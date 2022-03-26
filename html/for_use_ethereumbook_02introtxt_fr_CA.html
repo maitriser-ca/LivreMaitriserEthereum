@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<title>Les bases d&#39;Ethereum</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article data-line-1">
+<div id="header">
+</div>
+<div id="content">
+<div class="sect1 data-line-2">
+<h2 id="intro_chapter">Les bases d&#39;Ethereum</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-4">
+<p>In this chapter we will start exploring Ethereum, learning how to use wallets, how to create transactions, and also how to run a basic smart contract.</p>
+</div>
+<div class="sect2 data-line-7">
+<h3 id="ether_units">Ether Currency Units</h3>
+<div class="paragraph data-line-9">
+<p>Ethereum&#8217;s currency unit is called <em>ether</em>, identified also as "ETH" or with the symbols &#926; (from the Greek letter "Xi" that looks like a stylized capital E) or, less often, &#9830;: for example, 1 ether, or 1 ETH, or &#926;1, or &#9830;1.</p>
+</div>
+<div class="admonitionblock tip data-line-12">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-13">
+<p>Use Unicode character U+039E for &#926; and U+2666 for &#9830;.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-16">
+<p>Ether is subdivided into smaller units, down to the smallest unit possible, which is named <em>wei</em>. One ether is 1 quintillion wei (1 * 10<sup>18</sup> or 1,000,000,000,000,000,000). You may hear people refer to the currency "Ethereum" too, but this is a common beginner&#8217;s mistake. Ethereum is the system, ether is the currency.</p>
+</div>
+<div class="paragraph data-line-18">
+<p>The value of ether is always represented internally in Ethereum as an unsigned integer value denominated in wei. When you transact 1 ether, the transaction encodes 1000000000000000000 wei as the value.</p>
+</div>
+<div class="paragraph data-line-20">
+<p>Ether&#8217;s various denominations have both a <em>scientific name</em> using the International System of Units (<em>SI</em>) and a colloquial name that pays homage to many of the great minds of computing and cryptography.</p>
+</div>
+<div class="paragraph data-line-22">
+<p><a href="#ether_denominations">Ether denominations and unit names</a> shows the various units, their colloquial (common) names, and their SI names. In keeping with the internal representation of value, the table shows all denominations in wei (first row), with ether shown as 10<sup>18</sup> wei in the 7th row.</p>
+</div>
+<table id="ether_denominations" class="tableblock frame-all grid-all stretch data-line-27">
+<caption class="title">Table 1. Ether denominations and unit names</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value (in wei)</th>
+<th class="tableblock halign-left valign-top">Exponent</th>
+<th class="tableblock halign-left valign-top">Common name</th>
+<th class="tableblock halign-left valign-top">SI name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wei</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wei</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>3</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Babbage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kilowei or femtoether</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>6</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lovelace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Megawei or picoether</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>9</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shannon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gigawei or nanoether</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>12</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Szabo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microether or micro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>15</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finney</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Milliether or milli</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>1,000,000,000,000,000,000</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>10<sup>18</sup></em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Ether</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Ether</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>21</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kiloether</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>24</sup></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Megaether</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2 data-line-41">
+<h3 id="choosing_eth_wallet">Choosing an Ethereum Wallet</h3>
+<div class="paragraph data-line-43">
+<p>The term "wallet" has come to mean many things, although they are all related and on a day-to-day basis boil down to pretty much the same thing. We will use the term "wallet" to mean a software application that helps you manage your Ethereum account. In short, an Ethereum wallet is your gateway to the Ethereum system. It holds your keys and can create and broadcast transactions on your behalf. Choosing an Ethereum wallet can be difficult because there are many different options with different features and designs. Some are more suitable for beginners and some are more suitable for experts. The Ethereum platform itself is still being improved, and the "best" wallets are often the ones that adapt to the changes that come with the platform upgrades.</p>
+</div>
+<div class="paragraph data-line-45">
+<p>But don&#8217;t worry! If you choose a wallet and don&#8217;t like how it works&#x2014;or if you like it at first but later want to try something else&#x2014;you can change wallets quite easily. All you have to do is make a transaction that sends your funds from the old wallet to the new wallet, or export your private keys and import them into the new one.</p>
+</div>
+<div class="paragraph data-line-47">
+<p>We&#8217;ve selected three different types of wallets to use as examples throughout the book: a mobile wallet, a desktop wallet, and a web-based wallet. We&#8217;ve chosen these three wallets because they represent a broad range of complexity and features. However, the selection of these wallets is not an endorsement of their quality or security. They are simply a good starting place for demonstrations and testing.</p>
+</div>
+<div class="paragraph data-line-49">
+<p>Remember that for a wallet application to work, it must have access to your private keys, so it is vital that you only download and use wallet applications from sources you trust. Fortunately, in general, the more popular a wallet application is, the more trustworthy it is likely to be. Nevertheless, it is good practice to avoid "putting all your eggs in one basket" and have your Ethereum accounts spread across a couple of wallets.</p>
+</div>
+<div class="paragraph data-line-51">
+<p>The following are some good starter wallets:</p>
+</div>
+<div class="dlist data-line-53">
+<dl>
+<dt class="hdlist1">MetaMask</dt>
+<dd>
+<p>MetaMask is a browser extension wallet that runs in your browser (Chrome, Firefox, Opera, or Brave Browser). It is easy to use and convenient for testing, as it is able to connect to a variety of Ethereum nodes and test blockchains. MetaMask is a web-based wallet.</p>
+</dd>
+<dt class="hdlist1">Jaxx</dt>
+<dd>
+<p>Jaxx is a multiplatform and multicurrency wallet that runs on a variety of operating systems, including Android, iOS, Windows, macOS, and Linux. It is often a good choice for new users as it is designed for simplicity and ease of use. Jaxx is either a mobile or a desktop wallet, depending on where you install it.</p>
+</dd>
+<dt class="hdlist1">MyEtherWallet (MEW)</dt>
+<dd>
+<p>MyEtherWallet is a web-based wallet that runs in any browser. It has multiple sophisticated features we will explore in many of our examples. MyEtherWallet is a web-based wallet.</p>
+</dd>
+<dt class="hdlist1">Emerald Wallet</dt>
+<dd>
+<p>Emerald Wallet is designed to work with the Ethereum Classic blockchain, but is compatible with other Ethereum-based blockchains. It&#8217;s an open source desktop application and works under Windows, macOS, and Linux. Emerald Wallet can run a full node or connect to a public remote node, working in a "light" mode. It also has a companion tool to do all operations from the command line.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph data-line-61">
+<p>We&#8217;ll start by installing MetaMask on a desktop&#x2014;but first, we&#8217;ll briefly discuss controlling and managing keys.</p>
+</div>
+</div>
+<div class="sect2 data-line-64">
+<h3 id="control_responsibility">Control and Responsibility</h3>
+<div class="paragraph data-line-66">
+<p>Open blockchains like Ethereum are important because they operate as a <em>decentralized</em> system. That means lots of things, but one crucial aspect is that each user of Ethereum can&#x2014;and should&#x2014;control their own private keys, which are the things that control access to funds and smart contracts. We sometimes call the combination of access to funds and smart contracts an "account" or "wallet." These terms can get quite complex in their functionality, so we will go into this in more detail later. As a fundamental principle, however, it is as easy as one private key equals one "account." Some users choose to give up control over their private keys by using a third-party custodian, such as an online exchange. In this book, we will teach you how to take control and manage your own private keys.</p>
+</div>
+<div class="paragraph data-line-68">
+<p>With control comes a big responsibility. If you lose your private keys, you lose access to your funds and contracts. No one can help you regain access&#x2014;your funds will be locked forever. Here are a few tips to help you manage this responsibility:</p>
+</div>
+<div class="ulist data-line-70">
+<ul>
+<li class="data-line-70">
+<p>Do not improvise security. Use tried-and-tested standard approaches.</p>
+</li>
+<li class="data-line-72">
+<p>The more important the account (e.g., the higher the value of the funds controlled, or the more significant the smart contracts accessible), the higher security measures should be taken.</p>
+</li>
+<li class="data-line-74">
+<p>The highest security is gained from an air-gapped device, but this level is not required for every account.</p>
+</li>
+<li class="data-line-76">
+<p>Never store your private key in plain form, especially digitally. Fortunately, most user interfaces today won&#8217;t even let you see the raw private key.</p>
+</li>
+<li class="data-line-78">
+<p>Private keys can be stored in an encrypted form, as a digital "keystore" file. Being encrypted, they need a password to unlock. When you are prompted to choose a password, make it strong (i.e., long and random), back it up, and don&#8217;t share it. If you don&#8217;t have a password manager, write it down and store it in a safe and secret place. To access your account, you need both the keystore file and the password.</p>
+</li>
+<li class="data-line-80">
+<p>Do not store any passwords in digital documents, digital photos, screenshots, online drives, encrypted PDFs, etc. Again, do not improvise security. Use a password manager or pen and paper.</p>
+</li>
+<li class="data-line-82">
+<p>When you are prompted to back up a key as a mnemonic word sequence, use pen and paper to make a physical backup. Do not leave that task "for later"; you will forget. These backups can be used to rebuild your private key in case you lose all the data saved on your system, or if you forget or lose your password. However, they can also be used by attackers to get your private keys, so never store them digitally, and keep the physical copy stored securely in a locked drawer or safe.</p>
+</li>
+<li class="data-line-84">
+<p>Before transferring any large amounts (especially to new addresses), first do a small test transaction (e.g., less than $1 value) and wait for confirmation of receipt.</p>
+</li>
+<li class="data-line-86">
+<p>When you create a new account, start by sending only a small test transaction to the new address. Once you receive the test transaction, try sending back again from that account. There are lots of reasons account creation can go wrong, and if it has gone wrong, it is better to find out with a small loss. If the tests work, all is well.</p>
+</li>
+<li class="data-line-88">
+<p>Public block explorers are an easy way to independently see whether a transaction has been accepted by the network. However, this convenience has a negative impact on your privacy, because you reveal your addresses to block explorers, which can track you.</p>
+</li>
+<li class="data-line-90">
+<p>Do not send money to any of the addresses shown in this book. The private keys are listed in the book and someone will immediately take that money.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-92">
+<p>Now that we&#8217;ve covered some basic best practices for key management and security, let&#8217;s get to work using MetaMask!</p>
+</div>
+</div>
+<div class="sect2 data-line-95">
+<h3 id="installing_MetaMask">Getting Started with MetaMask</h3>
+<div class="paragraph data-line-97">
+<p>Open the Google Chrome browser and navigate to <a href="https://chrome.google.com/webstore/category/extensions" class="undefined" data-href="https://chrome.google.com/webstore/category/extensions">https://chrome.google.com/webstore/category/extensions</a>.</p>
+</div>
+<div class="paragraph data-line-99">
+<p>Search for "MetaMask" and click on the logo of a fox. You should see something like the result shown in <a href="#metamask_download">The detail page of the MetaMask Chrome extension</a>.</p>
+</div>
+<div id="metamask_download" class="imageblock data-line-103">
+<div class="content">
+<img src="images/metamask_download.png" alt="MetaMask Detail Page">
+</div>
+<div class="title">Figure 1. The detail page of the MetaMask Chrome extension</div>
+</div>
+<div class="paragraph data-line-105">
+<p>It&#8217;s important to verify that you are downloading the real MetaMask extension, as sometimes people are able to sneak malicious extensions past Google&#8217;s filters. The real one:</p>
+</div>
+<div class="ulist data-line-107">
+<ul>
+<li class="data-line-107">
+<p>Shows the ID nkbihfbeogaeaoehlefnkodbefgpgknn in the address bar</p>
+</li>
+<li class="data-line-108">
+<p>Is offered by <a href="https://metamask.io" class="undefined" data-href="https://metamask.io">https://metamask.io</a></p>
+</li>
+<li class="data-line-109">
+<p>Has more than 1,500 reviews</p>
+</li>
+<li class="data-line-110">
+<p>Has more than 1,000,000 users</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-112">
+<p>Once you confirm you are looking at the correct extension, click "Add to Chrome" to install it.</p>
+</div>
+<div class="sect3 data-line-115">
+<h4 id="using_MetaMask">Creating a Wallet</h4>
+<div class="paragraph data-line-117">
+<p>Once MetaMask is installed you should see a new icon (the head of a fox) in your browser&#8217;s toolbar. Click on it to get started. You will be asked to accept the terms and conditions and then to create your new Ethereum wallet by entering a password (see <a href="#metamask_password">The password page of the MetaMask Chrome extension</a>).</p>
+</div>
+<div id="metamask_password" class="imageblock data-line-121">
+<div class="content">
+<img src="images/metamask_password.png" alt="MetaMask Password Page">
+</div>
+<div class="title">Figure 2. The password page of the MetaMask Chrome extension</div>
+</div>
+<div class="admonitionblock tip data-line-124">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-125">
+<p>The password controls access to MetaMask, so that it can&#8217;t be used by anyone with access to your browser.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-128">
+<p>Once you&#8217;ve set a password, MetaMask will generate a wallet for you and show you a <em>mnemonic backup</em> consisting of 12 English words (see <a href="#metamask_mnemonic">The mnemonic backup of your wallet, created by MetaMask</a>). These words can be used in any compatible wallet to recover access to your funds should something happen to MetaMask or your computer. You do not need the password for this recovery; the 12 words are sufficient.</p>
+</div>
+<div class="admonitionblock tip data-line-131">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-132">
+<p>Back up your mnemonic (12 words) on paper, twice. Store the two paper backups in two separate secure locations, such as a fire-resistant safe, a locked drawer, or a safe deposit box. Treat the paper backups like cash of equivalent value to what you store in your Ethereum wallet. Anyone with access to these words can gain access and steal your money.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="metamask_mnemonic" class="imageblock data-line-137">
+<div class="content">
+<img src="images/metamask_mnemonic.png" alt="MetaMask Mnemonic Page">
+</div>
+<div class="title">Figure 3. The mnemonic backup of your wallet, created by MetaMask</div>
+</div>
+<div class="paragraph data-line-139">
+<p>Once you have confirmed that you have stored the mnemonic securely, you&#8217;ll be able to see the details of your Ethereum account, as shown in <a href="#metamask_account">Your Ethereum account in MetaMask</a>.</p>
+</div>
+<div id="metamask_account" class="imageblock data-line-143">
+<div class="content">
+<img src="images/metamask_account.png" alt="MetaMask Account Page">
+</div>
+<div class="title">Figure 4. Your Ethereum account in MetaMask</div>
+</div>
+<div class="paragraph data-line-145">
+<p>Your account page shows the name of your account ("Account 1" by default), an Ethereum address (0x9E713... in the example), and a colorful icon to help you visually distinguish this account from other accounts. At the top of the account page, you can see which Ethereum network you are currently working on ("Main Network" in the example).</p>
+</div>
+<div class="paragraph data-line-147">
+<p>Congratulations! You have set up your first Ethereum wallet.</p>
+</div>
+</div>
+<div class="sect3 data-line-150">
+<h4 id="switching_networks">Switching Networks</h4>
+<div class="paragraph data-line-152">
+<p>As you can see on the MetaMask account page, you can choose between multiple Ethereum networks. By default, MetaMask will try to connect to the main network. The other choices are public testnets, any Ethereum node of your choice, or nodes running private blockchains on your own computer (localhost):</p>
+</div>
+<div class="dlist data-line-154">
+<dl>
+<dt class="hdlist1">Main Ethereum Network</dt>
+<dd>
+<p>The main public Ethereum blockchain. Real ETH, real value, and real consequences.</p>
+</dd>
+<dt class="hdlist1">Ropsten Test Network</dt>
+<dd>
+<p>Ethereum public test blockchain and network. ETH on this network has no value.</p>
+</dd>
+<dt class="hdlist1">Kovan Test Network</dt>
+<dd>
+<p>Ethereum public test blockchain and network using the Aura consensus protocol with proof of authority (federated signing). ETH on this network has no value. The Kovan test network is supported by Parity only. Other Ethereum clients use the Clique consensus protocol, which was proposed later, for proof of authority&#x2013;based verification.</p>
+</dd>
+<dt class="hdlist1">Rinkeby Test Network</dt>
+<dd>
+<p>Ethereum public test blockchain and network, using the Clique consensus protocol with proof of authority (federated signing). ETH on this network has no value.</p>
+</dd>
+<dt class="hdlist1">Localhost 8545</dt>
+<dd>
+<p>Connects to a node running on the same computer as the browser. The node can be part of any public blockchain (main or testnet), or a private testnet.</p>
+</dd>
+<dt class="hdlist1">Custom RPC</dt>
+<dd>
+<p>Allows you to connect MetaMask to any node with a Geth-compatible Remote Procedure Call (RPC) interface. The node can be part of any public or private blockchain.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note data-line-167">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-168">
+<p>Your MetaMask wallet uses the same private key and Ethereum address on all the networks it connects to. However, your Ethereum address balance on each Ethereum network will be different. Your keys may control ether and contracts on Ropsten, for example, but not on the main network.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3 data-line-172">
+<h4 id="getting_test_eth">Getting Some Test Ether</h4>
+<div class="paragraph data-line-174">
+<p>Your first task is to get your wallet funded. You won&#8217;t be doing that on the main network because real ether costs money and handling it requires a bit more experience. For now, you&#8217;ll load your wallet with some testnet ether.</p>
+</div>
+<div class="paragraph data-line-176">
+<p>Switch MetaMask to the <em>Ropsten Test Network</em>. Click Deposit, then click Ropsten Test Faucet. MetaMask will open a new web page, as shown in <a href="#metamask_ropsten_faucet">MetaMask Ropsten Test Faucet</a>.</p>
+</div>
+<div id="metamask_ropsten_faucet" class="imageblock data-line-180">
+<div class="content">
+<img src="images/metamask_ropsten_faucet.png" alt="MetaMask Ropsten Test Faucet">
+</div>
+<div class="title">Figure 5. MetaMask Ropsten Test Faucet</div>
+</div>
+<div class="paragraph data-line-182">
+<p>You may notice that the web page already contains your MetaMask wallet&#8217;s Ethereum address. MetaMask integrates Ethereum-enabled web pages with your MetaMask wallet and can "see" Ethereum addresses on the web page, allowing you, for example, to send a payment to an online shop displaying an Ethereum address. MetaMask can also populate the web page with your own wallet&#8217;s address as a recipient address if the web page requests it. In this page, the faucet application is asking MetaMask for a wallet address to send test ether to.</p>
+</div>
+<div class="paragraph data-line-184">
+<p>Click the green "request 1 ether from faucet" button. You will see a transaction ID appear in the lower part of the page. The faucet app has created a transaction&#x2014;a payment to you. The transaction ID looks like this:</p>
+</div>
+<div id="faucet_tx_id" class="listingblock data-line-187">
+<div class="content">
+<pre>0x7c7ad5aaea6474adccf6f5c5d6abed11b70a350fbc6f9590109e099568090c57</pre>
+</div>
+</div>
+<div class="paragraph data-line-191">
+<p>In a few seconds, the new transaction will be mined by the Ropsten miners and your MetaMask wallet will show a balance of 1 ETH. Click on the transaction ID and your browser will take you to a <em>block explorer</em>, which is a website that allows you to visualize and explore blocks, addresses, and transactions. MetaMask uses the <a href="https://etherscan.io/" data-href="https://etherscan.io/">Etherscan block explorer</a>, one of the more popular Ethereum block explorers. The transaction containing the payment from the Ropsten Test Faucet is shown in <a href="#ropsten_block_explorer">Etherscan Ropsten block explorer</a>.</p>
+</div>
+<div id="ropsten_block_explorer" class="imageblock data-line-195">
+<div class="content">
+<img src="images/ropsten_block_explorer.png" alt="Etherscan Ropsten Block Explorer">
+</div>
+<div class="title">Figure 6. Etherscan Ropsten block explorer</div>
+</div>
+<div class="paragraph data-line-197">
+<p>The transaction has been recorded on the Ropsten blockchain and can be viewed at any time by anyone, simply by searching for the transaction ID, or <a href="http://bit.ly/2Q860Wk" data-href="http://bit.ly/2Q860Wk">visiting the link</a>.</p>
+</div>
+<div class="paragraph data-line-199">
+<p>Try visiting that link, or entering the transaction hash into the <em>ropsten.etherscan.io</em> website, to see it for yourself.</p>
+</div>
+</div>
+<div class="sect3 data-line-202">
+<h4 id="sending_eth_MetaMask">Sending Ether from MetaMask</h4>
+<div class="paragraph data-line-204">
+<p>Once you&#8217;ve received your first test ether from the Ropsten Test Faucet, you can experiment with sending ether by trying to send some back to the faucet. As you can see on the Ropsten Test Faucet page, there is an option to "donate" 1 ETH to the faucet. This option is available so that once you&#8217;re done testing, you can return the remainder of your test ether, so that someone else can use it next. Even though test ether has no value, some people hoard it, making it difficult for everyone else to use the test networks. Hoarding test ether is frowned upon!</p>
+</div>
+<div class="paragraph data-line-206">
+<p>Fortunately, we are not test ether hoarders. Click the orange "1 ether" button to tell MetaMask to create a transaction paying the faucet 1 ether. MetaMask will prepare a transaction and pop up a window with the confirmation, as shown in <a href="#send_to_faucet">Sending 1 ether to the faucet</a>.</p>
+</div>
+<div id="send_to_faucet" class="imageblock data-line-211">
+<div class="content">
+<img src="images/send_to_faucet.png" alt="Sending 1 ether to the faucet">
+</div>
+<div class="title">Figure 7. Sending 1 ether to the faucet</div>
+</div>
+<div class="paragraph data-line-213">
+<p>Oops! You probably noticed you can&#8217;t complete the transaction&#x2014;MetaMask says you have an insufficient balance. At first glance this may seem confusing: you have 1 ETH, you want to send 1 ETH, so why is MetaMask saying you have insufficient funds?</p>
+</div>
+<div class="paragraph data-line-215">
+<p>The answer is because of the cost of <em>gas</em>. Every Ethereum transaction requires payment of a fee, which is collected by the miners to validate the transaction. The fees in Ethereum are charged in a virtual currency called gas. You pay for the gas with ether, as part of the transaction.</p>
+</div>
+<div class="admonitionblock note data-line-218">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-219">
+<p>Fees are required on the test networks too. Without fees, a test network would behave differently from the main network, making it an inadequate testing platform. Fees also protect the test networks from DoS attacks and poorly constructed contracts (e.g., infinite loops), much like they protect the main network.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-222">
+<p>When you sent the transaction, MetaMask calculated the average gas price of recent successful transactions at 3 gwei, which stands for gigawei. Wei is the smallest <span class="keep-together">subdivision</span> of the ether currency, as we discussed in <a href="#ether_units">Ether Currency Units</a>. The gas limit is set at the cost of sending a basic transaction, which is 21,000 gas units. Therefore, the maximum amount of ETH you will spend is 3 * 21,000 gwei = 63,000 gwei = 0.000063 ETH. (Be advised that average gas prices can fluctuate, as they are predominantly determined by miners. We will see in a later chapter how you can increase/decrease your gas limit to ensure your transaction takes precedence if need be.)</p>
+</div>
+<div class="paragraph data-line-224">
+<p>All this to say: making a 1 ETH transaction costs 1.000063 ETH. MetaMask confusingly rounds that <em>down</em> to 1 ETH when showing the total, but the actual amount you need is 1.000063 ETH and you only have 1 ETH. Click Reject to cancel this transaction.</p>
+</div>
+<div class="paragraph data-line-226">
+<p>Let&#8217;s get some more test ether! Click the green "request 1 ether from the faucet" button again and wait a few seconds. Don&#8217;t worry, the faucet should have plenty of ether and will give you more if you ask.</p>
+</div>
+<div class="paragraph data-line-228">
+<p>Once you have a balance of 2 ETH, you can try again. This time, when you click the orange "1 ether" donation button, you have sufficient balance to complete the transaction. Click Submit when MetaMask pops up the payment window. After all of this, you should see a balance of 0.999937 ETH because you sent 1 ETH to the faucet with 0.000063 ETH in gas.</p>
+</div>
+</div>
+<div class="sect3 data-line-231">
+<h4 id="explore_tx_history">Exploring the Transaction History of an Address</h4>
+<div class="paragraph data-line-233">
+<p>By now you have become an expert in using MetaMask to send and receive test ether. Your wallet has received at least two payments and sent at least one. You can view all these transactions using the <em>ropsten.etherscan.io</em> block explorer. You can either copy your wallet address and paste it into the block explorer&#8217;s search box, or have MetaMask open the page for you. Next to your account icon in MetaMask, you will see a button showing three dots. Click on it to show a menu of account-related options (see <a href="#metamask_account_context_menu">MetaMask account context menu</a>).</p>
+</div>
+<div id="metamask_account_context_menu" class="imageblock data-line-237">
+<div class="content">
+<img src="images/metamask_account_context_menu.png" alt="MetaMask Account Context Menu">
+</div>
+<div class="title">Figure 8. MetaMask account context menu</div>
+</div>
+<div class="paragraph data-line-239">
+<p>Select "View account on Etherscan" to open a web page in the block explorer showing your account&#8217;s transaction history, as shown in <a href="#block_explorer_account_history">Address transaction history on Etherscan</a>.</p>
+</div>
+<div id="block_explorer_account_history" class="imageblock data-line-243">
+<div class="content">
+<img src="images/block_explorer_account_history.png" alt="Address Transaction History on Etherscan">
+</div>
+<div class="title">Figure 9. Address transaction history on Etherscan</div>
+</div>
+<div class="paragraph data-line-245">
+<p>Here you can see the entire transaction history of your Ethereum address. It shows all the transactions recorded on the Ropsten blockchain where your address is the sender or recipient. Click on a few of these transactions to see more details.</p>
+</div>
+<div class="paragraph data-line-247">
+<p>You can explore the transaction history of any address. Take a look at the transaction history of the Ropsten Test Faucet address (hint: it is the "sender" address listed in the oldest payment to your address). You can see all the test ether sent from the faucet to you and to other addresses. Every transaction you see can lead you to more addresses and more transactions. Before long you will be lost in the maze of interconnected data. Public blockchains contain an enormous wealth of information, all of which can be explored programmatically, as we will see in future examples.</p>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-250">
+<h3 id="intro_world_computer">Introducing the World Computer</h3>
+<div class="paragraph data-line-252">
+<p>You&#8217;ve now created a wallet and sent and received ether. So far, we&#8217;ve treated Ethereum as a cryptocurrency. But Ethereum is much, much more. In fact, the cryptocurrency function is subservient to Ethereum&#8217;s function as a decentralized world computer. Ether is meant to be used to pay for running <em>smart contracts</em>, which are computer programs that run on an emulated computer called the <em>Ethereum Virtual Machine</em> (EVM).</p>
+</div>
+<div class="paragraph data-line-254">
+<p>The EVM is a global singleton, meaning that it operates as if it were a global, single-instance computer, running everywhere. Each node on the Ethereum network runs a local copy of the EVM to validate contract execution, while the Ethereum blockchain records the changing <em>state</em> of this world computer as it processes transactions and smart contracts. We&#8217;ll discuss this in much greater detail in <a href="#evm_chapter">[evm_chapter]</a>.</p>
+</div>
+</div>
+<div class="sect2 data-line-257">
+<h3 id="EOA_contracts">Externally Owned Accounts (EOAs) and Contracts</h3>
+<div class="paragraph data-line-259">
+<p>The type of account you created in the MetaMask wallet is called an <em>externally owned account</em> (EOA). Externally owned accounts are those that have a private key; having the private key means control over access to funds or contracts. Now, you&#8217;re probably guessing there is another type of account. That other type of account is a <em>contract account</em>. A contract account has smart contract code, which a simple EOA can&#8217;t have. Furthermore, a contract account does not have a private key. Instead, it is owned (and controlled) by the logic of its smart contract code: the software program recorded on the Ethereum blockchain at the contract account&#8217;s creation and executed by the EVM.</p>
+</div>
+<div class="paragraph data-line-261">
+<p>Contracts have addresses, just like EOAs. Contracts can also send and receive ether, just like EOAs. However, when a transaction destination is a contract address, it causes that contract to <em>run</em> in the EVM, using the transaction, and the transaction&#8217;s data, as its input. In addition to ether, transactions can contain <em>data</em> indicating which specific function in the contract to run and what parameters to pass to that function. In this way, transactions can <em>call</em> functions within contracts.</p>
+</div>
+<div class="paragraph data-line-263">
+<p>Note that because a contract account does not have a private key, it cannot <em>initiate</em> a transaction. Only EOAs can initiate transactions, but contracts can <em>react</em> to transactions by calling other contracts, building complex execution paths. One typical use of this is an EOA sending a request transaction to a multisignature smart contract wallet to send some ETH on to another address. A typical DApp programming pattern is to have Contract A calling Contract B in order to maintain a shared state across users of Contract A.</p>
+</div>
+<div class="paragraph data-line-265">
+<p>In the next few sections, we will write our first contract. You will then learn how to create, fund, and use that contract with your MetaMask wallet and test ether on the Ropsten test network.</p>
+</div>
+</div>
+<div class="sect2 data-line-268">
+<h3 id="simple_contract_example">A Simple Contract: A Test Ether Faucet</h3>
+<div class="paragraph data-line-270">
+<p>Ethereum has many different high-level languages, all of which can be used to write a contract and produce EVM bytecode. You can read about many of the most prominent and interesting ones in <a href="#high_level_languages">[high_level_languages]</a>. One high-level language is by far the dominant choice for smart contract programming: Solidity. Solidity was created by Dr. Gavin Wood, the coauthor of this book, and has become the most widely used language in Ethereum (and beyond). We&#8217;ll use Solidity to write our first contract.</p>
+</div>
+<div class="paragraph data-line-272">
+<p>For our first example (<a href="#solidity_faucet_example">Faucet.sol: A Solidity contract implementing a faucet</a>), we will write a contract that controls a <em>faucet</em>. You&#8217;ve already used a faucet to get test ether on the Ropsten test network. A faucet is a relatively simple thing: it gives out ether to any address that asks, and can be refilled periodically. You can implement a faucet as a wallet controlled by a human or a web server.</p>
+</div>
+<div id="solidity_faucet_example" class="exampleblock data-line-276">
+<div class="title">Example 1. Faucet.sol: A Solidity contract implementing a faucet</div>
+<div class="content">
+<div class="listingblock data-line-278">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// SPDX-License-Identifier: CC-BY-SA-4.0
+
+// Version of Solidity compiler this program was written for
+pragma solidity 0.6.4;
+
+// Our first contract is a faucet!
+contract Faucet {
+    // Accept any incoming amount
+    receive() external payable {}
+
+    // Give out ether to anyone who asks
+    function withdraw(uint withdraw_amount) public {
+        // Limit withdrawal amount
+        require(withdraw_amount &lt;= 100000000000000000);
+
+        // Send the amount to the address that requested it
+        msg.sender.transfer(withdraw_amount);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note data-line-284">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-285">
+<p>You will find all the code samples for this book in the <em>code</em> subdirectory of <a href="https://github.com/ethereumbook/ethereumbook/" data-href="https://github.com/ethereumbook/ethereumbook/">the book&#8217;s GitHub repository</a>. Specifically, our <em>Faucet.sol</em> contract is in:</p>
+</div>
+<div class="listingblock data-line-287">
+<div class="content">
+<pre>code/Solidity/Faucet.sol</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-292">
+<p>This is a very simple contract, about as simple as we can make it. It is also a <em>flawed</em> contract, demonstrating a number of bad practices and security vulnerabilities. We will learn by examining all of its flaws in later sections. But for now, let&#8217;s look at what this contract does and how it works, line by line. You will quickly notice that many elements of Solidity are similar to existing programming languages, such as JavaScript, Java, or C++.</p>
+</div>
+<div class="paragraph data-line-294">
+<p>The first line is a comment:</p>
+</div>
+<div id="comment" class="listingblock data-line-298">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Our first contract is a faucet!</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-302">
+<p>Comments are for humans to read and are not included in the executable EVM bytecode. We usually put them on the line before the code we are trying to explain, or sometimes on the same line. Comments start with two forward slashes: //. Everything from the first slash until the end of that line is treated the same as a blank line and ignored.</p>
+</div>
+<div class="paragraph data-line-304">
+<p>The next line is where our actual contract starts:</p>
+</div>
+<div id="contract_definition" class="listingblock data-line-308">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">contract Faucet {</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-312">
+<p>This line declares a contract object, similar to a class declaration in other object-oriented languages. The contract definition includes all the lines between the curly braces (<code>{}</code>), which define a <em>scope</em>, much like how curly braces are used in many other programming languages.</p>
+</div>
+<div class="paragraph data-line-314">
+<p>Next, we declare the first function of the Faucet contract:</p>
+</div>
+<div id="withdraw_function" class="listingblock data-line-318">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">function withdraw(uint withdraw_amount) public {</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-322">
+<p>The function is named withdraw, and it takes one unsigned integer (uint) argument named withdraw_amount. It is declared as a public function, meaning it can be called by other contracts. The function definition follows, between curly braces. The first part of the withdraw function sets a limit on withdrawals:</p>
+</div>
+<div id="withdraw_limit" class="listingblock data-line-326">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">require(withdraw_amount &lt;= 100000000000000000);</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-330">
+<p>It uses the built-in Solidity function require to test a precondition, that the withdraw_amount is less than or equal to 100,000,000,000,000,000 wei, which is the base unit of ether (see <a href="#ether_denominations">Ether denominations and unit names</a>) and equivalent to 0.1 ether. If the withdraw function is called with a withdraw_amount greater than that amount, the require function here will cause contract execution to stop and fail with an <em>exception</em>. Note that statements need to be terminated with a semicolon in Solidity.</p>
+</div>
+<div class="paragraph data-line-332">
+<p>This part of the contract is the main logic of our faucet. It controls the flow of funds out of the contract by placing a limit on withdrawals. It&#8217;s a very simple control but can give you a glimpse of the power of a programmable blockchain: decentralized software controlling money.</p>
+</div>
+<div class="paragraph data-line-334">
+<p>Next comes the actual withdrawal:</p>
+</div>
+<div id="withdraw_command" class="listingblock data-line-338">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">msg.sender.transfer(withdraw_amount);</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-342">
+<p>A couple of interesting things are happening here. The msg object is one of the inputs that all contracts can access. It represents the transaction that triggered the execution of this contract. The attribute sender is the sender address of the transaction. The function transfer is a built-in function that transfers ether from the current contract to the address of the sender. Reading it backward, this means transfer to the sender of the msg that triggered this contract execution. The transfer function takes an amount as its only argument. We pass the withdraw_amount value that was the parameter to the withdraw function declared a few lines earlier.</p>
+</div>
+<div class="paragraph data-line-344">
+<p>The very next line is the closing curly brace, indicating the end of the definition of our withdraw function.</p>
+</div>
+<div class="paragraph data-line-346">
+<p>Next, we declare one more function:</p>
+</div>
+<div id="fallback_function" class="listingblock data-line-350">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">function () external payable {}</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-354">
+<p>This function is a so-called <em>fallback</em> or <em>default</em> function, which is called if the transaction that triggered the contract didn&#8217;t name any of the declared functions in the contract, or any function at all, or didn&#8217;t contain data. Contracts can have one such default function (without a name) and it is usually the one that receives ether. That&#8217;s why it is defined as an external and payable function, which means it can accept ether into the contract. It doesn&#8217;t do anything, other than accept the ether, as indicated by the empty definition in the curly braces (<code>{}</code>). If we make a transaction that sends ether to the contract address, as if it were a wallet, this function will handle it.</p>
+</div>
+<div class="paragraph data-line-356">
+<p>Right below our default function is the final closing curly brace, which closes the definition of the contract Faucet. That&#8217;s it!</p>
+</div>
+</div>
+<div class="sect2 data-line-359">
+<h3 id="compile_faucet_contract">Compiling the Faucet Contract</h3>
+<div class="paragraph data-line-361">
+<p>Now that we have our first example contract, we need to use a Solidity compiler to convert the Solidity code into EVM bytecode so it can be executed by the EVM on the blockchain itself.</p>
+</div>
+<div class="paragraph data-line-363">
+<p>The Solidity compiler comes as a standalone executable, as part of various frameworks, and bundled in Integrated Development Environments (IDEs). To keep things simple, we will use one of the more popular IDEs, called <em>Remix</em>.</p>
+</div>
+<div class="paragraph data-line-365">
+<p>Use your Chrome browser (with the MetaMask wallet you installed earlier) to navigate to the Remix IDE at <a href="https://remix.ethereum.org" class="undefined" data-href="https://remix.ethereum.org">https://remix.ethereum.org</a>.</p>
+</div>
+<div class="paragraph data-line-367">
+<p>When you first load Remix, it will start with a sample contract called <em>ballot.sol</em>. We don&#8217;t need that, so close it by clicking the x on the corner of the tab, as seen in <a href="#remix_close_tab">Close the default example tab</a>.</p>
+</div>
+<div id="remix_close_tab" class="imageblock data-line-371">
+<div class="content">
+<img src="images/remix_close_tab.png" alt="Close the default example tab">
+</div>
+<div class="title">Figure 10. Close the default example tab</div>
+</div>
+<div class="paragraph data-line-373">
+<p>Now, add a new tab by clicking on the circular plus sign in the top-left toolbar, as seen in <a href="#remix_toolbar">Click the plus sign to open a new tab</a>. Name the new file <em>Faucet.sol</em>.</p>
+</div>
+<div id="remix_toolbar" class="imageblock data-line-377">
+<div class="content">
+<img src="images/remix_toolbar.png" alt="Click the plus sign to open a new tab">
+</div>
+<div class="title">Figure 11. Click the plus sign to open a new tab</div>
+</div>
+<div class="paragraph data-line-379">
+<p>Once you have the new tab open, copy and paste the code from our example <em>Faucet.sol</em>, as seen in <a href="#remix_faucet_load">Copy the Faucet example code into the new tab</a>.</p>
+</div>
+<div id="remix_faucet_load" class="imageblock data-line-383">
+<div class="content">
+<img src="images/remix_faucet_load.png" alt="Copy the Faucet example code into the new tab">
+</div>
+<div class="title">Figure 12. Copy the Faucet example code into the new tab</div>
+</div>
+<div class="paragraph data-line-385">
+<p>Once you have loaded the <em>Faucet.sol</em> contract into the Remix IDE, the IDE will automatically compile the code. If all goes well, you will see a green box with "Faucet" in it appear on the right, under the Compile tab, confirming the successful compilation (see <a href="#remix_compile">Remix successfully compiles the Faucet.sol contract</a>).</p>
+</div>
+<div id="remix_compile" class="imageblock data-line-389">
+<div class="content">
+<img src="images/remix_compile.png" alt="">
+</div>
+<div class="title">Figure 13. Remix successfully compiles the Faucet.sol contract</div>
+</div>
+<div class="paragraph data-line-391">
+<p>If something goes wrong, the most likely problem is that the Remix IDE is using a version of the Solidity compiler that is different from 0.5.12. In that case, our pragma directive will prevent <em>Faucet.sol</em> from compiling. To change the compiler version, go to the Settings tab, set the version to 0.5.12, and try again.</p>
+</div>
+<div class="paragraph data-line-393">
+<p>The Solidity compiler has now compiled our <em>Faucet.sol</em> into EVM bytecode. If you are curious, the bytecode looks like this:</p>
+</div>
+<div id="faucet_bytecode" class="listingblock data-line-396">
+<div class="content">
+<pre>PUSH1 0x60 PUSH1 0x40 MSTORE CALLVALUE ISZERO PUSH2 0xF JUMPI PUSH1 0x0 DUP1
+REVERT JUMPDEST PUSH1 0xE5 DUP1 PUSH2 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN
+STOP PUSH1 0x60 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x3F JUMPI
+PUSH1 0x0 CALLDATALOAD PUSH29
+0x100000000000000000000000000000000000000000000000000000000
+SWAP1 DIV PUSH4 0xFFFFFFFF AND DUP1 PUSH4 0x2E1A7D4D EQ PUSH1 0x41 JUMPI
+JUMPDEST STOP JUMPDEST CALLVALUE ISZERO PUSH1 0x4B JUMPI PUSH1 0x0 DUP1 REVERT
+JUMPDEST PUSH1 0x5F PUSH1 0x4 DUP1 DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD SWAP1
+SWAP2 SWAP1 POP POP PUSH1 0x61 JUMP JUMPDEST STOP JUMPDEST PUSH8
+0x16345785D8A0000 DUP2 GT ISZERO ISZERO ISZERO PUSH1 0x77 JUMPI PUSH1 0x0 DUP1
+REVERT JUMPDEST CALLER PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND
+PUSH2 0x8FC DUP3 SWAP1 DUP2 ISZERO MUL SWAP1 PUSH1 0x40 MLOAD PUSH1 0x0 PUSH1
+0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP6 DUP9 DUP9 CALL SWAP4 POP POP POP POP ISZERO
+ISZERO PUSH1 0xB6 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP JUMP STOP LOG1 PUSH6
+0x627A7A723058 KECCAK256 PUSH9 0x13D1EA839A4438EF75 GASLIMIT CALLVALUE LOG4 0x5f
+PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
+</div>
+</div>
+<div class="paragraph data-line-415">
+<p>Aren&#8217;t you glad you are using a high-level language like Solidity instead of programming directly in EVM bytecode? Me too!</p>
+</div>
+</div>
+<div class="sect2 data-line-418">
+<h3 id="create_contract">Creating the Contract on the Blockchain</h3>
+<div class="paragraph data-line-420">
+<p>So, we have a contract. We&#8217;ve compiled it into bytecode. Now, we need to "register" the contract on the Ethereum blockchain. We will be using the Ropsten testnet to test our contract, so that&#8217;s the blockchain we want to submit it to.</p>
+</div>
+<div class="paragraph data-line-422">
+<p>Registering a contract on the blockchain involves creating a special transaction whose destination is the address 0x0000000000000000000000000000000000000000, also known as the <em>zero address</em>. The zero address is a special address that tells the Ethereum blockchain that you want to register a contract. Fortunately, the Remix IDE will handle all of that for you and send the transaction to MetaMask.</p>
+</div>
+<div class="paragraph data-line-424">
+<p>First, switch to the Run tab and select Injected Web3 in the Environment drop-down selection box. This connects the Remix IDE to the MetaMask wallet, and through MetaMask to the Ropsten test network. Once you do that, you can see Ropsten under Environment. Also, in the Account selection box it shows the address of your wallet (see <a href="#remix_run">Remix IDE Run tab, with Injected Web3 environment selected</a>).</p>
+</div>
+<div id="remix_run" class="imageblock data-line-428">
+<div class="content">
+<img src="images/remix_run.png" alt="Remix IDE Run tab, with Injected Web3 environment selected">
+</div>
+<div class="title">Figure 14. Remix IDE Run tab, with Injected Web3 environment selected</div>
+</div>
+<div class="paragraph data-line-430">
+<p>Right below the Run settings you just confirmed is the Faucet contract, ready to be created. Click on the Deploy button shown in <a href="#remix_run">Remix IDE Run tab, with Injected Web3 environment selected</a>.</p>
+</div>
+<div class="paragraph data-line-432">
+<p>Remix will construct the special "creation" transaction and MetaMask will ask you to approve it, as shown in <a href="#remix_metamask_create">MetaMask showing the contract creation transaction</a>. You&#8217;ll notice the contract creation transaction has no ether in it, but it has 262 bytes of data (the compiled contract) and will consume 10 gwei in gas. Click Submit to approve it.</p>
+</div>
+<div id="remix_metamask_create" class="imageblock data-line-436">
+<div class="content">
+<img src="images/remix_metamask_create.png" alt="MetaMask showing the contract creation transaction">
+</div>
+<div class="title">Figure 15. MetaMask showing the contract creation transaction</div>
+</div>
+<div class="paragraph data-line-438">
+<p>Now you have to wait. It will take about 15 to 30 seconds for the contract to be mined on Ropsten. Remix won&#8217;t appear to be doing much, but be patient.</p>
+</div>
+<div class="paragraph data-line-440">
+<p>Once the contract is created, it appears at the bottom of the Run tab (see <a href="#remix_contract_interact">The Faucet contract is ALIVE!</a>).</p>
+</div>
+<div id="remix_contract_interact" class="imageblock data-line-444">
+<div class="content">
+<img src="images/remix_contract_interact.png" alt="The Faucet contract is ALIVE!">
+</div>
+<div class="title">Figure 16. The Faucet contract is ALIVE!</div>
+</div>
+<div class="paragraph data-line-446">
+<p>Notice that the Faucet contract now has an address of its own: Remix shows it as &#x201c;Faucet at 0x72e&#8230;&#8203;c7829&#x201d; (although your address, the random letters and numbers, will be different). The small clipboard symbol to the right allows you to copy the contract address to your clipboard. We will use that in the next section.</p>
+</div>
+</div>
+<div class="sect2 data-line-449">
+<h3 id="interact_contract">Interacting with the Contract</h3>
+<div class="paragraph data-line-451">
+<p>Let&#8217;s recap what we&#8217;ve learned so far: Ethereum contracts are programs that control money, which run inside a virtual machine called the EVM. They are created by a special transaction that submits their bytecode to be recorded on the blockchain. Once they are created on the blockchain, they have an Ethereum address, just like wallets. Anytime someone sends a transaction to a contract address it causes the contract to run in the EVM, with the transaction as its input. Transactions sent to <span class="keep-together">contract</span> addresses may have ether or data or both. If they contain ether, it is "deposited" to the contract balance. If they contain data, the data can specify a named function in the contract and call it, passing arguments to the function.</p>
+</div>
+<div class="sect3 data-line-454">
+<h4 id="view_contract_address">Viewing the Contract Address in a Block Explorer</h4>
+<div class="paragraph data-line-456">
+<p>We now have a contract recorded on the blockchain, and we can see it has an Ethereum address. Let&#8217;s check it out in the <em>ropsten.etherscan.io</em> block explorer and see what a contract looks like. In the Remix IDE, copy the address of the contract by clicking the clipboard icon next to its name (see <a href="#remix_contract_address">Copy the contract address from Remix</a>).</p>
+</div>
+<div id="remix_contract_address" class="imageblock data-line-460">
+<div class="content">
+<img src="images/remix_contract_address.png" alt="Copy the contract address from Remix">
+</div>
+<div class="title">Figure 17. Copy the contract address from Remix</div>
+</div>
+<div class="paragraph data-line-462">
+<p>Keep Remix open; we&#8217;ll come back to it again later. Now, navigate your browser to <em>ropsten.etherscan.io</em> and paste the address into the search box. You should see the contract&#8217;s Ethereum address history, as shown in <a href="#etherscan_contract_address">View the Faucet contract address in the Etherscan block explorer</a>.</p>
+</div>
+<div id="etherscan_contract_address" class="imageblock data-line-466">
+<div class="content">
+<img src="images/etherscan_contract_address.png" alt="View the Faucet contract address in the etherscan block explorer">
+</div>
+<div class="title">Figure 18. View the Faucet contract address in the Etherscan block explorer</div>
+</div>
+</div>
+<div class="sect3 data-line-469">
+<h4 id="fund_contract">Funding the Contract</h4>
+<div class="paragraph data-line-471">
+<p>For now, the contract only has one transaction in its history: the contract creation transaction. As you can see, the contract also has no ether (zero balance). That&#8217;s because we didn&#8217;t send any ether to the contract in the creation transaction, even though we could have.</p>
+</div>
+<div class="paragraph data-line-473">
+<p>Our faucet needs funds! Our first project will be to use MetaMask to send ether to the contract. You should still have the address of the contract in your clipboard (if not, copy it again from Remix). Open MetaMask, and send 1 ether to it, exactly as you would to any other Ethereum address (see <a href="#metamask_send_to_contract">Send 1 ether to the contract address</a>).</p>
+</div>
+<div id="metamask_send_to_contract" class="imageblock data-line-477">
+<div class="content">
+<img src="images/metamask_send_to_contract.png" alt="">
+</div>
+<div class="title">Figure 19. Send 1 ether to the contract address</div>
+</div>
+<div class="paragraph data-line-479">
+<p>In a minute, if you reload the Etherscan block explorer, it will show another transaction to the contract address and an updated balance of 1 ether.</p>
+</div>
+<div class="paragraph data-line-481">
+<p>Remember the unnamed default external payable function in our <em>Faucet.sol</em> code? It looked like this:</p>
+</div>
+<div id="fallback_function_review" class="listingblock data-line-485">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">function () external payable {}</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-489">
+<p>When you sent a transaction to the contract address, with no data specifying which function to call, it called this default function. Because we declared it as payable, it accepted and deposited the 1 ether into the contract&#8217;s account balance. Your transaction caused the contract to run in the EVM, updating its balance. You have funded your faucet!</p>
+</div>
+</div>
+<div class="sect3 data-line-492">
+<h4 id="withdraw_from_contract">Withdrawing from Our Contract</h4>
+<div class="paragraph data-line-494">
+<p>Next, let&#8217;s withdraw some funds from the faucet. To withdraw, we have to construct a transaction that calls the withdraw function and passes a withdraw_amount argument to it. To keep things simple for now, Remix will construct that transaction for us and MetaMask will present it for our approval.</p>
+</div>
+<div class="paragraph data-line-496">
+<p>Return to the Remix tab and look at the contract on the Run tab. You should see a orange box labeled withdraw with a field entry labeled uint256 withdraw_amount (see <a href="#remix_contract_withdraw">The withdraw function of Faucet.sol, in Remix</a>).</p>
+</div>
+<div id="remix_contract_withdraw" class="imageblock data-line-500">
+<div class="content">
+<img src="images/remix_contract_interact.png" alt="The withdraw function of Faucet.sol, in Remix">
+</div>
+<div class="title">Figure 20. The withdraw function of Faucet.sol, in Remix</div>
+</div>
+<div class="paragraph data-line-502">
+<p>This is the Remix interface to the contract. It allows us to construct transactions that call the functions defined in the contract. We will enter a withdraw_amount and click the withdraw button to generate the transaction.</p>
+</div>
+<div class="paragraph data-line-504">
+<p>First, let&#8217;s figure out the withdraw_amount. We want to try and withdraw 0.1 ether, which is the maximum amount allowed by our contract. Remember that all currency values in Ethereum are denominated in wei internally, and our withdraw function expects the withdraw_amount to be denominated in wei too. The amount we want is 0.1 ether, which is 100,000,000,000,000,000 wei (a 1 followed by 17 zeros).</p>
+</div>
+<div class="admonitionblock tip data-line-509">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-510">
+<p>Due to a limitation in JavaScript, a number as large as 10^17 cannot be processed by Remix. Instead, we enclose it in double quotes, to allow Remix to receive it as a string and manipulate it as a BigNumber. If we don&#8217;t enclose it in quotes, the Remix IDE will fail to process it and display "Error encoding arguments: Error: Assertion failed."</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-513">
+<p>Type "100000000000000000" (with the quotes) into the withdraw_amount box and click on the withdraw button (see <a href="#remix_withdraw">Click "withdraw" in Remix to create a withdrawal transaction</a>).</p>
+</div>
+<div id="remix_withdraw" class="imageblock data-line-517">
+<div class="content">
+<img src="images/remix_withdraw.png" alt="">
+</div>
+<div class="title">Figure 21. Click "withdraw" in Remix to create a withdrawal transaction</div>
+</div>
+<div class="paragraph data-line-519">
+<p>MetaMask will pop up a transaction window for you to approve. Click Confirm to send your withdrawal call to the contract (see <a href="#metamask_withdraw">MetaMask transaction to call the withdraw function</a>).</p>
+</div>
+<div id="metamask_withdraw" class="imageblock data-line-523">
+<div class="content">
+<img src="images/metamask_withdraw.png" alt="MetaMask transaction to call the withdraw function">
+</div>
+<div class="title">Figure 22. MetaMask transaction to call the withdraw function</div>
+</div>
+<div class="paragraph data-line-525">
+<p>Wait a minute and then reload the Etherscan block explorer to see the transaction reflected in the Faucet contract address history (see <a href="#etherscan_withdrawal_tx">Etherscan shows the transaction calling the withdraw function</a>).</p>
+</div>
+<div id="etherscan_withdrawal_tx" class="imageblock data-line-529">
+<div class="content">
+<img src="images/etherscan_withdrawal_tx.png" alt="Etherscan shows the transaction calling the withdraw function">
+</div>
+<div class="title">Figure 23. Etherscan shows the transaction calling the withdraw function</div>
+</div>
+<div class="paragraph data-line-532">
+<p>We now see a new transaction with the contract address as the destination and a value of 0 ether. The contract balance has changed and is now 0.9 ether because it sent us 0.1 ether as requested. But we don&#8217;t see an "OUT" transaction in the <em>contract address history</em>.</p>
+</div>
+<div class="paragraph data-line-534">
+<p>Where&#8217;s the outgoing withdrawal? A new tab has appeared on the contract&#8217;s address history page, named Internal Transactions. Because the 0.1 ether transfer originated from the contract code, it is an internal transaction (also called a <em>message</em>). Click on that tab to see it (see <a href="#etherscan_withdrawal_internal">Etherscan shows the internal transaction transferring ether out from the contract</a>).</p>
+</div>
+<div class="paragraph data-line-537">
+<p>This "internal transaction" was sent by the contract in this line of code (from the <code><span class="keep-together">withdraw</span></code> function in <em>Faucet.sol</em>):</p>
+</div>
+<div id="withdraw_command_review" class="listingblock data-line-541">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">msg.sender.transfer(withdraw_amount);</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-545">
+<p>To recap: you sent a transaction from your MetaMask wallet that contained data instructions to call the withdraw function with a withdraw_amount argument of 0.1 ether. That transaction caused the contract to run inside the EVM. As the EVM ran the Faucet contract&#8217;s withdraw function, first it called the require function and validated that the requested amount was less than or equal to the maximum allowed withdrawal of 0.1 ether. Then it called the transfer function to send you the ether. Running the transfer function generated an internal transaction that deposited 0.1 ether into your wallet address, from the contract&#8217;s balance. That&#8217;s the one shown on the Internal Transactions tab in Etherscan.</p>
+</div>
+<div id="etherscan_withdrawal_internal" class="imageblock data-line-549">
+<div class="content">
+<img src="images/etherscan_withdrawal_internal.png" alt="Etherscan shows the internal transaction transferring ether out from the contract">
+</div>
+<div class="title">Figure 24. Etherscan shows the internal transaction transferring ether out from the contract</div>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-552">
+<h3 id="intro_conclusion">Conclusions</h3>
+<div class="paragraph data-line-554">
+<p>In this chapter, you set up a wallet using MetaMask and funded it using a faucet on the Ropsten test network. You received ether into your wallet&#8217;s Ethereum address, then you sent ether to the faucet&#8217;s Ethereum address.</p>
+</div>
+<div class="paragraph data-line-556">
+<p>Next, you wrote a faucet contract in Solidity. You used the Remix IDE to compile the contract into EVM bytecode, then used Remix to form a transaction and created the Faucet contract on the Ropsten blockchain. Once created, the Faucet contract had an Ethereum address, and you sent it some ether. Finally, you constructed a transaction to call the withdraw function and successfully asked for 0.1 ether. The contract checked the request and sent you 0.1 ether with an internal transaction.</p>
+</div>
+<div class="paragraph data-line-558">
+<p>It may not seem like much, but you&#8217;ve just successfully interacted with software that controls money on a decentralized world computer.</p>
+</div>
+<div class="paragraph data-line-560">
+<p>We will do a lot more smart contract programming in <a href="#smart_contracts_chapter">[smart_contracts_chapter]</a> and learn about best practices and security considerations in <a href="#smart_contract_security">[smart_contract_security]</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-03-26 12:14:20 -0400
+</div>
+</div>
+</body>
+</html>
