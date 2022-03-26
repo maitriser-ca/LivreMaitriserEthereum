@@ -1,4 +1,4 @@
-# Maîtriser Ethereum, 1ère édition ouverte
+# Maîtriser Ethereum : Implémenter des contrats numériques, 1ère édition ouverte
 
 Le livre **Maîtriser Ethereum** (_**Mastering Ethereum**_ par O'Reilly Media) tel qu'écrit originalement en anglais par _Andreas M. Antonopoulos_ et _Gavin Wood_, traduit en français (Canada) par _Google Translate API_ et révisé par _Serafim Dos Santos_ avec les termes du [Grand dictionnaire terminologique (GDT)](https://gdt.oqlf.gouv.qc.ca/) de l'[Office qu&eacute;b&eacute;cois de la langue fran&ccedil;aise](https://www.oqlf.gouv.qc.ca/).
 
