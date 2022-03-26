@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<title>Transactions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article data-line-1">
+<div id="header">
+</div>
+<div id="content">
+<div class="sect1 data-line-2">
+<h2 id="tx_chapter">Transactions</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-4">
+<p>Transactions are signed messages originated by an externally owned account, transmitted by the Ethereum network, and recorded on the Ethereum blockchain. This basic definition conceals a lot of surprising and fascinating details. Another way to look at transactions is that they are the only things that can trigger a change of state, or cause a contract to execute in the EVM. Ethereum is a global singleton state machine, and transactions are what make that state machine "tick," changing its state. Contracts don&#8217;t run on their own. Ethereum doesn&#8217;t run  autonomously. Everything starts with a transaction.</p>
+</div>
+<div class="paragraph data-line-6">
+<p>In this chapter, we will dissect transactions, show how they work, and examine the details. Note that much of this chapter is addressed to those who are interested in managing their own transactions at a low level, perhaps because they are writing a wallet app; you don&#8217;t have to worry about this if you are happy using existing wallet applications, although you may find the details interesting!</p>
+</div>
+<div class="sect2 data-line-9">
+<h3 id="tx_struct">Structure d&#8217;une transaction</h3>
+<div class="paragraph data-line-11">
+<p>First let&#8217;s take a look at the basic structure of a transaction, as it is serialized and transmitted on the Ethereum network. Each client and application that receives a serialized transaction will store it in-memory using its own internal data structure, perhaps embellished with metadata that doesn&#8217;t exist in the network serialized transaction itself. The network-serialization is the only standard form of a transaction.</p>
+</div>
+<div class="paragraph data-line-13">
+<p>A transaction is a serialized binary message that contains the following data:</p>
+</div>
+<div class="dlist data-line-15">
+<dl>
+<dt class="hdlist1">Nonce</dt>
+<dd>
+<p>A sequence number, issued by the originating EOA, used to prevent message replay</p>
+</dd>
+<dt class="hdlist1">Gas price</dt>
+<dd>
+<p>The price of gas (in wei) the originator is willing to pay</p>
+</dd>
+<dt class="hdlist1">Gas limit</dt>
+<dd>
+<p>The maximum amount of gas the originator is willing to buy for this transaction</p>
+</dd>
+<dt class="hdlist1">Recipient</dt>
+<dd>
+<p>The destination Ethereum address</p>
+</dd>
+<dt class="hdlist1">Value</dt>
+<dd>
+<p>The amount of ether to send to the destination</p>
+</dd>
+<dt class="hdlist1">Data</dt>
+<dd>
+<p>The variable-length binary data payload</p>
+</dd>
+<dt class="hdlist1">v,r,s</dt>
+<dd>
+<p>The three components of an ECDSA digital signature of the originating EOA</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph data-line-29">
+<p>The transaction message&#8217;s structure is serialized using the Recursive Length Prefix (RLP) encoding scheme, which was created specifically for simple, byte-perfect data serialization in Ethereum. All numbers in Ethereum are encoded as big-endian integers, of lengths that are multiples of 8 bits.</p>
+</div>
+<div class="paragraph data-line-31">
+<p>Note that the field labels (to, gas limit, etc.) are shown here for clarity, but are not part of the transaction serialized data, which contains the field values RLP-encoded. In general, RLP does not contain any field delimiters or labels. RLP&#8217;s length prefix is used to identify the length of each field. Anything beyond the defined length belongs to the next field in the structure.</p>
+</div>
+<div class="paragraph data-line-33">
+<p>While this is the actual transaction structure transmitted, most internal representations and user interface visualizations embellish this with additional information, derived from the transaction or from the blockchain.</p>
+</div>
+<div class="paragraph data-line-35">
+<p>For example, you may notice there is no &#x201c;from&#x201d; data in the address identifying the originator EOA. That is because the EOA&#8217;s public key can be derived from the v,r,s components of the ECDSA signature. The address can, in turn, be derived from the public key. When you see a transaction showing a "from" field, that was added by the software used to visualize the transaction. Other metadata frequently added to the transaction by client software includes the block number (once it is mined and included in the blockchain) and a transaction ID (calculated hash). Again, this data is derived from the transaction, and does not form part of the transaction message itself.</p>
+</div>
+</div>
+<div class="sect2 data-line-38">
+<h3 id="tx_nonce">La nonce de transaction</h3>
+<div class="paragraph data-line-40">
+<p>The nonce is one of the most important and least understood components of a transaction. The definition in the Yellow Paper (see <a href="#references">[references]</a>) reads:</p>
+</div>
+<div class="quoteblock data-line-42">
+<blockquote>
+<div class="paragraph data-line-43">
+<p>nonce: A scalar value equal to the number of transactions sent from this address or, in the case of accounts with associated code, the number of contract-creations made by this account.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph data-line-46">
+<p>Strictly speaking, the nonce is an attribute of the originating address; that is, it only has meaning in the context of the sending address. However, the nonce is not stored explicitly as part of an account&#8217;s state on the blockchain. Instead, it is calculated dynamically, by counting the number of confirmed transactions that have originated from an address.</p>
+</div>
+<div class="paragraph data-line-48">
+<p>There are two scenarios where the existence of a transaction-counting nonce is important: the usability feature of transactions being included in the order of creation, and the vital feature of transaction duplication protection. Let&#8217;s look at an example scenario for each of these:</p>
+</div>
+<div class="olist arabic data-line-50">
+<ol class="arabic">
+<li class="data-line-50">
+<p>Imagine you wish to make two transactions. You have an important payment to make of 6 ether, and also another payment of 8 ether. You sign and broadcast the 6-ether transaction first, because it is the more important one, and then you sign and broadcast the second, 8-ether transaction. Sadly, you have overlooked the fact that your account contains only 10 ether, so the network can&#8217;t accept both transactions: one of them will fail. Because you sent the more important 6-ether one first, you understandably expect that one to go through and the 8-ether one to be rejected. However, in a decentralized system like Ethereum, nodes may receive the transactions in either order; there is no guarantee that a particular node will have one transaction propagated to it before the other. As such, it will almost certainly be the case that some nodes receive the 6-ether transaction first and others receive the 8-ether transaction first. Without the nonce, it would be random as to which one gets accepted and which rejected. However, with the nonce included, the first transaction you sent will have a nonce of, let&#8217;s say, 3, while the 8-ether transaction has the next nonce value (i.e., 4). So, that transaction will be ignored until the transactions with nonces from 0 to 3 have been processed, even if it is received first. Phew!</p>
+</li>
+<li class="data-line-53">
+<p>Now imagine you have an account with 100 ether. Fantastic! You find someone online who will accept payment in ether for a mcguffin-widget that you really want to buy. You send them 2 ether and they send you the mcguffin-widget. Lovely. To make that 2-ether payment, you signed a transaction sending 2 ether from your account to their account, and then broadcast it to the Ethereum network to be verified and included on the blockchain. Now, without a nonce value in the transaction, a second transaction sending 2 ether to the same address a second time will look exactly the same as the first transaction. This means that anyone who sees your transaction on the Ethereum network (which means everyone, including the recipient or your enemies) can "replay" the transaction again and again and again until all your ether is gone simply by copying and pasting your original transaction and resending it to the network. However, with the nonce value included in the transaction data, <em>every single transaction is unique</em>, even when sending the same amount of ether to the same recipient address multiple times. Thus, by having the incrementing nonce as part of the transaction, it is simply not possible for anyone to "duplicate" a payment you have made.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph data-line-55">
+<p>In summary, it is important to note that the use of the nonce is actually vital for an <em>account-based</em> protocol, in contrast to the &#x201c;Unspent Transaction Output&#x201d; (UTXO) mechanism of the Bitcoin protocol.</p>
+</div>
+<div class="sect3 data-line-58">
+<h4 id="tracking_nonce">Suivi des nonces</h4>
+<div class="paragraph data-line-60">
+<p>In practical terms, the nonce is an up-to-date count of the number of <em>confirmed</em> (i.e., on-chain) transactions that have originated from an account. To find out what the nonce is, you can interrogate the blockchain, for example via the web3 interface. Open a JavaScript console in Geth (or your preferred web3 interface) on Ropsten testnet, then type:</p>
+</div>
+<pre data-type="programlisting">
+&gt; <strong>web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f")</strong>
+40
+</pre>
+<div class="admonitionblock tip data-line-70">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-71">
+<p>The nonce is a zero-based counter, meaning the first transaction has nonce 0. In this example, we have a transaction count of 40, meaning nonces 0 through 39 have been seen. The next transaction&#8217;s nonce will need to be 40.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-74">
+<p>Your wallet will keep track of nonces for each address it manages. It&#8217;s fairly simple to do that, as long as you are only originating transactions from a single point. Let&#8217;s say you are writing your own wallet software or some other application that originates transactions. How do you track nonces?</p>
+</div>
+<div class="paragraph data-line-76">
+<p>When you create a new transaction, you assign the next nonce in the sequence. But until it is confirmed, it will not count toward the getTransactionCount total.</p>
+</div>
+<div id="get_tx_count_bug" class="admonitionblock warning data-line-80">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-81">
+<p>Be careful when using the getTransactionCount function for counting pending transactions, because you might run into some problems if you send a few transactions in a row.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-84">
+<p>Let&#8217;s look at an example:</p>
+</div>
+<pre data-type="programlisting">
+&gt; <strong>web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")</strong>
+40
+&gt; <strong>web3.eth.sendTransaction({from: web3.eth.accounts[0], to: \
+"0xB0920c523d582040f2BCB1bD7FB1c7C1ECEbdB34", value: web3.utils.toWei(0.01, "ether")});</strong>
+&gt; <strong>web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")</strong>
+41
+&gt; <strong>web3.eth.sendTransaction({from: web3.eth.accounts[0], to: \
+"0xB0920c523d582040f2BCB1bD7FB1c7C1ECEbdB34", value: web3.utils.toWei(0.01, "ether")});</strong>
+&gt; <strong>web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")</strong>
+41
+&gt; <strong>web3.eth.sendTransaction({from: web3.eth.accounts[0], to: \
+"0xB0920c523d582040f2BCB1bD7FB1c7C1ECEbdB34", value: web3.utils.toWei(0.01, "ether")});</strong>
+&gt; <strong>web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
+"pending")</strong>
+41
+</pre>
+<div class="admonitionblock tip data-line-109">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-110">
+<p>If you&#8217;re trying to recreate these code examples yourself in Geth&#8217;s javascript console, you should use web3.toWei() instead of web3.utils.toWei(). This is because Geth uses an older version of the web3 library.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-113">
+<p>As you can see, the first transaction we sent increased the transaction count to 41, showing the pending transaction. But when we sent three more transactions in quick succession, the getTransactionCount call didn&#8217;t count them. It only counted one, even though you might expect there to be three pending in the mempool. If we wait a few seconds to allow for network communications to settle down, the getTransactionCount call will return the expected number. But in the interim, while there is more than one transaction pending, it might not help us.</p>
+</div>
+<div class="paragraph data-line-115">
+<p>When you build an application that constructs transactions, it cannot rely on <span class="keep-together"><code>getTransactionCount</code></span> for pending transactions. Only when the pending and confirmed counts are equal (all outstanding transactions are confirmed) can you trust the output of getTransactionCount to start your nonce counter. Thereafter, keep track of the nonce in your application until each transaction confirms.</p>
+</div>
+<div class="paragraph data-line-117">
+<p>Parity&#8217;s JSON RPC interface offers the parity_nextNonce function, which returns the next nonce that should be used in a transaction. The parity_nextNonce function counts nonces correctly, even if you construct several transactions in rapid succession without confirming them:</p>
+</div>
+<pre data-type="programlisting">
+$ <strong>curl --data '{"method":"parity_nextNonce", \
+  "params":["0x9e713963a92c02317a681b9bb3065a8249de124f"],\
+  "id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST \
+  localhost:8545</strong>
+
+{"jsonrpc":"2.0","result":"0x32","id":1}
+</pre>
+<div id="parity_curl" class="admonitionblock tip data-line-132">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-133">
+<p>Parity has a web console for accessing the JSON RPC interface, but here we are using a command-line HTTP client to access it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3 data-line-137">
+<h4 id="gaps_nonce">Lacunes dans les nonces, nonces en doublons et confirmation</h4>
+<div class="paragraph data-line-139">
+<p>It is important to keep track of nonces if you are creating transactions programmatically, especially if you are doing so from multiple independent processes <span class="keep-together">simultaneously</span>.</p>
+</div>
+<div class="paragraph data-line-141">
+<p>The Ethereum network processes transactions sequentially, based on the nonce. That means that if you transmit a transaction with nonce 0 and then transmit a transaction with nonce 2, the second transaction will not be included in any blocks. It will be stored in the mempool, while the Ethereum network waits for the missing nonce to appear. All nodes will assume that the missing nonce has simply been delayed and that the transaction with nonce 2 was received out of sequence.</p>
+</div>
+<div class="paragraph data-line-143">
+<p>If you then transmit a transaction with the missing nonce 1, both transactions (nonces 1 and 2) will be processed and included (if valid, of course). Once you fill the gap, the network can mine the out-of-sequence transaction that it held in the mempool.</p>
+</div>
+<div class="paragraph data-line-145">
+<p>What this means is that if you create several transactions in sequence and one of them does not get officially included in any blocks, all the subsequent transactions will be "stuck," waiting for the missing nonce. A transaction can create an inadvertent "gap" in the nonce sequence because it is invalid or has insufficient gas. To get things moving again, you have to transmit a valid transaction with the missing nonce. You should be equally mindful that once a transaction with the "missing" nonce is validated by the network, all the broadcast transactions with subsequent nonces will incrementally become valid; it is not possible to "recall" a transaction!</p>
+</div>
+<div class="paragraph data-line-147">
+<p>If, on the other hand, you accidentally duplicate a nonce, for example by transmitting two transactions with the same nonce but different recipients or values, then one of them will be confirmed and one will be rejected. Which one is confirmed will be determined by the sequence in which they arrive at the first validating node that receives them&#x2014;i.e., it will be fairly random.</p>
+</div>
+<div class="paragraph data-line-149">
+<p>As you can see, keeping track of nonces is necessary, and if your application doesn&#8217;t manage that process correctly you will run into problems. Unfortunately, things get even more difficult if you are trying to do this concurrently, as we will see in the next section.</p>
+</div>
+</div>
+<div class="sect3 data-line-152">
+<h4 id="concurrency">Concurrence, origine de transaction et nonces</h4>
+<div class="paragraph data-line-154">
+<p>Concurrency is a complex aspect of computer science, and it crops up unexpectedly sometimes, especially in decentralized and distributed real-time systems like <span class="keep-together">Ethereum</span>.</p>
+</div>
+<div class="paragraph data-line-156">
+<p>In simple terms, concurrency is when you have simultaneous computation by multiple independent systems. These can be in the same program (e.g., multithreading), on the same CPU (e.g., multiprocessing), or on different computers (i.e., distributed <span class="keep-together">systems</span>). Ethereum, by definition, is a system that allows concurrency of operations (nodes, clients, DApps) but enforces a singleton state through consensus.</p>
+</div>
+<div class="paragraph data-line-158">
+<p>Now, imagine that you have multiple independent wallet applications that are generating transactions from the same address or addresses. One example of such a situation would be an exchange processing withdrawals from the exchange&#8217;s hot wallet (a wallet whose keys are stored online, in contrast to a cold wallet where the keys are never online). Ideally, you&#8217;d want to have more than one computer processing withdrawals, so that it doesn&#8217;t become a bottleneck or single point of failure. However, this quickly becomes problematic, as having more than one computer producing withdrawals will result in some thorny concurrency problems, not least of which is the selection of nonces. How do multiple computers generating, signing, and broadcasting transactions from the same hot wallet account coordinate?</p>
+</div>
+<div class="paragraph data-line-160">
+<p>You could use a single computer to assign nonces, on a first-come first-served basis, to computers signing transactions. However, this computer is now a single point of failure. Worse, if several nonces are assigned and one of them never gets used (because of a failure in the computer processing the transaction with that nonce), all subsequent transactions get stuck.</p>
+</div>
+<div class="paragraph data-line-162">
+<p>Another approach would be to generate the transactions, but not assign a nonce to them (and therefore leave them unsigned&#x2014;remember that the nonce is an integral part of the transaction data and therefore needs to be included in the digital signature that authenticates the transaction). You could then queue them to a single node that signs them and also keeps track of nonces. Again, though, this would be a choke point in the process: the signing and tracking of nonces is the part of your operation that is likely to become congested under load, whereas the generation of the unsigned transaction is the part you don&#8217;t really need to parallelize. You would have some concurrency, but it would be lacking in a critical part of the process.</p>
+</div>
+<div class="paragraph data-line-164">
+<p>In the end, these concurrency problems, on top of the difficulty of tracking account balances and transaction confirmations in independent processes, force most implementations toward avoiding concurrency and creating bottlenecks such as a single process handling all withdrawal transactions in an exchange, or setting up multiple hot wallets that can work completely independently for withdrawals and only need to be intermittently rebalanced.</p>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-167">
+<h3 id="tx_gas">Gaz de transaction</h3>
+<div class="paragraph data-line-169">
+<p>We talked about gas a little in earlier chapters, and we discuss it in more detail in <a href="#gas">[gas]</a>. However, let&#8217;s cover some basics about the role of the gasPrice and gasLimit components of a transaction.</p>
+</div>
+<div class="paragraph data-line-171">
+<p>Gas is the fuel of Ethereum. Gas is not ether&#x2014;it&#8217;s a separate virtual currency with its own exchange rate against ether. Ethereum uses gas to control the amount of resources that a transaction can use, since it will be processed on thousands of computers around the world. The open-ended (Turing-complete) computation model requires some form of metering in order to avoid denial-of-service attacks or inadvertently resource-devouring transactions.</p>
+</div>
+<div class="paragraph data-line-173">
+<p>Gas is separate from ether in order to protect the system from the volatility that might arise along with rapid changes in the value of ether, and also as a way to manage the important and sensitive ratios between the costs of the various resources that gas pays for (namely, computation, memory, and storage).</p>
+</div>
+<div class="paragraph data-line-175">
+<p>The gasPrice field in a transaction allows the transaction originator to set the price they are willing to pay in exchange for gas. The price is measured in wei per gas unit. For example, in the sample transaction in <a href="#intro_chapter">[intro_chapter]</a> your wallet set the gasPrice to 3 gwei (3 gigawei or 3 billion wei).</p>
+</div>
+<div class="admonitionblock tip data-line-178">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-179">
+<p>The popular site <a href="https://ethgasstation.info/" data-href="https://ethgasstation.info/">ETH Gas Station</a> provides information on the current prices of gas and other relevant gas metrics for the Ethereum main network.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-182">
+<p>Wallets can adjust the gasPrice in transactions they originate to achieve faster confirmation of transactions. The higher the gasPrice, the faster the transaction is likely to be confirmed. Conversely, lower-priority transactions can carry a reduced price, resulting in slower confirmation. The minimum value that gasPrice can be set to is zero, which means a fee-free transaction. During periods of low demand for space in a block, such transactions might very well get mined.</p>
+</div>
+<div class="admonitionblock note data-line-185">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-186">
+<p>The minimum acceptable gasPrice is zero. That means that wallets can generate completely free transactions. Depending on capacity, these may never be confirmed, but there is nothing in the protocol that prohibits free transactions. You can find several examples of such transactions successfully included on the Ethereum blockchain.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="gas_price_suggestion" class="paragraph data-line-190">
+<p>The web3 interface offers a gasPrice suggestion, by calculating a median price across several blocks (we can use the truffle console or any JavaScript web3 console to do that):</p>
+</div>
+<pre data-type="programlisting">
+> <strong>web3.eth.getGasPrice(console.log)</strong>
+> null BigNumber { s: 1, e: 10, c: [ 10000000000 ] }
+</pre>
+<div id="calc_gas_price" class="paragraph data-line-200">
+<p>The second important field related to gas is gasLimit. In simple terms, gasLimit gives the maximum number of units of gas the transaction originator is willing to buy in order to complete the transaction. For simple payments, meaning transactions that transfer ether from one EOA to another EOA, the gas amount needed is fixed at 21,000 gas units. To calculate how much ether that will cost, you multiply 21,000 by the gasPrice you&#8217;re willing to pay. For example:</p>
+</div>
+<pre data-type="programlisting">
+> <strong>web3.eth.getGasPrice(function(err, res) {console.log(res*21000)} )</strong>
+> 210000000000000
+</pre>
+<div class="paragraph data-line-209">
+<p>If your transaction&#8217;s destination address is a contract, then the amount of gas needed can be estimated but cannot be determined with accuracy. That&#8217;s because a contract can evaluate different conditions that lead to different execution paths, with different total gas costs. The contract may execute only a simple computation or a more complex one, depending on conditions that are outside of your control and cannot be predicted. To demonstrate this, let&#8217;s look at an example: we can write a smart contract that increments a counter each time it is called and executes a particular loop a number of times equal to the call count. Maybe on the 100th call it gives out a special prize, like a lottery, but needs to do additional computation to calculate the prize. If you call the contract 99 times one thing happens, but on the 100th call something very different happens. The amount of gas you would pay for that depends on how many other transactions have called that function before your transaction is included in a block. Perhaps your estimate is based on being the 99th transaction, but just before your transaction is confirmed someone else calls the contract for the 99th time. Now you&#8217;re the 100th transaction to call, and the computation effort (and gas cost) is much higher.</p>
+</div>
+<div class="paragraph data-line-211">
+<p>To borrow a common analogy used in Ethereum, you can think of gasLimit as the capacity of the fuel tank in your car (your car is the transaction). You fill the tank with as much gas as you think it will need for the journey (the computation needed to validate your transaction). You can estimate the amount to some degree, but there might be unexpected changes to your journey, such as a diversion (a more complex execution path), that increase fuel consumption.</p>
+</div>
+<div class="paragraph data-line-213">
+<p>The analogy to a fuel tank is somewhat misleading, however. It&#8217;s actually more like a credit account for a gas station company, where you pay after the trip is completed, based on how much gas you actually used. When you transmit your transaction, one of the first validation steps is to check that the account it originated from has enough ether to pay the gasPrice * gas limit. But the amount is not actually deducted from your account until the transaction finishes executing. You are only billed for gas actually consumed by your transaction, but you have to have enough balance for the maximum amount you are willing to pay before you send your transaction.</p>
+</div>
+</div>
+<div class="sect2 data-line-216">
+<h3 id="tx_recipient">Destinataire de la transaction</h3>
+<div class="paragraph data-line-218">
+<p>The recipient of a transaction is specified in the to field. This contains a 20-byte Ethereum address. The address can be an EOA or a contract address.</p>
+</div>
+<div class="paragraph data-line-220">
+<p>Ethereum does no further validation of this field. Any 20-byte value is considered valid. If the 20-byte value corresponds to an address without a corresponding private key, or without a corresponding contract, the transaction is still valid. Ethereum has no way of knowing whether an address was correctly derived from a public key (and therefore from a private key) in existence.</p>
+</div>
+<div class="admonitionblock warning data-line-223">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-224">
+<p>The Ethereum protocol does not validate recipient addresses in transactions. You can send to an address that has no corresponding private key or contract, thereby "burning" the ether, rendering it forever unspendable. Validation should be done at the user interface level.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-227">
+<p>Sending a transaction to the wrong address will probably <em>burn</em> the ether sent, rendering it forever inaccessible (unspendable), since most addresses do not have a known private key and therefore no signature can be generated to spend it. It is assumed that validation of the address happens at the user interface level (see <a href="#EIP55">[EIP55]</a>). In fact, there are a number of valid reasons for burning ether&#x2014;for example, as a disincentive to cheating in payment channels and other smart contracts&#x2014;and since the amount of ether is finite, burning ether effectively distributes the value burned to all ether holders (in proportion to the amount of ether they hold).</p>
+</div>
+</div>
+<div class="sect2 data-line-230">
+<h3 id="tx_value_data">Valeur et données de transaction</h3>
+<div class="paragraph data-line-232">
+<p>The main "payload" of a transaction is contained in two fields: value and data. Transactions can have both value and data, only value, only data, or neither value nor data. All four combinations are valid.</p>
+</div>
+<div class="paragraph data-line-234">
+<p>A transaction with only value is a <em>payment</em>. A transaction with only data is an <em>invocation</em>. A transaction with both value and data is both a payment and an invocation. A transaction with neither value nor data&#x2014;well that&#8217;s probably just a waste of gas! But it is still possible.</p>
+</div>
+<div class="paragraph data-line-236">
+<p>Let&#8217;s try all of these combinations. First we&#8217;ll set the source and destination addresses from our wallet, just to make the demo easier to read:</p>
+</div>
+<div class="listingblock data-line-239">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">src = web3.eth.accounts[0];
+dst = web3.eth.accounts[1];</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-244">
+<p>Our first transaction contains only a value (payment), and no data payload:</p>
+</div>
+<div id="tx_value_nodata_src" class="listingblock data-line-248">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">web3.eth.sendTransaction({from: src, to: dst, \
+  value: web3.utils.toWei(0.01, "ether"), data: ""});</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-253">
+<p>Our wallet shows a confirmation screen indicating the value to send, as shown in <a href="#parity_txdemo_value_nodata">Parity wallet showing a transaction with value, but no data</a>.</p>
+</div>
+<div id="parity_txdemo_value_nodata" class="imageblock data-line-257">
+<div class="content">
+<img src="images/parity_txdemo_value_nodata.png" alt="Parity wallet showing a transaction with value, but no data">
+</div>
+<div class="title">Figure 1. Parity wallet showing a transaction with value, but no data</div>
+</div>
+<div class="paragraph data-line-260">
+<p>The next example specifies both a value and a data payload:</p>
+</div>
+<div id="tx_value_data_src" class="listingblock data-line-264">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">web3.eth.sendTransaction({from: src, to: dst, \
+  value: web3.utils.toWei(0.01, "ether"), data: "0x1234"});</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-269">
+<p>Our wallet shows a confirmation screen indicating the value to send as well as the data payload, as shown in <a href="#parity_txdemo_value_data">Parity wallet showing a transaction with value and data</a>.</p>
+</div>
+<div id="parity_txdemo_value_data" class="imageblock data-line-273">
+<div class="content">
+<img src="images/parity_txdemo_value_data.png" alt="Parity wallet showing a transaction with value and data">
+</div>
+<div class="title">Figure 2. Parity wallet showing a transaction with value and data</div>
+</div>
+<div class="paragraph data-line-275">
+<p>The next transaction includes a data payload but specifies a value of zero:</p>
+</div>
+<div id="tx_novalue_data_src" class="listingblock data-line-279">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">web3.eth.sendTransaction({from: src, to: dst, value: 0, data: "0x1234"});</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-283">
+<p>Our wallet shows a confirmation screen indicating the zero value and the data payload, as shown in <a href="#parity_txdemo_novalue_data">Parity wallet showing a transaction with no value, only data</a>.</p>
+</div>
+<div id="parity_txdemo_novalue_data" class="imageblock data-line-287">
+<div class="content">
+<img src="images/parity_txdemo_novalue_data.png" alt="Parity wallet showing a transaction with no value, only data">
+</div>
+<div class="title">Figure 3. Parity wallet showing a transaction with no value, only data</div>
+</div>
+<div class="paragraph pagebreak-before data-line-290">
+<p>Finally, the last transaction includes neither a value to send nor a data payload:</p>
+</div>
+<div id="tx_novalue_nodata_src" class="listingblock data-line-294">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">web3.eth.sendTransaction({from: src, to: dst, value: 0, data: ""}));</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-298">
+<p>Our wallet shows a confirmation screen indicating zero value, as shown in <a href="#parity_txdemo_novalue_nodata">Parity wallet showing a transaction with no value, and no data</a>.</p>
+</div>
+<div id="parity_txdemo_novalue_nodata" class="imageblock data-line-302">
+<div class="content">
+<img src="images/parity_txdemo_novalue_nodata.png" alt="Parity wallet showing a transaction with no value, and no data">
+</div>
+<div class="title">Figure 4. Parity wallet showing a transaction with no value, and no data</div>
+</div>
+<div class="sect3 data-line-305">
+<h4 id="value_EOA_contracts">Transmission de la valeur aux OE et contrats</h4>
+<div class="paragraph data-line-307">
+<p>When you construct an Ethereum transaction that contains a value, it is the equivalent of a <em>payment</em>. Such transactions behave differently depending on whether the destination address is a contract or not.</p>
+</div>
+<div class="paragraph data-line-309">
+<p>For EOA addresses, or rather for any address that isn&#8217;t flagged as a contract on the blockchain, Ethereum will record a state change, adding the value you sent to the balance of the address. If the address has not been seen before, it will be added to the client&#8217;s internal representation of the state and its balance initialized to the value of your payment.</p>
+</div>
+<div class="paragraph data-line-311">
+<p>If the destination address (to) is a contract, then the EVM will execute the contract and will attempt to call the function named in the data payload of your transaction. If there is no data in your transaction, the EVM will call a <em>fallback</em> function and, if that function is payable, will execute it to determine what to do next. If there is no code in fallback function, then the effect of the transaction will be to increase the balance of the contract, exactly like a payment to a wallet. If there is no fallback function or non-payable fallback function, then transaction will be reverted.</p>
+</div>
+<div class="paragraph data-line-313">
+<p>A contract can reject incoming payments by throwing an exception immediately when a function is called, or as determined by conditions coded in a function. If the function terminates successfully (without an exception), then the contract&#8217;s state is updated to reflect an increase in the contract&#8217;s ether balance.</p>
+</div>
+</div>
+<div class="sect3 data-line-316">
+<h4 id="data_EOA">Transmission d&#8217;un payload de données à une EOA ou un contrat</h4>
+<div class="paragraph data-line-318">
+<p>When your transaction contains data, it is most likely addressed to a contract address. That doesn&#8217;t mean you cannot send a data payload to an EOA&#x2014;that is completely valid in the Ethereum protocol. However, in that case, the interpretation of the data is up to the wallet you use to access the EOA. It is ignored by the Ethereum protocol. Most wallets also ignore any data received in a transaction to an EOA they control. In the future, it is possible that standards may emerge that allow wallets to interpret data the way contracts do, thereby allowing transactions to invoke functions running inside user wallets. The critical difference is that any interpretation of the data payload by an EOA is not subject to Ethereum&#8217;s consensus rules, unlike a contract <span class="keep-together">execution</span>.</p>
+</div>
+<div class="paragraph data-line-320">
+<p>For now, let&#8217;s assume your transaction is delivering data to a contract address. In that case, the data will be interpreted by the EVM as a <em>contract invocation</em>. Most contracts use this data more specifically as a <em>function invocation</em>, calling the named function and passing any encoded arguments to the function.</p>
+</div>
+<div class="paragraph data-line-322">
+<p>The data payload sent to an ABI-compatible contract (which you can assume all contracts are) is a hex-serialized encoding of:</p>
+</div>
+<div class="dlist data-line-324">
+<dl>
+<dt class="hdlist1">A function selector</dt>
+<dd>
+<p>The first 4 bytes of the Keccak-256 hash of the function&#8217;s prototype. This allows the contract to unambiguously identify which function you wish to invoke.</p>
+</dd>
+<dt class="hdlist1">The function arguments</dt>
+<dd>
+<p>The function&#8217;s arguments, encoded according to the rules for the various elementary types defined in the ABI specification.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph data-line-328">
+<p>In <a href="#solidity_faucet_example">[solidity_faucet_example]</a>, we defined a function for withdrawals:</p>
+</div>
+<div id="withdraw_function_src" class="listingblock data-line-332">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">function withdraw(uint withdraw_amount) public {</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-336">
+<p>The <em>prototype</em> of a function is defined as the string containing the name of the function, followed by the data types of each of its arguments, enclosed in parentheses and separated by commas. The function name here is withdraw and it takes a single argument that is a uint (which is an alias for uint256), so the prototype of withdraw would be:</p>
+</div>
+<div class="listingblock data-line-339">
+<div class="content">
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">withdraw(uint256)</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-343">
+<p>Let&#8217;s calculate the Keccak-256 hash of this string:</p>
+</div>
+<pre data-type="programlisting">
+> <strong>web3.utils.sha3("withdraw(uint256)");</strong>
+'0x2e1a7d4d13322e7b96f9a57413e1525c250fb7a9021cf91d1540d5b69f16a49f'
+</pre>
+<div class="paragraph data-line-352">
+<p>The first 4 bytes of the hash are 0x2e1a7d4d. That&#8217;s our "function selector" value, which will tell the contract which function we want to call.</p>
+</div>
+<div class="paragraph data-line-354">
+<p>Next, let&#8217;s calculate a value to pass as the argument withdraw_amount. We want to withdraw 0.01 ether. Let&#8217;s encode that to a hex-serialized big-endian unsigned 256-bit integer, denominated in wei:</p>
+</div>
+<pre data-type="programlisting">
+> <strong>withdraw_amount = web3.utils.toWei(0.01, "ether");</strong>
+'10000000000000000'
+> <strong>withdraw_amount_hex = web3.utils.toHex(withdraw_amount);</strong>
+'0x2386f26fc10000'
+</pre>
+<div class="paragraph data-line-365">
+<p>Now, we add the function selector to the amount (padded to 32 bytes):</p>
+</div>
+<div class="listingblock data-line-367">
+<div class="content">
+<pre>2e1a7d4d000000000000000000000000000000000000000000000000002386f26fc10000</pre>
+</div>
+</div>
+<div class="paragraph data-line-371">
+<p>That&#8217;s the data payload for our transaction, invoking the withdraw function and requesting 0.01 ether as the withdraw_amount.</p>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-374">
+<h3 id="contract_reg">Transaction spéciale : création de contrat</h3>
+<div class="paragraph data-line-376">
+<p>One special case that we should mention is a transaction that <em>creates a new contract</em> on the blockchain, deploying it for future use. Contract creation transactions are sent to a special destination address called the <em>zero address</em>; the to field in a contract registration transaction contains the address 0x0. This address represents neither an EOA (there is no corresponding private–public key pair) nor a contract. It can never spend ether or initiate a transaction. It is only used as a destination, with the special meaning "create this contract."</p>
+</div>
+<div class="paragraph data-line-378">
+<p>While the zero address is intended only for contract creation, it sometimes receives payments from various addresses. There are two explanations for this: either it is by accident, resulting in the loss of ether, or it is an intentional <em>ether burn</em> (deliberately destroying ether by sending it to an address from which it can never be spent). However, if you want to do an intentional ether burn, you should make your intention clear to the network and use the specially designated burn address instead:</p>
+</div>
+<div id="burn_address" class="listingblock data-line-381">
+<div class="content">
+<pre>0x000000000000000000000000000000000000dEaD</pre>
+</div>
+</div>
+<div class="admonitionblock warning data-line-386">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-387">
+<p>Any ether sent to the designated burn address will become unspendable and be lost forever.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph data-line-390">
+<p>A contract creation transaction need only contain a data payload that contains the compiled bytecode which will create the contract. The only effect of this transaction is to create the contract. You can include an ether amount in the value field if you want to set the new contract up with a starting balance, but that is entirely optional. If you send a value (ether) to the contract creation address without a data payload (no contract), then the effect is the same as sending to a burn address&#x2014;there is no contract to credit, so the ether is lost.</p>
+</div>
+<div class="paragraph data-line-392">
+<p>As an example, we can create the <em>Faucet.sol</em> contract used in <a href="#intro_chapter">[intro_chapter]</a> by manually creating a transaction to the zero address with the contract in the data payload. The contract needs to be compiled into a bytecode representation. This can be done with the Solidity compiler:</p>
+</div>
+<pre data-type="programlisting" class="pagebreak-before">
+$ <strong>solc --bin Faucet.sol</strong>
+
+Binary:
+6060604052341561000f57600080fd5b60e58061001d6000396000f30060606040526004361060...
+</pre>
+<div class="paragraph data-line-403">
+<p>The same information can also be obtained from the Remix online compiler.</p>
+</div>
+<div class="paragraph data-line-405">
+<p>Now we can create the transaction:</p>
+</div>
+<pre data-type="programlisting">
+> <strong>src = web3.eth.accounts[0];</strong>
+> <strong>faucet_code = \
+  "0x6060604052341561000f57600080fd5b60e58061001d6000396000f300606...f0029";</strong>
+> <strong>web3.eth.sendTransaction({from: src, to: 0, data: faucet_code, \
+  gas: 113558, gasPrice: 200000000000});</strong>
+
+"0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b"
+</pre>
+<div class="paragraph data-line-419">
+<p>It is good practice to always specify a to parameter, even in the case of zero-address contract creation, because the cost of accidentally sending your ether to 0x0 and losing it forever is too great. You should also specify a gasPrice and gasLimit.</p>
+</div>
+<div class="paragraph data-line-421">
+<p>Once the contract is mined we can see it on the Etherscan block explorer, as shown in <a href="#publish_contract_from_web3">Etherscan showing the contract successfully mined</a>.</p>
+</div>
+<div id="publish_contract_from_web3" class="imageblock data-line-425">
+<div class="content">
+<img src="images/contract_published.png" alt="Etherscan showing the contract successfully mined">
+</div>
+<div class="title">Figure 5. Etherscan showing the contract successfully mined</div>
+</div>
+<div class="paragraph data-line-427">
+<p>We can look at the receipt of the transaction to get information about the contract:</p>
+</div>
+<pre data-type="programlisting">
+> <strong>web3.eth.getTransactionReceipt( \
+  "0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b");</strong>
+
+{
+  blockHash: "0x6fa7d8bf982490de6246875deb2c21e5f3665b4422089c060138fc3907a95bb2",
+  blockNumber: 3105256,
+  contractAddress: "0xb226270965b43373e98ffc6e2c7693c17e2cf40b",
+  cumulativeGasUsed: 113558,
+  from: "0x2a966a87db5913c1b22a59b0d8a11cc51c167a89",
+  gasUsed: 113558,
+  logs: [],
+  logsBloom: \
+    "0x00000000000000000000000000000000000000000000000000...00000",
+  status: "0x1",
+  to: null,
+  transactionHash: \
+    "0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b",
+  transactionIndex: 0
+}
+</pre>
+<div class="paragraph data-line-453">
+<p>This includes the address of the contract, which we can use to send funds to and receive funds from the contract as shown in the previous section:</p>
+</div>
+<pre data-type="programlisting">
+> <strong>contract_address = "0xb226270965b43373e98ffc6e2c7693c17e2cf40b"</strong>
+> <strong>web3.eth.sendTransaction({from: src, to: contract_address, \
+  value: web3.utils.toWei(0.1, "ether"), data: ""});</strong>
+
+"0x6ebf2e1fe95cc9c1fe2e1a0dc45678ccd127d374fdf145c5c8e6cd4ea2e6ca9f"
+
+> <strong>web3.eth.sendTransaction({from: src, to: contract_address, value: 0, data: \
+  "0x2e1a7d4d000000000000000000000000000000000000000000000000002386f26fc10000"});</strong>
+
+"0x59836029e7ce43e92daf84313816ca31420a76a9a571b69e31ec4bf4b37cd16e"
+</pre>
+<div class="paragraph data-line-470">
+<p>After a while, both transactions are visible on Etherscan, as shown in <a href="#publish_contract_transactions">Etherscan showing the transactions for sending and receiving funds</a>.</p>
+</div>
+<div id="publish_contract_transactions" class="imageblock data-line-474">
+<div class="content">
+<img src="images/published_contract_transactions.png" alt="Etherscan showing the transactions for sending and receiving funds">
+</div>
+<div class="title">Figure 6. Etherscan showing the transactions for sending and receiving funds</div>
+</div>
+</div>
+<div class="sect2 data-line-478">
+<h3 id="digital_sign">Signatures numériques</h3>
+<div class="paragraph data-line-480">
+<p>So far, we have not delved into any detail about digital signatures. In this section, we look at how digital signatures work and how they can be used to present proof of ownership of a private key without revealing that private key.</p>
+</div>
+<div class="sect3 data-line-483">
+<h4 id="ecdsa">L&#8217;algorithme de signature numérique à courbe elliptique</h4>
+<div class="paragraph data-line-485">
+<p>The digital signature algorithm used in Ethereum is the <em>Elliptic Curve Digital Signature Algorithm</em> (ECDSA). It&#8217;s based on elliptic curve private–public key pairs, as described in <a href="#elliptic_curve">[elliptic_curve]</a>.</p>
+</div>
+<div class="paragraph data-line-487">
+<p>A digital signature serves three purposes in Ethereum (see the following sidebar). First, the signature proves that the owner of the private key, who is by implication the owner of an Ethereum account, has <em>authorized</em> the spending of ether, or execution of a contract. Secondly, it guarantees <em>non-repudiation</em>: the proof of authorization is undeniable. Thirdly, the signature proves that the transaction data has not been and <em>cannot be modified</em> by anyone after the transaction has been signed.</p>
+</div>
+<div id="digital_signature_definition" class="sidebarblock data-line-491">
+<div class="content">
+<div class="title">Wikipedia&#8217;s Definition of a Digital Signature</div>
+<div class="paragraph data-line-492">
+<p>A <em>digital signature</em> is a mathematical scheme for presenting the authenticity of digital messages or documents. A valid digital signature gives a recipient reason to believe that the message was created by a known sender (authentication), that the sender cannot deny having sent the message (non-repudiation), and that the message was not altered in transit (integrity).</p>
+</div>
+<div class="paragraph data-line-494">
+<p><em>Source: <a href="https://en.wikipedia.org/wiki/Digital_signature" class="undefined" data-href="https://en.wikipedia.org/wiki/Digital_signature">https://en.wikipedia.org/wiki/Digital_signature</a></em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-498">
+<h4 id="digital_sign_work">Fonctionnement des signatures numériques</h4>
+<div class="paragraph data-line-500">
+<p>A digital signature is a mathematical scheme that consists of two parts. The first part is an algorithm for creating a signature, using a private key (the signing key), from a message (which in our case is the transaction). The second part is an algorithm that allows anyone to verify the signature by only using the message and a public key.</p>
+</div>
+<div class="sect4 data-line-503">
+<h5 id="digital_sign_create">Création d&#8217;une signature numérique</h5>
+<div class="paragraph data-line-505">
+<p>In Ethereum&#8217;s implementation of ECDSA, the "message" being signed is the transaction, or more accurately, the Keccak-256 hash of the RLP-encoded data from the transaction. The signing key is the EOA&#8217;s private key. The result is the signature:</p>
+</div>
+<div data-type="equation">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mrow>
+      <mi>S</mi>
+      <mi>i</mi>
+      <mi>g</mi>
+    </mrow>
+    <mo>=</mo>
+    <msub><mi>F</mi> <mrow><mi>s</mi><mi>i</mi><mi>g</mi></mrow> </msub>
+    <mrow>
+      <mo>(</mo>
+      <msub><mi>F</mi> <mrow><mi>k</mi><mi>e</mi><mi>c</mi><mi>c</mi><mi>a</mi><mi>k</mi><mn>256</mn></mrow> </msub>
+      <mrow>
+        <mo>(</mo>
+        <mi>m</mi>
+        <mo>)</mo>
+      </mrow>
+      <mo>,</mo>
+      <mi>k</mi>
+      <mo>)</mo>
+    </mrow>
+  </mrow>
+</math>
+</div>
+<div class="paragraph data-line-535">
+<p>where:</p>
+</div>
+<div class="ulist data-line-537">
+<ul>
+<li class="data-line-537">
+<p><em>k</em> is the signing private key.</p>
+</li>
+<li class="data-line-538">
+<p><em>m</em> is the RLP-encoded transaction.</p>
+</li>
+<li class="data-line-539">
+<p><em>F</em><sub><em>keccak256</em></sub> is the Keccak-256 hash function.</p>
+</li>
+<li class="data-line-540">
+<p><em>F</em><sub><em>sig</em></sub> is the signing algorithm.</p>
+</li>
+<li class="data-line-541">
+<p><em>Sig</em> is the resulting signature.</p>
+</li>
+</ul>
+</div>
+<div id="sign_function" class="paragraph data-line-544">
+<p>The function <em>F</em><sub><em>sig</em></sub> produces a signature <em>Sig</em> that is composed of two values, commonly referred to as <em>r</em> and <em>s</em>:</p>
+</div>
+<div data-type="equation">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mrow>
+      <mi>S</mi>
+      <mi>i</mi>
+      <mi>g</mi>
+    </mrow>
+    <mo>=</mo>
+    <mo>(</mo>
+    <mi>r</mi>
+    <mo>,</mo>
+    <mi>s</mi>
+    <mo>)</mo>
+  </mrow>
+</math>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-567">
+<h4 id="verify_sign">Vérification de la signature</h4>
+<div class="paragraph data-line-569">
+<p>To verify the signature, one must have the signature (<em>r</em> and <em>s</em>), the serialized transaction, and the public key that corresponds to the private key used to create the signature. Essentially, verification of a signature means "only the owner of the private key that generated this public key could have produced this signature on this transaction."</p>
+</div>
+<div class="paragraph data-line-571">
+<p>The signature verification algorithm takes the message (i.e., a hash of the transaction for our usage), the signer&#8217;s public key, and the signature (<em>r</em> and <em>s</em> values), and returns true if the signature is valid for this message and public key.</p>
+</div>
+</div>
+<div class="sect3 data-line-574">
+<h4 id="ecdsa_math">ECDSA Math</h4>
+<div class="paragraph data-line-576">
+<p>As mentioned previously, signatures are created by a mathematical function <em>F</em><sub><em>sig</em></sub> that produces a signature composed of two values, <em>r</em> and <em>s</em>. In this section we look at the function <em>F</em><sub><em>sig</em></sub> in more detail.</p>
+</div>
+<div class="paragraph data-line-578">
+<p>The signature algorithm first generates an <em>ephemeral</em> (temporary) private key in a cryptographically secure way. This temporary key is used in the calculation of the <em>r</em> and <em>s</em> values to ensure that the sender&#8217;s actual private key can&#8217;t be calculated by attackers watching signed transactions on the Ethereum network.</p>
+</div>
+<div class="paragraph data-line-580">
+<p>As we know from <a href="#pubkey">[pubkey]</a>, the ephemeral private key is used to derive the corresponding (ephemeral) public key, so we have:</p>
+</div>
+<div class="ulist data-line-582">
+<ul>
+<li class="data-line-582">
+<p>A cryptographically secure random number <em>q</em>, which is used as the ephemeral private key</p>
+</li>
+<li class="data-line-583">
+<p>The corresponding ephemeral public key <em>Q</em>, generated from <em>q</em> and the elliptic curve generator point <em>G</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-585">
+<p>The <em>r</em> value of the digital signature is then the <em>x</em> coordinate of the ephemeral public key <em>Q</em>.</p>
+</div>
+<div class="paragraph data-line-587">
+<p>From there, the algorithm calculates the <em>s</em> value of the signature, such that:</p>
+</div>
+<ul class="simplelist">
+<li><em>s</em> &#8801; <em>q</em><sup>-1</sup> (<em>Keccak256</em>(<em>m</em>) + <em>r</em> * <em>k</em>)  &nbsp;  &nbsp; (<em>mod p</em>)</li>
+</ul>
+<div class="paragraph data-line-595">
+<p>where:</p>
+</div>
+<div class="ulist data-line-597">
+<ul>
+<li class="data-line-597">
+<p><em>q</em> is the ephemeral private key.</p>
+</li>
+<li class="data-line-598">
+<p><em>r</em> is the <em>x</em> coordinate of the ephemeral public key.</p>
+</li>
+<li class="data-line-599">
+<p><em>k</em> is the signing (EOA owner&#8217;s) private key.</p>
+</li>
+<li class="data-line-600">
+<p><em>m</em> is the transaction data.</p>
+</li>
+<li class="data-line-601">
+<p><em>p</em> is the prime order of the elliptic curve.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-603">
+<p>Verification is the inverse of the signature generation function, using the <em>r</em> and <em>s</em> values and the sender&#8217;s public key to calculate a value <em>Q</em>, which is a point on the elliptic curve (the ephemeral public key used in signature creation). The steps are as follows:</p>
+</div>
+<div class="olist arabic data-line-605">
+<ol class="arabic">
+<li class="data-line-605">
+<p>Check all inputs are correctly formed</p>
+</li>
+<li class="data-line-606">
+<p>Calculate <em>w</em> = <em>s</em><sup>-1</sup> <em>mod p</em></p>
+</li>
+<li class="data-line-607">
+<p>Calculate <em>u<sub>1</sub></em> = <em>Keccak256</em>(<em>m</em>) * <em>w</em> <em>mod p</em></p>
+</li>
+<li class="data-line-608">
+<p>Calculate <em>u<sub>2</sub></em> = <em>r</em> * <em>w</em> <em>mod p</em></p>
+</li>
+<li class="data-line-609">
+<p>Finally, calculate the point on the elliptic curve <em>Q</em> &#8801; <em>u<sub>1</sub></em> * <em>G</em> + <em>u<sub>2</sub></em> * <em>K</em>  &#160; &#160; (<em>mod p</em>)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph data-line-611">
+<p>where:</p>
+</div>
+<div class="ulist data-line-613">
+<ul>
+<li class="data-line-613">
+<p><em>r</em> and <em>s</em> are the signature values.</p>
+</li>
+<li class="data-line-614">
+<p><em>K</em> is the signer&#8217;s (EOA owner&#8217;s) public key.</p>
+</li>
+<li class="data-line-615">
+<p><em>m</em> is the transaction data that was signed.</p>
+</li>
+<li class="data-line-616">
+<p><em>G</em> is the elliptic curve generator point.</p>
+</li>
+<li class="data-line-617">
+<p><em>p</em> is the prime order of the elliptic curve.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-619">
+<p>If the <em>x</em> coordinate of the calculated point <em>Q</em> is equal to <em>r</em>, then the verifier can conclude that the signature is valid.</p>
+</div>
+<div class="paragraph data-line-621">
+<p>Note that in verifying the signature, the private key is neither known nor revealed.</p>
+</div>
+<div class="admonitionblock tip data-line-624">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-625">
+<p>ECDSA is necessarily a fairly complicated piece of math; a full explanation is beyond the scope of this book. A number of great guides online take you through it step by step: search for "ECDSA explained" or try this one: <a href="http://bit.ly/2r0HhGB" class="undefined" data-href="http://bit.ly/2r0HhGB">http://bit.ly/2r0HhGB</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3 data-line-629">
+<h4 id="tx_sign">Signature de transaction en pratique</h4>
+<div class="paragraph data-line-631">
+<p>To produce a valid transaction, the originator must digitally sign the message, using the Elliptic Curve Digital Signature Algorithm. When we say "sign the transaction" we actually mean "sign the Keccak-256 hash of the RLP-serialized transaction data." The signature is applied to the hash of the transaction data, not the transaction itself.</p>
+</div>
+<div class="paragraph data-line-633">
+<p>To sign a transaction in Ethereum, the originator must:</p>
+</div>
+<div class="olist arabic data-line-635">
+<ol class="arabic">
+<li class="data-line-635">
+<p>Create a transaction data structure, containing nine fields: nonce, gasPrice, gasLimit, to, value, data, chainID, 0, 0.</p>
+</li>
+<li class="data-line-636">
+<p>Produce an RLP-encoded serialized message of the transaction data structure.</p>
+</li>
+<li class="data-line-637">
+<p>Compute the Keccak-256 hash of this serialized message.</p>
+</li>
+<li class="data-line-638">
+<p>Compute the ECDSA signature, signing the hash with the originating EOA&#8217;s private key.</p>
+</li>
+<li class="data-line-639">
+<p>Append the ECDSA signature&#8217;s computed v, r, and s values to the transaction.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph data-line-641">
+<p>The special signature variable v indicates two things: the chain ID and the recovery identifier to help the ECDSArecover function check the signature. It is calculated as either one of 27 or 28, or as the chain ID doubled plus 35 or 36. For more information on the chain ID, see <a href="#raw_tx_eip155">Création de transaction brute avec EIP-155</a>. The recovery identifier (27 or 28 in the "old-style" signatures, or 35 or 36 in the full Spurious Dragon&#x2013;style transactions) is used to indicate the parity of the y component of the public key (see <a href="#sign_prefix">La valeur du préfixe de signature (v) et la récupération de la clé publique</a> for more details).</p>
+</div>
+<div class="admonitionblock note data-line-645">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph data-line-646">
+<p>At block #2,675,000 Ethereum implemented the "Spurious Dragon" hard fork, which, among other changes, introduced a new signing scheme that includes transaction replay protection (preventing transactions meant for one network being replayed on others). This new signing scheme is specified in EIP-155. This change affects the form of the transaction and its signature, so attention must be paid to the first of the three signature variables (i.e., v), which takes one of two forms and indicates the data fields included in the transaction message being hashed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3 data-line-651">
+<h4 id="raw_tx">Création et signature de transactions brutes</h4>
+<div class="paragraph data-line-653">
+<p>In this section we&#8217;ll create a raw transaction and sign it, using the ethereumjs-tx library, which can be installed with npm. This demonstrates the functions that would normally be used inside a wallet, or an application that signs transactions on behalf of a user. The source code for this example is in the file <em>raw_tx_demo.js</em> in the book&#8217;s <a href="http://bit.ly/2yI2GL3" data-href="http://bit.ly/2yI2GL3">GitHub repository</a>:</p>
+</div>
+<div id="raw_tx_demo_source" class="listingblock data-line-0">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">// Load requirements first:
+//
+// npm init
+// npm install ethereumjs-tx
+//
+// Run with: $ node raw_tx_demo.js
+const ethTx = require('ethereumjs-tx').Transaction;
+
+const txData = {
+  nonce: '0x0',
+  gasPrice: '0x09184e72a000',
+  gasLimit: '0x30000',
+  to: '0xb0920c523d582040f2bcb1bd7fb1c7c1ecebdb34',
+  value: '0x00',
+  data: '',
+  v: "0x1c", // Ethereum mainnet chainID
+  r: 0,
+  s: 0 
+};
+
+tx = new ethTx(txData);
+console.log('RLP-Encoded Tx: 0x' + tx.serialize().toString('hex'))
+
+txHash = tx.hash(); // This step encodes into RLP and calculates the hash
+console.log('Tx Hash: 0x' + txHash.toString('hex'))
+
+// Sign transaction
+const privKey = Buffer.from(
+    '91c8360c4cb4b5fac45513a7213f31d4e4a7bfcb4630e9fbf074f42a203ac0b9', 'hex');
+tx.sign(privKey);
+
+serializedTx = tx.serialize();
+rawTx = 'Signed Raw Transaction: 0x' + serializedTx.toString('hex');
+console.log(rawTx)</code></pre>
+</div>
+</div>
+<div id="raw_tx_demo_run" class="paragraph data-line-662">
+<p>Running the example code produces the following results:</p>
+</div>
+<pre data-type="programlisting">
+$ <strong>node raw_tx_demo.js</strong>
+RLP-Encoded Tx: 0xe6808609184e72a0008303000094b0920c523d582040f2bcb1bd7fb1c7c1...
+Tx Hash: 0xaa7f03f9f4e52fcf69f836a6d2bbc7706580adce0a068ff6525ba337218e6992
+Signed Raw Transaction: 0xf866808609184e72a0008303000094b0920c523d582040f2bcb1...
+</pre>
+</div>
+<div class="sect3 data-line-674">
+<h4 id="raw_tx_eip155">Création de transaction brute avec EIP-155</h4>
+<div class="paragraph data-line-676">
+<p>The EIP-155 "Simple Replay Attack Protection" standard specifies a replay-attack-protected transaction encoding, which includes a <em>chain identifier</em> inside the transaction data, prior to signing. This ensures that transactions created for one blockchain (e.g., the Ethereum main network) are invalid on another blockchain (e.g., Ethereum Classic or the Ropsten test network). Therefore, transactions broadcast on one network cannot be <em>replayed</em> on another, hence the name of the standard.</p>
+</div>
+<div class="paragraph data-line-678">
+<p>EIP-155 adds three fields to the main six fields of the transaction data structure, namely the chain identifier, 0, and 0. These three fields are added to the transaction data <em>before it is encoded and hashed</em>. They therefore change the transaction&#8217;s hash, to which the signature is later applied. By including the chain identifier in the data being signed, the transaction signature prevents any changes, as the signature is invalidated if the chain identifier is modified. Therefore, EIP-155 makes it impossible for a transaction to be replayed on another chain, because the signature&#8217;s validity depends on the chain identifier.</p>
+</div>
+<div class="paragraph data-line-681">
+<p>The chain identifier field takes a value according to the network the transaction is meant for, as outlined in <a href="#chain_id_table">Chain identifiers</a>.</p>
+</div>
+<table id="chain_id_table" class="tableblock frame-all grid-all stretch data-line-686">
+<caption class="title">Table 1. Chain identifiers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Chain</th>
+<th class="tableblock halign-left valign-top">Chain ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ethereum mainnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Morden (obsolete), Expanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ropsten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rinkeby</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rootstock mainnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rootstock testnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kovan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ethereum Classic mainnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">61</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ethereum Classic testnet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">62</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geth private testnets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1337</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph data-line-700">
+<p>The resulting transaction structure is RLP-encoded, hashed, and signed. The signature algorithm is modified slightly to encode the chain identifier in the v prefix too.</p>
+</div>
+<div class="paragraph data-line-702">
+<p>For more details, see <a href="http://bit.ly/2CQUgne" data-href="http://bit.ly/2CQUgne">the EIP-155 specification</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-705">
+<h3 id="sign_prefix">La valeur du préfixe de signature (v) et la récupération de la clé publique</h3>
+<div class="paragraph data-line-707">
+<p>As mentioned in <a href="#tx_struct">Structure d&#8217;une transaction</a>, the transaction message doesn&#8217;t include a "from" field. That&#8217;s because the originator&#8217;s public key can be computed directly from the ECDSA signature. Once you have the public key, you can compute the address easily. The process of recovering the signer&#8217;s public key is called <em>public key recovery</em>.</p>
+</div>
+<div class="paragraph data-line-709">
+<p>Given the values r and s that were computed in <a href="#ecdsa_math">ECDSA Math</a>, we can compute two possible public keys.</p>
+</div>
+<div class="paragraph data-line-711">
+<p>First, we compute two elliptic curve points, <em>R</em> and <em>R</em><sup><em>'</em></sup>, from the <em>x</em> coordinate r value that is in the signature. There are two points because the elliptic curve is symmetric across the x-axis, so that for any value x there are two possible values that fit the curve, one on each side of the x-axis.</p>
+</div>
+<div class="paragraph data-line-713">
+<p>From r we also calculate <em>r</em><sup>-1</sup>, which is the multiplicative inverse of r.</p>
+</div>
+<div class="paragraph data-line-715">
+<p>Finally, we calculate <em>z</em>, which is the <em>n</em> lowest bits of the message hash, where <em>n</em> is the order of the elliptic curve.</p>
+</div>
+<div class="paragraph data-line-717">
+<p>The two possible public keys are then:</p>
+</div>
+<ul class="simplelist">
+<li><em>K</em><sub>1</sub> = <em>r</em><sup>&#x2013;1</sup> (<em>sR</em> &#x2013; <em>zG</em>)</li>
+</ul>
+<div class="paragraph data-line-725">
+<p>and:</p>
+</div>
+<ul class="simplelist">
+<li><em>K</em><sub>2</sub> = <em>r</em><sup>&#x2013;1</sup> (<em>sR</em><sup>'</sup> &#x2013; <em>zG</em>)</li>
+</ul>
+<div class="paragraph data-line-733">
+<p>where:</p>
+</div>
+<div class="ulist data-line-735">
+<ul>
+<li class="data-line-735">
+<p><em>K</em><sub>1</sub> and <em>K</em><sub>2</sub> are the two possibilities for the signer&#8217;s public key.</p>
+</li>
+<li class="data-line-736">
+<p><em>r</em><sup>-1</sup> is the multiplicative inverse of the signature&#8217;s r value.</p>
+</li>
+<li class="data-line-737">
+<p><em>s</em> is the signature&#8217;s s value.</p>
+</li>
+<li class="data-line-738">
+<p><em>R</em> and <em>R</em><sup>'</sup> are the two possibilities for the ephemeral public key <em>Q</em>.</p>
+</li>
+<li class="data-line-739">
+<p><em>z</em> is the <em>n</em>-lowest bits of the message hash.</p>
+</li>
+<li class="data-line-740">
+<p><em>G</em> is the elliptic curve generator point.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-742">
+<p>To make things more efficient, the transaction signature includes a prefix value v, which tells us which of the two possible <em>R</em> values is the ephemeral public key. If v is even, then <em>R</em> is the correct value. If v is odd, then it is <em>R</em><sup>'</sup>. That way, we need to calculate only one value for <em>R</em> and only one value for <em>K</em>.</p>
+</div>
+</div>
+<div class="sect2 data-line-745">
+<h3 id="offline_sign">Séparation de la signature et de la transmission (signature hors ligne)</h3>
+<div class="paragraph data-line-747">
+<p>Once a transaction is signed, it is ready to transmit to the Ethereum network. The three steps of creating, signing, and broadcasting a transaction normally happen as a single operation, for example using web3.eth.sendTransaction. However, as you saw in <a href="#raw_tx">Création et signature de transactions brutes</a>, you can create and sign the transaction in two separate steps. Once you have a signed transaction, you can then transmit it using web3.eth.sendSignedTransaction, which takes a hex-encoded and signed transaction and transmits it on the Ethereum network.</p>
+</div>
+<div class="paragraph data-line-749">
+<p>Why would you want to separate the signing and transmission of transactions? The most common reason is security. The computer that signs a transaction must have unlocked private keys loaded in memory. The computer that does the transmitting must be connected to the internet (and be running an Ethereum client). If these two functions are on one computer, then you have private keys on an online system, which is quite dangerous. Separating the functions of signing and transmitting and performing them on different machines (on an offline and an online device, respectively) is called <em>offline signing</em> and is a common security practice.</p>
+</div>
+<div class="paragraph data-line-751">
+<p><a href="#offline_signing">Offline signing of Ethereum transactions</a> shows the process:</p>
+</div>
+<div class="olist arabic data-line-753">
+<ol class="arabic">
+<li class="data-line-753">
+<p>Create an unsigned transaction on the online computer where the current state of the account, notably the current nonce and funds available, can be retrieved.</p>
+</li>
+<li class="data-line-754">
+<p>Transfer the unsigned transaction to an "air-gapped" offline device for transaction signing, e.g., via a QR code or USB flash drive.</p>
+</li>
+<li class="data-line-755">
+<p>Transmit the signed transaction (back) to an online device for broadcast on the Ethereum blockchain, e.g., via QR code or USB flash drive.</p>
+</li>
+</ol>
+</div>
+<div id="offline_signing" class="imageblock data-line-759">
+<div class="content">
+<img src="images/offline_signing.png" alt="Offline signing of Ethereum transactions">
+</div>
+<div class="title">Figure 7. Offline signing of Ethereum transactions</div>
+</div>
+<div class="paragraph data-line-761">
+<p>Depending on the level of security you need, your "offline signing" computer can have varying degrees of separation from the online computer, ranging from an isolated and firewalled subnet (online but segregated) to a completely offline system known as an <em>air-gapped</em> system. In an air-gapped system there is no network connectivity at all&#x2014;the computer is separated from the online environment by a gap of "air." To sign transactions you transfer them to and from the air-gapped computer using data storage media or (better) a webcam and QR code. Of course, this means you must manually transfer every transaction you want signed, and this doesn&#8217;t scale.</p>
+</div>
+<div class="paragraph data-line-763">
+<p>While not many environments can utilize a fully air-gapped system, even a small degree of isolation has significant security benefits. For example, an isolated subnet with a firewall that only allows a message-queue protocol through can offer a much-reduced attack surface and much higher security than signing on the online system. Many companies use a protocol such as ZeroMQ (0MQ) for this purpose. With a setup like that, transactions are serialized and queued for signing. The queuing protocol transmits the serialized message, in a way similar to a TCP socket, to the signing computer. The signing computer reads the serialized transactions from the queue (carefully), applies a signature with the appropriate key, and places them on an outgoing queue. The outgoing queue transmits the signed transactions to a computer with an Ethereum client that dequeues them and transmits them.</p>
+</div>
+</div>
+<div class="sect2 data-line-766">
+<h3 id="tx_propagation">Propagation des transactions</h3>
+<div class="paragraph data-line-768">
+<p>The Ethereum network uses a "flood routing" protocol. Each Ethereum client acts as a <em>node</em> in a <em>peer-to-peer (P2P)</em> network, which (ideally) forms a <em>mesh</em> network. No network node is special: they all act as equal peers. We will use the term "node" to refer to an Ethereum client that is connected to and participates in the P2P network.</p>
+</div>
+<div class="paragraph data-line-770">
+<p>Transaction propagation starts with the originating Ethereum node creating (or receiving from offline) a signed transaction. The transaction is validated and then transmitted to all the other Ethereum nodes that are <em>directly</em> connected to the originating node. On average, each Ethereum node maintains connections to at least 13 other nodes, called its <em>neighbors</em>. Each neighbor node validates the transaction as soon as they receive it. If they agree that it is valid, they store a copy and propagate it to all their neighbors (except the one it came from). As a result, the transaction ripples outwards from the originating node, <em>flooding</em> across the network, until all nodes in the network have a copy of the transaction. Nodes can filter the messages they propagate, but the default is to propagate all valid transaction messages they receive.</p>
+</div>
+<div class="paragraph data-line-772">
+<p>Within just a few seconds, an Ethereum transaction propagates to all the Ethereum nodes around the globe. From the perspective of each node, it is not possible to discern the origin of the transaction. The neighbor that sent it to the node may be the originator of the transaction or may have received it from one of its neighbors. To be able to track the origins of transactions, or interfere with propagation, an attacker would have to control a significant percentage of all nodes. This is part of the security and privacy design of P2P networks, especially as applied to blockchain networks.</p>
+</div>
+</div>
+<div class="sect2 data-line-775">
+<h3 id="chain_record">Enregistrement sur la Blockchain</h3>
+<div class="paragraph data-line-777">
+<p>While all the nodes in Ethereum are equal peers, some of them are operated by <em>miners</em> and are feeding transactions and blocks to <em>mining farms</em>, which are computers with high-performance graphics processing units (GPUs). The mining computers add transactions to a candidate block and attempt to find a <em>proof of work</em> that makes the candidate block valid. We will discuss this in more detail in <a href="#consensus">[consensus]</a>.</p>
+</div>
+<div class="paragraph data-line-779">
+<p>Without going into too much detail, valid transactions will eventually be included in a block of transactions and, thus, recorded in the Ethereum blockchain. Once mined into a block, transactions also modify the state of the Ethereum singleton, either by modifying the balance of an account (in the case of a simple payment) or by invoking contracts that change their internal state. These changes are recorded alongside the transaction, in the form of a transaction <em>receipt</em>, which may also include <em>events</em>. We will examine all this in much more detail in <a href="#evm_chapter">[evm_chapter]</a>.</p>
+</div>
+<div class="paragraph data-line-781">
+<p>A transaction that has completed its journey from creation through signing by an EOA, propagation, and finally mining has changed the state of the singleton and left an indelible mark on the blockchain.</p>
+</div>
+</div>
+<div class="sect2 data-line-783">
+<h3 id="_transactions_à_signatures_multiples_multisig">Transactions à signatures multiples (multisig)</h3>
+<div class="paragraph data-line-785">
+<p>If you are familiar with Bitcoin&#8217;s scripting capabilities, you know that it is possible to create a Bitcoin multisig account which can only spend funds when multiple parties sign the transaction (e.g., 2 of 2 or 3 of 4 signatures). Ethereum&#8217;s basic EOA value transactions have no provisions for multiple signatures; however, arbitrary signing restrictions can be enforced by smart contracts with any conditions you can think of, to handle the transfer of ether and tokens alike.</p>
+</div>
+<div class="paragraph data-line-787">
+<p>To take advantage of this capability, ether has to be transferred to a "wallet contract" that is programmed with the spending rules desired, such as multisignature requirements or spending limits (or combinations of the two). The wallet contract then sends the funds when prompted by an authorized EOA once the spending conditions have been satisfied. For example, to protect your ether under a multisig condition, transfer the ether to a multisig contract. Whenever you want to send funds to another account, all the required users will need to send transactions to the contract using a regular wallet app, effectively authorizing the contract to perform the final <span class="keep-together">transaction</span>.</p>
+</div>
+<div class="paragraph data-line-789">
+<p>These contracts can also be designed to require multiple signatures before executing local code or to trigger other contracts. The security of the scheme is ultimately determined by the multisig contract code.</p>
+</div>
+<div class="paragraph data-line-791">
+<p>The ability to implement multisignature transactions as a smart contract demonstrates the flexiblity of Ethereum. However, it is a double-edged sword, as the extra flexibility can lead to bugs that undermine the security of multisignature schemes. There are, in fact, a number of proposals to create a multisignature command in the EVM that removes the need for smart contracts, at least for the simple M-of-N multisignature schemes. This would be equivalent to Bitcoin&#8217;s multisignature system, which is part of the core consensus rules and has proven to be robust and secure.</p>
+</div>
+</div>
+<div class="sect2 data-line-793">
+<h3 id="_conclusions">Conclusions</h3>
+<div class="paragraph data-line-795">
+<p>Transactions are the starting point of every activity in the Ethereum system. Transactions are the "inputs" that cause the Ethereum Virtual Machine to evaluate contracts, update balances, and more generally modify the state of the Ethereum blockchain. Next, we will work with smart contracts in a lot more detail and learn how to program in the Solidity contract-oriented language.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-03-26 01:01:33 -0400
+</div>
+</div>
+</body>
+</html>
