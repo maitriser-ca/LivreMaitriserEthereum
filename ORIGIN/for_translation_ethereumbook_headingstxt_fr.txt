@@ -1,0 +1,7 @@
+////
+Ne pas traduire les noms de variables "variables names"
+Traduisez le contenu en suivant les variables
+////
+:index_heading: Index
+:toc-title: Table des matières
+:table-caption: Table
