@@ -76,6 +76,21 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 18. [Annexe D - Outils de développement, cadres de développement, et bibliothèques](html/for_use_ethereumbook_appdx-dev-toolstxt_fr_CA.html)
 19. [Annexe E - Tutoriel web3.js](html/for_use_ethereumbook_appdx-web3js-tutorialtxt_fr_CA.html)
 
+
+---
+
+<center>
+<p>Je n'ai pas référencé les liens entres les documents .adoc (les documents originaux anglais ne sont pas concu pour être disponibles par chapitre). Si vous souhaîtez le livre en une seule page :</p>
+
+<p style="color:red;">!!! ATTENTION : Processus intense !!!</p>
+
+<a href="https://ethereum.maitriser.ca/html/book.html" alt="Livre Maîtriser Bitcoin en une seule page html">Livre en une seule page html</a>
+</center>
+
+---
+
+L'édition ouverte originale en anglais, en html : [http://www.maitriser.ca/MasteringEthereumBook/](http://www.maitriser.ca/MasteringEthereumBook/)
+
 ---
 ## Translations
 If you are interested in translating this book, please join a team of volunteers at [www.transifex.com/aantonop/ethereumbook/](https://www.transifex.com/aantonop/ethereumbook/)
