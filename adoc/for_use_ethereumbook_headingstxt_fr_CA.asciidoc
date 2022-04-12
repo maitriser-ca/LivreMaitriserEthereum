@@ -1,7 +1,7 @@
 ////
-Do not translate the :variable names:
-Translate the content following the variables
+Ne traduisez pas les :noms_de_variables:
+Traduire le contenu suivant les variables
 ////
 :index_heading: Index
-:toc-title: Table of Contents
-:table-caption: Table
+:toc-title: Table des matières
+:table-caption: Tableau

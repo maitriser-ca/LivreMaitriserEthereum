@@ -1,8 +1,8 @@
 ////
-Do not translate the :variable names:
-Translate the content following the variables
+Ne traduisez pas les :noms_de_variables:
+Traduire le contenu suivant les variables
 ////
 :author: Andreas M. Antonopoulos, Gavin Wood
-:book_title: Mastering Ethereum Open Edition
-:subtitle: Building Smart Contracts and DApps
+:book_title: Maîtriser Ethereum Édition Ouverte
+:subtitle: Créer des contrats numériques et des DApps
 :publisher: aantonop Books LLC
