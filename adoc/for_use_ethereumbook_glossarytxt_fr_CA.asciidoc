@@ -28,7 +28,7 @@ Code intermédiaire::
 (((&quot;code intermédiaire&quot;, seealso=&quot;code intermédiaire EVM&quot;)))Jeu d&#39;instructions abstrait conçu pour une exécution efficace par un interpréteur logiciel ou une machine virtuelle. Contrairement au code source lisible par l&#39;homme, le code intermédiaire est exprimé au format numérique.
 
 Fourche Byzantaine::
-(((&quot;fourche Byzantaine&quot;)))Le premier de deux embranchements divergents pour la phase de développement de Metropolis. Il comprenait EIP-649: Metropolis Difficulty Bomb Delay and Block Reward Reduction, où l&#39;ère glaciaire (voir ci-dessous) a été retardée d&#39;un an et la récompense de bloc a été réduite de 5 à 3 éthers.
+(((&quot;fourche Byzantaine&quot;)))Le premier de deux embranchements divergents pour la phase de développement de Metropolis. Il comprenait EIP-649: Metropolis Difficulty Bomb Delay and Block Reward Reduction, où l&#39;ère glaciaire (voir ci-dessous) a été retardée d&#39;un an et la récompense de bloc a été réduite de 5 à 3 ethers.
 
 Compilation::
 (((&quot;compilation&quot;,&quot;défini&quot;))Convertir le code écrit dans un langage de programmation de haut niveau (par exemple, Solidity) dans un langage de niveau inférieur (par exemple, le code intermédiaire EVM).
@@ -84,7 +84,7 @@ ERC::
 Ethash::
 (((&quot;Ethash&quot;)))Un algorithme de preuve de travail pour Ethereum 1.0. Pour plus d&#39;informations, voir https://github.com/ethereum/wiki/wiki/Ethash.
 
-Éther::
+Ether::
 (((&quot;Ether (cryptomonnaie)&quot;)))La cryptomonnaie native utilisée par l&#39;écosystème Ethereum, qui couvre les coûts de gaz lors de l&#39;exécution de contrats intelligents. Son symbole est Ξ, le caractère grec majuscule Xi.
 
 Événement::
@@ -100,10 +100,10 @@ Fonction de repli::
 (((&quot;fonction de secours&quot;)))Une fonction par défaut appelée en l&#39;absence de données ou d&#39;un nom de fonction déclaré.
 
 Robinet::
-(((&quot;robinet, défini&quot;)))Un service qui distribue des fonds sous la forme d&#39;éther de test gratuit pouvant être utilisé sur un testnet.
+(((&quot;robinet, défini&quot;)))Un service qui distribue des fonds sous la forme d&#39;ether de test gratuit pouvant être utilisé sur un testnet.
 
 Finney::
-(((&quot;finney&quot;)))Une dénomination d&#39;éther. 1 finney = 10^15^ wei, 10^3^ finney = 1 éther.
+(((&quot;finney&quot;)))Une dénomination d&#39;ether. 1 finney = 10^15^ wei, 10^3^ finney = 1 ether.
 
 Embranchement::
 (((&quot;embranchements&quot;)))Un changement de protocole provoquant la création d&#39;une chaîne alternative, ou une divergence temporelle dans deux chemins de blocs potentiels lors de l&#39;extraction.
@@ -176,7 +176,7 @@ LevelDB::
 (((&quot;LevelDB&quot;)))Un magasin clé-valeur open source sur disque, implémenté comme une bibliothèque légère à usage unique, avec des liaisons vers de nombreuses plates-formes.
 
 Bibliothèque::
-(((&quot;contrat de bibliothèque&quot;)))Un type spécial de contrat qui n&#39;a pas de fonctions payantes, pas de fonction de secours et pas de stockage de données. Par conséquent, il ne peut pas recevoir ou conserver d&#39;éther, ni stocker de données. Une bibliothèque sert de code précédemment déployé que d&#39;autres contrats peuvent appeler pour un calcul en lecture seule.
+(((&quot;contrat de bibliothèque&quot;)))Un type spécial de contrat qui n&#39;a pas de fonctions payantes, pas de fonction de secours et pas de stockage de données. Par conséquent, il ne peut pas recevoir ou conserver d&#39;ether, ni stocker de données. Une bibliothèque sert de code précédemment déployé que d&#39;autres contrats peuvent appeler pour un calcul en lecture seule.
 
 Client léger::
 (((&quot;client léger/léger&quot;)))Un client Ethereum qui ne stocke pas de copie locale de la chaîne de blocs, ni ne valide les blocs et les transactions. Il offre les fonctions d&#39;un portefeuille et peut créer et diffuser des transactions.
@@ -229,7 +229,7 @@ Preuve de participation ou d'enjeu (PoS)::
 (((&quot;preuve d&#39;enjeu (PoS)&quot;,&quot;défini&quot;)))Une méthode par laquelle un protocole de chaîne de blocs de cryptomonnaie vise à atteindre un consensus distribué. PoS demande aux utilisateurs de prouver la propriété d&#39;une certaine quantité de cryptomonnaie (leur &quot;participation&quot; dans le réseau) afin de pouvoir participer à la validation des transactions.
 
 Preuve de travail (PoW): :
-(((&quot;preuve de travail (PoW)&quot;,&quot;défini&quot;))) Un élément de données (la preuve) qui nécessite un calcul important pour être trouvé. Dans Ethereum, les mineurs doivent trouver une solution numérique à l&#39;algorithme Ethash qui répond à un objectif de difficulté à l&#39;échelle du réseau.
+(((&quot;preuve de travail (PoW)&quot;,&quot;défini&quot;)))Un élément de données (la preuve) qui nécessite un calcul important pour être trouvé. Dans Ethereum, les mineurs doivent trouver une solution numérique à l&#39;algorithme Ethash qui répond à un objectif de difficulté à l&#39;échelle du réseau.
 
 Clé publique::
 (((&quot;clés publiques&quot;,&quot;défini&quot;)))Un numéro, dérivé via une fonction unidirectionnelle d&#39;une clé privée, qui peut être partagé publiquement et utilisé par n&#39;importe qui pour vérifier une signature numérique faite avec la clé privée correspondante.
@@ -238,10 +238,10 @@ Reçu::
 (((&quot;reçu, défini&quot;)))Données renvoyées par un client Ethereum pour représenter le résultat d&#39;une transaction particulière, y compris un hachage de la transaction, son numéro de bloc, la quantité de gaz utilisée et, en cas de déploiement de un contrat intelligent, l&#39;adresse du contrat.
 
 Attaque de réentrance::
-(((&quot;attaques de réentrance&quot;,&quot;défini&quot;)) Une attaque qui consiste en un contrat de l&#39;attaquant appelant une fonction de contrat de la victime de telle sorte que pendant l&#39;exécution, la victime appelle à nouveau le contrat de l&#39;attaquant, de manière récursive. Cela peut entraîner, par exemple, le vol de fonds en sautant des parties du contrat de la victime qui mettent à jour les soldes ou comptent les montants des retraits.
+(((&quot;attaques de réentrance&quot;,&quot;défini&quot;)))Une attaque qui consiste en un contrat de l&#39;attaquant appelant une fonction de contrat de la victime de telle sorte que pendant l&#39;exécution, la victime appelle à nouveau le contrat de l&#39;attaquant, de manière récursive. Cela peut entraîner, par exemple, le vol de fonds en sautant des parties du contrat de la victime qui mettent à jour les soldes ou comptent les montants des retraits.
 
 Récompense::
-(((&quot;récompense, défini&quot;)))Une quantité d&#39;éther incluse dans chaque nouveau bloc comme récompense par le réseau au mineur qui a trouvé la solution de preuve de travail.
+(((&quot;récompense, défini&quot;)))Une quantité d&#39;ether incluse dans chaque nouveau bloc comme récompense par le réseau au mineur qui a trouvé la solution de preuve de travail.
 
 RLP::
 (((&quot;Préfixe de longueur récursive (RLP)&quot;)))(((&quot;RLP (Préfixe de longueur récursive)&quot;)))Préfixe de longueur récursive. Une norme d&#39;encodage conçue par les développeurs d&#39;Ethereum pour encoder et sérialiser des objets (structures de données) de complexité et de longueur arbitraires.
@@ -280,7 +280,7 @@ Swarm::
 (((&quot;Swarm&quot;,&quot;défini&quot;)))Un réseau de stockage décentralisé (P2P), utilisé avec Web3 et Whisper pour créer des DApps.
 
 Szabo::
-(((&quot;szabo, défini&quot;)))Une dénomination d&#39;éther. 1 szabo = 10^12^ wei, 10^6^ szabo = 1 éther.
+(((&quot;szabo, défini&quot;)))Une dénomination d&#39;ether. 1 szabo = 10^12^ wei, 10^6^ szabo = 1 ether.
 
 Tangerine Whistle::
 (((&quot;Tangerine Whistle&quot;)))Un embranchement divergent de la chaîne de blocs Ethereum, qui s&#39;est produit au bloc #2 463 000 pour modifier le calcul du gaz pour certaines opérations intensives en E/S et pour effacer l&#39;état accumulé d&#39;un déni de service attaque, qui a exploité le faible coût du gaz de ces opérations.
@@ -310,7 +310,7 @@ Web3::
 (((&quot;web3&quot;, seealso=&quot;DApps&quot;)))La troisième version du web. Proposé pour la première fois par le Dr Gavin Wood, Web3 représente une nouvelle vision et une nouvelle orientation pour les applications Web : des applications détenues et gérées de manière centralisée aux applications basées sur des protocoles décentralisés.
 
 Wei::
-(((&quot;wei, défini&quot;)))La plus petite dénomination de l&#39;éther. 10^18^ wei = 1 éther.
+(((&quot;wei, défini&quot;)))La plus petite dénomination de l&#39;ether. 10^18^ wei = 1 ether.
 
 Whisper::
 (((&quot;Whisper&quot;)))Un service de messagerie décentralisé (P2P). Il est utilisé avec Web3 et Swarm pour créer des DApps.

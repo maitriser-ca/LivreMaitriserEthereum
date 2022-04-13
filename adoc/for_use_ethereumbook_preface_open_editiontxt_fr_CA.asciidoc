@@ -138,7 +138,7 @@ Je dois remercier la mère de mes enfants, Jutta, pour son soutien continu, et l
 
 include::github_contrib.asciidoc[]
 
-===Sources
+=== Sources
 
 Ce livre fait référence à diverses sources publiques et sous licence libre :
 
