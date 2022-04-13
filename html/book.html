@@ -451,7 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>D&#39;un point de vue informatique, Ethereum est une machine à états déterministe mais pratiquement illimitée, composée d&#39;un état singleton globalement accessible et d&#39;une machine virtuelle qui applique des modifications à cet état.</p>
 </div>
 <div class="paragraph data-line-9">
-<p>D&#39;un point de vue plus pratique, Ethereum est une infrastructure informatique à source libre décentralisée à l&#39;échelle mondiale qui exécute des programmes appelés <em>contrats intelligents</em>. Il utilise une chaîne de blocs pour synchroniser et stocker les changements d&#39;état du système, ainsi qu&#39;une cryptomonnaie appelée <em>éther</em> pour mesurer et limiter les coûts des ressources d&#39;exécution.</p>
+<p>D&#39;un point de vue plus pratique, Ethereum est une infrastructure informatique à source libre décentralisée à l&#39;échelle mondiale qui exécute des programmes appelés <em>contrats intelligents</em>. Il utilise une chaîne de blocs pour synchroniser et stocker les changements d&#39;état du système, ainsi qu&#39;une cryptomonnaie appelée <em>ether</em> pour mesurer et limiter les coûts des ressources d&#39;exécution.</p>
 </div>
 <div class="paragraph data-line-11">
 <p>La plate-forme Ethereum permet aux développeurs de créer de puissantes applications décentralisées avec des fonctions économiques intégrées. Tout en offrant une disponibilité, une auditabilité, une transparence et une neutralité élevées, il réduit ou élimine également la censure et réduit certains risques de contrepartie.</p>
@@ -459,13 +459,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2 data-line-14">
 <h3 id="bitcoin_comparison">Comparé à Bitcoin</h3>
 <div class="paragraph data-line-16">
-<p>Beaucoup de gens viendront à Ethereum avec une expérience préalable des cryptomonnaies, en particulier du Bitcoin. Ethereum partage de nombreux éléments communs avec d&#39;autres chaînes de blocs ouvertes : un réseau pair à pair reliant les participants, un algorithme de consensus byzantin tolérant aux pannes pour la synchronisation des mises à jour d&#39;état (une chaîne de blocs de preuve de travail), l&#39;utilisation de primitives cryptographiques telles que le numérique signatures et hachages, et une monnaie numérique (éther).</p>
+<p>Beaucoup de gens viendront à Ethereum avec une expérience préalable des cryptomonnaies, en particulier du Bitcoin. Ethereum partage de nombreux éléments communs avec d&#39;autres chaînes de blocs ouvertes : un réseau pair à pair reliant les participants, un algorithme de consensus byzantin tolérant aux pannes pour la synchronisation des mises à jour d&#39;état (une chaîne de blocs de preuve de travail), l&#39;utilisation de primitives cryptographiques telles que le numérique signatures et hachages, et une monnaie numérique (ether).</p>
 </div>
 <div class="paragraph data-line-18">
 <p>Pourtant, à bien des égards, le but et la construction d&#39;Ethereum sont étonnamment différents de ceux des chaînes de blocs ouvertes qui l&#39;ont précédé, y compris Bitcoin.</p>
 </div>
 <div class="paragraph data-line-20">
-<p> Le but d&#39;Ethereum n&#39;est pas principalement d&#39;être un réseau de paiement en monnaie numérique. Alors que la monnaie numérique éther fait à la fois partie intégrante et nécessaire au fonctionnement d&#39;Ethereum, l&#39;éther est conçu comme une <em>monnaie d&#39;utilité</em> pour payer l&#39;utilisation de la plate-forme Ethereum en tant qu&#39;ordinateur mondial.</p>
+<p> Le but d&#39;Ethereum n&#39;est pas principalement d&#39;être un réseau de paiement en monnaie numérique. Alors que la monnaie numérique ether fait à la fois partie intégrante et nécessaire au fonctionnement d&#39;Ethereum, l&#39;ether est conçu comme une <em>monnaie d&#39;utilité</em> pour payer l&#39;utilisation de la plate-forme Ethereum en tant qu&#39;ordinateur mondial.</p>
 </div>
 <div class="paragraph data-line-22">
 <p>Contrairement à Bitcoin, qui a un langage de script très limité, Ethereum est conçu pour être une chaîne de blocs programmable à usage général qui exécute une <em>machine virtuelle</em> capable d&#39;exécuter du code d&#39;une complexité arbitraire et illimitée. Là où le langage de script de Bitcoin est, intentionnellement, contraint à une simple évaluation vrai/faux des conditions de dépenses, le langage d&#39;Ethereum est <em>Turing complet</em>, ce qui signifie qu&#39;Ethereum peut fonctionner directement comme un ordinateur à usage général.</p>
@@ -756,7 +756,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Pour répondre à ce défi, Ethereum introduit un mécanisme de mesure appelé <em>gaz</em>. Comme l&#39;EVM exécute un contrat intelligent, il comptabilise soigneusement chaque instruction (calcul, accès aux données, etc.). Chaque instruction a un coût prédéterminé en unités de gaz. Lorsqu&#39;une transaction déclenche l&#39;exécution d&#39;un contrat intelligent, elle doit inclure une quantité de gaz qui fixe la limite supérieure de ce qui peut être consommé en exécutant le contrat intelligent. L&#39;EVM terminera l&#39;exécution si la quantité de gaz consommée par le calcul dépasse le gaz disponible dans la transaction. Le gaz est le mécanisme utilisé par Ethereum pour permettre un calcul complet de Turing tout en limitant les ressources que tout programme peut consommer.</p>
 </div>
 <div class="paragraph data-line-198">
-<p>La question suivante est, &quot;comment obtenir du gaz pour payer le calcul sur l&#39;ordinateur mondial Ethereum?&quot; Vous ne trouverez pas de gaz sur les échanges.  Il ne peut être acheté que dans le cadre d&#39;une transaction et ne peut être acheté qu&#39;avec de l&#39;éther. L&#39;éther doit être envoyé avec une transaction et il doit être explicitement affecté à l&#39;achat de gaz, avec un prix du gaz acceptable. Comme à la pompe, le prix de l&#39;essence n&#39;est pas fixe. Le gaz est acheté pour la transaction, le calcul est exécuté et tout gaz non utilisé est remboursé à l&#39;expéditeur de la transaction.</p>
+<p>La question suivante est, &quot;comment obtenir du gaz pour payer le calcul sur l&#39;ordinateur mondial Ethereum?&quot; Vous ne trouverez pas de gaz sur les échanges.  Il ne peut être acheté que dans le cadre d&#39;une transaction et ne peut être acheté qu&#39;avec de l&#39;ether. L&#39;ether doit être envoyé avec une transaction et il doit être explicitement affecté à l&#39;achat de gaz, avec un prix du gaz acceptable. Comme à la pompe, le prix de l&#39;essence n&#39;est pas fixe. Le gaz est acheté pour la transaction, le calcul est exécuté et tout gaz non utilisé est remboursé à l&#39;expéditeur de la transaction.</p>
 </div>
 </div>
 </div>
@@ -857,7 +857,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Ce livre plonge dans Ethereum et examine chaque composant. Vous commencerez par une transaction simple, décortiquerez son fonctionnement, établirez un contrat simple, l&#39;améliorerez et suivrez son parcours dans le système Ethereum.</p>
 </div>
 <div class="paragraph data-line-5">
-<p>Vous apprendrez non seulement comment utiliser Ethereum - comment cela fonctionne - mais aussi pourquoi il est conçu comme il est. Vous pourrez comprendre comment chacune des pièces fonctionne, comment elles s&#39;emboîtent et pourquoi. (&quot;smartphones&quot;, see=&quot;portefeuilles mobiles (smartphones)&quot; )</p>
+<p>Vous apprendrez non seulement comment utiliser Ethereum - comment cela fonctionne - mais aussi pourquoi il est conçu comme il est. Vous pourrez comprendre comment chacune des pièces fonctionne, comment elles s&#39;emboîtent et pourquoi. </p>
 </div>
 </div>
 </div>
@@ -866,12 +866,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="intro_chapter">Les bases d&#39;Ethereum</h2>
 <div class="sectionbody">
 <div class="paragraph data-line-4">
-<p>In this chapter we will start exploring Ethereum, learning how to use wallets, how to create transactions, and also how to run a basic smart contract.</p>
+<p> Dans ce chapitre, nous commencerons à explorer Ethereum, à apprendre à utiliser les portefeuilles, à créer des transactions, et aussi comment exécuter un contrat intelligent de base.</p>
 </div>
 <div class="sect2 data-line-7">
-<h3 id="ether_units">Ether Currency Units</h3>
+<h3 id="ether_units">L&#8217;ether comme unité monétaire</h3>
 <div class="paragraph data-line-9">
-<p>Ethereum&#8217;s currency unit is called <em>ether</em>, identified also as "ETH" or with the symbols &#926; (from the Greek letter "Xi" that looks like a stylized capital E) or, less often, &#9830;: for example, 1 ether, or 1 ETH, or &#926;1, or &#9830;1.</p>
+<p>L&#39;unité monétaire d&#39;Ethereum est appelée <em>ether</em>, également identifiée par &quot;ETH&quot; ou avec les symboles &#926; (de la lettre grecque « Xi » qui ressemble à un E majuscule stylisé) ou, moins souvent, &#9830;: par exemple, 1 éther, ou 1 ETH, ou &#926;1, ou &#9830;1.</p>
 </div>
 <div class="admonitionblock tip data-line-12">
 <table>
@@ -881,26 +881,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-13">
-<p>Use Unicode character U+039E for &#926; and U+2666 for &#9830;.</p>
+<p>Utilisez le caractère Unicode U+039E pour &#926; et U+2666 pour &#9830;.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-16">
-<p>Ether is subdivided into smaller units, down to the smallest unit possible, which is named <em>wei</em>. One ether is 1 quintillion wei (1 * 10<sup>18</sup> or 1,000,000,000,000,000,000). You may hear people refer to the currency "Ethereum" too, but this is a common beginner&#8217;s mistake. Ethereum is the system, ether is the currency.</p>
+<p>L&#39;ether est subdivisé en unités plus petites, jusqu&#39;à la plus petite unité possible, qui est nommée <em>wei</em>. Un ether est égal à 1 quintillion de wei (1 * 10<sup>18</sup> ou 1 000 000 000 000 000 000). Vous entendrez peut-être aussi les gens se référer à la devise &quot;Ethereum&quot;, mais c&#39;est une erreur courante pour les débutants. Ethereum est le système, ether est la monnaie.</p>
 </div>
 <div class="paragraph data-line-18">
-<p>The value of ether is always represented internally in Ethereum as an unsigned integer value denominated in wei. When you transact 1 ether, the transaction encodes 1000000000000000000 wei as the value.</p>
+<p>La valeur de l&#39;ether est toujours représentée en interne dans Ethereum sous la forme d&#39;une valeur entière non signée libellée en wei. Lorsque vous traitez 1 ether, la transaction encode 1000000000000000000 wei comme valeur.</p>
 </div>
 <div class="paragraph data-line-20">
-<p>Ether&#8217;s various denominations have both a <em>scientific name</em> using the International System of Units (<em>SI</em>) and a colloquial name that pays homage to many of the great minds of computing and cryptography.</p>
+<p>Les différentes dénominations d&#39;ether ont à la fois un <em>nom scientifique</em> utilisant le Système international d&#39;unités (<em>SI</em>) et un nom familier qui rend hommage à de nombreux grands esprits de l&#39;informatique et de la cryptographie.</p>
 </div>
 <div class="paragraph data-line-22">
-<p><a href="#ether_denominations">Ether denominations and unit names</a> shows the various units, their colloquial (common) names, and their SI names. In keeping with the internal representation of value, the table shows all denominations in wei (first row), with ether shown as 10<sup>18</sup> wei in the 7th row.</p>
+<p><a href="#ether_denominations">Dénominations d&#8217;ether et noms d&#39;unités</a> montre les différentes unités, leurs noms familiers (communs) et leurs noms SI. Conformément à la représentation interne de la valeur, le tableau montre toutes les dénominations en wei (première ligne), avec l&#39;ether indiqué par 10<sup>18</sup> wei dans la 7e ligne.</p>
 </div>
 <table id="ether_denominations" class="tableblock frame-all grid-all stretch data-line-27">
-<caption class="title">Table 1. Ether denominations and unit names</caption>
+<caption class="title">Table 1. Dénominations d&#8217;ether et noms d&#39;unités</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -909,10 +909,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Value (in wei)</th>
-<th class="tableblock halign-left valign-top">Exponent</th>
-<th class="tableblock halign-left valign-top">Common name</th>
-<th class="tableblock halign-left valign-top">SI name</th>
+<th class="tableblock halign-left valign-top">Valeur (en wei)</th>
+<th class="tableblock halign-left valign-top">Exposant</th>
+<th class="tableblock halign-left valign-top">Nom commun</th>
+<th class="tableblock halign-left valign-top">Nom SI</th>
 </tr>
 </thead>
 <tbody>
@@ -923,192 +923,192 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wei</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>3</sup></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Babbage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kilowei or femtoether</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kilowei ou femtoether</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 000 000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>6</sup></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lovelace</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Megawei or picoether</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mégawei ou picoether</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 000 000 000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>9</sup></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shannon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gigawei or nanoether</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shanon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gigawei ou nanoether</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 000 000 000 000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>12</sup></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Szabo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Microether or micro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microether ou micro</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 000 000 000 000 000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>15</sup></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Finney</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Milliether or milli</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Milliether ou milli</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>1,000,000,000,000,000,000</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>1 000 000 000 000 000 000</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>10<sup>18</sup></em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Ether</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Ether</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 000 000 000 000 000 000 000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>21</sup></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grandiose</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kiloether</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000,000,000,000,000,000,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 000 000 000 000 000 000 000 000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10<sup>24</sup></p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Megaether</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mégaether</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2 data-line-41">
-<h3 id="choosing_eth_wallet">Choosing an Ethereum Wallet</h3>
+<h3 id="choosing_eth_wallet">Choisir un portefeuille Ethereum</h3>
 <div class="paragraph data-line-43">
-<p>The term "wallet" has come to mean many things, although they are all related and on a day-to-day basis boil down to pretty much the same thing. We will use the term "wallet" to mean a software application that helps you manage your Ethereum account. In short, an Ethereum wallet is your gateway to the Ethereum system. It holds your keys and can create and broadcast transactions on your behalf. Choosing an Ethereum wallet can be difficult because there are many different options with different features and designs. Some are more suitable for beginners and some are more suitable for experts. The Ethereum platform itself is still being improved, and the "best" wallets are often the ones that adapt to the changes that come with the platform upgrades.</p>
+<p>Le terme &quot;portefeuille&quot; est venu signifier beaucoup de choses, bien qu&#39;elles soient toutes liées et qu&#39;elles se résument au quotidien à peu près à la même chose. Nous utiliserons le terme &quot;portefeuille&quot; pour désigner une application logicielle qui vous aide à gérer votre compte Ethereum. En bref, un portefeuille Ethereum est votre passerelle vers le système Ethereum. Il détient vos clés et peut créer et diffuser des transactions en votre nom. Choisir un portefeuille Ethereum peut être difficile car il existe de nombreuses options différentes avec des caractéristiques et des conceptions différentes. Certains sont plus adaptés aux débutants et certains sont plus adaptés aux experts. La plate-forme Ethereum elle-même est toujours en cours d&#39;amélioration, et les &quot;meilleurs&quot; portefeuilles sont souvent ceux qui s&#39;adaptent aux changements qui accompagnent les mises à niveau de la plate-forme.</p>
 </div>
 <div class="paragraph data-line-45">
-<p>But don&#8217;t worry! If you choose a wallet and don&#8217;t like how it works&#x2014;or if you like it at first but later want to try something else&#x2014;you can change wallets quite easily. All you have to do is make a transaction that sends your funds from the old wallet to the new wallet, or export your private keys and import them into the new one.</p>
+<p>Mais ne vous inquiétez pas ! Si vous choisissez un portefeuille et que vous n&#39;aimez pas son fonctionnement, ou si vous l&#39;aimez au début, mais que vous souhaitez ensuite essayer autre chose, vous pouvez changer de portefeuille assez facilement. Tout ce que vous avez à faire est d&#39;effectuer une transaction qui envoie vos fonds de l&#39;ancien portefeuille vers le nouveau portefeuille, ou d&#39;exporter vos clés privées et de les importer dans le nouveau.</p>
 </div>
 <div class="paragraph data-line-47">
-<p>We&#8217;ve selected three different types of wallets to use as examples throughout the book: a mobile wallet, a desktop wallet, and a web-based wallet. We&#8217;ve chosen these three wallets because they represent a broad range of complexity and features. However, the selection of these wallets is not an endorsement of their quality or security. They are simply a good starting place for demonstrations and testing.</p>
+<p>Nous avons sélectionné trois types de portefeuilles différents à utiliser comme exemples tout au long du livre : un portefeuille mobile, un portefeuille de bureau et un portefeuille Web. Nous avons choisi ces trois portefeuilles car ils représentent un large éventail de complexité et de fonctionnalités. Cependant, la sélection de ces portefeuilles n&#39;est pas une approbation de leur qualité ou de leur sécurité. Ils sont simplement un bon point de départ pour des démonstrations et des tests.</p>
 </div>
 <div class="paragraph data-line-49">
-<p>Remember that for a wallet application to work, it must have access to your private keys, so it is vital that you only download and use wallet applications from sources you trust. Fortunately, in general, the more popular a wallet application is, the more trustworthy it is likely to be. Nevertheless, it is good practice to avoid "putting all your eggs in one basket" and have your Ethereum accounts spread across a couple of wallets.</p>
+<p>N&#39;oubliez pas que pour qu&#39;une application de portefeuille fonctionne, elle doit avoir accès à vos clés privées, il est donc essentiel que vous ne téléchargiez et n&#39;utilisiez que des applications de portefeuille provenant de sources de confiance. Heureusement, en général, plus une application de portefeuille est populaire, plus elle est susceptible d&#39;être fiable. Néanmoins, il est recommandé d&#39;éviter de &quot;mettre tous vos œufs dans le même panier&quot; et de répartir vos comptes Ethereum sur plusieurs portefeuilles.</p>
 </div>
 <div class="paragraph data-line-51">
-<p>The following are some good starter wallets:</p>
+<p>Voici quelques bons portefeuilles de démarrage :</p>
 </div>
 <div class="dlist data-line-53">
 <dl>
 <dt class="hdlist1">MetaMask</dt>
 <dd>
-<p>MetaMask is a browser extension wallet that runs in your browser (Chrome, Firefox, Opera, or Brave Browser). It is easy to use and convenient for testing, as it is able to connect to a variety of Ethereum nodes and test blockchains. MetaMask is a web-based wallet.</p>
+<p>MetaMask est un portefeuille d&#39;extension de navigateur qui s&#39;exécute dans votre navigateur (Chrome, Firefox, Opera ou Brave Browser). Il est facile à utiliser et pratique pour les tests, car il est capable de se connecter à une variété de nœuds Ethereum et de tester des chaînes de blocs. MetaMask est un portefeuille basé sur le Web.</p>
 </dd>
 <dt class="hdlist1">Jaxx</dt>
 <dd>
-<p>Jaxx is a multiplatform and multicurrency wallet that runs on a variety of operating systems, including Android, iOS, Windows, macOS, and Linux. It is often a good choice for new users as it is designed for simplicity and ease of use. Jaxx is either a mobile or a desktop wallet, depending on where you install it.</p>
+<p>Jaxx est un portefeuille multiplateforme et multidevise qui fonctionne sur une variété de systèmes d&#39;exploitation, y compris Android, iOS, Windows, macOS, et Linux. C&#39;est souvent un bon choix pour les nouveaux utilisateurs car il est conçu pour la simplicité et la facilité d&#39;utilisation. Jaxx est soit un portefeuille mobile, soit un portefeuille de bureau, selon l&#39;endroit où vous l&#39;installez.</p>
 </dd>
 <dt class="hdlist1">MyEtherWallet (MEW)</dt>
 <dd>
-<p>MyEtherWallet is a web-based wallet that runs in any browser. It has multiple sophisticated features we will explore in many of our examples. MyEtherWallet is a web-based wallet.</p>
+<p>(&quot;portefeuilles&quot;,&quot;Emerald Wallet&quot; )MyEtherWallet est un portefeuille Web qui s&#39;exécute dans n&#39;importe quel navigateur. Il possède de multiples fonctionnalités sophistiquées que nous explorerons dans plusieurs de nos exemples. MyEtherWallet est un portefeuille basé sur le Web.</p>
 </dd>
 <dt class="hdlist1">Emerald Wallet</dt>
 <dd>
-<p>Emerald Wallet is designed to work with the Ethereum Classic blockchain, but is compatible with other Ethereum-based blockchains. It&#8217;s an open source desktop application and works under Windows, macOS, and Linux. Emerald Wallet can run a full node or connect to a public remote node, working in a "light" mode. It also has a companion tool to do all operations from the command line.</p>
+<p>Emerald Wallet est conçu pour fonctionner avec la blockchain Ethereum Classic, mais est compatible avec d&#39;autres blockchains basées sur Ethereum. C&#39;est une application de bureau à source libre et fonctionne sous Windows, macOS et Linux. Emerald Wallet peut exécuter un nœud complet ou se connecter à un nœud distant public, fonctionnant en mode &quot;léger&quot;. Il dispose également d&#39;un outil compagnon pour effectuer toutes les opérations à partir de la ligne de commande.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph data-line-61">
-<p>We&#8217;ll start by installing MetaMask on a desktop&#x2014;but first, we&#8217;ll briefly discuss controlling and managing keys.</p>
+<p>Nous commencerons par installer MetaMask sur un bureau, mais nous aborderons d&#39;abord brièvement le contrôle et la gestion des clés.</p>
 </div>
 </div>
 <div class="sect2 data-line-64">
-<h3 id="control_responsibility">Control and Responsibility</h3>
+<h3 id="control_responsibility">Contrôle et responsabilité</h3>
 <div class="paragraph data-line-66">
-<p>Open blockchains like Ethereum are important because they operate as a <em>decentralized</em> system. That means lots of things, but one crucial aspect is that each user of Ethereum can&#x2014;and should&#x2014;control their own private keys, which are the things that control access to funds and smart contracts. We sometimes call the combination of access to funds and smart contracts an "account" or "wallet." These terms can get quite complex in their functionality, so we will go into this in more detail later. As a fundamental principle, however, it is as easy as one private key equals one "account." Some users choose to give up control over their private keys by using a third-party custodian, such as an online exchange. In this book, we will teach you how to take control and manage your own private keys.</p>
+<p>Les chaînes de blocs ouvertes comme Ethereum sont importantes car elles fonctionnent comme un système <em>décentralisé</em>. Cela signifie beaucoup de choses, mais un aspect crucial est que chaque utilisateur d&#39;Ethereum peut et doit contrôler ses propres clés privées, qui contrôlent l&#39;accès aux fonds et aux contrats intelligents. Nous appelons parfois la combinaison de l&#39;accès aux fonds et des contrats intelligents un &quot;compte&quot; ou un &quot;portefeuille&quot;. Ces termes peuvent devenir assez complexes dans leur fonctionnalité, nous y reviendrons donc plus en détail plus tard. En tant que principe fondamental, cependant, c&#39;est aussi simple qu&#39;une clé privée équivaut à un &quot;compte&quot;. Certains utilisateurs choisissent de renoncer au contrôle de leurs clés privées en utilisant un dépositaire tiers, tel qu&#39;un échange en ligne. Dans ce livre, nous vous apprendrons à prendre le contrôle et à gérer vos propres clés privées.</p>
 </div>
 <div class="paragraph data-line-68">
-<p>With control comes a big responsibility. If you lose your private keys, you lose access to your funds and contracts. No one can help you regain access&#x2014;your funds will be locked forever. Here are a few tips to help you manage this responsibility:</p>
+<p>Avec le contrôle vient une grande responsabilité. Si vous perdez vos clés privées, vous perdez l&#39;accès à vos fonds et contrats. Personne ne peut vous aider à retrouver l&#39;accès - vos fonds seront verrouillés pour toujours. Voici quelques conseils pour vous aider à gérer cette responsabilité :</p>
 </div>
 <div class="ulist data-line-70">
 <ul>
 <li class="data-line-70">
-<p>Do not improvise security. Use tried-and-tested standard approaches.</p>
+<p>N&#39;improvisez pas la sécurité. Utilisez des approches standardisées.</p>
 </li>
 <li class="data-line-72">
-<p>The more important the account (e.g., the higher the value of the funds controlled, or the more significant the smart contracts accessible), the higher security measures should be taken.</p>
+<p>Plus le compte est important (par exemple, plus la valeur des fonds contrôlés est élevée, ou plus les contrats intelligents accessibles sont importants), plus les mesures de sécurité doivent être prises.</p>
 </li>
 <li class="data-line-74">
-<p>The highest security is gained from an air-gapped device, but this level is not required for every account.</p>
+<p>La sécurité la plus élevée est obtenue à partir d&#39;un appareil isolé, mais ce niveau n&#39;est pas requis pour tous les comptes.</p>
 </li>
 <li class="data-line-76">
-<p>Never store your private key in plain form, especially digitally. Fortunately, most user interfaces today won&#8217;t even let you see the raw private key.</p>
+<p>Ne stockez jamais votre clé privée en clair, en particulier sous forme numérique. Heureusement, la plupart des interfaces utilisateur actuelles ne vous permettent même pas de voir la clé privée brute.</p>
 </li>
 <li class="data-line-78">
-<p>Private keys can be stored in an encrypted form, as a digital "keystore" file. Being encrypted, they need a password to unlock. When you are prompted to choose a password, make it strong (i.e., long and random), back it up, and don&#8217;t share it. If you don&#8217;t have a password manager, write it down and store it in a safe and secret place. To access your account, you need both the keystore file and the password.</p>
+<p>Les clés privées peuvent être stockées sous forme cryptée, en tant que fichier &quot;keystore&quot; numérique. Étant cryptés, ils ont besoin d&#39;un mot de passe pour se déverrouiller. Lorsque vous êtes invité à choisir un mot de passe, rendez-le fort (c&#39;est-à-dire long et aléatoire), sauvegardez-le et ne le partagez pas. Si vous n&#39;avez pas de gestionnaire de mots de passe, écrivez-le et conservez-le dans un endroit sûr et secret. Pour accéder à votre compte, vous avez besoin à la fois du fichier keystore et du mot de passe.</p>
 </li>
 <li class="data-line-80">
-<p>Do not store any passwords in digital documents, digital photos, screenshots, online drives, encrypted PDFs, etc. Again, do not improvise security. Use a password manager or pen and paper.</p>
+<p>Ne stockez aucun mot de passe dans des documents numériques, des photos numériques, des captures d&#39;écran, des lecteurs en ligne, des PDF cryptés, etc. Encore une fois, n&#39;improvisez pas la sécurité. Utilisez un gestionnaire de mots de passe ou un stylo et du papier.</p>
 </li>
 <li class="data-line-82">
-<p>When you are prompted to back up a key as a mnemonic word sequence, use pen and paper to make a physical backup. Do not leave that task "for later"; you will forget. These backups can be used to rebuild your private key in case you lose all the data saved on your system, or if you forget or lose your password. However, they can also be used by attackers to get your private keys, so never store them digitally, and keep the physical copy stored securely in a locked drawer or safe.</p>
+<p>Lorsque vous êtes invité à sauvegarder une clé sous forme de séquence de mots mnémoniques, utilisez un stylo et du papier pour effectuer une sauvegarde physique. Ne laissez pas cette tâche &quot;pour plus tard&quot; ; vous oublierez. Ces sauvegardes peuvent être utilisées pour reconstruire votre clé privée au cas où vous perdriez toutes les données enregistrées sur votre système, ou si vous oubliez ou perdez votre mot de passe. Cependant, ils peuvent également être utilisés par des attaquants pour obtenir vos clés privées. Ne les stockez donc jamais sous forme numérique et conservez la copie physique en toute sécurité dans un tiroir ou un coffre-fort verrouillé.</p>
 </li>
 <li class="data-line-84">
-<p>Before transferring any large amounts (especially to new addresses), first do a small test transaction (e.g., less than $1 value) and wait for confirmation of receipt.</p>
+<p>Avant de transférer des montants importants (en particulier vers de nouvelles adresses), effectuez d&#39;abord une petite transaction test (par exemple, une valeur inférieure à 1 $) et attendez la confirmation de réception.</p>
 </li>
 <li class="data-line-86">
-<p>When you create a new account, start by sending only a small test transaction to the new address. Once you receive the test transaction, try sending back again from that account. There are lots of reasons account creation can go wrong, and if it has gone wrong, it is better to find out with a small loss. If the tests work, all is well.</p>
+<p>Lorsque vous créez un nouveau compte, commencez par n&#39;envoyer qu&#39;une petite transaction test à la nouvelle adresse. Une fois que vous avez reçu la transaction de test, essayez de renvoyer à partir de ce compte. Il existe de nombreuses raisons pour lesquelles la création d&#39;un compte peut mal tourner, et si cela a mal tourné, il vaut mieux le découvrir avec une petite perte. Si les tests fonctionnent, tout va bien.</p>
 </li>
 <li class="data-line-88">
-<p>Public block explorers are an easy way to independently see whether a transaction has been accepted by the network. However, this convenience has a negative impact on your privacy, because you reveal your addresses to block explorers, which can track you.</p>
+<p>Les explorateurs de blocs publics sont un moyen simple de voir indépendamment si une transaction a été acceptée par le réseau. Cependant, cette commodité a un impact négatif sur votre vie privée, car vous révélez vos adresses pour bloquer les explorateurs, qui peuvent vous suivre.</p>
 </li>
 <li class="data-line-90">
-<p>Do not send money to any of the addresses shown in this book. The private keys are listed in the book and someone will immediately take that money.</p>
+<p>N&#39;envoyez pas d&#39;argent à l&#39;une des adresses indiquées dans ce livre. Les clés privées sont répertoriées dans le livre et quelqu&#39;un prendra immédiatement cet argent.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph data-line-92">
-<p>Now that we&#8217;ve covered some basic best practices for key management and security, let&#8217;s get to work using MetaMask!</p>
+<p>Maintenant que nous avons couvert quelques bonnes pratiques de base pour la gestion des clés et la sécurité, passons au travail avec MetaMask !</p>
 </div>
 </div>
 <div class="sect2 data-line-95">
-<h3 id="installing_MetaMask">Getting Started with MetaMask</h3>
+<h3 id="installing_MetaMask">Premiers pas avec MetaMask</h3>
 <div class="paragraph data-line-97">
-<p>Open the Google Chrome browser and navigate to <a href="https://chrome.google.com/webstore/category/extensions" class="undefined" data-href="https://chrome.google.com/webstore/category/extensions">https://chrome.google.com/webstore/category/extensions</a>.</p>
+<p>Ouvrez le navigateur Google Chrome et accédez à <a href="https://chrome.google.com/webstore/category/extensions" class="undefined" data-href="https://chrome.google.com/webstore/category/extensions">https://chrome.google.com/webstore/category/extensions</a>.</p>
 </div>
 <div class="paragraph data-line-99">
-<p>Search for "MetaMask" and click on the logo of a fox. You should see something like the result shown in <a href="#metamask_download">The detail page of the MetaMask Chrome extension</a>.</p>
+<p>Recherchez &quot;MetaMask&quot; et cliquez sur le logo d&#39;un renard. Vous devriez voir quelque chose comme le résultat affiché dans <a href="#metamask_download">La page de détail de l&#39;extension MetaMask Chrome</a>.</p>
 </div>
 <div id="metamask_download" class="imageblock data-line-103">
 <div class="content">
-<img src="images/metamask_download.png" alt="MetaMask Detail Page">
+<img src="images/metamask_download.png" alt="&quot;Page de détails du métamasque&quot;">
 </div>
-<div class="title">Figure 1. The detail page of the MetaMask Chrome extension</div>
+<div class="title">Figure 1. La page de détail de l&#39;extension MetaMask Chrome</div>
 </div>
 <div class="paragraph data-line-105">
-<p>It&#8217;s important to verify that you are downloading the real MetaMask extension, as sometimes people are able to sneak malicious extensions past Google&#8217;s filters. The real one:</p>
+<p>Il est important de vérifier que vous téléchargez la véritable extension MetaMask, car parfois les gens sont capables de passer furtivement des extensions malveillantes au-delà des filtres de Google. Le vrai:</p>
 </div>
 <div class="ulist data-line-107">
 <ul>
 <li class="data-line-107">
-<p>Shows the ID nkbihfbeogaeaoehlefnkodbefgpgknn in the address bar</p>
+<p>Affiche l&#39;ID nkbihfbeogaeaoehlefnkodbefgpgknn dans la barre d&#39;adresse</p>
 </li>
 <li class="data-line-108">
-<p>Is offered by <a href="https://metamask.io" class="undefined" data-href="https://metamask.io">https://metamask.io</a></p>
+<p>Est offert par <a href="https://metamask.io" class="undefined" data-href="https://metamask.io">https://metamask.io</a></p>
 </li>
 <li class="data-line-109">
-<p>Has more than 1,500 reviews</p>
+<p>A plus de 1 500 avis</p>
 </li>
 <li class="data-line-110">
-<p>Has more than 1,000,000 users</p>
+<p>A plus de 1 000 000 d&#39;utilisateurs</p>
 </li>
 </ul>
 </div>
 <div class="paragraph data-line-112">
-<p>Once you confirm you are looking at the correct extension, click "Add to Chrome" to install it.</p>
+<p>Une fois que vous avez confirmé que vous recherchez la bonne extension, cliquez sur &quot;Ajouter à Chrome&quot; pour l&#39;installer.</p>
 </div>
 <div class="sect3 data-line-115">
-<h4 id="using_MetaMask">Creating a Wallet</h4>
+<h4 id="using_MetaMask">Création d&#39;un portefeuille</h4>
 <div class="paragraph data-line-117">
-<p>Once MetaMask is installed you should see a new icon (the head of a fox) in your browser&#8217;s toolbar. Click on it to get started. You will be asked to accept the terms and conditions and then to create your new Ethereum wallet by entering a password (see <a href="#metamask_password">The password page of the MetaMask Chrome extension</a>).</p>
+<p>Une fois MetaMask installé, vous devriez voir une nouvelle icône (la tête d&#39;un renard) dans la barre d&#39;outils de votre navigateur. Cliquez dessus pour commencer. Il vous sera demandé d&#39;accepter les termes et conditions puis de créer votre nouveau portefeuille Ethereum en saisissant un mot de passe (voir <a href="#metamask_password">La page de mot de passe de l&#39;extension MetaMask Chrome</a>).</p>
 </div>
 <div id="metamask_password" class="imageblock data-line-121">
 <div class="content">
-<img src="images/metamask_password.png" alt="MetaMask Password Page">
+<img src="images/metamask_password.png" alt="&quot;Page de mot de passe du métamasque&quot;">
 </div>
-<div class="title">Figure 2. The password page of the MetaMask Chrome extension</div>
+<div class="title">Figure 2. La page de mot de passe de l&#39;extension MetaMask Chrome</div>
 </div>
 <div class="admonitionblock tip data-line-124">
 <table>
@@ -1118,14 +1118,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-125">
-<p>The password controls access to MetaMask, so that it can&#8217;t be used by anyone with access to your browser.</p>
+<p>Le mot de passe contrôle l&#39;accès à MetaMask, de sorte qu&#39;il ne peut être utilisé par personne ayant accès à votre navigateur.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-128">
-<p>Once you&#8217;ve set a password, MetaMask will generate a wallet for you and show you a <em>mnemonic backup</em> consisting of 12 English words (see <a href="#metamask_mnemonic">The mnemonic backup of your wallet, created by MetaMask</a>). These words can be used in any compatible wallet to recover access to your funds should something happen to MetaMask or your computer. You do not need the password for this recovery; the 12 words are sufficient.</p>
+<p>Une fois que vous avez défini un mot de passe, MetaMask générera un portefeuille pour vous et vous montrera un <em>mnémonique de sauvegarde</em> composé de 12 mots anglais (voir <a href="#metamask_mnemonic">La sauvegarde mnémonique de votre portefeuille, créée par MetaMask</a>). Ces mots peuvent être utilisés dans n&#39;importe quel portefeuille compatible pour récupérer l&#39;accès à vos fonds si quelque chose arrivait à MetaMask ou à votre ordinateur. Vous n&#39;avez pas besoin du mot de passe pour cette récupération ; les 12 mots suffisent.</p>
 </div>
 <div class="admonitionblock tip data-line-131">
 <table>
@@ -1135,7 +1135,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-132">
-<p>Back up your mnemonic (12 words) on paper, twice. Store the two paper backups in two separate secure locations, such as a fire-resistant safe, a locked drawer, or a safe deposit box. Treat the paper backups like cash of equivalent value to what you store in your Ethereum wallet. Anyone with access to these words can gain access and steal your money.</p>
+<p>Sauvegardez votre mnémonique (12 mots) sur papier, deux fois. Conservez les deux sauvegardes papier dans deux emplacements sécurisés distincts, tels qu&#39;un coffre-fort résistant au feu, un tiroir verrouillé ou un coffre-fort. Traitez les sauvegardes papier comme de l&#39;argent de valeur équivalente à ce que vous stockez dans votre portefeuille Ethereum. Toute personne ayant accès à ces mots peut y accéder et voler votre argent.</p>
 </div>
 </td>
 </tr>
@@ -1143,56 +1143,56 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="metamask_mnemonic" class="imageblock data-line-137">
 <div class="content">
-<img src="images/metamask_mnemonic.png" alt="MetaMask Mnemonic Page">
+<img src="images/metamask_mnemonic.png" alt="&quot;Page Mnémonique MetaMask&quot;">
 </div>
-<div class="title">Figure 3. The mnemonic backup of your wallet, created by MetaMask</div>
+<div class="title">Figure 3. La sauvegarde mnémonique de votre portefeuille, créée par MetaMask</div>
 </div>
 <div class="paragraph data-line-139">
-<p>Once you have confirmed that you have stored the mnemonic securely, you&#8217;ll be able to see the details of your Ethereum account, as shown in <a href="#metamask_account">Your Ethereum account in MetaMask</a>.</p>
+<p>Une fois que vous avez confirmé que vous avez stocké le mnémonique en toute sécurité, vous pourrez voir les détails de votre compte Ethereum, comme indiqué dans <a href="#metamask_account">Votre compte Ethereum dans MetaMask</a>.</p>
 </div>
 <div id="metamask_account" class="imageblock data-line-143">
 <div class="content">
-<img src="images/metamask_account.png" alt="MetaMask Account Page">
+<img src="images/metamask_account.png" alt="&quot;Page de compte MetaMask&quot;">
 </div>
-<div class="title">Figure 4. Your Ethereum account in MetaMask</div>
+<div class="title">Figure 4. Votre compte Ethereum dans MetaMask</div>
 </div>
 <div class="paragraph data-line-145">
-<p>Your account page shows the name of your account ("Account 1" by default), an Ethereum address (0x9E713... in the example), and a colorful icon to help you visually distinguish this account from other accounts. At the top of the account page, you can see which Ethereum network you are currently working on ("Main Network" in the example).</p>
+<p>La page de votre compte affiche le nom de votre compte (&quot;Account 1&quot; par défaut), une adresse Ethereum (0x9E713... dans l&#39;exemple), et une icône colorée pour vous aider à distinguer visuellement ce compte des autres comptes. En haut de la page du compte, vous pouvez voir sur quel réseau Ethereum vous travaillez actuellement (&quot;Main Network&quot; dans l&#39;exemple).</p>
 </div>
 <div class="paragraph data-line-147">
-<p>Congratulations! You have set up your first Ethereum wallet.</p>
+<p>Toutes nos félicitations! Vous avez configuré votre premier portefeuille Ethereum.</p>
 </div>
 </div>
 <div class="sect3 data-line-150">
-<h4 id="switching_networks">Switching Networks</h4>
+<h4 id="switching_networks">Changer le réseau</h4>
 <div class="paragraph data-line-152">
-<p>As you can see on the MetaMask account page, you can choose between multiple Ethereum networks. By default, MetaMask will try to connect to the main network. The other choices are public testnets, any Ethereum node of your choice, or nodes running private blockchains on your own computer (localhost):</p>
+<p>Comme vous pouvez le voir sur la page du compte MetaMask, vous pouvez choisir entre plusieurs réseaux Ethereum. Par défaut, MetaMask essaiera de se connecter au réseau principal. Les autres choix sont des réseaux de test publics, tout nœud Ethereum de votre choix ou des nœuds exécutant des chaînes de blocs privées sur votre propre ordinateur (localhost) :</p>
 </div>
 <div class="dlist data-line-154">
 <dl>
-<dt class="hdlist1">Main Ethereum Network</dt>
+<dt class="hdlist1">Réseau principal Ethereum</dt>
 <dd>
-<p>The main public Ethereum blockchain. Real ETH, real value, and real consequences.</p>
+<p>La principale chaîne de blocs publique Ethereum. Véritable ETH, valeur réelle et conséquences réelles.</p>
 </dd>
-<dt class="hdlist1">Ropsten Test Network</dt>
+<dt class="hdlist1">Réseau de test Ropsten</dt>
 <dd>
-<p>Ethereum public test blockchain and network. ETH on this network has no value.</p>
+<p>Chaîne de blocs et réseau de test public Ethereum. l&#8217;ETH sur ce réseau n&#39;a aucune valeur.</p>
 </dd>
-<dt class="hdlist1">Kovan Test Network</dt>
+<dt class="hdlist1">Réseau de test Kovan</dt>
 <dd>
-<p>Ethereum public test blockchain and network using the Aura consensus protocol with proof of authority (federated signing). ETH on this network has no value. The Kovan test network is supported by Parity only. Other Ethereum clients use the Clique consensus protocol, which was proposed later, for proof of authority&#x2013;based verification.</p>
+<p>Chaîne de blocs et réseau de test public Ethereum utilisant le protocole de consensus Aura avec preuve d&#39;autorité (signature fédérée). ETH sur ce réseau n&#39;a aucune valeur. Le réseau de test Kovan est uniquement pris en charge par Parity. D&#39;autres clients Ethereum utilisent le protocole de consensus Clique, qui a été proposé plus tard, pour la preuve de la vérification basée sur l&#39;autorité.</p>
 </dd>
-<dt class="hdlist1">Rinkeby Test Network</dt>
+<dt class="hdlist1">Réseau de test Rinkeby</dt>
 <dd>
-<p>Ethereum public test blockchain and network, using the Clique consensus protocol with proof of authority (federated signing). ETH on this network has no value.</p>
+<p>Chaîne de blocs et réseau de test public Ethereum, utilisant le protocole de consensus Clique avec preuve d&#39;autorité (signature fédérée). ETH sur ce réseau n&#39;a aucune valeur.</p>
 </dd>
 <dt class="hdlist1">Localhost 8545</dt>
 <dd>
-<p>Connects to a node running on the same computer as the browser. The node can be part of any public blockchain (main or testnet), or a private testnet.</p>
+<p>Se connecte à un nœud exécuté sur le même ordinateur que le navigateur. Le nœud peut faire partie de n&#39;importe quelle chaîne de blocs publique (principale ou testnet) ou d&#39;un testnet privé.</p>
 </dd>
-<dt class="hdlist1">Custom RPC</dt>
+<dt class="hdlist1">RPC personnalisé</dt>
 <dd>
-<p>Allows you to connect MetaMask to any node with a Geth-compatible Remote Procedure Call (RPC) interface. The node can be part of any public or private blockchain.</p>
+<p>vous permet de connecter MetaMask à n&#39;importe quel nœud avec une interface d&#39;appel de procédure distante (RPC) compatible Geth. Le nœud peut faire partie de n&#39;importe quelle chaîne de blocs publique ou privée.</p>
 </dd>
 </dl>
 </div>
@@ -1204,7 +1204,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-168">
-<p>Your MetaMask wallet uses the same private key and Ethereum address on all the networks it connects to. However, your Ethereum address balance on each Ethereum network will be different. Your keys may control ether and contracts on Ropsten, for example, but not on the main network.</p>
+<p>Votre portefeuille MetaMask utilise la même clé privée et la même adresse Ethereum sur tous les réseaux auxquels il se connecte. Cependant, votre solde d&#39;adresses Ethereum sur chaque réseau Ethereum sera différent. Vos clés peuvent contrôler l&#39;éther et les contrats sur Ropsten, par exemple, mais pas sur le réseau principal.</p>
 </div>
 </td>
 </tr>
@@ -1212,24 +1212,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3 data-line-172">
-<h4 id="getting_test_eth">Getting Some Test Ether</h4>
+<h4 id="getting_test_eth">Obtenir de l&#39;ether de test</h4>
 <div class="paragraph data-line-174">
-<p>Your first task is to get your wallet funded. You won&#8217;t be doing that on the main network because real ether costs money and handling it requires a bit more experience. For now, you&#8217;ll load your wallet with some testnet ether.</p>
+<p>Votre première tâche est de financer votre portefeuille. Vous ne ferez pas cela sur le réseau principal car l&#39;éther réel coûte de l&#39;argent et sa manipulation nécessite un peu plus d&#39;expérience. Pour l&#39;instant, vous allez charger votre portefeuille avec de l&#39;ether testnet.</p>
 </div>
 <div class="paragraph data-line-176">
-<p>Switch MetaMask to the <em>Ropsten Test Network</em>. Click Deposit, then click Ropsten Test Faucet. MetaMask will open a new web page, as shown in <a href="#metamask_ropsten_faucet">MetaMask Ropsten Test Faucet</a>.</p>
+<p>Passez MetaMask au <em>Réseau test Ropsten</em>. Cliquez sur Deposit, puis sur Ropsten Test Faucet. MetaMask ouvrira une nouvelle page Web, comme indiqué dans <a href="#metamask_ropsten_faucet">MetaMask et le robinet du réseau test Ropsten</a>.</p>
 </div>
 <div id="metamask_ropsten_faucet" class="imageblock data-line-180">
 <div class="content">
-<img src="images/metamask_ropsten_faucet.png" alt="MetaMask Ropsten Test Faucet">
+<img src="images/metamask_ropsten_faucet.png" alt="&quot;MetaMask et le robinet du réseau test Ropsten&quot;">
 </div>
-<div class="title">Figure 5. MetaMask Ropsten Test Faucet</div>
+<div class="title">Figure 5. MetaMask et le robinet du réseau test Ropsten</div>
 </div>
 <div class="paragraph data-line-182">
-<p>You may notice that the web page already contains your MetaMask wallet&#8217;s Ethereum address. MetaMask integrates Ethereum-enabled web pages with your MetaMask wallet and can "see" Ethereum addresses on the web page, allowing you, for example, to send a payment to an online shop displaying an Ethereum address. MetaMask can also populate the web page with your own wallet&#8217;s address as a recipient address if the web page requests it. In this page, the faucet application is asking MetaMask for a wallet address to send test ether to.</p>
+<p>Vous remarquerez peut-être que la page Web contient déjà l&#39;adresse Ethereum de votre portefeuille MetaMask. MetaMask intègre les pages Web compatibles Ethereum avec votre portefeuille MetaMask et peut &quot;voir&quot; les adresses Ethereum sur la page Web, vous permettant, par exemple, d&#39;envoyer un paiement à une boutique en ligne affichant une adresse Ethereum. MetaMask peut également remplir la page Web avec l&#39;adresse de votre propre portefeuille en tant qu&#39;adresse de destinataire si la page Web le demande. Sur cette page, l&#39;application du robinet demande à MetaMask une adresse de portefeuille à laquelle envoyer de l&#39;ether de test.</p>
 </div>
 <div class="paragraph data-line-184">
-<p>Click the green "request 1 ether from faucet" button. You will see a transaction ID appear in the lower part of the page. The faucet app has created a transaction&#x2014;a payment to you. The transaction ID looks like this:</p>
+<p>Cliquez sur le bouton vert &quot;demander 1 éther au robinet&quot;. Vous verrez un ID de transaction apparaître dans la partie inférieure de la page. L&#39;application robinet ou "faucet" a créé une transaction, un paiement qui vous est destiné. L&#39;ID de transaction ressemble à ceci :</p>
 </div>
 <div id="faucet_tx_id" class="listingblock data-line-187">
 <div class="content">
@@ -1237,40 +1237,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph data-line-191">
-<p>In a few seconds, the new transaction will be mined by the Ropsten miners and your MetaMask wallet will show a balance of 1 ETH. Click on the transaction ID and your browser will take you to a <em>block explorer</em>, which is a website that allows you to visualize and explore blocks, addresses, and transactions. MetaMask uses the <a href="https://etherscan.io/" data-href="https://etherscan.io/">Etherscan block explorer</a>, one of the more popular Ethereum block explorers. The transaction containing the payment from the Ropsten Test Faucet is shown in <a href="#ropsten_block_explorer">Etherscan Ropsten block explorer</a>.</p>
+<p>Dans quelques secondes, la nouvelle transaction sera exploitée par les mineurs de Ropsten et votre portefeuille MetaMask affichera un solde de 1 ETH. Cliquez sur l&#39;ID de transaction et votre navigateur vous amènera à un <em>explorateur de bloc</em>, qui est un site Web qui vous permet de visualiser et d&#39;explorer des blocs, des adresses et des transactions. MetaMask utilise <a href="https://etherscan.io/" data-href="https://etherscan.io/">Explorateur de blocs Etherscan</a>, l&#39;un des explorateurs de blocs Ethereum les plus populaires. La transaction contenant le paiement du Ropsten Test Faucet est affichée dans <a href="#ropsten_block_explorer">Explorateur de blocs Ropsten sur Etherscan</a>.</p>
 </div>
 <div id="ropsten_block_explorer" class="imageblock data-line-195">
 <div class="content">
-<img src="images/ropsten_block_explorer.png" alt="Etherscan Ropsten Block Explorer">
+<img src="images/ropsten_block_explorer.png" alt="&quot;Explorateur de blocs Ropsten sur Etherscan&quot;">
 </div>
-<div class="title">Figure 6. Etherscan Ropsten block explorer</div>
+<div class="title">Figure 6. Explorateur de blocs Ropsten sur Etherscan</div>
 </div>
 <div class="paragraph data-line-197">
-<p>The transaction has been recorded on the Ropsten blockchain and can be viewed at any time by anyone, simply by searching for the transaction ID, or <a href="http://bit.ly/2Q860Wk" data-href="http://bit.ly/2Q860Wk">visiting the link</a>.</p>
+<p>La transaction a été enregistrée sur la chaîne de blocs Ropsten et peut être consultée à tout moment par n&#39;importe qui, simplement en recherchant l&#39;ID de transaction, ou <a href="http://bit.ly/2Q860Wk" data-href="http://bit.ly/2Q860Wk">en visitant le lien</a>.</p>
 </div>
 <div class="paragraph data-line-199">
-<p>Try visiting that link, or entering the transaction hash into the <em>ropsten.etherscan.io</em> website, to see it for yourself.</p>
+<p>Essayez de visiter ce lien ou de saisir le hachage de la transaction sur le site Web <em>ropsten.etherscan.io</em> pour le voir par vous-même.</p>
 </div>
 </div>
 <div class="sect3 data-line-202">
-<h4 id="sending_eth_MetaMask">Sending Ether from MetaMask</h4>
+<h4 id="sending_eth_MetaMask">Envoi d&#39;ether depuis MetaMask</h4>
 <div class="paragraph data-line-204">
-<p>Once you&#8217;ve received your first test ether from the Ropsten Test Faucet, you can experiment with sending ether by trying to send some back to the faucet. As you can see on the Ropsten Test Faucet page, there is an option to "donate" 1 ETH to the faucet. This option is available so that once you&#8217;re done testing, you can return the remainder of your test ether, so that someone else can use it next. Even though test ether has no value, some people hoard it, making it difficult for everyone else to use the test networks. Hoarding test ether is frowned upon!</p>
+<p>Une fois que vous avez reçu votre premier test d&#39;ether du Ropsten Test Faucet, vous pouvez expérimenter l&#39;envoi d&#39;ether en essayant d&#39;en renvoyer au robinet. Comme vous pouvez le voir sur la page Ropsten Test Faucet, il existe une option pour &quot;donner&quot; 1 ETH au robinet. Cette option est disponible pour qu&#39;une fois que vous avez terminé les tests, vous puissiez retourner le reste de votre ether de test, afin que quelqu&#39;un d&#39;autre puisse l&#39;utiliser ensuite. Même si l&#39;ether de test n&#39;a aucune valeur, certaines personnes l&#8217;accumulent, ce qui rend difficile pour tout le monde d&#39;utiliser les réseaux de test. L&#8217;accumulation de l&#39;ether de test est mal vue !</p>
 </div>
 <div class="paragraph data-line-206">
-<p>Fortunately, we are not test ether hoarders. Click the orange "1 ether" button to tell MetaMask to create a transaction paying the faucet 1 ether. MetaMask will prepare a transaction and pop up a window with the confirmation, as shown in <a href="#send_to_faucet">Sending 1 ether to the faucet</a>.</p>
+<p>Heureusement, nous ne sommes pas des accumulateurs d&#39;éther de test. Cliquez sur le bouton orange &quot;1 ether&quot; pour dire à MetaMask de créer une transaction payant le robinet 1 ether. MetaMask préparera une transaction et ouvrira une fenêtre avec la confirmation, comme indiqué dans <a href="#send_to_faucet">Envoi de 1 éther au robinet</a>.</p>
 </div>
 <div id="send_to_faucet" class="imageblock data-line-211">
 <div class="content">
-<img src="images/send_to_faucet.png" alt="Sending 1 ether to the faucet">
+<img src="images/send_to_faucet.png" alt="&quot;Envoi d&#39;1 ether au robinet&quot;">
 </div>
-<div class="title">Figure 7. Sending 1 ether to the faucet</div>
+<div class="title">Figure 7. Envoi de 1 éther au robinet</div>
 </div>
 <div class="paragraph data-line-213">
-<p>Oops! You probably noticed you can&#8217;t complete the transaction&#x2014;MetaMask says you have an insufficient balance. At first glance this may seem confusing: you have 1 ETH, you want to send 1 ETH, so why is MetaMask saying you have insufficient funds?</p>
+<p>Oups! Vous avez probablement remarqué que vous ne pouvez pas terminer la transaction - MetaMask indique que vous avez un solde insuffisant. À première vue, cela peut sembler déroutant : vous avez 1 ETH, vous voulez envoyer 1 ETH, alors pourquoi MetaMask dit-il que vous avez des fonds insuffisants ?</p>
 </div>
 <div class="paragraph data-line-215">
-<p>The answer is because of the cost of <em>gas</em>. Every Ethereum transaction requires payment of a fee, which is collected by the miners to validate the transaction. The fees in Ethereum are charged in a virtual currency called gas. You pay for the gas with ether, as part of the transaction.</p>
+<p>La réponse est à cause du coût de <em>gaz</em>. Chaque transaction Ethereum nécessite le paiement d&#39;une redevance, qui est perçue par les mineurs pour valider la transaction. Les frais d&#39;Ethereum sont facturés dans une monnaie virtuelle appelée gaz. Vous payez le gaz avec de l&#39;ether, dans le cadre de la transaction.</p>
 </div>
 <div class="admonitionblock note data-line-218">
 <table>
@@ -1280,87 +1280,87 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-219">
-<p>Fees are required on the test networks too. Without fees, a test network would behave differently from the main network, making it an inadequate testing platform. Fees also protect the test networks from DoS attacks and poorly constructed contracts (e.g., infinite loops), much like they protect the main network.</p>
+<p>Des frais sont également exigés sur les réseaux de test. Sans frais, un réseau de test se comporterait différemment du réseau principal, ce qui en ferait une plate-forme de test inadéquate. Les frais protègent également les réseaux de test des attaques DoS et des contrats mal construits (par exemple, des boucles infinies), tout comme ils protègent le réseau principal.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-222">
-<p>When you sent the transaction, MetaMask calculated the average gas price of recent successful transactions at 3 gwei, which stands for gigawei. Wei is the smallest <span class="keep-together">subdivision</span> of the ether currency, as we discussed in <a href="#ether_units">Ether Currency Units</a>. The gas limit is set at the cost of sending a basic transaction, which is 21,000 gas units. Therefore, the maximum amount of ETH you will spend is 3 * 21,000 gwei = 63,000 gwei = 0.000063 ETH. (Be advised that average gas prices can fluctuate, as they are predominantly determined by miners. We will see in a later chapter how you can increase/decrease your gas limit to ensure your transaction takes precedence if need be.)</p>
+<p>Lorsque vous avez envoyé la transaction, MetaMask a calculé le prix moyen du gaz des récentes transactions réussies à 3 gwei, ce qui signifie gigawei. Wei est la plus petite <span class="keep-together">subdivision</span> de la monnaie ether, comme nous l&#39;avons vu dans <a href="#ether_units">L&#8217;ether comme unité monétaire</a>. La limite de gaz est fixée au prix de l&#39;envoi d&#39;une transaction de base, soit 21 000 unités de gaz. Par conséquent, le montant maximum d&#39;ETH que vous dépenserez est de 3 * 21 000 gwei = 63 000 gwei = 0,000063 ETH. (Sachez que les prix moyens du gaz peuvent fluctuer, car ils sont principalement déterminés par les mineurs. Nous verrons dans un chapitre ultérieur comment vous pouvez augmenter/diminuer votre limite de gaz pour vous assurer que votre transaction a la priorité si nécessaire.)</p>
 </div>
 <div class="paragraph data-line-224">
-<p>All this to say: making a 1 ETH transaction costs 1.000063 ETH. MetaMask confusingly rounds that <em>down</em> to 1 ETH when showing the total, but the actual amount you need is 1.000063 ETH and you only have 1 ETH. Click Reject to cancel this transaction.</p>
+<p>Tout cela pour dire : faire une transaction à 1 ETH coûte 1,000063 ETH. MetaMask arrondit de manière confuse au <em>plancher</em> d'1 ETH lors de l&#39;affichage du total, mais le montant réel dont vous avez besoin est de 1,000063 ETH et vous n&#39;avez que 1 ETH. Cliquez sur Reject pour annuler cette transaction.</p>
 </div>
 <div class="paragraph data-line-226">
-<p>Let&#8217;s get some more test ether! Click the green "request 1 ether from the faucet" button again and wait a few seconds. Don&#8217;t worry, the faucet should have plenty of ether and will give you more if you ask.</p>
+<p>Prenons un peu plus d&#39;ether de test ! Cliquez à nouveau sur le bouton vert &quot;request 1 ether from the faucet&quot; et attendez quelques secondes. Ne vous inquiétez pas, le robinet devrait avoir beaucoup d&#39;ether et vous en donnera plus si vous le demandez.</p>
 </div>
 <div class="paragraph data-line-228">
-<p>Once you have a balance of 2 ETH, you can try again. This time, when you click the orange "1 ether" donation button, you have sufficient balance to complete the transaction. Click Submit when MetaMask pops up the payment window. After all of this, you should see a balance of 0.999937 ETH because you sent 1 ETH to the faucet with 0.000063 ETH in gas.</p>
+<p>Une fois que vous avez un solde de 2 ETH, vous pouvez réessayer. Cette fois, lorsque vous cliquez sur le bouton de don orange &quot;1 ether&quot;, vous disposez d&#39;un solde suffisant pour finaliser la transaction. Cliquez sur Soumettre lorsque MetaMask apparaît dans la fenêtre de paiement. Après tout cela, vous devriez voir un solde de 0,999937 ETH car vous avez envoyé 1 ETH au robinet avec 0,000063 ETH en gaz.</p>
 </div>
 </div>
 <div class="sect3 data-line-231">
-<h4 id="explore_tx_history">Exploring the Transaction History of an Address</h4>
+<h4 id="explore_tx_history">Explorer l&#39;historique des transactions d&#39;une adresse</h4>
 <div class="paragraph data-line-233">
-<p>By now you have become an expert in using MetaMask to send and receive test ether. Your wallet has received at least two payments and sent at least one. You can view all these transactions using the <em>ropsten.etherscan.io</em> block explorer. You can either copy your wallet address and paste it into the block explorer&#8217;s search box, or have MetaMask open the page for you. Next to your account icon in MetaMask, you will see a button showing three dots. Click on it to show a menu of account-related options (see <a href="#metamask_account_context_menu">MetaMask account context menu</a>).</p>
+<p>Vous êtes maintenant devenu un expert dans l&#39;utilisation de MetaMask pour envoyer et recevoir de l&#39;ether de test. Votre portefeuille a reçu au moins deux paiements et en a envoyé au moins un. Vous pouvez afficher toutes ces transactions à l&#39;aide de l&#39;explorateur de blocs <em>ropsten.etherscan.io</em>. Vous pouvez soit copier l&#39;adresse de votre portefeuille et la coller dans la zone de recherche de l&#39;explorateur de blocs, soit demander à MetaMask d&#39;ouvrir la page pour vous. À côté de l&#39;icône de votre compte dans MetaMask, vous verrez un bouton affichant trois points. Cliquez dessus pour afficher un menu d&#39;options liées au compte (voir <a href="#metamask_account_context_menu">Menu contextuel du compte MetaMask</a>).</p>
 </div>
 <div id="metamask_account_context_menu" class="imageblock data-line-237">
 <div class="content">
-<img src="images/metamask_account_context_menu.png" alt="MetaMask Account Context Menu">
+<img src="images/metamask_account_context_menu.png" alt="&quot;Menu contextuel du compte MetaMask&quot;">
 </div>
-<div class="title">Figure 8. MetaMask account context menu</div>
+<div class="title">Figure 8. Menu contextuel du compte MetaMask</div>
 </div>
 <div class="paragraph data-line-239">
-<p>Select "View account on Etherscan" to open a web page in the block explorer showing your account&#8217;s transaction history, as shown in <a href="#block_explorer_account_history">Address transaction history on Etherscan</a>.</p>
+<p>Sélectionnez &quot;View account on Etherscan&quot; pour ouvrir une page Web dans l&#39;explorateur de blocs affichant l&#39;historique des transactions de votre compte, comme indiqué dans <a href="#block_explorer_account_history">Historique des transactions d&#8217;une adresse sur Etherscan</a>.</p>
 </div>
 <div id="block_explorer_account_history" class="imageblock data-line-243">
 <div class="content">
-<img src="images/block_explorer_account_history.png" alt="Address Transaction History on Etherscan">
+<img src="images/block_explorer_account_history.png" alt="&quot;Historique des transactions d&#39;adresses sur Etherscan&quot;">
 </div>
-<div class="title">Figure 9. Address transaction history on Etherscan</div>
+<div class="title">Figure 9. Historique des transactions d&#8217;une adresse sur Etherscan</div>
 </div>
 <div class="paragraph data-line-245">
-<p>Here you can see the entire transaction history of your Ethereum address. It shows all the transactions recorded on the Ropsten blockchain where your address is the sender or recipient. Click on a few of these transactions to see more details.</p>
+<p>Ici, vous pouvez voir l&#39;historique complet des transactions de votre adresse Ethereum. Il montre toutes les transactions enregistrées sur la chaîne de blocs Ropsten où votre adresse est l&#39;expéditeur ou le destinataire. Cliquez sur quelques-unes de ces transactions pour voir plus de détails.</p>
 </div>
 <div class="paragraph data-line-247">
-<p>You can explore the transaction history of any address. Take a look at the transaction history of the Ropsten Test Faucet address (hint: it is the "sender" address listed in the oldest payment to your address). You can see all the test ether sent from the faucet to you and to other addresses. Every transaction you see can lead you to more addresses and more transactions. Before long you will be lost in the maze of interconnected data. Public blockchains contain an enormous wealth of information, all of which can be explored programmatically, as we will see in future examples.</p>
+<p>Vous pouvez explorer l&#39;historique des transactions de n&#39;importe quelle adresse. Jetez un œil à l&#39;historique des transactions de l&#39;adresse Ropsten Test Faucet (indice : il s&#39;agit de l&#39;adresse « expéditeur » répertoriée dans le plus ancien paiement à votre adresse). Vous pouvez voir tout l&#39;ether de test envoyé par le robinet à vous et à d&#39;autres adresses. Chaque transaction que vous voyez peut vous mener à plus d&#39;adresses et plus de transactions. D&#39;ici peu, vous serez perdu dans le labyrinthe de données interconnectées. Les chaînes de blocs publiques contiennent une énorme richesse d&#39;informations, qui peuvent toutes être explorées par programmation, comme nous le verrons dans de futurs exemples.</p>
 </div>
 </div>
 </div>
 <div class="sect2 data-line-250">
-<h3 id="intro_world_computer">Introducing the World Computer</h3>
+<h3 id="intro_world_computer">Présentation de l&#39;ordinateur mondial</h3>
 <div class="paragraph data-line-252">
-<p>You&#8217;ve now created a wallet and sent and received ether. So far, we&#8217;ve treated Ethereum as a cryptocurrency. But Ethereum is much, much more. In fact, the cryptocurrency function is subservient to Ethereum&#8217;s function as a decentralized world computer. Ether is meant to be used to pay for running <em>smart contracts</em>, which are computer programs that run on an emulated computer called the <em>Ethereum Virtual Machine</em> (EVM).</p>
+<p> Vous avez maintenant créé un portefeuille et envoyé et reçu de l&#39;ether. Jusqu&#39;à présent, nous avons traité Ethereum comme une cryptomonnaie. Mais Ethereum est bien plus que cela. En fait, la fonction de cryptomonnaie est subordonnée à la fonction d&#39;Ethereum en tant qu&#39;ordinateur mondial décentralisé. L&#8217;ether est destiné à être utilisé pour payer l&#39;exécution de <em>contrats intelligents</em> aussi, qui sont des programmes informatiques qui s&#39;exécutent sur un ordinateur émulé appelé <em>Ethereum Virtual Machine</em> (EVM).</p>
 </div>
 <div class="paragraph data-line-254">
-<p>The EVM is a global singleton, meaning that it operates as if it were a global, single-instance computer, running everywhere. Each node on the Ethereum network runs a local copy of the EVM to validate contract execution, while the Ethereum blockchain records the changing <em>state</em> of this world computer as it processes transactions and smart contracts. We&#8217;ll discuss this in much greater detail in <a href="#evm_chapter">La machine virtuelle Ethereum</a>.</p>
+<p>L&#39;EVM est un singleton global, ce qui signifie qu&#39;il fonctionne comme s&#39;il s&#39;agissait d&#39;un ordinateur global à instance unique, fonctionnant partout. Chaque nœud du réseau Ethereum exécute une copie locale de l&#39;EVM pour valider l&#39;exécution du contrat, tandis que la blockchain Ethereum enregistre l&#39;état changeant de cet ordinateur mondial lorsqu&#39;il traite les transactions et les contrats intelligents. Nous en discuterons plus en détail dans <a href="#evm_chapter">La machine virtuelle Ethereum</a>.</p>
 </div>
 </div>
 <div class="sect2 data-line-257">
-<h3 id="EOA_contracts">Externally Owned Accounts (EOAs) and Contracts</h3>
+<h3 id="EOA_contracts">Comptes détenus en externe (EOA ou Externally Owned Accounts) et contrats</h3>
 <div class="paragraph data-line-259">
-<p>The type of account you created in the MetaMask wallet is called an <em>externally owned account</em> (EOA). Externally owned accounts are those that have a private key; having the private key means control over access to funds or contracts. Now, you&#8217;re probably guessing there is another type of account. That other type of account is a <em>contract account</em>. A contract account has smart contract code, which a simple EOA can&#8217;t have. Furthermore, a contract account does not have a private key. Instead, it is owned (and controlled) by the logic of its smart contract code: the software program recorded on the Ethereum blockchain at the contract account&#8217;s creation and executed by the EVM.</p>
+<p>Le type de compte que vous avez créé dans le portefeuille MetaMask est appelé un <em>compte détenu par une personne externe</em> (EOA ou Externally Owned Accounts). Les comptes détenus en externe sont ceux qui ont une clé privée ; avoir la clé privée signifie contrôler l&#39;accès aux fonds ou aux contrats. Maintenant, vous devinez probablement qu&#39;il existe un autre type de compte. Cet autre type de compte est un <em>compte de contrat</em>. Un compte de contrat a un code de contrat intelligent, ce qu&#39;un simple EOA ne peut pas avoir. De plus, un compte contractuel ne possède pas de clé privée. Au lieu de cela, il est détenu (et contrôlé) par la logique de son code de contrat intelligent : le programme logiciel enregistré sur la blockchain Ethereum lors de la création du compte de contrat et exécuté par l&#39;EVM.</p>
 </div>
 <div class="paragraph data-line-261">
-<p>Contracts have addresses, just like EOAs. Contracts can also send and receive ether, just like EOAs. However, when a transaction destination is a contract address, it causes that contract to <em>run</em> in the EVM, using the transaction, and the transaction&#8217;s data, as its input. In addition to ether, transactions can contain <em>data</em> indicating which specific function in the contract to run and what parameters to pass to that function. In this way, transactions can <em>call</em> functions within contracts.</p>
+<p>Les contrats ont des adresses, tout comme les EOA. Les contrats peuvent également envoyer et recevoir de l&#39;ether, tout comme les EOA. Cependant, lorsqu&#39;une destination de transaction est une adresse de contrat, cela provoque l&#39;exécution de ce contrat dans l&#39;EVM, en utilisant la transaction et les données de la transaction comme entrée. En plus d&#39;ether, les transactions peuvent contenir des <em>données</em> indiquant quelle fonction spécifique du contrat exécuter et quels paramètres transmettre à cette fonction. De cette façon, les transactions peuvent <em>appeler</em> des fonctions dans les contrats.</p>
 </div>
 <div class="paragraph data-line-263">
-<p>Note that because a contract account does not have a private key, it cannot <em>initiate</em> a transaction. Only EOAs can initiate transactions, but contracts can <em>react</em> to transactions by calling other contracts, building complex execution paths. One typical use of this is an EOA sending a request transaction to a multisignature smart contract wallet to send some ETH on to another address. A typical DApp programming pattern is to have Contract A calling Contract B in order to maintain a shared state across users of Contract A.</p>
+<p>Notez qu&#39;étant donné qu&#39;un compte de contrat n&#39;a pas de clé privée, il ne peut pas <em>initier</em> une transaction. Seuls les EOA peuvent initier des transactions, mais les contrats peuvent <em>réagir</em> aux transactions en appelant d&#39;autres contrats, en créant des chemins d&#39;exécution complexes. Une utilisation typique de ceci est un EOA envoyant une transaction de demande à un portefeuille de contrats intelligents multisignatures pour envoyer des ETH à une autre adresse. Un modèle de programmation DApp typique consiste à ce que le contrat A appelle le contrat B afin de maintenir un état partagé entre les utilisateurs du contrat A.</p>
 </div>
 <div class="paragraph data-line-265">
-<p>In the next few sections, we will write our first contract. You will then learn how to create, fund, and use that contract with your MetaMask wallet and test ether on the Ropsten test network.</p>
+<p>Dans les prochaines sections, nous rédigerons notre premier contrat. Vous apprendrez ensuite comment créer, financer et utiliser ce contrat avec votre portefeuille MetaMask et tester l&#39;éther sur le réseau de test Ropsten.</p>
 </div>
 </div>
 <div class="sect2 data-line-268">
-<h3 id="simple_contract_example">A Simple Contract: A Test Ether Faucet</h3>
+<h3 id="exemple_contrat_simple">Un contrat simple : un robinet test d&#8217;ether</h3>
 <div class="paragraph data-line-270">
-<p>Ethereum has many different high-level languages, all of which can be used to write a contract and produce EVM bytecode. You can read about many of the most prominent and interesting ones in <a href="#high_level_languages">Introduction to Ethereum High-Level Languages</a>. One high-level language is by far the dominant choice for smart contract programming: Solidity. Solidity was created by Dr. Gavin Wood, the coauthor of this book, and has become the most widely used language in Ethereum (and beyond). We&#8217;ll use Solidity to write our first contract.</p>
+<p> Ethereum possède de nombreux langages de haut niveau différents, qui peuvent tous être utilisés pour écrire un contrat et produire un code intermédiaire ou bytecode EVM. Vous pouvez lire sur bon nombre des plus importantes et des plus intéressantes dans <a href="#high_level_languages">Introduction to Ethereum High-Level Languages</a>. Un langage de haut niveau est de loin le choix dominant pour la programmation de contrats intelligents : Solidity. Solidity a été créé par le Dr Gavin Wood, le co-auteur de ce livre, et est devenu le langage le plus largement utilisé dans Ethereum (et au-delà). Nous utiliserons Solidity pour rédiger notre premier contrat.</p>
 </div>
 <div class="paragraph data-line-272">
-<p>For our first example (<a href="#solidity_faucet_example">Faucet.sol: A Solidity contract implementing a faucet</a>), we will write a contract that controls a <em>faucet</em>. You&#8217;ve already used a faucet to get test ether on the Ropsten test network. A faucet is a relatively simple thing: it gives out ether to any address that asks, and can be refilled periodically. You can implement a faucet as a wallet controlled by a human or a web server.</p>
+<p>Pour notre premier exemple (<a href="#solidity_faucet_example">Faucet.sol: Un contrat Solidity mettant en place un robinet</a>), nous allons écrire un contrat qui contrôle un <em>robinet</em>. Vous avez déjà utilisé un robinet pour obtenir de l&#39;ether de test sur le réseau de test de Ropsten. Un robinet est une chose relativement simple: il donne de l&#39;ether à toute adresse qui le demande et peut être rempli périodiquement. Vous pouvez implémenter un robinet comme un portefeuille contrôlé par un humain ou un serveur Web.</p>
 </div>
 <div id="solidity_faucet_example" class="exampleblock data-line-276">
-<div class="title">Example 1. Faucet.sol: A Solidity contract implementing a faucet</div>
+<div class="title">Example 1. Faucet.sol: Un contrat Solidity mettant en place un robinet</div>
 <div class="content">
 <div class="listingblock data-line-278">
 <div class="content">
@@ -1395,7 +1395,7 @@ contract Faucet {
 </td>
 <td class="content">
 <div class="paragraph data-line-285">
-<p>You will find all the code samples for this book in the <em>code</em> subdirectory of <a href="https://github.com/ethereumbook/ethereumbook/" data-href="https://github.com/ethereumbook/ethereumbook/">the book&#8217;s GitHub repository</a>. Specifically, our <em>Faucet.sol</em> contract is in:</p>
+<p>Vous trouverez tous les exemples de code pour ce livre dans le sous-répertoire <em>code</em> de <a href="https://github.com/ethereumbook/ethereumbook/" data-href="https://github.com/ethereumbook/ethereumbook/">le référentiel GitHub du livre</a>. Concrètement, notre contrat <em>Faucet.sol</em> est en:</p>
 </div>
 <div class="listingblock data-line-287">
 <div class="content">
@@ -1407,21 +1407,21 @@ contract Faucet {
 </table>
 </div>
 <div class="paragraph data-line-292">
-<p>This is a very simple contract, about as simple as we can make it. It is also a <em>flawed</em> contract, demonstrating a number of bad practices and security vulnerabilities. We will learn by examining all of its flaws in later sections. But for now, let&#8217;s look at what this contract does and how it works, line by line. You will quickly notice that many elements of Solidity are similar to existing programming languages, such as JavaScript, Java, or C++.</p>
+<p>Il s&#39;agit d&#39;un contrat très simple, à peu près aussi simple que possible. Il s&#39;agit également d&#39;un contrat <em>faussé</em>, démontrant un certain nombre de mauvaises pratiques et de failles de sécurité. Nous apprendrons en examinant tous ses défauts dans les sections suivantes. Mais pour l&#39;instant, regardons ce que fait ce contrat et comment il fonctionne, ligne par ligne. Vous remarquerez rapidement que de nombreux éléments de Solidity sont similaires aux langages de programmation existants, tels que JavaScript, Java ou C++.</p>
 </div>
 <div class="paragraph data-line-294">
-<p>The first line is a comment:</p>
+<p>La première ligne est un commentaire :</p>
 </div>
 <div id="comment" class="listingblock data-line-298">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Our first contract is a faucet!</code></pre>
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Notre premier contrat est un robinet (faucet) !</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-302">
-<p>Comments are for humans to read and are not included in the executable EVM bytecode. We usually put them on the line before the code we are trying to explain, or sometimes on the same line. Comments start with two forward slashes: //. Everything from the first slash until the end of that line is treated the same as a blank line and ignored.</p>
+<p>Les commentaires sont destinés à être lus par des humains et ne sont pas inclus dans le code intermédiaire exécutable de l&#8217;EVM. Nous les plaçons généralement sur la ligne avant le code que nous essayons d&#39;expliquer, ou parfois sur la même ligne. Les commentaires commencent par deux barres obliques : //. Tout, depuis la première barre oblique jusqu&#39;à la fin de cette ligne, est traité comme une ligne vide et ignoré.</p>
 </div>
 <div class="paragraph data-line-304">
-<p>The next line is where our actual contract starts:</p>
+<p>La ligne suivante est l&#39;endroit où notre contrat réel commence :</p>
 </div>
 <div id="contract_definition" class="listingblock data-line-308">
 <div class="content">
@@ -1429,10 +1429,10 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph data-line-312">
-<p>This line declares a contract object, similar to a class declaration in other object-oriented languages. The contract definition includes all the lines between the curly braces (<code>{}</code>), which define a <em>scope</em>, much like how curly braces are used in many other programming languages.</p>
+<p>Cette ligne déclare un objet contract, similaire à une déclaration class dans d&#39;autres langages orientés objet. La définition du contrat inclut toutes les lignes entre les accolades (<code>{}</code>), qui définissent une <em>portée</em>, un peu comme la façon dont les accolades sont utilisées dans de nombreux autres langages de programmation.</p>
 </div>
 <div class="paragraph data-line-314">
-<p>Next, we declare the first function of the Faucet contract:</p>
+<p>Ensuite, nous déclarons la première fonction du contrat Faucet :</p>
 </div>
 <div id="withdraw_function" class="listingblock data-line-318">
 <div class="content">
@@ -1440,7 +1440,7 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph data-line-322">
-<p>The function is named withdraw, and it takes one unsigned integer (uint) argument named withdraw_amount. It is declared as a public function, meaning it can be called by other contracts. The function definition follows, between curly braces. The first part of the withdraw function sets a limit on withdrawals:</p>
+<p>La fonction est nommée withdraw, et elle prend un argument entier non signé (uint) nommé withdraw_amount. Elle est déclarée fonction publique, c&#39;est-à-dire qu&#39;elle peut être appelée par d&#39;autres contrats. La définition de la fonction suit, entre accolades. La première partie de la fonction retirer fixe une limite aux retraits :</p>
 </div>
 <div id="withdraw_limit" class="listingblock data-line-326">
 <div class="content">
@@ -1448,13 +1448,13 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph data-line-330">
-<p>It uses the built-in Solidity function require to test a precondition, that the withdraw_amount is less than or equal to 100,000,000,000,000,000 wei, which is the base unit of ether (see <a href="#ether_denominations">Ether denominations and unit names</a>) and equivalent to 0.1 ether. If the withdraw function is called with a withdraw_amount greater than that amount, the require function here will cause contract execution to stop and fail with an <em>exception</em>. Note that statements need to be terminated with a semicolon in Solidity.</p>
+<p>Il utilise la fonction intégrée Solidity require pour tester une condition préalable, que le withdraw_amount est inférieur ou égal à 100 000 000 000 000 000 wei, qui est l&#39;unité de base de l&#39;ether (voir <a href="#ether_denominations">Dénominations d&#8217;ether et noms d&#39;unités</a>) et équivalent à 0,1 ether. Si la fonction withdraw est appelée avec un withdraw_amount supérieur à ce montant, la fonction require provoquera ici l&#39;arrêt et l&#39;échec de l&#39;exécution du contrat avec une <em>exception</em>. Notez que les instructions doivent se terminer par un point-virgule dans Solidity.</p>
 </div>
 <div class="paragraph data-line-332">
-<p>This part of the contract is the main logic of our faucet. It controls the flow of funds out of the contract by placing a limit on withdrawals. It&#8217;s a very simple control but can give you a glimpse of the power of a programmable blockchain: decentralized software controlling money.</p>
+<p>Cette partie du contrat est la logique principale de notre robinet. Il contrôle le flux de fonds hors du contrat en imposant une limite aux retraits. C&#39;est un contrôle très simple mais qui peut vous donner un aperçu de la puissance d&#39;une chaîne de blocs programmable : un logiciel décentralisé contrôlant l&#39;argent.</p>
 </div>
 <div class="paragraph data-line-334">
-<p>Next comes the actual withdrawal:</p>
+<p>Vient ensuite le retrait proprement dit :</p>
 </div>
 <div id="withdraw_command" class="listingblock data-line-338">
 <div class="content">
@@ -1462,13 +1462,13 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph data-line-342">
-<p>A couple of interesting things are happening here. The msg object is one of the inputs that all contracts can access. It represents the transaction that triggered the execution of this contract. The attribute sender is the sender address of the transaction. The function transfer is a built-in function that transfers ether from the current contract to the address of the sender. Reading it backward, this means transfer to the sender of the msg that triggered this contract execution. The transfer function takes an amount as its only argument. We pass the withdraw_amount value that was the parameter to the withdraw function declared a few lines earlier.</p>
+<p>Quelques choses intéressantes se passent ici. L&#39;objet msg est l&#39;une des entrées auxquelles tous les contrats peuvent accéder. Il représente la transaction qui a déclenché l&#39;exécution de ce contrat. L&#39;attribut sender est l&#39;adresse de l&#39;expéditeur de la transaction. La fonction transfer est une fonction intégrée qui transfère l&#39;ether du contrat actuel à l&#39;adresse de l&#39;expéditeur. En le lisant à l&#39;envers, cela signifie transfert vers l&#39;+expéditeur+ du msg qui a déclenché l&#39;exécution de ce contrat. La fonction transfer prend un montant comme seul argument. Nous passons la valeur withdraw_amount qui était le paramètre à la fonction withdraw déclarée quelques lignes plus tôt.</p>
 </div>
 <div class="paragraph data-line-344">
-<p>The very next line is the closing curly brace, indicating the end of the definition of our withdraw function.</p>
+<p>La ligne suivante est l&#39;accolade fermante, indiquant la fin de la définition de notre fonction withdraw.</p>
 </div>
 <div class="paragraph data-line-346">
-<p>Next, we declare one more function:</p>
+<p>Ensuite, nous déclarons une autre fonction :</p>
 </div>
 <div id="fallback_function" class="listingblock data-line-350">
 <div class="content">
@@ -1476,64 +1476,64 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph data-line-354">
-<p>This function is a so-called <em>fallback</em> or <em>default</em> function, which is called if the transaction that triggered the contract didn&#8217;t name any of the declared functions in the contract, or any function at all, or didn&#8217;t contain data. Contracts can have one such default function (without a name) and it is usually the one that receives ether. That&#8217;s why it is defined as an external and payable function, which means it can accept ether into the contract. It doesn&#8217;t do anything, other than accept the ether, as indicated by the empty definition in the curly braces (<code>{}</code>). If we make a transaction that sends ether to the contract address, as if it were a wallet, this function will handle it.</p>
+<p>Cette fonction est une fonction dite de <em>secours</em> ou de <em>fallback</em> (ou <em>default</em>), qui est appelée si la transaction qui a déclenché le contrat n&#39;a nommé aucune des fonctions déclarées dans le contrat, ou aucune fonction du tout , ou ne contenait pas de données. Les contrats peuvent avoir une telle fonction par défaut (sans nom) et c&#39;est généralement celle qui reçoit l&#39;ether. C&#39;est pourquoi il est défini comme une fonction externe et payante, ce qui signifie qu&#39;il peut accepter de l&#39;ether dans le contrat. Il ne fait rien d&#39;autre que d&#39;accepter l&#39;ether, comme indiqué par la définition vide entre les accolades (<code>{}</code>). Si nous effectuons une transaction qui envoie de l&#39;ether à l&#39;adresse du contrat, comme s&#39;il s&#39;agissait d&#39;un portefeuille, cette fonction s&#39;en chargera.</p>
 </div>
 <div class="paragraph data-line-356">
-<p>Right below our default function is the final closing curly brace, which closes the definition of the contract Faucet. That&#8217;s it!</p>
+<p>Juste en dessous de notre fonction par défaut se trouve l&#39;accolade fermante finale, qui ferme la définition du contrat Faucet. C&#39;est tout !</p>
 </div>
 </div>
 <div class="sect2 data-line-359">
-<h3 id="compile_faucet_contract">Compiling the Faucet Contract</h3>
+<h3 id="compile_faucet_contract">Compilation du contrat de robinet</h3>
 <div class="paragraph data-line-361">
-<p>Now that we have our first example contract, we need to use a Solidity compiler to convert the Solidity code into EVM bytecode so it can be executed by the EVM on the blockchain itself.</p>
+<p>Maintenant que nous avons notre premier exemple de contrat, nous devons utiliser un compilateur Solidity pour convertir le code Solidity en code intermédiaire/bytecode EVM afin qu&#39;il puisse être exécuté par l&#39;EVM sur la chaîne de blocs elle-même .</p>
 </div>
 <div class="paragraph data-line-363">
-<p>The Solidity compiler comes as a standalone executable, as part of various frameworks, and bundled in Integrated Development Environments (IDEs). To keep things simple, we will use one of the more popular IDEs, called <em>Remix</em>.</p>
+<p>Le compilateur Solidity se présente sous la forme d&#39;un exécutable autonome, dans le cadre de divers frameworks, et regroupé dans des environnements de développement intégrés (IDE). Pour garder les choses simples, nous utiliserons l&#39;un des IDE les plus populaires, appelé <em>Remix</em>.</p>
 </div>
 <div class="paragraph data-line-365">
-<p>Use your Chrome browser (with the MetaMask wallet you installed earlier) to navigate to the Remix IDE at <a href="https://remix.ethereum.org" class="undefined" data-href="https://remix.ethereum.org">https://remix.ethereum.org</a>.</p>
+<p>Utilisez votre navigateur Chrome (avec le portefeuille MetaMask que vous avez installé précédemment) pour accéder à l&#39;IDE Remix à l&#39;adresse <a href="https://remix.ethereum.org" class="undefined" data-href="https://remix.ethereum.org">https://remix.ethereum.org</a>.</p>
 </div>
 <div class="paragraph data-line-367">
-<p>When you first load Remix, it will start with a sample contract called <em>ballot.sol</em>. We don&#8217;t need that, so close it by clicking the x on the corner of the tab, as seen in <a href="#remix_close_tab">Close the default example tab</a>.</p>
+<p>Lorsque vous chargez Remix pour la première fois, il démarre avec un exemple de contrat appelé <em>ballot.sol</em>. Nous n&#39;en avons pas besoin, alors fermez-le en cliquant sur le x dans le coin de l&#39;onglet, comme indiqué dans <a href="#remix_close_tab">Fermer l&#39;onglet d&#39;exemple par défaut</a>.</p>
 </div>
 <div id="remix_close_tab" class="imageblock data-line-371">
 <div class="content">
-<img src="images/remix_close_tab.png" alt="Close the default example tab">
+<img src="images/remix_close_tab.png" alt="&quot;Fermer l&#39;onglet d&#39;exemple par défaut&quot;">
 </div>
-<div class="title">Figure 10. Close the default example tab</div>
+<div class="title">Figure 10. Fermer l&#39;onglet d&#39;exemple par défaut</div>
 </div>
 <div class="paragraph data-line-373">
-<p>Now, add a new tab by clicking on the circular plus sign in the top-left toolbar, as seen in <a href="#remix_toolbar">Click the plus sign to open a new tab</a>. Name the new file <em>Faucet.sol</em>.</p>
+<p>Maintenant, ajoutez un nouvel onglet en cliquant sur le signe plus circulaire dans la barre d&#39;outils en haut à gauche, comme indiqué dans <a href="#remix_toolbar">Cliquez sur le signe plus pour ouvrir un nouvel onglet</a>. Nommez le nouveau fichier <em>Faucet.sol</em>.</p>
 </div>
 <div id="remix_toolbar" class="imageblock data-line-377">
 <div class="content">
-<img src="images/remix_toolbar.png" alt="Click the plus sign to open a new tab">
+<img src="images/remix_toolbar.png" alt="&quot;Cliquez sur le signe plus pour ouvrir un nouvel onglet&quot;">
 </div>
-<div class="title">Figure 11. Click the plus sign to open a new tab</div>
+<div class="title">Figure 11. Cliquez sur le signe plus pour ouvrir un nouvel onglet</div>
 </div>
 <div class="paragraph data-line-379">
-<p>Once you have the new tab open, copy and paste the code from our example <em>Faucet.sol</em>, as seen in <a href="#remix_faucet_load">Copy the Faucet example code into the new tab</a>.</p>
+<p>Une fois que vous avez ouvert le nouvel onglet, copiez et collez le code de notre exemple <em>Faucet.sol</em>, comme indiqué dans <a href="#remix_faucet_load">Copiez l&#39;exemple de code Faucet dans le nouvel onglet</a>.</p>
 </div>
 <div id="remix_faucet_load" class="imageblock data-line-383">
 <div class="content">
-<img src="images/remix_faucet_load.png" alt="Copy the Faucet example code into the new tab">
+<img src="images/remix_faucet_load.png" alt="&quot;Copiez l&#39;exemple de code Faucet dans le nouvel onglet&quot;">
 </div>
-<div class="title">Figure 12. Copy the Faucet example code into the new tab</div>
+<div class="title">Figure 12. Copiez l&#39;exemple de code Faucet dans le nouvel onglet</div>
 </div>
 <div class="paragraph data-line-385">
-<p>Once you have loaded the <em>Faucet.sol</em> contract into the Remix IDE, the IDE will automatically compile the code. If all goes well, you will see a green box with "Faucet" in it appear on the right, under the Compile tab, confirming the successful compilation (see <a href="#remix_compile">Remix successfully compiles the Faucet.sol contract</a>).</p>
+<p>Une fois que vous avez chargé le contrat <em>Faucet.sol</em> dans l&#39;IDE Remix, l&#39;IDE compilera automatiquement le code. Si tout se passe bien, vous verrez une boîte verte avec &quot;Faucet&quot; dedans apparaître à droite, sous l&#39;onglet Compiler, confirmant la compilation réussie (voir <a href="#remix_compile">Remix compile avec succès le contrat Faucet.sol</a>).</p>
 </div>
 <div id="remix_compile" class="imageblock data-line-389">
 <div class="content">
-<img src="images/remix_compile.png" alt="">
+<img src="images/remix_compile.png" alt="&quot;&quot;">
 </div>
-<div class="title">Figure 13. Remix successfully compiles the Faucet.sol contract</div>
+<div class="title">Figure 13. Remix compile avec succès le contrat Faucet.sol</div>
 </div>
 <div class="paragraph data-line-391">
-<p>If something goes wrong, the most likely problem is that the Remix IDE is using a version of the Solidity compiler that is different from 0.5.12. In that case, our pragma directive will prevent <em>Faucet.sol</em> from compiling. To change the compiler version, go to the Settings tab, set the version to 0.5.12, and try again.</p>
+<p>Si quelque chose ne va pas, le problème le plus probable est que l&#39;IDE Remix utilise une version du compilateur Solidity différente de 0.5.12. Dans ce cas, notre directive pragma empêchera <em>Faucet.sol</em> de se compiler. Pour modifier la version du compilateur, accédez à l&#39;onglet Paramètres, définissez la version sur 0.5.12 et réessayez.</p>
 </div>
 <div class="paragraph data-line-393">
-<p>The Solidity compiler has now compiled our <em>Faucet.sol</em> into EVM bytecode. If you are curious, the bytecode looks like this:</p>
+<p>Le compilateur Solidity a maintenant compilé notre <em>Faucet.sol</em> en code intermédiaire EVM. Si vous êtes curieux, le code intermédiaire ressemble à ceci :</p>
 </div>
 <div id="faucet_bytecode" class="listingblock data-line-396">
 <div class="content">
@@ -1556,99 +1556,99 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </div>
 </div>
 <div class="paragraph data-line-415">
-<p>Aren&#8217;t you glad you are using a high-level language like Solidity instead of programming directly in EVM bytecode? Me too!</p>
+<p>N&#39;êtes-vous pas content d&#39;utiliser un langage de haut niveau comme Solidity au lieu de programmer directement en code intermédiaire EVM ? Moi aussi !</p>
 </div>
 </div>
 <div class="sect2 data-line-418">
-<h3 id="create_contract">Creating the Contract on the Blockchain</h3>
+<h3 id="create_contract">Création du contrat sur la chaîne de blocs</h3>
 <div class="paragraph data-line-420">
-<p>So, we have a contract. We&#8217;ve compiled it into bytecode. Now, we need to "register" the contract on the Ethereum blockchain. We will be using the Ropsten testnet to test our contract, so that&#8217;s the blockchain we want to submit it to.</p>
+<p>Donc, nous avons un contrat. Nous l&#39;avons compilé en code intermédiaire. Maintenant, nous devons &quot;enregistrer&quot; le contrat sur la chaîne de blocs Ethereum. Nous utiliserons le testnet de Ropsten pour tester notre contrat, c&#39;est donc la chaîne de blocs à laquelle nous voulons le soumettre.</p>
 </div>
 <div class="paragraph data-line-422">
-<p>Registering a contract on the blockchain involves creating a special transaction whose destination is the address 0x0000000000000000000000000000000000000000, also known as the <em>zero address</em>. The zero address is a special address that tells the Ethereum blockchain that you want to register a contract. Fortunately, the Remix IDE will handle all of that for you and send the transaction to MetaMask.</p>
+<p>L&#39;enregistrement d&#39;un contrat sur la chaîne de blocs implique la création d&#39;une transaction spéciale dont la destination est l&#39;adresse 0x00000000000000000000000000000000000000, également appelée <em>zero address</em> ou l'<em>adresse zéro</em>. L&#39;adresse zéro est une adresse spéciale qui indique à la chaîne de blocs Ethereum que vous souhaitez enregistrer un contrat. Heureusement, l&#39;IDE Remix s&#39;occupera de tout cela pour vous et enverra la transaction à MetaMask.</p>
 </div>
 <div class="paragraph data-line-424">
-<p>First, switch to the Run tab and select Injected Web3 in the Environment drop-down selection box. This connects the Remix IDE to the MetaMask wallet, and through MetaMask to the Ropsten test network. Once you do that, you can see Ropsten under Environment. Also, in the Account selection box it shows the address of your wallet (see <a href="#remix_run">Remix IDE Run tab, with Injected Web3 environment selected</a>).</p>
+<p>Tout d&#39;abord, passez à l&#39;onglet Run et sélectionnez Injected Web3 dans la zone de sélection déroulante Environment. Cela connecte l&#39;IDE Remix au portefeuille MetaMask et, via MetaMask, au réseau de test Ropsten. Une fois que vous faites cela, vous pouvez voir Ropsten sous Environment. De plus, dans la zone de sélection du compte, il indique l&#39;adresse de votre portefeuille (voir <a href="#remix_run">Onglet Run du IDE Remix, avec l&#39;environnement Injected Web3 sélectionné</a>).</p>
 </div>
 <div id="remix_run" class="imageblock data-line-428">
 <div class="content">
-<img src="images/remix_run.png" alt="Remix IDE Run tab, with Injected Web3 environment selected">
+<img src="images/remix_run.png" alt="&quot;Onglet Run du IDE Remix" width="avec l&#39;environnement Injected Web3 sélectionné&quot;">
 </div>
-<div class="title">Figure 14. Remix IDE Run tab, with Injected Web3 environment selected</div>
+<div class="title">Figure 14. Onglet Run du IDE Remix, avec l&#39;environnement Injected Web3 sélectionné</div>
 </div>
 <div class="paragraph data-line-430">
-<p>Right below the Run settings you just confirmed is the Faucet contract, ready to be created. Click on the Deploy button shown in <a href="#remix_run">Remix IDE Run tab, with Injected Web3 environment selected</a>.</p>
+<p>Juste en dessous des paramètres d&#39;exécution que vous venez de confirmer se trouve le contrat Faucet, prêt à être créé. Cliquez sur le bouton Deploy affiché dans <a href="#remix_run">Onglet Run du IDE Remix, avec l&#39;environnement Injected Web3 sélectionné</a>.</p>
 </div>
 <div class="paragraph data-line-432">
-<p>Remix will construct the special "creation" transaction and MetaMask will ask you to approve it, as shown in <a href="#remix_metamask_create">MetaMask showing the contract creation transaction</a>. You&#8217;ll notice the contract creation transaction has no ether in it, but it has 262 bytes of data (the compiled contract) and will consume 10 gwei in gas. Click Submit to approve it.</p>
+<p>Remix construira la transaction spéciale &quot;création&quot; et MetaMask vous demandera de l&#39;approuver, comme indiqué dans <a href="#remix_metamask_create">MetaMask montrant la transaction de création de contrat</a>. Vous remarquerez que la transaction de création de contrat ne contient pas d&#39;ether, mais qu&#39;elle contient 262 octets de données (le contrat compilé) et consommera 10 gwei en gaz. Cliquez sur Soumettre pour l&#39;approuver.</p>
 </div>
 <div id="remix_metamask_create" class="imageblock data-line-436">
 <div class="content">
-<img src="images/remix_metamask_create.png" alt="MetaMask showing the contract creation transaction">
+<img src="images/remix_metamask_create.png" alt="&quot;MetaMask montrant la transaction de création de contrat&quot;">
 </div>
-<div class="title">Figure 15. MetaMask showing the contract creation transaction</div>
+<div class="title">Figure 15. MetaMask montrant la transaction de création de contrat</div>
 </div>
 <div class="paragraph data-line-438">
-<p>Now you have to wait. It will take about 15 to 30 seconds for the contract to be mined on Ropsten. Remix won&#8217;t appear to be doing much, but be patient.</p>
+<p>Maintenant, vous devez attendre. Il faudra environ 15 à 30 secondes pour que le contrat soit miné sur Ropsten. Remix ne semblera pas faire grand-chose, mais soyez patient.</p>
 </div>
 <div class="paragraph data-line-440">
-<p>Once the contract is created, it appears at the bottom of the Run tab (see <a href="#remix_contract_interact">The Faucet contract is ALIVE!</a>).</p>
+<p>Une fois le contrat créé, il apparaît en bas de l&#39;onglet Run (voir <a href="#remix_contract_interact">Le contrat Faucet est VIVANT !</a>).</p>
 </div>
 <div id="remix_contract_interact" class="imageblock data-line-444">
 <div class="content">
-<img src="images/remix_contract_interact.png" alt="The Faucet contract is ALIVE!">
+<img src="images/remix_contract_interact.png" alt="&quot;Le contrat Faucet est VIVANT !&quot;">
 </div>
-<div class="title">Figure 16. The Faucet contract is ALIVE!</div>
+<div class="title">Figure 16. Le contrat Faucet est VIVANT !</div>
 </div>
 <div class="paragraph data-line-446">
-<p>Notice that the Faucet contract now has an address of its own: Remix shows it as &#x201c;Faucet at 0x72e&#8230;&#8203;c7829&#x201d; (although your address, the random letters and numbers, will be different). The small clipboard symbol to the right allows you to copy the contract address to your clipboard. We will use that in the next section.</p>
+<p>Notez que le contrat Faucet a maintenant sa propre adresse : Remix l&#39;affiche comme &quot;Faucet à 0x72e&#8230;&#8203;c7829&quot; (bien que votre adresse, les lettres et les chiffres aléatoires, soient différents). Le petit symbole de presse-papiers à droite vous permet de copier l&#39;adresse du contrat dans votre presse-papiers. Nous l&#39;utiliserons dans la section suivante.</p>
 </div>
 </div>
 <div class="sect2 data-line-449">
-<h3 id="interact_contract">Interacting with the Contract</h3>
+<h3 id="interact_contract">Interagir avec le contrat</h3>
 <div class="paragraph data-line-451">
-<p>Let&#8217;s recap what we&#8217;ve learned so far: Ethereum contracts are programs that control money, which run inside a virtual machine called the EVM. They are created by a special transaction that submits their bytecode to be recorded on the blockchain. Once they are created on the blockchain, they have an Ethereum address, just like wallets. Anytime someone sends a transaction to a contract address it causes the contract to run in the EVM, with the transaction as its input. Transactions sent to <span class="keep-together">contract</span> addresses may have ether or data or both. If they contain ether, it is "deposited" to the contract balance. If they contain data, the data can specify a named function in the contract and call it, passing arguments to the function.</p>
+<p>Récapitulons ce que nous avons appris jusqu&#39;à présent : les contrats Ethereum sont des programmes qui contrôler l&#39;argent, qui s&#39;exécutent à l&#39;intérieur d&#39;une machine virtuelle appelée EVM. Ils sont créés par une transaction spéciale qui soumet leur code intermédiaire à enregistrer sur la chaîne de blocs. Une fois créés sur la chaîne de blocs, ils ont une adresse Ethereum, tout comme les portefeuilles. Chaque fois que quelqu&#39;un envoie une transaction à une adresse de contrat, le contrat s&#39;exécute dans l&#39;EVM, avec la transaction en entrée. Transactions envoyées pour les adresses de  <span class="keep-together">contrat</span> peuvent contenir de l&#39;ether ou des données ou les deux. S&#39;ils contiennent de l&#39;ether, il est &quot;déposé&quot; sur le solde du contrat. S&#39;ils contiennent des données, les données peuvent spécifier une fonction nommée dans le contrat et l&#39;appeler, en transmettant des arguments à la fonction.</p>
 </div>
 <div class="sect3 data-line-454">
-<h4 id="view_contract_address">Viewing the Contract Address in a Block Explorer</h4>
+<h4 id="view_contract_address">Affichage de l&#39;adresse du contrat dans un explorateur de blocs</h4>
 <div class="paragraph data-line-456">
-<p>We now have a contract recorded on the blockchain, and we can see it has an Ethereum address. Let&#8217;s check it out in the <em>ropsten.etherscan.io</em> block explorer and see what a contract looks like. In the Remix IDE, copy the address of the contract by clicking the clipboard icon next to its name (see <a href="#remix_contract_address">Copy the contract address from Remix</a>).</p>
+<p>Nous avons maintenant un contrat enregistré sur la chaîne de blocs, et nous pouvons voir qu&#39;il a une adresse Ethereum. Vérifions-le dans l&#39;explorateur de blocs <em>ropsten.etherscan.io</em> et voyons à quoi ressemble un contrat. Dans l&#39;IDE Remix, copiez l&#39;adresse du contrat en cliquant sur l&#39;icône du presse-papiers à côté de son nom (voir <a href="#remix_contract_address">Copiez l&#39;adresse du contrat de Remix</a>).</p>
 </div>
 <div id="remix_contract_address" class="imageblock data-line-460">
 <div class="content">
-<img src="images/remix_contract_address.png" alt="Copy the contract address from Remix">
+<img src="images/remix_contract_address.png" alt="&quot;Copier l&#39;adresse du contrat depuis Remix&quot;">
 </div>
-<div class="title">Figure 17. Copy the contract address from Remix</div>
+<div class="title">Figure 17. Copiez l&#39;adresse du contrat de Remix</div>
 </div>
 <div class="paragraph data-line-462">
-<p>Keep Remix open; we&#8217;ll come back to it again later. Now, navigate your browser to <em>ropsten.etherscan.io</em> and paste the address into the search box. You should see the contract&#8217;s Ethereum address history, as shown in <a href="#etherscan_contract_address">View the Faucet contract address in the Etherscan block explorer</a>.</p>
+<p>Gardez Remix ouvert ; nous y reviendrons plus tard. Maintenant, naviguez dans votre navigateur jusqu&#39;à <em>ropsten.etherscan.io</em> et collez l&#39;adresse dans le champ de recherche. Vous devriez voir l&#39;historique des adresses Ethereum du contrat, comme indiqué dans <a href="#etherscan_contract_address">Afficher l&#39;adresse du contrat Faucet dans l&#39;explorateur de blocs Etherscan</a>.</p>
 </div>
 <div id="etherscan_contract_address" class="imageblock data-line-466">
 <div class="content">
-<img src="images/etherscan_contract_address.png" alt="View the Faucet contract address in the etherscan block explorer">
+<img src="images/etherscan_contract_address.png" alt="&quot;Afficher l&#39;adresse du contrat Faucet dans l&#39;explorateur de blocs etherscan&quot;">
 </div>
-<div class="title">Figure 18. View the Faucet contract address in the Etherscan block explorer</div>
+<div class="title">Figure 18. Afficher l&#39;adresse du contrat Faucet dans l&#39;explorateur de blocs Etherscan</div>
 </div>
 </div>
 <div class="sect3 data-line-469">
-<h4 id="fund_contract">Funding the Contract</h4>
+<h4 id="fund_contract">Financement du contrat</h4>
 <div class="paragraph data-line-471">
-<p>For now, the contract only has one transaction in its history: the contract creation transaction. As you can see, the contract also has no ether (zero balance). That&#8217;s because we didn&#8217;t send any ether to the contract in the creation transaction, even though we could have.</p>
+<p>Pour l&#39;instant, le contrat n&#39;a qu&#39;une seule transaction dans son historique : l&#8217;opération de création de contrat. Comme vous pouvez le voir, le contrat n&#39;a pas non plus d&#39;ether (solde nul). C&#39;est parce que nous n&#39;avons pas envoyé d&#39;éther au contrat dans la transaction de création, même si nous aurions pu le faire.</p>
 </div>
 <div class="paragraph data-line-473">
-<p>Our faucet needs funds! Our first project will be to use MetaMask to send ether to the contract. You should still have the address of the contract in your clipboard (if not, copy it again from Remix). Open MetaMask, and send 1 ether to it, exactly as you would to any other Ethereum address (see <a href="#metamask_send_to_contract">Send 1 ether to the contract address</a>).</p>
+<p>Notre robinet a besoin de fonds ! Notre premier projet sera d&#39;utiliser MetaMask pour envoyer de l&#39;ether au contrat. Vous devriez toujours avoir l&#39;adresse du contrat dans votre presse-papiers (sinon, copiez-la à nouveau depuis Remix). Ouvrez MetaMask et envoyez-lui 1 éther, exactement comme vous le feriez à n&#39;importe quelle autre adresse Ethereum (voir <a href="#metamask_send_to_contract">Envoyer 1 ether à l&#39;adresse du contrat</a>).</p>
 </div>
 <div id="metamask_send_to_contract" class="imageblock data-line-477">
 <div class="content">
-<img src="images/metamask_send_to_contract.png" alt="">
+<img src="images/metamask_send_to_contract.png" alt="&quot;&quot;">
 </div>
-<div class="title">Figure 19. Send 1 ether to the contract address</div>
+<div class="title">Figure 19. Envoyer 1 ether à l&#39;adresse du contrat</div>
 </div>
 <div class="paragraph data-line-479">
-<p>In a minute, if you reload the Etherscan block explorer, it will show another transaction to the contract address and an updated balance of 1 ether.</p>
+<p>Dans une minute, si vous rechargez l&#39;explorateur de blocs Etherscan, il affichera une autre transaction à l&#39;adresse du contrat et un solde mis à jour de 1 ether.</p>
 </div>
 <div class="paragraph data-line-481">
-<p>Remember the unnamed default external payable function in our <em>Faucet.sol</em> code? It looked like this:</p>
+<p>Vous souvenez-vous de la fonction de paiement externe par défaut sans nom dans notre code <em>Faucet.sol</em> ? Ça ressemblait à ça :</p>
 </div>
 <div id="fallback_function_review" class="listingblock data-line-485">
 <div class="content">
@@ -1656,28 +1656,28 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </div>
 </div>
 <div class="paragraph data-line-489">
-<p>When you sent a transaction to the contract address, with no data specifying which function to call, it called this default function. Because we declared it as payable, it accepted and deposited the 1 ether into the contract&#8217;s account balance. Your transaction caused the contract to run in the EVM, updating its balance. You have funded your faucet!</p>
+<p>Lorsque vous avez envoyé une transaction à l&#39;adresse du contrat, sans données spécifiant la fonction à appeler, elle a appelé cette fonction par défaut. Parce que nous l&#39;avons déclaré comme payable, il a accepté et déposé le 1 éther dans le solde du compte du contrat. Votre transaction a entraîné l&#39;exécution du contrat dans l&#39;EVM, mettant à jour son solde. Vous avez financé votre robinet !</p>
 </div>
 </div>
 <div class="sect3 data-line-492">
-<h4 id="withdraw_from_contract">Withdrawing from Our Contract</h4>
+<h4 id="withdraw_from_contract">Faire un retrait sur notre contrat</h4>
 <div class="paragraph data-line-494">
-<p>Next, let&#8217;s withdraw some funds from the faucet. To withdraw, we have to construct a transaction that calls the withdraw function and passes a withdraw_amount argument to it. To keep things simple for now, Remix will construct that transaction for us and MetaMask will present it for our approval.</p>
+<p>Ensuite, retirons des fonds du robinet. Pour retirer, nous devons construire une transaction qui appelle la fonction withdraw et lui passe un argument withdraw_amount. Pour garder les choses simples pour le moment, Remix construira cette transaction pour nous et MetaMask la présentera pour notre approbation.</p>
 </div>
 <div class="paragraph data-line-496">
-<p>Return to the Remix tab and look at the contract on the Run tab. You should see a orange box labeled withdraw with a field entry labeled uint256 withdraw_amount (see <a href="#remix_contract_withdraw">The withdraw function of Faucet.sol, in Remix</a>).</p>
+<p>Revenez à l&#39;onglet Remix et consultez le contrat dans l&#39;onglet Run. Vous devriez voir une boîte orange intitulée wthdraw (retrait) avec une entrée de champ intitulée uint256 withdraw_amount (voir <a href="#remix_contract_withdraw">La fonction de retrait (withdraw) de Faucet.sol, dans Remix</a>).</p>
 </div>
 <div id="remix_contract_withdraw" class="imageblock data-line-500">
 <div class="content">
-<img src="images/remix_contract_interact.png" alt="The withdraw function of Faucet.sol, in Remix">
+<img src="images/remix_contract_interact.png" alt="&quot;La fonction de retrait (withdraw) de Faucet.sol" width="dans Remix&quot;">
 </div>
-<div class="title">Figure 20. The withdraw function of Faucet.sol, in Remix</div>
+<div class="title">Figure 20. La fonction de retrait (withdraw) de Faucet.sol, dans Remix</div>
 </div>
 <div class="paragraph data-line-502">
-<p>This is the Remix interface to the contract. It allows us to construct transactions that call the functions defined in the contract. We will enter a withdraw_amount and click the withdraw button to generate the transaction.</p>
+<p>Il s&#39;agit de l&#39;interface Remix du contrat. Il nous permet de construire des transactions qui appellent les fonctions définies dans le contrat. Nous entrerons un withdraw_amount et cliquerons sur le bouton de retrait pour générer la transaction.</p>
 </div>
 <div class="paragraph data-line-504">
-<p>First, let&#8217;s figure out the withdraw_amount. We want to try and withdraw 0.1 ether, which is the maximum amount allowed by our contract. Remember that all currency values in Ethereum are denominated in wei internally, and our withdraw function expects the withdraw_amount to be denominated in wei too. The amount we want is 0.1 ether, which is 100,000,000,000,000,000 wei (a 1 followed by 17 zeros).</p>
+<p>Tout d&#39;abord, déterminons le withdraw_amount (montant de retrait). Nous voulons essayer de retirer 0,1 éther, qui est le montant maximum autorisé par notre contrat. N&#39;oubliez pas que toutes les valeurs monétaires d&#39;Ethereum sont libellées en wei en interne, et notre fonction withdraw s&#39;attend à ce que le withdraw_amount soit également libellé en wei. La quantité que nous voulons est de 0,1 éther, soit 100 000 000 000 000 000 wei (un 1 suivi de 17 zéros).</p>
 </div>
 <div class="admonitionblock tip data-line-509">
 <table>
@@ -1687,47 +1687,47 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-510">
-<p>Due to a limitation in JavaScript, a number as large as 10^17 cannot be processed by Remix. Instead, we enclose it in double quotes, to allow Remix to receive it as a string and manipulate it as a BigNumber. If we don&#8217;t enclose it in quotes, the Remix IDE will fail to process it and display "Error encoding arguments: Error: Assertion failed."</p>
+<p>En raison d&#39;une limitation de JavaScript, un nombre aussi grand que 10<sup>17</sup> ne peut pas être traité par Remix. Au lieu de cela, nous l&#39;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un BigNumber. Si nous ne le mettons pas entre guillemets, l&#39;IDE Remix ne parviendra pas à le traiter et affichera &quot;Error encoding arguments: Error: Assertion failed.&quot;</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-513">
-<p>Type "100000000000000000" (with the quotes) into the withdraw_amount box and click on the withdraw button (see <a href="#remix_withdraw">Click "withdraw" in Remix to create a withdrawal transaction</a>).</p>
+<p>Tapez &quot;100000000000000000&quot; (avec les guillemets) dans la case withdraw_amount et cliquez sur le bouton de retrait (voir <a href="#remix_withdraw">Cliquez sur &quot;withdraw&quot; dans Remix pour créer une transaction de retrait</a>).</p>
 </div>
 <div id="remix_withdraw" class="imageblock data-line-517">
 <div class="content">
-<img src="images/remix_withdraw.png" alt="">
+<img src="images/remix_withdraw.png" alt="&quot;&quot;">
 </div>
-<div class="title">Figure 21. Click "withdraw" in Remix to create a withdrawal transaction</div>
+<div class="title">Figure 21. Cliquez sur &quot;withdraw&quot; dans Remix pour créer une transaction de retrait</div>
 </div>
 <div class="paragraph data-line-519">
-<p>MetaMask will pop up a transaction window for you to approve. Click Confirm to send your withdrawal call to the contract (see <a href="#metamask_withdraw">MetaMask transaction to call the withdraw function</a>).</p>
+<p>MetaMask fera apparaître une fenêtre de transaction que vous devrez approuver. Cliquez sur Confirmer pour envoyer votre appel de retrait au contrat (voir <a href="#metamask_withdraw">Transaction MetaMask pour appeler la fonction de retrait</a>).</p>
 </div>
 <div id="metamask_withdraw" class="imageblock data-line-523">
 <div class="content">
-<img src="images/metamask_withdraw.png" alt="MetaMask transaction to call the withdraw function">
+<img src="images/metamask_withdraw.png" alt="&quot;Transaction MetaMask pour appeler la fonction de retrait&quot;">
 </div>
-<div class="title">Figure 22. MetaMask transaction to call the withdraw function</div>
+<div class="title">Figure 22. Transaction MetaMask pour appeler la fonction de retrait</div>
 </div>
 <div class="paragraph data-line-525">
-<p>Wait a minute and then reload the Etherscan block explorer to see the transaction reflected in the Faucet contract address history (see <a href="#etherscan_withdrawal_tx">Etherscan shows the transaction calling the withdraw function</a>).</p>
+<p>Attendez une minute, puis rechargez l&#39;explorateur de blocs Etherscan pour voir la transaction reflétée dans l&#39;historique des adresses de contrat + Faucet + (voir <a href="#etherscan_withdrawal_tx">Etherscan montre la transaction appelant la fonction de retrait</a>).</p>
 </div>
 <div id="etherscan_withdrawal_tx" class="imageblock data-line-529">
 <div class="content">
-<img src="images/etherscan_withdrawal_tx.png" alt="Etherscan shows the transaction calling the withdraw function">
+<img src="images/etherscan_withdrawal_tx.png" alt="&quot;Etherscan affiche la transaction appelant la fonction de retrait&quot;">
 </div>
-<div class="title">Figure 23. Etherscan shows the transaction calling the withdraw function</div>
+<div class="title">Figure 23. Etherscan montre la transaction appelant la fonction de retrait</div>
 </div>
 <div class="paragraph data-line-532">
-<p>We now see a new transaction with the contract address as the destination and a value of 0 ether. The contract balance has changed and is now 0.9 ether because it sent us 0.1 ether as requested. But we don&#8217;t see an "OUT" transaction in the <em>contract address history</em>.</p>
+<p>Nous voyons maintenant une nouvelle transaction avec l&#39;adresse du contrat comme destination et une valeur de 0 éther. Le solde du contrat a changé et est maintenant de 0,9 éther car il nous a envoyé 0,1 éther comme demandé. Mais nous ne voyons pas de transaction &quot;OUT&quot; dans l&#39;_historique des adresses de contrat_.</p>
 </div>
 <div class="paragraph data-line-534">
-<p>Where&#8217;s the outgoing withdrawal? A new tab has appeared on the contract&#8217;s address history page, named Internal Transactions. Because the 0.1 ether transfer originated from the contract code, it is an internal transaction (also called a <em>message</em>). Click on that tab to see it (see <a href="#etherscan_withdrawal_internal">Etherscan shows the internal transaction transferring ether out from the contract</a>).</p>
+<p>Où est le retrait sortant ? Un nouvel onglet est apparu sur la page d&#39;historique des adresses du contrat, nommé Transactions internes. Parce que le transfert d&#39;éther 0.1 provient du code de contrat, il s&#39;agit d&#39;une transaction interne (également appelée <em>message</em>). Cliquez sur cet onglet pour le voir (voir <a href="#etherscan_withdrawal_internal">Etherscan montre la transaction interne transférant l&#39;ether du contrat</a>).</p>
 </div>
 <div class="paragraph data-line-537">
-<p>This "internal transaction" was sent by the contract in this line of code (from the <code><span class="keep-together">withdraw</span></code> function in <em>Faucet.sol</em>):</p>
+<p>Cette &quot;transaction interne&quot; a été envoyée par le contrat dans cette ligne de code (à partir de la fonction <code><span class="keep-together">withdraw</span></code> dans <em>Faucet.sol</em>) :</p>
 </div>
 <div id="withdraw_command_review" class="listingblock data-line-541">
 <div class="content">
@@ -1735,29 +1735,29 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </div>
 </div>
 <div class="paragraph data-line-545">
-<p>To recap: you sent a transaction from your MetaMask wallet that contained data instructions to call the withdraw function with a withdraw_amount argument of 0.1 ether. That transaction caused the contract to run inside the EVM. As the EVM ran the Faucet contract&#8217;s withdraw function, first it called the require function and validated that the requested amount was less than or equal to the maximum allowed withdrawal of 0.1 ether. Then it called the transfer function to send you the ether. Running the transfer function generated an internal transaction that deposited 0.1 ether into your wallet address, from the contract&#8217;s balance. That&#8217;s the one shown on the Internal Transactions tab in Etherscan.</p>
+<p>Pour récapituler : vous avez envoyé une transaction depuis votre portefeuille MetaMask contenant des instructions de données pour appeler la fonction withdraw avec un argument withdraw_amount de 0,1 ether. Cette transaction a entraîné l&#39;exécution du contrat à l&#39;intérieur de l&#39;EVM. Lorsque l&#39;EVM a exécuté la fonction withdraw du contrat Faucet, il a d&#39;abord appelé la fonction require et validé que le montant demandé était inférieur ou égal au retrait maximal autorisé de 0,1 éther. Ensuite, il a appelé la fonction transfer pour vous envoyer l&#39;éther. L&#39;exécution de la fonction transfer a généré une transaction interne qui a déposé 0,1 éther dans votre adresse de portefeuille, à partir du solde du contrat. C&#39;est celui affiché sur l&#39;onglet Internal Transactions dans Etherscan. </p>
 </div>
 <div id="etherscan_withdrawal_internal" class="imageblock data-line-549">
 <div class="content">
-<img src="images/etherscan_withdrawal_internal.png" alt="Etherscan shows the internal transaction transferring ether out from the contract">
+<img src="images/etherscan_withdrawal_internal.png" alt="&quot;Etherscan montre la transaction interne transférant l&#39;éther hors du contrat&quot;">
 </div>
-<div class="title">Figure 24. Etherscan shows the internal transaction transferring ether out from the contract</div>
+<div class="title">Figure 24. Etherscan montre la transaction interne transférant l&#39;ether du contrat</div>
 </div>
 </div>
 </div>
 <div class="sect2 data-line-552">
-<h3 id="intro_conclusion">Conclusions</h3>
+<h3 id="intro_conclusion">Conclusion</h3>
 <div class="paragraph data-line-554">
-<p>In this chapter, you set up a wallet using MetaMask and funded it using a faucet on the Ropsten test network. You received ether into your wallet&#8217;s Ethereum address, then you sent ether to the faucet&#8217;s Ethereum address.</p>
+<p>Dans ce chapitre, vous avez configuré un portefeuille à l&#39;aide de MetaMask et l&#39;avez financé à l&#39;aide d&#39;un robinet sur le réseau de test Ropsten. Vous avez reçu de l&#39;ether dans l&#39;adresse Ethereum de votre portefeuille, puis vous avez envoyé de l&#39;ether à l&#39;adresse du robinet Ethereum.</p>
 </div>
 <div class="paragraph data-line-556">
-<p>Next, you wrote a faucet contract in Solidity. You used the Remix IDE to compile the contract into EVM bytecode, then used Remix to form a transaction and created the Faucet contract on the Ropsten blockchain. Once created, the Faucet contract had an Ethereum address, and you sent it some ether. Finally, you constructed a transaction to call the withdraw function and successfully asked for 0.1 ether. The contract checked the request and sent you 0.1 ether with an internal transaction.</p>
+<p>Ensuite, vous avez écrit un contrat de robinet dans Solidity. Vous avez utilisé l&#39;IDE Remix pour compiler le contrat en code intermédiaire EVM, puis utilisé Remix pour former une transaction et créé le contrat Faucet sur la chaîne de blocs Ropsten. Une fois créé, le contrat Faucet avait une adresse Ethereum, et vous lui avez envoyé de l&#39;ether. Enfin, vous avez construit une transaction pour appeler la fonction withdraw et demandé avec succès 0,1 éther. Le contrat a vérifié la demande et vous a envoyé 0,1 ether avec une transaction interne.</p>
 </div>
 <div class="paragraph data-line-558">
-<p>It may not seem like much, but you&#8217;ve just successfully interacted with software that controls money on a decentralized world computer.</p>
+<p>Cela peut ne pas sembler beaucoup, mais vous venez d&#39;interagir avec succès avec un logiciel qui contrôle l&#39;argent sur un ordinateur mondial décentralisé.</p>
 </div>
 <div class="paragraph data-line-7">
-<p>We will do a lot more smart contract programming in <a href="#smart_contracts_chapter">Contrats intelligents et Solidity</a> and learn about best practices and security considerations in <a href="#smart_contract_security">Sécurité des contrats intelligents</a>.</p>
+<p>Nous ferons beaucoup plus de programmation de contrats intelligents dans <a href="#smart_contracts_chapter">Contrats intelligents et Solidity</a> et découvrirons les meilleures pratiques et les considérations de sécurité dans <a href="#smart_contract_security">Sécurité des contrats intelligents</a>.</p>
 </div>
 </div>
 </div>
@@ -2686,7 +2686,7 @@ $ <strong>parity --geth</strong>
 <p>As we saw earlier in the book, Ethereum has two different types of accounts: <em>externally owned accounts</em> (EOAs) and <em>contracts</em>. Ownership of ether by EOAs is established through digital <em>private keys</em>, <em>Ethereum addresses</em>, and <em>digital signatures</em>. The private keys are at the heart of all user interaction with Ethereum. In fact, account addresses are derived directly from private keys: a private key uniquely determines a single Ethereum address, also known as an <em>account</em>.</p>
 </div>
 <div class="paragraph data-line-15">
-<p>Private keys are not used directly in the Ethereum system in any way; they are never transmitted or stored on Ethereum. That is to say that private keys should remain private and never appear in messages passed to the network, nor should they be stored on-chain; only account addresses and digital signatures are ever transmitted and stored on the Ethereum system. For more information on how to keep private keys safe and secure, see <a href="#control_responsibility">Control and Responsibility</a> and <a href="#wallets_chapter">Portefeuilles</a>.</p>
+<p>Private keys are not used directly in the Ethereum system in any way; they are never transmitted or stored on Ethereum. That is to say that private keys should remain private and never appear in messages passed to the network, nor should they be stored on-chain; only account addresses and digital signatures are ever transmitted and stored on the Ethereum system. For more information on how to keep private keys safe and secure, see <a href="#control_responsibility">Contrôle et responsabilité</a> and <a href="#wallets_chapter">Portefeuilles</a>.</p>
 </div>
 <div class="paragraph data-line-17">
 <p>Access and control of funds is achieved with digital signatures, which are also created using the private key. Ethereum transactions require a valid digital signature to be included in the blockchain. Anyone with a copy of a private key has control of the corresponding account and any ether it holds. Assuming a user keeps their private key safe, the digital signatures in Ethereum transactions prove the true owner of the funds, because they prove ownership of the private key.</p>
@@ -4824,7 +4824,7 @@ dst = web3.eth.accounts[1];</code></pre>
 </dl>
 </div>
 <div class="paragraph data-line-328">
-<p>In <a href="#solidity_faucet_example">Faucet.sol: A Solidity contract implementing a faucet</a>, we defined a function for withdrawals:</p>
+<p>In <a href="#solidity_faucet_example">Faucet.sol: Un contrat Solidity mettant en place un robinet</a>, we defined a function for withdrawals:</p>
 </div>
 <div id="withdraw_function_src" class="listingblock data-line-332">
 <div class="content">
@@ -16225,7 +16225,7 @@ $ <strong>truffle unbox <em>BOX_NAME</em></strong>
 <div class="sect4 data-line-81">
 <h5 id="truffle_project_directory">Creating a truffle project directory</h5>
 <div class="paragraph data-line-83">
-<p>For each project where you will use truffle, create a project directory and initialize truffle within that directory. truffle will create the necessary directory structure inside your project directory. It&#8217;s customary to give the project directory a name that describes the project. For this example, we will use truffle to deploy our Faucet contract from <a href="#simple_contract_example">A Simple Contract: A Test Ether Faucet</a>, and therefore we will name the project folder <em>Faucet</em>:</p>
+<p>For each project where you will use truffle, create a project directory and initialize truffle within that directory. truffle will create the necessary directory structure inside your project directory. It&#8217;s customary to give the project directory a name that describes the project. For this example, we will use truffle to deploy our Faucet contract from <a href="#simple_contract_example">[simple_contract_example]</a>, and therefore we will name the project folder <em>Faucet</em>:</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>mkdir Faucet</strong>
@@ -16338,7 +16338,7 @@ $ <strong>rm truffle.js</strong>
 <p>We now have a basic working directory for our <em>Faucet</em> project, and we have truffle and its dependencies configured. Contracts go in the <em>contracts</em> subdirectory of our project. The directory already contains a "helper" contract, <em>Migrations.sol</em>, which manages contract upgrades for us. We&#8217;ll examine the use of <em>Migrations.sol</em> in the next section.</p>
 </div>
 <div class="paragraph data-line-196">
-<p>Let&#8217;s copy the <em>Faucet.sol</em> contract (from <a href="#solidity_faucet_example">Faucet.sol: A Solidity contract implementing a faucet</a>) into the <em>contracts</em> subdirectory, so that the project directory looks like this:</p>
+<p>Let&#8217;s copy the <em>Faucet.sol</em> contract (from <a href="#solidity_faucet_example">Faucet.sol: Un contrat Solidity mettant en place un robinet</a>) into the <em>contracts</em> subdirectory, so that the project directory looks like this:</p>
 </div>
 <div class="listingblock data-line-198">
 <div class="content">
@@ -17396,7 +17396,7 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-12 11:01:43 -0400
+Last updated 2022-04-13 16:21:48 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
