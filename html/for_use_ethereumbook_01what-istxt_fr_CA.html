@@ -450,7 +450,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>D&#39;un point de vue informatique, Ethereum est une machine à états déterministe mais pratiquement illimitée, composée d&#39;un état singleton globalement accessible et d&#39;une machine virtuelle qui applique des modifications à cet état.</p>
 </div>
 <div class="paragraph data-line-9">
-<p>D&#39;un point de vue plus pratique, Ethereum est une infrastructure informatique à source libre décentralisée à l&#39;échelle mondiale qui exécute des programmes appelés <em>contrats intelligents</em>. Il utilise une chaîne de blocs pour synchroniser et stocker les changements d&#39;état du système, ainsi qu&#39;une cryptomonnaie appelée <em>éther</em> pour mesurer et limiter les coûts des ressources d&#39;exécution.</p>
+<p>D&#39;un point de vue plus pratique, Ethereum est une infrastructure informatique à source libre décentralisée à l&#39;échelle mondiale qui exécute des programmes appelés <em>contrats intelligents</em>. Il utilise une chaîne de blocs pour synchroniser et stocker les changements d&#39;état du système, ainsi qu&#39;une cryptomonnaie appelée <em>ether</em> pour mesurer et limiter les coûts des ressources d&#39;exécution.</p>
 </div>
 <div class="paragraph data-line-11">
 <p>La plate-forme Ethereum permet aux développeurs de créer de puissantes applications décentralisées avec des fonctions économiques intégrées. Tout en offrant une disponibilité, une auditabilité, une transparence et une neutralité élevées, il réduit ou élimine également la censure et réduit certains risques de contrepartie.</p>
@@ -458,13 +458,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2 data-line-14">
 <h3 id="bitcoin_comparison">Comparé à Bitcoin</h3>
 <div class="paragraph data-line-16">
-<p>Beaucoup de gens viendront à Ethereum avec une expérience préalable des cryptomonnaies, en particulier du Bitcoin. Ethereum partage de nombreux éléments communs avec d&#39;autres chaînes de blocs ouvertes : un réseau pair à pair reliant les participants, un algorithme de consensus byzantin tolérant aux pannes pour la synchronisation des mises à jour d&#39;état (une chaîne de blocs de preuve de travail), l&#39;utilisation de primitives cryptographiques telles que le numérique signatures et hachages, et une monnaie numérique (éther).</p>
+<p>Beaucoup de gens viendront à Ethereum avec une expérience préalable des cryptomonnaies, en particulier du Bitcoin. Ethereum partage de nombreux éléments communs avec d&#39;autres chaînes de blocs ouvertes : un réseau pair à pair reliant les participants, un algorithme de consensus byzantin tolérant aux pannes pour la synchronisation des mises à jour d&#39;état (une chaîne de blocs de preuve de travail), l&#39;utilisation de primitives cryptographiques telles que le numérique signatures et hachages, et une monnaie numérique (ether).</p>
 </div>
 <div class="paragraph data-line-18">
 <p>Pourtant, à bien des égards, le but et la construction d&#39;Ethereum sont étonnamment différents de ceux des chaînes de blocs ouvertes qui l&#39;ont précédé, y compris Bitcoin.</p>
 </div>
 <div class="paragraph data-line-20">
-<p> Le but d&#39;Ethereum n&#39;est pas principalement d&#39;être un réseau de paiement en monnaie numérique. Alors que la monnaie numérique éther fait à la fois partie intégrante et nécessaire au fonctionnement d&#39;Ethereum, l&#39;éther est conçu comme une <em>monnaie d&#39;utilité</em> pour payer l&#39;utilisation de la plate-forme Ethereum en tant qu&#39;ordinateur mondial.</p>
+<p> Le but d&#39;Ethereum n&#39;est pas principalement d&#39;être un réseau de paiement en monnaie numérique. Alors que la monnaie numérique ether fait à la fois partie intégrante et nécessaire au fonctionnement d&#39;Ethereum, l&#39;ether est conçu comme une <em>monnaie d&#39;utilité</em> pour payer l&#39;utilisation de la plate-forme Ethereum en tant qu&#39;ordinateur mondial.</p>
 </div>
 <div class="paragraph data-line-22">
 <p>Contrairement à Bitcoin, qui a un langage de script très limité, Ethereum est conçu pour être une chaîne de blocs programmable à usage général qui exécute une <em>machine virtuelle</em> capable d&#39;exécuter du code d&#39;une complexité arbitraire et illimitée. Là où le langage de script de Bitcoin est, intentionnellement, contraint à une simple évaluation vrai/faux des conditions de dépenses, le langage d&#39;Ethereum est <em>Turing complet</em>, ce qui signifie qu&#39;Ethereum peut fonctionner directement comme un ordinateur à usage général.</p>
@@ -755,7 +755,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Pour répondre à ce défi, Ethereum introduit un mécanisme de mesure appelé <em>gaz</em>. Comme l&#39;EVM exécute un contrat intelligent, il comptabilise soigneusement chaque instruction (calcul, accès aux données, etc.). Chaque instruction a un coût prédéterminé en unités de gaz. Lorsqu&#39;une transaction déclenche l&#39;exécution d&#39;un contrat intelligent, elle doit inclure une quantité de gaz qui fixe la limite supérieure de ce qui peut être consommé en exécutant le contrat intelligent. L&#39;EVM terminera l&#39;exécution si la quantité de gaz consommée par le calcul dépasse le gaz disponible dans la transaction. Le gaz est le mécanisme utilisé par Ethereum pour permettre un calcul complet de Turing tout en limitant les ressources que tout programme peut consommer.</p>
 </div>
 <div class="paragraph data-line-198">
-<p>La question suivante est, &quot;comment obtenir du gaz pour payer le calcul sur l&#39;ordinateur mondial Ethereum?&quot; Vous ne trouverez pas de gaz sur les échanges.  Il ne peut être acheté que dans le cadre d&#39;une transaction et ne peut être acheté qu&#39;avec de l&#39;éther. L&#39;éther doit être envoyé avec une transaction et il doit être explicitement affecté à l&#39;achat de gaz, avec un prix du gaz acceptable. Comme à la pompe, le prix de l&#39;essence n&#39;est pas fixe. Le gaz est acheté pour la transaction, le calcul est exécuté et tout gaz non utilisé est remboursé à l&#39;expéditeur de la transaction.</p>
+<p>La question suivante est, &quot;comment obtenir du gaz pour payer le calcul sur l&#39;ordinateur mondial Ethereum?&quot; Vous ne trouverez pas de gaz sur les échanges.  Il ne peut être acheté que dans le cadre d&#39;une transaction et ne peut être acheté qu&#39;avec de l&#39;ether. L&#39;ether doit être envoyé avec une transaction et il doit être explicitement affecté à l&#39;achat de gaz, avec un prix du gaz acceptable. Comme à la pompe, le prix de l&#39;essence n&#39;est pas fixe. Le gaz est acheté pour la transaction, le calcul est exécuté et tout gaz non utilisé est remboursé à l&#39;expéditeur de la transaction.</p>
 </div>
 </div>
 </div>
@@ -856,7 +856,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Ce livre plonge dans Ethereum et examine chaque composant. Vous commencerez par une transaction simple, décortiquerez son fonctionnement, établirez un contrat simple, l&#39;améliorerez et suivrez son parcours dans le système Ethereum.</p>
 </div>
 <div class="paragraph data-line-258">
-<p>Vous apprendrez non seulement comment utiliser Ethereum - comment cela fonctionne - mais aussi pourquoi il est conçu comme il est. Vous pourrez comprendre comment chacune des pièces fonctionne, comment elles s&#39;emboîtent et pourquoi. (&quot;smartphones&quot;, see=&quot;portefeuilles mobiles (smartphones)&quot; )</p>
+<p>Vous apprendrez non seulement comment utiliser Ethereum - comment cela fonctionne - mais aussi pourquoi il est conçu comme il est. Vous pourrez comprendre comment chacune des pièces fonctionne, comment elles s&#39;emboîtent et pourquoi. </p>
 </div>
 </div>
 </div>
@@ -864,7 +864,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-12 11:00:53 -0400
+Last updated 2022-04-13 16:06:30 -0400
 </div>
 </div>
 </body>
