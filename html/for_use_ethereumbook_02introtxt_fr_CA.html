@@ -466,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="paragraph data-line-16">
-<p>L&#39;ether est subdivisé en unités plus petites, jusqu&#39;à la plus petite unité possible, qui est nommée <em>wei</em>. Un ether est égal à 1 quintillion de wei (1 * 10 ^ 18 ^ ou 1 000 000 000 000 000 000). Vous entendrez peut-être aussi les gens se référer à la devise &quot;Ethereum&quot;, mais c&#39;est une erreur courante pour les débutants. Ethereum est le système, ether est la monnaie.</p>
+<p>L&#39;ether est subdivisé en unités plus petites, jusqu&#39;à la plus petite unité possible, qui est nommée <em>wei</em>. Un ether est égal à 1 quintillion de wei (1 * 10<sup>18</sup> ou 1 000 000 000 000 000 000). Vous entendrez peut-être aussi les gens se référer à la devise &quot;Ethereum&quot;, mais c&#39;est une erreur courante pour les débutants. Ethereum est le système, ether est la monnaie.</p>
 </div>
 <div class="paragraph data-line-18">
 <p>La valeur de l&#39;ether est toujours représentée en interne dans Ethereum sous la forme d&#39;une valeur entière non signée libellée en wei. Lorsque vous traitez 1 ether, la transaction encode 1000000000000000000 wei comme valeur.</p>
@@ -475,7 +475,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Les différentes dénominations d&#39;ether ont à la fois un <em>nom scientifique</em> utilisant le Système international d&#39;unités (<em>SI</em>) et un nom familier qui rend hommage à de nombreux grands esprits de l&#39;informatique et de la cryptographie.</p>
 </div>
 <div class="paragraph data-line-22">
-<p><a href="#ether_denominations">Dénominations d&#8217;ether et noms d&#39;unités</a> montre les différentes unités, leurs noms familiers (communs) et leurs noms SI. Conformément à la représentation interne de la valeur, le tableau montre toutes les dénominations en wei (première ligne), avec l&#39;ether indiqué par 10 ^ 18 ^ wei dans la 7e ligne.</p>
+<p><a href="#ether_denominations">Dénominations d&#8217;ether et noms d&#39;unités</a> montre les différentes unités, leurs noms familiers (communs) et leurs noms SI. Conformément à la représentation interne de la valeur, le tableau montre toutes les dénominations en wei (première ligne), avec l&#39;ether indiqué par 10<sup>18</sup> wei dans la 7e ligne.</p>
 </div>
 <table id="ether_denominations" class="tableblock frame-all grid-all stretch data-line-27">
 <caption class="title">Table 1. Dénominations d&#8217;ether et noms d&#39;unités</caption>
@@ -901,7 +901,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Ici, vous pouvez voir l&#39;historique complet des transactions de votre adresse Ethereum. Il montre toutes les transactions enregistrées sur la chaîne de blocs Ropsten où votre adresse est l&#39;expéditeur ou le destinataire. Cliquez sur quelques-unes de ces transactions pour voir plus de détails.</p>
 </div>
 <div class="paragraph data-line-247">
-<p>Vous pouvez explorer l&#39;historique des transactions de n&#39;importe quelle adresse. Jetez un œil à l&#39;historique des transactions de l&#39;adresse Ropsten Test Faucet (indice : il s&#39;agit de l&#39;adresse « expéditeur » répertoriée dans le plus ancien paiement à votre adresse). Vous pouvez voir tout l&#39;ether de test envoyé par le robinet à vous et à d&#39;autres adresses. Chaque transaction que vous voyez peut vous mener à plus d&#39;adresses et plus de transactions. D&#39;ici peu, vous serez perdu dans le labyrinthe de données interconnectées. Les chaînes de blocs publiques contiennent une énorme richesse d&#39;informations, qui peuvent toutes être explorées par programmation, comme nous le verrons dans de futurs exemples.(range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc2&quot; )</p>
+<p>Vous pouvez explorer l&#39;historique des transactions de n&#39;importe quelle adresse. Jetez un œil à l&#39;historique des transactions de l&#39;adresse Ropsten Test Faucet (indice : il s&#39;agit de l&#39;adresse « expéditeur » répertoriée dans le plus ancien paiement à votre adresse). Vous pouvez voir tout l&#39;ether de test envoyé par le robinet à vous et à d&#39;autres adresses. Chaque transaction que vous voyez peut vous mener à plus d&#39;adresses et plus de transactions. D&#39;ici peu, vous serez perdu dans le labyrinthe de données interconnectées. Les chaînes de blocs publiques contiennent une énorme richesse d&#39;informations, qui peuvent toutes être explorées par programmation, comme nous le verrons dans de futurs exemples.</p>
 </div>
 </div>
 </div>
@@ -942,7 +942,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock data-line-278">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">inclure::code/Solidity/Robinet.sol[]</code></pre>
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// SPDX-License-Identifier: CC-BY-SA-4.0
+
+// Version of Solidity compiler this program was written for
+pragma solidity 0.6.4;
+
+// Our first contract is a faucet!
+contract Faucet {
+    // Accept any incoming amount
+    receive() external payable {}
+
+    // Give out ether to anyone who asks
+    function withdraw(uint withdraw_amount) public {
+        // Limit withdrawal amount
+        require(withdraw_amount &lt;= 100000000000000000);
+
+        // Send the amount to the address that requested it
+        msg.sender.transfer(withdraw_amount);
+    }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1247,7 +1265,7 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-510">
-<p>En raison d&#39;une limitation de JavaScript, un nombre aussi grand que 10 ^ 17 ne peut pas être traité par Remix. Au lieu de cela, nous l&#39;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un BigNumber. Si nous ne le mettons pas entre guillemets, l&#39;IDE Remix ne parviendra pas à le traiter et affichera &quot;Error encoding arguments: Error: Assertion failed.&quot;</p>
+<p>En raison d&#39;une limitation de JavaScript, un nombre aussi grand que 10<sup>17</sup> ne peut pas être traité par Remix. Au lieu de cela, nous l&#39;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un BigNumber. Si nous ne le mettons pas entre guillemets, l&#39;IDE Remix ne parviendra pas à le traiter et affichera &quot;Error encoding arguments: Error: Assertion failed.&quot;</p>
 </div>
 </td>
 </tr>
@@ -1325,7 +1343,7 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-13 15:41:14 -0400
+Last updated 2022-04-13 15:54:46 -0400
 </div>
 </div>
 </body>

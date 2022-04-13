@@ -13,13 +13,13 @@
 Utilisez le caractère Unicode +U+039E+ pour &#926; et +U+2666+ pour &#9830;.
 ====
 
-L&#39;ether est subdivisé en unités plus petites, jusqu&#39;à la plus petite unité possible, qui est nommée _wei_. Un ether est égal à 1 quintillion de wei (1 * 10 ^ 18 ^ ou 1 000 000 000 000 000 000). Vous entendrez peut-être aussi les gens se référer à la devise &quot;Ethereum&quot;, mais c&#39;est une erreur courante pour les débutants. Ethereum est le système, ether est la monnaie.
+L&#39;ether est subdivisé en unités plus petites, jusqu&#39;à la plus petite unité possible, qui est nommée _wei_. Un ether est égal à 1 quintillion de wei (1 * 10^18^ ou 1 000 000 000 000 000 000). Vous entendrez peut-être aussi les gens se référer à la devise &quot;Ethereum&quot;, mais c&#39;est une erreur courante pour les débutants. Ethereum est le système, ether est la monnaie.
 
 La valeur de l&#39;ether est toujours représentée en interne dans Ethereum sous la forme d&#39;une valeur entière non signée libellée en wei. Lorsque vous traitez 1 ether, la transaction encode 1000000000000000000 wei comme valeur.
 
 Les différentes dénominations d&#39;ether ont à la fois un _nom scientifique_ utilisant le Système international d&#39;unités (_SI_) et un nom familier qui rend hommage à de nombreux grands esprits de l&#39;informatique et de la cryptographie.
 
-&lt;<ether_denominations>&gt; montre les différentes unités, leurs noms familiers (communs) et leurs noms SI. Conformément à la représentation interne de la valeur, le tableau montre toutes les dénominations en wei (première ligne), avec l&#39;ether indiqué par 10 ^ 18 ^ wei dans la 7e ligne.
+&lt;<ether_denominations>&gt; montre les différentes unités, leurs noms familiers (communs) et leurs noms SI. Conformément à la représentation interne de la valeur, le tableau montre toutes les dénominations en wei (première ligne), avec l&#39;ether indiqué par 10^18^ wei dans la 7e ligne.
 
 [[ether_denominations]]
 .Dénominations d'ether et noms d&#39;unités
@@ -244,7 +244,7 @@ image::images/block_explorer_account_history.png[&quot;Historique des transactio
 
 Ici, vous pouvez voir l&#39;historique complet des transactions de votre adresse Ethereum. Il montre toutes les transactions enregistrées sur la chaîne de blocs Ropsten où votre adresse est l&#39;expéditeur ou le destinataire. Cliquez sur quelques-unes de ces transactions pour voir plus de détails.
 
-Vous pouvez explorer l&#39;historique des transactions de n&#39;importe quelle adresse. Jetez un œil à l&#39;historique des transactions de l&#39;adresse Ropsten Test Faucet (indice : il s&#39;agit de l&#39;adresse « expéditeur » répertoriée dans le plus ancien paiement à votre adresse). Vous pouvez voir tout l&#39;ether de test envoyé par le robinet à vous et à d&#39;autres adresses. Chaque transaction que vous voyez peut vous mener à plus d&#39;adresses et plus de transactions. D&#39;ici peu, vous serez perdu dans le labyrinthe de données interconnectées. Les chaînes de blocs publiques contiennent une énorme richesse d&#39;informations, qui peuvent toutes être explorées par programmation, comme nous le verrons dans de futurs exemples(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc9&quot;)))(((range=&quot;endofrange &quot;, startref=&quot;ix_02intro-asciidoc8&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc3&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc2&quot;)) )
+Vous pouvez explorer l&#39;historique des transactions de n&#39;importe quelle adresse. Jetez un œil à l&#39;historique des transactions de l&#39;adresse Ropsten Test Faucet (indice : il s&#39;agit de l&#39;adresse « expéditeur » répertoriée dans le plus ancien paiement à votre adresse). Vous pouvez voir tout l&#39;ether de test envoyé par le robinet à vous et à d&#39;autres adresses. Chaque transaction que vous voyez peut vous mener à plus d&#39;adresses et plus de transactions. D&#39;ici peu, vous serez perdu dans le labyrinthe de données interconnectées. Les chaînes de blocs publiques contiennent une énorme richesse d&#39;informations, qui peuvent toutes être explorées par programmation, comme nous le verrons dans de futurs exemples(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc9&quot;)))(((range=&quot;endofrange &quot;, startref=&quot;ix_02intro-asciidoc8&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc3&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc2&quot;)))
 
 [[intro_world_computer]]
 === Présentation de l&#39;ordinateur mondial
@@ -276,7 +276,7 @@ Dans les prochaines sections, nous rédigerons notre premier contrat. Vous appre
 ====
 [source,solidity,linenums]
 ----
-inclure::code/Solidity/Robinet.sol[]
+include::code/Solidity/Faucet.sol[]
 ----
 ====
 
@@ -507,7 +507,7 @@ Tout d&#39;abord, déterminons le +withdraw_amount+ (montant de retrait). Nous v
 
 [TIP]
 ====
-En raison d&#39;une limitation de JavaScript, un nombre aussi grand que 10 ^ 17 ne peut pas être traité par Remix. Au lieu de cela, nous l&#39;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un +BigNumber+. Si nous ne le mettons pas entre guillemets, l&#39;IDE Remix ne parviendra pas à le traiter et affichera &quot;Error encoding arguments: Error: Assertion failed.&quot;
+En raison d&#39;une limitation de JavaScript, un nombre aussi grand que 10^17^ ne peut pas être traité par Remix. Au lieu de cela, nous l&#39;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un +BigNumber+. Si nous ne le mettons pas entre guillemets, l&#39;IDE Remix ne parviendra pas à le traiter et affichera &quot;Error encoding arguments: Error: Assertion failed.&quot;
 ====
 
 Tapez &quot;100000000000000000&quot; (avec les guillemets) dans la case +withdraw_amount+ et cliquez sur le bouton de retrait (voir &lt;<remix_withdraw>&gt;).
