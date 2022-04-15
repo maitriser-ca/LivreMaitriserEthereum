@@ -44,7 +44,7 @@ Vous avez également la possibilité d&#39;exécuter un client distant, qui ne s
 (((&quot;client léger/léger&quot;)))Ne confondez pas le concept de portefeuille distant dans Ethereum avec celui d&#39;un _client léger_ (qui est analogue à un client de vérification simplifiée des paiements dans Bitcoin). Les clients légers valident les en-têtes de bloc et utilisent les preuves Merkle pour valider l&#39;inclusion des transactions dans la chaîne de blocs et déterminer leurs effets, leur donnant un niveau de sécurité similaire à un nœud complet. Inversement, les clients distants Ethereum ne valident pas les en-têtes de bloc ou les transactions. Ils font entièrement confiance à un client complet pour leur donner accès à la chaîne de blocs, et perdent ainsi d&#39;importantes garanties de sécurité et d&#39;anonymat. Vous pouvez atténuer ces problèmes en utilisant un client complet que vous exécutez vous-même.
 
 [[full_node_adv_disadv]]
-==== Avantages et inconvénients du nœud complet
+==== Avantages et désavantages du nœud complet
 
 (((&quot;nœud complet&quot;,&quot;avantages/inconvénients&quot;))) Choisir d&#39;exécuter un nœud complet facilite le fonctionnement des réseaux auxquels vous le connectez, mais entraîne également des coûts légers à modérés pour vous. Regardons quelques-uns des avantages et des inconvénients.
 
@@ -61,10 +61,10 @@ Vous avez également la possibilité d&#39;exécuter un client distant, qui ne s
 
 * Nécessite des ressources matérielles et de bande passante importantes et croissantes
 * Peut nécessiter plusieurs jours pour une synchronisation complète lors du premier démarrage
-* Doit être maintenu, mis à jour et maintenu en ligne pour rester synchronisé(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc4&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc3&quot;)) )
+* Doit être maintenu, mis à jour et maintenu en ligne pour rester synchronisé(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc4&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc3&quot;)))
 
 [[pub_test_adv_disadv]]
-==== Avantages et inconvénients du testnet public
+==== Avantages et désavantages du testnet public
 
 (((&quot;réseaux (Ethereum)&quot;,&quot;avantages/inconvénients du réseau de test public&quot;)))(((&quot;réseaux de test publics&quot;)))(((&quot;réseau de test&quot;,&quot;public&quot;)))Que vous choisissiez ou non d&#39;exécuter un nœud complet, vous souhaiterez probablement exécuter un nœud testnet public. Examinons quelques-uns des avantages et des inconvénients de l&#39;utilisation d&#39;un testnet public.
 
@@ -81,7 +81,7 @@ Vous avez également la possibilité d&#39;exécuter un client distant, qui ne s
 * Il y a certains aspects d&#39;une chaîne de blocs publique que vous ne pouvez pas tester de manière réaliste sur un testnet. Par exemple, les frais de transaction, bien que nécessaires pour envoyer des transactions, ne sont pas pris en compte sur un testnet, car le gaz est gratuit. De plus, les réseaux de test ne connaissent pas de congestion du réseau comme le fait parfois le réseau principal public.
 
 [[localtest_adv_dis]]
-==== Avantages et inconvénients de la simulation chaîne de blocs locale
+==== Avantages et désavantages de la simulation chaîne de blocs locale
 
 (((&quot;Ganache&quot;,&quot;avantages/inconvénients&quot;)))(((&quot;simulation chaîne de blocs locale&quot;)))(((&quot;réseaux (Ethereum)&quot;,&quot;simulation chaîne de blocs locale avantages/inconvénients&quot;)))((( &quot;chaîne de blocs privée&quot;)))(((&quot;chaîne de blocs privée à instance unique&quot;)))À de nombreuses fins de test, la meilleure option consiste à lancer une chaîne de blocs privée à instance unique. Ganache (anciennement nommé +testrpc+) est l&#39;une des simulations de chaîne de blocs locales les plus populaires avec lesquelles vous pouvez interagir, sans aucun autre participant. Il partage de nombreux avantages et inconvénients du testnet public, mais présente également quelques différences.
 
@@ -366,7 +366,7 @@ Operating System: linux
 
 Votre commande +geth version+ peut afficher des informations légèrement différentes, mais vous devriez voir un rapport de version similaire à celui présenté ici.
 
-Les sections suivantes expliquent le défi avec la synchronisation initiale de la chaîne de blocs d&#39;Ethereum(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc6&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc5&quot;) ))
+Les sections suivantes expliquent le défi avec la synchronisation initiale de la chaîne de blocs d&#39;Ethereum(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc6&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc5&quot;)))
 
 
 [[first_sync]]
