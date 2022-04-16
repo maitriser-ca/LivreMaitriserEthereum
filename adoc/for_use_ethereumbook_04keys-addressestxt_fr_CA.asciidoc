@@ -219,7 +219,7 @@ Q =
 59574132161899900045862086493921015780032175291755807399284007721050341297360)
 ----
 
-&lt;<example_1>&gt; montre comment vous pouvez vérifier cela vous-même en utilisant Python. Les variables +x+ et +y+ sont les coordonnées du point _Q_, comme dans l&#39;exemple précédent. La variable +p+ est l&#39;ordre premier de la courbe elliptique (le premier qui est utilisé pour toutes les opérations modulo). La dernière ligne de Python est l&#39;équation de la courbe elliptique (l&#39;opérateur +%+ en Python est l&#39;opérateur modulo). Si +x+ et +y+ sont bien les coordonnées d&#39;un point sur la courbe elliptique, alors elles satisfont l&#39;équation et le résultat est zéro (+0L+ est un entier long valant zéro). Essayez vous-même, en tapant ++**python**++ sur une ligne de commande et en copiant chaque ligne (après l&#39;invite +&gt;&gt;&gt;+) de la liste(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-adresses-asciidoc10&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc9&quot;)))
+&lt;<example_1>&gt; montre comment vous pouvez vérifier cela vous-même en utilisant Python. Les variables +x+ et +y+ sont les coordonnées du point _Q_, comme dans l&#39;exemple précédent. La variable +p+ est l&#39;ordre premier de la courbe elliptique (le premier qui est utilisé pour toutes les opérations modulo). La dernière ligne de Python est l&#39;équation de la courbe elliptique (l&#39;opérateur +%+ en Python est l&#39;opérateur modulo). Si +x+ et +y+ sont bien les coordonnées d&#39;un point sur la courbe elliptique, alors elles satisfont l&#39;équation et le résultat est zéro (+0L+ est un entier long valant zéro). Essayez vous-même, en tapant **++python++** sur une ligne de commande et en copiant chaque ligne (après l&#39;invite + &gt;&gt;&gt; +) de la liste(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-adresses-asciidoc10&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc9&quot;)))
 
 ++++
 <div data-type="example" id="example_1">
@@ -400,7 +400,7 @@ Bien que vous puissiez voir &quot;SHA-3&quot; mentionné dans les documents et l
 
 (((&quot;fonctions de hachage&quot;,&quot;vecteur de test pour déterminer&quot;)))(((&quot;vecteur de test, détermination des fonctions de hachage avec&quot;)))Comment pouvez-vous savoir si la bibliothèque de logiciels que vous utilisez implémente FIPS-202 SHA-3 ou Keccak-256, si les deux pouvaient s&#39;appeler &quot;SHA-3&quot; ?
 
-Un moyen simple de le dire est d&#39;utiliser un _vecteur de test_, une sortie attendue pour une entrée donnée. (((&quot;test d&#39;entrée vide&quot;)))Le test le plus couramment utilisé pour une fonction de hachage est l&#39;_entrée vide_. Si vous exécutez la fonction de hachage avec une chaîne vide en entrée, vous devriez voir les résultats suivants :
+Un moyen simple de le dire est d&#39;utiliser un _vecteur de test_, une sortie attendue pour une entrée donnée. (((&quot;test d&#39;entrée vide&quot;)))Le test le plus couramment utilisé pour une fonction de hachage est l' _entrée vide_. Si vous exécutez la fonction de hachage avec une chaîne vide en entrée, vous devriez voir les résultats suivants :
 
 ----
 Keccak256("") =
@@ -625,7 +625,7 @@ Maintenant, alignons les deux et vérifions la capitalisation :
 
 C&#39;est tout faux! Plusieurs des caractères alphabétiques sont mal capitalisés. N&#39;oubliez pas que la capitalisation est l&#39;encodage de la somme de contrôle _correcte_.
 
-La casse de l&#39;adresse que nous avons saisie ne correspond pas à la somme de contrôle que nous venons de calculer, ce qui signifie que quelque chose a changé dans l&#39;adresse et qu&#39;une erreur a été pass:[<span class="keep-together">introduite</span>](((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc21&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc20&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc19&quot;))).(( (range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc15&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc14&quot;)))
+La casse de l&#39;adresse que nous avons saisie ne correspond pas à la somme de contrôle que nous venons de calculer, ce qui signifie que quelque chose a changé dans l&#39;adresse et qu&#39;une erreur a été pass:[<span class="keep-together">introduite</span>](((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc21&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc20&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc19&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc15&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_04keys-addresses-asciidoc14&quot;)))
 
 
 [[keys-addresses-conclusions]]
