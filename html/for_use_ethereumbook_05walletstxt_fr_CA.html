@@ -444,27 +444,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="wallets_chapter">Portefeuilles</h2>
 <div class="sectionbody">
 <div class="paragraph data-line-4">
-<p>The word "wallet" is used to describe a few different things in Ethereum.</p>
+<p>Le mot &quot;portefeuille&quot; est utilisé pour décrire quelques choses différentes dans Ethereum.</p>
 </div>
 <div class="paragraph data-line-6">
-<p>At a high level, a wallet is a software application that serves as the primary user interface to Ethereum. The wallet controls access to a user&#8217;s money, managing keys and addresses, tracking the balance, and creating and signing transactions. In addition, some Ethereum wallets can also interact with contracts, such as ERC20 tokens.</p>
+<p>À un niveau élevé, un portefeuille est une application logicielle qui sert d&#39;interface utilisateur principale à Ethereum. Le portefeuille contrôle l&#39;accès à l&#39;argent d&#39;un utilisateur, gère les clés et les adresses, suit le solde et crée et signe des transactions. De plus, certains portefeuilles Ethereum peuvent également interagir avec des contrats, tels que les jetons ERC20.</p>
 </div>
 <div class="paragraph data-line-8">
-<p>More narrowly, from a programmer&#8217;s perspective, the word <em>wallet</em> refers to the system used to store and manage a user&#8217;s keys. Every wallet has a key-management component. For some wallets, that&#8217;s all there is. Other wallets are part of a much broader category, that of <em>browsers</em>, which are interfaces to Ethereum-based decentralized applications, or <em>DApps</em>, which we will examine in more detail in <a href="#decentralized_applications_chap">[decentralized_applications_chap]</a>. There are no clear lines of distinction between the various categories that are conflated under the term wallet.</p>
+<p>Plus étroitement, du point de vue d&#39;un programmeur, le mot <em>wallet</em> ou <em>portefeuille</em> fait référence au système utilisé pour stocker et gérer les clés d&#39;un utilisateur. Chaque portefeuille a un composant de gestion des clés. Pour certains portefeuilles, c&#39;est tout ce qu&#39;il y a. D&#39;autres portefeuilles font partie d&#39;une catégorie beaucoup plus large, celle des <em>navigateurs</em>, qui sont des interfaces vers des applications décentralisées basées sur Ethereum, ou <em>DApps</em>, que nous examinerons plus en détail dans <a href="#decentralized_applications_chap">[decentralized_applications_chap]</a>. Il n&#39;y a pas de lignes de distinction claires entre les différentes catégories qui sont regroupées sous le terme portefeuille.</p>
 </div>
 <div class="paragraph data-line-10">
-<p>In this chapter we will look at wallets as containers for private keys, and as systems for managing these keys.</p>
+<p>Dans ce chapitre, nous examinerons les portefeuilles en tant que conteneurs de clés privées et en tant que systèmes de gestion de ces clés.</p>
 </div>
 <div class="sect2 data-line-13">
-<h3 id="wallet_tech_overview">Wallet Technology Overview</h3>
+<h3 id="wallet_tech_overview">Présentation de la technologie de portefeuille</h3>
 <div class="paragraph data-line-15">
-<p>In this section we summarize the various technologies used to construct user-friendly, secure, and flexible Ethereum wallets.</p>
+<p> Dans cette section, nous résumons les différentes technologies utilisées pour construire des portefeuilles Ethereum conviviaux, sécurisés et flexibles.</p>
 </div>
 <div class="paragraph data-line-17">
-<p>One key consideration in designing wallets is balancing convenience and privacy. The most convenient Ethereum wallet is one with a single private key and address that you reuse for everything. Unfortunately, such a solution is a privacy nightmare, as anyone can easily track and correlate all your transactions. Using a new key for every transaction is best for privacy, but becomes very difficult to manage. The correct balance is difficult to achieve, but that&#8217;s why good wallet design is paramount.</p>
+<p>L&#39;une des principales considérations dans la conception des portefeuilles est l&#39;équilibre entre commodité et confidentialité. Le portefeuille Ethereum le plus pratique est celui avec une clé privée unique et une adresse que vous réutilisez pour tout. Malheureusement, une telle solution est un cauchemar pour la confidentialité, car n&#39;importe qui peut facilement suivre et corréler toutes vos transactions. L&#39;utilisation d&#39;une nouvelle clé pour chaque transaction est préférable pour la confidentialité, mais devient très difficile à gérer. Le bon équilibre est difficile à atteindre, mais c&#39;est pourquoi une bonne conception de portefeuille est primordiale.</p>
 </div>
 <div class="paragraph data-line-19">
-<p>A common misconception about Ethereum is that Ethereum wallets contain ether or tokens. In fact, very strictly speaking, the wallet holds only keys. The ether or other tokens are recorded on the Ethereum blockchain. Users control the tokens on the network by signing transactions with the keys in their wallets. In a sense, an Ethereum wallet is a <em>keychain</em>. Having said that, given that the keys held by the wallet are the only things that are needed to transfer ether or tokens to others, in practice this distinction is fairly irrelevant. Where the difference does matter is in changing one&#8217;s mindset from dealing with the centralized system of conventional banking (where only you, and the bank, can see the money in your account, and you only need convince the bank that you want to move funds to make a transaction) to the decentralized system of blockchain platforms (where everyone can see the ether balance of an account, although they probably don&#8217;t know the account&#8217;s owner, and everyone needs to be convinced the owner wants to move funds for a transaction to be enacted). In practice this means that there is an independent way to check an account&#8217;s balance, without needing its wallet. Moreover, you can move your account handling from your current wallet to a different wallet, if you grow to dislike the wallet app you started out using.</p>
+<p>Une idée fausse courante à propos d&#39;Ethereum est que les portefeuilles Ethereum contiennent de l&#39;ether ou des jetons. En fait, très strictement parlant, le portefeuille ne contient que des clés. L&#39;ether ou d&#39;autres jetons sont enregistrés sur la blockchain Ethereum. Les utilisateurs contrôlent les jetons sur le réseau en signant des transactions avec les clés dans leurs portefeuilles. Dans un sens, un portefeuille Ethereum est un <em>porte-clés</em>. Cela dit, étant donné que les clés détenues par le portefeuille sont les seules choses nécessaires pour transférer de l&#39;ether ou des jetons à d&#39;autres, en pratique, cette distinction est assez peu pertinente. Là où la différence est importante, c&#39;est dans le fait de changer d&#39;état d&#39;esprit et de ne plus avoir affaire au système bancaire conventionnel centralisé (où seuls vous et la banque pouvez voir l&#39;argent sur votre compte, et vous n&#39;avez qu&#39;à convaincre la banque que vous voulez transférer des fonds pour faire une transaction) vers un système décentralisé des plates-formes chaîne de blocs (où tout le monde peut voir le solde d&#39;un compte, bien qu&#39;il ne connaisse probablement pas le propriétaire du compte, et tout le monde doit être convaincu que le propriétaire veut déplacer des fonds pour une transaction édictée). En pratique, cela signifie qu&#39;il existe un moyen indépendant de vérifier le solde d&#39;un compte, sans avoir besoin de son portefeuille. De plus, vous pouvez déplacer la gestion de votre compte de votre portefeuille actuel vers un autre portefeuille, si vous n&#39;aimez plus l&#39;application de portefeuille que vous avez commencé à utiliser.</p>
 </div>
 <div class="admonitionblock note data-line-22">
 <table>
@@ -474,34 +474,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-23">
-<p>Ethereum wallets contain keys, not ether or tokens. Wallets are like keychains containing pairs of private and public keys. Users sign transactions with the private keys, thereby proving they own the ether. The ether is stored on the blockchain.</p>
+<p>Les portefeuilles Ethereum contiennent des clés, pas d&#39;ether ni de jetons. Les portefeuilles sont comme des porte-clés contenant des paires de clés privées et publiques. Les utilisateurs signent des transactions avec les clés privées, prouvant ainsi qu&#39;ils possèdent l&#39;ether. L&#39;ether est stocké sur la chaîne de blocs.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-26">
-<p>There are two primary types of wallets, distinguished by whether the keys they contain are related to each other or not.</p>
+<p>Il existe deux principaux types de portefeuilles, qui se distinguent par le fait que les clés qu&#39;ils contiennent sont liées ou non.</p>
 </div>
 <div class="paragraph data-line-28">
-<p>The first type is a <em>nondeterministic wallet</em>, where each key is independently generated from a different random number. The keys are not related to each other. This type of wallet is also known as a JBOK wallet, from the phrase "Just a Bunch of Keys.&#x201d;</p>
+<p>Le premier type est un <em>portefeuille non déterministe</em>, où chaque clé est générée indépendamment à partir d&#39;un nombre aléatoire différent . Les clés ne sont pas liées les unes aux autres.  Ce type de portefeuille est également connu sous le nom de portefeuille JBOK, de l&#39;expression "Just a Bunch Of Keys" ou &quot;Juste un tas de clés&quot;.</p>
 </div>
 <div class="paragraph data-line-30">
-<p>The second type of wallet is a <em>deterministic wallet</em>, where all the keys are derived from a single master key, known as the <em>seed</em>. All the keys in this type of wallet are related to each other and can be generated again if one has the original seed. There are a number of different <em>key derivation</em> methods used in deterministic wallets. The most commonly used derivation method uses a tree-like structure, as described in <a href="#hd_wallets">Hierarchical Deterministic Wallets (BIP-32/BIP-44)</a>.</p>
+<p>Le deuxième type de portefeuille est un <em>portefeuille déterministe</em>, où toutes les clés sont dérivées d&#39;une seule clé maîtresse, connue sous le nom de <em>seed</em> ou <em>graine</em> ou <em>valeur d&#8217;amorçage</em>. Toutes les clés de ce type de portefeuille sont liées les unes aux autres et peuvent être générées à nouveau si l&#39;on dispose de la valeur d&#8217;amorçage d&#39;origine.  Il existe un certain nombre de méthodes différentes de <em>dérivation de clé</em> utilisées dans les portefeuilles déterministes. La méthode de dérivation la plus couramment utilisée utilise une structure arborescente, comme décrit dans <a href="#hd_wallets">Portefeuilles déterministes hiérarchiques (BIP-32/BIP-44)</a>.</p>
 </div>
 <div class="paragraph data-line-32">
-<p>To make deterministic wallets slightly more secure against data-loss accidents, such as having your phone stolen or dropping it in the toilet, the seeds are often encoded as a list of words (in English or another language) for you to write down and use in the event of an accident. These are known as the wallet&#8217;s <em>mnemonic code words</em>. Of course, if someone gets hold of your mnemonic code words, then they can also recreate your wallet and thus gain access to your ether and smart contracts. As such, be very, very careful with your recovery word list! Never store it electronically, in a file, on your computer or phone. Write it down on paper and store it in a safe and secure place.</p>
+<p>Pour rendre les portefeuilles déterministes légèrement plus sûrs contre les accidents de perte de données, comme le vol de votre téléphone ou sa chute dans les toilettes, les valeurs d&#8217;amorçages sont souvent encodées sous la forme d&#39;une liste de mots (en anglais ou dans une autre langue) à noter et à utiliser en cas d&#39;accident. Ceux-ci sont connus sous le nom de <em>mots de code mnémoniques</em> du portefeuille. Bien sûr, si quelqu&#39;un met la main sur vos mots de code mnémoniques, il peut également recréer votre portefeuille et ainsi accéder à vos contrats intelligents et votre ether. En tant que tel, soyez très, très prudent avec votre liste de mots de récupération ! Ne les stockez jamais électroniquement, dans un fichier, sur votre ordinateur ou votre téléphone. Écrivez-le sur papier et rangez-le dans un endroit sûr et sécurisé.</p>
 </div>
 <div class="paragraph data-line-34">
-<p>The next few sections introduce each of these technologies at a high level.</p>
+<p>Les prochaines sections présentent chacune de ces technologies à un niveau élevé.</p>
 </div>
 <div class="sect3 data-line-38">
-<h4 id="random_wallet">Nondeterministic (Random) Wallets</h4>
+<h4 id="random_wallet">Portefeuilles non déterministes (aléatoires)</h4>
 <div class="paragraph data-line-40">
-<p>In the first Ethereum wallet (produced for the Ethereum pre-sale), each wallet file stored a single randomly generated private key. Such wallets are being replaced with deterministic wallets because these "old-style" wallets are in many ways inferior. For example, it is considered good practice to avoid Ethereum address reuse as part of maximizing your privacy while using Ethereum&#x2014;i.e., to use a new address (which needs a new private key) every time you receive funds. You can go further and use a new address for each transaction, although this can get expensive if you deal a lot with tokens. To follow this practice, a nondeterministic wallet will need to regularly increase its list of keys, which means you will need to make regular backups. If you ever lose your data (disk failure, drink accident, phone stolen) before you&#8217;ve managed to back up your wallet, you will lose access to your funds and smart contracts. The "type 0" nondeterministic wallets are the hardest to deal with, because they create a new wallet file for every new address in a "just in time" manner.</p>
+<p>Dans le premier portefeuille Ethereum (produit pour la prévente Ethereum), chaque fichier de portefeuille stockait une seule clé privée générée aléatoirement. Ces portefeuilles sont remplacés par des portefeuilles déterministes car ces portefeuilles &quot;à l&#39;ancienne&quot; sont à bien des égards inférieurs. Par exemple, il est considéré comme une bonne pratique d&#39;éviter la réutilisation de l&#39;adresse Ethereum dans le cadre de la maximisation de votre vie privée lors de l&#39;utilisation d&#39;Ethereum, c&#39;est-à-dire d&#39;utiliser une nouvelle adresse (qui nécessite une nouvelle clé privée) chaque fois que vous recevez des fonds. Vous pouvez aller plus loin et utiliser une nouvelle adresse pour chaque transaction, bien que cela puisse coûter cher si vous traitez beaucoup de jetons. Pour suivre cette pratique, un portefeuille non déterministe devra régulièrement augmenter sa liste de clés, ce qui signifie que vous devrez effectuer des sauvegardes régulières. Si jamais vous perdez vos données (panne de disque, accident d&#8217;abus de boisson, vol de téléphone) avant d&#39;avoir réussi à sauvegarder votre portefeuille, vous perdrez l&#39;accès à vos fonds et à vos contrats intelligents. Les portefeuilles non déterministes de &quot;type 0&quot; sont les plus difficiles à gérer, car ils créent un nouveau fichier de portefeuille pour chaque nouvelle adresse de manière &quot;juste à temps&quot;.</p>
 </div>
 <div class="paragraph data-line-42">
-<p>Nevertheless, many Ethereum clients (including geth) use a <em>keystore</em> file, which is a JSON-encoded file that contains a single (randomly generated) private key, encrypted by a passphrase for extra security. The JSON file&#8217;s contents look like this:</p>
+<p>Néanmoins, de nombreux clients Ethereum (y compris geth) utilisent un fichier <em>keystore</em> ou <em>magasin de clés</em>, qui est un fichier codé JSON contenant une clé privée unique (générée de manière aléatoire), chiffrée par une phrase secrète pour plus de sécurité . Le contenu du fichier JSON ressemble à ceci :</p>
 </div>
 <div id="keystore_example" class="listingblock data-line-46">
 <div class="content">
@@ -531,10 +531,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph data-line-72">
-<p>The keystore format uses a <em>key derivation function</em> (KDF), also known as a password stretching algorithm, which protects against brute-force, dictionary, and rainbow table attacks. In simple terms, the private key is not encrypted by the passphrase directly. Instead, the passphrase is <em>stretched</em>, by repeatedly hashing it. The hashing function is repeated for 262,144 rounds, which can be seen in the keystore JSON as the parameter crypto.kdfparams.n. An attacker trying to brute-force the passphrase would have to apply 262,144 rounds of hashing for every attempted passphrase, which slows down the attack sufficiently to make it infeasible for passphrases of sufficient complexity and length.</p>
+<p>Le format de magasin de clés utilise une <em>fonction de dérivation de clé</em> (KDF ou key derivation function), également connue sous le nom d&#39;algorithme d&#39;étirement de mot de passe, qui protège contre les attaques par force, par dictionnaire et par table arc-en-ciel. En termes simples, la clé privée n&#39;est pas chiffrée directement par la phrase secrète. Au lieu de cela, la phrase secrète est <em>étirée</em>, en la hachant à plusieurs reprises. La fonction de hachage est répétée pendant 262 144 tours, ce qui peut être vu dans le magasin de clés JSON sous la forme du paramètre crypto.kdfparams.n. Un attaquant essayant de forcer brutalement la phrase secrète devrait appliquer 262 144 cycles de hachage pour chaque phrase secrète tentée, ce qui ralentit suffisamment l&#39;attaque pour la rendre impossible pour les phrases secrètes d&#39;une complexité et d&#39;une longueur suffisantes.</p>
 </div>
 <div class="paragraph data-line-74">
-<p>There are a number of software libraries that can read and write the keystore format, such as the JavaScript library <a href="https://github.com/ethereumjs/keythereum" data-href="https://github.com/ethereumjs/keythereum">keythereum</a>.</p>
+<p>Il existe un certain nombre de bibliothèques logicielles qui peuvent lire et écrire le format keystore, comme la bibliothèque JavaScript <a href="https://github.com/ethereumjs/keythereum" data-href="https://github.com/ethereumjs/keythereum">keythereum</a>.</p>
 </div>
 <div class="admonitionblock tip data-line-77">
 <table>
@@ -544,7 +544,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-78">
-<p>The use of nondeterministic wallets is discouraged for anything other than simple tests. They are too cumbersome to back up and use for anything but the most basic of situations. Instead, use an industry-standard&#x2013;based HD wallet with a mnemonic seed for backup.</p>
+<p>L&#39;utilisation de portefeuilles non déterministes est déconseillée pour autre chose que de simples tests. Ils sont trop encombrants pour être sauvegardés et utilisés pour autre chose que les situations les plus élémentaires. Utilisez plutôt un portefeuille HD standard avec une valeur d&#8217;amorçage mnémonique pour la sauvegarde.</p>
 </div>
 </td>
 </tr>
@@ -552,93 +552,93 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3 data-line-82">
-<h4 id="deterministic_wallets">Deterministic (Seeded) Wallets</h4>
+<h4 id="deterministic_wallets">Portefeuilles déterministes (par valeur d&#8217;amorçage)</h4>
 <div class="paragraph data-line-84">
-<p>Deterministic or "seeded" wallets are wallets that contain private keys that are all derived from a single master key, or seed. The seed is a randomly generated number that is combined with other data, such as an index number or "chain code" (see <a href="#extended_keys">Extended public and private keys</a>), to derive any number of private keys. In a deterministic wallet, the seed is sufficient to recover all the derived keys, and therefore a single backup, at creation time, is sufficient to secure all the funds and smart contracts in the wallet. The seed is also sufficient for a wallet export or import, allowing for easy migration of all the keys between different wallet implementations.</p>
+<p>Les portefeuilles déterministes ou &quot;ensemencés par valeurs d&#8217;amorçages&quot; sont des portefeuilles qui contiennent des clés privées qui sont toutes dérivées d&#39;une seule clé maîtresse ou valeur d&#8217;amorçage. La valeur d&#8217;amorçage est un nombre généré aléatoirement qui est combiné avec d&#39;autres données, telles qu&#39;un numéro d&#39;index ou un &quot;code de chaîne&quot; (voir <a href="#extended_keys">Clés publiques et privées étendues</a>), pour dériver n&#39;importe quel nombre de clés privées. Dans un portefeuille déterministe, la valeur d&#8217;amorçage est suffisante pour récupérer toutes les clés dérivées, et donc une seule sauvegarde, au moment de la création, est suffisante pour sécuriser tous les fonds et contrats intelligents dans le portefeuille. La valeur d&#8217;amorçage est également suffisante pour une exportation ou une importation de portefeuille, permettant une migration facile de toutes les clés entre différentes implémentations de portefeuille.</p>
 </div>
 <div class="paragraph data-line-86">
-<p>This design makes the security of the seed of utmost importance, as only the seed is needed to gain access to the entire wallet. On the other hand, being able to focus security efforts on a single piece of data can be seen as an advantage.</p>
+<p>Cette conception rend la sécurité de la valeur d&#8217;amorçage d&#8217;une plus haute importance, car seule la valeur d&#8217;amorçage est nécessaire pour accéder à l&#39;ensemble du portefeuille. D&#39;un autre côté, le fait de pouvoir concentrer les efforts de sécurité sur une seule donnée peut être considéré comme un avantage.</p>
 </div>
 </div>
 <div class="sect3 data-line-89">
-<h4 id="hd_wallets">Hierarchical Deterministic Wallets (BIP-32/BIP-44)</h4>
+<h4 id="hd_wallets">Portefeuilles déterministes hiérarchiques (BIP-32/BIP-44)</h4>
 <div class="paragraph data-line-91">
-<p>Deterministic wallets were developed to make it easy to derive many keys from a single seed. Currently, the most advanced form of deterministic wallet is the <em>hierarchical deterministic</em> (HD) wallet defined by Bitcoin&#8217;s <a href="http://bit.ly/2B2vQWs" data-href="http://bit.ly/2B2vQWs"><em>BIP-32 standard</em></a>. HD wallets contain keys derived in a tree structure, such that a parent key can derive a sequence of child keys, each of which can derive a sequence of grandchild keys, and so on. This tree structure is illustrated in <a href="#hd_wallets_figure">HD wallet: a tree of keys generated from a single seed</a>.</p>
+<p>Les portefeuilles déterministes ont été développés pour faciliter la dérivation de nombreuses clés à partir d&#39;une seule valeur d&#8217;amorçage. Actuellement, la forme la plus avancée de portefeuille déterministe est le portefeuille <em>hiérarchique déterministe</em> (HD ou Hierarchical Deterministic) défini par le <a href="http://bit.ly/2B2vQWs" data-href="http://bit.ly/2B2vQWs"><em>standard BIP-32</em></a> de Bitcoin. Les portefeuilles HD contiennent des clés dérivées dans une structure arborescente, de sorte qu&#39;une clé parent peut dériver une séquence de clés enfants, chacune pouvant dériver une séquence de clés petits-enfants, et ainsi de suite. Cette arborescence est illustrée dans <a href="#hd_wallets_figure">Portefeuille HD : un arbre de clés généré à partir d&#39;une seule valeur d&#8217;amorçage</a>.</p>
 </div>
 <div id="hd_wallets_figure" class="imageblock data-line-95">
 <div class="content">
-<img src="images/hd_wallet.png" alt="HD wallet">
+<img src="images/hd_wallet.png" alt="&quot;Portefeuille HD&quot;">
 </div>
-<div class="title">Figure 1. HD wallet: a tree of keys generated from a single seed</div>
+<div class="title">Figure 1. Portefeuille HD : un arbre de clés généré à partir d&#39;une seule valeur d&#8217;amorçage</div>
 </div>
 <div class="paragraph data-line-97">
-<p>HD wallets offer a few key advantages over simpler deterministic wallets. First, the tree structure can be used to express additional organizational meaning, such as when a specific branch of subkeys is used to receive incoming payments and a different branch is used to receive change from outgoing payments. Branches of keys can also be used in corporate settings, allocating different branches to departments, subsidiaries, specific functions, or accounting categories.</p>
+<p>Les portefeuilles HD offrent quelques avantages clés par rapport aux portefeuilles déterministes plus simples. Tout d&#39;abord, la structure arborescente peut être utilisée pour exprimer une signification organisationnelle supplémentaire, par exemple lorsqu&#39;une branche spécifique de sous-clés est utilisée pour recevoir des paiements entrants et qu&#39;une branche différente est utilisée pour recevoir la monnaie des paiements sortants. Les branches de clés peuvent également être utilisées dans les paramètres de l&#39;entreprise, en attribuant différentes branches à des départements, des filiales, des fonctions spécifiques ou des catégories comptables.</p>
 </div>
 <div class="paragraph data-line-99">
-<p>The second advantage of HD wallets is that users can create a sequence of public keys without having access to the corresponding private keys. This allows HD wallets to be used on an insecure server or in a watch-only or receive-only capacity, where the wallet doesn&#8217;t have the private keys that can spend the funds.</p>
+<p>Le deuxième avantage des portefeuilles HD est que les utilisateurs peuvent créer une séquence de clés publiques sans avoir accès aux clés privées correspondantes. Cela permet aux portefeuilles HD d&#39;être utilisés sur un serveur non sécurisé ou dans une capacité de surveillance ou de réception uniquement, où le portefeuille n&#39;a pas les clés privées qui peuvent dépenser les fonds.</p>
 </div>
 </div>
 <div class="sect3 data-line-102">
-<h4 id="mnemonic_codes">Seeds and Mnemonic Codes (BIP-39)</h4>
+<h4 id="mnemonic_codes">Valeurs d&#8217;amorçage et codes mnémoniques (BIP-39)</h4>
 <div class="paragraph data-line-104">
-<p>There are many ways to encode a private key for secure backup and retrieval. The currently preferred method is using a sequence of words that, when taken together in the correct order, can uniquely recreate the private key. This is sometimes known as a <em>mnemonic</em>, and the approach has been standardized by <a href="http://bit.ly/2OEMjUz" data-href="http://bit.ly/2OEMjUz">BIP-39</a>. Today, many Ethereum wallets (as well as wallets for other cryptocurrencies) use this standard, and can import and export seeds for backup and recovery using interoperable mnemonics.</p>
+<p>Il y a beaucoup de manières d&#39;encoder une clé privée pour une sauvegarde et une récupération sécurisées. La méthode actuellement préférée consiste à utiliser une séquence de mots qui, lorsqu&#39;ils sont pris ensemble dans le bon ordre, peuvent recréer de manière unique la clé privée. Ceci est parfois connu sous le nom de <em>mnémonique</em>, et l&#39;approche a été normalisée par <a href="http://bit.ly/2OEMjUz" data-href="http://bit.ly/2OEMjUz">BIP-39</a>. Aujourd&#39;hui, de nombreux portefeuilles Ethereum (ainsi que des portefeuilles pour d&#39;autres crypto-monnaies) utilisent cette norme et peuvent importer et exporter des valeurs d&#8217;amorçage pour la sauvegarde et la récupération à l&#39;aide de mnémoniques interopérables.</p>
 </div>
 <div class="paragraph data-line-106">
-<p>To see why this approach has become popular, let&#8217;s have a look at an example:</p>
+<p>Pour comprendre pourquoi cette approche est devenue populaire, examinons un exemple :</p>
 </div>
 <div id="hex_seed_example" class="listingblock data-line-110">
-<div class="title">A seed for a deterministic wallet, in hex</div>
+<div class="title">Une valeur d&#8217;amorçage pour un portefeuille déterministe, en hexadécimal</div>
 <div class="content">
 <pre>FCCF1AB3329FD5DA3DA9577511F8F137</pre>
 </div>
 </div>
 <div id="mnemonic_seed_example" class="listingblock data-line-116">
-<div class="title">A seed for a deterministic wallet, from a 12-word mnemonic</div>
+<div class="title">Une valeur d&#8217;amorçage pour un portefeuille déterministe, à partir d&#39;un mnémonique de 12 mots</div>
 <div class="content">
 <pre>wolf juice proud gown wool unfair
 wall cliff insect more detail hub</pre>
 </div>
 </div>
 <div class="paragraph data-line-121">
-<p>In practical terms, the chance of an error when writing down the hex sequence is unacceptably high. In contrast, the list of known words is quite easy to deal with, mainly because there is a high level of redundancy in the writing of words (especially English words). If "inzect" had been recorded by accident, it could quickly be determined, upon the need for wallet recovery, that "inzect" is not a valid English word and that "insect" should be used instead. We are talking about writing down a representation of the seed because that is good practice when managing HD wallets: the seed is needed to recover a wallet in the case of data loss (whether through accident or theft), so keeping a backup is very prudent. However, the seed must be kept extremely private, so digital backups should be carefully avoided; hence the earlier advice to back up with pen and paper.</p>
+<p>En termes pratiques, le risque d&#39;erreur lors de l&#39;écriture de la séquence hexadécimale est inacceptablement élevé. En revanche, la liste des mots connus est assez facile à gérer, principalement parce qu&#39;il y a une forte redondance dans l&#39;écriture des mots (surtout des mots anglais). Si « inzect » avait été enregistré par accident, il pourrait être rapidement déterminé, lors de la récupération du portefeuille, que « inzect » n&#39;est pas un mot anglais valide et que « insect » devrait être utilisé à la place. Nous parlons d&#39;écrire une représentation de la valeur d&#8217;amorçage car c&#39;est une bonne pratique lors de la gestion des portefeuilles HD : la valeur d&#8217;amorçage est nécessaire pour récupérer un portefeuille en cas de perte de données (que ce soit par accident ou par vol), il est donc très prudent de conserver une sauvegarde. Cependant, la valeur d&#8217;amorçage doit rester extrêmement privée, les sauvegardes numériques doivent donc être soigneusement évitées ; d&#39;où le conseil précédent de sauvegarder avec un stylo et du papier.</p>
 </div>
 <div class="paragraph data-line-123">
-<p>In summary, the use of a recovery word list to encode the seed for an HD wallet makes for the easiest way to safely export, transcribe, record on paper, read without error, and import a private key set into another wallet.</p>
+<p>En résumé, l&#39;utilisation d&#39;une liste de mots de récupération pour coder la valeur d&#8217;amorçage d&#39;un portefeuille HD constitue le moyen le plus simple d&#39;exporter, de transcrire, d&#39;enregistrer sur papier en toute sécurité, de lire sans erreur et d&#39;importer un ensemble de clés privées dans un autre portefeuille.</p>
 </div>
 </div>
 </div>
 <div class="sect2 data-line-127">
-<h3 id="wallet_best_practices">Wallet Best Practices</h3>
+<h3 id="wallet_best_practices">Meilleures pratiques de portefeuille</h3>
 <div class="paragraph data-line-129">
-<p>As cryptocurrency wallet technology has matured, certain common industry standards have emerged that make wallets broadly interoperable, easy to use, secure, and flexible. These standards also allow wallets to derive keys for multiple different cryptocurrencies, all from a single mnemonic. These common standards are:</p>
+<p>Alors que la technologie des portefeuilles de cryptomonnaie a mûri, certaines normes industrielles communes ont émergé qui rendent les portefeuilles largement interopérables, faciles à utiliser, sécurisé et flexible. Ces normes permettent également aux portefeuilles de dériver des clés pour plusieurs cryptomonnaies différentes, toutes à partir d&#39;un seul mnémonique. Ces normes communes sont :</p>
 </div>
 <div class="ulist data-line-131">
 <ul>
 <li class="data-line-131">
-<p>Mnemonic code words, based on BIP-39</p>
+<p>Mots de code mnémonique, basés sur BIP-39</p>
 </li>
 <li class="data-line-132">
-<p>HD wallets, based on BIP-32</p>
+<p>Portefeuilles HD, basés sur BIP-32</p>
 </li>
 <li class="data-line-133">
-<p>Multipurpose HD wallet structure, based on BIP-43</p>
+<p>Structure de portefeuille HD polyvalente, basée sur BIP-43</p>
 </li>
 <li class="data-line-134">
-<p>Multicurrency and multiaccount wallets, based on BIP-44</p>
+<p>Portefeuilles multidevises et multicomptes, basés sur BIP-44</p>
 </li>
 </ul>
 </div>
 <div class="paragraph data-line-136">
-<p>These standards may change or be obsoleted by future developments, but for now they form a set of interlocking technologies that have become the <em>de facto</em> wallet standard for most blockchain platforms and their cryptocurrencies.</p>
+<p>Ces normes peuvent changer ou être obsolètes par les développements futurs, mais pour l&#39;instant, elles forment un ensemble de technologies imbriquées qui sont devenues la norme <em>de facto</em> de portefeuille pour la plupart des plateformes de chaîne de blocs et leurs cryptomonnaies.</p>
 </div>
 <div class="paragraph data-line-138">
-<p>The standards have been adopted by a broad range of software and hardware wallets, making all these wallets interoperable. A user can export a mnemonic generated in one of these wallets and import it to another wallet, recovering all keys and addresses.</p>
+<p>Les normes ont été adoptées par une large gamme de portefeuilles logiciels et matériels, rendant tous ces portefeuilles interopérables. Un utilisateur peut exporter un mnémonique généré dans l&#39;un de ces portefeuilles et l&#39;importer dans un autre portefeuille, en récupérant toutes les clés et adresses.</p>
 </div>
 <div class="paragraph data-line-140">
-<p>Some examples of software wallets supporting these standards include (listed alphabetically) Jaxx, MetaMask, MyCrypto, and MyEtherWallet (MEW). Examples of hardware wallets supporting these standards include Keepkey, Ledger, and Trezor.</p>
+<p>Quelques exemples de portefeuilles logiciels prenant en charge ces normes incluent (classés par ordre alphabétique) Jaxx, MetaMask, MyCrypto et MyEtherWallet (MEW). Les exemples de portefeuilles matériels prenant en charge ces normes incluent Keepkey, Ledger et Trezor.</p>
 </div>
 <div class="paragraph data-line-142">
-<p>The following sections examine each of these technologies in detail.</p>
+<p>Les sections suivantes examinent chacune de ces technologies en détail.</p>
 </div>
 <div class="admonitionblock tip data-line-145">
 <table>
@@ -648,16 +648,16 @@ wall cliff insect more detail hub</pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-146">
-<p>If you are implementing an Ethereum wallet, it should be built as an HD wallet, with a seed encoded as a mnemonic code for backup, following the BIP-32, BIP-39, BIP-43, and BIP-44 standards, as described in the following sections.</p>
+<p>Si vous implémentez un portefeuille Ethereum, il doit être construit comme un portefeuille HD, avec une valeur d&#8217;amorçage encodée sous forme de code mnémonique pour la sauvegarde, conformément aux normes BIP-32, BIP-39, BIP-43 et BIP-44, comme décrit dans les rubriques suivantes.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="sect3 data-line-151">
-<h4 id="mnemonic_code_words">Mnemonic Code Words (BIP-39)</h4>
+<h4 id="mnemonic_code_words">Mots de code mnémonique (BIP-39)</h4>
 <div class="paragraph data-line-153">
-<p>Mnemonic code words are word sequences that encode a random number used as a seed to derive a deterministic wallet. The sequence of words is sufficient to recreate the seed, and from there recreate the wallet and all the derived keys. A wallet application that implements deterministic wallets with mnemonic words will show the user a sequence of 12 to 24 words when first creating a wallet. That sequence of words is the wallet backup, and can be used to recover and recreate all the keys in the same or any compatible wallet application. As we explained earlier, mnemonic word lists make it easier for users to back up wallets, because they are easy to read and correctly <span class="keep-together">transcribe</span>.</p>
+<p> Les mots de code mnémoniques sont des séquences de mots qui encodent un nombre aléatoire utilisé comme valeur d&#8217;amorçage pour dériver un portefeuille déterministe. La séquence de mots est suffisante pour recréer la valeur d&#8217;amorçage, et à partir de là recréer le portefeuille et toutes les clés dérivées. Une application de portefeuille qui implémente des portefeuilles déterministes avec des mots mnémoniques montrera à l&#39;utilisateur une séquence de 12 à 24 mots lors de la première création d&#39;un portefeuille. Cette séquence de mots est la sauvegarde du portefeuille et peut être utilisée pour récupérer et recréer toutes les clés dans la même application de portefeuille ou dans n&#39;importe quelle application de portefeuille compatible. Comme nous l&#39;avons expliqué précédemment, les listes de mots mnémoniques facilitent la sauvegarde des portefeuilles par les utilisateurs, car elles sont faciles à lire et correctement <span class="keep-together">transcrire</span>.</p>
 </div>
 <div class="admonitionblock note data-line-156">
 <table>
@@ -667,53 +667,53 @@ wall cliff insect more detail hub</pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-157">
-<p>Mnemonic words are often confused with "brainwallets." They are not the same. The primary difference is that a brainwallet consists of words chosen by the user, whereas mnemonic words are created randomly by the wallet and presented to the user. This important difference makes mnemonic words much more secure, because humans are very poor sources of randomness. Perhaps more importantly, using the term "brainwallet" suggests that the words have to be memorized, which is a terrible idea, and a recipe for not having your backup when you need it.</p>
+<p> Les mots mnémoniques sont souvent confondus avec les &quot;brainwallets&quot;. Ils ne sont pas les mêmes. La principale différence est qu&#39;un brainwallet se compose de mots choisis par l&#39;utilisateur, tandis que les mots mnémoniques sont créés de manière aléatoire par le portefeuille et présentés à l&#39;utilisateur. Cette différence importante rend les mots mnémoniques beaucoup plus sûrs, car les humains sont de très mauvaises sources d&#39;aléatoire. Peut-être plus important encore, l&#39;utilisation du terme &quot;brainwallet&quot; suggère que les mots doivent être mémorisés, ce qui est une idée terrible et une recette pour ne pas avoir votre sauvegarde lorsque vous en avez besoin.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-160">
-<p>Mnemonic codes are defined in BIP-39. Note that BIP-39 is one implementation of a mnemonic code standard. There is a different standard, <em>with a different set of words</em>, used by the Electrum Bitcoin wallet and predating BIP-39. BIP-39 was proposed by the company behind the Trezor hardware wallet and is incompatible with Electrum&#8217;s implementation. However, BIP-39 has now achieved broad industry support across dozens of interoperable implementations and should be considered the <em>de facto</em> industry standard. Furthermore, BIP-39 can be used to produce multicurrency wallets supporting Ethereum, whereas Electrum seeds cannot.</p>
+<p>Les codes mnémoniques sont définis dans le BIP-39. Notez que BIP-39 est une implémentation d&#39;une norme de code mnémonique. Il existe une norme différente, <em>avec un ensemble de mots différent</em>, utilisée par le portefeuille Electrum Bitcoin et antérieure à BIP-39. BIP-39 a été proposé par la société à l&#39;origine du portefeuille matériel Trezor et est incompatible avec la mise en œuvre d&#39;Electrum. Cependant, BIP-39 a maintenant obtenu un large soutien de l&#39;industrie à travers des dizaines d&#39;implémentations interopérables et devrait être considéré comme la norme <em>de facto</em> industrielle. De plus, BIP-39 peut être utilisé pour produire des portefeuilles multidevises prenant en charge Ethereum, contrairement aux valeurs d&#8217;amorçage Electrum.</p>
 </div>
 <div class="paragraph data-line-162">
-<p>BIP-39 defines the creation of a mnemonic code and seed, which we describe here in nine steps. For clarity, the process is split into two parts: steps 1 through 6 are shown in <a href="#generating_mnemonic_words">Generating mnemonic words</a> and steps 7 through 9 are shown in <a href="#mnemonic_to_seed">From mnemonic to seed</a>.</p>
+<p>La BIP-39 définit la création d&#39;un code mnémonique et d&#39;une valeur d&#8217;amorçage, que nous décrivons ici en neuf étapes. Pour plus de clarté, le processus est divisé en deux parties : les étapes 1 à 6 sont présentées dans <a href="#generating_mnemonic_words">Génération de mots mnémoniques</a> et les étapes 7 à 9 sont illustrées dans <a href="#mnemonic_to_seed">Du mnémonique à la valeur d&#8217;amorçage</a>.</p>
 </div>
 <div class="sect4 data-line-165">
-<h5 id="generating_mnemonic_words">Generating mnemonic words</h5>
+<h5 id="generating_mnemonic_words">Génération de mots mnémoniques</h5>
 <div class="paragraph data-line-167">
-<p>Mnemonic words are generated automatically by the wallet using the standardized process defined in BIP-39. The wallet starts from a source of entropy, adds a checksum, and then maps the entropy to a word list:</p>
+<p>Les mots mnémoniques sont générés automatiquement par le portefeuille en utilisant le processus standardisé défini dans BIP-39. Le portefeuille part d&#39;une source d&#39;entropie, ajoute une somme de contrôle, puis mappe l&#39;entropie sur une liste de mots :</p>
 </div>
 <div class="olist arabic data-line-169">
 <ol class="arabic">
 <li class="data-line-169">
-<p>Create a cryptographically random sequence S of 128 to 256 bits.</p>
+<p>Créer une séquence cryptographiquement aléatoire S de 128 à 256 bits.</p>
 </li>
 <li class="data-line-170">
-<p>Create a checksum of S by taking the first length-of-S ÷ 32 bits of the SHA-256 hash of S.</p>
+<p>Créez une somme de contrôle de S en prenant la première longueur de S ÷ 32 bits du hachage SHA-256 de S.</p>
 </li>
 <li class="data-line-171">
-<p>Add the checksum to the end of the random sequence S.</p>
+<p>Ajoutez la somme de contrôle à la fin de la séquence aléatoire S.</p>
 </li>
 <li class="data-line-172">
-<p>Divide the sequence-and-checksum concatenation into sections of 11 bits.</p>
+<p>Divisez la concaténation de séquence et de somme de contrôle en sections de 11 bits.</p>
 </li>
 <li class="data-line-173">
-<p>Map each 11-bit value to a word from the predefined dictionary of 2,048 words.</p>
+<p>Associez chaque valeur 11 bits à un mot du dictionnaire prédéfini de 2 048 mots.</p>
 </li>
 <li class="data-line-174">
-<p>Create the mnemonic code from the sequence of words, maintaining the order.</p>
+<p>Créez le code mnémonique à partir de la séquence de mots en respectant l&#39;ordre.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph data-line-176">
-<p><a href="#generating_entropy_and_encoding">Generating entropy and encoding as mnemonic words</a> shows how entropy is used to generate mnemonic words.</p>
+<p><a href="#generating_entropy_and_encoding">Génération d&#39;entropie et encodage sous forme de mots mnémoniques</a> montre comment l&#39;entropie est utilisée pour générer des mots mnémoniques.</p>
 </div>
 <div class="paragraph data-line-178">
-<p><a href="#table_bip39_entropy">Mnemonic codes: entropy and word length</a> shows the relationship between the size of the entropy data and the length of mnemonic codes in words.</p>
+<p><a href="#table_bip39_entropy">Codes mnémoniques : entropie et longueur des mots</a> montre la relation entre la taille des données d&#39;entropie et la longueur des codes mnémoniques en mots.</p>
 </div>
 <table id="table_bip39_entropy" class="tableblock frame-all grid-all stretch data-line-183">
-<caption class="title">Table 1. Mnemonic codes: entropy and word length</caption>
+<caption class="title">Table 1. Codes mnémoniques : entropie et longueur des mots</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -722,10 +722,10 @@ wall cliff insect more detail hub</pre>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Entropy (bits)</th>
-<th class="tableblock halign-left valign-top">Checksum (bits)</th>
-<th class="tableblock halign-left valign-top">Entropy <strong>+</strong> checksum (bits)</th>
-<th class="tableblock halign-left valign-top">Mnemonic length (words)</th>
+<th class="tableblock halign-left valign-top">Entropie (bits)</th>
+<th class="tableblock halign-left valign-top">Somme de contrôle (bits)</th>
+<th class="tableblock halign-left valign-top">Somme de contrôle d&#39;entropie <strong>+</strong> (bits)</th>
+<th class="tableblock halign-left valign-top">Longueur mnémonique (mots)</th>
 </tr>
 </thead>
 <tbody>
@@ -763,43 +763,43 @@ wall cliff insect more detail hub</pre>
 </table>
 <div id="generating_entropy_and_encoding" class="imageblock smallerseventy data-line-195">
 <div class="content">
-<img src="images/bip39-part1.png" alt="Generating entropy and encoding as mnemonic words">
+<img src="images/bip39-part1.png" alt="&quot;Génération d&#39;entropie et encodage sous forme de mots mnémoniques&quot;">
 </div>
-<div class="title">Figure 2. Generating entropy and encoding as mnemonic words</div>
+<div class="title">Figure 2. Génération d&#39;entropie et encodage sous forme de mots mnémoniques</div>
 </div>
 </div>
 <div class="sect4 data-line-198">
-<h5 id="mnemonic_to_seed">From mnemonic to seed</h5>
+<h5 id="mnemonic_to_seed">Du mnémonique à la valeur d&#8217;amorçage</h5>
 <div class="paragraph data-line-200">
-<p>The mnemonic words represent entropy with a length of 128 to 256 bits. The entropy is then used to derive a longer (512-bit) seed through the use of the key-stretching function PBKDF2. The seed produced is used to build a deterministic wallet and derive its keys.</p>
+<p>Les mots mnémoniques représentent l&#39;entropie d&#39;une longueur de 128 à 256 bits . L&#39;entropie est ensuite utilisée pour dériver une valeur d&#8217;amorçage plus longue (512 bits) grâce à l&#39;utilisation de la fonction d&#39;étirement de clé PBKDF2. La valeur d&#8217;amorçage produite est utilisée pour construire un portefeuille déterministe et en dériver ses clés.</p>
 </div>
 <div class="paragraph data-line-202">
-<p>The key-stretching function takes two parameters: the mnemonic and a <em>salt</em>. The purpose of a salt in a key-stretching function is to make it difficult to build a lookup table enabling a brute-force attack. In the BIP-39 standard, the salt has another purpose: it allows the introduction of a passphrase that serves as an additional security factor protecting the seed, as we will describe in more detail in <a href="#mnemonic_passphrase">Optional passphrase in BIP-39</a>.</p>
+<p>La fonction d&#8217;étirement de clé prend deux paramètres : le mnémonique et un <em>sel</em>. Le but d&#39;un sel dans une fonction d&#39;étirement de clé est de rendre difficile la construction d&#39;une table de recherche permettant une attaque par force brute. Dans la norme BIP-39, le sel a un autre objectif : il permet l&#39;introduction d&#39;une phrase secrète qui sert de facteur de sécurité supplémentaire protégeant la valeur d&#8217;amorçage, comme nous le décrirons plus en détail dans <a href="#mnemonic_passphrase">Phrase secrète facultative dans BIP-39</a>.</p>
 </div>
 <div class="paragraph data-line-204">
-<p>The process described in steps 7 through 9 continues from the process described in the previous section:</p>
+<p>Le processus décrit aux étapes 7 à 9 continue à partir du processus décrit dans la section précédente :</p>
 </div>
 <div class="olist arabic data-line-207">
 <ol class="arabic" start="7">
 <li class="data-line-207">
-<p>The first parameter to the PBKDF2 key-stretching function is the <em>mnemonic</em> produced in step 6.</p>
+<p>Le premier paramètre de la fonction d&#39;étirement de clé PBKDF2 est le <em>mnémonique</em> produit à l&#39;étape 6.</p>
 </li>
 <li class="data-line-208">
-<p>The second parameter to the PBKDF2 key-stretching function is a <em>salt</em>. The salt is composed of the string constant "mnemonic" concatenated with an optional user-supplied passphrase.</p>
+<p>Le deuxième paramètre de la fonction d&#39;étirement de clé PBKDF2 est un <em>sel</em>. Le sel est composé de la constante de chaîne &amp;quot;mnémonique&amp;quot; concaténée avec une phrase secrète facultative fournie par l&#39;utilisateur.</p>
 </li>
 <li class="data-line-209">
-<p>PBKDF2 stretches the mnemonic and salt parameters using 2,048 rounds of hashing with the HMAC-SHA512 algorithm, producing a 512-bit value as its final output. That 512-bit value is the seed.</p>
+<p>PBKDF2 étend les paramètres mnémoniques et de sel en utilisant 2 048 cycles de hachage avec l&#39;algorithme HMAC-SHA512, produisant une valeur de 512 bits comme sortie finale. Cette valeur de 512 bits est la valeur d&#8217;amorçage.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph data-line-211">
-<p><a href="#mnemonic_to_seed_figure">From mnemonic to seed</a> shows how a mnemonic is used to generate a seed.</p>
+<p><a href="#mnemonic_to_seed_figure">Du mnémonique à la valeur d&#8217;amorçage</a> montre comment un mnémonique est utilisé pour générer une valeur d&#8217;amorçage.</p>
 </div>
 <div id="mnemonic_to_seed_figure" class="imageblock data-line-215">
 <div class="content">
-<img src="images/bip39-part2.png" alt="From mnemonic to seed">
+<img src="images/bip39-part2.png" alt="&quot;Du mnémonique à la valeur d&#8217;amorçage&quot;">
 </div>
-<div class="title">Figure 3. From mnemonic to seed</div>
+<div class="title">Figure 3. Du mnémonique à la valeur d&#8217;amorçage</div>
 </div>
 <div class="admonitionblock note data-line-218">
 <table>
@@ -809,89 +809,89 @@ wall cliff insect more detail hub</pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-219">
-<p>The key-stretching function, with its 2,048 rounds of hashing, is a somewhat effective protection against brute-force attacks against the mnemonic or the passphrase. It makes it costly (in computation) to try more than a few thousand passphrase and mnemonic combinations, while the number of possible derived seeds is vast (2<sup>512</sup>, or about 10<sup>154</sup>)&#x2014;far bigger than the number of atoms in the visible universe (about 10<sup>80</sup>).</p>
+<p>La fonction d&#39;étirement de clé, avec ses 2 048 cycles de hachage, est une protection assez efficace contre les attaques par force brute contre le mnémonique ou la phrase secrète. Cela rend coûteux (en calcul) d&#39;essayer plus de quelques milliers de combinaisons de mots de passe et de mnémoniques, alors que le nombre de valeurs d&#8217;amorçage dérivées possibles est vaste (2<sup>512</sup>, soit environ 10<sup>154</sup>) - bien plus grand que le nombre d&#39;atomes dans l&#39;univers visible (environ 10<sup>80</sup>).</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-222">
-<p>Tables <a data-type="xref" data-xrefstyle="select:labelnumber" href="#mnemonic_128_no_pass">#mnemonic_128_no_pass</a>, <a data-type="xref" data-xrefstyle="select:labelnumber" href="#mnemonic_128_w_pass">#mnemonic_128_w_pass</a>, and <a data-type="xref" data-xrefstyle="select:labelnumber" href="#mnemonic_256_no_pass">#mnemonic_256_no_pass</a> show some examples of mnemonic codes and the seeds they produce.</p>
+<p>Les tables <a data-type="xref" data-xrefstyle="select:labelnumber" href="#mnemonic_128_no_pass">#mnemonic_128_no_pass</a>, <a data-type="xref" data-xrefstyle="select:labelnumber" href="#mnemonic_128_w_pass">#mnemonic_128_w_pass</a> et <a data-type="xref" data-xrefstyle="select:labelnumber" href="#mnemonic_256_no_pass">#mnemonic_256_no_pass</a> montrent quelques exemples de codes mnémoniques et les valeurs d&#8217;amorçage qu&#39;ils produisent.</p>
 </div>
 <table id="mnemonic_128_no_pass" class="tableblock frame-all grid-all stretch data-line-227">
-<caption class="title">Table 2. 128-bit entropy mnemonic code, no passphrase, resulting seed</caption>
+<caption class="title">Table 2. Code mnémonique d&#39;entropie 128 bits, sans phrase secrète, valeur d&#8217;amorçage résultante</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Entropy input (128 bits)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Entrée d&#39;entropie (128 bits)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0c1e24e5917779d297e14d45f14e1a1a</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mnemonic (12 words)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mnémonique (12 mots)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">army van defense carry jealous true garbage claim echo media make crunch</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Passphrase</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(none)</p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Phrase secrète</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(rien)</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Seed  (512 bits)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Valeur d&#8217;amorçage (512 bits)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5b56c417303faa3fcba7e57400e120a0ca83ec5a4fc9ffba757fbe63fbd77a89a1a3be4c67196f57c39
 a88b76373733891bfaba16ed27a813ceed498804c0570</p></td>
 </tr>
 </tbody>
 </table>
 <table id="mnemonic_128_w_pass" class="tableblock frame-all grid-all stretch data-line-238">
-<caption class="title">Table 3. 128-bit entropy mnemonic code, with passphrase, resulting seed</caption>
+<caption class="title">Table 3. Code mnémonique d&#39;entropie 128 bits, avec phrase secrète, valeur d&#8217;amorçage résultante</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Entropy input (128 bits)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Entrée d&#39;entropie (128 bits)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0c1e24e5917779d297e14d45f14e1a1a</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mnemonic (12 words)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mnémonique (12 mots)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">army van defense carry jealous true garbage claim echo media make crunch</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Passphrase</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Phrase secrète</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SuperDuperSecret</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Seed  (512 bits)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Valeur d&#8217;amorçage (512 bits)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3b5df16df2157104cfdd22830162a5e170c0161653e3afe6c88defeefb0818c793dbb28ab3ab091897d0
 715861dc8a18358f80b79d49acf64142ae57037d1d54</p></td>
 </tr>
 </tbody>
 </table>
 <table id="mnemonic_256_no_pass" class="tableblock frame-all grid-all stretch pagebreak-before data-line-250">
-<caption class="title">Table 4. 256-bit entropy mnemonic code, no passphrase, resulting seed</caption>
+<caption class="title">Table 4. Code mnémonique d&#39;entropie 256 bits, sans phrase secrète, valeur d&#8217;amorçage résultante</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Entropy input (256 bits)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Entrée d&#39;entropie (256 bits)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2041546864449caff939d32d574753fe684d3c947c3346713dd8423e74abcf8c</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mnemonic (24 words)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mnémonique (24 mots)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cake apple borrow silk endorse fitness top denial coil riot stay wolf
 luggage oxygen faint major edit measure invite love trap field dilemma oblige</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Passphrase</strong></p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(none)</p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Phrase secrète</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(rien)</p></td>
 </tr>
 <tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Seed (512 bits)</strong></p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong>Valeur d&#8217;amorçage (512 bits)</strong></p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3269bce2674acbd188d4f120072b13b088a0ecf87c6e4cae41657a0bb78f5315b33b3a04356e53d062e5
 5f1e0deaa082df8d487381379df848a6ad7e98798404</p></td>
 </tr>
@@ -899,9 +899,9 @@ luggage oxygen faint major edit measure invite love trap field dilemma oblige</p
 </table>
 </div>
 <div class="sect4 data-line-260">
-<h5 id="mnemonic_passphrase">Optional passphrase in BIP-39</h5>
+<h5 id="mnemonic_passphrase">Phrase secrète facultative dans BIP-39</h5>
 <div class="paragraph data-line-262">
-<p>The BIP-39 standard allows the use of an optional passphrase in the derivation of the seed. If no passphrase is used, the mnemonic is stretched with a salt consisting of the constant string "mnemonic", producing a specific 512-bit seed from any given mnemonic. If a passphrase is used, the stretching function produces a <em>different</em> seed from that same mnemonic. In fact, given a single mnemonic, every possible passphrase leads to a different seed. Essentially, there is no "wrong" passphrase. All passphrases are valid and they all lead to different seeds, forming a vast set of possible uninitialized wallets. The set of possible wallets is so large (2<sup>512</sup>) that there is no practical possibility of brute-forcing or accidentally guessing one that is in use, as long as the passphrase has sufficient complexity and length.</p>
+<p>La norme BIP-39 permet l&#39;utilisation d&#39;une phrase secrète facultative dans la dérivation de la valeur d&#8217;amorçage. Si aucune phrase secrète n&#39;est utilisée, le mnémonique est étiré avec un sel constitué de la chaîne constante &amp;quot;mnémonique&amp;quot;, produisant une valeur d&#8217;amorçage spécifique de 512 bits à partir de n&#39;importe quel mnémonique donné. Si une phrase secrète est utilisée, la fonction d&#39;étirement produit une valeur d&#8217;amorçage <em>différente</em> à partir de ce même mnémonique. En fait, étant donné un seul mnémonique, chaque phrase secrète possible conduit à une valeur d&#8217;amorçage différente. Essentiellement, il n&#39;y a pas de &quot;mauvaise&quot; phrase secrète. Toutes les phrases secrètes sont valides et mènent toutes à des valeur d&#8217;amorçage différentes, formant un vaste ensemble de portefeuilles non initialisés possibles. L&#39;ensemble des portefeuilles possibles est si grand (2<sup>512</sup>) qu&#39;il n&#39;y a aucune possibilité pratique de forcer brutalement ou de deviner accidentellement celui qui est utilisé, tant que la phrase secrète a une complexité et une longueur suffisantes.</p>
 </div>
 <div class="admonitionblock tip data-line-265">
 <table>
@@ -911,96 +911,96 @@ luggage oxygen faint major edit measure invite love trap field dilemma oblige</p
 </td>
 <td class="content">
 <div class="paragraph data-line-266">
-<p>There are no "wrong" passphrases in BIP-39. Every passphrase leads to some wallet, which unless previously used will be empty.</p>
+<p>Il n&#39;y a pas de &quot;mauvaises&quot; phrases secrète dans BIP-39. Chaque phrase secrète mène à un portefeuille qui, à moins qu&#39;il n&#39;ait été utilisé auparavant, sera vide.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-269">
-<p>The optional passphrase creates two important features:</p>
+<p>La phrase secrète facultative crée deux fonctionnalités importantes :</p>
 </div>
 <div class="ulist data-line-271">
 <ul>
 <li class="data-line-271">
-<p>A second factor (something memorized) that makes a mnemonic useless on its own, protecting mnemonic backups from compromise by a thief.</p>
+<p>Un deuxième facteur (quelque chose de mémorisé) qui rend un mnémonique inutile par lui-même, protégeant les sauvegardes mnémoniques de la compromission par un voleur.</p>
 </li>
 <li class="data-line-273">
-<p>A form of plausible deniability or "duress wallet," where a chosen passphrase leads to a wallet with a small amount of funds, used to distract an attacker from the "real" wallet that contains the majority of funds.</p>
+<p>Une forme de déni plausible ou &quot;portefeuille sous contrainte&quot;, où une phrase secrète choisie mène à un portefeuille avec une petite quantité de fonds , utilisé pour distraire un attaquant du &quot;vrai&quot; portefeuille qui contient la majorité des fonds.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph pagebreak-before data-line-276">
-<p>However, it is important to note that the use of a passphrase also introduces the risk of loss:</p>
+<p>Cependant, il est important de noter que l&#39;utilisation d&#39;une phrase secrète introduit également un risque de perte :</p>
 </div>
 <div class="ulist data-line-278">
 <ul>
 <li class="data-line-278">
-<p>If the wallet owner is incapacitated or dead and no one else knows the passphrase, the seed is useless and all the funds stored in the wallet are lost forever.</p>
+<p>Si le propriétaire du portefeuille est incapacité ou décédé et que personne d&#39;autre ne connaît la phrase secrète, la valeur d&#8217;amorçage est inutile et tous les fonds stockés dans le portefeuille sont perdus à jamais.</p>
 </li>
 <li class="data-line-280">
-<p>Conversely, if the owner backs up the passphrase in the same place as the seed, it defeats the purpose of a second factor.</p>
+<p>À l&#39;inverse, si le propriétaire sauvegarde la phrase secrète au même endroit que la valeur d&#8217;amorçage, cela va à l&#39;encontre de l&#39;objectif d&#39;un deuxième facteur.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph data-line-282">
-<p>While passphrases are very useful, they should only be used in combination with a carefully planned process for backup and recovery, considering the possibility of heirs surviving the owner being able to recover the cryptocurrency.</p>
+<p>Bien que les phrases secrètes soient très utiles, elles ne doivent être utilisées qu&#39;en combinaison avec un processus soigneusement planifié de sauvegarde et de récupération, compte tenu de la possibilité que des héritiers survivant au propriétaire puissent récupérer la cryptomonnaie.</p>
 </div>
 </div>
 <div class="sect4 data-line-285">
-<h5 id="working_mnemonic_codes">Working with mnemonic codes</h5>
+<h5 id="working_mnemonic_codes">Travailler avec des codes mnémoniques</h5>
 <div class="paragraph data-line-287">
-<p>BIP-39 is implemented as a library in many different programming languages. For example:</p>
+<p>BIP-39 est implémenté comme une bibliothèque dans de nombreux langages de programmation différents. Par example:</p>
 </div>
 <div class="dlist data-line-289">
 <dl>
 <dt class="hdlist1"><a href="https://github.com/trezor/python-mnemonic" data-href="https://github.com/trezor/python-mnemonic">python-mnemonic</a></dt>
 <dd>
-<p>The reference implementation of the standard by the SatoshiLabs team that proposed BIP-39, in Python</p>
+<p>L&#39;implémentation de référence de la norme par l&#39;équipe SatoshiLabs qui a proposé BIP-39, en Python</p>
 </dd>
 <dt class="hdlist1"><a href="https://github.com/ConsenSys/eth-lightwallet" data-href="https://github.com/ConsenSys/eth-lightwallet">ConsenSys/eth-lightwallet</a></dt>
 <dd>
-<p>Lightweight JS Ethereum wallet for nodes and browser (with BIP-39)</p>
+<p>Portefeuille léger JS Ethereum pour nœuds et navigateur (avec BIP-39)</p>
 </dd>
 <dt class="hdlist1"><a href="https://www.npmjs.com/package/bip39" data-href="https://www.npmjs.com/package/bip39">npm/bip39</a></dt>
 <dd>
-<p>JavaScript implementation of Bitcoin BIP-39: Mnemonic code for generating deterministic keys</p>
+<p>Implémentation JavaScript de Bitcoin BIP-39 : Code mnémonique pour générer des clés déterministes</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph data-line-295">
-<p>There is also a BIP-39 generator implemented in a standalone web page (<a href="#a_bip39_generator_as_a_standalone_web_page">A BIP-39 generator as a standalone web page</a>), which is extremely useful for testing and experimentation. The <a href="https://iancoleman.io/bip39/" data-href="https://iancoleman.io/bip39/">Mnemonic Code Converter</a> generates mnemonics, seeds, and extended private keys. It can be used offline in a browser, or accessed online.</p>
+<p>Il existe également un générateur BIP-39 implémenté dans une page Web autonome (<a href="#a_bip39_generator_as_a_standalone_web_page">Un générateur BIP-39 en tant que page Web autonome</a>), ce qui est extrêmement utile pour les tests et l&#39;expérimentation. Le <a href="https://iancoleman.io/bip39/" data-href="https://iancoleman.io/bip39/">Mnemonic Code Converter</a> génère des mnémoniques, des valeurs d&#8217;amorçage et des clés privées étendues. Il peut être utilisé hors ligne dans un navigateur ou accessible en ligne.</p>
 </div>
 <div id="a_bip39_generator_as_a_standalone_web_page" class="imageblock data-line-299">
 <div class="content">
-<img src="images/bip39_web.png" alt="BIP-39 generator web-page">
+<img src="images/bip39_web.png" alt="&quot;Page Web du générateur BIP-39&quot;">
 </div>
-<div class="title">Figure 4. A BIP-39 generator as a standalone web page</div>
+<div class="title">Figure 4. Un générateur BIP-39 en tant que page Web autonome</div>
 </div>
 </div>
 </div>
 <div class="sect3 data-line-302">
-<h4 id="create_hd_wallet">Creating an HD Wallet from the Seed</h4>
+<h4 id="create_hd_wallet">Créer un portefeuille HD à partir de la valeur d&#8217;amorçage</h4>
 <div class="paragraph data-line-304">
-<p>HD wallets are created from a single <em>root seed</em>, which is a 128-, 256-, or 512-bit random number. Most commonly, this seed is generated from a mnemonic as detailed in the previous section.</p>
+<p>Les portefeuilles HD sont créés à partir d&#39;une seule <em>valeur d&#8217;amorçage racine</em>, qui est un nombre aléatoire de 128, 256 ou 512 bits. Le plus souvent, cette valeur d&#8217;amorçage est générée à partir d&#39;un mnémonique comme détaillé dans la section précédente.</p>
 </div>
 <div class="paragraph data-line-306">
-<p>Every key in the HD wallet is deterministically derived from this root seed, which makes it possible to recreate the entire HD wallet from that seed in any compatible HD wallet. This makes it easy to export, back up, restore, and import HD wallets containing thousands or even millions of keys by transferring just the mnemonic from which the root seed is derived.</p>
+<p>Chaque clé du portefeuille HD est dérivée de manière déterministe de cette valeur d&#8217;amorçage racine, ce qui permet de recréer l&#39;intégralité du portefeuille HD à partir de cette valeur d&#8217;amorçage dans n&#39;importe quel portefeuille HD compatible. Cela facilite l&#39;exportation, la sauvegarde, la restauration et l&#39;importation de portefeuilles HD contenant des milliers, voire des millions de clés en transférant uniquement le mnémonique à partir duquel la valeur d&#8217;amorçage racine est dérivée.</p>
 </div>
 </div>
 <div class="sect3 data-line-309">
-<h4 id="bip32_bip43_44">HD Wallets (BIP-32) and Paths (BIP-43/44)</h4>
+<h4 id="bip32_bip43_44">Portefeuilles HD (BIP-32) et Chemins (BIP-43/44)</h4>
 <div class="paragraph data-line-311">
-<p>Most HD wallets follow the BIP-32 standard, which has become a <em>de facto</em> industry standard for deterministic key generation.</p>
+<p>La plupart des portefeuilles HD suivent le Standard BIP-32, qui est devenu un standard industriel <em>de facto</em> pour la génération de clé déterministe.</p>
 </div>
 <div class="paragraph data-line-313">
-<p>We won&#8217;t be discussing all the details of BIP-32 here, only the components necessary to understand how it is used in wallets. The main important aspect is the tree-like hierarchical relationships that it is possible for the derived keys to have, as you can see in <a href="#hd_wallets_figure">HD wallet: a tree of keys generated from a single seed</a>. It&#8217;s also important to understand the ideas of <em>extended keys</em> and <em>hardened keys</em>, which are explained in the following sections.</p>
+<p>Nous ne discuterons pas de tous les détails du BIP-32 ici, seulement des composants nécessaires pour comprendre comment il est utilisé dans les portefeuilles. Le principal aspect important est les relations hiérarchiques arborescentes qu&#39;il est possible que les clés dérivées aient, comme vous pouvez le voir dans <a href="#hd_wallets_figure">Portefeuille HD : un arbre de clés généré à partir d&#39;une seule valeur d&#8217;amorçage</a>. Il est également important de comprendre les notions de <em>clés étendues</em> et <em>clés renforcées</em>, qui sont expliquées dans les sections suivantes.</p>
 </div>
 <div class="paragraph data-line-315">
-<p>There are dozens of interoperable implementations of BIP-32 offered in many software libraries. These are mostly designed for Bitcoin wallets, which implement addresses in a different way, but share the same key-derivation implementation as Ethereum&#8217;s BIP-32-compatible wallets. Use one <a href="https://github.com/ConsenSys/eth-lightwallet" data-href="https://github.com/ConsenSys/eth-lightwallet">designed for Ethereum</a>, or adapt one from Bitcoin by adding an Ethereum address encoding library.</p>
+<p>Il existe des dizaines d&#39;implémentations interopérables de BIP-32 proposées dans de nombreuses bibliothèques de logiciels. Ceux-ci sont principalement conçus pour les portefeuilles Bitcoin, qui implémentent les adresses d&#39;une manière différente, mais partagent la même implémentation de dérivation de clé que les portefeuilles compatibles BIP-32 d&#39;Ethereum. Utilisez-en un <a href="https://github.com/ConsenSys/eth-lightwallet" class="undefined" data-href="https://github.com/ConsenSys/eth-lightwallet">https://github.com/ConsenSys/eth-lightwallet</a> [conçu pour Ethereum], ou adaptez-en un à partir de Bitcoin en ajoutant une bibliothèque d&#39;encodage d&#39;adresses Ethereum.</p>
 </div>
 <div class="paragraph data-line-317">
-<p>There is also a BIP-32 generator implemented as a <a href="http://bip32.org/" data-href="http://bip32.org/">standalone web page</a> that is very useful for testing and experimentation with BIP-32.</p>
+<p>Il existe également un générateur BIP-32 implémenté sous la forme d&#39;une <a href="http://bip32.org/" data-href="http://bip32.org/">page Web autonome</a> qui est très utile pour tester et expérimenter avec BIP-32.</p>
 </div>
 <div class="admonitionblock warning data-line-320">
 <table>
@@ -1010,19 +1010,19 @@ luggage oxygen faint major edit measure invite love trap field dilemma oblige</p
 </td>
 <td class="content">
 <div class="paragraph data-line-321">
-<p>The standalone BIP-32 generator is not an HTTPS site. That&#8217;s to remind you that the use of this tool is not secure. It is only for testing. You should not use the keys produced by this site with real funds.</p>
+<p>Le générateur BIP-32 autonome n&#39;est pas un site HTTPS. C&#39;est pour vous rappeler que l&#39;utilisation de cet outil n&#39;est pas sécurisée. C&#39;est uniquement pour tester. Vous ne devez pas utiliser les clés produites par ce site avec des fonds réels.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="sect4 data-line-325">
-<h5 id="extended_keys">Extended public and private keys</h5>
+<h5 id="extended_keys">Clés publiques et privées étendues</h5>
 <div class="paragraph data-line-327">
-<p>In BIP-32 terminology, keys can be "extended.&#x201d; With the right mathematical operations, these extended "parent" keys can be used to derive "child" keys, thus producing the hierarchy of keys and addresses described earlier. A parent key doesn&#8217;t have to be at the top of the tree. It can be picked out from anywhere in the tree hierarchy. Extending a key involves taking the key itself and appending a special <em>chain code</em> to it. A chain code is a 256-bit binary string that is mixed with each key to produce child keys.</p>
+<p>Dans la terminologie BIP-32, les clés peuvent être &quot;étendues&quot;. Avec les bonnes opérations mathématiques, ces clés &quot;parentes&quot; étendues peuvent être utilisées pour dériver des clés &quot;enfant&quot;, produisant ainsi la hiérarchie des clés et des adresses décrites précédemment. Une clé parent n&#39;a pas besoin d&#39;être au sommet de l&#39;arborescence. peut être choisi n&#39;importe où dans l&#39;arborescence. L&#39;extension d&#39;une clé implique de prendre la clé elle-même et d&#39;y ajouter un <em>code de chaîne</em> spécial. Un code de chaîne est une chaîne binaire de 256 bits qui est mélangé avec chaque clé pour produire des clés enfants.</p>
 </div>
 <div class="paragraph data-line-329">
-<p>If the key is a private key, it becomes an <em>extended private key</em> distinguished by the <span class="keep-together">prefix</span> xprv:</p>
+<p>Si la clé est une clé privée, elle devient une <em>clé privée étendue</em> qui se distingue par le <span class="keep-together">préfixe</span> xprv :</p>
 </div>
 <div id="xprv_example" class="listingblock data-line-332">
 <div class="content">
@@ -1030,7 +1030,7 @@ luggage oxygen faint major edit measure invite love trap field dilemma oblige</p
 </div>
 </div>
 <div class="paragraph data-line-336">
-<p>An <em>extended public key</em> is distinguished by the prefix xpub:</p>
+<p>Une <em>clé publique étendue</em> se distingue par le préfixe xpub :</p>
 </div>
 <div id="xpub_example" class="listingblock data-line-339">
 <div class="content">
@@ -1038,138 +1038,142 @@ luggage oxygen faint major edit measure invite love trap field dilemma oblige</p
 </div>
 </div>
 <div class="paragraph data-line-343">
-<p>A very useful characteristic of HD wallets is the ability to derive child public keys from parent public keys, <em>without</em> having the private keys. This gives us two ways to derive a child public key: either directly from the child private key, or from the parent public key.</p>
+<p>Une caractéristique très utile des portefeuilles HD est la possibilité de dériver les clés publiques enfants des clés publiques parents, <em>sans</em> avoir les clés privées. Cela nous donne deux façons de dériver une clé publique enfant : soit directement à partir de la clé privée enfant, soit à partir de la clé publique parent.</p>
 </div>
 <div class="paragraph data-line-345">
-<p>An extended public key can be used, therefore, to derive all of the public keys (and only the public keys) in that branch of the HD wallet structure.</p>
+<p>Une clé publique étendue peut donc être utilisée pour dériver toutes les clés publiques (et uniquement les clés publiques) dans cette branche de la structure du portefeuille HD.</p>
 </div>
 <div class="paragraph data-line-347">
-<p>This shortcut can be used to create very secure public key&#x2013;only deployments, where a server or application has a copy of an extended public key, but no private keys whatsoever. That kind of deployment can produce an infinite number of public keys and Ethereum addresses, but cannot spend any of the money sent to those addresses. Meanwhile, on another, more secure server, the extended private key can derive all the corresponding private keys to sign transactions and spend the money.</p>
+<p>Ce raccourci peut être utilisé pour créer des déploiements très sécurisés à clé publique uniquement, où un serveur ou une application possède une copie d&#39;une clé publique étendue, mais aucune clé privée. Ce type de déploiement peut produire un nombre infini de clés publiques et d&#39;adresses Ethereum, mais ne peut pas dépenser l&#39;argent envoyé à ces adresses. Pendant ce temps, sur un autre serveur plus sécurisé, la clé privée étendue peut dériver toutes les clés privées correspondantes pour signer des transactions et dépenser de l&#39;argent.</p>
 </div>
 <div class="paragraph data-line-349">
-<p>One common application of this method is to install an extended public key on a web server that serves an ecommerce application. The web server can use the public key derivation function to create a new Ethereum address for every transaction (e.g., for a customer shopping cart), and will not have any private keys that would be vulnerable to theft. Without HD wallets, the only way to do this is to generate thousands of Ethereum addresses on a separate secure server and then preload them on the ecommerce server. That approach is cumbersome and requires constant maintenance to ensure that the server doesn&#8217;t run out of keys, hence the preference to use extended public keys from HD wallets.</p>
+<p>Une application courante de cette méthode consiste à installer une clé publique étendue sur un serveur Web qui sert une application de commerce électronique. Le serveur Web peut utiliser la fonction de dérivation de clé publique pour créer une nouvelle adresse Ethereum pour chaque transaction (par exemple, pour le panier d&#39;un client) et n&#39;aura aucune clé privée vulnérable au vol. Sans les portefeuilles HD, la seule façon d&#39;y parvenir est de générer des milliers d&#39;adresses Ethereum sur un serveur sécurisé séparé, puis de les précharger sur le serveur de commerce électronique. Cette approche est lourde et nécessite une maintenance constante pour s&#39;assurer que le serveur ne manque pas de clés, d&#39;où la préférence d&#39;utiliser des clés publiques étendues à partir de portefeuilles HD.</p>
 </div>
 <div class="paragraph data-line-351">
-<p>Another common application of this solution is for cold-storage or hardware wallets. In that scenario, the extended private key can be stored in a hardware wallet, while the extended public key can be kept online. The user can create "receive" addresses at will, while the private keys are safely stored offline. To spend the funds, the user can use the extended private key in an offline signing Ethereum client, or sign transactions on the hardware wallet device.</p>
+<p>Une autre application courante de cette solution est pour le stockage à froid ou pour les portefeuilles matériels. Dans ce scénario, la clé privée étendue peut être stockée dans un portefeuille matériel, tandis que la clé publique étendue peut être conservée en ligne. L&#39;utilisateur peut créer des adresses &quot;de réception&quot; à volonté, tandis que les clés privées sont stockées en toute sécurité hors ligne. Pour dépenser les fonds, l&#39;utilisateur peut utiliser la clé privée étendue dans un client Ethereum de signature hors ligne ou signer des transactions sur le périphérique de portefeuille matériel.</p>
 </div>
 </div>
 <div class="sect4 data-line-354">
-<h5 id="hardened_child_key">Hardened child key derivation</h5>
+<h5 id="hardened_child_key">Dérivation de clé enfant renforcée</h5>
 <div class="paragraph data-line-356">
-<p>The ability to derive a branch of public keys from an extended public key, or <em>xpub</em>, is very useful, but it comes with a potential risk. Access to an xpub does not give access to child private keys. However, because the xpub contains the chain code (used to derive child public keys from the parent public key), if a child private key is known, or somehow leaked, it can be used with the chain code to derive all the other child private keys. A single leaked child private key, together with a parent chain code, reveals all the private keys of all the children. Worse, the child private key together with a parent chain code can be used to deduce the parent private key.</p>
+<p>La possibilité de dériver une branche de clés publiques à partir d&#39;une clé publique étendue, ou <em>xpub</em>, est très utile, mais elle comporte un risque potentiel. L&#39;accès à une xpub ne donne pas accès aux clés privées enfants. Cependant, étant donné que le xpub contient le code de chaîne (utilisé pour dériver les clés publiques enfants de la clé publique parent), si une clé privée enfant est connue ou divulguée d&#39;une manière ou d&#39;une autre, elle peut être utilisée avec le code de chaîne pour dériver tous les autres enfants privés. clés. Une seule clé privée enfant divulguée, associée à un code de chaîne parent, révèle toutes les clés privées de tous les enfants. Pire encore, la clé privée enfant associée à un code de chaîne parent peut être utilisée pour déduire la clé privée parent.</p>
 </div>
 <div class="paragraph data-line-358">
-<p>To counter this risk, HD wallets use an alternative derivation function called <em>hardened derivation</em>, which "breaks" the relationship between parent public key and child chain code. The hardened derivation function uses the parent private key to derive the child chain code, instead of the parent public key. This creates a "firewall" in the parent/child sequence, with a chain code that cannot be used to compromise a parent or sibling private key.</p>
+<p>Pour contrer ce risque, les portefeuilles HD utilisent une fonction de dérivation alternative appelée <em>dérivation renforcée</em>, qui &quot;casse&quot; la relation entre la clé publique parent et le code de chaîne enfant. La fonction de dérivation renforcée utilise la clé privée parent pour dériver le code de chaîne enfant, au lieu de la clé publique parent. Cela crée un &quot;pare-feu&quot; dans la séquence parent/enfant, avec un code de chaîne qui ne peut pas être utilisé pour compromettre une clé privée parent ou sœur.</p>
 </div>
 <div class="paragraph data-line-360">
-<p>In simple terms, if you want to use the convenience of an xpub to derive branches of public keys without exposing yourself to the risk of a leaked chain code, you should derive it from a hardened parent, rather than a normal parent. Best practice is to have the level-1 children of the master keys always derived by hardened derivation, to prevent compromise of the master keys.</p>
+<p>En termes simples, si vous souhaitez utiliser la commodité d&#39;un xpub pour dériver des branches de clés publiques sans vous exposer au risque d&#39;une fuite de code de chaîne, vous devez le dériver d&#39;un parent renforcé, plutôt que d&#39;un parent normal. La meilleure pratique consiste à toujours dériver les enfants de niveau 1 des clés principales par dérivation renforcée, afin d&#39;éviter toute compromission des clés principales.</p>
 </div>
 </div>
 <div class="sect4 data-line-363">
-<h5 id="index_number">Index numbers for normal and hardened derivation</h5>
+<h5 id="index_number">Numéros d&#39;index pour dérivation normale et durcie</h5>
 <div class="paragraph data-line-365">
-<p>It is clearly desirable to be able to derive more than one child key from a given parent key. To manage this, an index number is used. Each index number, when combined with a parent key using the special child derivation function, gives a different child key. The index number used in the BIP-32 parent-to-child derivation function is a 32-bit integer. To easily distinguish between keys derived through the normal (unhardened) derivation function versus keys derived through hardened derivation, this index number is split into two ranges. Index numbers between 0 and 2<sup>31</sup>&#x2013;1 (0x0 to 0x7FFFFFFF) are used <em>only</em> for normal derivation. Index numbers between 2<sup>31</sup> and 2<sup>32</sup>&#x2013;1 (0x80000000 to 0xFFFFFFFF) are used <em>only</em> for hardened derivation. Therefore, if the index number is less than 2<sup>31</sup>, the child is normal, whereas if the index number is equal to or above 2<sup>31</sup>, the child is hardened.</p>
+<p>Il est clairement souhaitable de pouvoir dériver plus d&#39;une clé enfant à partir d&#39;une clé parent donnée. Pour gérer cela, un numéro d&#39;index est utilisé. Chaque numéro d&#39;index, lorsqu&#39;il est combiné avec une clé parent à l&#39;aide de la fonction spéciale de dérivation d&#39;enfant, donne une clé enfant différente. Le numéro d&#39;index utilisé dans la fonction de dérivation parent-enfant BIP-32 est un entier de 32 bits. Pour distinguer facilement les clés dérivées via la fonction de dérivation normale (non renforcée) des clés dérivées via la dérivation renforcée, ce numéro d&#39;index est divisé en deux plages. Les numéros d&#39;index entre 0 et 2<sup>31</sup>–1 (0x0 à 0x7FFFFFFF) sont utilisés <em>uniquement</em> pour la dérivation normale. Les numéros d&#39;index entre 2<sup>31</sup> et 2<sup>32</sup>–1 (0x80000000 à 0xFFFFFFFF) sont utilisés <em>uniquement</em> pour la dérivation renforcée. Ainsi, si l&#39;indice est inférieur à 2<sup>31</sup>, l&#39;enfant est normal, alors que si l&#39;indice est égal ou supérieur à 2<sup>31</sup>, l&#39;enfant est endurci.</p>
 </div>
 <div class="paragraph data-line-367">
-<p>To make the index numbers easier to read and display, the index numbers for hardened children are displayed starting from zero, but with a prime symbol. The first normal child key is therefore displayed as 0, whereas the first hardened child (index 0x80000000) is displayed as 0&amp;#x27;. In sequence, then, the second hardened key would have index of 0x80000001 and would be displayed as 1&amp;#x27;, and so on. When you see an HD wallet index i&amp;#x27;, that means 2<sup>31</sup> + i.</p>
+<p>Pour faciliter la lecture et l&#39;affichage des numéros d&#39;index, les numéros d&#39;index pour les enfants endurcis sont affichés à partir de zéro, mais avec un symbole prime. La première clé enfant normale est donc affichée sous la forme 0, tandis que la première clé enfant renforcée (index 0x80000000) est affichée sous la forme 0&amp;#39;. Dans l&#39;ordre, alors, la deuxième clé renforcée aurait un index de 0x80000001 et serait affichée comme 1&amp;#39;, et ainsi de suite. Lorsque vous voyez un index de portefeuille HD i&amp;#39;, cela signifie 2<sup>31</sup> + i.</p>
 </div>
 </div>
 <div class="sect4 data-line-370">
-<h5 id="hd_wallet_path">HD wallet key identifier (path)</h5>
+<h5 id="hd_wallet_path">Identifiant de clé de portefeuille HD (chemin)</h5>
 <div class="paragraph data-line-372">
-<p>Keys in an HD wallet are identified using a "path" naming convention, with each level of the tree separated by a slash (/) character (see <a href="#hd_path_table">HD wallet path examples</a>). Private keys derived from the master private key start with m. Public keys derived from the master public key start with M. Therefore, the first child private key of the master private key is m/0. The first child public key is M/0. The second grandchild of the first child is m/0/1, and so on.</p>
+<p>Les clés d&#39;un portefeuille HD sont identifiées à l&#39;aide d&#39;un &quot; chemin&quot;, avec chaque niveau de l&#39;arborescence séparé par une barre oblique (/) (voir <a href="#hd_path_table">[hd_path_table]</a>). Les clés privées dérivées de la clé privée principale commencent par m. Les clés publiques dérivées de la clé publique principale commencent par M. Par conséquent, la première clé privée enfant de la clé privée principale est m/0. La première clé publique enfant est M/0. Le deuxième petit-enfant du premier enfant est m/0/1, et ainsi de suite.</p>
 </div>
 <div class="paragraph data-line-374">
-<p>The "ancestry" of a key is read from right to left, until you reach the master key from which it was derived. For example, identifier m/x/y/z describes the key that is the z-th child of key m/x/y, which is the y-th child of key m/x, which is the x-th child of m.</p>
+<p>L&#39;&quot;ascendance&quot; d&#39;une clé se lit de droite à gauche, jusqu&#39;à atteindre la clé maîtresse dont elle est issue. Par exemple, l&#39;identifiant m/x/y/z décrit la clé qui est le z-ème enfant de la clé m/x/y, qui est le y-ème enfant de la clé m/x, qui est le x-ième enfant de m.</p>
 </div>
-<table id="hd_path_table" class="tableblock frame-all grid-all stretch data-line-379">
-<caption class="title">Table 5. HD wallet path examples</caption>
+<div id="hd_path_table" class="paragraph data-line-377">
+<p>Exemples de chemin de portefeuille .HD</p>
+</div>
+<table class="tableblock frame-all grid-all stretch data-line-379">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">HD path</th>
-<th class="tableblock halign-left valign-top">Key described</th>
+<th class="tableblock halign-left valign-top">Chemin HD</th>
+<th class="tableblock halign-left valign-top">Clé décrite</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">m/0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The first (0) child private key of the master private key (m)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La première clé privée enfant (0) de la clé privée principale (m)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">m/0/0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The first grandchild private key of the first child (m/0)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La clé privée du premier petit-enfant du premier enfant (m/0)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">m/0'/0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The first normal grandchild of the first <em>hardened</em> child (m/0')</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">m/0&amp;#39;/0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le premier petit-enfant normal du premier enfant <em>renforcé</em> (m/0&amp;#39;)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">m/1/0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The first grandchild private key of the second child (m/1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La clé privée du premier petit-enfant du deuxième enfant (m/1)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M/23/17/0/0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The first great-great-grandchild public key of the first great-grandchild of the 18th grandchild of the <span class="keep-together">24th child</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La clé publique du premier arrière-arrière-petit-enfant du premier arrière-petit-enfant du 18e petit-enfant du <span class="keep-together">24e enfant</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4 data-line-389">
-<h5 id="navigating_hd_wallet_tree">Navigating the HD wallet tree structure</h5>
+<h5 id="navigating_hd_wallet_tree">Naviguer dans l&#39;arborescence du portefeuille HD</h5>
 <div class="paragraph data-line-391">
-<p>The HD wallet tree structure is tremendously flexible. The flip side of this is that it also allows for unbounded complexity: each parent extended key can have 4 billion children: 2 billion normal children and 2 billion hardened children. Each of those children can have another 4 billion children, and so on. The tree can be as deep as you want, with a potentially infinite number of generations. With all that potential, it can become quite difficult to navigate these very large trees.</p>
+<p>La structure arborescente du portefeuille HD est extrêmement flexible. Le revers de la médaille est qu&#39;il permet également une complexité illimitée : chaque clé étendue parent peut avoir 4 milliards d&#39;enfants : 2 milliards d&#39;enfants normaux et 2 milliards d&#39;enfants renforcés. Chacun de ces enfants peut avoir 4 milliards d&#39;enfants supplémentaires, et ainsi de suite. L&#39;arbre peut être aussi profond que vous le souhaitez, avec un nombre potentiellement infini de générations. Avec tout ce potentiel, il peut devenir assez difficile de naviguer dans ces très grands arbres.</p>
 </div>
 <div class="paragraph data-line-393">
-<p>Two BIPs offer a way to manage this potential complexity by creating standards for the structure of HD wallet trees. BIP-43 proposes the use of the first hardened child index as a special identifier that signifies the "purpose" of the tree structure. Based on BIP-43, an HD wallet should use only one level-1 branch of the tree, with the index number defining the purpose of the wallet by identifying the structure and namespace of the rest of the tree. More specifically, an HD wallet using only branch m/i&amp;#x27;/... is intended to signify a specific purpose and that purpose is identified by index number i.</p>
+<p>Deux BIP offrent un moyen de gérer cette complexité potentielle en créant des normes pour la structure des arborescences de portefeuille HD. BIP-43 propose l&#39;utilisation du premier index enfant renforcé comme identifiant spécial qui signifie le &quot;but&quot; de la structure arborescente. Basé sur BIP-43, un portefeuille HD ne devrait utiliser qu&#39;une seule branche de niveau 1 de l&#39;arborescence, le numéro d&#39;index définissant l&#39;objectif du portefeuille en identifiant la structure et l&#39;espace de noms du reste de l&#39;arborescence. Plus précisément, un portefeuille HD utilisant uniquement la branche m/i&amp;#39;/... est destiné à signifier un objectif spécifique et cet objectif est identifié par le numéro d&#39;index i.</p>
 </div>
 <div class="paragraph data-line-395">
-<p>Extending that specification, BIP-44 proposes a multicurrency multiaccount structure signified by setting the "purpose" number to 44'. All HD wallets following the BIP-44 structure are identified by the fact that they only use one branch of the tree: m/44'/*.</p>
+<p>Étendant cette spécification, BIP-44 propose une structure multicompte multidevise signifiée en définissant le numéro de &quot;but&quot; à 44&amp;#39;. Tous les portefeuilles HD suivant la structure BIP-44 sont identifiés par le fait qu&#39;ils n&#39;utilisent qu&#39;une seule branche de l&#39;arbre : m/44&amp;#39;/*.</p>
 </div>
 <div class="paragraph data-line-397">
-<p>BIP-44 specifies the structure as consisting of five predefined tree levels:</p>
+<p>BIP-44 spécifie la structure comme étant composée de cinq niveaux d&#39;arborescence prédéfinis :</p>
 </div>
 <div id="bip44_tree" class="listingblock data-line-400">
 <div class="content">
-<pre>m / purpose' / coin_type' / account' / change / address_index</pre>
+<pre>m / but&amp;#39; / type_de_monnaie&amp;#39; / compte&amp;#39; / change / index_adresse</pre>
 </div>
 </div>
 <div class="paragraph data-line-404">
-<p>The first level, purpose&amp;#x27;, is always set to 44&amp;#x27;. The second level, coin_type&amp;#x27;, specifies the type of cryptocurrency coin, allowing for multicurrency HD wallets where each currency has its own subtree under the second level. There are several currencies defined in a standards document called <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md" data-href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">SLIP0044</a>; for example, Ethereum is m/44&amp;#x27;/60&amp;#x27;, Ethereum Classic is m/44&amp;#x27;/61&amp;#x27;, Bitcoin is m/44&amp;#x27;/0&amp;#x27;, and Testnet for all currencies is m/44&amp;#x27;/1&amp;#x27;.</p>
+<p>Le premier niveau, but&amp;#39;, est toujours réglé sur 44&amp;#39;. Le deuxième niveau, type_de_monnaie&amp;#39;, spécifie le type de pièce de cryptomonnaie, permettant des portefeuilles HD multidevises où chaque devise a son propre sous-arbre sous le deuxième niveau. Il existe plusieurs devises définies dans un document standard appelé <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md" data-href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">SLIP0044</a> ; par exemple, Ethereum vaut m/44&amp;#39;/60&amp;#39;, Ethereum Classic vaut m/44&amp;#39;/61&amp;#39;, Bitcoin vaut m/44&amp;#39;/0&amp;#39; et Testnet pour tous devises est m/44&amp;#39;/1&amp;#39;.</p>
 </div>
 <div class="paragraph data-line-406">
-<p>The third level of the tree is account&amp;#x27;, which allows users to subdivide their wallets into separate logical subaccounts for accounting or organizational purposes. For example, an HD wallet might contain two Ethereum "accounts": m/44&amp;#x27;/60&amp;#x27;/0&amp;#x27; and m/44&amp;#x27;/60&amp;#x27;/1&amp;#x27;. Each account is the root of its own subtree.</p>
+<p>Le troisième niveau de l&#39;arborescence est compte&amp;#39;, qui permet aux utilisateurs de subdiviser leurs portefeuilles en sous-comptes logiques distincts à des fins comptables ou organisationnelles. Par exemple, un portefeuille HD peut contenir deux &quot;comptes&quot; Ethereum : m/44&amp;#39;/60&amp;#39;/0&amp;#39; et m/44&amp;#39;/60&amp;#39;/1&amp;#39;. Chaque compte est la racine de sa propre sous-arborescence.</p>
 </div>
 <div class="paragraph data-line-408">
-<p>Because BIP-44 was created originally for Bitcoin, it contains a "quirk" that isn&#8217;t relevant in the Ethereum world. On the fourth level of the path, change, an HD wallet has two subtrees: one for creating receiving addresses and one for creating change addresses. Only the "receive" path is used in Ethereum, as there is no necessity for a change address like there is in Bitcoin. Note that whereas the previous levels used hardened derivation, this level uses normal derivation. This is to allow the account level of the tree to export extended public keys for use in a nonsecured environment. Usable addresses are derived by the HD wallet as children of the fourth level, making the fifth level of the tree the address_index. For example, the third receiving address for Ethereum payments in the primary account would be M/44&amp;#x27;/60&amp;#x27;/0&amp;#x27;/0/2. <a href="#bip44_path_examples">BIP-44 HD wallet structure examples</a> shows a few more examples.</p>
+<p>Parce que BIP-44 a été créé à l&#39;origine pour Bitcoin, il contient une &quot;bizarrerie&quot; qui n&#39;est pas pertinente dans le monde Ethereum. Au quatrième niveau du chemin, change, un portefeuille HD a deux sous-arbres : un pour créer des adresses de réception et un pour créer des adresses de change (retour du change de la transaction). Seul le chemin &quot;réception&quot; est utilisé dans Ethereum, car il n&#39;est pas nécessaire de changer d&#39;adresse comme c&#39;est le cas dans Bitcoin. Notez qu&#39;alors que les niveaux précédents utilisaient une dérivation renforcée, ce niveau utilise une dérivation normale. Cela permet au niveau du compte de l&#39;arborescence d&#39;exporter des clés publiques étendues pour une utilisation dans un environnement non sécurisé. Les adresses utilisables sont dérivées par le portefeuille HD en tant qu&#39;enfants du quatrième niveau, faisant du cinquième niveau de l&#39;arborescence le index_adresse. Par exemple, la troisième adresse de réception des paiements Ethereum dans le compte principal serait M/44&amp;#39;/60&amp;#39;/0&amp;#39;/0/2. <a href="#bip44_path_examples">[bip44_path_examples]</a> montre quelques exemples supplémentaires.</p>
 </div>
-<table id="bip44_path_examples" class="tableblock frame-all grid-all stretch data-line-413">
-<caption class="title">Table 6. BIP-44 HD wallet structure examples</caption>
+<div id="bip44_path_examples" class="paragraph data-line-411">
+<p>Exemples de structure de portefeuille .BIP-44 HD</p>
+</div>
+<table class="tableblock frame-all grid-all stretch data-line-413">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">HD path</th>
-<th class="tableblock halign-left valign-top">Key described</th>
+<th class="tableblock halign-left valign-top">Chemin HD</th>
+<th class="tableblock halign-left valign-top">Clé décrite</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M/44&amp;#x27;/60&amp;#x27;/0&amp;#x27;/0/2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The third receiving public key for the primary Ethereum account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M/44&amp;#39;/60&amp;#39;/0&amp;#39;/0/2+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La troisième clé publique de réception pour le compte Ethereum principal</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">M/44&amp;#x27;/0&amp;#x27;/3&amp;#x27;/1/14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The 15<sup>th</sup> change-address public key for the 4<sup>th</sup> Bitcoin account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M/44&amp;#39;/0&amp;#39;/3&amp;#39;/1/14+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La 15<sup>ème</sup> clé publique d&#39;adresse de change pour le 4<sup>ème</sup> compte Bitcoin</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">m/44&amp;#x27;/2&amp;#x27;/0&amp;#x27;/0/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The second private key in the Litecoin main account, for signing transactions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">m/44&amp;#39;/2&amp;#39;/0&amp;#39;/0/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La deuxième clé privée du compte principal Litecoin, pour la signature des transactions</p></td>
 </tr>
 </tbody>
 </table>
@@ -1177,9 +1181,9 @@ luggage oxygen faint major edit measure invite love trap field dilemma oblige</p
 </div>
 </div>
 <div class="sect2 data-line-420">
-<h3 id="_conclusions">Conclusions</h3>
+<h3 id="_conclusion">Conclusion</h3>
 <div class="paragraph data-line-422">
-<p>Wallets are the foundation of any user-facing blockchain application. They allow users to manage collections of keys and addresses. Wallets also allow users to demonstrate their ownership of ether, and authorize transactions, by applying digital signatures, as we will see in <a href="#tx_chapter">[tx_chapter]</a>.</p>
+<p>Les portefeuilles sont la base de toute application chaîne de blocs destinée aux utilisateurs. Ils permettent aux utilisateurs de gérer des collections de clés et d&#39;adresses. Les portefeuilles permettent également aux utilisateurs de démontrer leur propriété d&#39;ether et d&#39;autoriser les transactions, en appliquant des signatures numériques, comme nous le verrons dans <a href="#tx_chapter">[tx_chapter]</a>.</p>
 </div>
 </div>
 </div>
@@ -1187,7 +1191,7 @@ luggage oxygen faint major edit measure invite love trap field dilemma oblige</p
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-26 12:14:32 -0400
+Last updated 2022-04-19 09:43:16 -0400
 </div>
 </div>
 </body>
