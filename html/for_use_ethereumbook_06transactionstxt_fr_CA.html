@@ -672,7 +672,7 @@ $ <strong>curl --data '{"method":"parity_nextNonce", \
 <p>La concurrence est un aspect complexe de l&#39;informatique, et il apparaît parfois de manière inattendue, en particulier dans les systèmes en temps réel décentralisés et distribués comme <span class="keep-together">Ethereum</span>.</p>
 </div>
 <div class="paragraph data-line-156">
-<p>En termes simples, la concurrence est lorsque vous avez un calcul simultané par plusieurs systèmes indépendants. Ceux-ci peuvent se trouver dans le même programme (par exemple, multithreading), sur le même processeur (par exemple, multitraitement) ou sur différents ordinateurs (c&#39;est-à-dire, passage distribué : [&lt;span class="keep-together"&gt;systèmes&lt;/span&gt;]). Ethereum, par définition, est un système qui permet la simultanéité des opérations (nœuds, clients, DApps) mais applique un état singleton par consensus.</p>
+<p>En termes simples, la concurrence est lorsque vous avez un calcul simultané par plusieurs systèmes indépendants. Ceux-ci peuvent se trouver dans le même programme (par exemple, multithreading), sur le même processeur (par exemple, multitraitement) ou sur différents ordinateurs (c&#39;est-à-dire, <span class="keep-together">systèmes</span> distribués). Ethereum, par définition, est un système qui permet la simultanéité des opérations (nœuds, clients, DApps) mais applique un état singleton par consensus.</p>
 </div>
 <div class="paragraph data-line-158">
 <p>Maintenant, imaginez que vous ayez plusieurs applications de portefeuille indépendantes qui génèrent des transactions à partir de la ou des mêmes adresses. Un exemple d&#39;une telle situation serait un échange traitant des retraits du portefeuille chaud de l&#39;échange (un portefeuille dont les clés sont stockées en ligne, contrairement à un portefeuille froid où les clés ne sont jamais en ligne). Idéalement, vous voudriez avoir plus d&#39;un ordinateur traitant les retraits, afin qu&#39;il ne devienne pas un goulot d&#39;étranglement ou un point de défaillance unique. Cependant, cela devient rapidement problématique, car le fait d&#39;avoir plus d&#39;un ordinateur produisant des retraits entraînera des problèmes épineux de concurrence, dont le moindre n&#39;est pas la sélection des nonces. Comment plusieurs ordinateurs générant, signant et diffusant des transactions à partir du même compte du portefeuille chaud (Hot Wallet) se coordonnent-ils ?</p>
@@ -1618,7 +1618,7 @@ Signed Raw Transaction: 0xf866808609184e72a0008303000094b0920c523d582040f2bcb1..
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-28 07:00:47 -0400
+Last updated 2022-04-28 07:11:47 -0400
 </div>
 </div>
 </body>
