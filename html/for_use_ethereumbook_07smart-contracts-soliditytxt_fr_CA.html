@@ -1187,11 +1187,7 @@ contract Faucet {
 <p>Nous avons modifié la directive pragma pour spécifier la v0.4.22 comme version minimale pour cet exemple, car nous utilisons le nouveau mot-clé constructor introduit dans la v0.4.22 de Solidity. Notre contrat a maintenant une variable de type address nommée owner. Le nom &quot;owner&quot; n&#39;est en aucun cas spécial. Nous pourrions appeler cette variable d&#39;adresse &quot;potato&quot; et l&#39;utiliser toujours de la même manière. Le nom owner rend simplement son objectif clair.</p>
 </div>
 <div class="paragraph data-line-465">
-<<<<<<< Updated upstream
-<p>Ensuite, notre constructeur, qui s&#39;exécute dans le cadre de la transaction de création de contrat, attribue l&#39;adresse de msg.sender à la variable owner. Nous avons utilisé msg.sender dans la fonction remove pour identifier l&#39;initiateur de la demande de &lt;span class="keep-together"&gt;&lt;code&gt;withdraw&lt;/code&gt;&lt;/span&gt;. Dans le constructeur, cependant, le msg.sender est l&#39;EOA ou l&#39;adresse du contrat qui a initié la création du contrat. Nous savons que c&#39;est le cas <em>car</em> il s&#39;agit d&#39;une fonction constructeur : elle ne s&#39;exécute qu&#39;une seule fois, lors de la création du contrat.</p>
-=======
 <p>Ensuite, notre constructeur, qui s&#39;exécute dans le cadre de la transaction de création de contrat, attribue l&#39;adresse de msg.sender à la variable owner. Nous avons utilisé msg.sender dans la fonction remove pour identifier l&#39;initiateur de la demande de <span class="keep-together"><code>withdraw</code></span>. Dans le constructeur, cependant, le msg.sender est l&#39;EOA ou l&#39;adresse du contrat qui a initié la création du contrat. Nous savons que c&#39;est le cas <em>car</em> il s&#39;agit d&#39;une fonction constructeur : elle ne s&#39;exécute qu&#39;une seule fois, lors de la création du contrat.</p>
->>>>>>> Stashed changes
 </div>
 <div class="paragraph data-line-467">
 <p>Nous pouvons maintenant ajouter une fonction pour détruire le contrat. Nous devons nous assurer que seul le propriétaire peut exécuter cette fonction, nous utiliserons donc une instruction require pour contrôler l&#39;accès. Voici à quoi cela ressemblera :</p>
@@ -1507,11 +1503,7 @@ contract Faucet is Mortal {
 <p>OK, nous avons donc configuré notre contrat pour émettre des événements. Comment voir les résultats d&#39;une transaction et &quot;attraper&quot; les événements ? La bibliothèque web3.js fournit une structure de données qui contient les journaux d&#39;une transaction. Dans ceux-ci, nous pouvons voir les événements générés par la transaction.</p>
 </div>
 <div class="paragraph data-line-689">
-<<<<<<< Updated upstream
-<p>Utilisons truffle pour exécuter une transaction de test sur le contrat Faucet révisé. Suivez les instructions dans <a href="#truffle">[truffle]</a> pour configurer un répertoire de projet et compiler le code <span class="keep-together"><code>Faucet</code></span>. Le code source peut être trouvé dans <a href="https://github.com/ethereumbook/ethereumbook" class="undefined" data-href="https://github.com/ethereumbook/ethereumbook">https://github.com/ethereumbook/ethereumbook</a> [le référentiel GitHub du livre] sous <em>code/truffle/FaucetEvents</em>.</p>
-=======
 <p>Utilisons truffle pour exécuter une transaction de test sur le contrat Faucet révisé. Suivez les instructions dans <a href="#truffle">[truffle]</a> pour configurer un répertoire de projet et compiler le code <span class="keep-together"><code>Faucet</code></span>. Le code source peut être trouvé dans link:https://github.com/ethereumbook/ethereumbook [le référentiel GitHub du livre] sous <em>code/truffle/FaucetEvents</em>.</p>
->>>>>>> Stashed changes
 </div>
 <pre data-type="programlisting">
 $ <strong>truffle develop</strong>
@@ -1971,11 +1963,7 @@ gas cost estimation = 0.00062794 ether
 <div class="sect2 data-line-1049">
 <h3 id="_conclusion">Conclusion</h3>
 <div class="paragraph data-line-1051">
-<<<<<<< Updated upstream
-<p>Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity. Nous avons pris un exemple de contrat simple, <em>Faucet.sol</em>, et l&#39;avons progressivement amélioré et rendu plus complexe, en l&#39;utilisant pour explorer divers aspects du langage Solidity. Dans <a href="#vyper_chap">[vyper_chap]</a> nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.(range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc0&quot; )</p>
-=======
 <p>Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity. Nous avons pris un exemple de contrat simple, <em>Faucet.sol</em>, et l&#39;avons progressivement amélioré et rendu plus complexe, en l&#39;utilisant pour explorer divers aspects du langage Solidity. Dans <a href="#vyper_chap">[vyper_chap]</a> nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.</p>
->>>>>>> Stashed changes
 </div>
 </div>
 </div>
@@ -1983,11 +1971,7 @@ gas cost estimation = 0.00062794 ether
 </div>
 <div id="footer">
 <div id="footer-text">
-<<<<<<< Updated upstream
-Last updated 2022-05-01 12:20:05 -0400
-=======
-Last updated 2022-05-01 12:31:08 -0400
->>>>>>> Stashed changes
+Last updated 2022-05-01 12:47:04 -0400
 </div>
 </div>
 </body>
