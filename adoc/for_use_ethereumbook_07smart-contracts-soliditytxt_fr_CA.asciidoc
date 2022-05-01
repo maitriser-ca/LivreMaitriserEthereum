@@ -686,7 +686,7 @@ include::code/Solidity/Faucet8.sol[]
 
 (((&quot;événements&quot;,&quot;attraper&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;attraper des événements&quot;)))OK, nous avons donc configuré notre contrat pour émettre des événements. Comment voir les résultats d&#39;une transaction et &quot;attraper&quot; les événements ? La bibliothèque web3.js fournit une structure de données qui contient les journaux d&#39;une transaction. Dans ceux-ci, nous pouvons voir les événements générés par la transaction.
 
-(((&quot;Truffle&quot;,&quot;exécution d&#39;une transaction de test avec&quot;)))Utilisons +truffle+ pour exécuter une transaction de test sur le contrat +Faucet+ révisé. Suivez les instructions dans &lt;<truffle>&gt; pour configurer un répertoire de projet et compiler le code pass:[<span class="keep-together"><code>Faucet</code></span>]. Le code source peut être trouvé dans link:https://github.com/ethereumbook/ethereumbook [le référentiel GitHub du livre] sous _code/truffle/FaucetEvents_.
+(((&quot;Truffle&quot;,&quot;exécution d&#39;une transaction de test avec&quot;)))Utilisons +truffle+ pour exécuter une transaction de test sur le contrat +Faucet+ révisé. Suivez les instructions dans &lt;<truffle>&gt; pour configurer un répertoire de projet et compiler le code pass:[<span class="keep-together"><code>Faucet</code></span>]. Le code source peut être trouvé dans https://github.com/ethereumbook/ethereumbook[le référentiel GitHub du livre] sous _code/truffle/FaucetEvents_.
 
 ++++
 <pre data-type="programlisting">
@@ -864,9 +864,9 @@ contract Token is mortal {
 
 Comme mentionné dans &lt;<solidity_address_object>&gt;, un +delegatecall+ est différent d&#39;un +call+ en ce que le contexte +msg+ ne change pas. Par exemple, alors qu&#39;un +call+ change la valeur de +msg.sender+ pour être le contrat d&#39;appel, un +delegatecall+ conserve le même +msg.sender+ que dans le contrat d&#39;appel. Essentiellement, +delegatecall+ exécute le code d&#39;un autre contrat dans le contexte de l&#39;exécution du contrat en cours. Il est le plus souvent utilisé pour invoquer du code à partir d&#39;une bibliothèque. Cela vous permet également de dessiner sur le modèle d&#39;utilisation des fonctions de bibliothèque stockées ailleurs, mais de faire fonctionner ce code avec les données de stockage de votre contrat.
 
-L&#39;appel +delegate+ doit être utilisé avec beaucoup de prudence. Cela peut avoir des effets inattendus, surtout si le contrat que vous appelez n&#39;a pas été conçu comme une bibliothèque.
+L&#39;appel +delegatecall+ doit être utilisé avec beaucoup de prudence. Cela peut avoir des effets inattendus, surtout si le contrat que vous appelez n&#39;a pas été conçu comme une bibliothèque.
 
-Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#39;appel utilisées par +call+ et +delegatecall+ pour appeler des bibliothèques et des contrats. Dans &lt;<call_examples_code> &gt;, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#39;appel change en fonction du type d&#39;appel.
+Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#39;appel utilisées par +call+ et +delegatecall+ pour appeler des bibliothèques et des contrats. Dans &lt;<call_examples_code>&gt;, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#39;appel change en fonction du type d&#39;appel.
 
 [[call_examples_code]]
 .CallExamples.sol : un exemple de différentes sémantiques d&#39;appel

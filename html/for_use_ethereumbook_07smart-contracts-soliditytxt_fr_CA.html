@@ -1503,7 +1503,7 @@ contract Faucet is Mortal {
 <p>OK, nous avons donc configuré notre contrat pour émettre des événements. Comment voir les résultats d&#39;une transaction et &quot;attraper&quot; les événements ? La bibliothèque web3.js fournit une structure de données qui contient les journaux d&#39;une transaction. Dans ceux-ci, nous pouvons voir les événements générés par la transaction.</p>
 </div>
 <div class="paragraph data-line-689">
-<p>Utilisons truffle pour exécuter une transaction de test sur le contrat Faucet révisé. Suivez les instructions dans <a href="#truffle">[truffle]</a> pour configurer un répertoire de projet et compiler le code <span class="keep-together"><code>Faucet</code></span>. Le code source peut être trouvé dans link:https://github.com/ethereumbook/ethereumbook [le référentiel GitHub du livre] sous <em>code/truffle/FaucetEvents</em>.</p>
+<p>Utilisons truffle pour exécuter une transaction de test sur le contrat Faucet révisé. Suivez les instructions dans <a href="#truffle">[truffle]</a> pour configurer un répertoire de projet et compiler le code <span class="keep-together"><code>Faucet</code></span>. Le code source peut être trouvé dans <a href="https://github.com/ethereumbook/ethereumbook" data-href="https://github.com/ethereumbook/ethereumbook">le référentiel GitHub du livre</a> sous <em>code/truffle/FaucetEvents</em>.</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>truffle develop</strong>
@@ -1701,10 +1701,10 @@ contract Token is mortal {
 <p>Comme mentionné dans <a href="#solidity_address_object">objet d&#39;adresse</a>, un delegatecall est différent d&#39;un call en ce que le contexte msg ne change pas. Par exemple, alors qu&#39;un call change la valeur de msg.sender pour être le contrat d&#39;appel, un delegatecall conserve le même msg.sender que dans le contrat d&#39;appel. Essentiellement, delegatecall exécute le code d&#39;un autre contrat dans le contexte de l&#39;exécution du contrat en cours. Il est le plus souvent utilisé pour invoquer du code à partir d&#39;une bibliothèque. Cela vous permet également de dessiner sur le modèle d&#39;utilisation des fonctions de bibliothèque stockées ailleurs, mais de faire fonctionner ce code avec les données de stockage de votre contrat.</p>
 </div>
 <div class="paragraph data-line-867">
-<p>L&#39;appel delegate doit être utilisé avec beaucoup de prudence. Cela peut avoir des effets inattendus, surtout si le contrat que vous appelez n&#39;a pas été conçu comme une bibliothèque.</p>
+<p>L&#39;appel delegatecall doit être utilisé avec beaucoup de prudence. Cela peut avoir des effets inattendus, surtout si le contrat que vous appelez n&#39;a pas été conçu comme une bibliothèque.</p>
 </div>
 <div class="paragraph data-line-869">
-<p>Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#39;appel utilisées par call et delegatecall pour appeler des bibliothèques et des contrats. Dans &lt;&lt;call_examples_code&gt; &gt;, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#39;appel change en fonction du type d&#39;appel.</p>
+<p>Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#39;appel utilisées par call et delegatecall pour appeler des bibliothèques et des contrats. Dans <a href="#call_examples_code">CallExamples.sol : un exemple de différentes sémantiques d&#39;appel</a>, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#39;appel change en fonction du type d&#39;appel.</p>
 </div>
 <div id="call_examples_code" class="exampleblock data-line-873">
 <div class="title">Example 4. CallExamples.sol : un exemple de différentes sémantiques d&#39;appel</div>
@@ -1971,7 +1971,7 @@ gas cost estimation = 0.00062794 ether
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-01 12:47:04 -0400
+Last updated 2022-05-01 12:59:21 -0400
 </div>
 </div>
 </body>
