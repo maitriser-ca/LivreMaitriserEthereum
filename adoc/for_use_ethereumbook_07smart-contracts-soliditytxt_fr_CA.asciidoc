@@ -462,7 +462,11 @@ contract Faucet {
 
 Nous avons modifié la directive pragma pour spécifier la v0.4.22 comme version minimale pour cet exemple, car nous utilisons le nouveau mot-clé +constructor+ introduit dans la v0.4.22 de Solidity. Notre contrat a maintenant une variable de type +address+ nommée +owner+. Le nom &quot;owner&quot; n&#39;est en aucun cas spécial. Nous pourrions appeler cette variable d&#39;adresse &quot;potato&quot; et l&#39;utiliser toujours de la même manière. Le nom +owner+ rend simplement son objectif clair.
 
+<<<<<<< Updated upstream
 Ensuite, notre constructeur, qui s&#39;exécute dans le cadre de la transaction de création de contrat, attribue l&#39;adresse de +msg.sender+ à la variable +owner+. Nous avons utilisé +msg.sender+ dans la fonction pass:[remove] pour identifier l&#39;initiateur de la demande de <span class="keep-together"><code>withdraw</code></span>. Dans le constructeur, cependant, le +msg.sender+ est l&#39;EOA ou l&#39;adresse du contrat qui a initié la création du contrat. Nous savons que c&#39;est le cas _car_ il s&#39;agit d&#39;une fonction constructeur : elle ne s&#39;exécute qu&#39;une seule fois, lors de la création du contrat.
+=======
+Ensuite, notre constructeur, qui s&#39;exécute dans le cadre de la transaction de création de contrat, attribue l&#39;adresse de +msg.sender+ à la variable +owner+. Nous avons utilisé +msg.sender+ dans la fonction pass:[remove] pour identifier l&#39;initiateur de la demande de pass:[<span class="keep-together"><code>withdraw</code></span>]. Dans le constructeur, cependant, le +msg.sender+ est l&#39;EOA ou l&#39;adresse du contrat qui a initié la création du contrat. Nous savons que c&#39;est le cas _car_ il s&#39;agit d&#39;une fonction constructeur : elle ne s&#39;exécute qu&#39;une seule fois, lors de la création du contrat.
+>>>>>>> Stashed changes
 
 Nous pouvons maintenant ajouter une fonction pour détruire le contrat. Nous devons nous assurer que seul le propriétaire peut exécuter cette fonction, nous utiliserons donc une instruction +require+ pour contrôler l&#39;accès. Voici à quoi cela ressemblera :
 
@@ -686,7 +690,11 @@ include::code/Solidity/Faucet8.sol[]
 
 (((&quot;événements&quot;,&quot;attraper&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;attraper des événements&quot;)))OK, nous avons donc configuré notre contrat pour émettre des événements. Comment voir les résultats d&#39;une transaction et &quot;attraper&quot; les événements ? La bibliothèque web3.js fournit une structure de données qui contient les journaux d&#39;une transaction. Dans ceux-ci, nous pouvons voir les événements générés par la transaction.
 
+<<<<<<< Updated upstream
 (((&quot;Truffle&quot;,&quot;exécution d&#39;une transaction de test avec&quot;)))Utilisons +truffle+ pour exécuter une transaction de test sur le contrat +Faucet+ révisé. Suivez les instructions dans &lt;<truffle>&gt; pour configurer un répertoire de projet et compiler le code pass:[<span class="keep-together"><code>Faucet</code></span>]. Le code source peut être trouvé dans https://github.com/ethereumbook/ethereumbook [le référentiel GitHub du livre] sous _code/truffle/FaucetEvents_.
+=======
+(((&quot;Truffle&quot;,&quot;exécution d&#39;une transaction de test avec&quot;)))Utilisons +truffle+ pour exécuter une transaction de test sur le contrat +Faucet+ révisé. Suivez les instructions dans &lt;<truffle>&gt; pour configurer un répertoire de projet et compiler le code pass:[<span class="keep-together"><code>Faucet</code></span>]. Le code source peut être trouvé dans link:https://github.com/ethereumbook/ethereumbook [le référentiel GitHub du livre] sous _code/truffle/FaucetEvents_.
+>>>>>>> Stashed changes
 
 ++++
 <pre data-type="programlisting">
@@ -1048,4 +1056,8 @@ Il est recommandé d&#39;évaluer le coût en gaz des fonctions dans le cadre de
 
 === Conclusion
 
+<<<<<<< Updated upstream
 Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc4&quot;)))(((range=&quot;endofrange&quot; , startref=&quot;ix_07smart-contracts-solidity-asciidoc3&quot;))) Nous avons pris un exemple de contrat simple, _Faucet.sol_, et l&#39;avons progressivement amélioré et rendu plus complexe, en l&#39;utilisant pour explorer divers aspects du langage Solidity. Dans &lt;<vyper_chap>&gt; nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc0&quot;)) )
+=======
+Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc4&quot;)))(((range=&quot;endofrange&quot; , startref=&quot;ix_07smart-contracts-solidity-asciidoc3&quot;))) Nous avons pris un exemple de contrat simple, _Faucet.sol_, et l&#39;avons progressivement amélioré et rendu plus complexe, en l&#39;utilisant pour explorer divers aspects du langage Solidity. Dans &lt;<vyper_chap>&gt; nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc0&quot;)))
+>>>>>>> Stashed changes
