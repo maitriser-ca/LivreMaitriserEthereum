@@ -63,7 +63,7 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 7. [Chapitre 5 - Portefeuilles](html/for_use_ethereumbook_05walletstxt_fr_CA.html) 👍
 8. [Chapitre 6 - Transactions](html/for_use_ethereumbook_06transactionstxt_fr_CA.html) 👍
 9. [Chapitre 7 - Contrats intelligents et Solidity](html/for_use_ethereumbook_07smart-contracts-soliditytxt_fr_CA.html) 👍
-10. [Chapitre 8 - Contrats intelligents et Vyper](html/for_use_ethereumbook_08smart-contracts-vypertxt_fr_CA.html) ❌
+10. [Chapitre 8 - Contrats intelligents et Vyper](html/for_use_ethereumbook_08smart-contracts-vypertxt_fr_CA.html) 👍
 11. [Chapitre 9 - Sécurité des contrats intelligents](html/for_use_ethereumbook_09smart-contracts-securitytxt_fr_CA.html) ❌
 12. [Chapitre 10 - Jetons](html/for_use_ethereumbook_10tokenstxt_fr_CA.html) ❌
 13. [Chapitre 11 - Oracles](html/for_use_ethereumbook_11oraclestxt_fr_CA.html) ❌
