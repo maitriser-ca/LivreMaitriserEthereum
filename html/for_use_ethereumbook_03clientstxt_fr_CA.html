@@ -806,55 +806,58 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <pre data-type="programlisting">
 $ <strong>sudo apt-get install openssl libssl-dev libudev-dev cmake clang</strong>
+
 </pre>
-<div class="paragraph data-line-188">
+<div class="paragraph data-line-189">
 <p>Pour les autres systèmes d&#39;exploitation, utilisez le gestionnaire d&#8217;applications de votre système d&#39;exploitation ou suivez les <a href="https://github.com/paritytech/parity/wiki/Setup" class="undefined" data-href="https://github.com/paritytech/parity/wiki/Setup">https://github.com/paritytech/parity/wiki/Setup</a> [instructions Wiki] pour installer les bibliothèques requises.</p>
 </div>
-<div class="paragraph data-line-190">
+<div class="paragraph data-line-191">
 <p>Maintenant que vous avez installé git, golang, Rust et les bibliothèques nécessaires, mettons-nous au travail !</p>
 </div>
 </div>
-<div class="sect3 data-line-193">
+<div class="sect3 data-line-194">
 <h4 id="parity">Parity</h4>
-<div class="paragraph data-line-195">
+<div class="paragraph data-line-196">
 <p>Parity est une implémentation d&#39;un client Ethereum à nœud complet et d&#39;un navigateur DApp. Il a été écrit « à partir de zéro » en Rust, un langage de programmation système, dans le but de créer un client Ethereum modulaire, sécurisé et évolutif. Parity est développé par Parity Tech, une société britannique, et est publié sous la licence de logiciel libre GPLv3.</p>
 </div>
-<div class="admonitionblock note data-line-198">
+<div class="admonitionblock note data-line-199">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-199">
+<div class="paragraph data-line-200">
 <p>Divulgation: L&#39;un des auteurs de ce livre, le Dr Gavin Wood, est le fondateur de Parity Tech et a écrit une grande partie du client Parity. Parity représente environ 25% de la base des clients Ethereum installés.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-202">
+<div class="paragraph data-line-203">
 <p>Pour installer Parity, vous pouvez utiliser le gestionnaire d&#8217;applications Rust cargo ou télécharger le code source depuis GitHub. Le gestionnaire d&#8217;applications télécharge également le code source, il n&#39;y a donc pas beaucoup de différence entre les deux options. Dans la section suivante, nous vous montrerons comment télécharger et compiler Parity vous-même.</p>
 </div>
-<div class="sect4 data-line-205">
+<div class="sect4 data-line-206">
 <h5 id="install_parity">Installation de Parity</h5>
-<div class="paragraph data-line-207">
+<div class="paragraph data-line-208">
 <p>Le <a href="https://wiki.parity.io/Setup" data-href="https://wiki.parity.io/Setup">Parity Wiki</a> propose des instructions pour créer Parity dans différents environnements et conteneurs. Nous allons vous montrer comment créer Parity à partir de la source. Cela suppose que vous avez déjà installé Rust en utilisant rustup (voir <a href="#sw_reqs">Configuration logicielle requise pour créer et exécuter un client (nœud)</a>).</p>
 </div>
-<div class="paragraph data-line-209">
+<div class="paragraph data-line-210">
 <p>Tout d&#39;abord, récupérez le code source sur GitHub :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>git clone https://github.com/paritytech/parity</strong>
+
 </pre>
-<div class="paragraph data-line-217">
+<div class="paragraph data-line-219">
 <p>Passez ensuite au répertoire <em>parity</em> et utilisez cargo pour créer l&#39;exécutable :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>cd parity</strong>
 $ <strong>cargo install --path .</strong>
+
 </pre>
-<div class="paragraph data-line-226">
+<div class="paragraph data-line-229">
 <p>Si tout se passe bien, vous devriez voir quelque chose comme :</p>
 </div>
 <pre data-type="programlisting">
@@ -871,8 +874,9 @@ Finished release [optimized] target(s) in 10m 16s
 Installing /root/.cargo/bin/parity
 Installed package `parity-ethereum v2.7.0 (/root/parity)` (executable `parity`)
 $
+
 </pre>
-<div class="paragraph data-line-246">
+<div class="paragraph data-line-250">
 <p>Essayez d&#39;exécuter parity pour voir s&#39;il est installé, en invoquant l&#39;option --version :</p>
 </div>
 <pre data-type="programlisting">
@@ -888,68 +892,70 @@ By Wood/Paronyan/Kotewicz/Drwięga/Volf/Greeff
    Habermeier/Czaban/Gotchac/Redman/Nikolsky
    Schoedon/Tang/Adolfsson/Silva/Palm/Hirsz et al.
 $
+
 </pre>
-<div class="paragraph data-line-266">
+<div class="paragraph data-line-271">
 <p>Génial! Maintenant que Parity est installé, vous pouvez synchroniser la chaîne de blocs et commencer avec quelques options de ligne de commande de base.</p>
 </div>
 </div>
 </div>
-<div class="sect3 data-line-269">
+<div class="sect3 data-line-274">
 <h4 id="go_ethereum_geth">Go-Ethereum (Geth)</h4>
-<div class="paragraph data-line-271">
+<div class="paragraph data-line-276">
 <p>Geth est l&#39;implémentation avec le langage Go activement développée par la Fondation Ethereum, elle est donc considérée comme l&#39;implémentation &quot;officielle&quot; du client Ethereum. En règle générale, chaque chaîne de blocs basée sur Ethereum aura sa propre implémentation Geth. Si vous utilisez Geth, assurez-vous de récupérer la bonne version pour votre chaîne de blocs en utilisant l&#39;un des liens de référentiel suivants :</p>
 </div>
-<div class="ulist data-line-274">
+<div class="ulist data-line-279">
 <ul>
-<li class="data-line-274">
+<li class="data-line-279">
 <p><a href="https://github.com/ethereum/go-ethereum" data-href="https://github.com/ethereum/go-ethereum">Ethereum</a> (or <a href="https://geth.ethereum.org/" class="undefined" data-href="https://geth.ethereum.org/">https://geth.ethereum.org/</a>)</p>
 </li>
-<li class="data-line-276">
+<li class="data-line-281">
 <p><a href="https://github.com/etclabscore/go-ethereum" data-href="https://github.com/etclabscore/go-ethereum">Ethereum Classic</a></p>
 </li>
-<li class="data-line-278">
+<li class="data-line-283">
 <p><a href="https://github.com/ellaism/go-ellaism" data-href="https://github.com/ellaism/go-ellaism">Ellaism</a></p>
 </li>
-<li class="data-line-280">
+<li class="data-line-285">
 <p><a href="https://github.com/expanse-org/go-expanse" data-href="https://github.com/expanse-org/go-expanse">Expanse</a></p>
 </li>
-<li class="data-line-282">
+<li class="data-line-287">
 <p><a href="https://github.com/Musicoin/go-musicoin" data-href="https://github.com/Musicoin/go-musicoin">Musicoin</a></p>
 </li>
-<li class="data-line-284">
+<li class="data-line-289">
 <p><a href="https://github.com/ubiq/go-ubiq" data-href="https://github.com/ubiq/go-ubiq">Ubiq</a></p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note data-line-287">
+<div class="admonitionblock note data-line-292">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-288">
+<div class="paragraph data-line-293">
 <p>Vous pouvez également ignorer ces instructions et installer un binaire précompilé pour la plate-forme de votre choix. Les versions précompilées sont beaucoup plus faciles à installer et peuvent être trouvées dans la section &quot;versions&quot; de l&#39;un des référentiels répertoriés ici. Cependant, vous pouvez en apprendre davantage en téléchargeant et en compilant le logiciel vous-même.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sect4 data-line-292">
+<div class="sect4 data-line-297">
 <h5 id="cloning_repo">Cloner le référentiel</h5>
-<div class="paragraph data-line-294">
+<div class="paragraph data-line-299">
 <p>La première étape consiste à cloner le référentiel Git, pour obtenir une copie du code source.</p>
 </div>
-<div class="paragraph data-line-296">
+<div class="paragraph data-line-301">
 <p>Pour créer un clone local de votre référentiel choisi, utilisez la commande git comme suit, dans votre répertoire personnel ou sous n&#39;importe quel répertoire que vous utilisez pour le développement :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>git clone &lt;Lien vers le référentiel&gt;</strong>
+
 </pre>
-<div class="paragraph data-line-304">
+<div class="paragraph data-line-310">
 <p>Vous devriez voir un rapport de progression au fur et à mesure que le référentiel est copié sur votre système local :</p>
 </div>
-<div id="cloning_status" class="listingblock data-line-307">
+<div id="cloning_status" class="listingblock data-line-313">
 <div class="content">
 <pre>Cloning into 'go-ethereum'...
 remote: Enumerating objects: 86915, done.
@@ -958,23 +964,24 @@ Receiving objects: 100% (86915/86915), 134.73 MiB | 29.30 MiB/s, done.
 Resolving deltas: 100% (57590/57590), done.</pre>
 </div>
 </div>
-<div class="paragraph data-line-315">
+<div class="paragraph data-line-321">
 <p>Génial! Maintenant que vous avez une copie locale de Geth, vous pouvez compiler un exécutable pour votre plate-forme.</p>
 </div>
 </div>
-<div class="sect4 data-line-318">
+<div class="sect4 data-line-324">
 <h5 id="build_geth_src">Construire Geth à partir du code source</h5>
-<div class="paragraph data-line-320">
+<div class="paragraph data-line-326">
 <p>Pour compiler Geth, allez dans le répertoire où le code source a été téléchargé et utilisez la commande make :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>cd go-ethereum</strong>
 $ <strong>make geth</strong>
+
 </pre>
-<div class="paragraph data-line-329">
+<div class="paragraph data-line-336">
 <p>Si tout se passe bien, vous verrez le compilateur Go construire chaque composant jusqu&#39;à ce qu&#39;il produise l&#39;exécutable geth :</p>
 </div>
-<div id="making_geth_status" class="listingblock data-line-332">
+<div id="making_geth_status" class="listingblock data-line-339">
 <div class="content">
 <pre>build/env.sh go run build/ci.go install ./cmd/geth
 &gt;&gt;&gt; /usr/local/go/bin/go install -ldflags -X main.gitCommit=58a1e13e6dd7f52a1d...
@@ -992,7 +999,7 @@ Exécutez &amp;quot;build/bin/geth&amp;quot; pour exécuter geth.
 $</pre>
 </div>
 </div>
-<div class="paragraph data-line-349">
+<div class="paragraph data-line-356">
 <p>Assurons-nous que geth fonctionne sans l&#8217;excuter :</p>
 </div>
 <pre data-type="programlisting">
@@ -1007,69 +1014,70 @@ Protocol Versions: [64 63]
 Go Version: go1.13.4
 Operating System: linux
 [...]
+
 </pre>
-<div class="paragraph data-line-367">
+<div class="paragraph data-line-375">
 <p>Votre commande geth version peut afficher des informations légèrement différentes, mais vous devriez voir un rapport de version similaire à celui présenté ici.</p>
 </div>
-<div class="paragraph data-line-369">
+<div class="paragraph data-line-377">
 <p>Les sections suivantes expliquent le défi avec la synchronisation initiale de la chaîne de blocs d&#39;Ethereum.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-373">
+<div class="sect2 data-line-381">
 <h3 id="first_sync">La première synchronisation des chaînes de blocs basées sur Ethereum</h3>
-<div class="paragraph data-line-375">
+<div class="paragraph data-line-383">
 <p>Traditionnellement, lors de la synchronisation d&#8217;une chaîne de blocs Ethereum, votre client téléchargerait et validerait chaque bloc et chaque transaction depuis le tout début, c&#39;est-à-dire depuis le bloc de genèse.</p>
 </div>
-<div class="paragraph data-line-377">
+<div class="paragraph data-line-385">
 <p>Bien qu&#39;il soit possible de synchroniser entièrement la chaîne de blocs de cette façon, ce type de synchronisation prendra très longtemps et nécessite beaucoup de ressources (il nécessitera beaucoup plus de RAM, et prendra en effet très longtemps si vous n&#39;avez pas stockage).</p>
 </div>
-<div class="paragraph data-line-379">
+<div class="paragraph data-line-387">
 <p>De nombreuses chaînes de blocs basées sur Ethereum ont été victimes d&#39;attaques par déni de service fin 2016. Les chaînes de blocs concernées auront tendance à se synchroniser lentement lors d&#39;une synchronisation complète.</p>
 </div>
-<div class="paragraph data-line-381">
+<div class="paragraph data-line-389">
 <p>Par exemple, sur Ethereum, un nouveau client progressera rapidement jusqu&#39;à atteindre le bloc 2 283 397. Ce bloc a été miné le 18 septembre 2016 et marque le début des attaques DoS. De ce bloc au bloc 2 700 031 (26 novembre 2016), la validation des transactions devient extrêmement lente, gourmande en mémoire et gourmande en E/S. Cela se traduit par des temps de validation supérieurs à 1 minute par bloc. Ethereum a mis en œuvre une série de mises à niveau, à l&#39;aide d&#8217;embranchements divergents, pour remédier aux vulnérabilités sous-jacentes qui ont été exploitées dans les attaques DoS. Ces mises à niveau ont également nettoyé la chaîne de blocs en supprimant quelque 20 millions de comptes vides créés par des transactions de spam.</p>
 </div>
-<div class="paragraph data-line-383">
+<div class="paragraph data-line-391">
 <p>Si vous synchronisez avec une validation complète, votre client ralentira et peut prendre plusieurs jours, voire plus, pour valider les blocs affectés par les attaques DoS.</p>
 </div>
-<div class="paragraph data-line-385">
+<div class="paragraph data-line-393">
 <p>Heureusement, la plupart des clients Ethereum effectuent désormais par défaut une synchronisation &quot;rapide&quot; qui ignore la validation complète des transactions jusqu&#39;à ce qu&#39;elle soit synchronisée avec la pointe de la chaîne de blocs, puis reprend la validation complète.</p>
 </div>
-<div class="paragraph data-line-387">
+<div class="paragraph data-line-395">
 <p>Geth effectue une synchronisation rapide par défaut pour Ethereum. Vous devrez peut-être vous référer aux instructions spécifiques pour l&#39;autre chaîne Ethereum choisie.</p>
 </div>
-<div class="paragraph data-line-389">
+<div class="paragraph data-line-397">
 <p>Parity effectue également une synchronisation rapide par défaut.</p>
 </div>
-<div class="admonitionblock note data-line-392">
+<div class="admonitionblock note data-line-400">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-393">
+<div class="paragraph data-line-401">
 <p>Geth ne peut opérer une synchronisation rapide que lorsqu&#39;il démarre avec une base de données de blocs vide. Si vous avez déjà commencé la synchronisation sans mode rapide, Geth ne peut pas basculer de mode. Il est plus rapide de supprimer le répertoire de données de la chaîne de blocs et de commencer la synchronisation rapide depuis le début que de continuer la synchronisation avec une validation complète. Veillez à ne supprimer aucun portefeuille lors de la suppression des données de la chaîne de blocs !</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sect3 data-line-396">
+<div class="sect3 data-line-404">
 <h4 id="_exécuter_geth_ou_parity">Exécuter Geth ou Parity</h4>
-<div class="paragraph data-line-398">
+<div class="paragraph data-line-406">
 <p>Maintenant que vous comprenez les défis de la &quot;première synchronisation&quot;, vous êtes prêt à démarrer un client Ethereum et à synchroniser la chaîne de blocs. Pour Geth et Parity, vous pouvez utiliser l&#39;option --help pour voir tous les paramètres de configuration. Les paramètres par défaut sont généralement judicieux et appropriés pour la plupart des utilisations. Choisissez comment configurer les paramètres facultatifs en fonction de vos besoins, puis démarrez Geth ou Parity pour synchroniser la chaîne. Puis attendre&#8230;&#8203;</p>
 </div>
-<div class="admonitionblock tip data-line-401">
+<div class="admonitionblock tip data-line-409">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-402">
+<div class="paragraph data-line-410">
 <p>La synchronisation de la chaîne de blocs Ethereum prendra entre une demi-journée sur un système très rapide avec beaucoup de RAM et plusieurs jours sur un système plus lent.</p>
 </div>
 </td>
@@ -1077,15 +1085,15 @@ Operating System: linux
 </table>
 </div>
 </div>
-<div class="sect3 data-line-406">
+<div class="sect3 data-line-414">
 <h4 id="json_rpc">L&#39;interface JSON-RPC</h4>
-<div class="paragraph data-line-408">
+<div class="paragraph data-line-416">
 <p>Les clients Ethereum offrent une interface de programmation d&#39;application et un ensemble de commandes Remote Procedure Call (RPC), qui sont encodées en JavaScript Object Notation (JSON). Vous verrez cela appelé <em>API JSON-RPC</em>. Essentiellement, l&#39;API JSON-RPC est une interface qui nous permet d&#39;écrire des programmes qui utilisent un client Ethereum comme <em>passerelle</em> vers un réseau Ethereum et une chaîne de blocs.</p>
 </div>
-<div class="paragraph data-line-410">
+<div class="paragraph data-line-418">
 <p>Habituellement, l&#39;interface RPC est proposée en tant que service HTTP sur le port 8545. Pour des raisons de sécurité, il est restreint, par défaut, de n&#39;accepter que les connexions de localhost (l&#39;adresse IP de votre propre ordinateur, qui est 127.0.0.1).</p>
 </div>
-<div class="paragraph data-line-412">
+<div class="paragraph data-line-420">
 <p>Pour accéder à l&#39;API JSON-RPC, vous pouvez utiliser une bibliothèque spécialisée (écrite dans le langage de programmation de votre choix) qui fournit des appels de fonction &quot;stub&quot; correspondant à chaque commande RPC disponible, ou vous pouvez construire manuellement des requêtes HTTP et envoyer/recevoir des requêtes codées en JSON. Vous pouvez même utiliser un client HTTP de ligne de commande générique, comme curl, pour appeler l&#39;interface RPC. Essayons ça. Tout d&#39;abord, assurez-vous que Geth est opérationnel, configuré avec --rpc pour autoriser l&#39;accès HTTP à l&#39;interface RPC, puis passez à une nouvelle fenêtre de terminal (par exemple, avec Ctrl-Maj-N ou Ctrl-Maj-T dans un fenêtre de terminal) comme indiqué ici :</p>
 </div>
 <pre data-type="programlisting">
@@ -1095,19 +1103,20 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
 
 {"jsonrpc":"2.0","id":1,
 "result":"Geth/v1.9.11-unstable-0b284f6c-20200123/linux-amd64/go1.13.4"}
+
 </pre>
-<div class="paragraph data-line-425">
+<div class="paragraph data-line-434">
 <p>Dans cet exemple, nous utilisons curl pour établir une connexion HTTP à l&#39;adresse <em><a href="http://localhost:8545" class="undefined" data-href="http://localhost:8545">http://localhost:8545</a></em>. Nous exécutons déjà geth, qui propose l&#39;API JSON-RPC en tant que service HTTP sur le port 8545. Nous demandons à curl d&#39;utiliser la commande HTTP POST et d&#39;identifier le contenu en tant que type application/json. Enfin, nous transmettons une requête encodée en JSON en tant que composant data de notre requête HTTP. La majeure partie de notre ligne de commande consiste simplement à configurer curl pour établir correctement la connexion HTTP. La partie intéressante est la commande JSON-RPC que nous émettons :</p>
 </div>
-<div id="JSON_RPC_command" class="listingblock data-line-428">
+<div id="JSON_RPC_command" class="listingblock data-line-437">
 <div class="content">
 <pre>{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}</pre>
 </div>
 </div>
-<div class="paragraph data-line-432">
+<div class="paragraph data-line-441">
 <p>La requête JSON-RPC est formatée conformément à la <a href="https://www.jsonrpc.org/specification" class="undefined" data-href="https://www.jsonrpc.org/specification">https://www.jsonrpc.org/specification</a> [spécification JSON-RPC 2.0]. Chaque demande contient quatre éléments :</p>
 </div>
-<div class="dlist data-line-434">
+<div class="dlist data-line-443">
 <dl>
 <dt class="hdlist1">jsonrpc </dt>
 <dd>
@@ -1127,33 +1136,33 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
 </dd>
 </dl>
 </div>
-<div class="admonitionblock tip data-line-443">
+<div class="admonitionblock tip data-line-452">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-444">
+<div class="paragraph data-line-453">
 <p>Le paramètre id est principalement utilisé lorsque vous effectuez plusieurs requêtes dans un seul appel JSON-RPC, une pratique appelée <em>batching</em>. Le traitement par lots est utilisé pour éviter la surcharge d&#39;une nouvelle connexion HTTP et TCP pour chaque requête. Dans le contexte Ethereum, par exemple, nous utiliserions le traitement par lots si nous voulions récupérer des milliers de transactions sur une seule connexion HTTP. Lors du traitement par lots, vous définissez un id différent pour chaque demande, puis le faites correspondre au id dans chaque réponse du serveur JSON-RPC. Le moyen le plus simple d&#39;implémenter ceci est de maintenir un compteur et d&#39;incrémenter la valeur pour chaque demande.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-448">
+<div class="paragraph data-line-457">
 <p>La réponse que nous recevons est :</p>
 </div>
-<div class="listingblock data-line-450">
+<div class="listingblock data-line-459">
 <div class="content">
 <pre>{"jsonrpc":"2.0","id":1,
 "result":"Geth/v1.9.11-unstable-0b284f6c-20200123/linux-amd64/go1.13.4"}</pre>
 </div>
 </div>
-<div class="paragraph data-line-455">
+<div class="paragraph data-line-464">
 <p>Cela nous indique que l&#39;API JSON-RPC est servie par la version 1.13.4 du client Geth.</p>
 </div>
-<div class="paragraph data-line-457">
+<div class="paragraph data-line-466">
 <p>Essayons quelque chose d&#39;un peu plus intéressant. Dans l&#39;exemple suivant, nous demandons à l&#39;API JSON-RPC le prix actuel du gaz en wei :</p>
 </div>
 <pre data-type="programlisting">
@@ -1162,83 +1171,86 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
   http://localhost:8545</strong>
 
 {"jsonrpc":"2.0","id":4213,"result":"0x430e23400"}
+
 </pre>
-<div class="paragraph data-line-469">
+<div class="paragraph data-line-479">
 <p>La réponse, 0x430e23400, nous indique que le prix actuel du gaz est de 18 gwei (gigawei ou milliard de wei). Si, comme nous, vous ne pensez pas en hexadécimal, vous pouvez le convertir en décimal sur la ligne de commande avec un petit bash-fu :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>echo $((0x430e23400))</strong>
 
 18000000000
+
 </pre>
-<div class="paragraph data-line-479">
+<div class="paragraph data-line-490">
 <p>L&#39;API JSON-RPC complète peut être étudiée sur le <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC" data-href="https://github.com/ethereum/wiki/wiki/JSON-RPC">wiki Ethereum</a>.</p>
 </div>
-<div class="sect4 data-line-482">
+<div class="sect4 data-line-493">
 <h5 id="parity_compatibility_mode">Mode de compatibilité Geth de Parity</h5>
-<div class="paragraph data-line-484">
+<div class="paragraph data-line-495">
 <p>Parity a un &quot;mode de compatibilité Geth&quot; spécial, où il offre une API JSON-RPC identique à celle offerte par Geth. Pour exécuter Parity dans ce mode, utilisez le commutateur --geth:</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>parity --geth</strong>
+
 </pre>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-493">
+<div class="sect2 data-line-505">
 <h3 id="lw_eth_clients">Clients Ethereum distants</h3>
-<div class="paragraph data-line-495">
+<div class="paragraph data-line-507">
 <p>Les clients distants offrent un sous-ensemble des fonctionnalités d&#39;un client complet. Ils ne stockent pas la chaîne de blocs Ethereum complète, ils sont donc plus rapides à configurer et nécessitent beaucoup moins de stockage de données.</p>
 </div>
-<div class="paragraph pagebreak-before data-line-498">
+<div class="paragraph pagebreak-before data-line-510">
 <p>Ces clients offrent généralement la possibilité d&#39;effectuer une ou plusieurs des actions suivantes :</p>
 </div>
-<div class="ulist data-line-500">
+<div class="ulist data-line-512">
 <ul>
-<li class="data-line-500">
+<li class="data-line-512">
 <p>Gérer les clés privées et les adresses Ethereum dans un portefeuille.</p>
 </li>
-<li class="data-line-501">
+<li class="data-line-513">
 <p>Créer, signer et diffuser des transactions.</p>
 </li>
-<li class="data-line-502">
+<li class="data-line-514">
 <p>Interagir avec les contrats intelligents, en utilisant la charge utile des données.</p>
 </li>
-<li class="data-line-503">
+<li class="data-line-515">
 <p>Naviguer et interagir avec les DApps.</p>
 </li>
-<li class="data-line-504">
+<li class="data-line-516">
 <p>Offrir des liens vers des services externes tels que des explorateurs de blocs.</p>
 </li>
-<li class="data-line-505">
+<li class="data-line-517">
 <p>Convertir les unités d&#39;ether et récupérer les taux de change à partir de sources externes.</p>
 </li>
-<li class="data-line-506">
+<li class="data-line-518">
 <p>Injecter une instance web3 dans le navigateur Web en tant qu&#39;objet JavaScript.</p>
 </li>
-<li class="data-line-507">
+<li class="data-line-519">
 <p>Utiliser une instance web3 fournie/injectée dans le navigateur par un autre client.</p>
 </li>
-<li class="data-line-508">
+<li class="data-line-520">
 <p>Accéder aux services RPC sur un nœud Ethereum local ou distant.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-510">
+<div class="paragraph data-line-522">
 <p>Certains clients distants, par exemple les portefeuilles mobiles (smartphones), n&#39;offrent que des fonctionnalités de portefeuille de base. Les autres clients distants sont des navigateurs DApp à part entière. Les clients distants offrent généralement certaines des fonctions d&#39;un client Ethereum à nœud complet sans synchroniser une copie locale de la chaîne de blocs Ethereum en se connectant à un nœud complet exécuté ailleurs, par exemple, par vous localement sur votre machine ou sur un serveur Web, ou par un tiers sur leurs serveurs.</p>
 </div>
-<div class="paragraph data-line-512">
+<div class="paragraph data-line-524">
 <p>Examinons certains des clients distants les plus populaires et les fonctions qu&#39;ils offrent.</p>
 </div>
-<div class="sect3 data-line-515">
+<div class="sect3 data-line-527">
 <h4 id="mobile_wallets">Portefeuilles mobiles (Smartphone)</h4>
-<div class="paragraph data-line-517">
+<div class="paragraph data-line-529">
 <p>Tous les portefeuilles mobiles sont des clients distants, car les téléphones intelligents ne disposent pas des ressources adéquates pour exécuter un client Ethereum complet. Les clients légers sont en développement et ne sont pas généralement utilisés pour Ethereum. Dans le cas de Parity, le client léger est marqué &quot;expérimental&quot; et peut être utilisé en exécutant parity avec l&#39;option --light.</p>
 </div>
-<div class="paragraph data-line-519">
+<div class="paragraph data-line-531">
 <p>Les portefeuilles mobiles populaires incluent les éléments suivants (nous les énumérons simplement à titre d&#39;exemples ; il ne s&#39;agit pas d&#39;une approbation ou d&#39;une indication de la sécurité ou de la fonctionnalité de ces portefeuilles) :</p>
 </div>
-<div class="dlist data-line-521">
+<div class="dlist data-line-533">
 <dl>
 <dt class="hdlist1"><a href="https://jaxx.io" data-href="https://jaxx.io">Jaxx</a></dt>
 <dd>
@@ -1259,64 +1271,64 @@ $ <strong>parity --geth</strong>
 </dl>
 </div>
 </div>
-<div class="sect3 data-line-530">
+<div class="sect3 data-line-542">
 <h4 id="browser_wallets">Portefeuilles de navigateur</h4>
-<div class="paragraph data-line-532">
+<div class="paragraph data-line-544">
 <p>Une variété de portefeuilles et de navigateurs DApp sont disponibles en tant que plug-ins ou extensions de navigateurs Web tels que Chrome et Firefox. Ce sont des clients distants qui s&#39;exécutent dans votre navigateur.</p>
 </div>
-<div class="paragraph data-line-534">
+<div class="paragraph data-line-546">
 <p>Certains des plus populaires sont MetaMask, Jaxx, MyEtherWallet et MyCrypto.</p>
 </div>
-<div class="sect4 data-line-537">
+<div class="sect4 data-line-549">
 <h5 id="MetaMask">MetaMask</h5>
-<div class="paragraph data-line-539">
+<div class="paragraph data-line-551">
 <p><a href="https://metamask.io/" data-href="https://metamask.io/">MetaMask</a>, introduit dans <a href="#intro_chapter">[intro_chapter]</a>, est un portefeuille polyvalent basé sur un navigateur, un client RPC et un explorateur de contrats de base. Il est disponible sur Chrome, Firefox, Opera et Brave Browser.</p>
 </div>
-<div class="paragraph data-line-541">
+<div class="paragraph data-line-553">
 <p>Contrairement aux autres portefeuilles de navigateur, MetaMask injecte une instance web3 dans le contexte JavaScript du navigateur, agissant comme un client RPC qui se connecte à une variété de chaînes de blocs Ethereum (mainnet, Ropsten testnet, Kovan testnet, nœud RPC local, etc.). La possibilité d&#39;injecter une instance web3 et d&#39;agir comme une passerelle vers des services RPC externes fait de MetaMask un outil très puissant pour les développeurs et les utilisateurs. Il peut être combiné, par exemple, avec MyEtherWallet ou MyCrypto, agissant comme un fournisseur web3 et une passerelle RPC pour ces outils.</p>
 </div>
 </div>
-<div class="sect4 data-line-544">
+<div class="sect4 data-line-556">
 <h5 id="Jaxx">Jaxx</h5>
-<div class="paragraph data-line-546">
+<div class="paragraph data-line-558">
 <p><a href="https://jaxx.io" data-href="https://jaxx.io">Jaxx</a>, qui a été présenté comme un portefeuille mobile dans la section précédente, est également disponible en tant qu&#39;extension Chrome et Firefox et en tant que portefeuille de bureau.</p>
 </div>
 </div>
-<div class="sect4 data-line-549">
+<div class="sect4 data-line-561">
 <h5 id="MEW">MyEtherWallet (MEW)</h5>
-<div class="paragraph data-line-551">
+<div class="paragraph data-line-563">
 <p><a href="https://www.myetherwallet.com/" data-href="https://www.myetherwallet.com/">MyEtherWallet</a>  est un client distant JavaScript basé sur un navigateur qui offre :</p>
 </div>
-<div class="ulist data-line-553">
+<div class="ulist data-line-565">
 <ul>
-<li class="data-line-553">
+<li class="data-line-565">
 <p>Un pont vers les portefeuilles matériels populaires tels que Trezor et Ledger</p>
 </li>
-<li class="data-line-554">
+<li class="data-line-566">
 <p>Une interface web3 pouvant se connecter à une instance web3 injectée par un autre client (par exemple, MetaMask)</p>
 </li>
-<li class="data-line-555">
+<li class="data-line-567">
 <p>Un client RPC pouvant se connecter à un client complet Ethereum</p>
 </li>
-<li class="data-line-556">
+<li class="data-line-568">
 <p>Une interface de base qui peut interagir avec des contrats intelligents, étant donné l&#39;adresse d&#39;un contrat et l&#39;interface binaire d&#39;application (ABI)</p>
 </li>
-<li class="data-line-557">
+<li class="data-line-569">
 <p>Une application mobile, MEWConnect, qui permet d&#39;utiliser un appareil Android ou iOS compatible pour stocker des fonds, de la même manière qu&#39;un portefeuille matériel.</p>
 </li>
-<li class="data-line-558">
+<li class="data-line-570">
 <p>Un portefeuille logiciel fonctionnant en JavaScript</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock warning data-line-561">
+<div class="admonitionblock warning data-line-573">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Warning</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-562">
+<div class="paragraph data-line-574">
 <p>Vous devez être très prudent lorsque vous accédez à MyEtherWallet et à d&#39;autres portefeuilles JavaScript basés sur un navigateur, car ils sont des cibles fréquentes pour le phishing. Utilisez toujours un signet et non un moteur de recherche ou un lien pour accéder à l&#39;URL Web correcte.</p>
 </div>
 </td>
@@ -1324,23 +1336,23 @@ $ <strong>parity --geth</strong>
 </table>
 </div>
 </div>
-<div class="sect4 data-line-566">
+<div class="sect4 data-line-578">
 <h5 id="MyCrypto">MyCrypto</h5>
-<div class="paragraph data-line-568">
+<div class="paragraph data-line-580">
 <p>Début 2018, le  projet MyEtherWallet s&#39;est scindé en deux implémentations concurrentes, guidées par deux équipes de développement indépendantes : une &quot;fourche&quot; ou &quot;fork&quot;, comme on l&#39;appelle dans le développement à source libre. Les deux projets s&#39;appellent MyEtherWallet (la marque originale) et <a href="https://mycrypto.com/" data-href="https://mycrypto.com/">MyCrypto</a>. MyCrypto offre des fonctionnalités presque identiques à MyEtherWallet, mais au lieu d&#39;utiliser MEWConnect, il offre une connexion à l&#39;application mobile Parity Signer. Comme MEWConnect, Parity Signer stocke les clés sur le téléphone et s&#39;interface avec MyCrypto de la même manière qu&#39;un portefeuille matériel.</p>
 </div>
 </div>
-<div class="sect4 data-line-571">
+<div class="sect4 data-line-583">
 <h5 id="Mist">Mist (obsolète)</h5>
-<div class="paragraph data-line-573">
+<div class="paragraph data-line-585">
 <p><a href="https://github.com/ethereum/mist" data-href="https://github.com/ethereum/mist">Mist</a> était le premier navigateur compatible avec Ethereum, construit par la Fondation Ethereum. Il contenait un portefeuille basé sur un navigateur qui était la première implémentation de la norme de jeton ERC20 (Fabian Vogelsteller, auteur d&#39;ERC20, était également le principal développeur de Mist). Mist a également été le premier portefeuille à introduire la somme de contrôle camelCase (EIP-55). Depuis mars 2019, Mist est obsolète et ne doit plus être utilisé.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-575">
+<div class="sect2 data-line-587">
 <h3 id="_conclusion">Conclusion</h3>
-<div class="paragraph data-line-577">
+<div class="paragraph data-line-589">
 <p>Dans ce chapitre, nous avons exploré les clients Ethereum. Vous avez téléchargé, installé et synchronisé un client, devenant un participant au réseau Ethereum et contribuant à la santé et à la stabilité du système en répliquant la chaîne de blocs sur votre propre ordinateur.</p>
 </div>
 </div>
@@ -1349,7 +1361,7 @@ $ <strong>parity --geth</strong>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-15 07:46:12 -0400
+Last updated 2022-05-10 17:52:23 -0400
 </div>
 </div>
 </body>

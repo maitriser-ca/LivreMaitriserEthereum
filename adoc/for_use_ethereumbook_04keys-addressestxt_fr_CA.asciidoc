@@ -234,7 +234,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> <strong>y = 59574132161899900045862086493921015780032175291755807399284007721050341297360</strong>
 >>> <strong>(x ** 3 + 7 - y**2) % p</strong>
 0L
-\n</pre>
+
+</pre>
 </div>
 ++++
 
@@ -501,7 +502,8 @@ Indirect:: Encode un identifiant qui se résout en une adresse Ethereum via un f
 ++++
 <pre data-type="programlisting">
 $ <strong>npm install -g helpeth</strong>
-\n</pre>
+
+</pre>
 ++++
 
 Si vous n&#39;avez pas npm, vous devrez peut-être d&#39;abord installer nodeJS, ce que vous pouvez faire en suivant les instructions sur https://nodeJS.org.
@@ -516,7 +518,8 @@ $ <strong>helpeth keyDetails \
 Address: 0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9
 ICAP: XE60 HAMI CDXS V5QX VJA7 TJW4 7Q9C HWKJ D
 Public key: 0x6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b...
-\n</pre>
+
+</pre>
 ++++
 
 La commande +helpeth+ construit une adresse Ethereum hexadécimale ainsi qu&#39;une adresse ICAP pour nous. L&#39;adresse ICAP de notre exemple de clé est :

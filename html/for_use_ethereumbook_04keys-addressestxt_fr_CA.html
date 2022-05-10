@@ -791,42 +791,43 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> <strong>y = 59574132161899900045862086493921015780032175291755807399284007721050341297360</strong>
 >>> <strong>(x ** 3 + 7 - y**2) % p</strong>
 0L
+
 </pre>
 </div>
 </div>
-<div class="sect3 data-line-242">
+<div class="sect3 data-line-243">
 <h4 id="EC_math">Opérations arithmétiques sur les courbes elliptiques</h4>
-<div class="paragraph data-line-244">
+<div class="paragraph data-line-245">
 <p>Beaucoup de mathématiques sur les courbes elliptiques ressemblent beaucoup à l&#39;arithmétique des nombres entiers que nous avons apprise à l&#39;école. Plus précisément, nous pouvons définir un opérateur d&#39;addition qui, au lieu de sauter le long de la droite numérique, saute vers d&#39;autres points de la courbe. Une fois que nous avons l&#39;opérateur d&#39;addition, nous pouvons également définir la multiplication d&#39;un point et d&#39;un nombre entier, ce qui équivaut à une addition répétée.</p>
 </div>
-<div class="paragraph data-line-246">
+<div class="paragraph data-line-247">
 <p>L&#39;addition de courbe elliptique est définie de telle sorte que, étant donné deux points <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> sur la courbe elliptique, il existe un troisième point <em>P</em><sub>3</sub> = <em>P</em><sub>1</sub> + <em>P</em><sub>2</sub>, également sur la courbe elliptique.</p>
 </div>
-<div class="paragraph data-line-248">
+<div class="paragraph data-line-249">
 <p>Géométriquement, ce troisième point <em>P</em><sub>3</sub> est calculé en traçant une ligne entre <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub>. Cette ligne coupera la courbe elliptique exactement à un endroit supplémentaire (étonnamment). Appelez ce point <em>P</em><sub>3</sub>&#39; = (<em>x</em>, <em>y</em>). Réfléchissez ensuite sur l&#39;axe des x pour obtenir <em>P</em><sub>3</sub> = (<em>x</em>, <em>–y</em>).</p>
 </div>
-<div class="paragraph data-line-250">
+<div class="paragraph data-line-251">
 <p>Si <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> sont au même point, la ligne &quot;entre&quot; <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> devrait s&#39;étendre pour être la tangente à la courbe en ce point <em>P</em><sub>1</sub>. Cette tangente coupera la courbe exactement en un nouveau point. Vous pouvez utiliser des techniques de calcul pour déterminer la pente de la ligne tangente. Curieusement, ces techniques fonctionnent, même si nous restreignons notre intérêt aux points de la courbe à deux coordonnées entières !</p>
 </div>
-<div class="paragraph data-line-252">
+<div class="paragraph data-line-253">
 <p>Dans les mathématiques des courbes elliptiques, il existe également un point appelé &quot;point à l&#39;infini&quot;, qui correspond à peu près au rôle du nombre zéro en addition. Sur les ordinateurs, il est parfois représenté par <em>x</em> = <em>y</em> = 0 (ce qui ne satisfait pas l&#39;équation de la courbe elliptique, mais c&#39;est un cas séparé facile qui peut être vérifié). Il y a quelques cas particuliers qui expliquent la nécessité du point à l&#39;infini.</p>
 </div>
-<div class="paragraph data-line-254">
+<div class="paragraph data-line-255">
 <p>Dans certains cas (par exemple, si <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> ont les mêmes valeurs <em>x</em> mais des valeurs <em>y</em> différentes), la ligne sera exactement verticale, auquel cas <em>P</em><sub>3</sub> = le point à l&#39;infini.</p>
 </div>
-<div class="paragraph data-line-256">
+<div class="paragraph data-line-257">
 <p>Si <em>P</em><sub>1</sub> est le point à l&#39;infini, alors <em>P</em><sub>1</sub> + <em>P</em><sub>2</sub> = <em>P</em><sub>2</sub>. De même, si <em>P</em><sub>2</sub> est le point à l&#39;infini, alors <em>P</em><sub>1</sub> + <em>P</em><sub>2</sub> = <em>P</em><sub>1</sub>. Cela montre comment le point à l&#39;infini joue le rôle que joue zéro dans l&#39;arithmétique &quot;normale&quot;.</p>
 </div>
-<div class="paragraph data-line-258">
+<div class="paragraph data-line-259">
 <p>Il s&#39;avère que + est associatif, ce qui signifie que (<em>A</em> + <em>B</em>) + <em>C</em> = <em>A</em> + (<em>B</em> + <em>C</em>). Cela signifie que nous pouvons écrire <em>A</em> + <em>B</em> + <em>C</em> (sans parenthèses) sans ambiguïté.</p>
 </div>
-<div class="paragraph data-line-260">
+<div class="paragraph data-line-261">
 <p>Maintenant que nous avons défini l&#39;addition, nous pouvons définir la multiplication de la manière standard qui étend l&#39;addition. Pour un point <em>P</em> sur la courbe elliptique, si <em>k</em> est un nombre entier, alors <em>k</em> * <em>P</em> = <em>P</em> + <em>P</em> + <em>P</em> + &#8230;&#8203; + <em>P</em> (<em>k</em> fois). Notez que <em>k</em> est parfois (peut-être de manière déroutante) appelé un &quot;exposant&quot; dans ce cas.</p>
 </div>
 </div>
-<div class="sect3 data-line-263">
+<div class="sect3 data-line-264">
 <h4 id="public_key_derivation">Génération d&#39;une clé publique</h4>
-<div class="paragraph data-line-265">
+<div class="paragraph data-line-266">
 <p>Commencer avec une clé privée sous la forme d&#39;un nombre <em>k</em> généré aléatoirement, nous le multiplions par un point prédéterminé sur la courbe appelé <em>point générateur</em> <em>G</em> pour produire un autre point ailleurs sur la courbe, qui est la clé publique correspondante <em>K</em> :</p>
 </div>
 <div data-type="equation">
@@ -840,56 +841,56 @@ Type "help", "copyright", "credits" or "license" for more information.
   </mrow>
 </math>
 </div>
-<div class="paragraph data-line-281">
+<div class="paragraph data-line-282">
 <p>Le point générateur est spécifié dans le cadre de la norme secp256k1 ; c&#39;est la même chose pour toutes les implémentations de secp256k1, et toutes les clés dérivées de cette courbe utilisent le même point <em>G</em>. Comme le point générateur est toujours le même pour tous les utilisateurs d&#39;Ethereum, une clé privée <em>k</em> multipliée par <em>G</em> donnera toujours la même clé publique <em>K</em>. La relation entre <em>k</em> et <em>K</em> est fixe, mais ne peut être calculée que dans un sens, de <em>k</em> vers <em>K</em>. C&#39;est pourquoi une adresse Ethereum (dérivée de <em>K</em>) peut être partagée avec n&#39;importe qui et ne révèle pas la clé privée de l&#39;utilisateur (<em>k</em>).</p>
 </div>
-<div class="paragraph data-line-283">
+<div class="paragraph data-line-284">
 <p>Comme nous l&#39;avons décrit dans la section précédente, la multiplication de <em>k</em> * <em>G</em> est équivalente à une addition répétée, donc <em>G</em> + <em>G</em> + <em>G</em> + &#8230;&#8203; + <em>G</em>, répété <em>k</em> fois. En résumé, pour produire une clé publique <em>K</em> à partir d&#39;une clé privée <em>k</em>, on ajoute le point générateur <em>G</em> à lui-même, <em>k</em> fois.</p>
 </div>
-<div class="admonitionblock tip data-line-286">
+<div class="admonitionblock tip data-line-287">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-287">
+<div class="paragraph data-line-288">
 <p>Une clé privée peut être convertie en clé publique, mais une clé publique ne peut pas être reconvertie en clé privée, car le calcul ne fonctionne que dans un sens.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-290">
+<div class="paragraph data-line-291">
 <p>Appliquons ce calcul pour trouver la clé publique de la clé privée spécifique que nous vous avons montrée dans <a href="#private_keys">Clés privées</a> :</p>
 </div>
-<div id="example_privkey" class="listingblock data-line-295">
+<div id="example_privkey" class="listingblock data-line-296">
 <div class="title">Exemple de calcul de clé privée à clé publique</div>
 <div class="content">
 <pre>K = f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315 * G</pre>
 </div>
 </div>
-<div class="paragraph data-line-299">
+<div class="paragraph data-line-300">
 <p>Une bibliothèque cryptographique peut nous aider à calculer <em>K</em>, en utilisant la multiplication de courbes elliptiques. La clé publique résultante <em>K</em> est définie comme le point :</p>
 </div>
-<div class="listingblock data-line-301">
+<div class="listingblock data-line-302">
 <div class="content">
 <pre>K = (x, y)</pre>
 </div>
 </div>
-<div class="paragraph data-line-305">
+<div class="paragraph data-line-306">
 <p>où:</p>
 </div>
-<div class="listingblock data-line-307">
+<div class="listingblock data-line-308">
 <div class="content">
 <pre>x = 6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b
 y = 83b5c38e5e2b0c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </div>
 </div>
-<div class="paragraph data-line-312">
+<div class="paragraph data-line-313">
 <p>Dans Ethereum, vous pouvez voir des clés publiques représentées par une sérialisation de 130 caractères hexadécimaux (65 octets ). Ceci est adopté à partir d&#39;un format de sérialisation standard proposé par le consortium industriel Standards for Efficient Cryptography Group (SECG), documenté dans <a href="http://www.secg.org/sec1-v2.pdf" class="undefined" data-href="http://www.secg.org/sec1-v2.pdf">http://www.secg.org/sec1-v2.pdf</a> [Standards for Efficient Cryptography (SEC1)]. La norme définit quatre préfixes possibles pouvant être utilisés pour identifier des points sur une courbe elliptique, répertoriés dans <a href="#EC_prefix_table">Préfixes de clé publique EC sérialisés</a>.</p>
 </div>
-<table id="EC_prefix_table" class="tableblock frame-all grid-all stretch data-line-317">
+<table id="EC_prefix_table" class="tableblock frame-all grid-all stretch data-line-318">
 <caption class="title">Table 1. Préfixes de clé publique EC sérialisés</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -926,30 +927,30 @@ y = 83b5c38e5e2b0c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </tr>
 </tbody>
 </table>
-<div class="paragraph data-line-325">
+<div class="paragraph data-line-326">
 <p>Ethereum utilise uniquement des clés publiques non compressées ; par conséquent, le seul préfixe pertinent est (hex) 04. La sérialisation concatène les coordonnées <em>x</em> et <em>y</em> de la clé publique :</p>
 </div>
-<div id="concat_coordinates" class="listingblock data-line-328">
+<div id="concat_coordinates" class="listingblock data-line-329">
 <div class="content">
 <pre>04 + coordonnée x (32 octets/64 hex) + coordonnée y (32 octets/64 hex)</pre>
 </div>
 </div>
-<div class="paragraph data-line-332">
+<div class="paragraph data-line-333">
 <p>Par conséquent, la clé publique que nous avons calculée précédemment est sérialisée comme suit :</p>
 </div>
-<div id="serialized_pubkey" class="listingblock data-line-335">
+<div id="serialized_pubkey" class="listingblock data-line-336">
 <div class="content">
 <pre>046e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e2b0 \
 c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </div>
 </div>
 </div>
-<div class="sect3 data-line-341">
+<div class="sect3 data-line-342">
 <h4 id="EC_lib">Bibliothèques de courbes elliptiques</h4>
-<div class="paragraph data-line-343">
+<div class="paragraph data-line-344">
 <p>Il existe quelques implémentations de la courbe elliptique secp256k1 qui sont utilisées dans les projets liés à la cryptomonnaie :</p>
 </div>
-<div class="dlist data-line-345">
+<div class="dlist data-line-346">
 <dl>
 <dt class="hdlist1"><a href="https://www.openssl.org/" data-href="https://www.openssl.org/">OpenSSL</a></dt>
 <dd>
@@ -963,24 +964,24 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-350">
+<div class="sect2 data-line-351">
 <h3 id="hash_functions">Fonctions de hachage cryptographique</h3>
-<div class="paragraph data-line-352">
+<div class="paragraph data-line-353">
 <p>Les fonctions de hachage cryptographiques sont utilisées dans Ethereum. En fait, les fonctions de hachage sont largement utilisées dans presque tous les systèmes cryptographiques - un fait capturé par <span class="keep-together">cryptographeur</span> <a href="http://bit.ly/2Q79qZp" data-href="http://bit.ly/2Q79qZp">Bruce Schneier</a>, qui a dit , &quot;Bien plus que des algorithmes de chiffrement, les fonctions de hachage unidirectionnelles sont les bêtes de somme de la cryptographie moderne.&quot;</p>
 </div>
-<div class="paragraph data-line-354">
+<div class="paragraph data-line-355">
 <p>Dans cette section, nous discuterons des fonctions de hachage, explorerons leurs propriétés de base et verrons comment ces propriétés les rendent si utiles dans de nombreux domaines de la cryptographie moderne. Nous abordons ici les fonctions de hachage car elles font partie de la transformation des clés publiques Ethereum en adresses. Ils peuvent également être utilisés pour créer des <em>empreintes digitales</em>, qui facilitent la vérification des données.</p>
 </div>
-<div class="paragraph data-line-356">
+<div class="paragraph data-line-357">
 <p>En termes simples, une <a href="http://bit.ly/2CR26gD" data-href="http://bit.ly/2CR26gD"><em>fonction de hachage</em></a> est &quot;toute fonction qui peut être utilisée pour mapper des données de taille arbitraire à des données de taille fixe. ” L&#39;entrée d&#39;une fonction de hachage est appelée une <em>pré-image</em>, le <em>message</em> ou simplement les <em>données d&#39;entrée</em>. La sortie est appelée <em>hash</em> ou <em>résultat de hachage</em> ou <em>hachage</em> en français. <a href="http://bit.ly/2Jrn3jM" data-href="http://bit.ly/2Jrn3jM"><em>Les fonctions de hachage cryptographiques</em></a> sont une sous-catégorie spéciale qui possède des propriétés spécifiques utiles pour sécuriser les plates-formes, telles qu&#39;Ethereum.</p>
 </div>
-<div class="paragraph data-line-358">
+<div class="paragraph data-line-359">
 <p>Une fonction de hachage cryptographique est une fonction de hachage <em>unidirectionnelle</em> qui associe des données de taille arbitraire à une chaîne de bits de taille fixe. La nature &quot;unidirectionnelle&quot; signifie qu&#39;il est impossible de recréer les données d&#39;entrée si l&#39;on ne connaît que le hachage de sortie. La seule façon de déterminer une entrée possible est de mener une recherche par force brute, en vérifiant chaque candidat pour une sortie correspondante ; étant donné que l&#39;espace de recherche est virtuellement infini, il est aisé de comprendre l&#39;impossibilité pratique de la tâche. Même si vous trouvez des données d&#39;entrée qui créent un hachage correspondant, il se peut qu&#39;il ne s&#39;agisse pas des données d&#39;entrée d&#39;origine : les fonctions de hachage sont des fonctions &quot;plusieurs vers un&quot;. Trouver deux ensembles de données d&#39;entrée qui hachent la même sortie s&#39;appelle trouver une <em>collision de hachage</em>. En gros, plus la fonction de hachage est bonne, plus les collisions de hachage sont rares. Pour Ethereum, ils sont effectivement impossibles.</p>
 </div>
-<div class="paragraph data-line-360">
+<div class="paragraph data-line-361">
 <p>Regardons de plus près les principales propriétés des fonctions de hachage cryptographiques. Ceux-ci inclus:</p>
 </div>
-<div class="dlist data-line-362">
+<div class="dlist data-line-363">
 <dl>
 <dt class="hdlist1">Déterministe </dt>
 <dd>
@@ -1004,56 +1005,56 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </dd>
 </dl>
 </div>
-<div class="paragraph data-line-372">
+<div class="paragraph data-line-373">
 <p>La résistance aux collisions de hachage est particulièrement importante pour éviter la falsification de signature numérique dans Ethereum.</p>
 </div>
-<div class="paragraph data-line-374">
+<div class="paragraph data-line-375">
 <p>La combinaison de ces propriétés rend les fonctions de hachage cryptographiques utiles pour un large éventail d&#39;applications de sécurité, notamment :</p>
 </div>
-<div class="ulist data-line-376">
+<div class="ulist data-line-377">
 <ul>
-<li class="data-line-376">
+<li class="data-line-377">
 <p>Empreinte des données</p>
 </li>
-<li class="data-line-377">
+<li class="data-line-378">
 <p>Intégrité des messages (détection d&#39;erreur)</p>
 </li>
-<li class="data-line-378">
+<li class="data-line-379">
 <p>Preuve de travail</p>
 </li>
-<li class="data-line-379">
+<li class="data-line-380">
 <p>Authentification (hachage de mot de passe et étirement de clé)</p>
 </li>
-<li class="data-line-380">
+<li class="data-line-381">
 <p>Générateurs de nombres pseudo-aléatoires</p>
 </li>
-<li class="data-line-381">
+<li class="data-line-382">
 <p>Engagement de message (mécanismes de validation-révélation)</p>
 </li>
-<li class="data-line-382">
+<li class="data-line-383">
 <p>Identifiants uniques</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-384">
+<div class="paragraph data-line-385">
 <p>Nous en trouverons beaucoup dans Ethereum au fur et à mesure que nous progressons dans les différentes couches du système.</p>
 </div>
-<div class="sect3 data-line-387">
+<div class="sect3 data-line-388">
 <h4 id="keccak256">Fonction de hachage cryptographique d&#39;Ethereum : Keccak-256</h4>
-<div class="paragraph data-line-389">
+<div class="paragraph data-line-390">
 <p>Ethereum utilise le hachage cryptographique <em>Keccak-256</em> dans de nombreux endroits. Keccak-256 a été conçu comme candidat pour le SHA-3 Cryptographic Hash Function Competition organisé en 2007 par le National Institute of Science and Technology (NIST). Keccak était l&#39;algorithme gagnant, qui a été normalisé en tant que Federal Information Processing Standard (FIPS) 202 en 2015.</p>
 </div>
-<div class="paragraph data-line-391">
+<div class="paragraph data-line-392">
 <p>Cependant, pendant la période de développement d&#39;Ethereum, la normalisation du NIST n&#39;était pas encore finalisée. Le NIST a ajusté certains des paramètres de Keccak après l&#39;achèvement du processus de normalisation, prétendument pour améliorer son efficacité. Cela se produisait en même temps que le dénonciateur héroïque Edward Snowden a révélé des documents qui impliquent que le NIST pourrait avoir été indûment influencé par la National Security Agency (NSA) pour affaiblir intentionnellement la norme de générateur de nombres aléatoires Dual_EC_DRBG, plaçant effectivement une porte dérobée dans le générateur de nombres aléatoires standard. Le résultat de cette controverse a été une réaction violente contre les modifications proposées et un retard important dans la normalisation de SHA-3. À l&#39;époque, la Fondation Ethereum a décidé d&#39;implémenter l&#39;algorithme Keccak original, tel que proposé par ses inventeurs, plutôt que la norme SHA-3 telle que modifiée par le NIST.</p>
 </div>
-<div class="admonitionblock warning data-line-394">
+<div class="admonitionblock warning data-line-395">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Warning</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-395">
+<div class="paragraph data-line-396">
 <p>Bien que vous puissiez voir &quot;SHA-3&quot; mentionné dans les documents et le code Ethereum, beaucoup, sinon toutes, de ces instances font en fait référence à Keccak-256, et non à la norme FIPS-202 SHA-3 finalisée. Les différences d&#39;implémentation sont légères, liées aux paramètres de remplissage, mais elles sont importantes dans la mesure où Keccak-256 produit des sorties de hachage différentes de FIPS-202 SHA-3 pour la même entrée.</p>
 </div>
 </td>
@@ -1061,15 +1062,15 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </table>
 </div>
 </div>
-<div class="sect3 data-line-399">
+<div class="sect3 data-line-400">
 <h4 id="which_hash">Quelle fonction de hachage suis-je en train d&#39;utiliser ?</h4>
-<div class="paragraph data-line-401">
+<div class="paragraph data-line-402">
 <p>Comment pouvez-vous savoir si la bibliothèque de logiciels que vous utilisez implémente FIPS-202 SHA-3 ou Keccak-256, si les deux pouvaient s&#39;appeler &quot;SHA-3&quot; ?</p>
 </div>
-<div class="paragraph data-line-403">
+<div class="paragraph data-line-404">
 <p>Un moyen simple de le dire est d&#39;utiliser un <em>vecteur de test</em>, une sortie attendue pour une entrée donnée. Le test le plus couramment utilisé pour une fonction de hachage est l' <em>entrée vide</em>. Si vous exécutez la fonction de hachage avec une chaîne vide en entrée, vous devriez voir les résultats suivants :</p>
 </div>
-<div class="listingblock data-line-405">
+<div class="listingblock data-line-406">
 <div class="content">
 <pre>Keccak256("") =
   c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470
@@ -1078,120 +1079,120 @@ SHA3("") =
   a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a</pre>
 </div>
 </div>
-<div class="paragraph data-line-414">
+<div class="paragraph data-line-415">
 <p>Quel que soit le nom de la fonction, vous pouvez la tester pour voir s&#39;il s&#39;agit du Keccak-256 d&#39;origine ou de la norme NIST finale FIPS-202 SHA-3 en exécutant ce test simple. N&#39;oubliez pas qu&#39;Ethereum utilise Keccak-256, même s&#39;il est souvent appelé SHA-3 dans le code.</p>
 </div>
-<div class="admonitionblock note data-line-417">
+<div class="admonitionblock note data-line-418">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-418">
+<div class="paragraph data-line-419">
 <p>En raison de la confusion créée par la différence entre la fonction de hachage utilisée dans Ethereum (Keccak-256) et la norme finalisée (FIP-202 SHA-3), des efforts sont en cours pour renommer toutes les instances de sha3 dans tous les codes, opcodes, et des bibliothèques à keccak256. Voir <a href="https://github.com/ethereum/EIPs/issues/59" data-href="https://github.com/ethereum/EIPs/issues/59">ERC59</a> pour plus de détails.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-422">
+<div class="paragraph data-line-423">
 <p>Examinons ensuite la première application de Keccak-256 dans Ethereum, qui consiste à produire des adresses Ethereum à partir de clés publiques.</p>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-425">
+<div class="sect2 data-line-426">
 <h3 id="eth_address">Adresses Ethereum</h3>
-<div class="paragraph data-line-427">
+<div class="paragraph data-line-428">
 <p>Les adresses Ethereum sont des <em>identifiants uniques</em> dérivés de clés publiques ou de contrats utilisant la fonction de hachage unidirectionnelle Keccak-256.</p>
 </div>
-<div class="paragraph data-line-429">
+<div class="paragraph data-line-430">
 <p>Dans nos exemples précédents, nous avons commencé avec une clé privée et avons utilisé la multiplication par courbe elliptique pour dériver une clé publique :</p>
 </div>
-<div class="paragraph pagebreak-before data-line-432">
+<div class="paragraph pagebreak-before data-line-433">
 <p>Clé privée <em>k</em> :</p>
 </div>
-<div class="listingblock data-line-434">
+<div class="listingblock data-line-435">
 <div class="content">
 <pre>k = f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315</pre>
 </div>
 </div>
-<div id="concat_pubkey" class="paragraph data-line-439">
+<div id="concat_pubkey" class="paragraph data-line-440">
 <p>Clé publique <em>K</em> (coordonnées <em>x</em> et <em>y</em> concaténées et affichées en hexadécimal) :</p>
 </div>
-<div class="listingblock data-line-441">
+<div class="listingblock data-line-442">
 <div class="content">
 <pre>K = 6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e...</pre>
 </div>
 </div>
-<div class="admonitionblock note data-line-446">
+<div class="admonitionblock note data-line-447">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-447">
+<div class="paragraph data-line-448">
 <p>Il est à noter que la clé publique n&#39;est pas formatée avec le préfixe (hex) 04 lors du calcul de l&#39;adresse.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-450">
+<div class="paragraph data-line-451">
 <p>Nous utilisons Keccak-256 pour calculer le <em>hachage</em> de cette clé publique :</p>
 </div>
-<div id="calculate_hash" class="listingblock data-line-453">
+<div id="calculate_hash" class="listingblock data-line-454">
 <div class="content">
 <pre>Keccak256(K) = 2a5bc342ed616b5ba5732269001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="paragraph data-line-457">
+<div class="paragraph data-line-458">
 <p>Ensuite, nous ne gardons que les 20 derniers octets (octets les moins significatifs), qui sont notre adresse Ethereum :</p>
 </div>
-<div id="keep_last_20" class="listingblock data-line-460">
+<div id="keep_last_20" class="listingblock data-line-461">
 <div class="content">
 <pre>001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="paragraph data-line-464">
+<div class="paragraph data-line-465">
 <p>Le plus souvent, vous verrez des adresses Ethereum avec le préfixe 0x qui indique qu&#39;elles sont codées en hexadécimal, comme ceci :</p>
 </div>
-<div id="hex_prefix" class="listingblock data-line-467">
+<div id="hex_prefix" class="listingblock data-line-468">
 <div class="content">
 <pre>0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="sect3 data-line-472">
+<div class="sect3 data-line-473">
 <h4 id="eth_address_format">Formats d&#39;adresse Ethereum</h4>
-<div class="paragraph data-line-474">
+<div class="paragraph data-line-475">
 <p>Les adresses Ethereum sont des nombres hexadécimaux, des identifiants dérivés des 20 derniers octets du hachage Keccak-256 de la clé publique.</p>
 </div>
-<div class="paragraph data-line-476">
+<div class="paragraph data-line-477">
 <p>(&quot;somme de contrôle&quot;,&quot;dans les formats d&#8217;adresses Ethereum&quot;Contrairement aux adresses Bitcoin, qui sont encodées dans l&#39;interface utilisateur de tous les clients pour inclure une somme de contrôle intégrée pour se protéger contre les adresses mal saisies, les adresses Ethereum sont présentées sous forme hexadécimale brute sans aucune somme de contrôle.</p>
 </div>
-<div class="paragraph data-line-478">
+<div class="paragraph data-line-479">
 <p>La justification de cette décision était que les adresses Ethereum seraient éventuellement cachées derrière des abstractions (telles que les services de noms) aux couches supérieures du système et que des sommes de contrôle devraient être ajoutées aux couches supérieures si nécessaire.</p>
 </div>
-<div class="paragraph data-line-480">
+<div class="paragraph data-line-481">
 <p>En réalité, ces couches supérieures ont été développées trop lentement et ce choix de conception a entraîné un certain nombre de problèmes dans les premiers jours de l&#39;écosystème, notamment la perte de fonds en raison d&#39;adresses mal saisies et d&#39;erreurs de validation des entrées. De plus, comme les services de noms Ethereum ont été développés plus lentement que prévu initialement, les encodages alternatifs ont été adoptés très lentement par les développeurs de portefeuilles. Nous examinerons ensuite quelques-unes des options d&#39;encodage.</p>
 </div>
 </div>
-<div class="sect3 data-line-483">
+<div class="sect3 data-line-484">
 <h4 id="ICAP">Inter Exchange Client Address Protocol (ICAP)</h4>
-<div class="paragraph data-line-485">
+<div class="paragraph data-line-486">
 <p>Le client <em>Inter exchange Address Protocol</em> (ICAP) est un codage d&#39;adresse Ethereum partiellement compatible avec le International Bank Account Number (IBAN), offrant un encodage polyvalent, à somme de contrôle et interopérable pour les adresses Ethereum. Les adresses ICAP peuvent encoder des adresses Ethereum ou des noms communs enregistrés auprès d&#39;un registre de noms Ethereum. Vous pouvez en savoir plus sur ICAP sur <a href="http://bit.ly/2JsZHKu" data-href="http://bit.ly/2JsZHKu">Ethereum Wiki</a>.</p>
 </div>
-<div class="paragraph data-line-487">
+<div class="paragraph data-line-488">
 <p>L&#39;IBAN est une norme internationale d&#39;identification des numéros de compte bancaire, principalement utilisée pour les virements électroniques. Il est largement adopté dans l&#39;espace européen unique de paiements en euros (SEPA) et au-delà. L&#39;IBAN est un service centralisé et fortement réglementé. ICAP est une implémentation décentralisée mais compatible pour les adresses Ethereum.</p>
 </div>
-<div class="paragraph data-line-489">
+<div class="paragraph data-line-490">
 <p>Un IBAN consiste en une chaîne de 34 caractères alphanumériques au maximum (insensible à la casse) comprenant un code pays, une somme de contrôle et un identifiant de compte bancaire (qui est spécifique au pays).</p>
 </div>
-<div class="paragraph data-line-491">
+<div class="paragraph data-line-492">
 <p>ICAP utilise la même structure en introduisant un code de pays non standard, &quot;XE&quot;, qui signifie &quot;Ethereum&quot;, suivi d&#39;une somme de contrôle à deux caractères et de trois variantes possibles d&#39;un identifiant de compte :</p>
 </div>
-<div class="dlist data-line-493">
+<div class="dlist data-line-494">
 <dl>
 <dt class="hdlist1">Direct</dt>
 <dd>
@@ -1207,16 +1208,17 @@ SHA3("") =
 </dd>
 </dl>
 </div>
-<div class="paragraph data-line-499">
+<div class="paragraph data-line-500">
 <p>Nous pouvons utiliser l&#39;outil de ligne de commande helpeth pour créer des adresses ICAP. Vous pouvez obtenir de l&#39;aide en l&#39;installant avec :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>npm install -g helpeth</strong>
+
 </pre>
-<div class="paragraph data-line-507">
+<div class="paragraph data-line-509">
 <p>Si vous n&#39;avez pas npm, vous devrez peut-être d&#39;abord installer nodeJS, ce que vous pouvez faire en suivant les instructions sur <a href="https://nodeJS.org" class="undefined" data-href="https://nodeJS.org">https://nodeJS.org</a>.</p>
 </div>
-<div class="paragraph data-line-509">
+<div class="paragraph data-line-511">
 <p>Maintenant que nous avons helpeth, essayons de créer une adresse ICAP avec notre exemple de clé privée (préfixée par 0x et passée en paramètre à helpeth).</p>
 </div>
 <pre data-type="programlisting">
@@ -1226,158 +1228,159 @@ $ <strong>helpeth keyDetails \
 Address: 0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9
 ICAP: XE60 HAMI CDXS V5QX VJA7 TJW4 7Q9C HWKJ D
 Public key: 0x6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b...
+
 </pre>
-<div class="paragraph data-line-522">
+<div class="paragraph data-line-525">
 <p>La commande helpeth construit une adresse Ethereum hexadécimale ainsi qu&#39;une adresse ICAP pour nous. L&#39;adresse ICAP de notre exemple de clé est :</p>
 </div>
-<div id="ICAP_example" class="listingblock data-line-525">
+<div id="ICAP_example" class="listingblock data-line-528">
 <div class="content">
 <pre>XE60HAMICDXSV5QXVJA7TJW47Q9CHWKJD</pre>
 </div>
 </div>
-<div class="paragraph data-line-529">
+<div class="paragraph data-line-532">
 <p>Étant donné que notre exemple d&#39;adresse Ethereum commence par un octet zéro, il peut être encodé à l&#39;aide de la méthode d&#39;encodage Direct ICAP qui est valide au format IBAN. Vous pouvez le dire car il comporte 33 caractères.</p>
 </div>
-<div class="paragraph data-line-531">
+<div class="paragraph data-line-534">
 <p>Si notre adresse ne commençait pas par un zéro, elle serait encodée avec l&#39;encodage Basic, qui comporterait 35 caractères et serait invalide en tant qu&#39;IBAN.</p>
 </div>
-<div class="admonitionblock tip data-line-534">
+<div class="admonitionblock tip data-line-537">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-535">
+<div class="paragraph data-line-538">
 <p>Les chances qu&#39;une adresse Ethereum commence par un octet zéro sont de 1 sur 256. Pour en générer une comme celle-là, il faudra en moyenne 256 tentatives avec 256 clés privées aléatoires différentes avant d&#39;en trouver une qui fonctionne comme un type &quot;Direct&quot; compatible IBAN encodé comme adresse ICAP.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-538">
+<div class="paragraph data-line-541">
 <p>À l&#39;heure actuelle, ICAP n&#39;est malheureusement pris en charge que par quelques portefeuilles.</p>
 </div>
 </div>
-<div class="sect3 data-line-541">
+<div class="sect3 data-line-544">
 <h4 id="EIP55">Encodage hexadécimal avec somme de contrôle en majuscules (EIP-55)</h4>
-<div class="paragraph data-line-543">
+<div class="paragraph data-line-546">
 <p>En raison de la lenteur du déploiement d&#39;ICAP et des services de noms, une norme a été proposée par la <a href="https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md" data-href="https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md">Proposition d&#39;amélioration d&#39;Ethereum 55 (EIP-55)</a>. EIP-55 offre une somme de contrôle rétrocompatible pour les adresses Ethereum en modifiant la capitalisation de l&#39;adresse hexadécimale. L&#39;idée est que les adresses Ethereum sont insensibles à la casse et que tous les portefeuilles sont censés accepter les adresses Ethereum exprimées en majuscules ou en minuscules, sans aucune différence d&#39;interprétation.</p>
 </div>
-<div class="paragraph data-line-545">
+<div class="paragraph data-line-548">
 <p>En modifiant la capitalisation des caractères alphabétiques dans l&#39;adresse, nous pouvons transmettre une somme de contrôle qui peut être utilisée pour protéger l&#39;intégrité de l&#39;adresse contre les erreurs de frappe ou de lecture. Les portefeuilles qui ne prennent pas en charge les sommes de contrôle EIP-55 ignorent simplement le fait que l&#39;adresse contient des majuscules mixtes, mais ceux qui la prennent en charge peuvent la valider et détecter les erreurs avec une précision de 99,986 %.</p>
 </div>
-<div class="paragraph data-line-547">
+<div class="paragraph data-line-550">
 <p>L&#39;encodage en majuscules mixtes est subtil et vous ne le remarquerez peut-être pas au début. Notre exemple d&#39;adresse est :</p>
 </div>
-<div class="listingblock data-line-549">
+<div class="listingblock data-line-552">
 <div class="content">
 <pre>0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="paragraph data-line-553">
+<div class="paragraph data-line-556">
 <p>Avec une somme de contrôle à capitalisation mixte EIP-55, cela devient :</p>
 </div>
-<div id="mixed_capitalization" class="listingblock data-line-556">
+<div id="mixed_capitalization" class="listingblock data-line-559">
 <div class="content">
 <pre>0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9</pre>
 </div>
 </div>
-<div class="paragraph data-line-560">
+<div class="paragraph data-line-563">
 <p>Pouvez-vous faire la différence? Certains des caractères alphabétiques (A à F) de l&#39;alphabet de codage hexadécimal sont désormais en majuscules, tandis que d&#39;autres sont en minuscules.</p>
 </div>
-<div class="paragraph data-line-562">
+<div class="paragraph data-line-565">
 <p>EIP-55 est assez simple à mettre en œuvre. Nous prenons le hachage Keccak-256 de l&#39;adresse hexadécimale minuscule. Ce hachage agit comme une empreinte numérique de l&#39;adresse, nous donnant une somme de contrôle pratique. Tout petit changement dans l&#39;entrée (l&#39;adresse) devrait entraîner un grand changement dans le hachage résultant (la somme de contrôle), nous permettant de détecter efficacement les erreurs. Le hachage de notre adresse est ensuite encodé dans la capitalisation de l&#39;adresse elle-même. Décomposons-le, étape par étape :</p>
 </div>
-<div class="olist arabic data-line-564">
+<div class="olist arabic data-line-567">
 <ol class="arabic">
-<li class="data-line-564">
+<li class="data-line-567">
 <p>Hachez l&#39;adresse en minuscules, sans le préfixe 0x :</p>
 </li>
 </ol>
 </div>
-<div id="hash_lower_case_address" class="listingblock data-line-567">
+<div id="hash_lower_case_address" class="listingblock data-line-570">
 <div class="content">
 <pre>Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0f9") =
 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9695d9a19d8f673ca991deae1</pre>
 </div>
 </div>
-<div class="olist arabic data-line-573">
+<div class="olist arabic data-line-576">
 <ol class="arabic" start="2">
-<li class="data-line-573">
+<li class="data-line-576">
 <p>Mettez en majuscule chaque caractère d&#39;adresse alphabétique si le chiffre hexadécimal correspondant du hachage est supérieur ou égal à 0x8. C&#39;est plus facile à montrer si nous alignons l&#39;adresse et le hachage :</p>
 </li>
 </ol>
 </div>
-<div id="capitalize_input" class="listingblock data-line-576">
+<div id="capitalize_input" class="listingblock data-line-579">
 <div class="content">
 <pre>Adresse : 001d3f1ef827552ae1114027bd3ecf1f086ba0f9
 Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...</pre>
 </div>
 </div>
-<div class="paragraph data-line-581">
+<div class="paragraph data-line-584">
 <p>Notre adresse contient un caractère alphabétique d en quatrième position. Le quatrième caractère du hachage est 6, qui est inférieur à 8. Donc, nous laissons le d minuscule. Le prochain caractère alphabétique de notre adresse est f, en sixième position. Le sixième caractère du hachage hexadécimal est c, qui est supérieur à 8. Par conséquent, nous capitalisons le F dans l&#39;adresse, et ainsi de suite. Comme vous pouvez le voir, nous n&#39;utilisons que les 20 premiers octets (40 caractères hexadécimaux) du hachage comme somme de contrôle, car nous n&#39;avons que 20 octets (40 caractères hexadécimaux) dans l&#39;adresse à capitaliser de manière appropriée.</p>
 </div>
-<div class="paragraph data-line-583">
+<div class="paragraph data-line-586">
 <p>Vérifiez vous-même l&#39;adresse en majuscules mixtes résultante et voyez si vous pouvez dire quels caractères ont été en majuscules et à quels caractères ils correspondent dans le hachage de l&#39;adresse :</p>
 </div>
-<div id="capitalize_output" class="listingblock data-line-586">
+<div id="capitalize_output" class="listingblock data-line-589">
 <div class="content">
 <pre>Adresse : 001d3F1ef827552Ae1114027BD3ECF1f086bA0F9
 Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...</pre>
 </div>
 </div>
-<div class="sect4 data-line-592">
+<div class="sect4 data-line-595">
 <h5 id="EIP55_error">Détection d&#39;une erreur dans une adresse encodée EIP-55</h5>
-<div class="paragraph data-line-594">
+<div class="paragraph data-line-597">
 <p>Maintenant, regardons comment les adresses EIP-55 nous aideront à trouver une erreur. Supposons que nous ayons imprimé une adresse Ethereum, qui est codée EIP-55 :</p>
 </div>
-<div id="correct_address" class="listingblock data-line-597">
+<div id="correct_address" class="listingblock data-line-600">
 <div class="content">
 <pre>0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9</pre>
 </div>
 </div>
-<div class="paragraph data-line-601">
+<div class="paragraph data-line-604">
 <p>Faisons maintenant une erreur fondamentale en lisant cette adresse. Le caractère avant le dernier est un F majuscule. Pour cet exemple, supposons que nous interprétions cela comme un E majuscule et que nous tapions l&#39;adresse suivante (incorrecte) dans notre portefeuille :</p>
 </div>
-<div id="incorrect_address" class="listingblock data-line-604">
+<div id="incorrect_address" class="listingblock data-line-607">
 <div class="content">
 <pre>0x001d3F1ef827552Ae1114027BD3ECF1f086bA0E9</pre>
 </div>
 </div>
-<div class="paragraph data-line-608">
+<div class="paragraph data-line-611">
 <p>Heureusement, notre portefeuille est conforme à la norme EIP-55 ! Il remarque les majuscules mixtes et tente de valider l&#39;adresse. Il le convertit en minuscules et calcule le hachage de la somme de contrôle :</p>
 </div>
-<div id="hash_demo" class="listingblock data-line-611">
+<div id="hash_demo" class="listingblock data-line-614">
 <div class="content">
 <pre>Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0e9") =
 5429b5d9460122fb4b11af9cb88b7bb76d8928862e0a57d46dd18dd8e08a6927</pre>
 </div>
 </div>
-<div class="paragraph data-line-616">
+<div class="paragraph data-line-619">
 <p>Comme vous pouvez le voir, même si l&#39;adresse n&#39;a changé que d&#39;un caractère (en fait, un seul bit, car e et f sont séparés d&#39;un bit), le hachage de l&#39;adresse a radicalement changé. C&#39;est la propriété des fonctions de hachage qui les rend si utiles pour les sommes de contrôle !</p>
 </div>
-<div class="paragraph data-line-618">
+<div class="paragraph data-line-621">
 <p>Maintenant, alignons les deux et vérifions la capitalisation :</p>
 </div>
-<div id="incorrect_capitalization" class="listingblock data-line-621">
+<div id="incorrect_capitalization" class="listingblock data-line-624">
 <div class="content">
 <pre>001d3F1ef827552Ae1114027BD3ECF1f086bA0E9
 5429b5d9460122fb4b11af9cb88b7bb76d892886...</pre>
 </div>
 </div>
-<div class="paragraph data-line-626">
+<div class="paragraph data-line-629">
 <p>C&#39;est tout faux! Plusieurs des caractères alphabétiques sont mal capitalisés. N&#39;oubliez pas que la capitalisation est l&#39;encodage de la somme de contrôle <em>correcte</em>.</p>
 </div>
-<div class="paragraph data-line-628">
+<div class="paragraph data-line-631">
 <p>La casse de l&#39;adresse que nous avons saisie ne correspond pas à la somme de contrôle que nous venons de calculer, ce qui signifie que quelque chose a changé dans l&#39;adresse et qu&#39;une erreur a été <span class="keep-together">introduite</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-632">
+<div class="sect2 data-line-635">
 <h3 id="keys-addresses-conclusions">Conclusion</h3>
-<div class="paragraph data-line-634">
+<div class="paragraph data-line-637">
 <p>Dans ce chapitre, nous avons fourni un bref aperçu de la cryptographie à clé publique et nous nous sommes concentrés sur l&#39;utilisation des clés publiques et privées dans Ethereum et l&#39;utilisation d&#39;outils cryptographiques, tels que les fonctions de hachage, dans la création et la vérification des adresses Ethereum. Nous avons également examiné les signatures numériques et comment elles peuvent démontrer la propriété d&#39;une clé privée sans révéler cette clé privée. Dans <a href="#wallets_chapter">[wallets_chapter]</a>, nous allons rassembler ces idées et voir comment les portefeuilles peuvent être utilisés pour gérer les collections de clés.</p>
 </div>
 </div>
@@ -1386,7 +1389,7 @@ Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-16 06:58:32 -0400
+Last updated 2022-05-10 17:52:29 -0400
 </div>
 </div>
 </body>

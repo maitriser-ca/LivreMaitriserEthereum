@@ -182,7 +182,8 @@ Parity nécessite Rust version 1.27 ou supérieure.
 ++++
 <pre data-type="programlisting">
 $ <strong>sudo apt-get install openssl libssl-dev libudev-dev cmake clang</strong>
-\n</pre>
+
+</pre>
 ++++
 
 Pour les autres systèmes d&#39;exploitation, utilisez le gestionnaire d'applications de votre système d&#39;exploitation ou suivez les https://github.com/paritytech/parity/wiki/Setup [instructions Wiki] pour installer les bibliothèques requises.
@@ -211,7 +212,8 @@ Tout d&#39;abord, récupérez le code source sur GitHub :
 ++++
 <pre data-type="programlisting">
 $ <strong>git clone https://github.com/paritytech/parity</strong>
-\n</pre>
+
+</pre>
 ++++
 
 Passez ensuite au répertoire _parity_ et utilisez +cargo+ pour créer l&#39;exécutable :
@@ -220,7 +222,8 @@ Passez ensuite au répertoire _parity_ et utilisez +cargo+ pour créer l&#39;ex�
 <pre data-type="programlisting">
 $ <strong>cd parity</strong>
 $ <strong>cargo install --path .</strong>
-\n</pre>
+
+</pre>
 ++++
 
 Si tout se passe bien, vous devriez voir quelque chose comme :
@@ -240,7 +243,8 @@ Finished release [optimized] target(s) in 10m 16s
 Installing /root/.cargo/bin/parity
 Installed package `parity-ethereum v2.7.0 (/root/parity)` (executable `parity`)
 $
-\n</pre>
+
+</pre>
 ++++
 
 Essayez d&#39;exécuter +parity+ pour voir s&#39;il est installé, en invoquant l&#39;option +--version+ :
@@ -260,7 +264,8 @@ By Wood/Paronyan/Kotewicz/Drwięga/Volf/Greeff
    Habermeier/Czaban/Gotchac/Redman/Nikolsky
    Schoedon/Tang/Adolfsson/Silva/Palm/Hirsz et al.
 $
-\n</pre>
+
+</pre>
 ++++
 
 Génial! Maintenant que Parity est installé, vous pouvez synchroniser la chaîne de blocs et commencer avec quelques options de ligne de commande de base.
@@ -298,7 +303,8 @@ Pour créer un clone local de votre référentiel choisi, utilisez la commande +
 ++++
 <pre data-type="programlisting">
 $ <strong>git clone &lt;Lien vers le référentiel&gt;</strong>
-\n</pre>
+
+</pre>
 ++++
 
 Vous devriez voir un rapport de progression au fur et à mesure que le référentiel est copié sur votre système local :
@@ -323,7 +329,8 @@ Génial! Maintenant que vous avez une copie locale de Geth, vous pouvez compiler
 <pre data-type="programlisting">
 $ <strong>cd go-ethereum</strong>
 $ <strong>make geth</strong>
-\n</pre>
+
+</pre>
 ++++
 
 Si tout se passe bien, vous verrez le compilateur Go construire chaque composant jusqu&#39;à ce qu&#39;il produise l&#39;exécutable +geth+ :
@@ -361,7 +368,8 @@ Protocol Versions: [64 63]
 Go Version: go1.13.4
 Operating System: linux
 [...]
-\n</pre>
+
+</pre>
 ++++
 
 Votre commande +geth version+ peut afficher des informations légèrement différentes, mais vous devriez voir un rapport de version similaire à celui présenté ici.
@@ -419,7 +427,8 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
 
 {"jsonrpc":"2.0","id":1,
 "result":"Geth/v1.9.11-unstable-0b284f6c-20200123/linux-amd64/go1.13.4"}
-\n</pre>
+
+</pre>
 ++++
 
 Dans cet exemple, nous utilisons +curl+ pour établir une connexion HTTP à l&#39;adresse _http://localhost:8545_. Nous exécutons déjà +geth+, qui propose l&#39;API JSON-RPC en tant que service HTTP sur le port 8545. Nous demandons à +curl+ d&#39;utiliser la commande HTTP +POST+ et d&#39;identifier le contenu en tant que type +application/json+. Enfin, nous transmettons une requête encodée en JSON en tant que composant +data+ de notre requête HTTP. La majeure partie de notre ligne de commande consiste simplement à configurer +curl+ pour établir correctement la connexion HTTP. La partie intéressante est la commande JSON-RPC que nous émettons :
@@ -463,7 +472,8 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
   http://localhost:8545</strong>
 
 {"jsonrpc":"2.0","id":4213,"result":"0x430e23400"}
-\n</pre>
+
+</pre>
 ++++
 
 La réponse, +0x430e23400+, nous indique que le prix actuel du gaz est de 18 gwei (gigawei ou milliard de wei). Si, comme nous, vous ne pensez pas en hexadécimal, vous pouvez le convertir en décimal sur la ligne de commande avec un petit bash-fu :
@@ -473,7 +483,8 @@ La réponse, +0x430e23400+, nous indique que le prix actuel du gaz est de 18 gwe
 $ <strong>echo $((0x430e23400))</strong>
 
 18000000000
-\n</pre>
+
+</pre>
 ++++
 
 L&#39;API JSON-RPC complète peut être étudiée sur le https://github.com/ethereum/wiki/wiki/JSON-RPC[wiki Ethereum].
@@ -486,7 +497,8 @@ Parity a un &quot;mode de compatibilité Geth&quot; spécial, où il offre une A
 ++++
 <pre data-type="programlisting">
 $ <strong>parity --geth</strong>
-\n</pre>
+
+</pre>
 ++++
 
 [[lw_eth_clients]]
