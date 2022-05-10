@@ -97,7 +97,7 @@ Voici comment installer la dernière version binaire de Solidity sur un système
 $ <strong>sudo add-apt-repository ppa:ethereum/ethereum</strong>
 $ <strong>sudo apt update</strong>
 $ <strong>sudo apt install solc</strong>
-</pre>
+\n</pre>
 ++++
 
 Une fois que vous avez installé +solc+, vérifiez la version en exécutant :
@@ -107,7 +107,7 @@ Une fois que vous avez installé +solc+, vérifiez la version en exécutant :
 $ <strong>solc --version</strong>
 solc, the solidity compiler commandline interface
 Version: 0.4.24+commit.e67f0147.Linux.g++
-</pre>
+\n</pre>
 ++++
 
 Il existe plusieurs autres façons d&#39;installer Solidity, en fonction de votre système d&#39;exploitation et de vos exigences, y compris la compilation directe à partir du code source. Pour plus d&#39;informations, consultez https://github.com/ethereum/solidity[].
@@ -155,7 +155,7 @@ Binary:
 06357600080fd5b73ffffffffffffffffffffffffffffffffffffffff331681156108fc0282604051
 600060405180830381858888f19350505050151560a057600080fd5b505600a165627a7a723058203
 556d79355f2da19e773a9551e95f1ca7457f2b5fbbf4eacf7748ab59d2532130029
-</pre>
+\n</pre>
 ++++
 
 
@@ -181,7 +181,7 @@ Contract JSON ABI
 "name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable", \
 "type":"function"},{"payable":true,"stateMutability":"payable", \
 "type":"fallback"}]
-</pre>
+\n</pre>
 ++++
 
 Comme vous pouvez le voir, le compilateur produit un tableau JSON décrivant les deux fonctions définies par _Faucet.sol_. Ce JSON peut être utilisé par toute application qui souhaite accéder au contrat +Faucet+ une fois qu&#39;il est déployé. À l&#39;aide de l&#39;ABI, une application telle qu&#39;un portefeuille ou un navigateur DApp peut construire des transactions qui appellent les fonctions dans + Faucet + avec les arguments et types d&#39;arguments corrects. Par exemple, un portefeuille saura que pour appeler la fonction +withdraw+, il devra fournir un argument +uint256+ nommé +withdraw_amount+. Le portefeuille pourrait inviter l&#39;utilisateur à fournir cette valeur, puis à créer une transaction qui l&#39;encode et exécute la fonction +retirer+.
@@ -363,7 +363,7 @@ Solidity propose deux autres types d&#39;objets qui s&#39;apparentent à un cont
 <pre data-type="programlisting">
 function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 [pure|constant|view|payable] [<em>modifiers</em>] [returns (<em>return types</em>)]
-</pre>
+\n</pre>
 ++++
 
 
@@ -719,7 +719,7 @@ truffle(develop)> <strong>FaucetDeployed.withdraw(web3.utils.toWei(0.1, "ether")
                   { console.log(res.logs[0].event, res.logs[0].args) })</strong>
 Withdrawal { to: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
   amount: BigNumber { s: 1, e: 17, c: [ 1000 ] } }
-</pre>
+\n</pre>
 ++++
 
 Après avoir déployé le contrat à l&#39;aide de la fonction +deployed+, nous exécutons deux transactions. La première transaction est un dépôt (en utilisant +send+), qui émet un événement +Deposit+ dans les journaux de transactions :
@@ -913,7 +913,7 @@ truffle(develop)> <strong>callerDeployed.make_calls(calledContract.address).then
 { sender: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
   origin: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
   from: '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f' }
-</pre>
+\n</pre>
 ++++
 
 Voyons ce qui s&#39;est passé ici. Nous avons appelé la fonction +make_calls+ et passé l&#39;adresse de +calledContract+, puis avons intercepté les quatre événements émis par chacun des différents appels. Examinons la fonction +make_calls+ et passons en revue chaque étape.
@@ -1041,7 +1041,7 @@ Gas Price is 20000000000 wei
 gas estimation = 31397 units
 gas cost estimation = 627940000000000 wei
 gas cost estimation = 0.00062794 ether
-</pre>
+\n</pre>
 ++++
 
 Il est recommandé d&#39;évaluer le coût en gaz des fonctions dans le cadre de votre workflow de développement, afin d&#39;éviter toute surprise lors du déploiement de contrats sur le réseau principal(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc27&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc26&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc25&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc24&quot;)))

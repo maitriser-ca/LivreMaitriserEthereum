@@ -63,7 +63,7 @@ En résumé, il est important de noter que l&#39;utilisation du nonce est en fai
 <pre data-type="programlisting">
 &gt; <strong>web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f")</strong>
 40
-</pre>
+\n</pre>
 ++++
 
 [TIP]
@@ -103,7 +103,7 @@ Regardons un exemple :
 &gt; <strong>web3.eth.getTransactionCount("0x9e713963a92c02317a681b9bb3065a8249de124f", \
 "pending")</strong>
 41
-</pre>
+\n</pre>
 ++++
 [TIP]
 ====
@@ -124,7 +124,7 @@ $ <strong>curl --data '{"method":"parity_nextNonce", \
   localhost:8545</strong>
 
 {"jsonrpc":"2.0","result":"0x32","id":1}
-</pre>
+\n</pre>
 ++++
 
 [[parity_curl]]
@@ -193,7 +193,7 @@ L&#39;interface web3 propose une suggestion +gasPrice+, en calculant un prix mé
 <pre data-type="programlisting">
 > <strong>web3.eth.getGasPrice(console.log)</strong>
 > null BigNumber { s: 1, e: 10, c: [ 10000000000 ] }
-</pre>
+\n</pre>
 ++++
 
 [[calc_gas_price]]
@@ -203,7 +203,7 @@ L&#39;interface web3 propose une suggestion +gasPrice+, en calculant un prix mé
 <pre data-type="programlisting">
 > <strong>web3.eth.getGasPrice(function(err, res) {console.log(res*21000)} )</strong>
 > 210000000000000
-</pre>
+\n</pre>
 ++++
 
 Si l&#39;adresse de destination de votre transaction est un contrat, la quantité de gaz nécessaire peut être estimée mais ne peut pas être déterminée avec précision. En effet, un contrat peut évaluer différentes conditions qui conduisent à différentes voies d&#39;exécution, avec différents coûts totaux du gaz. Le contrat peut n&#39;exécuter qu&#39;un calcul simple ou un calcul plus complexe, selon des conditions indépendantes de votre volonté et imprévisibles. Pour le démontrer, regardons un exemple : nous pouvons écrire un contrat intelligent qui incrémente un compteur à chaque fois qu&#39;il est appelé et exécute une boucle particulière un nombre de fois égal au nombre d&#39;appels. Peut-être qu&#39;au 100e appel, il distribue un prix spécial, comme une loterie, mais doit faire des calculs supplémentaires pour calculer le prix. Si vous appelez le contrat 99 fois, une chose se produit, mais au 100e appel, quelque chose de très différent se produit. La quantité de gaz que vous paieriez pour cela dépend du nombre d&#39;autres transactions qui ont appelé cette fonction avant que votre transaction ne soit incluse dans un bloc. Peut-être que votre estimation est basée sur la 99e transaction, mais juste avant que votre transaction ne soit confirmée, quelqu&#39;un d&#39;autre appelle le contrat pour la 99e fois. Vous êtes maintenant la 100e transaction à appeler, et l&#39;effort de calcul (et le coût du gaz) est beaucoup plus élevé.
@@ -346,7 +346,7 @@ Calculons le hachage Keccak-256 de cette chaîne :
 <pre data-type="programlisting">
 > <strong>web3.utils.sha3("withdraw(uint256)");</strong>
 '0x2e1a7d4d13322e7b96f9a57413e1525c250fb7a9021cf91d1540d5b69f16a49f'
-</pre>
+\n</pre>
 ++++
 
 Les 4 premiers octets du hachage sont +0x2e1a7d4d+. C&#39;est notre valeur &quot;sélecteur de fonction&quot;, qui indiquera au contrat quelle fonction nous voulons appeler.
@@ -359,7 +359,7 @@ Ensuite, calculons une valeur à passer comme argument +withdraw_amount+. Nous v
 '10000000000000000'
 > <strong>withdraw_amount_hex = web3.utils.toHex(withdraw_amount);</strong>
 '0x2386f26fc10000'
-</pre>
+\n</pre>
 ++++
 
 Maintenant, nous ajoutons le sélecteur de fonction au montant (rembourré à 32 octets) :
@@ -397,7 +397,7 @@ $ <strong>solc --bin Faucet.sol</strong>
 
 Binary:
 6060604052341561000f57600080fd5b60e58061001d6000396000f30060606040526004361060...
-</pre>
+\n</pre>
 ++++
 
 Les mêmes informations peuvent également être obtenues à partir du compilateur en ligne Remix.
@@ -413,7 +413,7 @@ Nous pouvons maintenant créer la transaction :
   gas: 113558, gasPrice: 200000000000});</strong>
 
 "0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b"
-</pre>
+\n</pre>
 ++++
 
 Il est recommandé de toujours spécifier un paramètre +to+, même dans le cas d&#39;une création de contrat sans adresse, car le coût d&#39;envoyer accidentellement votre ether à +0x0+ et de le perdre pour toujours est trop élevé. Vous devez également spécifier un +gasPrice+ et un +gasLimit+.
@@ -447,7 +447,7 @@ Nous pouvons regarder le reçu de la transaction pour obtenir des informations s
     "0x7bcc327ae5d369f75b98c0d59037eec41d44dfae75447fd753d9f2db9439124b",
   transactionIndex: 0
 }
-</pre>
+\n</pre>
 ++++
 
 Cela inclut l&#39;adresse du contrat, que nous pouvons utiliser pour envoyer et recevoir des fonds du contrat, comme indiqué dans la section précédente :
@@ -464,7 +464,7 @@ Cela inclut l&#39;adresse du contrat, que nous pouvons utiliser pour envoyer et 
   "0x2e1a7d4d000000000000000000000000000000000000000000000000002386f26fc10000"});</strong>
 
 "0x59836029e7ce43e92daf84313816ca31420a76a9a571b69e31ec4bf4b37cd16e"
-</pre>
+\n</pre>
 ++++
 
 Après un certain temps, les deux transactions sont visibles sur Etherscan, comme indiqué dans &lt;<publish_contract_transactions>&gt;.(((range=&quot;endofrange&quot;, startref=&quot;ix_06transactions-asciidoc13&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_06transactions-asciidoc12&quot;)))
@@ -667,7 +667,7 @@ $ <strong>node raw_tx_demo.js</strong>
 RLP-Encoded Tx: 0xe6808609184e72a0008303000094b0920c523d582040f2bcb1bd7fb1c7c1...
 Tx Hash: 0xaa7f03f9f4e52fcf69f836a6d2bbc7706580adce0a068ff6525ba337218e6992
 Signed Raw Transaction: 0xf866808609184e72a0008303000094b0920c523d582040f2bcb1...
-</pre>
+\n</pre>
 ++++
 
 [[raw_tx_eip155]]
