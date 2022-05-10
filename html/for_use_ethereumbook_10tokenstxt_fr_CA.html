@@ -444,86 +444,86 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="tokens_chapter">Jetons</h2>
 <div class="sectionbody">
 <div class="paragraph data-line-5">
-<p>The word "token" derives from the Old English "tācen," meaning a sign or symbol. It is commonly used to refer to privately issued special-purpose coin-like items of insignificant intrinsic value, such as transportation tokens, laundry tokens, and arcade game tokens.</p>
+<p>Le mot &quot;token&quot; (jeton) dérive du vieil anglais &quot;tācen&quot;, signifiant un signe ou un symbole. Il est couramment utilisé pour désigner des objets de type pièce de monnaie à usage spécial émis par des particuliers et ayant une valeur intrinsèque insignifiante, tels que des token ou jetons de transport, des jetons de blanchisserie et des jetons de jeux d&#39;arcade.</p>
 </div>
 <div class="paragraph data-line-7">
-<p>Nowadays, "tokens" administered on blockchains are redefining the word to mean blockchain-based abstractions that can be owned and that represent assets, currency, or access rights.</p>
+<p>De nos jours, les &quot;tokens&quot; ou &quot;jetons&quot; (nous utiliserons le terme français "jeton" pour le restant du chapitre) administrés sur les chaînes de blocs redéfinissent le mot pour désigner des abstractions basées sur la chaîne de blocs qui peuvent être possédées et qui représentent des actifs, des devises ou des droits d&#39;accès.</p>
 </div>
 <div class="paragraph data-line-9">
-<p>The association between the word "token" and insignificant value has a lot to do with the limited use of the physical versions of tokens. Often restricted to specific businesses, organizations, or locations, physical tokens are not easily exchangeable and typically have only one function. With blockchain tokens, these restrictions are lifted&#x2014;or, more accurately, completely redefinable. Many blockchain tokens serve multiple purposes globally and can be traded for each other or for other currencies on global liquid markets. With the restrictions on use and ownership gone, the "insignificant value" expectation is also a thing of the past.</p>
+<p>L&#39;association entre le mot &quot;jeton&quot; et la valeur insignifiante a beaucoup à voir avec l&#39;utilisation limitée des versions physiques des jetons. Souvent limités à des entreprises, des organisations ou des emplacements spécifiques, les jetons physiques ne sont pas facilement échangeables et n&#39;ont généralement qu&#39;une seule fonction. Avec les jetons de chaîne de blocs, ces restrictions sont levées ou, plus précisément, complètement redéfinissables. De nombreux jetons de chaîne de blocs ont plusieurs objectifs à l&#39;échelle mondiale et peuvent être échangés les uns contre les autres ou contre d&#39;autres devises sur les marchés liquides mondiaux. Avec la disparition des restrictions d&#39;utilisation et de propriété, l&#39;attente d&#39;une &quot;valeur insignifiante&quot; appartient également au passé.</p>
 </div>
 <div class="paragraph data-line-11">
-<p>In this chapter, we look at various uses for tokens and how they are created. We also discuss attributes of tokens such as fungibility and intrinsicality. Finally, we examine the standards and technologies that they are based on, and experiment by building our own tokens.</p>
+<p>Dans ce chapitre, nous examinons les différentes utilisations des jetons et comment ils sont créés. Nous discutons également des attributs des jetons tels que la fongibilité et l&#39;intrinsèque. Enfin, nous examinons les normes et les technologies sur lesquelles ils sont basés et expérimentons en créant nos propres jetons.</p>
 </div>
 <div class="sect2 data-line-14">
-<h3 id="tokens_use">How Tokens Are Used</h3>
+<h3 id="tokens_use">Comment les jetons sont utilisés</h3>
 <div class="paragraph data-line-16">
-<p>The most obvious use of tokens is as digital private currencies. However, this is only one possible use. Tokens can be programmed to serve many different functions, often overlapping. For example, a token can simultaneously convey a voting right, an access right, and ownership of a resource. As the following list shows, currency is just the first "app":</p>
+<p>L&#39;utilisation la plus évidente des jetons est celle des monnaies privées numériques. Cependant, ce n&#39;est qu&#39;une utilisation possible. Les jetons peuvent être programmés pour remplir de nombreuses fonctions différentes, qui se chevauchent souvent. Par exemple, un jeton peut simultanément transmettre un droit de vote, un droit d&#39;accès et la propriété d&#39;une ressource. Comme le montre la liste suivante, la devise n&#39;est que la première &quot;application&quot; :</p>
 </div>
 <div class="dlist data-line-18">
 <dl>
-<dt class="hdlist1">Currency</dt>
+<dt class="hdlist1">Monnaie</dt>
 <dd>
-<p>A token can serve as a form of currency, with a value determined through private trade.</p>
+<p>Un jeton peut servir de forme de monnaie, avec une valeur déterminée par le commerce privé.</p>
 </dd>
-<dt class="hdlist1">Resource</dt>
+<dt class="hdlist1">Ressource</dt>
 <dd>
-<p>A token can represent a resource earned or produced in a sharing economy or resource-sharing environment; for example, a storage or CPU token representing resources that can be shared over a network.</p>
+<p>Un jeton peut représenter une ressource gagnée ou produite dans une économie de partage ou un environnement de partage de ressources ; par exemple, un jeton de stockage ou de processeur représentant des ressources qui peuvent être partagées sur un réseau.</p>
 </dd>
-<dt class="hdlist1">Asset</dt>
+<dt class="hdlist1">Actif</dt>
 <dd>
-<p>A token can represent ownership of an intrinsic or extrinsic, tangible or intangible asset; for example, gold, real estate, a car, oil, energy, MMOG items, etc.</p>
+<p>un jeton peut représenter la propriété d&#39;un actif intrinsèque ou extrinsèque, tangible ou intangible ; par exemple, de l&#39;or, de l&#39;immobilier, une voiture, du pétrole, de l&#39;énergie, des objets MMOG, etc.</p>
 </dd>
-<dt class="hdlist1">Access</dt>
+<dt class="hdlist1">Accès</dt>
 <dd>
-<p>A token can represent access rights and grant access to a digital or physical property, such as a discussion forum, an exclusive website, a hotel room, or a rental car.</p>
+<p>un jeton peut représenter des droits d&#39;accès et accorder l&#39;accès à une propriété numérique ou physique, telle qu&#39;un forum de discussion, un site Web exclusif, une chambre d&#39;hôtel ou une voiture de location.</p>
 </dd>
-<dt class="hdlist1">Equity</dt>
+<dt class="hdlist1">Équité</dt>
 <dd>
-<p>A token can represent shareholder equity in a digital organization (e.g., a DAO) or legal entity (e.g., a corporation).</p>
+<p>Un jeton peut représenter l&#39;équité des actionnaires dans une organisation numérique (par exemple, un DAO) ou une entité juridique (par exemple, une société).</p>
 </dd>
-<dt class="hdlist1">Voting</dt>
+<dt class="hdlist1">Vote</dt>
 <dd>
-<p>A token can represent voting rights in a digital or legal system.</p>
+<p>Un jeton peut représenter des droits de vote dans un système numérique ou juridique.</p>
 </dd>
-<dt class="hdlist1">Collectible</dt>
+<dt class="hdlist1">Objet de collection</dt>
 <dd>
-<p>A token can represent a digital collectible (e.g., CryptoPunks) or physical collectible (e.g., a painting).</p>
+<p>Un jeton peut représenter un objet de collection numérique (par exemple, CryptoPunks) ou un objet de collection physique (par exemple, une peinture).</p>
 </dd>
-<dt class="hdlist1">Identity</dt>
+<dt class="hdlist1">Identité</dt>
 <dd>
-<p>A token can represent a digital identity (e.g., avatar) or legal identity (e.g., national ID).</p>
+<p>Un jeton peut représenter une identité numérique (par exemple, un avatar) ou une identité légale (par exemple, une carte d&#39;identité nationale).</p>
 </dd>
 <dt class="hdlist1">Attestation</dt>
 <dd>
-<p>A token can represent a certification or attestation of fact by some authority or by a decentralized reputation system (e.g., marriage record, birth certificate, college degree).</p>
+<p>Un jeton peut représenter une certification ou une attestation de fait par une autorité ou par un système de réputation décentralisé (par exemple, acte de mariage, certificat de naissance, diplôme universitaire).</p>
 </dd>
-<dt class="hdlist1">Utility</dt>
+<dt class="hdlist1">Utilitaire</dt>
 <dd>
-<p>A token can be used to access or pay for a service.</p>
+<p>Un jeton peut être utilisé pour accéder ou payer un service.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph data-line-38">
-<p>Often, a single token encompasses several of these functions. Sometimes it is hard to discern between them, as the physical equivalents have always been inextricably linked. For example, in the physical world, a driver&#8217;s license (attestation) is also an identity document (identity) and the two cannot be separated. In the digital realm, previously commingled functions can be separated and developed independently (e.g., an anonymous attestation).</p>
+<p>Souvent, un seul jeton englobe plusieurs de ces fonctions. Parfois, il est difficile de les distinguer, car les équivalents physiques ont toujours été inextricablement liés. Par exemple, dans le monde physique, un permis de conduire (attestation) est aussi un document d&#39;identité (identité) et les deux ne peuvent pas être séparés. Dans le domaine numérique, les fonctions précédemment mélangées peuvent être séparées et développées indépendamment (par exemple, une attestation anonyme).</p>
 </div>
 </div>
 <div class="sect2 data-line-41">
-<h3 id="tokens_fungibility">Tokens and Fungibility</h3>
+<h3 id="tokens_fungibility">Jetons et fongibilité</h3>
 <div class="paragraph data-line-43">
-<p><a href="https://en.wikipedia.org/wiki/Fungibility" data-href="https://en.wikipedia.org/wiki/Fungibility">Wikipedia</a> says: "In economics, fungibility is the property of a good or a commodity whose individual units are essentially interchangeable."</p>
+<p><a href="https://en.wikipedia.org/wiki/Fungibility" data-href="https://en.wikipedia.org/wiki/Fungibility">Wikipedia</a> dit : &quot; En économie, la fongibilité est la propriété d&#39;un bien ou d&#39;une marchandise dont les unités individuelles sont essentiellement interchangeables.&quot;</p>
 </div>
 <div class="paragraph data-line-45">
-<p>Tokens are fungible when we can substitute any single unit of the token for another without any difference in its value or function.</p>
+<p>Les jetons sont fongibles lorsque nous pouvons remplacer n&#39;importe quelle unité du jeton par une autre sans aucune différence dans sa valeur ou sa fonction.</p>
 </div>
 <div class="paragraph data-line-47">
-<p>Strictly speaking, if a token&#8217;s historical provenance can be tracked, then it is not entirely fungible. The ability to track provenance can lead to blacklisting and whitelisting, reducing or eliminating fungibility.</p>
+<p>À proprement parler, si la provenance historique d&#39;un jeton peut être suivie, il n&#39;est pas entièrement fongible. La possibilité de suivre la provenance peut conduire à la mise sur liste noire et à la liste blanche, réduisant ou éliminant la fongibilité.</p>
 </div>
 <div class="paragraph data-line-49">
-<p>Non-fungible tokens are tokens that each represent a unique tangible or intangible item and therefore are not interchangeable. For example, a token that represents ownership of a <em>specific</em> Van Gogh painting is not equivalent to another token that represents a Picasso, even though they might be part of the same "art ownership token" system. Similarly, a token representing a <em>specific</em> digital collectible such as a specific CryptoKitty is not interchangeable with any other CryptoKitty. Each non-fungible token is associated with a unique identifier, such as a serial number.</p>
+<p>Les jetons non fongibles sont des jetons qui représentent chacun un élément tangible ou intangible unique et ne sont donc pas interchangeables. Par exemple, un jeton qui représente la propriété d&#39;un tableau <em>spécifique</em> de Van Gogh n&#39;est pas équivalent à un autre jeton qui représente un Picasso, même s&#39;ils peuvent faire partie du même système de &quot;jeton de propriété d&#39;art&quot;. De même, un jeton représentant un objet de collection numérique <em>spécifique</em> tel qu&#39;un CryptoKitty spécifique n&#39;est pas interchangeable avec un autre CryptoKitty. Chaque jeton non fongible est associé à un identifiant unique, tel qu&#39;un numéro de série.</p>
 </div>
 <div class="paragraph data-line-51">
-<p>We will see examples of both fungible and non-fungible tokens later in this chapter.</p>
+<p>Nous verrons des exemples de jetons fongibles et non fongibles plus loin dans ce chapitre.</p>
 </div>
 <div class="admonitionblock note data-line-54">
 <table>
@@ -533,7 +533,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-55">
-<p>Note that "fungible" is often used to mean "directly exchangeable for money" (for example, a casino token can be "cashed in," while laundry tokens typically cannot). This is <em>not</em> the sense in which we use the word here.</p>
+<p>Notez que &quot;fongible&quot; est souvent utilisé pour signifier &quot;directement échangeable contre de l&#39;argent&quot; (par exemple, un jeton de casino peut être &quot;encaissé&quot;, contrairement aux jetons de blanchisserie). Ce n&#39;est <em>pas</em> le sens dans lequel nous utilisons le mot ici.</p>
 </div>
 </td>
 </tr>
@@ -541,71 +541,71 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2 data-line-59">
-<h3 id="counterparty_risk">Counterparty Risk</h3>
+<h3 id="counterparty_risk">Risque de contrepartie</h3>
 <div class="paragraph data-line-61">
-<p>Counterparty risk is the risk that the <em>other</em> party in a transaction will fail to meet their obligations. Some types of transactions suffer additional counterparty risk because there are more than two parties involved. For example, if you hold a certificate of deposit for a precious metal and you sell that to someone, there are at least three parties in that transaction: the seller, the buyer, and the custodian of the precious metal. Someone holds the physical asset; by necessity they become party to the fulfillment of the transaction and add counterparty risk to any transaction involving that asset. In general, when an asset is traded indirectly through the exchange of a token of ownership, there is additional counterparty risk from the custodian of the asset. Do they have the asset? Will they recognize (or allow) the transfer of ownership based on the transfer of a token (such as a certificate, deed, title, or digital token)? In the world of digital tokens representing assets, as in the nondigital world, it is important to understand who holds the asset that is represented by the token and what rules apply to that underlying asset.</p>
+<p>Le risque de contrepartie est le risque que l&#39;_autre_ partie à une transaction ne respecte pas ses obligations. Certains types de transactions présentent un risque de contrepartie supplémentaire car il y a plus de deux parties impliquées. Par exemple, si vous détenez un certificat de dépôt pour un métal précieux et que vous le vendez à quelqu&#39;un, il y a au moins trois parties dans cette transaction : le vendeur, l&#39;acheteur et le dépositaire du métal précieux. Quelqu&#39;un détient l&#39;actif physique ; par nécessité, ils deviennent partie à l&#39;exécution de la transaction et ajoutent un risque de contrepartie à toute transaction impliquant cet actif. En général, lorsqu&#39;un actif est négocié indirectement via l&#39;échange d&#39;un jeton de propriété, il existe un risque de contrepartie supplémentaire de la part du dépositaire de l&#39;actif. En ont-ils l&#39;atout ? Reconnaîtront-ils (ou autoriseront-ils) le transfert de propriété basé sur le transfert d&#39;un jeton (tel qu&#39;un certificat, un acte, un titre ou un jeton numérique) ? Dans le monde des jetons numériques représentant des actifs, comme dans le monde non numérique, il est important de comprendre qui détient l&#39;actif représenté par le jeton et quelles règles s&#39;appliquent à cet actif sous-jacent.</p>
 </div>
 </div>
 <div class="sect2 data-line-64">
-<h3 id="tokens_intrinsicality">Tokens and Intrinsicality</h3>
+<h3 id="tokens_intrinsicality">Tokens et Intrinsicité</h3>
 <div class="paragraph data-line-66">
-<p>The word "intrinsic" derives from the Latin "intra," meaning "from within."</p>
+<p>Le mot &quot;intrinsèque&quot; dérive du latin &quot;intra&quot;, qui signifie &quot;de l&#39;intérieur&quot;.</p>
 </div>
 <div class="paragraph data-line-68">
-<p>Some tokens represent digital items that are intrinsic to the blockchain. Those digital assets are governed by consensus rules, just like the tokens themselves. This has an important implication: tokens that represent intrinsic assets do not carry additional counterparty risk. If you hold the keys for a CryptoKitty, there is no other party holding that CryptoKitty for you&#x2014;you own it directly. The blockchain consensus rules apply and your ownership (i.e., control) of the private keys is equivalent to ownership of the asset, without any intermediary.</p>
+<p>Certains jetons représentent des éléments numériques intrinsèques à la chaîne de blocs. Ces actifs numériques sont régis par des règles consensuelles, tout comme les jetons eux-mêmes. Cela a une implication importante : les jetons qui représentent des actifs intrinsèques ne comportent pas de risque de contrepartie supplémentaire. Si vous détenez les clés d&#39;un CryptoKitty, aucune autre partie ne détient ce CryptoKitty pour vous - vous le possédez directement. Les règles de consensus de la chaîne de blocs s&#39;appliquent et votre propriété (c&#39;est-à-dire votre contrôle) des clés privées équivaut à la propriété de l&#39;actif, sans aucun intermédiaire.</p>
 </div>
 <div class="paragraph data-line-70">
-<p>Conversely, many tokens are used to represent <em>extrinsic</em> things, such as real estate, corporate voting shares, trademarks, and gold bars. The ownership of these items, which are not "within" the blockchain, is governed by law, custom, and policy, separate from the consensus rules that govern the token. In other words, token issuers and owners may still depend on real-world non-smart contracts. As a result, these extrinsic assets carry additional counterparty risk because they are held by custodians, recorded in external registries, or controlled by laws and policies outside the blockchain environment.</p>
+<p>À l&#39;inverse, de nombreux jetons sont utilisés pour représenter des choses <em>extrinsèques</em>, telles que l&#39;immobilier, les actions avec droit de vote des entreprises, les marques et les lingots d&#39;or. La propriété de ces éléments, qui ne sont pas &quot;dans&quot; la chaîne de blocs, est régie par la loi, la coutume et la politique, distinctes des règles consensuelles qui régissent le jeton. En d&#39;autres termes, les émetteurs et propriétaires de jetons peuvent toujours dépendre de contrats réels non intelligents. En conséquence, ces actifs extrinsèques comportent un risque de contrepartie supplémentaire car ils sont détenus par des dépositaires, enregistrés dans des registres externes ou contrôlés par des lois et des politiques en dehors de l&#39;environnement de la chaîne de blocs.</p>
 </div>
 <div class="paragraph data-line-72">
-<p>One of the most important ramifications of blockchain-based tokens is the ability to convert extrinsic assets into intrinsic assets and thereby remove counterparty risk. A good example is moving from equity in a corporation (extrinsic) to an equity or voting token in a <em>DAO</em> or similar (intrinsic) organization.</p>
+<p>L&#39;une des ramifications les plus importantes des jetons basés sur la chaîne de blocs est la capacité de convertir des actifs extrinsèques en actifs intrinsèques et ainsi de supprimer le risque de contrepartie. Un bon exemple est le passage de l&#39;équité dans une société (extrinsèque) à une équité ou à un jeton de vote dans un <em>DAO</em> ou une organisation similaire (intrinsèque).</p>
 </div>
 </div>
 <div class="sect2 data-line-75">
-<h3 id="using_tokens">Using Tokens: Utility or Equity</h3>
+<h3 id="using_tokens">Utilisation de jetons : utilité ou équité</h3>
 <div class="paragraph data-line-77">
-<p>Almost all projects in Ethereum today launch with some kind of token. But do all these projects really need tokens? Are there any disadvantages to using a token, or will we see the slogan "tokenize all the things" come to fruition? In principle, the use of tokens can be seen as the ultimate management or organization tool. In practice, the integration of blockchain platforms, including Ethereum, into the existing structures of society means that, so far, there are many limitations to their applicability.</p>
+<p>Presque tous les projets d&#39;Ethereum sont lancés aujourd&#39;hui avec une sorte de jeton. Mais est-ce que tous ces projets ont vraiment besoin de jetons ? Y a-t-il des inconvénients à utiliser un jeton, ou verrons-nous le slogan &quot;tokéniser toutes les choses&quot; se concrétiser ? En principe, l&#39;utilisation de jetons peut être considérée comme l&#39;ultime outil de gestion ou d&#39;organisation. Dans la pratique, l&#39;intégration des plateformes de chaîne de blocs, y compris Ethereum, dans les structures existantes de la société signifie que, jusqu&#39;à présent, il existe de nombreuses limites à leur applicabilité.</p>
 </div>
 <div class="paragraph data-line-79">
-<p>Let&#8217;s start by clarifying the role of a token in a new project. The majority of projects are using tokens in one of two ways: either as "utility tokens" or as "equity tokens." Very often, those two roles are conflated.</p>
+<p>Commençons par clarifier le rôle d&#39;un jeton dans un nouveau projet. La majorité des projets utilisent des jetons de deux manières : soit en tant que « jetons utilitaires », soit en tant que « jetons d&#39;équité ». Très souvent, ces deux rôles sont confondus.</p>
 </div>
 <div class="paragraph data-line-81">
-<p>Utility tokens are those where the use of the token is required to gain access to a service, application, or resource. Examples of utility tokens include tokens that represent resources such as shared storage, or access to services such as social media networks.</p>
+<p>Les jetons utilitaires sont ceux où l&#39;utilisation du jeton est nécessaire pour accéder à un service, une application ou une ressource. Des exemples de jetons utilitaires incluent des jetons qui représentent des ressources telles que le stockage partagé ou l&#39;accès à des services tels que les réseaux de médias sociaux.</p>
 </div>
 <div class="paragraph data-line-83">
-<p>Equity tokens are those that represent shares in the control or ownership of something, such as a startup. Equity tokens can be as limited as nonvoting shares for distribution of dividends and profits, or as expansive as voting shares in a decentralized autonomous organization, where management of the platform is through some complex governance system based on votes by the token holders.</p>
+<p>Les jetons d&#8217;équité sont ceux qui représentent des parts dans le contrôle ou la propriété de quelque chose, comme une startup. Les jetons d&#39;équité peuvent être aussi limités que les actions sans droit de vote pour la distribution des dividendes et des bénéfices, ou aussi expansifs que les actions avec droit de vote dans une organisation autonome décentralisée, où la gestion de la plate-forme se fait par un système de gouvernance complexe basé sur les votes des détenteurs de jetons.</p>
 </div>
 <div class="sect3 data-line-86">
-<h4 id="its_not_duck">It&#8217;s a Duck!</h4>
+<h4 id="its_not_duck">C&#39;est un canard !</h4>
 <div class="paragraph data-line-88">
-<p>Many startups face a difficult problem: tokens are a great fundraising mechanism, but offering securities (equity) to the public is a regulated activity in most jurisdictions. By disguising equity tokens as utility tokens, many startups hope to get around these regulatory restrictions and raise money from a public offering while presenting it as a pre-sale of "service access vouchers" or, as we call them, utility tokens. Whether these thinly disguised equity offerings will be able to skirt the regulators remains to be seen.</p>
+<p>De nombreuses startups sont confrontées à un problème difficile : les jetons sont un excellent mécanisme de collecte de fonds, mais offrir des titres (actions) au public est une activité réglementée dans la plupart des juridictions. En déguisant les jetons d&#8217;équité en jetons utilitaires, de nombreuses startups espèrent contourner ces restrictions réglementaires et lever des fonds à partir d&#8217;une offre publique tout en la présentant comme une prévente de "bons d&#8217;accès au service" ou, comme nous les appelons, de jetons utilitaires. Reste à savoir si ces offres d&#8217;actions à peine déguisées pourront contourner les régulateurs.</p>
 </div>
 <div class="paragraph data-line-90">
-<p>As the popular saying goes: "If it walks like a duck and quacks like a duck, it&#8217;s a duck." Regulators are not likely to be distracted by these semantic contortions; quite the opposite, they are more likely to see such legal sophistry as an attempt to deceive the public.</p>
+<p>Comme le dit le dicton populaire : &quot;Si ça marche comme un canard et cancane comme un canard, c&#39;est un canard.&quot; Les régulateurs ne risquent pas d&#39;être distraits par ces contorsions sémantiques ; bien au contraire, ils sont plus susceptibles de considérer ce sophisme juridique comme une tentative de tromper le public.</p>
 </div>
 </div>
 <div class="sect3 data-line-93">
-<h4 id="who_needs_utility_tokens">Utility Tokens: Who Needs Them?</h4>
+<h4 id="who_needs_utility_tokens">Jetons utilitaires : qui en a besoin ?</h4>
 <div class="paragraph data-line-95">
-<p>The real problem is that utility tokens introduce significant risks and adoption barriers for startups. Perhaps in a distant future "tokenize all the things" will become reality, but at present the set of people who have an understanding of and desire to use a token is a subset of the already small cryptocurrency market.</p>
+<p>Le vrai problème est que les jetons utilitaires introduisent des risques importants et des obstacles à l&#39;adoption pour les startups. Peut-être que dans un avenir lointain, &quot;tokéniser toutes les choses&quot; deviendra réalité, mais à l&#39;heure actuelle, l&#39;ensemble des personnes qui comprennent et souhaitent utiliser un jeton est un sous-ensemble du marché déjà petit de la crypto-monnaie.</p>
 </div>
 <div class="paragraph data-line-97">
-<p>For a startup, each innovation represents a risk and a market filter. Innovation is taking the road least traveled, walking away from the path of tradition. It is already a lonely walk. If a startup is trying to innovate in a new area of technology, such as storage sharing over P2P networks, that is a lonely enough path. Adding a utility token to that innovation and requiring users to adopt tokens in order to use the service compounds the risk and increases the barriers to adoption. It&#8217;s walking off the already lonely trail of P2P storage innovation and into the wilderness.</p>
+<p>Pour une startup, chaque innovation représente un risque et un filtre de marché. L&#39;innovation, c&#39;est emprunter le chemin le moins fréquenté, s&#39;éloigner du chemin de la tradition. C&#39;est déjà une promenade solitaire. Si une startup essaie d&#39;innover dans un nouveau domaine technologique, tel que le partage de stockage sur des réseaux P2P, c&#39;est une voie assez solitaire. L&#39;ajout d&#39;un jeton utilitaire à cette innovation et l&#39;obligation pour les utilisateurs d&#39;adopter des jetons afin d&#39;utiliser le service aggravent le risque et augmentent les obstacles à l&#39;adoption. C&#39;est sortir de la piste déjà solitaire de l&#39;innovation de stockage P2P et dans le désert.</p>
 </div>
 <div class="paragraph data-line-99">
-<p>Think of each innovation as a filter. It limits adoption to the subset of the market that can become early adopters of this innovation. Adding a second filter compounds that effect, further limiting the addressable market. You are asking your early adopters to adopt not one but two completely new technologies: the novel application/platform/service you built, and the token economy.</p>
+<p>Considérez chaque innovation comme un filtre. Cela limite l&#39;adoption au sous-ensemble du marché qui peut devenir les premiers à adopter cette innovation. L&#39;ajout d&#39;un deuxième filtre aggrave cet effet, limitant davantage le marché adressable. Vous demandez à vos premiers utilisateurs d&#39;adopter non pas une mais deux technologies entièrement nouvelles : la nouvelle application/plate-forme/service que vous avez créée et l&#39;économie des jetons.</p>
 </div>
 <div class="paragraph data-line-101">
-<p>For a startup, each innovation introduces risks that increase the chance of failure of the startup. If you take your already risky startup idea and add a utility token, you are adding all the risks of the underlying platform (Ethereum), broader economy (exchanges, liquidity), regulatory environment (equity/commodity regulators), and technology (smart contracts, token standards). That&#8217;s a lot of risk for a startup.</p>
+<p>Pour une startup, chaque innovation introduit des risques qui augmentent les chances d&#39;échec de la startup. Si vous prenez votre idée de démarrage déjà risquée et ajoutez un jeton utilitaire, vous ajoutez tous les risques de la plate-forme sous-jacente (Ethereum), de l&#39;économie plus large (échanges, liquidité), de l&#39;environnement réglementaire (régulateurs des actions/matières premières) et de la technologie (contrats intelligents , normes symboliques). C&#39;est beaucoup de risques pour une startup.</p>
 </div>
 <div class="paragraph data-line-103">
-<p>Advocates of "tokenize all the things" will likely counter that by adopting tokens they are also inheriting the market enthusiasm, early adopters, technology, innovation, and liquidity of the entire token economy. That is true too. The question is whether the benefits and enthusiasm outweigh the risks and uncertainties.</p>
+<p>Les partisans de la &quot;tokénisation de toutes les choses&quot; rétorqueront probablement qu&#39;en adoptant des jetons, ils héritent également de l&#39;enthousiasme du marché, des premiers utilisateurs, de la technologie, de l&#39;innovation et de la liquidité de l&#39;ensemble de l&#39;économie des jetons. C&#39;est vrai aussi. La question est de savoir si les avantages et l&#39;enthousiasme l&#39;emportent sur les risques et les incertitudes.</p>
 </div>
 <div class="paragraph data-line-105">
-<p>Nevertheless, some of the most innovative business ideas are indeed taking place in the crypto realm. If regulators are not quick enough to adopt laws and support new business models, entrepreneurs and associated talent will seek to operate in other jurisdictions that are more crypto-friendly. This is already happening.</p>
+<p>Néanmoins, certaines des idées commerciales les plus innovantes se déroulent effectivement dans le domaine de la cryptographie. Si les régulateurs ne sont pas assez rapides pour adopter des lois et soutenir de nouveaux modèles commerciaux, les entrepreneurs et les talents associés chercheront à opérer dans d&#39;autres juridictions plus favorables à la cryptographie. Cela se produit déjà.</p>
 </div>
 <div class="paragraph data-line-107">
-<p>Finally, at the beginning of this chapter, when introducing tokens, we discussed the colloquial meaning of "token" as "something of insignificant value." The underlying reason for the insignificant value of most tokens is because they can only be used in a very narrow context: one bus company, one laundromat, one arcade, one hotel, or one company store. Limited liquidity, limited applicability, and high conversion costs reduce the value of tokens until they are only of "token" value. So when you add a utility token to your platform, but the token can only be used on your single platform with a small market, you are recreating the conditions that made physical tokens worthless. This may indeed be the correct way to incorporate tokenization into your project. However, if in order to use your platform a user has to convert something into your utility token, use it, and then convert the remainder back into something more generally useful, you&#8217;ve created a company scrip. The switching costs of a digital token are orders of magnitude lower than for a physical token without a market, but they are not zero. Utility tokens that work across an entire industry sector will be very interesting and probably quite valuable. But if you set up your startup to have to bootstrap an entire industry standard in order to succeed, you may have already failed.</p>
+<p>Enfin, au début de ce chapitre, lors de l&#39;introduction des jetons, nous avons discuté de la signification familière du « jeton » comme « quelque chose de valeur insignifiante ». La raison sous-jacente de la valeur insignifiante de la plupart des jetons est qu&#39;ils ne peuvent être utilisés que dans un contexte très étroit : une compagnie d&#8217;autobus, une buanderie automatique, une arcade, un hôtel ou un magasin d&#39;entreprise. Une liquidité limitée, une applicabilité limitée et des coûts de conversion élevés réduisent la valeur des jetons jusqu&#39;à ce qu&#39;ils n&#39;aient plus qu&#39;une valeur « symbolique ». Ainsi, lorsque vous ajoutez un jeton utilitaire à votre plateforme, mais que le jeton ne peut être utilisé que sur votre seule plateforme avec un petit marché, vous recréez les conditions qui ont rendu les jetons physiques sans valeur. Cela peut en effet être la bonne façon d&#39;intégrer la tokenisation dans votre projet. Cependant, si pour utiliser votre plate-forme, un utilisateur doit convertir quelque chose en votre jeton utilitaire, l&#39;utiliser, puis reconvertir le reste en quelque chose de plus généralement utile, vous avez créé un certificat d&#39;entreprise. Les coûts de commutation d&#39;un jeton numérique sont des ordres de grandeur inférieurs à ceux d&#39;un jeton physique sans marché, mais ils ne sont pas nuls. Les jetons utilitaires qui fonctionnent dans tout un secteur industriel seront très intéressants et probablement très précieux. Mais si vous configurez votre startup pour qu&#39;elle doive amorcer une norme industrielle entière pour réussir, vous avez peut-être déjà échoué.</p>
 </div>
 <div class="admonitionblock note data-line-110">
 <table>
@@ -615,107 +615,107 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-111">
-<p>One of the benefits of deploying services on general-purpose platforms like Ethereum is being able to connect smart contracts (and therefore the utility of tokens) across projects, increasing the potential for liquidity and utility of tokens.</p>
+<p>L&#39;un des avantages du déploiement de services sur des plates-formes à usage général comme Ethereum est de pouvoir connecter des contrats intelligents (et donc l&#39;utilité des jetons) à travers les projets, augmentant ainsi le potentiel de liquidité et l&#39;utilité des jetons.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-114">
-<p>Make this decision for the right reasons. Adopt a token because your application <em>cannot work without a token</em>. Adopt it because the token lifts a fundamental market barrier or solves an access problem. Don&#8217;t introduce a utility token because it is the only way you can raise money fast and you need to pretend it&#8217;s not a public securities offering.</p>
+<p>Prenez cette décision pour les bonnes raisons. Adoptez un jeton car votre application <em>ne peut pas fonctionner sans jeton</em>. Adoptez-le car le jeton lève une barrière fondamentale du marché ou résout un problème d&#39;accès. N&#39;introduisez pas de jeton utilitaire car c&#39;est le seul moyen de collecter des fonds rapidement et vous devez prétendre qu&#39;il ne s&#39;agit pas d&#39;une offre publique de titres .</p>
 </div>
 </div>
 </div>
 <div class="sect2 data-line-117">
-<h3 id="token_std">Tokens on Ethereum</h3>
+<h3 id="token_std">Jetons sur Ethereum</h3>
 <div class="paragraph data-line-119">
-<p>Blockchain tokens existed before Ethereum. In some ways, the first blockchain currency, Bitcoin, is a token itself. Many token platforms were also developed on Bitcoin and other cryptocurrencies before Ethereum. However, the introduction of the first token standard on Ethereum led to an explosion of tokens.</p>
+<p>Les jetons de chaîne de blocs existaient avant Ethereum. D&#39;une certaine manière, la première monnaie chaîne de blocs, Bitcoin, est un jeton lui-même. De nombreuses plateformes de jetons ont également été développées sur Bitcoin et d&#39;autres crypto-monnaies avant Ethereum. Cependant, l&#39;introduction de la première norme de jeton sur Ethereum a conduit à une explosion de jetons.</p>
 </div>
 <div class="paragraph data-line-121">
-<p>Vitalik Buterin suggested tokens as one of the most obvious and useful applications of a generalized programmable blockchain such as Ethereum. In fact, in the first year of Ethereum, it was common to see Vitalik and others wearing T-shirts emblazoned with the Ethereum logo and a smart contract sample on the back. There were several variations of this T-shirt, but the most common showed an implementation of a token.</p>
+<p>Vitalik Buterin a suggéré les jetons comme l&#39;une des applications les plus évidentes et les plus utiles d&#39;une chaîne de blocs programmable généralisée telle qu&#39;Ethereum. En fait, au cours de la première année d&#39;Ethereum, il était courant de voir Vitalik et d&#39;autres porter des T-shirts arborant le logo Ethereum et un échantillon de contrat intelligent au dos. Il y avait plusieurs variantes de ce T-shirt, mais la plus courante montrait une implémentation d&#39;un jeton.</p>
 </div>
 <div class="paragraph data-line-123">
-<p>Before we delve into the details of creating tokens on Ethereum, it is important to have an overview of how tokens work on Ethereum. Tokens are different from ether because the Ethereum protocol does not know anything about them. Sending ether is an intrinsic action of the Ethereum platform, but sending or even owning tokens is not. The ether balance of Ethereum accounts is handled at the protocol level, whereas the token balance of Ethereum accounts is handled at the smart contract level. In order to create a new token on Ethereum, you must create a new smart contract. Once deployed, the smart contract handles everything, including ownership, transfers, and access rights. You can write your smart contract to perform all the necessary actions any way you want, but it is probably wisest to follow an existing standard. We will look at such standards next. We discuss the pros and cons of the following standards at the end of the chapter.</p>
+<p>Avant de nous plonger dans les détails de la création de jetons sur Ethereum, il est important d&#39;avoir un aperçu du fonctionnement des jetons sur Ethereum. Les jetons sont différents de l&#39;ether car le protocole Ethereum ne sait rien d&#39;eux. L&#39;envoi d&#39;éther est une action intrinsèque de la plateforme Ethereum, mais l&#39;envoi ou même la possession de jetons ne l&#39;est pas. Le solde d&#39;ether des comptes Ethereum est géré au niveau du protocole, tandis que le solde de jetons des comptes Ethereum est géré au niveau du contrat intelligent. Afin de créer un nouveau jeton sur Ethereum, vous devez créer un nouveau contrat intelligent. Une fois déployé, le contrat intelligent gère tout, y compris la propriété, les transferts et les droits d&#39;accès. Vous pouvez rédiger votre contrat intelligent pour effectuer toutes les actions nécessaires comme vous le souhaitez, mais il est probablement plus sage de suivre une norme existante. Nous examinerons ensuite ces normes. Nous discutons des avantages et des inconvénients des normes suivantes à la fin du chapitre.</p>
 </div>
 <div class="sect3 data-line-127">
-<h4 id="ERC20_std">The ERC20 Token Standard</h4>
+<h4 id="ERC20_std">La norme de jeton ERC20</h4>
 <div class="paragraph data-line-129">
-<p>The first standard was introduced in November 2015 by Fabian Vogelsteller as an Ethereum Request for Comments (ERC). It was automatically assigned GitHub issue number 20, giving rise to the name "ERC20 token." The vast majority of tokens are currently based on the ERC20 standard. The ERC20 request for comments eventually became Ethereum Improvement Proposal 20 (EIP-20), but it is mostly still referred to by the original name, ERC20.</p>
+<p>La première norme a été introduite en novembre 2015 par Fabian Vogelsteller en tant que demande de commentaires Ethereum (ERC). Il s&#39;est automatiquement vu attribuer le numéro de problème GitHub 20, donnant lieu au nom de &quot;jeton ERC20&quot;. La grande majorité des jetons sont actuellement basés sur la norme ERC20. La demande de commentaires ERC20 est finalement devenue la proposition d&#39;amélioration Ethereum 20 (EIP-20), mais elle est encore principalement désignée par le nom d&#39;origine, ERC20.</p>
 </div>
 <div class="paragraph data-line-131">
-<p>ERC20 is a standard for <em>fungible tokens</em>, meaning that different units of an ERC20 token are interchangeable and have no unique properties.</p>
+<p>ERC20 est une norme pour les <em>jetons fongibles</em>, ce qui signifie que différentes unités d&#39;un token ERC20 sont interchangeables et n&#39;ont pas de propriétés uniques.</p>
 </div>
 <div class="paragraph data-line-133">
-<p><a href="http://bit.ly/2CUf7WG" data-href="http://bit.ly/2CUf7WG">The ERC20 standard</a> defines a common interface for contracts implementing a token, such that any compatible token can be accessed and used in the same way. The interface consists of a number of functions that must be present in every implementation of the standard, as well as some optional functions and attributes that may be added by developers.</p>
+<p><a href="http://bit.ly/2CUf7WG" data-href="http://bit.ly/2CUf7WG">La norme ERC20</a> définit une interface commune pour les contrats mettant en œuvre un jeton, de sorte que tout jeton compatible est accessible et utilisable de la même manière. L&#39;interface se compose d&#39;un certain nombre de fonctions qui doivent être présentes dans chaque implémentation de la norme, ainsi que de certaines fonctions et attributs facultatifs qui peuvent être ajoutés par les développeurs.</p>
 </div>
 <div class="sect4 data-line-136">
-<h5 id="ERC20_reqd_func">ERC20 required functions and events</h5>
+<h5 id="ERC20_reqd_func">Fonctions et événements requis par ERC20</h5>
 <div class="paragraph data-line-138">
-<p>An ERC20-compliant token contract must provide at least the following functions and events:</p>
+<p>Un contrat de jeton conforme à ERC20 doit fournir au moins les fonctions et événements suivants :</p>
 </div>
 <div class="dlist data-line-140">
 <dl>
 <dt class="hdlist1">totalSupply</dt>
 <dd>
-<p>Returns the total units of this token that currently exist. ERC20 tokens can have a fixed or a variable supply.</p>
+<p>Renvoie le nombre total d&#39;unités de ce jeton qui existent actuellement. Les jetons ERC20 peuvent avoir une offre fixe ou variable.</p>
 </dd>
 <dt class="hdlist1">balanceOf</dt>
 <dd>
-<p>Given an address, returns the token balance of that address.</p>
+<p>Étant donné une adresse, renvoie le solde du jeton de cette adresse.</p>
 </dd>
 <dt class="hdlist1">transfer</dt>
 <dd>
-<p>Given an address and amount, transfers that amount of tokens to that address, from the balance of the address that executed the transfer.</p>
+<p>Étant donné une adresse et un montant, transfère ce montant de jetons à cette adresse, à partir du solde de l&#39;adresse qui a exécuté le transfert.</p>
 </dd>
 <dt class="hdlist1">transferFrom</dt>
 <dd>
-<p>Given a sender, recipient, and amount, transfers tokens from one account to another. Used in combination with approve.</p>
+<p>Étant donné un expéditeur, un destinataire et un montant, transfère des jetons d&#39;un compte à un autre. Utilisé en combinaison avec approve.</p>
 </dd>
 <dt class="hdlist1">approve</dt>
 <dd>
-<p>Given a recipient address and amount, authorizes that address to execute several transfers up to that amount, from the account that issued the approval.</p>
+<p>Étant donné une adresse et un montant de destinataire, autorise cette adresse à exécuter plusieurs virements jusqu&#39;à ce montant, à partir du compte qui a émis l&#39;approbation.</p>
 </dd>
 <dt class="hdlist1">allowance</dt>
 <dd>
-<p>Given an owner address and a spender address, returns the remaining amount that the spender is approved to withdraw from the owner.</p>
+<p>Étant donné une adresse de propriétaire et une adresse de dépensier, renvoie le montant restant que le dépensier est autorisé à retirer au propriétaire.</p>
 </dd>
 <dt class="hdlist1">Transfer</dt>
 <dd>
-<p>Event triggered upon a successful transfer (call to transfer or transferFrom) (even for zero-value transfers).</p>
+<p>Evénement déclenché lors d&#39;un transfert réussi (appel à transfer ou transferFrom) (même pour les transferts de valeur nulle).</p>
 </dd>
 <dt class="hdlist1">Approval</dt>
 <dd>
-<p>Event logged upon a successful call to approve.</p>
+<p>Événement enregistré lors d&#39;un appel réussi à approve.</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect4 data-line-157">
-<h5 id="ERC20_optional_func">ERC20 optional functions</h5>
+<h5 id="ERC20_optional_func">Fonctions optionnelles ERC20</h5>
 <div class="paragraph data-line-159">
-<p>In addition to the required functions listed in the previous section, the following optional functions are also defined by the standard:</p>
+<p>En plus des fonctions requises listées dans la section précédente, les fonctions optionnelles suivantes sont également définies par la norme :</p>
 </div>
 <div class="dlist data-line-161">
 <dl>
 <dt class="hdlist1">name</dt>
 <dd>
-<p>Returns the human-readable name (e.g., "US Dollars") of the token.</p>
+<p>Renvoie le nom lisible par l&#39;homme (par exemple, &quot;US Dollars&quot;) du jeton.</p>
 </dd>
 <dt class="hdlist1">symbol</dt>
 <dd>
-<p>Returns a human-readable symbol (e.g., "USD") for the token.</p>
+<p>Renvoie un symbole lisible par l&#39;homme (par exemple, &quot;USD&quot;) pour le jeton.</p>
 </dd>
 <dt class="hdlist1">decimals</dt>
 <dd>
-<p>Returns the number of decimals used to divide token amounts. For example, if decimals is 2, then the token amount is divided by 100 to get its user <span class="keep-together">representation</span>.</p>
+<p>Renvoie le nombre de décimales utilisées pour diviser les quantités de jetons. Par exemple, si decimals vaut 2, alors le montant du jeton est divisé par 100 pour obtenir sa <span class="keep-together">représentation</span> d&#8217;usage.</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect4 data-line-168">
-<h5 id="ERC20_interface">The ERC20 interface defined in Solidity</h5>
+<h5 id="ERC20_interface">L&#39;interface ERC20 définie dans Solidity</h5>
 <div class="paragraph data-line-170">
-<p>Here&#8217;s what an ERC20 interface specification looks like in Solidity:</p>
+<p>Voici à quoi ressemble une spécification d&#39;interface ERC20 dans Solidity :</p>
 </div>
 <div id="ERC20_interface_example" class="listingblock data-line-174">
 <div class="content">
@@ -735,12 +735,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4 data-line-190">
-<h5 id="ERC20_data_struct">ERC20 data structures</h5>
+<h5 id="ERC20_data_struct">Structures de données ERC20</h5>
 <div class="paragraph data-line-192">
-<p>If you examine any ERC20 implementation you will see that it contains two data structures, one to track balances and one to track allowances. In Solidity, they are implemented with a <em>data mapping</em>.</p>
+<p>Si vous examinez une implémentation ERC20, vous verrez qu&#39;elle contient deux structures de données, une pour suivre les soldes et une pour suivre indemnités. Dans Solidity, ils sont implémentés avec un <em>data mapping</em> ou <em>mappage de données</em>.</p>
 </div>
 <div class="paragraph data-line-194">
-<p>The first data mapping implements an internal table of token balances, by owner. This allows the token contract to keep track of who owns the tokens. Each transfer is a deduction from one balance and an addition to another balance:</p>
+<p>Le premier mappage de données implémente une table interne des soldes de jetons, par propriétaire. Cela permet au contrat de jeton de garder une trace de qui possède les jetons. Chaque transfert est une déduction d&#39;un solde et un ajout à un autre solde :</p>
 </div>
 <div id="balance_mapping" class="listingblock data-line-198">
 <div class="content">
@@ -748,7 +748,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph data-line-202">
-<p>The second data structure is a data mapping of allowances. As we will see in the next section, with ERC20 tokens an owner of a token can delegate authority to a spender, allowing them to spend a specific amount (allowance) from the owner&#8217;s balance. The ERC20 contract keeps track of the allowances with a two-dimensional mapping, with the primary key being the address of the token owner, mapping to a spender address and an allowance amount:</p>
+<p>La deuxième structure de données est un mappage de données d&#39;allocations. Comme nous le verrons dans la section suivante, avec les jetons ERC20, le propriétaire d&#39;un jeton peut déléguer l&#39;autorité à un dépensier, lui permettant de dépenser un montant spécifique (allocation) à partir du solde du propriétaire. Le contrat ERC20 assure le suivi des allocations avec un mappage bidimensionnel, la clé primaire étant l&#39;adresse du propriétaire du jeton, mappée à une adresse de dépense et un montant d&#39;allocation :</p>
 </div>
 <div id="allowance_mapping" class="listingblock data-line-206">
 <div class="content">
@@ -757,21 +757,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4 data-line-212">
-<h5 id="transfer_workflows">ERC20 workflows: "transfer" and "approve &amp; transferFrom"</h5>
+<h5 id="transfer_workflows">Flux de travail ERC20 : &quot;transfer&quot; et &quot;approve et transferFrom&quot;</h5>
 <div class="paragraph data-line-214">
-<p>The ERC20 token standard has two transfer functions. You might be wondering why.</p>
+<p>La norme de jeton ERC20 a deux fonctions de transfert. Vous vous demandez peut-être pourquoi.</p>
 </div>
 <div class="paragraph data-line-216">
-<p>ERC20 allows for two different workflows. The first is a single-transaction, straightforward workflow using the transfer function. This workflow is the one used by wallets to send tokens to other wallets. The vast majority of token transactions happen with the transfer workflow.</p>
+<p>ERC20 permet deux flux de travail différents. Le premier est un flux de travail simple et à transaction unique utilisant la fonction transfer. Ce flux de travail est celui utilisé par les portefeuilles pour envoyer des jetons à d&#39;autres portefeuilles. La grande majorité des transactions de jetons se produisent avec le flux de travail transfer.</p>
 </div>
 <div class="paragraph data-line-218">
-<p>Executing the transfer contract is very simple. If Alice wants to send 10 tokens to Bob, her wallet sends a transaction to the token contract&#8217;s address, calling the <span class="keep-together"><code>transfer</code></span> function with Bob&#8217;s address and 10 as the arguments. The token contract adjusts Alice&#8217;s balance (&#x2013;10) and Bob&#8217;s balance (+10) and issues a Transfer event.</p>
+<p>L&#39;exécution du contrat de transfert est très simple. Si Alice veut envoyer 10 jetons à Bob, son portefeuille envoie une transaction à l&#39;adresse du contrat de jeton, en appelant la fonction <span class="keep-together"><code>transfer</code></span> avec l&#39;adresse de Bob et 10 comme arguments. Le contrat de jeton ajuste le solde d&#39;Alice (–10) et le solde de Bob (+10) et émet un événement Transfer.</p>
 </div>
 <div class="paragraph data-line-220">
-<p>The second workflow is a two-transaction workflow that uses approve followed by transferFrom. This workflow allows a token owner to delegate their control to another address. It is most often used to delegate control to a contract for distribution of tokens, but it can also be used by exchanges.</p>
+<p>Le deuxième flux de travail est un processus à deux transactions qui utilise approve suivi de transferFrom. Ce workflow permet à un propriétaire de jeton de déléguer son contrôle à une autre adresse. Il est le plus souvent utilisé pour déléguer le contrôle à un contrat de distribution de jetons, mais il peut également être utilisé par les échanges.</p>
 </div>
 <div class="paragraph data-line-222">
-<p>For example, if a company is selling tokens for an ICO, they can approve a crowdsale contract address to distribute a certain amount of tokens. The crowdsale contract can then transferFrom the token contract owner&#8217;s balance to each buyer of the token, as illustrated in <a href="#approve_transferFrom_workflow">The two-step approve &amp; transferFrom workflow of ERC20 tokens</a>.</p>
+<p>Par exemple, si une entreprise vend des tokens pour une ICO (Initial Coin Offerings ou "offres initiales de pièces"), elle peut approve (approuver) une adresse de contrat de crowdsale pour distribuer une certaine quantité de jetons. Le contrat de crowdsale peut alors transferFrom le solde du propriétaire du contrat de jeton à chaque acheteur du jeton, comme illustré dans <a href="#approve_transferFrom_workflow">Le flux de travail d&#39;approbation et de transfert en deux étapes des jetons ERC20</a>.</p>
 </div>
 <div class="admonitionblock note data-line-225">
 <table>
@@ -781,7 +781,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-226">
-<p>An <em>Initial Coin Offering</em> (ICO) is a crowdfunding mechanism used by companies and organizations to raise money by selling tokens. The term is derived from Initial Public Offering (IPO), which is the process by which a public company offers shares for sale to investors on a stock exchange. Unlike the highly regulated IPO markets, ICOs are open, global, and messy. The examples and explanations of ICOs in this book are not an endorsement of this type of fundraising.</p>
+<p>(&quot;Initial Coin Offerings (ICOs)&quot;,&quot;défini&quot;Une <em>Initial Coin Offering</em> (ICO) ou <em>Offres initiales de pièces</em> est un mécanisme de financement participatif utilisé par les entreprises et les organisations pour collecter des fonds en vendant des jetons. Le terme est dérivé de l&#39;offre publique initiale (IPO), qui est le processus par lequel une société publique propose des actions à vendre aux investisseurs en bourse. Contrairement aux marchés des introductions en bourse hautement réglementés, les ICO sont ouverts, mondiaux et désordonnés. Les exemples et les explications des ICO dans ce livre ne constituent pas une approbation de ce type de collecte de fonds.</p>
 </div>
 </td>
 </tr>
@@ -789,43 +789,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="approve_transferFrom_workflow" class="imageblock data-line-231">
 <div class="content">
-<img src="images/approve_transferFrom_workflow.png" alt="The two-step approve &amp; transferFrom workflow of ERC20 tokens">
+<img src="images/approve_transferFrom_workflow.png" alt="&quot;Le flux de travail d&#39;approbation et de transfert en deux étapes des jetons ERC20&quot;">
 </div>
-<div class="title">Figure 1. The two-step approve &amp; transferFrom workflow of ERC20 tokens</div>
+<div class="title">Figure 1. Le flux de travail d&#39;approbation et de transfert en deux étapes des jetons ERC20</div>
 </div>
 <div class="paragraph data-line-233">
-<p>For the approve &amp; transferFrom workflow, two transactions are needed. Let&#8217;s say that Alice wants to allow the AliceICO contract to sell 50% of all the AliceCoin tokens to buyers like Bob and Charlie. First, Alice launches the AliceCoin ERC20 contract, issuing all the AliceCoin to her own address. Then, Alice launches the AliceICO contract that can sell tokens for ether. Next, Alice initiates the approve &amp; transferFrom workflow. She sends a transaction to the AliceCoin contract, calling approve with the address of the AliceICO contract and 50% of the totalSupply as arguments. This will trigger the Approval event. Now, the AliceICO contract can sell AliceCoin.</p>
+<p>Pour le flux de travail approve et transferFrom, deux transactions sont nécessaires. Disons qu&#39;Alice veut autoriser le contrat AliceICO à vendre 50 % de tous les jetons AliceCoin à des acheteurs comme Bob et Charlie. Tout d&#39;abord, Alice lance le contrat AliceCoin ERC20, émettant tous les AliceCoin à sa propre adresse. Ensuite, Alice lance le contrat AliceICO qui peut vendre des jetons contre de l&#39;ether. Ensuite, Alice lance le flux de travail approve et transferFrom. Elle envoie une transaction au contrat AliceCoin, en appelant approve avec l&#39;adresse du contrat AliceICO et 50 % du totalSupply comme arguments. Cela déclenchera l&#39;événement Approbation. Désormais, le contrat AliceICO peut vendre AliceCoin.</p>
 </div>
 <div class="paragraph data-line-235">
-<p>When the AliceICO contract receives ether from Bob, it needs to send some AliceCoin to Bob in return. Within the AliceICO contract is an exchange rate between AliceCoin and ether. The exchange rate that Alice set when she created the AliceICO contract determines how many tokens Bob will receive for the amount of ether sent to the AliceICO contract. When the AliceICO contract calls the AliceCoin transferFrom function, it sets Alice&#8217;s address as the sender and Bob&#8217;s address as the recipient, and uses the exchange rate to determine how many AliceCoin tokens will be transferred to Bob in the value field. The AliceCoin contract transfers the balance from Alice&#8217;s address to Bob&#8217;s address and triggers a Transfer event. The AliceICO contract can call transferFrom an unlimited number of times, as long as it doesn&#8217;t exceed the approval limit Alice set. The AliceICO contract can keep track of how many AliceCoin tokens it can sell by calling the allowance function.</p>
+<p>Lorsque le contrat AliceICO reçoit de l&#39;ether de Bob, il doit envoyer des AliceCoin à Bob en retour. Dans le contrat AliceICO se trouve un taux de change entre AliceCoin et de l&#8217;Ether. Le taux de change qu&#39;Alice a fixé lors de la création du contrat AliceICO détermine le nombre de jetons que Bob recevra pour la quantité d&#39;ether envoyé au contrat AliceICO. Lorsque le contrat AliceICO appelle la fonction AliceCoin transferFrom, il définit l&#39;adresse d&#39;Alice comme expéditeur et l&#39;adresse de Bob comme destinataire, et utilise le taux de change pour déterminer le nombre de jetons AliceCoin qui seront transférés à Bob dans le champ value. Le contrat AliceCoin transfère le solde de l&#39;adresse d&#39;Alice à l&#39;adresse de Bob et déclenche un événement Transfer. Le contrat AliceICO peut appeler transferFrom un nombre illimité de fois, tant qu&#39;il ne dépasse pas la limite d&#39;approbation définie par Alice. Le contrat AliceICO peut suivre le nombre de jetons AliceCoin qu&#39;il peut vendre en appelant la fonction allowance.</p>
 </div>
 </div>
 <div class="sect4 data-line-238">
-<h5 id="ERC20_implementation">ERC20 implementations</h5>
+<h5 id="ERC20_implémentation">Implémentations ERC20</h5>
 <div class="paragraph data-line-240">
-<p>While it is possible to implement an ERC20-compatible token in about 30 lines of Solidity code, most implementations are more complex. This is to account for potential security vulnerabilities. There are two implementations mentioned in the EIP-20 standard:</p>
+<p>Bien qu&#39;il soit possible d&#39;implémenter un jeton compatible ERC20 dans environ 30 lignes de code Solidity, la plupart des implémentations sont plus complexes. Ceci pour tenir compte des vulnérabilités de sécurité potentielles. Deux implémentations sont mentionnées dans la norme EIP-20 :</p>
 </div>
 <div class="dlist data-line-242">
 <dl>
 <dt class="hdlist1"><a href="http://bit.ly/2EUYCMR" data-href="http://bit.ly/2EUYCMR">Consensys EIP20</a></dt>
 <dd>
-<p>A simple and easy-to-read implementation of an ERC20-compatible token.</p>
+<p>Une implémentation simple et facile à lire d&#39;un jeton compatible ERC20.</p>
 </dd>
 <dt class="hdlist1"><a href="https://bit.ly/2xPYck6" data-href="https://bit.ly/2xPYck6">OpenZeppelin StandardToken</a></dt>
 <dd>
-<p>This implementation is ERC20-compatible, with additional security precautions. It forms the basis of OpenZeppelin libraries implementing more complex ERC20-compatible tokens with fundraising caps, auctions, vesting schedules, and other features.</p>
+<p>Cette implémentation est compatible ERC20, avec des précautions de sécurité supplémentaires. Il constitue la base des bibliothèques OpenZeppelin implémentant des jetons compatibles ERC20 plus complexes avec des plafonds de collecte de fonds, des enchères, des calendriers d&#39;acquisition et d&#39;autres fonctionnalités.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
 <div class="sect3 data-line-247">
-<h4 id="METoken_example">Launching Our Own ERC20 Token</h4>
+<h4 id="METoken_example">Lancement de notre propre jeton ERC20</h4>
 <div class="paragraph data-line-249">
-<p>Let&#8217;s create and launch our own token. For this example, we will use the Truffle framework. The example assumes you have already installed truffle and configured it, and are familiar with its basic operation (for details, see <a href="#truffle">[truffle]</a>).</p>
+<p> Créons et lançons notre propre jeton. Pour cet exemple, nous utiliserons le cadre de développement (framework) Truffle. L&#39;exemple suppose que vous avez déjà installé truffle et que vous l&#39;avez configuré, et que vous êtes familiarisé avec son fonctionnement de base (pour plus de détails, voir <a href="#truffle">[truffle]</a>).</p>
 </div>
 <div class="paragraph data-line-251">
-<p>We will call our token "Mastering Ethereum Token,&#x201d; with the symbol "MET."</p>
+<p>Nous appellerons notre jeton &quot;Mastering Ethereum Token&quot;, avec le symbole &quot;MET&quot;.</p>
 </div>
 <div class="admonitionblock note data-line-254">
 <table>
@@ -835,14 +835,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph data-line-255">
-<p>You can find this example <a href="https://github.com/ethereumbook/ethereumbook/blob/develop/code/truffle/METoken" data-href="https://github.com/ethereumbook/ethereumbook/blob/develop/code/truffle/METoken">in the book&#8217;s GitHub repository</a>.</p>
+<p>Vous pouvez trouver cet exemple <a href="https://github.com/ethereumbook/ethereumbook/blob/develop/code/truffle/METoken" data-href="https://github.com/ethereumbook/ethereumbook/blob/develop/code/truffle/METoken">dans le référentiel GitHub du livre</a>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-258">
-<p>First, let&#8217;s create and initialize a Truffle project directory. Run these four commands and accept the default answers to any questions:</p>
+<p>Commençons par créer et initialiser un répertoire de projet Truffle. Exécutez ces quatre commandes et acceptez les réponses par défaut à toutes les questions :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>mkdir METoken</strong>
@@ -851,7 +851,7 @@ METoken $ <strong>truffle init</strong>
 METoken $ <strong>npm init</strong>
 </pre>
 <div class="paragraph data-line-269">
-<p>You should now have the following directory structure:</p>
+<p>Vous devriez maintenant avoir la structure de répertoires suivante :</p>
 </div>
 <div id="truffle_directory" class="listingblock data-line-272">
 <div class="content">
@@ -867,13 +867,13 @@ METoken $ <strong>npm init</strong>
 </div>
 </div>
 <div class="paragraph data-line-284">
-<p>Edit the <em>truffle.js</em> or <em>truffle-config.js</em> configuration file to set up your Truffle environment, or copy the latter from <a href="http://bit.ly/2DdP2mz" data-href="http://bit.ly/2DdP2mz">the repository</a>.</p>
+<p>Modifiez le fichier de configuration <em>truffle.js</em> ou <em>truffle-config.js</em> pour configurer votre environnement Truffle, ou copiez ce dernier depuis <a href="http://bit.ly/2DdP2mz" data-href="http://bit.ly/2DdP2mz">le référentiel</a>.</p>
 </div>
 <div class="paragraph data-line-286">
-<p>If you use the example <em>truffle-config.js</em>, remember to create a file <em>.env</em> in the <em>METoken</em> folder containing your test private keys for testing and deployment on public Ethereum test networks, such as Ropsten or Kovan. You can export your test network private key from MetaMask.</p>
+<p>Si vous utilisez l&#39;exemple <em>truffle-config.js</em>, pensez à créer un fichier <em>.env</em> dans le dossier <em>METoken</em> contenant vos clés privées de test pour le test et le déploiement sur les réseaux publics de test Ethereum, tels que Ropsten ou Kovan. Vous pouvez exporter votre clé privée de réseau de test à partir de MetaMask.</p>
 </div>
 <div class="paragraph data-line-288">
-<p>After that your directory should look like:</p>
+<p>Après cela, votre répertoire devrait ressembler à :</p>
 </div>
 <div id="truffle_directory_metoken" class="listingblock data-line-291">
 <div class="content">
@@ -897,14 +897,14 @@ METoken $ <strong>npm init</strong>
 </td>
 <td class="content">
 <div class="paragraph data-line-306">
-<p>Only use test keys or test mnemonics that are <em>not</em> used to hold funds on the main Ethereum network. <em>Never</em> use keys that hold real money for testing.</p>
+<p>N&#39;utilisez que des clés de test ou des mnémoniques de test qui ne sont <em>pas</em> utilisés pour détenir des fonds sur le réseau Ethereum principal. <em>Ne jamais</em> utiliser des clés contenant de l&#39;argent réel pour les tests.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-309">
-<p>For our example, we will import the OpenZeppelin library, which implements some important security checks and is easy to extend:</p>
+<p>Pour notre exemple, nous allons importer la bibliothèque OpenZeppelin, qui implémente des contrôles de sécurité importants et est facile à étendre :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>npm install openzeppelin-solidity@1.12.0</strong>
@@ -913,16 +913,16 @@ $ <strong>npm install openzeppelin-solidity@1.12.0</strong>
 added 1 package from 1 contributor and audited 2381 packages in 4.074s
 </pre>
 <div class="paragraph data-line-320">
-<p>The openzeppelin-solidity package will add about 250 files under the <em>node_modules</em> directory. The OpenZeppelin library includes a lot more than the ERC20 token, but we will only use a small part of it.</p>
+<p>Le module de dévelopement openzeppelin-solidity ajoutera environ 250 fichiers sous le répertoire <em>node_modules</em>. La bibliothèque OpenZeppelin comprend bien plus que le jeton ERC20, mais nous n&#39;en utiliserons qu&#39;une petite partie.</p>
 </div>
 <div class="paragraph data-line-322">
-<p>Next, let&#8217;s write our token contract. Create a new file, <em>METoken.sol</em>, and copy the example code from <a href="http://bit.ly/2qfIFH0" data-href="http://bit.ly/2qfIFH0">GitHub</a>.</p>
+<p>Ensuite, écrivons notre contrat de jeton. Créez un nouveau fichier, <em>METoken.sol</em>, et copiez l&#39;exemple de code depuis <a href="http://bit.ly/2qfIFH0" data-href="http://bit.ly/2qfIFH0">GitHub</a>.</p>
 </div>
 <div class="paragraph data-line-324">
-<p>Our contract, shown in <a href="#solidity_token_example">METoken.sol: A Solidity contract implementing an ERC20 token</a>, is very simple, as it inherits all its functionality from the OpenZeppelin library.</p>
+<p>Notre contrat, illustré en <a href="#solidity_token_example">METoken.sol : Un contrat Solidity implémentant un token ERC20</a>, est très simple, car il hérite toutes ses fonctionnalités de la bibliothèque OpenZeppelin.</p>
 </div>
 <div id="solidity_token_example" class="exampleblock data-line-328">
-<div class="title">Example 1. METoken.sol: A Solidity contract implementing an ERC20 token</div>
+<div class="title">Example 1. METoken.sol : Un contrat Solidity implémentant un token ERC20</div>
 <div class="content">
 <div class="listingblock data-line-330">
 <div class="content">
@@ -947,10 +947,10 @@ contract METoken is StandardToken {
 </div>
 </div>
 <div class="paragraph data-line-335">
-<p>Here, we are defining the optional variables name, symbol, and decimals. We also define an _initial_supply variable, set to 21 million tokens; with two decimals of subdivision that gives 2.1 billion total units. In the contract&#8217;s initialization (constructor) function we set the totalSupply to be equal to _initial_supply and allocate all of the _initial_supply to the balance of the account (msg.sender) that creates the METoken contract.</p>
+<p>Ici, nous définissons les variables optionnelles name, symbol et decimals. Nous définissons également une variable _initial_supply, définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d&#39;unités au total. Dans la fonction d&#39;initialisation (constructeur) du contrat, nous définissons le totalSupply égal à _initial_supply et allouons tout le _initial_supply au solde du compte (msg.sender) qui crée le contrat METoken.</p>
 </div>
 <div class="paragraph data-line-337">
-<p>We now use truffle to compile the METoken code:</p>
+<p>Nous utilisons maintenant truffe pour compiler le code METoken :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>truffle compile</strong>
@@ -963,13 +963,13 @@ Compiling openzeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol...
 Compiling openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol...
 </pre>
 <div class="paragraph data-line-352">
-<p>As you can see, truffle incorporates necessary dependencies from the OpenZeppelin libraries and compiles those contracts too.</p>
+<p>Comme vous pouvez le voir, truffle intègre les dépendances nécessaires des bibliothèques OpenZeppelin et compile également ces contrats.</p>
 </div>
 <div class="paragraph data-line-354">
-<p>Let&#8217;s set up a migration script to deploy the METoken contract. Create a new file called <em>2_deploy_contracts.js</em>, in the <em>METoken/migrations</em> folder. Copy the contents from the example <a href="http://bit.ly/2P0rHLl" data-href="http://bit.ly/2P0rHLl">in the GitHub repository</a>:</p>
+<p>Configurons un script de migration pour déployer le contrat METoken. Créez un nouveau fichier appelé <em>2_deploy_contracts.js</em>, dans le dossier <em>METoken/migrations</em>. Copiez le contenu de l&#39;exemple <a href="http://bit.ly/2P0rHLl" data-href="http://bit.ly/2P0rHLl">dans le référentiel GitHub</a> :</p>
 </div>
 <div id="METoken_migration" class="listingblock data-line-0">
-<div class="title">2_deploy_contracts: Migration to deploy METoken</div>
+<div class="title">2_deploy_contracts : Migration pour déployer METoken</div>
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">var METoken = artifacts.require("METoken");
 
@@ -980,10 +980,10 @@ module.exports = function(deployer) {
 </div>
 </div>
 <div class="paragraph data-line-364">
-<p>Before we deploy on one of the Ethereum test networks, let&#8217;s start a local blockchain to test everything. Start the ganache blockchain, either from the command line with ganache-cli or from the graphical user interface.</p>
+<p>Avant de déployer sur l&#39;un des réseaux de test Ethereum, démarrons une chaîne de blocs locale pour tout tester. Démarrez la chaîne de blocs ganache, soit depuis la ligne de commande avec ganache-cli, soit depuis l&#39;interface utilisateur graphique.</p>
 </div>
 <div class="paragraph data-line-366">
-<p>Once ganache is started, we can deploy our METoken contract and see if everything works as expected:</p>
+<p>Une fois ganache lancé, nous pouvons déployer notre contrat METoken et voir si tout fonctionne comme prévu :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>truffle migrate --network ganache</strong>
@@ -1005,25 +1005,25 @@ Saving successful migration to network...
 Saving artifacts...
 </pre>
 <div class="paragraph data-line-390">
-<p>On the ganache console, we should see that our deployment has created four new transactions, as depicted in <a href="#ganache_METoken">METoken deployment on ganache</a>.</p>
+<p>Sur la console ganache, nous devrions voir que notre déploiement a créé quatre nouvelles transactions, comme illustré dans <a href="#ganache_METoken">Déploiement METoken sur ganache</a>.</p>
 </div>
 <div id="ganache_METoken" class="imageblock data-line-394">
 <div class="content">
-<img src="images/ganache_metoken.png" alt="METoken deployment on Ganache">
+<img src="images/ganache_metoken.png" alt="&quot;Déploiement de METoken sur Ganache&quot;">
 </div>
-<div class="title">Figure 2. METoken deployment on ganache</div>
+<div class="title">Figure 2. Déploiement METoken sur ganache</div>
 </div>
 <div class="sect4 data-line-397">
-<h5 id="truffle_console">Interacting with METoken using the Truffle console</h5>
+<h5 id="truffle_console">Interagir avec METoken à l&#39;aide de la console Truffle</h5>
 <div class="paragraph data-line-399">
-<p>We can interact with our contract on the ganache blockchain using the Truffle console. This is an interactive JavaScript environment that provides access to the Truffle environment and, via web3, to the blockchain. In this case, we will connect the Truffle console to the ganache blockchain:</p>
+<p> Nous pouvons interagir avec notre contrat sur la chaîne de blocs ganache en utilisant la console Truffle. Il s&#39;agit d&#39;un environnement JavaScript interactif qui donne accès à l&#39;environnement Truffle et, via web3, à la chaîne de blocs. Dans ce cas, nous allons connecter la console Truffle à la chaîne de blocs ganache :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>truffle console --network ganache</strong>
 truffle(ganache)&gt;
 </pre>
 <div class="paragraph data-line-408">
-<p>The truffle(ganache)&gt; prompt shows that we are connected to the ganache blockchain and are ready to type our commands. The Truffle console supports all the truffle commands, so we could compile and migrate from the console. We&#8217;ve already run those commands, so let&#8217;s go directly to the contract itself. The METoken contract exists as a JavaScript object within the Truffle environment. Type **METoken** at the prompt and it will dump the entire contract definition:</p>
+<p>L&#39;invite truffe(ganache)&amp;gt; indique que nous sommes connectés à la chaîne de blocs ganache et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes truffle, nous pourrions donc compiler et migrer depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat METoken existe en tant qu&#39;objet JavaScript dans l&#39;environnement Truffle. Tapez METoken** à l&#39;invite et il affichera l&#39;intégralité de la définition du contrat :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken</strong>
@@ -1045,21 +1045,21 @@ currentProvider:
 network_id: '5777' }
 </pre>
 <div class="paragraph data-line-432">
-<p>The METoken object also exposes several attributes, such as the address of the contract (as deployed by the migrate command):</p>
+<p>L&#39;objet METoken expose également plusieurs attributs, tels que l&#39;adresse du contrat (telle que déployée par la commande migrate) :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken.address</strong>
 '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
 </pre>
 <div class="paragraph data-line-441">
-<p>If we want to interact with the deployed contract, we have to use an asynchronous call, in the form of a JavaScript "promise." We use the deployed function to get the contract instance and then call the totalSupply function:</p>
+<p>Si nous voulons interagir avec le contrat déployé, nous devons utiliser un appel asynchrone, sous la forme d&#39;une &quot;promesse&quot; JavaScript. Nous utilisons la fonction deployed pour obtenir l&#39;instance de contrat, puis appelons la fonction totalSupply :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken.deployed().then(instance => instance.totalSupply())</strong>
 BigNumber { s: 1, e: 9, c: [ 2100000000 ] }
 </pre>
 <div class="paragraph data-line-450">
-<p>Next, let&#8217;s use the accounts created by ganache to check our METoken balance and send some METoken to another address. First, let&#8217;s get the account addresses:</p>
+<p>Ensuite, utilisons les comptes créés par ganache pour vérifier notre solde de METoken et envoyer des METoken à une autre adresse. Commençons par obtenir les adresses de compte :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>let accounts</strong>
@@ -1070,7 +1070,7 @@ truffle(ganache)&gt; <strong>accounts[0]</strong>
 '0x627306090abab3a6e1400e9345bc60c78a8bef57'
 </pre>
 <div class="paragraph data-line-463">
-<p>The accounts list now contains all the accounts created by ganache, and account[0] is the account that deployed the METoken contract. It should have a balance of <span class="keep-together">METoken</span>, because our METoken constructor gives the entire token supply to the address that created it. Let&#8217;s check:</p>
+<p>La liste accounts contient maintenant tous les comptes créés par ganache, et account[0] est le compte qui a déployé le contrat METoken. Il devrait avoir un solde de <span class="keep-together">METoken</span>, car notre constructeur METoken donne l&#39;intégralité de l&#39;offre de jetons à l&#39;adresse qui l&#39;a créé. Allons vérifier:</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken.deployed().then(instance =></strong>
@@ -1079,7 +1079,7 @@ undefined
 truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 9, c: [ 2100000000 ] }</strong>
 </pre>
 <div class="paragraph data-line-474">
-<p>Finally, let&#8217;s transfer 1000.00 METoken from account[0] to account[1], by calling the contract&#8217;s transfer function:</p>
+<p>Enfin, transférons 1000.00 METoken de account[0] vers account[1], en appelant la fonction transfer du contrat :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken.deployed().then(instance =>
@@ -1103,32 +1103,32 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 </td>
 <td class="content">
 <div class="paragraph data-line-495">
-<p>METoken has 2 decimals of precision, meaning that 1 METoken is 100 units in the contract. When we transfer 1,000 METoken, we specify the value as 100000 in the call to the transfer function.</p>
+<p>METoken a 2 décimales de précision, ce qui signifie que 1 METoken correspond à 100 unités dans le contrat. Lorsque nous transférons 1 000 METoken, nous spécifions la valeur comme 100000 dans l&#39;appel à la fonction transfer.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph data-line-498">
-<p>As you can see, in the console, account[0] now has 20,999,000 MET, and account[1] has 1,000 MET.</p>
+<p>Comme vous pouvez le voir, dans la console, account[0] a maintenant 20 999 000 MET, et account[1] a 1 000 MET.</p>
 </div>
 <div class="paragraph data-line-500">
-<p>If you switch to the ganache graphical user interface, as shown in <a href="#ganache_METoken_transfer">METoken transfer on ganache</a>, you will see the transaction that called the transfer function.</p>
+<p>Si vous passez à l&#39;interface utilisateur graphique ganache, comme indiqué dans <a href="#ganache_METoken_transfer">Transfert METoken sur ganache</a>, vous verrez la transaction qui a appelé la fonction transfer.</p>
 </div>
 <div id="ganache_METoken_transfer" class="imageblock data-line-504">
 <div class="content">
-<img src="images/ganache_metoken_transfer.png" alt="METoken transfer on Ganache">
+<img src="images/ganache_metoken_transfer.png" alt="&quot;Transfert METoken sur Ganache&quot;">
 </div>
-<div class="title">Figure 3. METoken transfer on ganache</div>
+<div class="title">Figure 3. Transfert METoken sur ganache</div>
 </div>
 </div>
 <div class="sect4 data-line-507">
-<h5 id="sending_erc20_tokens_contracts">Sending ERC20 tokens to contract addresses</h5>
+<h5 id="sending_erc20_tokens_contracts">Envoi de jetons ERC20 aux adresses contractuelles</h5>
 <div class="paragraph data-line-509">
-<p>So far, we&#8217;ve set up an ERC20 token and transferred some tokens from one account to another. All the accounts we used for these demonstrations are externally owned accounts, meaning they are controlled by a private key, not a contract. What happens if we send MET to a contract address? Let&#8217;s find out!</p>
+<p> Jusqu&#39;à présent, nous avons configuré un jeton ERC20 et transféré certains jetons d&#39;un compte à un autre. Tous les comptes que nous avons utilisés pour ces démonstrations sont des comptes externes, ce qui signifie qu&#39;ils sont contrôlés par une clé privée et non par un contrat. Que se passe-t-il si nous envoyons MET à une adresse contractuelle ? Découvrons-le!</p>
 </div>
 <div class="paragraph data-line-511">
-<p>First, let&#8217;s deploy another contract into our test environment. For this example, we will use our first contract, <em>Faucet.sol</em>. Let&#8217;s add it to the METoken project by copying it to the <em>contracts</em> directory. Our directory should look like this:</p>
+<p>Tout d&#39;abord, déployons un autre contrat dans notre environnement de test. Pour cet exemple, nous utiliserons notre premier contrat, <em>Faucet.sol</em>. Ajoutons-le au projet METoken en le copiant dans le répertoire <em>contracts</em>. Notre répertoire devrait ressembler à ceci :</p>
 </div>
 <div id="METoken_directory" class="listingblock data-line-514">
 <div class="content">
@@ -1140,20 +1140,20 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 </div>
 </div>
 <div class="paragraph data-line-522">
-<p>We&#8217;ll also add a migration, to deploy Faucet separately from METoken:</p>
+<p>Nous ajouterons également une migration, pour déployer Faucet séparément de METoken :</p>
 </div>
 <div id="faucet_migration" class="listingblock data-line-526">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">var Faucet = artifacts.require("Faucet");
 
 module.exports = function(deployer) {
-  // Deploy the Faucet contract as our only task
+  // Déployer le contrat Faucet comme seule tâche
   deployer.deploy(Faucet);
 };</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-535">
-<p>Let&#8217;s compile and migrate the contracts from the Truffle console:</p>
+<p>Compilons et migrons les contrats depuis la console Truffle :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>truffle console --network ganache</strong>
@@ -1181,7 +1181,7 @@ Running migration: 3_deploy_faucet.js
 Saving artifacts...
 </pre>
 <div class="paragraph data-line-565">
-<p>Great. Now let&#8217;s send some MET to the Faucet contract:</p>
+<p>Génial. Envoyons maintenant du MET au contrat Faucet :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken.deployed().then(instance =>
@@ -1191,37 +1191,37 @@ truffle(ganache)&gt; <strong>METoken.deployed().then(instance =>
 truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 </pre>
 <div class="paragraph data-line-577">
-<p>Alright, we have transferred 1,000 MET to the Faucet contract. Now, how do we withdraw those tokens?</p>
+<p>D&#39;accord, nous avons transféré 1 000 MET au contrat Faucet. Maintenant, comment retirer ces jetons ?</p>
 </div>
 <div class="paragraph data-line-579">
-<p>Remember, <em>Faucet.sol</em> is a pretty simple contract. It only has one function, <span class="keep-together"><code>withdraw</code></span>, which is for withdrawing <em>ether</em>. It doesn&#8217;t have a function for withdrawing MET, or any other ERC20 token. If we use withdraw it will try to send ether, but since Faucet doesn&#8217;t have a balance of ether yet, it will fail.</p>
+<p>N&#39;oubliez pas que <em>Faucet.sol</em> est un contrat assez simple. Il n&#39;a qu&#39;une seule fonction, <span class="keep-together"><code>withdraw</code></span>, qui sert à retirer de l'<em>ether</em>. Il n&#39;a pas de fonction pour retirer le MET, ou tout autre jeton ERC20. Si nous utilisons withdraw, il essaiera d&#39;envoyer de l&#39;ether, mais comme Faucet n&#39;a pas encore de solde d&#39;ether, il échouera.</p>
 </div>
 <div class="paragraph data-line-581">
-<p>The METoken contract knows that Faucet has a balance, but the only way that it can transfer that balance is if it receives a transfer call from the address of the contract. Somehow we need to make the Faucet contract call the transfer function in <span class="keep-together"><code>METoken</code></span>.</p>
+<p>Le contrat METoken sait que Faucet a un solde, mais le seul moyen de transférer ce solde est de recevoir un appel transfer de l&#39;adresse du contrat. D&#39;une manière ou d&#39;une autre, nous devons faire en sorte que le contrat Faucet appelle la fonction transfer dans <span class="keep-together"><code>METoken</code></span>.</p>
 </div>
 <div class="paragraph data-line-583">
-<p>If you&#8217;re wondering what to do next, don&#8217;t. There is no solution to this problem. The MET sent to Faucet is stuck, forever. Only the Faucet contract can transfer it, and the Faucet contract doesn&#8217;t have code to call the transfer function of an ERC20 token contract.</p>
+<p>Si vous vous demandez quoi faire ensuite, ne le faites pas. Il n&#39;y a pas de solution à ce problème. Le MET envoyé à Faucet est bloqué, pour toujours. Seul le contrat Faucet peut le transférer, et le contrat Faucet n&#39;a pas de code pour appeler la fonction transfer d&#39;un contrat de jeton ERC20.</p>
 </div>
 <div class="paragraph data-line-585">
-<p>Perhaps you anticipated this problem. Most likely, you didn&#8217;t. In fact, neither did hundreds of Ethereum users who accidentally transferred various tokens to contracts that didn&#8217;t have any ERC20 capability. According to some estimates, tokens worth more than roughly $2.5 million USD (at the time of writing) have gotten "stuck" like this and are lost forever.</p>
+<p>Peut-être avez-vous anticipé ce problème. Très probablement, vous ne l&#39;avez pas fait. En fait, des centaines d&#39;utilisateurs d&#39;Ethereum qui ont accidentellement transféré divers jetons vers des contrats qui n&#39;avaient aucune capacité ERC20 n&#39;en ont pas non plus fait. Selon certaines estimations, des jetons d&#39;une valeur de plus d&#39;environ 2,5 millions de dollars (au moment de la rédaction) sont restés &quot;bloqués&quot; comme ça et sont perdus à jamais.</p>
 </div>
 <div class="paragraph data-line-587">
-<p>One of the ways that users of ERC20 tokens can inadvertently lose their tokens in a transfer, is when they attempt to transfer to an exchange or another service. They copy an Ethereum address from the website of an exchange, thinking they can simply send tokens to it. However, many exchanges publish receiving addresses that are actually contracts! These contracts are only meant to receive ether, not ERC20 tokens, most often sweeping all funds sent to them to "cold storage" or another centralized wallet. Despite the many warnings saying "do not send tokens to this address," lots of tokens are lost this way.</p>
+<p>L&#39;une des façons dont les utilisateurs de jetons ERC20 peuvent perdre par inadvertance leurs jetons lors d&#39;un transfert, c&#39;est lorsqu&#39;ils tentent de transférer vers un échange ou un autre service. Ils copient une adresse Ethereum à partir du site Web d&#39;un échange, pensant qu&#39;ils peuvent simplement lui envoyer des jetons. Cependant, de nombreux échanges publient des adresses de réception qui sont en fait des contrats ! Ces contrats sont uniquement destinés à recevoir de l&#39;éther, pas des jetons ERC20, balayant le plus souvent tous les fonds qui leur sont envoyés vers un « stockage à froid » ou un autre portefeuille centralisé. Malgré les nombreux avertissements indiquant &quot;n&#39;envoyez pas de jetons à cette adresse&quot;, de nombreux jetons sont perdus de cette façon.</p>
 </div>
 </div>
 <div class="sect4 data-line-590">
-<h5 id="transfer_workflow_demo">Demonstrating the &#x201c;approve &amp; transferFrom&#x201d; workflow</h5>
+<h5 id="transfer_workflow_demo">Démonstration du flux de travail &quot;approuver et transférer de&quot;</h5>
 <div class="paragraph data-line-592">
-<p>Our Faucet contract couldn&#8217;t handle ERC20 tokens. Sending tokens to it using the transfer function resulted in the loss of those tokens. Let&#8217;s rewrite the contract now and make it handle ERC20 tokens. Specifically, we will turn it into a faucet that gives out MET to anyone who asks.</p>
+<p>Notre contrat Faucet ne pouvait pas gérer les jetons ERC20. L&#39;envoi de jetons à l&#39;aide de la fonction + transfer + a entraîné la perte de ces jetons. Réécrivons maintenant le contrat et faisons en sorte qu&#39;il gère les jetons ERC20. Plus précisément, nous allons le transformer en un robinet qui donne du MET à quiconque le demande.</p>
 </div>
 <div class="paragraph data-line-594">
-<p>For this example, we&#8217;ll make a copy of the <em>truffle</em> project directory (we&#8217;ll call it <em>METoken_METFaucet</em>), initialize truffle and npm, install the OpenZeppelin dependencies, and copy the <em>METoken.sol</em> contract. See our first example, in <a href="#METoken_example">Launching Our Own ERC20 Token</a>, for the detailed instructions.</p>
+<p>Pour cet exemple, nous allons faire une copie du répertoire du projet <em>truffle</em> (nous l&#39;appellerons <em>METoken_METFaucet</em>), initialiser truffle et npm, installer les dépendances OpenZeppelin et copier le contrat <em>METoken.sol</em>. Voir notre premier exemple, dans <a href="#METoken_example">Lancement de notre propre jeton ERC20</a>, pour les instructions détaillées.</p>
 </div>
 <div class="paragraph data-line-596">
-<p>Our new faucet contract, <em>METFaucet.sol</em>, will look like <a href="#METFaucet">METFaucet.sol: A faucet for METoken</a>.</p>
+<p>Notre nouveau contrat de robinetterie, <em>METFaucet.sol</em>, ressemblera à <a href="#METFaucet">METFaucet.sol : Un robinet pour METoken</a>.</p>
 </div>
 <div id="METFaucet" class="exampleblock data-line-600">
-<div class="title">Example 2. METFaucet.sol: A faucet for METoken</div>
+<div class="title">Example 2. METFaucet.sol : Un robinet pour METoken</div>
 <div class="content">
 <div class="listingblock data-line-602">
 <div class="content">
@@ -1264,10 +1264,10 @@ contract METFaucet {
 </div>
 </div>
 <div class="paragraph data-line-607">
-<p>We&#8217;ve made quite a few changes to the basic Faucet example. Since METFaucet will use the transferFrom function in METoken, it will need two additional variables. One will hold the address of the deployed METoken contract. The other will hold the address of the owner of the MET, who will approve the faucet withdrawals. The METFaucet contract will call METoken.transferFrom and instruct it to move MET from the owner to the address where the faucet withdrawal request came from.</p>
+<p>Nous avons apporté quelques modifications à l&#39;exemple de base de Faucet. Puisque METFaucet utilisera la fonction transferFrom dans METoken, il aura besoin de deux variables supplémentaires. L&#39;un contiendra l&#39;adresse du contrat METoken déployé. L&#39;autre détiendra l&#39;adresse du propriétaire du MET, qui approuvera les retraits du robinet. Le contrat METFaucet appellera METoken.transferFrom et lui demandera de déplacer le MET du propriétaire vers l&#39;adresse d&#39;où provient la demande de retrait du robinet.</p>
 </div>
 <div class="paragraph data-line-610">
-<p>We declare these two variables here:</p>
+<p>Nous déclarons ici ces deux variables :</p>
 </div>
 <div class="listingblock data-line-613">
 <div class="content">
@@ -1276,40 +1276,40 @@ address public METOwner;</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-618">
-<p>Since our faucet needs to be initialized with the correct addresses for METoken and METOwner, we need to declare a custom constructor:</p>
+<p>Étant donné que notre robinet doit être initialisé avec les adresses correctes pour METoken et METOwner, nous devons déclarer un constructeur personnalisé :</p>
 </div>
 <div id="custom_constructor" class="listingblock data-line-622">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// METFaucet constructor - provide the address of the METoken contract and
-// the owner address we will be approved to transferFrom
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Constructeur METFaucet - fournir l&amp;#39;adresse du contrat METoken et
+// l&amp;#39;adresse du propriétaire que nous serons autorisés à transférer avec transferFrom
 function METFaucet(address _METoken, address _METOwner) public {
 
-	// Initialize the METoken from the address provided
+	// Initialise le METoken à partir de l&amp;#39;adresse fournie
 	METoken = StandardToken(_METoken);
 	METOwner = _METOwner;
 }</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-633">
-<p>The next change is to the withdraw function. Instead of calling transfer, METFaucet uses the transferFrom function in METoken and asks METoken to transfer MET to the faucet recipient:</p>
+<p>Le prochain changement concerne la fonction withdraw. Au lieu d&#39;appeler transfer, METFaucet utilise la fonction transferFrom dans METoken et demande à METoken de transférer MET au destinataire du robinet :</p>
 </div>
 <div id="transfer_met" class="listingblock data-line-637">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Use the transferFrom function of METoken
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Utiliser la fonction transferFrom de METoken
 METoken.transferFrom(METOwner, msg.sender, withdraw_amount);</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-642">
-<p>Finally, since our faucet no longer sends ether, we should probably prevent anyone from sending ether to METFaucet, as we wouldn&#8217;t want it to get stuck. We change the fallback payable function to reject incoming ether, using the revert function to revert any incoming payments:</p>
+<p>Enfin, puisque notre robinet n&#39;envoie plus d&#39;ether, nous devrions probablement empêcher quiconque d&#39;envoyer de l&#39;ether à METFaucet, car nous ne voudrions pas qu&#39;il reste bloqué. Nous modifions la fonction de paiement de secours pour rejeter l&#39;ether entrant, en utilisant la fonction revert pour annuler tout paiement entrant :</p>
 </div>
 <div id="reject_incoming_eth" class="listingblock data-line-646">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// REJECT any incoming ether
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// REJETER tout ether entrant
 function () external payable { revert(); }</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-651">
-<p>Now that our <em>METFaucet.sol</em> code is ready, we need to modify the migration script to deploy it. This migration script will be a bit more complex, as METFaucet depends on the address of METoken. We will use a JavaScript promise to deploy the two contracts in sequence. Create <em>2_deploy_contracts.js</em> as follows:</p>
+<p>Maintenant que notre code <em>METFaucet.sol</em> est prêt, nous devons modifier le script de migration pour le déployer. Ce script de migration sera un peu plus complexe, car METFaucet dépend de l&#39;adresse de METoken. Nous utiliserons une promesse JavaScript pour déployer les deux contrats en séquence. Créez <em>2_deploy_contracts.js</em> comme suit :</p>
 </div>
 <div class="listingblock data-line-654">
 <div class="content">
@@ -1319,17 +1319,17 @@ var owner = web3.eth.accounts[0];
 
 module.exports = function(deployer) {
 
-	// Deploy the METoken contract first
+	// Déployer d&amp;#39;abord le contrat METoken
 	deployer.deploy(METoken, {from: owner}).then(function() {
-		// Then deploy METFaucet and pass the address of METoken and the
-		// address of the owner of all the MET who will approve METFaucet
+		// Ensuite, déployer METFaucet et passez l&amp;#39;adresse de METoken et
+		// l'adresse du propriétaire de tous les MET qui agréera METFaucet
 		return deployer.deploy(METFaucet, METoken.address, owner);
   	});
 }</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-670">
-<p>Now, we can test everything in the Truffle console. First, we use migrate to deploy the contracts. When METoken is deployed it will allocate all the MET to the account that created it, web3.eth.accounts[0]. Then, we call the approve function in <code><span class="keep-together">METoken</span></code> to approve METFaucet to send up to 1,000 MET on behalf of web3.eth.accounts[0]. Finally, to test our faucet, we call METFaucet.withdraw from web3.eth.accounts[1] and try to withdraw 10 MET. Here are the console commands:</p>
+<p>Maintenant, nous pouvons tout tester dans la console Truffle. Tout d&#39;abord, nous utilisons migrate pour déployer les contrats. Lorsque METoken est déployé, il alloue tout le MET au compte qui l&#39;a créé, web3.eth.accounts[0]. Ensuite, nous appelons la fonction approve dans <code><span class="keep-together">METoken</span></code> pour approuver METFaucet afin d&#39;envoyer jusqu&#39;à 1 000 MET au nom de web3.eth.accounts[0]. Enfin, pour tester notre faucet, nous appelons METFaucet.withdraw depuis web3.eth.accounts[1] et essayons de retirer 10 MET. Voici les commandes de la console :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>truffle console --network ganache</strong>
@@ -1361,51 +1361,51 @@ truffle(ganache)&gt; <strong>METoken.deployed().then(instance =>
 truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 </pre>
 <div class="paragraph data-line-704">
-<p>As you can see from the results, we can use the approve &amp; transferFrom workflow to authorize one contract to transfer tokens defined in another token. If properly used, ERC20 tokens can be used by EOAs and other contracts.</p>
+<p>Comme vous pouvez le voir sur les résultats, nous pouvons utiliser le flux de travail approve et transferFrom pour autoriser un contrat à transférer des jetons définis dans un autre jeton. S&#39;ils sont correctement utilisés, les jetons ERC20 peuvent être utilisés par les EOA et d&#39;autres contrats.</p>
 </div>
 <div class="paragraph data-line-706">
-<p>However, the burden of managing ERC20 tokens correctly is pushed to the user interface. If a user incorrectly attempts to transfer ERC20 tokens to a contract address and that contract is not equipped to receive ERC20 tokens, the tokens will be lost.</p>
+<p>Cependant, la charge de gérer correctement les jetons ERC20 est transmise à l&#39;interface utilisateur. Si un utilisateur tente à tort de transférer des jetons ERC20 vers une adresse de contrat et que ce contrat n&#39;est pas équipé pour recevoir des jetons ERC20, les jetons seront perdus.</p>
 </div>
 </div>
 </div>
 <div class="sect3 data-line-709">
-<h4 id="ERC20_issues">Issues with ERC20 Tokens</h4>
+<h4 id="ERC20_issues">Problèmes avec les jetons ERC20</h4>
 <div class="paragraph data-line-711">
-<p>The adoption of the ERC20 token standard has been truly explosive. Thousands of tokens have been launched, both to experiment with new capabilities and to raise funds in various "crowdfund" auctions and ICOs. However, there are some potential pitfalls, as we saw with the issue of transferring tokens to contract addresses.</p>
+<p>L&#39;adoption de la norme de jeton ERC20 a été vraiment explosive. Des milliers de jetons ont été lancés, à la fois pour expérimenter de nouvelles capacités et pour lever des fonds dans diverses enchères et &quot;financements participatifs&quot; ICO. Cependant, il existe des pièges potentiels, comme nous l&#39;avons vu avec la question du transfert de jetons vers des adresses contractuelles.</p>
 </div>
 <div class="paragraph data-line-713">
-<p>One of the less obvious issues with ERC20 tokens is that they expose subtle differences between tokens and ether itself. Where ether is transferred by a transaction that has a recipient address as its destination, token transfers occur within the <em>specific token contract state</em> and have the token contract as their destination, not the recipient&#8217;s address. The token contract tracks balances and issues events. In a token transfer, no transaction is actually sent to the recipient of the token. Instead, the recipient&#8217;s address is added to a map within the token contract itself. A transaction sending ether to an address changes the state of an address. A transaction transferring a token to an address only changes the state of the token contract, not the state of the recipient address. Even a wallet that has support for ERC20 tokens does not become aware of a token balance unless the user explicitly adds a specific token contract to "watch." Some wallets watch the most popular token contracts to detect balances held by addresses they control, but that&#8217;s limited to a small fraction of existing ERC20 <span class="keep-together">contracts</span>.</p>
+<p>L&#39;un des problèmes les moins évidents avec les jetons ERC20 est qu&#39;ils exposent des différences subtiles entre les jetons et l&#39;ether lui-même. Lorsque l&#39;ether est transféré par une transaction qui a une adresse de destinataire comme destination, les transferts de jeton se produisent dans l&#39;_état spécifique du contrat de jeton_ et ont le contrat de jeton comme destination, et non l&#39;adresse du destinataire. Le contrat de jeton suit les soldes et émet des événements. Dans un transfert de jeton, aucune transaction n&#39;est réellement envoyée au destinataire du jeton. Au lieu de cela, l&#39;adresse du destinataire est ajoutée à un tableau dans le contrat de jeton lui-même. Une transaction envoyant de l&#39;ether à une adresse modifie l&#39;état d&#39;une adresse. Une transaction transférant un jeton à une adresse ne modifie que l&#39;état du contrat de jeton, pas l&#39;état de l&#39;adresse du destinataire. Même un portefeuille prenant en charge les jetons ERC20 ne prend pas connaissance d&#39;un solde de jetons à moins que l&#39;utilisateur n&#39;ajoute explicitement un contrat de jeton spécifique à « surveiller ». Certains portefeuilles surveillent les contrats de jetons les plus populaires pour détecter les soldes détenus par les adresses qu&#39;ils contrôlent, mais cela est limité à une petite fraction des <span class="keep-together">contrats</span> ERC20 existants.</p>
 </div>
 <div class="paragraph data-line-715">
-<p>In fact, it&#8217;s unlikely that a user would <em>want</em> to track all balances in all possible ERC20 token contracts. Many ERC20 tokens are more like email spam than usable tokens. They automatically create balances for accounts that have ether activity, in order to attract users. If you have an Ethereum address with a long history of activity, especially if it was created in the presale, you will find it full of "junk" tokens that appeared out of nowhere. Of course, the address isn&#8217;t really full of tokens; it&#8217;s the token contracts that have your address in them. You only see these balances if these token contracts are being watched by the block explorer or wallet you use to view your address.</p>
+<p>En fait, il est peu probable qu&#39;un utilisateur veuille suivre tous les soldes de tous les contrats de jetons ERC20 possibles. De nombreux jetons ERC20 ressemblent plus à du courrier indésirable qu&#39;à des jetons utilisables. Ils créent automatiquement des soldes pour les comptes qui ont une activité ether, afin d&#39;attirer les utilisateurs. Si vous avez une adresse Ethereum avec une longue histoire d&#39;activité, surtout si elle a été créée lors de la prévente, vous la trouverez pleine de jetons &quot;indésirables&quot; qui sont apparus de nulle part. Bien sûr, l&#39;adresse n&#39;est pas vraiment pleine de jetons ; ce sont les contrats symboliques qui contiennent votre adresse. Vous ne voyez ces soldes que si ces contrats de jetons sont surveillés par l&#39;explorateur de blocs ou le portefeuille que vous utilisez pour afficher votre adresse.</p>
 </div>
 <div class="paragraph data-line-717">
-<p>Tokens don&#8217;t behave the same way as ether. Ether is sent with the send function and accepted by any payable function in a contract or any externally owned address. Tokens are sent using transfer or approve &amp; transferFrom functions that exist only in the ERC20 contract, and do not (at least in ERC20) trigger any payable functions in a recipient contract. Tokens are meant to function just like a cryptocurrency such as ether, but they come with certain differences that break that illusion.</p>
+<p>Les jetons ne se comportent pas de la même manière que l&#39;ether. L&#8217;ether est envoyé avec la fonction send et accepté par toute fonction payante dans un contrat ou toute adresse détenue en externe. Les jetons sont envoyés à l&#39;aide des fonctions transfer ou approve et transferFrom qui n&#39;existent que dans le contrat ERC20, et ne déclenchent (du moins dans ERC20) aucune fonction payante dans un contrat destinataire. Les jetons sont censés fonctionner comme une cryptomonnaie telle que l&#39;ether, mais ils présentent certaines différences qui brisent cette illusion.</p>
 </div>
 <div class="paragraph data-line-719">
-<p>Consider another issue. To send ether or use any Ethereum contract you need ether to pay for gas. To send tokens, you <em>also need ether</em>. You cannot pay for a transaction&#8217;s gas with a token and the token contract can&#8217;t pay for the gas for you. This may change at some point in the distant future, but in the meantime this can cause some rather strange user experiences. For example, let&#8217;s say you use an exchange or ShapeShift to convert some bitcoin to a token. You "receive" the token in a wallet that tracks that token&#8217;s contract and shows your balance. It looks the same as any of the other cryptocurrencies you have in your wallet. Try sending the token, though, and your wallet will inform you that you need ether to do that. You might be confused&#x2014;after all, you didn&#8217;t need ether to receive the token. Perhaps you have no ether. Perhaps you didn&#8217;t even know the token was an ERC20 token on Ethereum; maybe you thought it was a cryptocurrency with its own blockchain. The illusion just broke.</p>
+<p>Envisagez un autre problème. Pour envoyer de l&#39;ether ou utiliser un contrat Ethereum, vous avez besoin d&#39;ether pour payer le gaz. Pour envoyer des jetons, vous avez <em>également besoin d&#39;ether</em>. Vous ne pouvez pas payer le gaz d&#39;une transaction avec un jeton et le contrat de jeton ne peut pas payer le gaz pour vous. Cela peut changer à un moment donné dans un avenir lointain, mais entre-temps, cela peut entraîner des expériences utilisateur plutôt étranges. Par exemple, supposons que vous utilisiez un échange ou ShapeShift pour convertir du bitcoin en jeton. Vous &quot;recevez&quot; le jeton dans un portefeuille qui suit le contrat de ce jeton et affiche votre solde. Il ressemble à toutes les autres crypto-monnaies que vous avez dans votre portefeuille. Essayez d&#39;envoyer le jeton et votre portefeuille vous informera que vous avez besoin d&#39;ether pour le faire. Vous pourriez être confus - après tout, vous n&#39;aviez pas besoin d&#39;ether pour recevoir le jeton. Peut-être que vous n&#39;avez pas d&#39;ether. Peut-être ne saviez-vous même pas que le jeton était un jeton ERC20 sur Ethereum; peut-être pensiez-vous qu&#39;il s&#39;agissait d&#39;une cryptomonnaie avec sa propre chaîne de blocs. L&#39;illusion vient de se briser.</p>
 </div>
 <div class="paragraph data-line-721">
-<p>Some of these issues are specific to ERC20 tokens. Others are more general issues that relate to abstraction and interface boundaries within Ethereum. Some can be solved by changing the token interface, while others may need changes to fundamental structures within Ethereum (such as the distinction between EOAs and contracts, and between transactions and messages). Some may not be "solvable" exactly and may require user interface design to hide the nuances and make the user experience consistent regardless of the underlying distinctions.</p>
+<p>Certains de ces problèmes sont spécifiques aux jetons ERC20. D&#39;autres sont des problèmes plus généraux liés à l&#39;abstraction et aux limites d&#39;interface au sein d&#39;Ethereum. Certains peuvent être résolus en modifiant l&#39;interface du jeton, tandis que d&#39;autres peuvent nécessiter des modifications des structures fondamentales au sein d&#39;Ethereum (comme la distinction entre EOA et contrats, et entre transactions et messages). Certains peuvent ne pas être exactement &quot;solvable&quot; et peuvent nécessiter une conception d&#39;interface utilisateur pour masquer les nuances et rendre l&#39;expérience utilisateur cohérente, quelles que soient les distinctions sous-jacentes.</p>
 </div>
 <div class="paragraph data-line-723">
-<p>In the next sections we will look at various proposals that attempt to address some of these issues.</p>
+<p>Dans les prochaines sections, nous examinerons diverses propositions qui tentent de résoudre certains de ces problèmes.</p>
 </div>
 </div>
 <div class="sect3 data-line-726">
-<h4 id="ERC223_std">ERC223: A Proposed Token Contract Interface Standard</h4>
+<h4 id="ERC223_std">ERC223 : une norme d&#39;interface de contrat de jeton proposée</h4>
 <div class="paragraph data-line-728">
-<p>The ERC223 proposal attempts to solve the problem of inadvertent transfer of tokens to a contract (that may or may not support tokens) by detecting whether the destination address is a contract or not. ERC223 requires that contracts designed to accept tokens implement a function named tokenFallback. If the destination of a transfer is a contract and the contract does not have support for tokens (i.e., does not implement tokenFallback), the transfer fails.</p>
+<p>La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l&#39;adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée tokenFallback. Si la destination d&#39;un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c&#39;est-à-dire qu&#39;il n&#39;implémente pas tokenFallback), le transfert échoue.</p>
 </div>
 <div id="is_contract" class="paragraph data-line-731">
-<p>To detect whether the destination address is a contract, the ERC223 reference implementation uses a small segment of inline bytecode in a rather creative way:</p>
+<p>Pour détecter si l&#39;adresse de destination est un contrat, l&#39;implémentation de référence ERC223 utilise un petit segment de bytecode en ligne d&#39;une manière plutôt créative :</p>
 </div>
 <div class="listingblock data-line-734">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">function isContract(address _addr) private view returns (bool is_contract) {
   uint length;
     assembly {
-       // retrieve the size of the code on target address; this needs assembly
+       // récupère la taille du code sur l&amp;#39;adresse cible ; cela nécessite un assemblage
        length := extcodesize(_addr)
     }
     return (length&gt;0);
@@ -1413,7 +1413,7 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 </div>
 </div>
 <div id="ERC223_interface" class="paragraph data-line-746">
-<p>The ERC223 contract interface specification is:</p>
+<p>La spécification de l&#39;interface de contrat ERC223 est :</p>
 </div>
 <div class="listingblock data-line-749">
 <div class="content">
@@ -1437,53 +1437,53 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 </div>
 </div>
 <div class="paragraph data-line-769">
-<p>ERC223 is not widely implemented, and there is some debate in <a href="https://github.com/ethereum/EIPs/issues/223" data-href="https://github.com/ethereum/EIPs/issues/223">the ERC discussion</a> thread about backward compatibility and trade-offs between implementing changes at the contract interface level versus the user interface. The debate continues.</p>
+<p>ERC223 n&#39;est pas largement mis en œuvre, et il y a un débat dans le fil <a href="https://github.com/ethereum/EIPs/issues/223" data-href="https://github.com/ethereum/EIPs/issues/223">de discussion ERC</a> sur la rétrocompatibilité et les compromis entre la mise en œuvre des changements au niveau de l&#39;interface du contrat par rapport à l&#8217;interface utilisateur. Le débat continue.</p>
 </div>
 </div>
 <div class="sect3 data-line-771">
-<h4 id="_erc777_a_proposed_token_contract_interface_standard">ERC777: A Proposed Token Contract Interface Standard</h4>
+<h4 id="_erc777_une_norme_dinterface_de_contrat_de_jeton_proposée">ERC777 : une norme d&#39;interface de contrat de jeton proposée</h4>
 <div class="paragraph data-line-773">
-<p>Another proposal for an improved token contract standard is <a href="https://eips.ethereum.org/EIPS/eip-777" data-href="https://eips.ethereum.org/EIPS/eip-777">ERC777</a>. This proposal has several goals, including:</p>
+<p>Une autre proposition pour une norme de contrat de jeton améliorée est <a href="https://eips.ethereum.org/EIPS/eip-777" data-href="https://eips.ethereum.org/EIPS/eip-777">ERC777</a>. Cette proposition a plusieurs objectifs, notamment :</p>
 </div>
 <div class="ulist data-line-775">
 <ul>
 <li class="data-line-775">
-<p>To offer an ERC20-compatible interface</p>
+<p>Offrir une interface compatible ERC20</p>
 </li>
 <li class="data-line-776">
-<p>To transfer tokens using a send function, similar to ether transfers</p>
+<p>Pour transférer des jetons à l&#39;aide d&#39;une fonction send, similaire aux transferts d&#39;ether</p>
 </li>
 <li class="data-line-777">
-<p>To be compatible with ERC820 for token contract registration</p>
+<p>Pour être compatible avec ERC820 pour l&#39;enregistrement de contrat de jeton</p>
 </li>
 <li class="data-line-778">
-<p>To allow contracts and addresses to control which tokens they send through a <code>tokensToSend</code> function that is called prior to sending</p>
+<p>Pour permettre aux contrats et aux adresses de contrôler les jetons qu&#39;ils envoient via une fonction <code>tokensToSend</code> qui est appelée avant l&#39;envoi</p>
 </li>
 <li class="data-line-779">
-<p>To enable contracts and addresses to be notified of the tokens' receipt by calling a <code>tokensReceived</code> function in the recipient, and to reduce the probability of tokens being locked into contracts by requiring contracts to provide a <span class="keep-together"><code>tokensReceived</code></span> function</p>
+<p>Pour permettre aux contrats et aux adresses d&#39;être informés de la réception des jetons en appelant une fonction <code>tokensReceived</code> dans le destinataire, et pour réduire la probabilité que les jetons soient verrouillés dans des contrats en exigeant que les contrats fournissent une fonction <span class="keep-together"><code>tokensReceived</code></span></p>
 </li>
 <li class="data-line-780">
-<p>To allow existing contracts to use proxy contracts for the tokensToSend and tokensReceived functions</p>
+<p>Pour permettre aux contrats existants d&#39;utiliser des contrats par procuration pour les fonctions tokensToSend et tokensReceived</p>
 </li>
 <li class="data-line-781">
-<p>To operate in the same way whether sending to a contract or an EOA</p>
+<p>Pour fonctionner de la même manière que vous envoyiez vers un contrat ou un EOA</p>
 </li>
 <li class="data-line-782">
-<p>To provide specific events for the minting and burning of tokens</p>
+<p>Pour fournir des événements spécifiques pour la frappe et la gravure de jetons</p>
 </li>
 <li class="data-line-783">
-<p>To enable operators (trusted third parties, intended to be verified contracts) to move tokens on behalf of a token holder</p>
+<p>Pour permettre aux opérateurs (tiers de confiance, destinés à être des contrats vérifiés) de déplacer des jetons pour le compte d&#39;un détenteur de jetons</p>
 </li>
 <li class="data-line-784">
-<p>To provide metadata on token transfer transactions in userData and operatorData fields</p>
+<p>Pour fournir des métadonnées sur les transactions de transfert de jetons dans les champs userData et operatorData</p>
 </li>
 </ul>
 </div>
 <div class="paragraph data-line-786">
-<p>The ongoing discussion on ERC777 can be found <a href="https://github.com/ethereum/EIPs/issues/777" data-href="https://github.com/ethereum/EIPs/issues/777">on GitHub</a>.</p>
+<p>La discussion en cours sur ERC777 peut être trouvée <a href="https://github.com/ethereum/EIPs/issues/777" data-href="https://github.com/ethereum/EIPs/issues/777">sur GitHub</a>.</p>
 </div>
 <div id="ERC777_interface" class="paragraph data-line-789">
-<p>The ERC777 contract interface specification is:</p>
+<p>La spécification de l&#39;interface de contrat ERC777 est :</p>
 </div>
 <div class="listingblock data-line-792">
 <div class="content">
@@ -1517,9 +1517,9 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 </div>
 </div>
 <div class="sect4 data-line-823">
-<h5 id="ERC777_hooks">ERC777 hooks</h5>
+<h5 id="ERC777_hooks">Crochets ERC777</h5>
 <div id="ERC777TokensSender_interface" class="paragraph data-line-826">
-<p>The ERC777 tokens sender hook specification is:</p>
+<p>La spécification de crochet d&#39;expéditeur de jetons ERC777 est :</p>
 </div>
 <div class="listingblock data-line-829">
 <div class="content">
@@ -1530,10 +1530,10 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 </div>
 </div>
 <div class="paragraph data-line-836">
-<p>The implementation of this interface is required for any address wishing to be notified of, to handle, or to prevent the debit of tokens. The address for which the contract implements this interface must be registered via ERC820, whether the contract implements the interface for itself or for another address.</p>
+<p>La mise en place de cette interface est nécessaire pour toute adresse souhaitant être notifiée, gérer ou empêcher le débit de jetons. L&#39;adresse pour laquelle le contrat implémente cette interface doit être enregistrée via ERC820, que le contrat implémente l&#39;interface pour lui-même ou pour une autre adresse.</p>
 </div>
 <div id="ERC777TokensRecipient_interface" class="paragraph data-line-839">
-<p>The ERC777 tokens recipient hook specification is:</p>
+<p>La spécification du crochet du destinataire des jetons ERC777 est :</p>
 </div>
 <div class="listingblock data-line-842">
 <div class="content">
@@ -1546,70 +1546,70 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 </div>
 </div>
 <div class="paragraph data-line-851">
-<p>The implementation of this interface is required for any address wishing to be notified of, to handle, or to reject the reception of tokens. The same logic and requirements apply to the tokens recipient as to the tokens sender interface, with the added constraint that recipient contracts must implement this interface to prevent locking tokens. If the recipient contract does not register an address implementing this interface, the transfer of tokens will fail.</p>
+<p>La mise en place de cette interface est nécessaire pour toute adresse souhaitant être notifiée, traiter ou rejeter la réception de jetons. La même logique et les mêmes exigences s&#39;appliquent au destinataire des jetons qu&#39;à l&#39;interface de l&#39;expéditeur des jetons, avec la contrainte supplémentaire que les contrats destinataires doivent implémenter cette interface pour empêcher le verrouillage des jetons. Si le contrat destinataire n&#39;enregistre pas d&#39;adresse implémentant cette interface, le transfert des jetons échouera.</p>
 </div>
 <div class="paragraph data-line-853">
-<p>An important aspect is that only one token sender and one token recipient can be registered per address. Hence, for every ERC777 token transfer the same hook functions are called upon debit and reception of every ERC777 token transfer. A specific token can be identified in these functions using the message&#8217;s sender, which is the specific token contract address, to handle a particular use case.</p>
+<p>Un aspect important est qu&#39;un seul expéditeur de jeton et un seul destinataire de jeton peuvent être enregistrés par adresse. Par conséquent, pour chaque transfert de jeton ERC777, les mêmes fonctions de crochet sont appelées lors du débit et de la réception de chaque transfert de jeton ERC777. Un jeton spécifique peut être identifié dans ces fonctions à l&#39;aide de l&#39;expéditeur du message, qui est l&#39;adresse de contrat de jeton spécifique, pour gérer un cas d&#39;utilisation particulier.</p>
 </div>
 <div class="paragraph data-line-855">
-<p>On the other hand, the same token sender and token recipient hooks can be registered for multiple addresses and the hooks can distinguish who are the sender and the intended recipient using the <code>from</code> and <code>to</code> parameters.</p>
+<p>D&#39;autre part, les mêmes hooks d&#39;expéditeur et de destinataire de jeton peuvent être enregistrés pour plusieurs adresses et les hooks peuvent distinguer qui sont l&#39;expéditeur et le destinataire prévu à l&#39;aide des paramètres &quot;from&quot; et &quot;to&quot;.</p>
 </div>
 <div class="paragraph data-line-857">
-<p>A <a href="http://bit.ly/2qkAKba" data-href="http://bit.ly/2qkAKba">reference implementation</a> of ERC777 is linked in the proposal. ERC777 depends on a parallel proposal for a registry contract, specified in ERC820. Some of the debate on ERC777 is about the complexity of adopting two big changes at once: a new token standard and a registry standard. The discussion continues.</p>
+<p>Une <a href="http://bit.ly/2qkAKba" data-href="http://bit.ly/2qkAKba">implémentation de référence</a> d&#39;ERC777 est liée dans la proposition. ERC777 dépend d&#39;une proposition parallèle de contrat de registre, spécifiée dans ERC820. Une partie du débat sur ERC777 porte sur la complexité de l&#39;adoption simultanée de deux grands changements : une nouvelle norme de jeton et une norme de registre. La discussion continue.</p>
 </div>
 </div>
 </div>
 <div class="sect3 data-line-860">
-<h4 id="erc721">ERC721: Non-fungible Token (Deed) Standard</h4>
+<h4 id="erc721">ERC721 : norme de jeton non fongible (acte)</h4>
 <div class="paragraph data-line-862">
-<p>All the token standards we have looked at so far are for <em>fungible</em> tokens, meaning that units of a token are interchangeable. The ERC20 token standard only tracks the final balance of each account and does not (explicitly) track the provenance of any token.</p>
+<p>Toutes les normes de jeton que nous avons examinées jusqu&#39;à présent concernent les jetons <em>fungible</em>, ce qui signifie que les unités de un jeton sont interchangeables. La norme de jeton ERC20 ne suit que le solde final de chaque compte et ne suit pas (explicitement) la provenance d&#39;un jeton.</p>
 </div>
 <div class="paragraph data-line-864">
-<p>The <a href="http://bit.ly/2Ogs7Im" data-href="http://bit.ly/2Ogs7Im">ERC721 proposal</a> is for a standard for <em>non-fungible</em> tokens, also known as <em>deeds</em>.</p>
+<p> La <a href="http://bit.ly/2Ogs7Im" data-href="http://bit.ly/2Ogs7Im">proposition ERC721</a> concerne une norme pour les jetons <em>non fongibles</em>, également appelés <em>actes</em>.</p>
 </div>
 <div class="paragraph data-line-866">
-<p>From the Oxford Dictionary:</p>
+<p>Extrait du dictionnaire Oxford :</p>
 </div>
 <div class="quoteblock data-line-868">
 <blockquote>
 <div class="paragraph data-line-869">
-<p><em>deed</em>: A legal document that is signed and delivered, especially one regarding the ownership of property or legal rights.</p>
+<p><em>acte</em> : un document juridique qui est signé et remis, en particulier un document concernant la propriété d&#39;un bien ou des droits légaux.</p>
 </div>
 </blockquote>
 </div>
 <div class="paragraph data-line-872">
-<p>The use of the word "deed" is intended to reflect the "ownership of property" part, even though these are not recognized as "legal documents" in any jurisdiction&#x2014;yet. It is likely that at some point in the future, legal ownership based on digital signatures on a blockchain platform will be legally recognized.</p>
+<p>L&#39;utilisation du mot &quot;acte&quot; est destinée à refléter la partie &quot;propriété d&#39;un bien&quot;, même si ceux-ci ne sont pas reconnus comme des &quot;documents juridiques&quot; dans aucune juridiction - pour le moment. Il est probable qu&#39;à un moment donné dans le futur, la propriété légale basée sur des signatures numériques sur une plate-forme chaîne de blocs sera légalement reconnue.</p>
 </div>
 <div class="paragraph data-line-874">
-<p>Non-fungible tokens track ownership of a unique thing. The thing owned can be a digital item, such as an in-game item or digital collectible; or the thing can be a physical item whose ownership is tracked by a token, such as a house, a car, or an artwork. Deeds can also represent things with negative value, such as loans (debt), liens, easements, etc. The ERC721 standard places no limitation or expectation on the nature of the thing whose ownership is tracked by a deed and requires only that it can be uniquely identified, which in the case of this standard is achieved by a 256-bit <span class="keep-together">identifier</span>.</p>
+<p>Les jetons non fongibles suivent la propriété d&#39;une chose unique. L&#39;objet possédé peut être un objet numérique, tel qu&#39;un objet de jeu ou un objet de collection numérique ; ou la chose peut être un objet physique dont la propriété est suivie par un jeton, comme une maison, une voiture ou une œuvre d&#39;art. Les actes peuvent également représenter des choses de valeur négative, telles que des prêts (dettes), des privilèges, des servitudes, etc. La norme ERC721 n&#39;impose aucune limitation ou attente sur la nature de la chose dont la propriété est suivie par un acte et exige seulement qu&#39;elle puisse être identifié de manière unique, ce qui, dans le cas de cette norme, est obtenu par un <span class="keep-together">identifiant</span> de 256 bits .</p>
 </div>
 <div class="paragraph data-line-876">
-<p>The details of the standard and discussion are tracked in two different GitHub <span class="keep-together">locations</span>:</p>
+<p>Les détails de la norme et de la discussion sont suivis sur deux <span class="keep-together">fils</span> GitHub différents:</p>
 </div>
 <div class="ulist data-line-878">
 <ul>
 <li class="data-line-878">
-<p><a href="https://github.com/ethereum/EIPs/issues/721" data-href="https://github.com/ethereum/EIPs/issues/721">Initial proposal</a></p>
+<p><a href="https://github.com/ethereum/EIPs/issues/721" data-href="https://github.com/ethereum/EIPs/issues/721">Proposition initiale</a></p>
 </li>
 <li class="data-line-880">
-<p><a href="https://github.com/ethereum/EIPs/pull/841" data-href="https://github.com/ethereum/EIPs/pull/841">Continued discussion</a></p>
+<p><a href="https://github.com/ethereum/EIPs/pull/841" data-href="https://github.com/ethereum/EIPs/pull/841">Discussion continue</a></p>
 </li>
 </ul>
 </div>
 <div id="map_deed_owner" class="paragraph data-line-883">
-<p>To grasp the basic difference between ERC20 and ERC721, it is sufficient to look at the internal data structure used in ERC721:</p>
+<p>Pour saisir la différence fondamentale entre ERC20 et ERC721, il suffit de regarder la structure de données interne utilisée dans ERC721 :</p>
 </div>
 <div class="listingblock data-line-886">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Mapping from deed ID to owner
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Mappage de l&amp;#39;ID de l&amp;#39;acte au propriétaire
 mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-891">
-<p>Whereas ERC20 tracks the balances that belong to each owner, with the owner being the primary key of the mapping, ERC721 tracks each deed ID and who owns it, with the deed ID being the primary key of the mapping. From this basic difference flow all the properties of a non-fungible token.</p>
+<p>Alors que l&#39;ERC20 suit les soldes appartenant à chaque propriétaire, le propriétaire étant la clé primaire du mappage, l&#39;ERC721 suit chaque ID d&#39;acte et son propriétaire, l&#39;ID d&#39;acte étant la clé primaire du mappage. De cette différence fondamentale découlent toutes les propriétés d&#39;un jeton non fongible.</p>
 </div>
 <div id="ERC721_interface" class="paragraph data-line-894">
-<p>The ERC721 contract interface specification is:</p>
+<p>La spécification de l&#39;interface de contrat ERC721 est :</p>
 </div>
 <div class="listingblock data-line-897">
 <div class="content">
@@ -1632,10 +1632,10 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 </div>
 <div class="paragraph data-line-916">
-<p>ERC721 also supports two <em>optional</em> interfaces, one for metadata and one for enumeration of deeds and owners.</p>
+<p>ERC721 prend également en charge deux interfaces <em>optionnelles</em>, une pour les métadonnées et une pour l&#39;énumération des actes et des propriétaires.</p>
 </div>
 <div id="ERC721_metadata" class="paragraph data-line-919">
-<p>The ERC721 optional interface for metadata is:</p>
+<p>L&#39;interface optionnelle ERC721 pour les métadonnées est :</p>
 </div>
 <div class="listingblock data-line-922">
 <div class="content">
@@ -1647,7 +1647,7 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 </div>
 <div id="ERC721_enum" class="paragraph data-line-931">
-<p>The ERC721 optional interface for enumeration is:</p>
+<p>L&#39;interface optionnelle ERC721 pour l&#39;énumération est :</p>
 </div>
 <div class="listingblock data-line-934">
 <div class="content">
@@ -1664,32 +1664,32 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 </div>
 <div class="sect2 data-line-946">
-<h3 id="token_std_review">Using Token Standards</h3>
+<h3 id="token_std_review">Utilisation des normes de jeton</h3>
 <div class="paragraph data-line-948">
-<p>In the previous section we reviewed several proposed standards and a couple of widely deployed standards for token contracts. What exactly do these standards do? Should you use these standards? How should you use them? Should you add functionality beyond these standards? Which standards should you use? We will examine some of those questions next.</p>
+<p>Dans la section précédente, nous avons examiné plusieurs normes proposées et quelques normes largement déployées pour les contrats de jetons. A quoi servent exactement ces normes ? Devez-vous utiliser ces normes ? Comment devriez-vous les utiliser? Devriez-vous ajouter des fonctionnalités au-delà de ces normes ? Quelles normes devez-vous utiliser ? Nous examinerons ensuite certaines de ces questions.</p>
 </div>
 <div class="sect3 data-line-951">
-<h4 id="token_std_purpose">What Are Token Standards? What Is Their Purpose?</h4>
+<h4 id="token_std_purpose">Que sont les normes de jeton ? Quel est leur but ?</h4>
 <div class="paragraph data-line-953">
-<p>Token standards are the <em>minimum</em> specifications for an implementation. What that means is that in order to be compliant with, say, ERC20, you need to at minimum implement the functions and behavior specified by the ERC20 standard. You are also free to <em>add</em> to the functionality by implementing functions that are not part of the standard.</p>
+<p>Les normes de jetons sont les spécifications <em>minimales</em> pour une implémentation. Cela signifie que pour être conforme, par exemple, à ERC20, vous devez au minimum implémenter les fonctions et le comportement spécifiés par la norme ERC20. Vous êtes également libre d&#39;_ajouter_ à la fonctionnalité en implémentant des fonctions qui ne font pas partie de la norme.</p>
 </div>
 <div class="paragraph data-line-955">
-<p>The primary purpose of these standards is to encourage <em>interoperability</em> between contracts. Thus, all wallets, exchanges, user interfaces, and other infrastructure components can <em>interface</em> in a predictable manner with any contract that follows the specification. In other words, if you deploy a contract that follows the ERC20 standard, all existing wallet users can seamlessly start trading your token without any wallet upgrade or effort on your part.</p>
+<p>L&#39;objectif principal de ces normes est d&#39;encourager l&#39;_interopérabilité_ entre les contrats. Ainsi, tous les portefeuilles, échanges, interfaces utilisateur et autres composants d&#39;infrastructure peuvent <em>s&#39;interfacer</em> de manière prévisible avec tout contrat qui suit la spécification. En d&#39;autres termes, si vous déployez un contrat qui suit la norme ERC20, tous les utilisateurs de portefeuille existants peuvent commencer à échanger votre jeton de manière transparente sans aucune mise à niveau de portefeuille ni effort de votre part.</p>
 </div>
 <div class="paragraph data-line-957">
-<p>The standards are meant to be <em>descriptive</em>, rather than <em>prescriptive</em>. How you choose to implement those functions is up to you&#x2014;the internal functioning of the contract is not relevant to the standard. They have some functional requirements, which govern the behavior under specific circumstances, but they do not prescribe an implementation. An example of this is the behavior of a transfer function if the value is set to zero.</p>
+<p>Les normes sont censées être <em>descriptives</em> plutôt que <em>prescriptives</em>. La façon dont vous choisissez de mettre en œuvre ces fonctions dépend de vous - le fonctionnement interne du contrat n&#39;est pas pertinent pour la norme. Ils ont des exigences fonctionnelles, qui régissent le comportement dans des circonstances spécifiques, mais ils ne prescrivent pas de mise en œuvre. Un exemple de ceci est le comportement d&#39;une fonction transfer si la valeur est définie sur zéro.</p>
 </div>
 </div>
 <div class="sect3 data-line-960">
-<h4 id="should_use_std">Should You Use These Standards?</h4>
+<h4 id="should_use_std">Devriez-vous utiliser ces normes ?</h4>
 <div class="paragraph data-line-962">
-<p>Given all these standards, each developer faces a dilemma: use the existing standards or innovate beyond the restrictions they impose?</p>
+<p>Compte tenu de tous ces standards, chaque développeur est confronté à un dilemme : utiliser les standards existants ou innover au-delà des contraintes qu&#39;ils imposent ?</p>
 </div>
 <div class="paragraph data-line-964">
-<p>This dilemma is not easy to resolve. Standards necessarily restrict your ability to innovate, by creating a narrow "rut" that you have to follow. On the other hand, the basic standards have emerged from experience with hundreds of applications and often fit well with the vast majority of use cases.</p>
+<p>Ce dilemme n&#39;est pas facile à résoudre. Les normes restreignent nécessairement votre capacité à innover, en créant une &quot;ornière&quot; étroite que vous devez suivre. D&#39;autre part, les normes de base ont émergé de l&#39;expérience de centaines d&#39;applications et s&#39;adaptent souvent bien à la grande majorité des cas d&#39;utilisation.</p>
 </div>
 <div class="paragraph data-line-966">
-<p>As part of this consideration is an even bigger issue: the value of interoperability and broad adoption. If you choose to use an existing standard, you gain the value of all the systems designed to work with that standard. If you choose to depart from the standard, you have to consider the cost of building all of the support infrastructure on your own, or persuading others to support your implementation as a new standard. The tendency to forge your own path and ignore existing standards is known as "Not Invented Here" syndrome and is antithetical to open source culture. On the other hand, progress and innovation depend on departing from tradition sometimes. It&#8217;s a tricky choice, so consider it carefully!</p>
+<p>Dans le cadre de cette considération, il y a un problème encore plus important : la valeur de l&#39;interopérabilité et de l&#39;adoption à grande échelle. Si vous choisissez d&#39;utiliser une norme existante, vous gagnez la valeur de tous les systèmes conçus pour fonctionner avec cette norme. Si vous choisissez de vous écarter de la norme, vous devez prendre en compte le coût de la construction de toute l&#39;infrastructure de support par vous-même ou persuader les autres de prendre en charge votre mise en œuvre en tant que nouvelle norme. La tendance à forger votre propre chemin et à ignorer les normes existantes est connue sous le nom de syndrome &quot;Not Invented Here&quot; (Non inventé ici) et est contraire à la culture open source. D&#39;autre part, le progrès et l&#39;innovation dépendent parfois de l&#39;abandon de la tradition. C&#39;est un choix délicat, alors réfléchissez bien !</p>
 </div>
 <div class="admonitionblock note data-line-969">
 <table>
@@ -1699,7 +1699,7 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-970">
-<p>Per Wikipedia, <a href="https://en.wikipedia.org/wiki/Not_invented_here" data-href="https://en.wikipedia.org/wiki/Not_invented_here">&#x201c;Not Invented Here&#x201d;</a> is a stance adopted by social, corporate, or institutional cultures that avoid using or buying already existing products, research, standards, or knowledge because of their external origins and costs, such as royalties.</p>
+<p>Selon Wikipedia, <a href="https://en.wikipedia.org/wiki/Not_invented_here" data-href="https://en.wikipedia.org/wiki/Not_invented_here">&quot;Not Invented Here&quot;</a> est une position adoptée par les cultures sociales, d&#39;entreprise ou institutionnelles qui évitent d&#39;utiliser ou d&#39;acheter des produits, des recherches, des normes ou des connaissances déjà existants en raison de leurs origines externes et de leurs coûts, tels que les redevances.</p>
 </div>
 </td>
 </tr>
@@ -1707,15 +1707,15 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 </div>
 <div class="sect3 data-line-975">
-<h4 id="security_maturity">Security by Maturity</h4>
+<h4 id="sécurité_maturité">Sécurité par maturité</h4>
 <div class="paragraph data-line-977">
-<p>Beyond the choice of standard, there is the parallel choice of <em>implementation</em>. When you decide to use a standard such as ERC20, you have to then decide how to implement a compatible design. There are a number of existing "reference" implementations that are widely used in the Ethereum ecosystem, or you could write your own from scratch. Again, this choice represents a dilemma that can have serious security implications.</p>
+<p>Au-delà du choix de la norme, il y a le choix parallèle de <em>la mise en oeuvre</em>. Lorsque vous décidez d&#39;utiliser une norme telle que ERC20, vous devez ensuite décider comment mettre en œuvre une conception compatible. Il existe un certain nombre d&#39;implémentations &quot;de référence&quot; existantes qui sont largement utilisées dans l&#39;écosystème Ethereum, ou vous pouvez écrire la vôtre à partir de zéro. Encore une fois, ce choix représente un dilemme qui peut avoir de graves implications en matière de sécurité.</p>
 </div>
 <div class="paragraph data-line-979">
-<p>Existing implementations are &#x201c;battle-tested.&#x201d; While it is impossible to prove that they are secure, many of them underpin millions of dollars' worth of tokens. They have been attacked, repeatedly and vigorously. So far, no significant vulnerabilities have been discovered. Writing your own is not easy&#x2014;there are many subtle ways that a contract can be compromised. It is much safer to use a well-tested, widely used implementation. In our examples, we used the OpenZeppelin implementation of the ERC20 standard, as this implementation is security-focused from the ground up.</p>
+<p>Les implémentations existantes sont &quot;testées au combat&quot;. Bien qu&#39;il soit impossible de prouver qu&#39;ils sont sécurisés, beaucoup d&#39;entre eux sous-tendent des millions de dollars de jetons. Ils ont été attaqués, à plusieurs reprises et vigoureusement. Jusqu&#39;à présent, aucune vulnérabilité significative n&#39;a été découverte. Rédiger le vôtre n&#39;est pas facile - il existe de nombreuses façons subtiles de compromettre un contrat. Il est beaucoup plus sûr d&#39;utiliser une implémentation largement testée et largement utilisée. Dans nos exemples, nous avons utilisé l&#39;implémentation OpenZeppelin de la norme ERC20, car cette implémentation est entièrement axée sur la sécurité.</p>
 </div>
 <div class="paragraph data-line-981">
-<p>If you use an existing implementation you can also extend it. Again, however, be careful with this impulse. Complexity is the enemy of security. Every single line of code you add expands the <em>attack surface</em> of your contract and could represent a vulnerability lying in wait. You may not notice a problem until you put a lot of value on top of the contract and someone breaks it.</p>
+<p>Si vous utilisez une implémentation existante, vous pouvez également l&#39;étendre. Encore une fois, cependant, soyez prudent avec cette impulsion. La complexité est l&#39;ennemie de la sécurité. Chaque ligne de code que vous ajoutez étend la <em>surface d&#39;attaque</em> de votre contrat et pourrait représenter une vulnérabilité en attente. Vous ne remarquerez peut-être pas un problème jusqu&#39;à ce que vous accordiez beaucoup de valeur au contrat et que quelqu&#39;un le rompe.</p>
 </div>
 <div class="admonitionblock tip data-line-984">
 <table>
@@ -1725,7 +1725,7 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-985">
-<p>Standards and implementation choices are important parts of overall secure smart contract design, but they&#8217;re not the only considerations. See <a href="#smart_contract_security">[smart_contract_security]</a>.</p>
+<p>Les normes et les choix de mise en œuvre sont des éléments importants de la conception globale des contrats intelligents sécurisés, mais ce ne sont pas les seules considérations. Voir <a href="#smart_contract_security">[smart_contract_security]</a>.</p>
 </div>
 </td>
 </tr>
@@ -1734,69 +1734,69 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 </div>
 <div class="sect2 data-line-990">
-<h3 id="extend_token_interface">Extensions to Token Interface Standards</h3>
+<h3 id="extend_token_interface">Extensions aux normes d&#39;interface de jeton</h3>
 <div class="paragraph data-line-992">
-<p>The token standards discussed in this chapter provide a very minimal interface, with limited functionality. Many projects have created extended implementations to support features that they need for their applications. Some of these features include:</p>
+<p>Les normes de jetons abordées dans ce chapitre fournissent une interface très minimale, avec des fonctionnalités limitées. De nombreux projets ont créé des implémentations étendues pour prendre en charge les fonctionnalités dont ils ont besoin pour leurs applications. Certaines de ces fonctionnalités incluent :</p>
 </div>
 <div class="dlist data-line-994">
 <dl>
-<dt class="hdlist1">Owner control</dt>
+<dt class="hdlist1">Contrôle du propriétaire</dt>
 <dd>
-<p>The ability to give specific addresses, or sets of addresses (i.e., multisignature schemes), special capabilities, such as blacklisting, whitelisting, minting, recovery, etc.</p>
+<p>La possibilité de donner des adresses spécifiques ou des ensembles d&#39;adresses (c&#39;est-à-dire des schémas multisignatures), des capacités spéciales, telles que la liste noire, la liste blanche, la frappe, la récupération, etc.</p>
 </dd>
-<dt class="hdlist1">Burning</dt>
+<dt class="hdlist1">Brûlure</dt>
 <dd>
-<p>The ability to deliberately destroy (&#x201c;burn&#x201d;) tokens by transferring them to an unspendable address or by erasing a balance and reducing the supply.</p>
+<p>La capacité de détruire délibérément (&quot;brûler&quot;) des jetons en les transférant à une adresse inutilisable ou en effaçant un solde et en réduisant l&#39;approvisionnement.</p>
 </dd>
-<dt class="hdlist1">Minting</dt>
+<dt class="hdlist1">Frappe</dt>
 <dd>
-<p>The ability to add to the total supply of tokens, at a predictable rate or by "fiat" of the creator of the token.</p>
+<p>La possibilité d&#39;ajouter à l&#39;offre totale de jetons, à un rythme prévisible ou par &quot;fiat&quot; du créateur du jeton.</p>
 </dd>
-<dt class="hdlist1">Crowdfunding</dt>
+<dt class="hdlist1">Financement participatif</dt>
 <dd>
-<p>The ability to offer tokens for sale, for example through an auction, market sale, reverse auction, etc.</p>
+<p>La possibilité de proposer des jetons à la vente, par exemple par le biais d&#39;une vente aux enchères, d&#39;une vente sur le marché, d&#39;une vente aux enchères inversée, etc.</p>
 </dd>
-<dt class="hdlist1">Caps</dt>
+<dt class="hdlist1">Limites</dt>
 <dd>
-<p>The ability to set predefined and immutable limits on the total supply (the opposite of the "minting" feature).</p>
+<p>La possibilité de fixer des limites prédéfinies et immuables sur l&#39;offre totale (à l&#39;opposé de la fonction &quot;frappe&quot;).</p>
 </dd>
-<dt class="hdlist1">Recovery backdoors</dt>
+<dt class="hdlist1">Portes dérobées de récupération</dt>
 <dd>
-<p>Functions to recover funds, reverse transfers, or dismantle the token that can be activated by a designated address or set of addresses.</p>
+<p>Fonctions pour récupérer des fonds, annuler des transferts ou démanteler le jeton qui peuvent être activés par une adresse désignée ou un ensemble d&#39;adresses.</p>
 </dd>
-<dt class="hdlist1">Whitelisting</dt>
+<dt class="hdlist1">Liste blanche</dt>
 <dd>
-<p>The ability to restrict actions (such as token transfers) to specific addresses. Most commonly used to offer tokens to "accredited investors" after vetting by the rules of different jurisdictions. There is usually a mechanism for updating the whitelist.</p>
+<p>La possibilité de restreindre les actions (telles que les transferts de jetons) à des adresses spécifiques. Le plus souvent utilisé pour offrir des jetons à des &quot;investisseurs accrédités&quot; après vérification par les règles de différentes juridictions. Il existe généralement un mécanisme de mise à jour de la liste blanche.</p>
 </dd>
-<dt class="hdlist1">Blacklisting</dt>
+<dt class="hdlist1">Liste noire</dt>
 <dd>
-<p>The ability to restrict token transfers by disallowing specific addresses. There is usually a function for updating the blacklist.</p>
+<p>La possibilité de restreindre les transferts de jetons en interdisant des adresses spécifiques. Il existe généralement une fonction de mise à jour de la liste noire.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph data-line-1010">
-<p>There are reference implementations for many of these functions, for example in the OpenZeppelin library. Some of these are use case–specific and only implemented in a few tokens. There are, as of now, no widely accepted standards for the interfaces to these functions.</p>
+<p>Il existe des implémentations de référence pour bon nombre de ces fonctions, par exemple dans la bibliothèque OpenZeppelin. Certains d&#39;entre eux sont spécifiques à un cas d&#39;utilisation et ne sont implémentés que dans quelques jetons. Il n&#39;existe pas, à l&#39;heure actuelle, de normes largement acceptées pour les interfaces avec ces fonctions.</p>
 </div>
 <div class="paragraph data-line-1012">
-<p>As previously discussed, the decision to extend a token standard with additional functionality represents a trade-off between innovation/risk and interoperability/security.</p>
+<p>Comme indiqué précédemment, la décision d&#39;étendre une norme de jeton avec des fonctionnalités supplémentaires représente un compromis entre innovation/risque et interopérabilité/sécurité.</p>
 </div>
 </div>
 <div class="sect2 data-line-1015">
-<h3 id="tokens_ico">Tokens and ICOs</h3>
+<h3 id="tokens_ico">Jetons et ICO</h3>
 <div class="paragraph data-line-1017">
-<p>Tokens have been an explosive development in the Ethereum ecosystem. It is likely that they will become a very important component of all smart contract platforms like Ethereum.</p>
+<p>Les jetons ont connu un développement explosif dans l&#39;écosystème Ethereum. Il est probable qu&#39;ils deviendront un élément très important de toutes les plateformes de contrats intelligents comme Ethereum.</p>
 </div>
 <div class="paragraph data-line-1019">
-<p>Nevertheless, the importance and future impact of these standards should not be confused with an endorsement of current token offerings. As in any early-stage technology, the first wave of products and companies will almost all fail, and some will fail spectacularly. Many of the tokens on offer in Ethereum today are barely disguised scams, pyramid schemes, and money grabs.</p>
+<p>Néanmoins, l&#39;importance et l&#39;impact futur de ces normes ne doivent pas être confondus avec une approbation des offres de jetons actuelles. Comme dans toute technologie à un stade précoce, la première vague de produits et d&#39;entreprises échouera presque toutes, et certaines échoueront de manière spectaculaire. La plupart des jetons proposés dans Ethereum aujourd&#39;hui sont des escroqueries à peine déguisées, des systèmes pyramidaux et des prises d&#39;argent.</p>
 </div>
 <div class="paragraph data-line-1021">
-<p>The trick is to separate the long-term vision and impact of this technology, which is likely to be huge, from the short-term bubble of token ICOs, which are rife with fraud. Token standards and the platform will survive the current token mania, and then they will likely change the world.</p>
+<p>L&#39;astuce consiste à séparer la vision et l&#39;impact à long terme de cette technologie, qui risque d&#39;être énorme, de la bulle à court terme des ICO symboliques, qui sont en proie à la fraude. Les normes de jetons et la plate-forme survivront à la manie actuelle des jetons, puis ils changeront probablement le monde.</p>
 </div>
 </div>
 <div class="sect2 data-line-1023">
-<h3 id="_conclusions">Conclusions</h3>
+<h3 id="_conclusion">Conclusion</h3>
 <div class="paragraph data-line-1025">
-<p>Tokens are a very powerful concept in Ethereum and can form the basis of many important decentralized applications. In this chapter we looked at the different types of tokens and token standards, and you built your first token and related application. We will revisit tokens again in <a href="#decentralized_applications_chap">[decentralized_applications_chap]</a>, where you will use a non-fungible token as the basis for an auction DApp.</p>
+<p>Les jetons sont un concept très puissant dans Ethereum et peuvent constituer la base de nombreuses applications décentralisées importantes. Dans ce chapitre, nous avons examiné les différents types de jetons et les normes de jeton, et vous avez construit votre premier jeton et l&#39;application associée. Nous reviendrons à nouveau sur les jetons dans <a href="#decentralized_applications_chap">[decentralized_applications_chap]</a>, où vous utiliserez un jeton non fongible comme base pour un DApp d&#39;enchères.</p>
 </div>
 </div>
 </div>
@@ -1804,7 +1804,7 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-26 12:14:52 -0400
+Last updated 2022-05-10 17:00:23 -0400
 </div>
 </div>
 </body>
