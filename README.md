@@ -70,7 +70,7 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 10. [Chapitre 8 - Contrats intelligents et Vyper](html/for_use_ethereumbook_08smart-contracts-vypertxt_fr_CA.html) 👍
 11. [Chapitre 9 - Sécurité des contrats intelligents](html/for_use_ethereumbook_09smart-contracts-securitytxt_fr_CA.html) 👍
 12. [Chapitre 10 - Jetons](html/for_use_ethereumbook_10tokenstxt_fr_CA.html) 👍
-13. [Chapitre 11 - Oracles](html/for_use_ethereumbook_11oraclestxt_fr_CA.html) ❌
+13. [Chapitre 11 - Oracles](html/for_use_ethereumbook_11oraclestxt_fr_CA.html) 👍
 14. [Chapitre 12 - Applications décentralisées (DApps)](html/for_use_ethereumbook_12dappstxt_fr_CA.html) ❌
 15. [Chapitre 13 - La machine virtuelle Ethereum](html/for_use_ethereumbook_13evmtxt_fr_CA.html) ❌
 16. [Chapitre 14 - Consensus](html/for_use_ethereumbook_14consensustxt_fr_CA.html) ❌
