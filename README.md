@@ -4,11 +4,9 @@ Le livre **Maîtriser Ethereum** (_**Mastering Ethereum**_ par O'Reilly Media) t
 
 ---
 
-<center>
+<!-- center>
 <img src="assets/ME1OE-GITHUB_BANNER-002.jpg" alt="Maîtriser Ethereum: Implémenter des contrats numériques" width="96%"/>
-</center>
-
----
+</center -->
 
 <center style="font-size:1.2em;">
 <h2><em>Mastering Ethereum</em></h2>
