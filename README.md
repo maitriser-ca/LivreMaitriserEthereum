@@ -1,6 +1,6 @@
 # Maîtriser Ethereum : Implémenter des contrats numériques, 1ère édition ouverte
 
-Le livre **Maîtriser Ethereum** (_**Mastering Ethereum**_ par O'Reilly Media) tel qu'écrit originalement en anglais par _Andreas M. Antonopoulos_ et _Gavin Wood_, traduit en français (Canada) par _Google Translate API_ et révisé par _Serafim Dos Santos_ avec les termes du [Grand dictionnaire terminologique (GDT)](https://gdt.oqlf.gouv.qc.ca/) de l'[Office qu&eacute;b&eacute;cois de la langue fran&ccedil;aise](https://www.oqlf.gouv.qc.ca/).
+Le livre **Maîtriser Ethereum** (_**Mastering Ethereum**_ par O'Reilly Media) tel qu'écrit originalement en anglais par _Andreas M. Antonopoulos_ et _Dr. Gavin Wood_, traduit en français (Canada) par _Google Translate API_ et révisé par _Serafim Dos Santos_ avec les termes du [Grand dictionnaire terminologique (GDT)](https://gdt.oqlf.gouv.qc.ca/) de l'[Office qu&eacute;b&eacute;cois de la langue fran&ccedil;aise](https://www.oqlf.gouv.qc.ca/).
 
 ---
 
@@ -13,12 +13,13 @@ Le livre **Maîtriser Ethereum** (_**Mastering Ethereum**_ par O'Reilly Media) t
 <center style="font-size:1.2em;">
 <h2><em>Mastering Ethereum</em></h2>
 <blockquote><br><p>
-La source originale de ces textes est tiré du livre à édition ouverte <strong>Mastering Ethereum</strong> par <em>Andreas M. Antonopoulos</em> et <em>Gavin Wood</em> accessible sur GitHub
+La source originale de ces textes est tiré du livre à édition ouverte <strong>Mastering Ethereum</strong> par <em>Andreas M. Antonopoulos</em> et <em>Dr. Gavin Wood</em> accessible sur GitHub
 </p>
 <p>
 👉 <a href="https://github.com/ethereumbook/ethereumbook">github.com/ethereumbook/ethereumbook</a> 👈
 </p>
-<p>Ευχαριστώ Ανδρέα!</p><br>
+<p>Ευχαριστώ Ανδρέα!<br>
+Thank you Dr. Gavin!</p><br>
 </blockquote>
 <hr>
 <pre>
@@ -52,7 +53,7 @@ La source originale de ces textes est tiré du livre à édition ouverte <strong
 <h1>Maîtriser Ethereum</h1>
 <h2>Implémenter des contrats numériques</h2>
 <h3>1ère édition ouverte</h3>
-<p>Auteurs : <strong>Andreas M. Antonopoulos</strong> et <strong>Gavin Wood</strong> <br />
+<p>Auteurs : <strong>Andreas M. Antonopoulos</strong> et <strong>Dr. Gavin Wood</strong> <br />
 Traducteur : <strong>Serafim Dos Santos</strong></p>
 </center>
 
