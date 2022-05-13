@@ -1,4 +1,4 @@
-# Maîtriser Ethereum : Implémenter des contrats intelligents, 1ère édition ouverte
+# Maîtriser Ethereum : Construire des contrats intelligents et des DApps, 1ère édition ouverte
 
 Le livre **Maîtriser Ethereum** (_**Mastering Ethereum**_ par O'Reilly Media) tel qu'écrit originalement en anglais par _Andreas M. Antonopoulos_ et _Dr. Gavin Wood_, traduit en français (Canada) par _Google Translate API_ et révisé par _Serafim Dos Santos_ avec les termes du [Grand dictionnaire terminologique (GDT)](https://gdt.oqlf.gouv.qc.ca/) de l'[Office qu&eacute;b&eacute;cois de la langue fran&ccedil;aise](https://www.oqlf.gouv.qc.ca/).
 
@@ -49,7 +49,7 @@ Thank you Dr. Gavin!</p><br>
 <center>
 <hr />
 <h1>Maîtriser Ethereum</h1>
-<h2>Implémenter des contrats intelligents</h2>
+<h2>Construire des contrats intelligents et des DApps</h2>
 <h3>1ère édition ouverte</h3>
 <p>Auteurs : <strong>Andreas M. Antonopoulos</strong> et <strong>Dr. Gavin Wood</strong> <br />
 Traducteur : <strong>Serafim Dos Santos</strong></p>
