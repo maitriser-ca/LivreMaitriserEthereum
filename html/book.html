@@ -13336,16 +13336,16 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <h2 id="consensus">Consensus</h2>
 <div class="sectionbody">
 <div class="paragraph data-line-4">
-<p>Throughout this book we have talked about "consensus rules&#x201d;&#x2014;the rules that everyone must agree to for the system to operate in a decentralized, yet deterministic, manner. In computer science, the term <em>consensus</em> predates blockchains and is related to the broader problem of synchronizing state in distributed systems, such that different participants in a distributed system all (eventually) agree on a single system-wide state. This is called "reaching consensus."</p>
+<p>Tout au long de ce livre, nous avons parlé de &quot;règles de consensus&quot; - les règles que tout le monde doit accepter pour que le système fonctionne dans un environnement décentralisé. En informatique, le terme <em>consensus</em> est antérieur aux chaînes de blocs et est lié au problème plus large de la synchronisation de l&#39;état dans les systèmes distribués, de sorte que les différents participants d&#39;un système distribué s&#39;accordent tous (éventuellement) sur un seul état à l&#39;échelle du système. C&#39;est ce qu&#39;on appelle « parvenir à un consensus ».</p>
 </div>
 <div class="paragraph data-line-6">
-<p>When it comes to the core function of decentralized record keeping and verification, it can become problematic to rely on trust alone to ensure that information derived from state updates is correct. This rather general challenge is particularly pronounced in decentralized networks because there is no central entity to decide what is true. The lack of a central decision-making entity is one of the main attractions of blockchain platforms, because of the resulting capacity to resist censorship and the lack of dependence on authority for permission to access information. However, these benefits come at a cost: without a trusted arbitrator, any disagreements, deceptions, or differences need to be reconciled using other means. Consensus algorithms are the  mechanism used to reconcile security and decentralization.</p>
+<p>En ce qui concerne la fonction principale de tenue et de vérification décentralisées des dossiers, il peut devenir problématique de se fier uniquement à la confiance pour s&#39;assurer que les informations dérivées des mises à jour de l&#39;État sont correctes. Ce défi assez général est particulièrement prononcé dans les réseaux décentralisés car il n&#39;y a pas d&#39;entité centrale pour décider de ce qui est vrai. L&#39;absence d&#39;une entité décisionnelle centrale est l&#39;un des principaux attraits des plateformes chaîne de blocs, en raison de la capacité qui en résulte à résister à la censure et au manque de dépendance vis-à-vis de l&#39;autorité pour obtenir l&#39;autorisation d&#39;accéder aux informations. Cependant, ces avantages ont un coût : sans arbitre de confiance, tout désaccord, tromperie ou différence doit être concilié par d&#39;autres moyens. Les algorithmes de consensus sont le mécanisme utilisé pour concilier sécurité et décentralisation.</p>
 </div>
 <div class="paragraph data-line-8">
-<p>In blockchains, consensus is a critical property of the system. Simply put, there is money at stake! So, in the context of blockchains, <em>consensus</em> is about being able to arrive at a common state, while maintaining decentralization. In other words, consensus is intended to produce a system of <em>strict rules without rulers</em>. There is no one person, organization, or group "in charge&#x201d;; rather, power and control are diffused across a broad network of participants, whose self-interest is served by following the rules and behaving honestly.</p>
+<p>Dans les chaînes de blocs, le consensus est une propriété essentielle du système. Bref, il y a de l&#39;argent en jeu ! Ainsi, dans le contexte des chaînes de blocs, le <em>consensus</em> consiste à pouvoir arriver à un état commun, tout en maintenant la décentralisation. En d&#39;autres termes, le consensus vise à produire un système de <em>règles strictes sans dirigeants</em>. Il n&#39;y a pas une personne, une organisation ou un groupe &quot;en charge&quot; ; plutôt, le pouvoir et le contrôle sont répartis sur un vaste réseau de participants, dont l&#39;intérêt personnel est servi en suivant les règles et en se comportant honnêtement.</p>
 </div>
 <div class="paragraph data-line-10">
-<p>The ability to come to consensus across a distributed network, under adversarial conditions, without centralizing control is the core principle of all open public blockchains. To address this challenge and maintain the valued property of decentralization, the community continues to experiment with different models of consensus. This chapter explores these consensus models and their expected impact on smart contract blockchains such as Ethereum.</p>
+<p>La capacité de parvenir à un consensus sur un réseau distribué, dans des conditions contradictoires, sans centraliser le contrôle est le principe fondamental de toutes les chaînes de blocs publiques ouvertes. Pour relever ce défi et maintenir la propriété précieuse de la décentralisation, la communauté continue d&#39;expérimenter différents modèles de consensus. Ce chapitre explore ces modèles de consensus et leur impact attendu sur les chaînes de blocs de contrats intelligents tels qu&#39;Ethereum.</p>
 </div>
 <div class="admonitionblock note data-line-13">
 <table>
@@ -13355,52 +13355,52 @@ ether remboursé = gaz restant * prix du gaz</pre>
 </td>
 <td class="content">
 <div class="paragraph data-line-14">
-<p>While consensus algorithms are an important part of how blockchains work, they operate at a foundational layer, far below the abstraction of smart contracts. In other words, most of the details of consensus are hidden from the writers of smart contracts. You don&#8217;t need to know how they work to use Ethereum, any more than you need to know how routing works to use the internet.</p>
+<p>Alors que les algorithmes de consensus sont une partie importante du fonctionnement des chaînes de blocs, ils fonctionnent à une couche fondamentale, bien en deçà de l&#39;abstraction des contrats intelligents. En d&#39;autres termes, la plupart des détails du consensus sont cachés aux auteurs de contrats intelligents. Vous n&#39;avez pas besoin de savoir comment ils fonctionnent pour utiliser Ethereum, pas plus que vous n&#39;avez besoin de savoir comment fonctionne le routage pour utiliser Internet.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="sect2 data-line-17">
-<h3 id="_consensus_via_proof_of_work">Consensus via Proof of Work</h3>
+<h3 id="_consensus_via_une_preuve_de_travail">Consensus via une preuve de travail</h3>
 <div class="paragraph data-line-19">
-<p>The creator of the original blockchain, Bitcoin, invented a <em>consensus algorithm</em> called <em>proof of work</em> (PoW). Arguably, PoW is the most important invention underpinning Bitcoin. The colloquial term for PoW is "mining," which creates a misunderstanding about the primary purpose of consensus. Often people assume that the purpose of mining is the creation of new currency, since the purpose of real-world mining is the extraction of precious metals or other resources. Rather, the real purpose of mining (and all other consensus models) is to <em>secure the blockchain</em>, while keeping control over the system decentralized and diffused across as many participants as possible. The reward of newly minted currency is an incentive to those who contribute to the security of the system: a means to an end. In that sense, the reward is the means and decentralized security is the end. In PoW consensus there is also a corresponding "punishment," which is the cost of energy required to participate in mining. If participants do not follow the rules and earn the reward, they risk the funds they have already spent on electricity to mine. Thus, PoW consensus is a careful balance of risk and reward that drives participants to behave honestly out of self-interest.</p>
+<p>Le créateur de la chaîne de blocs originale, Bitcoin, a inventé un <em>algorithme de consensus</em> appelé <em>Proof-of-Work</em> (PoW) ou <em>preuve de travail</em>. On peut dire que PoW est l&#39;invention la plus importante qui sous-tend Bitcoin. Le terme familier pour PoW est &quot;minage&quot;, ce qui crée un malentendu sur l&#39;objectif principal du consensus. Souvent, les gens supposent que le but de l&#39;exploitation minière est la création d&#39;une nouvelle monnaie, puisque le but de l&#39;exploitation minière dans le monde réel est l&#39;extraction de métaux précieux ou d&#39;autres ressources. Au contraire, le véritable objectif de l&#39;exploitation minière (et de tous les autres modèles de consensus) est de <em>sécuriser la chaîne de blocs</em>, tout en gardant le contrôle du système décentralisé et diffusé entre autant de participants que possible. La récompense de la monnaie nouvellement frappée est une incitation pour ceux qui contribuent à la sécurité du système : un moyen pour une fin. En ce sens, la récompense est le moyen et la sécurité décentralisée est la fin. Dans le consensus PoW, il existe également une &quot;punition&quot; correspondante, qui est le coût de l&#39;énergie nécessaire pour participer à l&#39;exploitation minière. Si les participants ne suivent pas les règles et ne gagnent pas la récompense, ils risquent les fonds qu&#39;ils ont déjà dépensés en électricité pour miner. Ainsi, le consensus PoW est un équilibre prudent entre risque et récompense qui pousse les participants à se comporter honnêtement par intérêt personnel.</p>
 </div>
 <div class="paragraph data-line-21">
-<p>Ethereum is currently a PoW blockchain, in that it uses a PoW algorithm with the same basic incentive system for the same basic goal: securing the blockchain while decentralizing control. Ethereum&#8217;s PoW algorithm is slightly different than Bitcoin&#8217;s and is called <em>Ethash</em>. We will examine the function and design characteristics of the algorithm in <a href="#ethash">Ethash: Ethereum&#8217;s Proof-of-Work Algorithm</a>.</p>
+<p>Ethereum est actuellement une chaîne de blocs PoW, en ce sens qu&#39;elle utilise un algorithme PoW avec le même système d&#39;incitation de base pour le même objectif de base : sécuriser la chaîne de blocs tout en décentralisant le contrôle. L&#39;algorithme PoW d&#39;Ethereum est légèrement différent de celui de Bitcoin et s&#39;appelle <em>Ethash</em>. Nous examinerons la fonction et les caractéristiques de conception de l&#39;algorithme dans <a href="#ethash">Ethash : l&#39;algorithme de preuve de travail d&#39;Ethereum</a>.</p>
 </div>
 </div>
 <div class="sect2 data-line-23">
-<h3 id="_consensus_via_proof_of_stake_pos">Consensus via Proof of Stake (PoS)</h3>
+<h3 id="_consensus_via_preuve_denjeu_pos">Consensus via preuve d&#8217;enjeu (PoS)</h3>
 <div class="paragraph data-line-25">
-<p>Historically, proof of work was not the first consensus algorithm proposed. Preceding the introduction of proof of work, many researchers had proposed variations of consensus algorithms based on financial stake, now called <em>proof of stake</em> (PoS). In some respects, proof of work was invented as an alternative to proof of stake. Following the success of Bitcoin, many blockchains have emulated proof of work. Yet the explosion of research into consensus algorithms has also resurrected proof of stake, significantly advancing the state of the technology. From the beginning, Ethereum&#8217;s founders were hoping to eventually migrate its consensus algorithm to proof of stake. In fact, there is a deliberate handicap on Ethereum&#8217;s proof of work called the <em>difficulty bomb</em>, intended to gradually make proof-of-work mining of Ethereum more and more difficult, thereby forcing the transition to proof of stake.</p>
+<p>Historiquement, la preuve de travail n&#39;était pas le premier algorithme de consensus proposé. Avant l&#39;introduction de la preuve de travail, de nombreux chercheurs avaient proposé des variantes d&#39;algorithmes de consensus basés sur l&#39;enjeu financier, désormais appelés <em>preuve d&#39;enjeu</em> (PoS). À certains égards, la preuve de travail a été inventée comme une alternative à la preuve d&#39;enjeu. Suite au succès de Bitcoin, de nombreuses chaînes de blocs ont émulé la preuve de travail. Pourtant, l&#39;explosion de la recherche sur les algorithmes de consensus a également ressuscité la preuve d&#39;enjeu, faisant progresser considérablement l&#39;état de la technologie. Dès le début, les fondateurs d&#39;Ethereum espéraient éventuellement migrer son algorithme de consensus vers la preuve d&#39;enjeu. En fait, il existe un handicap délibéré sur la preuve de travail d&#39;Ethereum appelée la <em>bombe de difficulté</em>, destinée à rendre progressivement de plus en plus difficile le minage de preuve de travail d&#39;Ethereum, forçant ainsi le passage à la preuve d&#39;enjeu.</p>
 </div>
 <div class="paragraph data-line-27">
-<p>At the time of publication of this book, Ethereum is still using proof of work, but the ongoing research toward a proof-of-stake alternative is nearing completion. Ethereum&#8217;s planned PoS algorithm is called <em>Casper</em>. The introduction of Casper as a replacement for Ethash has been postponed several times over the past two years, necessitating interventions to defuse the difficulty bomb and postpone its forced obsolescence of proof of work.</p>
+<p>Au moment de la publication de ce livre, Ethereum utilise toujours la preuve de travail, mais la recherche en cours vers une alternative de preuve d&#8217;enjeu touche à sa fin. L&#39;algorithme PoS prévu par Ethereum s&#39;appelle <em>Casper</em>. L&#39;introduction de Casper en remplacement d&#39;Ethash a été repoussée à plusieurs reprises au cours des deux dernières années, nécessitant des interventions pour désamorcer la bombe de difficulté et repousser l&#8217;obsolescence forcée de la preuve de travail.</p>
 </div>
 <div class="paragraph data-line-29">
-<p>In general, a PoS algorithm works as follows. The blockchain keeps track of a set of validators, and anyone who holds the blockchain&#8217;s base cryptocurrency (in Ethereum&#8217;s case, ether) can become a validator by sending a special type of transaction that locks up their ether into a deposit. The validators take turns proposing and voting on the next valid block, and the weight of each validator&#8217;s vote depends on the size of its deposit (i.e., stake). Importantly, a validator risks losing their deposit if the block they staked it on is rejected by the majority of validators. Conversely, validators earn a small reward, proportional to their deposited stake, for every block that is accepted by the majority. Thus, PoS forces validators to act honestly and follow the consensus rules, by a system of reward and punishment. The major difference between PoS and PoW is that the punishment in PoS is intrinsic to the blockchain (e.g., loss of staked ether), whereas in PoW the punishment is extrinsic (e.g., loss of funds spent on <span class="keep-together">electricity</span>).</p>
+<p>En général, un algorithme PoS fonctionne comme suit. La chaîne de blocs garde la trace d&#39;un ensemble de validateurs, et toute personne qui détient la cryptomonnaie de base de la chaîne de blocs (dans le cas d&#39;Ethereum, l&#39;ether) peut devenir un validateur en envoyant un type spécial de transaction qui verrouille son ether dans un dépôt. Les validateurs proposent et votent à tour de rôle sur le prochain bloc valide, et le poids du vote de chaque validateur dépend de la taille de son dépôt (c&#39;est-à-dire de sa mise). Il est important de noter qu&#39;un validateur risque de perdre son dépôt si le bloc sur lequel il l&#39;a misé est rejeté par la majorité des validateurs. Inversement, les validateurs gagnent une petite récompense, proportionnelle à leur mise déposée, pour chaque bloc accepté par la majorité. Ainsi, le PoS oblige les validateurs à agir honnêtement et à suivre les règles du consensus, par un système de récompense et de punition. La principale différence entre PoS et PoW est que la punition dans PoS est intrinsèque à la chaîne de blocs (par exemple, perte d&#39;ether en enjeu), alors que dans PoW, la punition est extrinsèque (par exemple, perte de fonds dépensés en <span class="keep-together">électricité</span>).</p>
 </div>
 </div>
 <div class="sect2 data-line-32">
-<h3 id="ethash">Ethash: Ethereum&#8217;s Proof-of-Work Algorithm</h3>
+<h3 id="ethash">Ethash : l&#39;algorithme de preuve de travail d&#39;Ethereum</h3>
 <div class="paragraph data-line-34">
-<p>Ethash is the Ethereum PoW algorithm. It uses an evolution of the Dagger–Hashimoto algorithm, which is a combination of Vitalik Buterin&#8217;s Dagger algorithm and Thaddeus Dryja&#8217;s Hashimoto algorithm. Ethash is dependent on the generation and analysis of a large dataset, known as a <em>directed acyclic graph</em> (or, more simply, &#x201c;the DAG&#x201d;). The DAG had an initial size of about 1 GB and will continue to slowly and linearly grow in size, being updated once every epoch (30,000 blocks, or roughly 125 hours).</p>
+<p>Ethash est l&#39;algorithme Ethereum PoW. Il utilise une évolution de l&#39;algorithme Dagger-Hashimoto, qui est une combinaison de l&#39;algorithme Dagger de Vitalik Buterin et de l&#39;algorithme Hashimoto de Thaddeus Dryja. Ethash dépend de la génération et de l&#39;analyse d&#39;un grand ensemble de données, connu sous le nom de <em>graphe acyclique dirigé</em> (ou, plus simplement, « le DAG »). Le DAG avait une taille initiale d&#39;environ 1 Go et continuera à croître lentement et linéairement, étant mis à jour une fois par époque (30 000 blocs, soit environ 125 heures).</p>
 </div>
 <div class="paragraph data-line-36">
-<p>The purpose of the DAG is to make the Ethash PoW algorithm dependent on maintaining a large, frequently accessed data structure. This in turn is intended to make Ethash "ASIC resistant," which means that it is more difficult to make <em>application-specific integrated circuits</em> (ASIC) mining equipment that is orders of magnitude faster than a fast <em>graphics processing unit</em> (GPU). Ethereum&#8217;s founders wanted to avoid centralization in PoW mining, where those with access to specialized silicon fabrication factories and big budgets could dominate the mining infrastructure and undermine the security of the consensus algorithm.</p>
+<p>Le but du DAG est de rendre l&#39;algorithme Ethash PoW dépendant du maintien d&#39;une grande structure de données fréquemment consultée. Cette dernière à son tour est destiné à rendre Ethash &quot;résistant aux ASIC&quot;, ce qui signifie qu&#39;il est plus difficile de fabriquer des équipements d&#39;exploitation de <em>circuits intégrés spécifiques à l&#39;application</em> (ASIC) qui sont des ordres de grandeur plus rapides qu&#39;une <em>unité de traitement graphique</em> (GPU) rapide. Les fondateurs d&#39;Ethereum voulaient éviter la centralisation dans l&#39;exploitation minière PoW, où ceux qui avaient accès à des usines de fabrication de silicium spécialisées et à de gros budgets pourraient dominer l&#39;infrastructure minière et compromettre la sécurité de l&#39;algorithme de consensus.</p>
 </div>
 <div class="paragraph data-line-38">
-<p>Use of consumer-level GPUs for carrying out the PoW on the Ethereum network means that more people around the world can participate in the mining process. The more independent miners there are the more decentralized the mining power is, which means we can avoid a situation like in Bitcoin, where much of the mining power is concentrated in the hands of a few large industrial mining operations. The downside of the use of GPUs for mining is that it precipitated a worldwide shortage GPUs in 2017, causing their price to skyrocket and an outcry from gamers. This led to purchase restrictions at retailers, limiting buyers to one or two GPUs per customer.</p>
+<p>L&#39;utilisation de GPU grand public pour effectuer le PoW sur le réseau Ethereum signifie que davantage de personnes dans le monde peuvent participer au processus de minage. Plus il y a de mineurs indépendants, plus la puissance minière est décentralisée, ce qui signifie que nous pouvons éviter une situation comme dans Bitcoin, où une grande partie de la puissance minière est concentrée entre les mains de quelques grandes exploitations minières industrielles. L&#39;inconvénient de l&#39;utilisation des GPU pour l&#39;exploitation minière est qu&#39;elle a précipité une pénurie mondiale de GPU en 2017, provoquant une montée en flèche de leur prix et un tollé des joueurs. Cela a conduit à des restrictions d&#39;achat chez les détaillants, limitant les acheteurs à un ou deux GPU par client.</p>
 </div>
 <div class="paragraph data-line-40">
-<p>Until recently, the threat of ASIC miners on the Ethereum network was largely nonexistent. Using ASICs for Ethereum requires the design, manufacture, and distribution of highly customized hardware. Producing them requires considerable investment of time and money. The Ethereum developers' long-expressed plans to move to a PoS consensus algorithm likely kept ASIC suppliers away from targeting the Ethereum network for a long time. As soon as Ethereum moves to PoS, ASICs designed for the PoW algorithm will be rendered useless—that is, unless miners can use them to mine other cryptocurrencies instead. The latter possibility is now a reality with a range of other Ethash-based consensus coins available, such as PIRL and Ubiq, and Ethereum Classic has pledged to remain a PoW blockchain for the foreseeable future. This means that we will likely see ASIC mining begin to become a force on the Ethereum network while is it still operating on PoW consensus.</p>
+<p>Jusqu&#39;à récemment, la menace des mineurs ASIC sur le réseau Ethereum était largement inexistante. L&#39;utilisation d&#39;ASIC pour Ethereum nécessite la conception, la fabrication et la distribution de matériel hautement personnalisé. Leur production nécessite un investissement considérable en temps et en argent. Les plans exprimés de longue date par les développeurs d&#39;Ethereum de passer à un algorithme de consensus PoS ont probablement empêché les fournisseurs d&#39;ASIC de cibler le réseau Ethereum pendant longtemps. Dès qu&#39;Ethereum passera au PoS, les ASIC conçus pour l&#39;algorithme PoW seront rendus inutiles, c&#39;est-à-dire à moins que les mineurs ne puissent les utiliser pour exploiter d&#39;autres crypto-monnaies à la place. Cette dernière possibilité est désormais une réalité avec une gamme d&#39;autres pièces de consensus basées sur Ethash disponibles, telles que PIRL et Ubiq, et Ethereum Classic s&#39;est engagé à rester une chaîne de blocs PoW dans un avenir prévisible. Cela signifie que nous verrons probablement l&#39;exploitation minière ASIC commencer à devenir une force sur le réseau Ethereum alors qu&#39;il fonctionne toujours sur le consensus PoW.</p>
 </div>
 </div>
 <div class="sect2 data-line-42">
-<h3 id="_casper_ethereums_proof_of_stake_algorithm">Casper: Ethereum&#8217;s Proof-of-Stake Algorithm</h3>
+<h3 id="_casper_lalgorithme_de_preuve_de_participation_dethereum">Casper : l&#39;algorithme de preuve de participation d&#39;Ethereum</h3>
 <div class="paragraph data-line-44">
-<p>Casper is the proposed name for Ethereum&#8217;s PoS consensus algorithm. It is still under active research and development and is not implemented on the Ethereum blockchain at the time of publication of this book. Casper is being developed in two competing "flavors":</p>
+<p>Casper est le nom proposé pour l&#39;algorithme de consensus PoS d&#39;Ethereum. Il est toujours en recherche et développement actif et n&#39;est pas implémenté sur la chaîne de blocs Ethereum au moment de la publication de ce livre. Casper est développé en deux &quot;saveurs&quot; concurrentes :</p>
 </div>
 <div class="ulist data-line-46">
 <ul>
@@ -13413,85 +13413,85 @@ ether remboursé = gaz restant * prix du gaz</pre>
 </ul>
 </div>
 <div class="paragraph data-line-49">
-<p>Initially, Casper FFG was proposed as a hybrid PoW/PoS algorithm to be implemented as a transition to a more permanent "pure PoS" algorithm. But in June 2018, Vitalik Buterin, who was leading the research work on Casper FFG, decided to "scrap" the hybrid model in favor of a pure PoS algorithm. Now, Casper FFG and Casper CBC are both being developed in parallel. As Vitalik explains:</p>
+<p>Initialement, Casper FFG a été proposé comme un algorithme hybride PoW/PoS à implémenter comme une transition vers un algorithme &quot;pur PoS&quot; plus permanent. Mais en juin 2018, Vitalik Buterin, qui dirigeait les travaux de recherche sur Casper FFG, a décidé de &quot;mettre fin&quot; au modèle hybride au profit d&#39;un algorithme PoS pur. Désormais, Casper FFG et Casper CBC sont développés en parallèle. Comme l&#39;explique Vitalik :</p>
 </div>
 <div class="quoteblock data-line-51">
 <blockquote>
 <div class="paragraph data-line-52">
-<p>The main tradeoff between FFG and CBC is that CBC seems to have nicer theoretical properties, but FFG seems to be easier to implement.</p>
+<p>Le principal compromis entre FFG et CBC est que CBC semble avoir de meilleures propriétés théoriques, mais FFG semble être plus facile à mettre en œuvre.</p>
 </div>
 </blockquote>
 </div>
 <div class="paragraph data-line-55">
-<p>More information about Casper&#8217;s history, ongoing research and future plans can be found at the following links:</p>
+<p>Plus d&#39;informations sur l&#39;histoire de Casper, les recherches en cours et les plans futurs peuvent être trouvées sur les liens suivants :</p>
 </div>
 <div class="ulist data-line-57">
 <ul>
 <li class="data-line-57">
-<p><a href="http://bit.ly/2RO5HAl" data-href="http://bit.ly/2RO5HAl">Ethereum Casper (Proof of Stake)</a></p>
+<p><a href="http://bit.ly/2RO5HAl" data-href="http://bit.ly/2RO5HAl">Ethereum Casper (preuve d&#8217;enjeu)</a></p>
 </li>
 <li class="data-line-58">
-<p><a href="http://bit.ly/2FlBojb" data-href="http://bit.ly/2FlBojb">History of Casper, Part 1</a></p>
+<p><a href="http://bit.ly/2FlBojb" data-href="http://bit.ly/2FlBojb">Histoire de Casper, partie 1</a></p>
 </li>
 <li class="data-line-59">
-<p><a href="http://bit.ly/2QyHiic" data-href="http://bit.ly/2QyHiic">History of Casper, Part 2</a></p>
+<p><a href="http://bit.ly/2QyHiic" data-href="http://bit.ly/2QyHiic">Histoire de Casper, partie 2</a></p>
 </li>
 <li class="data-line-60">
-<p><a href="http://bit.ly/2JWWFyt" data-href="http://bit.ly/2JWWFyt">History of Casper, Part 3</a></p>
+<p><a href="http://bit.ly/2JWWFyt" data-href="http://bit.ly/2JWWFyt">Histoire de Casper, partie 3</a></p>
 </li>
 <li class="data-line-61">
-<p><a href="http://bit.ly/2FsaExI" data-href="http://bit.ly/2FsaExI">History of Casper, Part 4</a></p>
+<p><a href="http://bit.ly/2FsaExI" data-href="http://bit.ly/2FsaExI">Histoire de Casper, partie 4</a></p>
 </li>
 <li class="data-line-62">
-<p><a href="http://bit.ly/2PPhhOv" data-href="http://bit.ly/2PPhhOv">History of Casper, Part 5</a></p>
+<p><a href="http://bit.ly/2PPhhOv" data-href="http://bit.ly/2PPhhOv">Histoire de Casper, partie 5</a></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2 data-line-64">
-<h3 id="_principles_of_consensus">Principles of Consensus</h3>
+<h3 id="_principes_de_consensus">Principes de Consensus</h3>
 <div class="paragraph data-line-66">
-<p>The principles and assumptions of consensus algorithms can be more clearly understood by asking a few key questions:</p>
+<p>Les principes et hypothèses des algorithmes de consensus peuvent être mieux compris en posant quelques questions clés :</p>
 </div>
 <div class="ulist data-line-68">
 <ul>
 <li class="data-line-68">
-<p>Who can change the past, and how? (This is also known as <em>immutability</em>.)</p>
+<p>Qui peut changer le passé, et comment ? (Ceci est également connu sous le nom d&#39;_immutabilité_.)</p>
 </li>
 <li class="data-line-69">
-<p>Who can change the future, and how? (This is also known as <em>finality</em>.)</p>
+<p>Qui peut changer le futur, et comment ? (Ceci est également connu sous le nom de <em>finalité</em>.)</p>
 </li>
 <li class="data-line-70">
-<p>What is the cost to make such changes?</p>
+<p>Quel est le coût pour effectuer de tels changements ?</p>
 </li>
 <li class="data-line-71">
-<p>How decentralized is the power to make such changes?</p>
+<p>Dans quelle mesure le pouvoir d&#39;apporter de tels changements est-il décentralisé ?</p>
 </li>
 <li class="data-line-72">
-<p>Who will know if something has changed, and how will they know?</p>
+<p>Qui saura si quelque chose a changé, et comment le saura-t-il ?</p>
 </li>
 </ul>
 </div>
 <div class="paragraph data-line-74">
-<p>Consensus algorithms are evolving rapidly, attempting to answer these questions in increasingly innovative ways.</p>
+<p>Les algorithmes de consensus évoluent rapidement, tentant de répondre à ces questions de manière de plus en plus innovante.</p>
 </div>
 </div>
 <div class="sect2 data-line-76">
-<h3 id="_controversy_and_competition">Controversy and Competition</h3>
+<h3 id="_controverse_et_compétition">Controverse et Compétition</h3>
 <div class="paragraph data-line-78">
-<p>At this point you might be wondering: Why do we need so many different consensus algorithms? Which one works better? The answer to the latter question is at the center of the most exciting area of research in distributed systems of the past decade. It all boils down to what you consider "better&#x201d;&#x2014;which in the context of computer science is about assumptions, goals, and the unavoidable trade-offs.</p>
+<p>À ce stade, vous vous demandez peut-être : pourquoi avons-nous besoin d&#39;autant d&#39;algorithmes de consensus différents ? Laquelle fonctionne mieux ? La réponse à cette dernière question est au centre du domaine de recherche le plus passionnant sur les systèmes distribués de la dernière décennie. Tout se résume à ce que vous considérez comme &quot;meilleur&quot; - ce qui, dans le contexte de l&#39;informatique, concerne les hypothèses, les objectifs et les compromis inévitables.</p>
 </div>
 <div class="paragraph data-line-80">
-<p>It is likely that no  algorithm can optimize across all dimensions of the problem of decentralized consensus. When someone suggests that one consensus algorithm is "better" than the others, you should start asking questions that clarify: Better at what? Immutability, finality, decentralization, cost? There is no clear answer to these questions, at least not yet. Furthermore, the design of consensus algorithms is at the center of a multi-billion-dollar industry and generates enormous controversy and heated arguments. In the end, there might not be a "correct" answer, just as there might be different answers for different applications.</p>
+<p>Il est probable qu&#39;aucun algorithme ne puisse optimiser toutes les dimensions du problème du consensus décentralisé. Lorsque quelqu&#39;un suggère qu&#39;un algorithme de consensus est &quot;meilleur&quot; que les autres, vous devriez commencer à poser des questions qui clarifient : mieux en quoi ? Immutabilité, finalité, décentralisation, coût ? Il n&#39;y a pas de réponse claire à ces questions, du moins pas encore. De plus, la conception d&#39;algorithmes de consensus est au centre d&#39;une industrie de plusieurs milliards de dollars et génère d&#39;énormes controverses et des arguments passionnés. En fin de compte, il se peut qu&#39;il n&#39;y ait pas de réponse &quot;correcte&quot;, tout comme il peut y avoir des réponses différentes pour différentes applications.</p>
 </div>
 <div class="paragraph data-line-82">
-<p>The entire blockchain industry is one giant experiment where these questions will be tested under adversarial conditions, with enormous monetary value at stake. In the end, history will answer the controversy.</p>
+<p>L&#39;ensemble de l&#39;industrie de la chaîne de blocs est une expérience géante où ces questions seront testées dans des conditions contradictoires, avec une énorme valeur monétaire en jeu. En fin de compte, l&#39;histoire répondra à la controverse.</p>
 </div>
 </div>
 <div class="sect2 data-line-84">
-<h3 id="_conclusions">Conclusions</h3>
+<h3 id="_conclusion_11">Conclusion</h3>
 <div class="paragraph data-line-31">
-<p>Ethereum&#8217;s consensus algorithm is still in flux at the time of completion of this book. In a future edition, we will likely add more detail about Casper and other related technologies as these mature and are deployed on Ethereum. This chapter represents the end of our journey, completing <em>Mastering Ethereum</em>. Additional reference material follows in the appendixes. Thank you for reading this book, and congratulations on reaching the end!</p>
+<p>L&#39;algorithme de consensus d&#39;Ethereum est toujours en évolution au moment de l&#39;achèvement de ce livre. Dans une future édition, nous ajouterons probablement plus de détails sur Casper et d&#39;autres technologies connexes à mesure qu&#39;elles mûriront et seront déployées sur Ethereum. Ce chapitre représente la fin de notre voyage, complétant <em>Maîtriser Ethereum</em>. Des documents de référence supplémentaires suivent dans les annexes. Merci d&#39;avoir lu ce livre et félicitations pour avoir atteint la fin !</p>
 </div>
 </div>
 </div>
@@ -16559,7 +16559,7 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-14 15:28:16 -0400
+Last updated 2022-05-14 16:04:26 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
