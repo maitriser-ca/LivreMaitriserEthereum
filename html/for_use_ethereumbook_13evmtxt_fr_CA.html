@@ -549,18 +549,18 @@ remis sur le dessus de la pile.</p>
 <p>Instructions d&#39;opcode arithmétique :</p>
 <div class="listingblock data-line-62">
 <div class="content">
-<pre>ADD        //Ajouter les deux premiers éléments de la pile
-MUL        //Multiplier les deux premiers éléments de la pile
+<pre>ADD        // Ajouter les deux premiers éléments de la pile
+MUL        // Multiplier les deux premiers éléments de la pile
 SUB        // Soustraire les deux premiers éléments de la pile
-DIV        //Division entière
-SDIV        //Division d&amp;#39;entier signé
-MOD        //Opération modulo (reste)
-SMOD        //Opération modulo signée
-ADDMOD        //Addition modulo n&amp;#39;importe quel nombre
-MULMOD        //Multiplication modulo n&amp;#39;importe quel nombre
-EXP        //Opération exponentielle
-SIGNEXTEND //Étend la longueur d&amp;#39;un entier signé complément à deux
-SHA3 // Calcule le hachage Keccak-256 d&amp;#39;un bloc de mémoire</pre>
+DIV        // Division entière
+SDIV       // Division d&amp;#39;entier signé
+MOD        // Opération modulo (reste)
+SMOD       // Opération modulo signée
+ADDMOD     // Addition modulo n&amp;#39;importe quel nombre
+MULMOD     // Multiplication modulo n&amp;#39;importe quel nombre
+EXP        // Opération exponentielle
+SIGNEXTEND // Étend la longueur d&amp;#39;un entier signé complément à deux
+SHA3       // Calcule le hachage Keccak-256 d&amp;#39;un bloc de mémoire</pre>
 </div>
 </div>
 <div class="paragraph data-line-77">
@@ -576,19 +576,19 @@ SHA3 // Calcule le hachage Keccak-256 d&amp;#39;un bloc de mémoire</pre>
 <p>Instructions de gestion de la pile, de la mémoire et du stockage :</p>
 <div class="listingblock data-line-83">
 <div class="content">
-<pre>POP //Supprime l&amp;#39;élément du haut de la pile
-MLOAD //Charger un mot machine de la mémoire
-MSTORE // Enregistre un mot machine en mémoire
-MSTORE8 // Enregistre un octet en mémoire
-SLOAD //Charger un mot machine depuis le stockage
-SSTORE //Enregistrer un mot machine dans le stockage
-MSIZE // Récupère la taille de la mémoire active en octets
-PUSHx // Place l&amp;#39;élément x octet sur la pile, où x peut être n&amp;#39;importe quel entier de
-// 1 à 32 (mot machine complet) inclus
-DUPx // Dupliquer le x-ième élément de la pile, où x peut être n&amp;#39;importe quel entier de
-// 1 à 16 inclus
-SWAPx //Échangez les 1er et (x+1)-ème éléments de la pile, où x peut être n&amp;#39;importe lequel
-// entier de 1 à 16 inclus</pre>
+<pre>POP        // Supprime l&amp;#39;élément du haut de la pile
+MLOAD      // Charger un mot machine de la mémoire
+MSTORE     // Enregistre un mot machine en mémoire
+MSTORE8    // Enregistre un octet en mémoire
+SLOAD      // Charger un mot machine depuis le stockage
+SSTORE     // Enregistrer un mot machine dans le stockage
+MSIZE      // Récupère la taille de la mémoire active en octets
+PUSHx      // Place l&amp;#39;élément x octet sur la pile, où x peut être n&amp;#39;importe quel entier de
+           // 1 à 32 (mot machine complet) inclus
+DUPx       // Dupliquer le x-ième élément de la pile, où x peut être n&amp;#39;importe quel entier de
+           // 1 à 16 inclus
+SWAPx      // Échangez les 1er et (x+1)-ème éléments de la pile, où x peut être n&amp;#39;importe quel
+           // entier de 1 à 16 inclus</pre>
 </div>
 </div>
 </dd>
@@ -601,12 +601,12 @@ SWAPx //Échangez les 1er et (x+1)-ème éléments de la pile, où x peut être 
 <p>Instructions pour le flux de contrôle :</p>
 <div class="listingblock data-line-103">
 <div class="content">
-<pre>STOP //Arrête l&amp;#39;exécution
-JUMP //Mettre le compteur de programme à n&amp;#39;importe quelle valeur
-JUMPI //Modifier conditionnellement le compteur de programme
-PC //Récupérer la valeur du compteur de programme (avant l&amp;#39;incrément
-//correspondant à cette instruction)
-JUMPDEST //Marquer une destination valide pour les sauts</pre>
+<pre>STOP     // Arrête l&amp;#39;exécution
+JUMP     // Mettre le compteur de programme à n&amp;#39;importe quelle valeur
+JUMPI    // Modifier conditionnellement le compteur de programme
+PC       // Récupérer la valeur du compteur de programme (avant l&amp;#39;incrément
+         // correspondant à cette instruction)
+JUMPDEST // Marquer une destination valide pour les sauts</pre>
 </div>
 </div>
 </dd>
@@ -619,21 +619,21 @@ JUMPDEST //Marquer une destination valide pour les sauts</pre>
 <p>Opcodes pour le système exécutant le programme :</p>
 <div class="listingblock data-line-115">
 <div class="content">
-<pre>LOGx //Ajouter un enregistrement de journal avec x sujets, où x est n&amp;#39;importe quel entier
-//de 0 à 4 inclus
-CREATE //Créer un nouveau compte avec le code associé
-CALL // Message-appel dans un autre compte, c&amp;#39;est-à-dire exécuter un autre
-//code du compte
-CALLCODE // Message-appel dans ce compte avec un autre
-//code du compte
-RETURN //Arrête l&amp;#39;exécution et renvoie les données de sortie
+<pre>LOGx         // Ajouter un enregistrement de journal avec x sujets, où x est n&amp;#39;importe quel entier
+             // de 0 à 4 inclus
+CREATE       // Créer un nouveau compte avec le code associé
+CALL         // Message-appel dans un autre compte, c&amp;#39;est-à-dire exécuter un autre
+             // code du compte
+CALLCODE     // Message-appel dans ce compte avec un autre
+             // code du compte
+RETURN       // Arrête l&amp;#39;exécution et renvoie les données de sortie
 DELEGATECALL // Message-appel dans ce compte avec une alternative
-//code du compte, mais en conservant les valeurs actuelles pour
-//expéditeur et valeur
-STATICCALL // Message-appel statique dans un compte
-REVERT // Arrête l&amp;#39;exécution, annule les changements d&amp;#39;état mais retourne
-//des données et legaz restant
-INVALID // L&amp;#39;instruction invalide désignée
+             // code du compte, mais en conservant les valeurs actuelles pour
+             // sender et value
+STATICCALL   // Message-appel statique dans un compte
+REVERT       // Arrête l&amp;#39;exécution, annule les changements d&amp;#39;état mais retourne
+             // des données et le gaz restant
+INVALID      // L&amp;#39;instruction invalide désignée
 SELFDESTRUCT //Arrête l&amp;#39;exécution et enregistre le compte pour suppression</pre>
 </div>
 </div>
@@ -647,17 +647,17 @@ SELFDESTRUCT //Arrête l&amp;#39;exécution et enregistre le compte pour suppres
 <p>Opcodes pour les comparaisons et la logique au niveau du bit :</p>
 <div class="listingblock data-line-137">
 <div class="content">
-<pre>LT // Comparaison inférieure à
-GT // Comparaison supérieure à
-SLT // Comparaison inférieure signée
-SGT // Comparaison supérieure signée
-EQ // Comparaison d&amp;#39;égalité
-ISZERO //Opérateur NOT simple
-AND //Opération AND au niveau du bit
-OR //Opération OR au niveau du bit
-XOR //Opération XOR au niveau du bit
-NOT //Opération NOT au niveau du bit
-BYTE //Récupérer un seul octet d&amp;#39;un mot pleine largeur de 256 bits</pre>
+<pre>LT     // Comparaison inférieure à
+GT     // Comparaison supérieure à
+SLT    // Comparaison inférieure signée
+SGT    // Comparaison supérieure signée
+EQ     // Comparaison d&amp;#39;égalité
+ISZERO // Opérateur NOT simple
+AND    // Opération AND au niveau du bit
+OR     // Opération OR au niveau du bit
+XOR    // Opération XOR au niveau du bit
+NOT    // Opération NOT au niveau du bit
+BYTE   // Récupérer un seul octet d&amp;#39;un mot pleine largeur de 256 bits</pre>
 </div>
 </div>
 </dd>
@@ -670,30 +670,30 @@ BYTE //Récupérer un seul octet d&amp;#39;un mot pleine largeur de 256 bits</pr
 <p>Opcodes traitant des informations sur l&#39;environnement d&#39;exécution :</p>
 <div class="listingblock data-line-154">
 <div class="content">
-<pre>GAZ //Obtenir la quantité de gaz disponible (après la réduction pour
-//cette instruction)
-ADRESSE //Obtenir l&amp;#39;adresse du compte en cours d&amp;#39;exécution
-SOLDE //Obtenir le solde du compte d&amp;#39;un compte donné
-ORIGIN //Obtenir l&amp;#39;adresse de l&amp;#39;EOA qui a lancé cette
-//éxecution EVM
-APPELANT //Obtenir l&amp;#39;adresse de l&amp;#39;appelant immédiatement responsable
-//pour cette exécution
-CALLVALUE //Obtenir le montant en ether déposé par l&amp;#39;appelant responsable
-//pour cette exécution
-CALLDATALOAD // Récupère les données d&amp;#39;entrée envoyées par l&amp;#39;appelant responsable de
-//cette exécution
-CALLDATASIZE // Récupère la taille des données d&amp;#39;entrée
-CALLDATACOPY //Copie les données d&amp;#39;entrée dans la mémoire
-CODESIZE // Récupère la taille du code en cours d&amp;#39;exécution dans l&amp;#39;environnement actuel
-CODECOPY //Copiez le code en cours d&amp;#39;exécution dans l&amp;#39;environnement actuel vers
-//la mémoire
-GASPRICE //Obtenir le prix du gaz spécifié par la
-//transaction d&amp;#39;origine
-EXTCODESIZE // Récupère la taille du code de n&amp;#39;importe quel compte
-EXTCODECOPY // Copie le code de n&amp;#39;importe quel compte en mémoire
+<pre>GAZ            // Obtenir la quantité de gaz disponible (après la réduction pour
+               // cette instruction)
+ADRESSE        // Obtenir l&amp;#39;adresse du compte en cours d&amp;#39;exécution
+SOLDE          // Obtenir le solde du compte d&amp;#39;un compte donné
+ORIGIN         // Obtenir l&amp;#39;adresse de l&amp;#39;EOA qui a lancé cette
+               // éxecution EVM
+APPELANT       // Obtenir l&amp;#39;adresse de l&amp;#39;appelant immédiatement responsable
+               // pour cette exécution
+CALLVALUE      // Obtenir le montant en ether déposé par l&amp;#39;appelant responsable
+               // pour cette exécution
+CALLDATALOAD   // Récupère les données d&amp;#39;entrée envoyées par l&amp;#39;appelant responsable de
+               // cette exécution
+CALLDATASIZE   // Récupère la taille des données d&amp;#39;entrée
+CALLDATACOPY   // Copie les données d&amp;#39;entrée dans la mémoire
+CODESIZE       // Récupère la taille du code en cours d&amp;#39;exécution dans l&amp;#39;environnement actuel
+CODECOPY       // Copiez le code en cours d&amp;#39;exécution dans l&amp;#39;environnement actuel vers
+               // la mémoire
+GASPRICE       // Obtenir le prix du gaz spécifié par la
+               // transaction d&amp;#39;origine
+EXTCODESIZE    // Récupère la taille du code de n&amp;#39;importe quel compte
+EXTCODECOPY    // Copie le code de n&amp;#39;importe quel compte en mémoire
 RETURNDATASIZE // Récupère la taille des données de sortie de l&amp;#39;appel précédent
-//dans l&amp;#39;environnement actuel
-RETURNDATACOPY //Copie la sortie des données de l&amp;#39;appel précédent dans la mémoire</pre>
+               // dans l&amp;#39;environnement actuel
+RETURNDATACOPY // Copie la sortie des données de l&amp;#39;appel précédent dans la mémoire</pre>
 </div>
 </div>
 </dd>
@@ -703,16 +703,16 @@ RETURNDATACOPY //Copie la sortie des données de l&amp;#39;appel précédent dan
 <dl>
 <dt class="hdlist1">Opérations sur les blocs</dt>
 <dd>
-<p>Opcodes pour accéder aux informations sur le bloc actuel :(range=&quot;endofrange&quot;, startref=&quot;ix_13evm-asciidoc2&quot; )</p>
+<p>Opcodes pour accéder aux informations sur le bloc actuel :</p>
 <div class="listingblock data-line-184">
 <div class="content">
-<pre>BLOCKHASH //Obtenir le hachage de l&amp;#39;un des 256 derniers
-//blocs complétés
-COINBASE //Obtenir l&amp;#39;adresse du bénéficiaire du bloc pour la récompense du bloc
-TIMESTAMP // Récupère l&amp;#39;horodatage du bloc
-NUMBER // Récupère le numéro du bloc
-DIFFICULTY //Obtenir la difficulté du bloc
-GASLIMIT // Récupère la limite de gaz du bloc</pre>
+<pre>BLOCKHASH  // Obtenir le hachage de l&amp;#39;un des 256 derniers
+           // blocs complétés
+COINBASE   // Obtenir l&amp;#39;adresse du bénéficiaire du bloc pour la récompense du bloc
+TIMESTAMP  // Récupère l&amp;#39;horodatage du bloc
+NUMBER     // Récupère le numéro du bloc
+DIFFICULTY // Obtenir la difficulté du bloc
+GASLIMIT   // Récupère la limite de gaz du bloc</pre>
 </div>
 </div>
 </dd>
@@ -741,29 +741,33 @@ GASLIMIT // Récupère la limite de gaz du bloc</pre>
 </div>
 <pre data-type="programlisting">
 $ <strong>solc --help</strong>
+
 </pre>
-<div id="solc_opcodes_option" class="paragraph data-line-222">
+<div id="solc_opcodes_option" class="paragraph data-line-223">
 <p>La génération du flux d&#39;opcode brut d&#39;un fichier source Solidity est facilement réalisée avec l&#39;option de ligne de commande --opcodes. Ce flux d&#39;opcode laisse de côté certaines informations (l&#39;option --asm produit les informations complètes), mais c&#39;est suffisant pour cette discussion. Par exemple, la compilation d&#39;un exemple de fichier Solidity, <em>Example.sol</em>, et l&#39;envoi de la sortie de l&#39;opcode dans un répertoire nommé <em>BytecodeDir</em> s&#39;effectuent avec la commande suivante :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>solc -o BytecodeDir --opcodes Example.sol</strong>
+
 </pre>
-<div class="paragraph data-line-230">
+<div class="paragraph data-line-232">
 <p>ou alors:</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>solc -o BytecodeDir --asm Example.sol</strong>
+
 </pre>
-<div id="solc_bin_option" class="paragraph data-line-239">
+<div id="solc_bin_option" class="paragraph data-line-242">
 <p>La commande suivante produira le code intermédiaire binaire pour notre exemple de programme :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>solc -o BytecodeDir --bin Example.sol</strong>
+
 </pre>
-<div class="paragraph data-line-247">
+<div class="paragraph data-line-251">
 <p>Les fichiers d&#39;opcode de sortie générés dépendront des contrats spécifiques contenus dans le fichier source Solidity. Notre fichier Solidity simple <em>Example.sol</em> n&#39;a qu&#39;un seul contrat, nommé example :</p>
 </div>
-<div id="simple_solidity_example" class="listingblock data-line-251">
+<div id="simple_solidity_example" class="listingblock data-line-255">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">pragma solidity ^0.4.19;
 
@@ -777,13 +781,13 @@ contract example {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-264">
+<div class="paragraph data-line-268">
 <p>Comme vous pouvez le voir, ce contrat ne contient qu&#39;une seule variable d&#39;état persistante, qui est définie comme l&#39;adresse du dernier compte pour exécuter ce contrat.</p>
 </div>
-<div class="paragraph data-line-266">
+<div class="paragraph data-line-270">
 <p>Si vous regardez dans le répertoire <em>BytecodeDir</em>, vous verrez le fichier d&#39;opcode <em>example.opcode</em>, qui contient les instructions d&#39;opcode EVM du contrat example. L&#39;ouverture du fichier <em>example.opcode</em> dans un éditeur de texte affichera ce qui suit :</p>
 </div>
-<div id="opcode_output" class="listingblock data-line-269">
+<div id="opcode_output" class="listingblock data-line-273">
 <div class="content">
 <pre>PUSH1 0x60 PUSH1 0x40 MSTORE CALLVALUE ISZERO PUSH1 0xE JUMPI PUSH1 0x0 DUP1
 REVERT JUMPDEST CALLER PUSH1 0x0 DUP1 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20
@@ -796,10 +800,10 @@ REVERT JUMPDEST CALLER PUSH1 0x0 DUP1 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20
 EXTCODESIZE 0xe2 0xb8 SWAP10 0xed 0x</pre>
 </div>
 </div>
-<div class="paragraph data-line-281">
+<div class="paragraph data-line-285">
 <p>Compiler l&#39;exemple avec l&#39;option --asm produit un fichier nommé <em>example.evm</em> dans notre répertoire <em>BytecodeDir</em>. Celui-ci contient une description de niveau légèrement supérieur des instructions du bytecode EVM, ainsi que quelques annotations utiles :</p>
 </div>
-<div id="asm_output" class="listingblock data-line-285">
+<div id="asm_output" class="listingblock data-line-289">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">/* "Example.sol":26:132  contract example {... */
   mstore(0x40, 0x60)
@@ -854,10 +858,10 @@ sub_0: assembly {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-339">
+<div class="paragraph data-line-343">
 <p>The --bin-runtime option produces the machine-readable hexadecimal bytecode:</p>
 </div>
-<div id="bin_output" class="listingblock data-line-342">
+<div id="bin_output" class="listingblock data-line-346">
 <div class="content">
 <pre>60606040523415600e57600080fd5b336000806101000a81548173
 ffffffffffffffffffffffffffffffffffffffff
@@ -866,53 +870,53 @@ ffffffffffffffffffffffffffffffffffffffff
 160217905550603580605b6000396000f3006060604052600080fd00a165627a7a7230582056b...</pre>
 </div>
 </div>
-<div class="paragraph data-line-350">
+<div class="paragraph data-line-354">
 <p>Vous pouvez enquêter sur ce qui se passe ici en détail en utilisant la liste des opcodes donnée dans <a href="#evm_bytecode_overview">Le jeu d&#39;instructions EVM (opérations de bytecode)</a>. Cependant, c&#39;est toute une tâche, alors commençons par examiner les quatre premières instructions :</p>
 </div>
-<div id="opcode_analysis_1" class="listingblock data-line-353">
+<div id="opcode_analysis_1" class="listingblock data-line-357">
 <div class="content">
 <pre>PUSH1 0x60 PUSH1 0x40 MSTORE CALLVALUE</pre>
 </div>
 </div>
-<div class="paragraph data-line-357">
+<div class="paragraph data-line-361">
 <p>Ici, nous avons PUSH1 suivi d&#39;un octet brut de valeur 0x60. Cette instruction EVM prend l&#39;octet unique suivant l&#39;opcode dans le code du programme (en tant que valeur littérale) et le pousse sur la pile. Il est possible de pousser des valeurs de taille jusqu&#39;à 32 octets sur la pile, comme dans :</p>
 </div>
-<div class="listingblock data-line-359">
+<div class="listingblock data-line-363">
 <div class="content">
 <pre>PUSH32 0x436f6e67726174756c6174696f6e732120536f6f6e20746f206d617374657221</pre>
 </div>
 </div>
-<div class="paragraph data-line-363">
+<div class="paragraph data-line-367">
 <p>Le deuxième opcode PUSH1 de <em>example.opcode</em> stocke 0x40 en haut de la pile (en poussant le 0x60 déjà présent d&#39;un emplacement vers le bas).</p>
 </div>
-<div class="paragraph data-line-365">
+<div class="paragraph data-line-369">
 <p>Vient ensuite MSTORE, qui est une opération de stockage en mémoire qui enregistre une valeur dans la mémoire de l&#39;EVM. Il prend deux arguments et, comme la plupart des opérations EVM, les obtient de la pile. Pour chaque argument, la pile est “poppée” (popped) c&#39;est-à-dire que la valeur supérieure de la pile est retirée et toutes les autres valeurs de la pile sont décalées d&#39;une position. Le premier argument de MSTORE est l&#39;adresse du mot en mémoire où sera mise la valeur à sauvegarder. Pour ce programme, nous avons 0x40 en haut de la pile, de sorte qu&#39;il est retiré de la pile et utilisé comme adresse mémoire. Le deuxième argument est la valeur à sauvegarder, qui est 0x60 ici. Après l&#39;exécution de l&#39;opération MSTORE, notre pile est à nouveau vide, mais nous avons la valeur 0x60 (96 en décimal) à l&#39;emplacement mémoire 0x40.</p>
 </div>
-<div class="paragraph data-line-367">
+<div class="paragraph data-line-371">
 <p>L&#39;opcode suivant est CALLVALUE, qui est un opcode environnemental qui pousse vers le haut de la pile la quantité d&#39;ether (mesurée en wei) envoyée avec l&#39;appel de message qui a initié cette exécution.</p>
 </div>
-<div class="paragraph data-line-369">
+<div class="paragraph data-line-373">
 <p>Nous pourrions continuer à parcourir ce programme de cette manière jusqu&#39;à ce que nous ayons une compréhension complète des changements d&#39;état de bas niveau que ce code effectue, mais cela ne nous aiderait pas à ce stade. Nous y reviendrons plus tard dans le chapitre. </p>
 </div>
 </div>
-<div class="sect3 data-line-372">
+<div class="sect3 data-line-376">
 <h4 id="contract_deployment_code">Code de déploiement du contrat</h4>
-<div class="paragraph data-line-374">
+<div class="paragraph data-line-378">
 <p>Il existe une différence importante mais subtile entre le code utilisé lors de la création et du déploiement d&#39;un nouveau contrat sur la plateforme Ethereum et le code du contrat lui-même. Afin de créer un nouveau contrat, une transaction spéciale est nécessaire dont le champ to est défini sur l&#39;adresse spéciale 0x0 et son champ data défini sur le <em>code d&#39;initiation</em> du contrat. Lorsqu&#39;une telle transaction de création de contrat est traitée, le code du nouveau compte de contrat n&#39;est <em>pas</em> le code du champ données de la transaction. Au lieu de cela, un EVM est instancié avec le code dans le champ data de la transaction chargée dans sa ROM de code de programme, puis la sortie de l&#39;exécution de ce code de déploiement est prise comme code pour le nouveau compte de contrat. C&#39;est ainsi que de nouveaux contrats peuvent être initialisés par programme en utilisant l&#39;état mondial Ethereum au moment du déploiement, en définissant des valeurs dans le stockage du contrat et même en envoyant de l&#39;ether ou en créant de nouveaux contrats.</p>
 </div>
-<div class="paragraph data-line-376">
+<div class="paragraph data-line-380">
 <p>Lors de la compilation d&#39;un contrat hors ligne, par exemple, en utilisant solc sur la ligne de commande, vous pouvez soit obtenir le <em>code intermédiaire de déploiement</em> ou le <em>code intermédiaire d&#8217;exécution</em>.</p>
 </div>
-<div class="paragraph data-line-378">
+<div class="paragraph data-line-382">
 <p>Le code intermédiaire de déploiement est utilisé pour chaque aspect de l&#39;initialisation d&#39;un nouveau compte de contrat, y compris le code intermédiaire qui finira par être exécuté lorsque les transactions appelleront ce nouveau contrat (c&#39;est-à-dire le code intermédiaire d&#39;exécution) et le code pour tout initialiser en fonction du constructeur du contrat.</p>
 </div>
-<div class="paragraph data-line-380">
+<div class="paragraph data-line-384">
 <p>Le code intermédiaire d&#8217;exécution, en revanche, est exactement le bytecode qui finit par être exécuté lorsque le nouveau contrat est appelé, et rien de plus ; il n&#39;inclut pas le code intermédiaire nécessaire pour initialiser le contrat lors du déploiement.</p>
 </div>
-<div class="paragraph data-line-382">
+<div class="paragraph data-line-386">
 <p>Prenons comme exemple le simple contrat <em>Faucet.sol</em> que nous avons créé précédemment :</p>
 </div>
-<div id="faucet_example" class="listingblock data-line-386">
+<div id="faucet_example" class="listingblock data-line-390">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity ^0.4.19;
@@ -936,44 +940,44 @@ contract Faucet {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-409">
+<div class="paragraph data-line-413">
 <p>Pour obtenir le code intermédiaire de déploiement, nous exécuterions <code>solc --bin Faucet.sol</code>. Si nous voulions plutôt uniquement le code intermédiaire d&#39;exécution, nous exécuterions <code>solc --bin-runtime <span class="keep-together">Faucet.sol</span></code>.</p>
 </div>
-<div class="paragraph data-line-411">
+<div class="paragraph data-line-415">
 <p>Si vous comparez la sortie de ces commandes, vous verrez que le code intermédiaire d&#39;exécution est un sous-ensemble du code intermédiaire de déploiement. En d&#39;autres termes, le code intermédiaire d&#39;exécution est entièrement contenu dans le code intermédiaire de déploiement.</p>
 </div>
 </div>
-<div class="sect3 data-line-414">
+<div class="sect3 data-line-418">
 <h4 id="disassembling_the_bytecode">Désassemblage du code intermédiaire</h4>
-<div class="paragraph data-line-416">
+<div class="paragraph data-line-420">
 <p>Le désassemblage du code intermédiaire EVM est un excellent moyen de comprendre comment le haut niveau de Solidity agit dans l&#39;EVM. Il existe quelques désassembleurs que vous pouvez utiliser pour cela :</p>
 </div>
-<div class="ulist data-line-418">
+<div class="ulist data-line-422">
 <ul>
-<li class="data-line-418">
+<li class="data-line-422">
 <p><a href="https://github.com/comaeio/porosity" data-href="https://github.com/comaeio/porosity"><em>Porosity</em></a> est un décompilateur à source libre populaire.</p>
 </li>
-<li class="data-line-419">
+<li class="data-line-423">
 <p><a href="https://github.com/trailofbits/ethersplay" data-href="https://github.com/trailofbits/ethersplay"><em>Ethersplay</em></a> est un plug-in EVM pour Binary Ninja, un désassembleur.</p>
 </li>
-<li class="data-line-420">
+<li class="data-line-424">
 <p><a href="https://github.com/trailofbits/ida-evm" data-href="https://github.com/trailofbits/ida-evm"><em>IDA-Evm</em></a> est un plugin EVM pour IDA, un autre désassembleur.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-422">
+<div class="paragraph data-line-426">
 <p>Dans cette section, nous utiliserons le plug-in Ethersplay pour Binary Ninja et pour commencer <a href="#Faucet_disassembled">Démontage du code intermédiaire d&#39;exécution du robinet</a>. Après avoir obtenu le code intermédiaire d&#39;exécution de <em>Faucet.sol</em>, nous pouvons l&#39;introduire dans Binary Ninja (après avoir chargé le plug-in Ethersplay) pour voir à quoi ressemblent les instructions EVM.</p>
 </div>
-<div id="Faucet_disassembled" class="imageblock data-line-426">
+<div id="Faucet_disassembled" class="imageblock data-line-430">
 <div class="content">
 <img src="images/Faucet_disassembled.png" alt="&quot;Le code intermédiaire d&#39;exécution de Faucet.sol a été désassemblé&quot;">
 </div>
 <div class="title">Figure 2. Démontage du code intermédiaire d&#39;exécution du robinet</div>
 </div>
-<div class="paragraph data-line-428">
+<div class="paragraph data-line-432">
 <p>Lorsque vous envoyez une transaction à un contrat intelligent compatible ABI (ce que vous pouvez supposer que tous les contrats le sont), la transaction interagit d&#39;abord avec le <em>répartiteur</em> de ce contrat intelligent. Le répartiteur lit le champ data de la transaction et envoie la partie pertinente à la fonction appropriée. Nous pouvons voir un exemple de répartiteur au début de notre code intermédiaire d&#39;exécution <em>Faucet.sol</em> désassemblé. Après l&#39;instruction familière MSTORE, nous voyons les instructions suivantes :</p>
 </div>
-<div id="faucet_instructions" class="listingblock data-line-431">
+<div id="faucet_instructions" class="listingblock data-line-435">
 <div class="content">
 <pre>PUSH1 0x4
 CALLDATASIZE
@@ -982,10 +986,10 @@ PUSH1 0x3f
 JUMPI</pre>
 </div>
 </div>
-<div class="paragraph data-line-439">
+<div class="paragraph data-line-443">
 <p>Comme nous l&#39;avons vu, PUSH1 0x4 place 0x4 en haut de la pile, qui est autrement vide. CALLDATASIZE obtient la taille en octets des données envoyées avec la transaction (appelée <em>calldata</em>) et pousse ce nombre sur la pile. Une fois ces opérations exécutées, la pile ressemble à ceci :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-442" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-446" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1005,27 +1009,27 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-448">
+<div class="paragraph data-line-452">
 <p>Cette instruction suivante est LT, abréviation de &quot;plus petit que&quot;. L&#39;instruction LT vérifie si l&#39;élément du haut de la pile est inférieur à l&#39;élément suivant de la pile. Dans notre cas, il vérifie si le résultat de CALLDATASIZE est inférieur à 4 octets.</p>
 </div>
-<div class="paragraph data-line-450">
+<div class="paragraph data-line-454">
 <p>Pourquoi l&#39;EVM vérifie-t-il que les données d&#39;appel de la transaction font au moins 4 octets ? En raison du fonctionnement des identificateurs de fonction. Chaque fonction est identifiée par les 4 premiers octets de son hachage Keccak-256. En plaçant le nom de la fonction et les arguments qu&#39;elle prend dans une fonction de hachage keccak256, nous pouvons déduire son identifiant de fonction. Dans notre cas, nous avons :</p>
 </div>
-<div id="faucet_function_identifier" class="listingblock data-line-453">
+<div id="faucet_function_identifier" class="listingblock data-line-457">
 <div class="content">
 <pre class="highlight"><code>keccak256("withdraw(uint256)") = 0x2e1a7d4d...</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-457">
+<div class="paragraph data-line-461">
 <p>Ainsi, l&#39;identifiant de fonction pour la fonction withdraw(uint256) est 0x2e1a7d4d, puisqu&#39;il s&#39;agit des 4 premiers octets du hachage résultant. Un identifiant de fonction a toujours une longueur de 4 octets, donc si le champ entier data de la transaction envoyée au contrat est inférieur à 4 octets, alors il n&#39;y a pas de fonction avec laquelle la transaction pourrait éventuellement communiquer, à moins qu&#39;une <em>fonction de secours</em> ne soit définie. Parce que nous avons implémenté une telle fonction de secours dans <em>Faucet.sol</em>, l&#39;EVM saute à cette fonction lorsque la longueur des données d&#39;appel est inférieure à 4 octets.</p>
 </div>
-<div class="paragraph data-line-459">
+<div class="paragraph data-line-463">
 <p>LT retire les deux premières valeurs de la pile et, si le champ data de la transaction est inférieur à 4 octets, il y pousse un 1. Sinon, il pousse un 0. Dans notre exemple, supposons que le champ data de la transaction envoyée à notre contrat <em>était</em> inférieur à 4 octets.</p>
 </div>
-<div class="paragraph data-line-461">
+<div class="paragraph data-line-465">
 <p>L&#39;instruction PUSH1 0x3f pousse l&#39;octet 0x3f sur la pile. Après cette instruction, la pile ressemble à ceci :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-464" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-468" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1045,28 +1049,30 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-470">
+<div class="paragraph data-line-474">
 <p>L&#39;instruction suivante est JUMPI, qui signifie &quot;sauter si&quot;. Cela fonctionne comme ceci :</p>
 </div>
-<div id="faucet_jump_instruction_text" class="listingblock data-line-473">
+<div id="faucet_jump_instruction_text" class="listingblock data-line-477">
 <div class="content">
 <pre>jumpi(label, cond) // Aller à &amp;quot;label&amp;quot; si &amp;quot;cond&amp;quot; est vrai</pre>
 </div>
 </div>
-<div class="paragraph data-line-477">
+<div class="paragraph data-line-481">
 <p>Dans notre cas, label est 0x3f, où réside notre fonction de secours dans notre contrat intelligent. L&#39;argument cond est 1, qui était le résultat de l&#39;instruction LT précédente. Pour mettre toute cette séquence en mots, le contrat passe à la fonction de repli si les données de transaction sont inférieures à 4 octets.</p>
 </div>
-<div class="paragraph data-line-479">
-<p>À 0x3f, seule une instruction STOP suit, car bien que nous ayons déclaré une fonction de repli, nous l&#39;avons laissée vide. Comme vous pouvez le voir dans <a href="#Faucet_jumpi_instruction">[Faucet_jumpi_instruction]</a>, si nous n&#39;avions pas implémenté une fonction de secours, le contrat lèverait une exception à la place.</p>
+<div class="paragraph data-line-483">
+<p>À 0x3f, seule une instruction STOP suit, car bien que nous ayons déclaré une fonction de repli, nous l&#39;avons laissée vide. Comme vous pouvez le voir dans <a href="#Faucet_jumpi_instruction">Instruction JUMPI menant à la fonction de repli</a>, si nous n&#39;avions pas implémenté une fonction de secours, le contrat lèverait une exception à la place.</p>
 </div>
-<div id="Faucet_jumpi_instruction" class="paragraph data-line-482">
-<p>Instruction .JUMPI menant à la fonction de repli
-image::images/Faucet_jumpi_instruction.png[&quot;Instruction JUMPI menant à la fonction de repli&quot;]</p>
+<div id="Faucet_jumpi_instruction" class="imageblock data-line-487">
+<div class="content">
+<img src="images/Faucet_jumpi_instruction.png" alt="&quot;Instruction JUMPI menant à la fonction de repli&quot;">
 </div>
-<div class="paragraph data-line-485">
+<div class="title">Figure 3. Instruction JUMPI menant à la fonction de repli</div>
+</div>
+<div class="paragraph data-line-489">
 <p>Examinons le bloc central du répartiteur. En supposant que nous recevions des données d&#39;appel d&#39;une longueur supérieure à 4 octets, l&#39;instruction JUMPI ne passerait pas à la fonction de repli. Au lieu de cela, l&#39;exécution du code procéderait aux instructions suivantes :</p>
 </div>
-<div id="faucet_instructions2" class="listingblock data-line-488">
+<div id="faucet_instructions2" class="listingblock data-line-492">
 <div class="content">
 <pre>PUSH1 0x0
 CALLDATALOAD
@@ -1082,18 +1088,18 @@ PUSH1 0x41
 JUMPI</pre>
 </div>
 </div>
-<div class="paragraph data-line-503">
+<div class="paragraph data-line-507">
 <p>PUSH1 0x0 pousse 0 sur la pile, qui est maintenant à nouveau vide. CALLDATALOAD accepte comme argument un index dans les données d&#39;appel envoyées au contrat intelligent et lit 32 octets à partir de cet index, comme ceci :</p>
 </div>
-<div id="faucet_calldataload_instruction_text" class="listingblock data-line-506">
+<div id="faucet_calldataload_instruction_text" class="listingblock data-line-510">
 <div class="content">
 <pre>calldataload(p) //charge 32 octets de données d&amp;#39;appel à partir de la position d&amp;#39;octet p</pre>
 </div>
 </div>
-<div class="paragraph data-line-510">
+<div class="paragraph data-line-514">
 <p>Puisque 0 était l&#39;index qui lui a été transmis par la commande PUSH1 0x0, CALLDATALOAD lit 32 octets de données d&#39;appel à partir de l&#39;octet 0, puis le pousse vers le haut de la pile (après avoir extrait le 0x0 d&#39;origine). Après l&#39;instruction PUSH29 0x1000000&#8230;&#8203;, la pile est alors :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-513" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-517" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1113,10 +1119,10 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-519">
+<div class="paragraph data-line-523">
 <p>SWAP1 commute l&#39;élément supérieur sur la pile avec le <em>i</em>-ème élément après lui. Dans ce cas, il échange 0x1000000&#8230;&#8203; avec le calldata. La nouvelle pile est :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-522" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-526" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1136,27 +1142,27 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-528">
+<div class="paragraph data-line-532">
 <p>L&#39;instruction suivante est DIV, qui fonctionne comme suit :</p>
 </div>
-<div id="faucet_div_instruction_text" class="listingblock data-line-531">
+<div id="faucet_div_instruction_text" class="listingblock data-line-535">
 <div class="content">
 <pre>div(x, y) // division entière x / y</pre>
 </div>
 </div>
-<div class="paragraph data-line-535">
+<div class="paragraph data-line-539">
 <p>Dans ce cas, x = 32 octets de calldata commençant à l&#39;octet 0, et y = 0x100000000&#8230;&#8203; (29 octets au total). Pouvez-vous penser à la raison pour laquelle le répartiteur fait la division ? Voici un indice : nous avons lu 32 octets de calldata plus tôt, en commençant à l&#39;index 0. Les 4 premiers octets de cette calldata sont l&#39;identifiant de la fonction.</p>
 </div>
-<div class="paragraph data-line-538">
+<div class="paragraph data-line-542">
 <p>Le 0x100000000&#8230;&#8203; que nous avons poussé plus tôt fait 29 octets de long, composé d&#39;un 1 au début, suivi de tous les 0. Diviser nos 32 octets de données d&#39;appel par cette valeur ne nous laissera que les <em>4 octets les plus élevés</em> de notre charge de données d&#39;appel, à partir de l&#39;index 0. Ces 4 octets - les 4 premiers octets des données d&#39;appel commençant à l&#39;index 0 - sont l&#39;identifiant de la fonction, et cela est la façon dont l&#39;EVM extrait ce champ.</p>
 </div>
-<div class="paragraph data-line-540">
+<div class="paragraph data-line-544">
 <p>Si cette partie n&#39;est pas claire pour vous, pensez-y comme ceci : en base 10, 1234000 / 1000 = 1234. En base 16, ce n&#39;est pas différent. Au lieu que chaque lieu soit un multiple de 10, c&#39;est un multiple de 16. Tout comme la division par 10<sup>3</sup> (1000) dans notre petit exemple ne conservait que les chiffres les plus élevés, divisant notre valeur de base 16 de 32 octets par 16<sup>29</sup> fait de même.</p>
 </div>
-<div class="paragraph data-line-542">
+<div class="paragraph data-line-546">
 <p>Le résultat du DIV (l&#39;identifiant de la fonction) est poussé sur la pile, et notre pile est maintenant :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-545" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-549" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1171,10 +1177,10 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-550">
+<div class="paragraph data-line-554">
 <p>Étant donné que les instructions PUSH4 0xffffffff et AND sont redondantes, nous pouvons les ignorer complètement, car la pile restera la même après leur exécution. L&#39;instruction DUP1 duplique le premier élément de la pile, qui est l&#39;identificateur de la fonction. L&#39;instruction suivante, PUSH4 0x2e1a7d4d, pousse l&#39;identificateur de fonction précalculé de la fonction <code><span class="keep-together">withdraw</span> (uint256)</code> sur la pile. La pile est maintenant :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-553" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-557" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1197,13 +1203,13 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-560">
+<div class="paragraph data-line-564">
 <p>L&#39;instruction suivante, EQ, extrait les deux premiers éléments de la pile et les compare. C&#39;est là que le répartiteur fait son travail principal : il compare si l&#39;identifiant de la fonction envoyé dans le champ msg.data de la transaction correspond à celui de <code><span class="keep-together">withdraw</span> (uint256)</code>. S&#39;ils sont égaux, EQ pousse 1 sur la pile, qui sera finalement utilisé pour passer à la fonction de retrait. Sinon, EQ pousse 0 sur la pile.</p>
 </div>
-<div class="paragraph data-line-562">
+<div class="paragraph data-line-566">
 <p>En supposant que la transaction envoyée à notre contrat a bien commencé avec l&#39;identifiant de fonction pour withdraw(uint256), notre pile est devenue :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-565" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-569" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1223,10 +1229,10 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-571">
+<div class="paragraph data-line-575">
 <p>Ensuite, nous avons PUSH1 0x41, qui est l&#39;adresse à laquelle la fonction withdraw(uint256) vit dans le contrat. Après cette instruction, la pile ressemble à ceci :</p>
 </div>
-<table class="tableblock frame-ends grid-all data-line-574" style="width: 40%;">
+<table class="tableblock frame-ends grid-all data-line-578" style="width: 40%;">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
@@ -1249,179 +1255,179 @@ JUMPI</pre>
 </tr>
 </tfoot>
 </table>
-<div class="paragraph data-line-581">
+<div class="paragraph data-line-585">
 <p>L&#39;instruction JUMPI est la suivante, et elle accepte à nouveau les deux premiers éléments de la pile comme arguments. Dans ce cas, nous avons jumpi(0x41, 1), qui indique à l&#39;EVM d&#39;exécuter le saut vers l&#39;emplacement de la fonction withdraw(uint256), et l&#39;exécution du code de cette fonction peut continuer.</p>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-584">
+<div class="sect2 data-line-588">
 <h3 id="turing_completeness_and_gas">Complétude de Turing et Gaz</h3>
-<div class="paragraph data-line-586">
+<div class="paragraph data-line-590">
 <p>Comme nous l&#39;avons déjà évoqué, en termes simples, un système ou langage de programmation est <em>Turing complet</em> s&#39;il peut exécuter n&#39;importe quel programme. Cette capacité, cependant, s&#39;accompagne d&#39;une mise en garde très importante : certains programmes prennent une éternité à s&#39;exécuter. Un aspect important de ceci est que nous ne pouvons pas dire, juste en regardant un programme, s&#39;il prendra une éternité ou non à s&#39;exécuter. Nous devons en fait suivre l&#39;exécution du programme et attendre qu&#39;il se termine pour le savoir. Bien sûr, si l&#39;exécution prend une éternité, nous devrons attendre une éternité pour le savoir. C&#39;est ce qu&#39;on appelle le <em>problème d&#39;arrêt</em> et ce serait un énorme problème pour Ethereum s&#39;il n&#39;était pas résolu.</p>
 </div>
-<div class="paragraph data-line-588">
+<div class="paragraph data-line-592">
 <p>En raison du problème d&#39;arrêt, l&#39;ordinateur du monde Ethereum risque de se voir demander d&#39;exécuter un programme qui ne s&#39;arrête jamais. Cela pourrait être par accident ou par malveillance. Nous avons discuté du fait qu&#39;Ethereum agit comme une machine à un seul fil d&#8217;exécution, sans aucun planificateur, et donc s&#39;il était bloqué dans une boucle infinie, cela signifierait qu&#39;il deviendrait inutilisable.</p>
 </div>
-<div class="paragraph data-line-590">
+<div class="paragraph data-line-594">
 <p>Cependant, avec le gaz, il existe une solution : si après qu&#39;une quantité maximale de calculs a été effectuée, l&#39;exécution n&#39;est pas terminée, l&#39;exécution du programme est stoppée par l&#39;EVM. Cela fait de l&#39;EVM une machine <em>quasi</em>–Turing-complète : elle peut exécuter n&#39;importe quel programme que vous lui introduisez, mais seulement si le programme se termine dans un certain nombre de calculs. Cette limite n&#39;est pas fixée dans Ethereum - vous pouvez payer pour l&#39;augmenter jusqu&#39;à un maximum (appelé &quot;limite de gaz de bloc&quot;), et tout le monde peut accepter d&#39;augmenter ce maximum au fil du temps. Néanmoins, à tout moment, il y a une limite en place, et les transactions qui consomment trop de gaz lors de l&#39;exécution sont <span class="keep-together">stoppées</span>.</p>
 </div>
-<div class="paragraph data-line-592">
+<div class="paragraph data-line-596">
 <p>Dans les sections suivantes, nous examinerons le gaz et examinerons en détail son fonctionnement.</p>
 </div>
 </div>
-<div class="sect2 data-line-595">
+<div class="sect2 data-line-599">
 <h3 id="gas">Gaz</h3>
-<div class="paragraph data-line-597">
+<div class="paragraph data-line-601">
 <p>Le <em>gaz</em> est l&#39;unité d&#39;Ethereum pour mesurer les ressources de calcul et de stockage nécessaires pour effectuer des actions sur la chaîne de blocs Ethereum. Contrairement à Bitcoin, dont les frais de transaction ne tiennent compte que de la taille d&#39;une transaction en kilo-octets, Ethereum doit tenir compte de chaque étape de calcul effectuée par les transactions et l&#39;exécution du code de contrat intelligent.</p>
 </div>
-<div class="paragraph data-line-599">
+<div class="paragraph data-line-603">
 <p>Chaque opération effectuée par une transaction ou un contrat coûte une quantité fixe de gaz. Quelques exemples, tirés du Ethereum Yellow Paper :</p>
 </div>
-<div class="ulist data-line-601">
+<div class="ulist data-line-605">
 <ul>
-<li class="data-line-601">
+<li class="data-line-605">
 <p>L&#39;ajout de deux nombres coûte 3 gaz</p>
 </li>
-<li class="data-line-602">
+<li class="data-line-606">
 <p>Le calcul d&#39;un hachage Keccak-256 coûte 30 gaz + 6 gaz pour chaque 256 bits de données hachés</p>
 </li>
-<li class="data-line-603">
+<li class="data-line-607">
 <p>L&#39;envoi d&#39;une transaction coûte 21 000 gaz</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-605">
+<div class="paragraph data-line-609">
 <p>Le gaz est un composant crucial d&#39;Ethereum et joue un double rôle : comme tampon entre le prix (volatile) d&#39;Ethereum et la récompense des mineurs pour le travail qu&#39;ils font, et comme défense contre les attaques par déni de service. Pour éviter les boucles infinies accidentelles ou malveillantes ou tout autre gaspillage de calcul dans le réseau, l&#39;initiateur de chaque transaction est tenu de fixer une limite à la quantité de calcul qu&#39;il est prêt à payer. Le système de gaz décourage ainsi les attaquants d&#39;envoyer des transactions de &quot;spam&quot;, car ils doivent payer proportionnellement pour les ressources de calcul, de bande passante et de stockage qu&#39;ils consomment.</p>
 </div>
-<div class="sect3 data-line-608">
+<div class="sect3 data-line-612">
 <h4 id="gas_accounting_execution">Comptabilisation du gaz pendant l&#39;exécution</h4>
-<div class="paragraph data-line-609">
+<div class="paragraph data-line-613">
 <p>Lorsqu&#39;une EVM est nécessaire pour effectuer une transaction, en premier lieu il reçoit un approvisionnement en gaz égal au montant spécifié par la limite de gaz dans la transaction. Chaque opcode exécuté a un coût en gaz, et donc l&#39;approvisionnement en gaz de l&#39;EVM est réduit au fur et à mesure que l&#39;EVM avance dans le programme. Avant chaque opération, l&#39;EVM vérifie qu&#39;il y a suffisamment de gaz pour payer l&#39;exécution de l&#39;opération. S&#39;il n&#39;y a pas assez de gaz, l&#39;exécution est interrompue et la transaction est annulée.</p>
 </div>
-<div class="paragraph data-line-611">
+<div class="paragraph data-line-615">
 <p>Si l&#39;EVM atteint la fin de l&#39;exécution avec succès, sans manquer de gaz, le coût du gaz utilisé est payé au mineur sous forme de frais de transaction, converti en ether sur la base du prix du gaz spécifié dans la transaction :</p>
 </div>
-<div class="listingblock data-line-613">
+<div class="listingblock data-line-617">
 <div class="content">
 <pre>frais de mineur = coût du gaz * prix du gaz</pre>
 </div>
 </div>
-<div class="paragraph data-line-618">
+<div class="paragraph data-line-622">
 <p>Le gaz restant dans l&#39;approvisionnement en gaz est remboursé à l&#39;expéditeur, à nouveau converti en ether sur la base du prix du gaz spécifié dans la transaction :</p>
 </div>
-<div class="listingblock data-line-620">
+<div class="listingblock data-line-624">
 <div class="content">
 <pre>gaz restant = limite de gaz - coût du gaz
 ether remboursé = gaz restant * prix du gaz</pre>
 </div>
 </div>
-<div class="paragraph data-line-625">
+<div class="paragraph data-line-629">
 <p>Si la transaction « manque de gaz » pendant l&#39;exécution, l&#39;opération est immédiatement terminée, ce qui déclenche une exception « à court de gaz » (OOG). La transaction est annulée et toutes les modifications apportées à l&#39;état sont annulées.</p>
 </div>
-<div class="paragraph data-line-627">
+<div class="paragraph data-line-631">
 <p>Bien que la transaction ait échoué, l&#39;expéditeur se verra facturer des frais de transaction, car les mineurs ont déjà effectué le travail de calcul jusqu&#39;à ce point et doivent être indemnisés pour cela.</p>
 </div>
 </div>
-<div class="sect3 data-line-629">
+<div class="sect3 data-line-633">
 <h4 id="_considérations_sur_la_comptabilisation_du_gaz">Considérations sur la comptabilisation du gaz</h4>
-<div class="paragraph data-line-631">
+<div class="paragraph data-line-635">
 <p>Les coûts relatifs du gaz des différentes opérations pouvant être effectuées par l&#39;EVM ont ont été soigneusement choisis pour protéger au mieux la chaîne de blocs Ethereum contre les attaques. Vous pouvez voir un tableau détaillé des coûts de gaz pour différents opcodes EVM dans <a href="#evm_opcodes_table">[evm_opcodes_table]</a>.</p>
 </div>
-<div class="paragraph data-line-633">
+<div class="paragraph data-line-637">
 <p>Les opérations plus intensives en calcul coûtent plus de gaz. Par exemple, l&#39;exécution de la fonction SHA3 est 10 fois plus coûteuse (30 gaz) que l&#39;opération ADD (3 gaz). Plus important encore, certaines opérations, telles que EXP, nécessitent un paiement supplémentaire en fonction de la taille de l&#39;opérande. L&#39;utilisation de la mémoire EVM et le stockage des données dans le stockage en chaîne d&#39;un contrat entraînent également un coût en gaz.</p>
 </div>
-<div class="paragraph data-line-635">
+<div class="paragraph data-line-639">
 <p>L&#39;importance de faire correspondre le coût du gaz au coût réel des ressources a été démontrée en 2016 lorsqu&#39;un attaquant a découvert et exploité une inadéquation des coûts. L&#39;attaque a généré des transactions très coûteuses en calcul et a presque paralysé le réseau principal Ethereum. Cette inadéquation a été résolue par un hard fork (nom de code &quot;Tangerine Whistle&quot;) qui a modifié les coûts relatifs du gaz.</p>
 </div>
 </div>
-<div class="sect3 data-line-637">
+<div class="sect3 data-line-641">
 <h4 id="_coût_du_gaz_versus_prix_du_gaz">Coût du gaz versus prix du gaz</h4>
-<div class="paragraph data-line-638">
+<div class="paragraph data-line-642">
 <p>Alors que le <em>coût</em> du gaz est une mesure de calcul et de stockage utilisée dans l&#39;EVM, le gaz lui-même a également un <em>prix</em> mesuré en ether. Lors d&#39;une transaction, l&#39;expéditeur spécifie le prix du gaz qu&#39;il est prêt à payer (en ether) pour chaque unité de gaz, permettant au marché de décider de la relation entre le prix de l&#39;ether et le coût des opérations informatiques (mesuré en gaz) :</p>
 </div>
-<div class="listingblock data-line-640">
+<div class="listingblock data-line-644">
 <div class="content">
 <pre>frais de transaction = total de gaz utilisé * prix du gaz payé (en ether)</pre>
 </div>
 </div>
-<div class="paragraph data-line-644">
+<div class="paragraph data-line-648">
 <p>Lors de la construction d&#39;un nouveau bloc, les mineurs du réseau Ethereum peuvent choisir parmi les transactions en attente en sélectionnant celles qui proposent de payer un prix du gaz plus élevé. Offrir un prix du gaz plus élevé incitera donc les mineurs à inclure votre transaction et à la faire confirmer plus rapidement.</p>
 </div>
-<div class="paragraph data-line-646">
+<div class="paragraph data-line-650">
 <p>En pratique, l&#39;expéditeur d&#39;une transaction fixera une limite de gaz supérieure ou égale à la quantité de gaz qu&#39;il s&#39;attend à utiliser. Si la limite de gaz est fixée à une valeur supérieure à la quantité de gaz consommée, l&#39;expéditeur recevra un remboursement du montant excédentaire, car les mineurs ne sont indemnisés que pour le travail qu&#39;ils effectuent réellement.</p>
 </div>
-<div class="paragraph data-line-648">
+<div class="paragraph data-line-652">
 <p>Il est important d&#39;être clair sur la distinction entre le <em>coût du gaz</em> et le <em>prix du gaz</em>. Récapituler:</p>
 </div>
-<div class="ulist data-line-650">
+<div class="ulist data-line-654">
 <ul>
-<li class="data-line-650">
+<li class="data-line-654">
 <p>Le coût du gaz est le nombre d&#39;unités de gaz nécessaires pour effectuer une opération particulière.</p>
 </li>
-<li class="data-line-652">
+<li class="data-line-656">
 <p>Le prix du gaz est la quantité d&#39;ether que vous êtes prêt à payer par unité de gaz lorsque vous envoyez votre transaction au réseau Ethereum.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock tip data-line-655">
+<div class="admonitionblock tip data-line-659">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-656">
+<div class="paragraph data-line-660">
 <p>Alors que le gaz a un prix, il ne peut pas être &quot;possédé&quot; ni &quot;dépensé&quot;. Le gaz n&#39;existe qu&#39;à l&#39;intérieur de l&#39;EVM, en tant que décompte de la quantité de travail de calcul effectué. L&#39;expéditeur se voit facturer des frais de transaction en ether, qui sont ensuite convertis en gaz pour la comptabilité EVM, puis de nouveau en ether en tant que frais de transaction payés aux mineurs.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sect4 data-line-660">
+<div class="sect4 data-line-664">
 <h5 id="_coûts_de_gaz_négatifs">Coûts de gaz négatifs</h5>
-<div class="paragraph data-line-662">
+<div class="paragraph data-line-666">
 <p>Ethereum encourage la suppression des variables et des comptes de stockage utilisés en remboursant une partie du gaz utilisé lors de l&#39;exécution du contrat.</p>
 </div>
-<div class="paragraph data-line-664">
+<div class="paragraph data-line-668">
 <p>Il y a deux opérations dans l&#39;EVM avec des coûts de gaz négatifs :</p>
 </div>
-<div class="ulist data-line-666">
+<div class="ulist data-line-670">
 <ul>
-<li class="data-line-666">
+<li class="data-line-670">
 <p>La suppression d&#39;un contrat (SELFDESTRUCT) vaut un remboursement de 24 000 gaz.</p>
 </li>
-<li class="data-line-667">
+<li class="data-line-671">
 <p>Changer une adresse de stockage d&#39;une valeur différente de zéro à zéro (SSTORE[x] = 0) vaut un remboursement de 15 000 gaz.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-669">
+<div class="paragraph data-line-673">
 <p>Pour éviter l&#39;exploitation du mécanisme de remboursement, le remboursement maximum pour une transaction est fixé à la moitié de la quantité totale de gaz consommée (arrondie à l&#39;inférieur).</p>
 </div>
 </div>
 </div>
-<div class="sect3 data-line-671">
+<div class="sect3 data-line-675">
 <h4 id="_limite_de_gaz_du_bloc">Limite de gaz du bloc</h4>
-<div class="paragraph data-line-673">
+<div class="paragraph data-line-677">
 <p>La limite de gaz de bloc est la quantité maximale de gaz pouvant être consommée par toutes les transactions d&#39;un bloc et limite le nombre de transactions pouvant tenir dans un bloc.</p>
 </div>
-<div class="paragraph data-line-675">
+<div class="paragraph data-line-679">
 <p>Par exemple, supposons que nous ayons 5 transactions dont les limites de gaz ont été fixées à 30 000, 30 000, 40 000, 50 000 et 50 000. Si la limite de gaz du bloc est de 180 000, alors quatre de ces transactions peuvent tenir dans un bloc, tandis que la cinquième devra attendre un futur bloc. Comme indiqué précédemment, les mineurs décident des transactions à inclure dans un bloc. Différents mineurs sont susceptibles de sélectionner différentes combinaisons, principalement parce qu&#39;ils reçoivent des transactions du réseau dans un ordre différent.</p>
 </div>
-<div class="paragraph data-line-677">
+<div class="paragraph data-line-681">
 <p>Si un mineur essaie d&#39;inclure une transaction qui nécessite plus de gaz que la limite actuelle de gaz du bloc, le bloc sera rejeté par le réseau. La plupart des clients Ethereum vous empêcheront d&#39;émettre une telle transaction en donnant un avertissement du type &quot;la transaction dépasse la limite de gaz du bloc&quot;. La limite de gaz de bloc sur le réseau principal Ethereum est de 8 millions de gaz au moment de la rédaction selon <a href="https://etherscan.io" class="undefined" data-href="https://etherscan.io">https://etherscan.io</a>, ce qui signifie qu&#39;environ 380 transactions de base (chacune consommant 21 000 gaz) pourraient tenir dans un bloc.</p>
 </div>
-<div class="sect4 data-line-679">
+<div class="sect4 data-line-683">
 <h5 id="_qui_décide_de_la_limite_de_gaz_du_bloc">Qui décide de la limite de gaz du bloc ?</h5>
-<div class="paragraph data-line-681">
+<div class="paragraph data-line-685">
 <p>Les mineurs du réseau décident collectivement de la limite de gaz du bloc. Les personnes qui souhaitent exploiter sur le réseau Ethereum utilisent un programme de minage, tel qu&#39;Ethminer, qui se connecte à un client Geth ou Parity Ethereum. Le protocole Ethereum a un mécanisme intégré où les mineurs peuvent voter sur la limite de gaz afin que la capacité puisse être augmentée ou diminuée dans les blocs suivants. Le mineur d&#39;un bloc peut voter pour ajuster la limite de gaz du bloc d&#39;un facteur de 1/1 024 (0,0976 %) dans les deux sens. Le résultat est une taille de bloc ajustable en fonction des besoins du réseau à ce moment-là. Ce mécanisme est couplé à une stratégie minière par défaut où les mineurs votent sur une limite de gaz d&#39;au moins 4,7 millions de gaz, mais qui cible une valeur de 150 % de la moyenne de la consommation totale récente de gaz par bloc (en utilisant un déplacement exponentiel de 1 024 blocs en moyenne).</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-683">
+<div class="sect2 data-line-687">
 <h3 id="_conclusion">Conclusion</h3>
-<div class="paragraph data-line-685">
+<div class="paragraph data-line-689">
 <p>Dans ce chapitre, nous avons exploré la machine virtuelle Ethereum, en retraçant l&#39;exécution de divers contrats intelligents et en examinant comment l&#39;EVM exécute le bytecode. Nous avons également examiné le gaz, le mécanisme de comptabilité de l&#39;EVM, et avons vu comment il résout le problème d&#39;arrêt et protège Ethereum des attaques par déni de service. Ensuite, dans <a href="#consensus">[consensus]</a>, nous examinerons le mécanisme utilisé par Ethereum pour parvenir à un consensus décentralisé.</p>
 </div>
 </div>
@@ -1430,7 +1436,7 @@ ether remboursé = gaz restant * prix du gaz</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-14 14:54:49 -0400
+Last updated 2022-05-14 15:24:50 -0400
 </div>
 </div>
 </body>

@@ -71,7 +71,7 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 12. [Chapitre 10 - Jetons](html/for_use_ethereumbook_10tokenstxt_fr_CA.html) 👍
 13. [Chapitre 11 - Oracles](html/for_use_ethereumbook_11oraclestxt_fr_CA.html) 👍
 14. [Chapitre 12 - Applications décentralisées (DApps)](html/for_use_ethereumbook_12dappstxt_fr_CA.html) 👍
-15. [Chapitre 13 - La machine virtuelle Ethereum](html/for_use_ethereumbook_13evmtxt_fr_CA.html) ❌
+15. [Chapitre 13 - La machine virtuelle Ethereum](html/for_use_ethereumbook_13evmtxt_fr_CA.html) 👍
 16. [Chapitre 14 - Consensus](html/for_use_ethereumbook_14consensustxt_fr_CA.html) ❌
 17. [Annexe A - Historique de la fourche Ethereum](html/for_use_ethereumbook_appdx-forks-historytxt_fr_CA.html) ❌
 18. [Annexe B - Normes Ethereum](html/for_use_ethereumbook_appdx-standards-eip-erctxt_fr_CA.html) ❌
@@ -86,7 +86,7 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 
 <p style="color:red;">!!! ATTENTION : Processus intense !!!</p>
 
-<a href="https://ethereum.maitriser.ca/html/book.html" alt="Livre Maîtriser Bitcoin en une seule page html">Livre en une seule page html</a>
+<a href="https://ethereum.maitriser.ca/html/book.html" alt="Livre Maîtriser Bitcoin en une seule page html">Livre en une seule page html</a> ❌
 </center>
 
 ---
