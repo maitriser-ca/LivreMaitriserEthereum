@@ -444,249 +444,249 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="ethereum_fork_history">Appendix A: Historique de la fourche Ethereum</h2>
 <div class="sectionbody">
 <div class="paragraph data-line-4">
-<p>Most hard forks are planned as part of an upgrade roadmap and consist of updates that the community generally agrees to (i.e., there is social consensus). However, some hard forks lack consensus, which leads to multiple distinct blockchains. The events that led to the Ethereum/Ethereum Classic split are one such case, and are discussed in this appendix.</p>
+<p>La plupart des <em>hard forks</em> ou <em>fourches ou embranchements divergents</em> sont planifiées dans le cadre d&#39;une feuille de route de mise à niveau et consistent en des mises à jour généralement acceptées par la communauté (c&#39;est-à-dire qu&#39;il existe un consensus social). Cependant, certains embranchements divergents manquent de consensus, ce qui conduit à plusieurs chaînes de blocs distinctes. Les événements qui ont conduit à la scission Ethereum/Ethereum Classic en sont un exemple et sont abordés dans cette annexe.</p>
 </div>
 <div class="sect2 data-line-7">
 <h3 id="etc_origin">Ethereum Classic (ETC)</h3>
 <div class="paragraph data-line-8">
-<p>Ethereum Classic came to be after members of the Ethereum community implemented a time-sensitive hard fork (codenamed &#x201c;DAO&#x201d;). On July 20, 2016, at a block height of 1.92 million, Ethereum introduced an irregular state change via a hard fork in an effort to return approximately 3.6 million ether that had been taken from a smart contract known as The DAO. Almost everyone agreed that the ether taken had been stolen and that leaving it all in the hands of the thief would be of significant detriment to the development of the Ethereum ecosystem as well as the platform itself.</p>
+<p>Ethereum Classic est né après que des membres de la communauté Ethereum ont mis en place un embranchement divergent sensible au temps (nom de code «DAO»). Le 20 juillet 2016, à une hauteur de bloc de 1,92 million, Ethereum a introduit un changement d&#39;état irrégulier via un embranchement divergent dans le but de restituer environ 3,6 millions d&#39;ether qui avaient été prélevés sur un contrat intelligent connu sous le nom de DAO. Presque tout le monde a convenu que l&#39;ether pris avait été volé et que tout laisser entre les mains du voleur nuirait considérablement au développement de l&#39;écosystème Ethereum ainsi qu&#39;à la plate-forme elle-même.</p>
 </div>
 <div class="paragraph data-line-10">
-<p>Returning the ether to its respective owners as though The DAO had never even existed was technically easy, if rather politically controversial. A number of people in the ecosystem disagreed with this change, believing immutability should be a fundamental principle of the Ethereum blockchain without exception; they elected to continue the original chain under the moniker of Ethereum Classic. While the split itself was initially ideological, the two chains have since evolved into separate entities.</p>
+<p>Rendre l&#39;ether à ses propriétaires respectifs comme si le DAO n&#39;avait même jamais existé était techniquement facile, bien que politiquement controversé. Un certain nombre de personnes dans l&#39;écosystème n&#39;étaient pas d&#39;accord avec ce changement, estimant que l&#39;immuabilité devrait être un principe fondamental de la chaîne de blocs Ethereum sans exception ; ils ont choisi de continuer la chaîne originale sous le nom d&#39;Ethereum Classic. Alors que la scission elle-même était initialement idéologique, les deux chaînes ont depuis évolué en entités distinctes.</p>
 </div>
 </div>
 <div class="sect2 data-line-13">
-<h3 id="dao_origin">The Decentralized Autonomous Organization (The DAO)</h3>
+<h3 id="dao_origin">L&#39;Organisation Autonome Décentralisée (La DAO)</h3>
 <div class="paragraph data-line-15">
-<p>The DAO was created by Slock.it, with the aim of providing community-based funding and governance for projects. The core idea was that proposals would be submitted, curators would manage proposals, funds would be raised from investors within the Ethereum community, and, if the projects proved successful, investors would receive a share of the profits.</p>
+<p>La DAO a été créé par Slock.it, dans le but de fournir un financement et une gouvernance communautaires pour les projets. L&#39;idée centrale était que les propositions seraient soumises, les conservateurs géreraient les propositions, des fonds seraient collectés auprès d&#39;investisseurs au sein de la communauté Ethereum et, si les projets s&#39;avéraient fructueux, les investisseurs recevraient une part des bénéfices.</p>
 </div>
 <div class="paragraph data-line-17">
-<p>The DAO was also one of the first experiments in an Ethereum token. Rather than funding projects directly with ether, participants would trade their ether for DAO tokens, use them to vote on project funding, and later be able to trade them back for ether.</p>
+<p>Le DAO a également été l&#39;une des premières expériences dans un jeton Ethereum. Plutôt que de financer des projets directement avec de l&#39;ether, les participants échangeraient leur ether contre des jetons DAO, les utiliseraient pour voter sur le financement du projet et pourraient plus tard les échanger contre de l&#39;ether à nouveau.</p>
 </div>
 <div class="paragraph data-line-19">
-<p>DAO tokens were available to purchase in a crowdsale that ran from April 5 through April 30, 2016, amassing <a href="https://econ.st/2qfJO1g" data-href="https://econ.st/2qfJO1g">nearly 14%</a> of the total ether in existence, which was worth ~$150 million at the time.</p>
+<p>Les jetons DAO étaient disponibles à l&#39;achat lors d&#39;une vente publique qui s&#39;est déroulée du 5 avril au 30 avril 2016, amassant <a href="https://econ.st/2qfJO1g" data-href="https://econ.st/2qfJO1g">près de 14%</a> du total d&#39;ether existant, qui valait environ 150 millions de dollars au temps.</p>
 </div>
 </div>
 <div class="sect2 data-line-22">
-<h3 id="dao_reentrancy_bug">The Reentrancy Bug</h3>
+<h3 id="dao_reentrancy_bug">Le bogue de réentrance</h3>
 <div class="paragraph data-line-24">
-<p>On June 9, 2016, developers Peter Vessenes and Chriseth reported that most Ethereum-based contracts that managed funds were potentially <a href="http://bit.ly/2AAaDmA" data-href="http://bit.ly/2AAaDmA">vulnerable to an exploit</a> that could empty contract funds. A few days later, on June 12, Stephen Tual (cofounder of Slock.it) reported that <a href="http://bit.ly/2qmo3g1" data-href="http://bit.ly/2qmo3g1">The DAO&#8217;s code was not vulnerable</a> to the bug described by Peter and Chriseth. Worried DAO contributors breathed a sigh of relief&#x2014;until five days later, when an unknown attacker started <a href="http://bit.ly/2Q7zR1h" data-href="http://bit.ly/2Q7zR1h">draining The DAO</a> using an exploit similar to the one for which the warning had been issued. Ultimately, the DAO attacker siphoned ~3.6 million ether out of The DAO.</p>
+<p>Le 9 juin 2016, les développeurs Peter Vessenes et Chriseth ont signalé que la plupart des contrats basés sur Ethereum qui géraient des fonds étaient potentiellement http:/ /bit.ly/2AAaDmA[vulnérable à un exploit] qui pourrait vider les fonds du contrat. Quelques jours plus tard, le 12 juin, Stephen Tual (cofondateur de Slock.it) rapportait que <a href="http://bit.ly/2qmo3g1" data-href="http://bit.ly/2qmo3g1">Le code du DAO n&#39;était pas vulnérable</a> au bogue décrit par Peter et Chriseth. Les contributeurs inquiets de DAO ont poussé un soupir de soulagement, jusqu&#39;à cinq jours plus tard, lorsqu&#39;un attaquant inconnu a lancé <a href="http://bit.ly/2Q7zR1h" data-href="http://bit.ly/2Q7zR1h">drainant le DAO</a> en utilisant un exploit similaire à celui pour lequel l&#39;avertissement avait été émis. En fin de compte, l&#39;attaquant du DAO a siphonné environ 3,6 millions d&#39;ether du DAO.</p>
 </div>
 <div class="paragraph data-line-26">
-<p>Simultaneously, an assemblage of volunteers calling themselves the Robin Hood Group (RHG) started using the same exploit to withdraw the remaining funds in order to save them from being stolen by the DAO attacker. On June 21, <a href="http://bit.ly/2PtX4xl" data-href="http://bit.ly/2PtX4xl">the RHG announced</a> that they had secured about 70% of The DAO&#8217;s funds (roughly 7.2 million ether), with plans to return it to the community (which they successfully did on the ETC network, and didn&#8217;t need to do on the Ethereum network after the fork). Many thanks and commendations were given to the RHG for their quick thinking and fast actions that helped secure the bulk of the community&#8217;s ether.</p>
+<p>Simultanément, un assemblage de volontaires se faisant appeler le Robin Hood Group (RHG) a commencé à utiliser le même exploit pour retirer les fonds restants afin d&#39;éviter qu&#39;ils ne soient volés par l&#39;attaquant du DAO. Le 21 juin, <a href="http://bit.ly/2PtX4xl" data-href="http://bit.ly/2PtX4xl">the RHG a annoncé</a> qu&#39;ils avaient obtenu environ 70 % des fonds du DAO (environ 7,2 millions d&#39;ethers), avec l&#39;intention de les restituer à la communauté (ce qu&#39;ils ont fait avec succès le le réseau ETC, et n&#39;avait pas besoin de le faire sur le réseau Ethereum après le fork). De nombreux remerciements et félicitations ont été adressés au GHR pour sa réflexion rapide et ses actions rapides qui ont aidé à sécuriser l&#39;essentiel de l&#39;ether de la communauté.</p>
 </div>
 <div class="sect3 data-line-29">
-<h4 id="dao_reentrancy_bug_technicals">Technical Details</h4>
+<h4 id="dao_reentrancy_bug_technicals">Détails techniques</h4>
 <div class="paragraph data-line-30">
-<p>While a more detailed and thorough explanation of the bug is given by <a href="http://bit.ly/2EQaLCI" data-href="http://bit.ly/2EQaLCI">Phil Daian</a>, the short explanation is that a crucial function in the DAO had two lines of code in the wrong order, meaning that the attacker could have requests to withdraw ether acted upon repeatedly, before the check of whether the attacker was entitled to the withdrawal was completed. This type of vulnerability is described in <a href="#reentrancy_security">[reentrancy_security]</a>.</p>
+<p>Alors qu&#39;une explication plus détaillée et approfondie du bogue est donnée par <a href="http://bit.ly/2EQaLCI" data-href="http://bit.ly/2EQaLCI">Phil Daian</a>, la brève explication est qu&#39;une fonction cruciale dans le DAO avait deux lignes de code dans le mauvais ordre, ce qui signifie que l&#39;attaquant pourrait avoir des demandes de retrait d&#39;ether traitées à plusieurs reprises, avant que la vérification de savoir si l&#39;attaquant avait droit au retrait ne soit terminée. Ce type de vulnérabilité est décrit dans <a href="#reentrancy_security">[reentrancy_security]</a>.</p>
 </div>
 </div>
 <div class="sect3 data-line-33">
-<h4 id="dao_reentrancy_bug_attack_flow">Attack Flow</h4>
+<h4 id="dao_reentrancy_bug_attack_flow">Flux d&#39;attaque</h4>
 <div class="paragraph data-line-34">
-<p>Imagine you had $100 in your bank account and you could bring your bank teller any number of withdrawal slips. The teller would give you money for each slip in order, and only after processing all the slips would they record your withdrawal. What if you brought them three slips, each requesting withdraw $100? What if you brought them three thousand?</p>
+<p>Imaginez que vous aviez 100 $ sur votre compte bancaire et que vous pouviez apporter à votre caissier de banque n&#39;importe quel nombre de bordereaux de retrait. Le caissier vous donnerait de l&#39;argent pour chaque feuillet dans l&#39;ordre, et ce n&#39;est qu&#39;après avoir traité tous les feuillets qu&#39;il enregistrerait votre retrait. Et si vous leur apportiez trois bordereaux, chacun demandant un retrait de 100 $ ? Et si vous leur apportiez trois mille ?</p>
 </div>
 <div class="paragraph data-line-36">
-<p>The DAO attack worked like this:</p>
+<p>L&#39;attaque DAO a fonctionné comme ceci :</p>
 </div>
 <div class="olist arabic data-line-38">
 <ol class="arabic">
 <li class="data-line-38">
-<p>The DAO attacker asks the DAO contract to withdraw DAO tokens (DAO).</p>
+<p>L&#39;attaquant du DAO demande au contrat DAO de retirer les jetons DAO (DAO).</p>
 </li>
 <li class="data-line-39">
-<p>The attacker asks the contract to withdraw DAO <em>again</em>, before the contract updates its records to show that DAO was withdrawn.</p>
+<p>L&#39;attaquant demande au contrat de retirer du DAO <em>encore</em>, avant que le contrat ne mette à jour ses enregistrements pour montrer que DAO a été retiré.</p>
 </li>
 <li class="data-line-40">
-<p>The attacker repeats step 2 as many times as possible.</p>
+<p>L&#39;attaquant répète l&#39;étape 2 autant de fois que possible.</p>
 </li>
 <li class="data-line-41">
-<p>The contract finally logs a single DAO withdrawal, losing track of the withdrawals that happened in the interim.</p>
+<p>Le contrat enregistre finalement un seul retrait DAO, perdant la trace des retraits qui se sont produits entre-temps.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect2 data-line-44">
-<h3 id="dao_hard_fork">The DAO Hard Fork</h3>
+<h3 id="dao_hard_fork">L&#8217;embranchement divergent DAO</h3>
 <div class="paragraph data-line-45">
-<p>Fortunately, there were several safeguards built into The DAO: notably, all withdrawal requests were subject to a 28-day delay. This gave the community a little while to discuss what to do about the exploit, because from roughly June 17&#x2013;July 20 the DAO attacker would be unable to convert their DAO tokens into ether.</p>
+<p>Heureusement, il y avait plusieurs garanties intégrées au DAO : notamment, toutes les demandes de retrait étaient soumises à un délai de 28 jours. Cela a donné à la communauté un peu de temps pour discuter de ce qu&#39;il fallait faire à propos de l&#39;exploit, car du 17 juin au 20 juillet environ, l&#39;attaquant DAO ne serait pas en mesure de convertir ses jetons DAO en ether.</p>
 </div>
 <div class="paragraph data-line-47">
-<p>Several developers focused on finding a viable solution, and multiple avenues were explored in this short space of time. Among them were a <a href="http://bit.ly/2qhruEK" data-href="http://bit.ly/2qhruEK"><em>DAO soft fork</em></a>, announced on June 24, to delay DAO withdrawals until consensus was reached, and a <a href="http://bit.ly/2AAGjIu" data-href="http://bit.ly/2AAGjIu"><em>DAO hard fork</em></a>, announced on July 15, to reverse the effects of the DAO attack with an exceptional state change.</p>
+<p>Plusieurs développeurs se sont concentrés sur la recherche d&#39;une solution viable, et de multiples pistes ont été explorées dans ce court laps de temps. Parmi eux se trouvaient un <a href="http://bit.ly/2qhruEK" data-href="http://bit.ly/2qhruEK"><em>embranchement convergent DAO</em></a>, annoncé le 24 juin, pour retarder les retraits de DAO jusqu&#39;à ce qu&#39;un consensus soit atteint, et un <a href="http://bit.ly/2AAGjIu" data-href="http://bit.ly/2AAGjIu"><em>embranchement divergent DAO</em></a>, annoncé le 15 juillet, pour inverser les effets de l&#39;attaque DAO avec un changement d&#39;état exceptionnel.</p>
 </div>
 <div class="paragraph data-line-49">
-<p>On June 28, developers discovered <a href="http://bit.ly/2zgOxUn" data-href="http://bit.ly/2zgOxUn">a DoS exploit in the DAO soft fork</a>  and concluded that the DAO hard fork would be the only viable option to fully resolve the situation. The DAO hard fork would transfer all ether that had been invested in The DAO into a new refund smart contract, allowing the original owners of the ether to claim full refunds. This provided a solution for returning the hacked funds, but also meant interfering with the balances of specific addresses on the network, however isolated they were. There would also be some leftover ether in portions of The DAO known as <em>childDAOs</em>. A group of trustees would manually authorize the leftover ether, worth <a href="http://bit.ly/2RuUrJh" data-href="http://bit.ly/2RuUrJh">~$6–7 million</a> at the time.</p>
+<p>Le 28 juin, les développeurs ont découvert <a href="http://bit.ly/2zgOxUn" data-href="http://bit.ly/2zgOxUn">un exploit DoS dans l&#8217;embranchement convergent DAO</a> et ont conclu que l&#8217;embranchement divergent DAO serait la seule option viable pour résoudre complètement la situation. L&#8217;embranchement divergent DAO transférerait tout l&#39;ether qui avait été investi dans le DAO dans un nouveau contrat intelligent de remboursement, permettant aux propriétaires d&#39;origine de l&#39;ether de réclamer un remboursement complet. Cela offrait une solution pour restituer les fonds piratés, mais signifiait également interférer avec les soldes d&#39;adresses spécifiques sur le réseau, aussi isolées soient-elles. Il y aurait également des restes d&#39;ether dans des parties de The DAO connues sous le nom de <em>childDAOs</em>. Un groupe d&#39;administrateurs autoriserait manuellement l&#39;ether restant, d&#39;une valeur de <a href="http://bit.ly/2RuUrJh" data-href="http://bit.ly/2RuUrJh">~$6–7 millions</a> à l&#39;époque.</p>
 </div>
 <div class="paragraph data-line-51">
-<p>With time running out, multiple Ethereum development teams created clients that allowed a user to decide whether they wanted to enable this fork. However, the client creators wanted to decide whether to make this choice opt-in (don&#8217;t fork by default) or opt-out (fork by default). On July 15, a vote was opened on <a href="http://bit.ly/2ABkTuV" data-href="http://bit.ly/2ABkTuV"><em>carbonvote.com</em></a>. The next day, at block height <a href="http://bit.ly/2yHb7Gl" data-href="http://bit.ly/2yHb7Gl">1,894,000</a>, it was closed. Of the <a href="http://bit.ly/2RuUrJh" data-href="http://bit.ly/2RuUrJh">5.5% of the total ether supply</a> that voted, &#x7e;80% of the votes (&#x7e;4.5% of the total ether supply) voted for opt-out. One-quarter of the opt-out vote came from a single address.</p>
+<p>Le temps presse, plusieurs équipes de développement Ethereum ont créé des clients qui permettaient à un utilisateur de décider s&#39;il souhaitait activer cet embranchement. Cependant, les créateurs du client voulaient décider de faire ce choix opt-in (ne pas de fourche par défaut) ou opt-out (embranchement par défaut). Le 15 juillet, un vote a été ouvert sur <a href="http://bit.ly/2ABkTuV" data-href="http://bit.ly/2ABkTuV"><em>carbonvote.com</em></a>. Le lendemain, à hauteur de bloc <a href="http://bit.ly/2yHb7Gl" data-href="http://bit.ly/2yHb7Gl">1,894,000</a>, il était fermé. Sur les <a href="http://bit.ly/2RuUrJh" data-href="http://bit.ly/2RuUrJh">5,5 % de l&#39;offre totale d&#39;ether</a> qui ont voté, environ 80 % des voix (~ 4,5 % de l&#39;offre totale d&#39;ether) ont voté pour l&#39;opt-out. Un quart des votes d&#39;opt-out provenaient d&#39;une seule adresse.</p>
 </div>
 <div class="paragraph data-line-53">
-<p>Ultimately the decision became opt-out, so those who opposed the DAO hard fork would need to explicitly state their opposition by changing a configuration option in the software they were running.</p>
+<p>En fin de compte, la décision est devenue une option de non-participation, de sorte que ceux qui s&#39;opposaient à l&#8217;embranchement divergent DAO devraient exprimer explicitement leur opposition en modifiant une option de configuration dans le logiciel qu&#39;ils exécutaient.</p>
 </div>
 <div class="paragraph data-line-55">
-<p>On July 20, at block height <a href="http://bit.ly/2zfaIKB" data-href="http://bit.ly/2zfaIKB">1,920,000</a>, Ethereum <a href="http://bit.ly/2yJxZ83" data-href="http://bit.ly/2yJxZ83">implemented the DAO hard fork</a> and thus two Ethereum networks were created: one including the state change, and the other ignoring it.</p>
+<p>Le 20 juillet, à hauteur de bloc <a href="http://bit.ly/2zfaIKB" data-href="http://bit.ly/2zfaIKB">1,920,000</a>, Ethereum <a href="http://bit.ly/2yJxZ83" data-href="http://bit.ly/2yJxZ83">a implémenté l&#8217;embranchement divergent DAO</a> et ainsi deux réseaux Ethereum ont été créés : un incluant le changement d&#39;état , et l&#39;autre l&#39;ignorant.</p>
 </div>
 <div class="paragraph data-line-57">
-<p>When the DAO hard-forked Ethereum (present-day Ethereum) gained a majority of the mining power, many assumed that consensus was achieved and the minority chain would fade away, as in previous forks. Despite this, a sizable portion of the Ethereum community (roughly 10% by value and mining power) started supporting the non-forked chain, which came to be known as Ethereum Classic.</p>
+<p>Lors de l&#8217;embranchement divergent DAO, Ethereum (Ethereum actuel) a gagné la majorité de la puissance minière, beaucoup ont supposé qu&#39;un consensus était atteint et que la chaîne minoritaire s&#39;estomperait loin, comme dans les fourches précédentes. Malgré cela, une partie importante de la communauté Ethereum (environ 10 % en valeur et en puissance minière) a commencé à soutenir la chaîne non bifurquée, connue sous le nom d&#39;Ethereum Classic.</p>
 </div>
 <div class="paragraph data-line-59">
-<p>Within days of the fork, several exchanges began to list both Ethereum ("ETH") and Ethereum Classic ("ETC"). Due to the nature of hard forks, all Ethereum users holding ether at the time of the split then held funds on both of the chains, and a market value for ETC was soon established with <a href="http://bit.ly/2qhuNvP" data-href="http://bit.ly/2qhuNvP">Poloniex</a> listing ETC on July 24.</p>
+<p>Quelques jours après l&#8217;embranchement, plusieurs bourses ont commencé à répertorier Ethereum (&quot;ETH&quot;) et Ethereum Classic (&quot;ETC&quot;). En raison de la nature des embranchements divergents, tous les utilisateurs d&#39;Ethereum détenant de l&#39;ether au moment de la scission détenaient alors des fonds sur les deux chaînes, et une valeur marchande pour ETC a été rapidement établie avec <a href="http://bit.ly/2qhuNvP" data-href="http://bit.ly/2qhuNvP">Poloniex</a> cotant ETC le 24 juillet.</p>
 </div>
 <div class="sect3 data-line-62">
-<h4 id="dao_hard_fork_timeline">Timeline of the DAO Hard Fork</h4>
+<h4 id="dao_hard_fork_timeline">Chronologie de l&#8217;embranchement divergent DAO</h4>
 <div class="ulist data-line-64">
 <ul>
 <li class="data-line-64">
-<p>April 5, 2016: Slock.it <a href="http://bit.ly/2Db4boE" data-href="http://bit.ly/2Db4boE">releases a security review</a> of the generic DAO framework smart contracts by Deja Vu Security.</p>
+<p>5 avril 2016 : Slock.it <a href="http://bit.ly/2Db4boE" data-href="http://bit.ly/2Db4boE">publie une revue de sécurité</a> des contrats intelligents génériques du cadre DAO par Deja Vu Security.</p>
 </li>
 <li class="data-line-65">
-<p>April 30, 2016: The DAO crowdsale <a href="http://bit.ly/2qhwhpI" data-href="http://bit.ly/2qhwhpI">launches</a>.</p>
+<p>30 avril 2016 : La vente publique DAO est <a href="http://bit.ly/2qhwhpI" data-href="http://bit.ly/2qhwhpI">lancée</a>.</p>
 </li>
 <li class="data-line-66">
-<p>May 27, 2016: The DAO crowdsale ends.</p>
+<p>27 mai 2016 : Fin de la vente publique DAO.</p>
 </li>
 <li class="data-line-67">
-<p>June 9, 2016: A generic <a href="http://bit.ly/2AAaDmA" data-href="http://bit.ly/2AAaDmA">recursive call bug</a> is discovered and believed to affect many Solidity contracts that track users' balances.</p>
+<p>9 juin 2016 : Un <a href="http://bit.ly/2AAaDmA" data-href="http://bit.ly/2AAaDmA">bogue d&#39;appel récursif</a> générique est découvert et semble affecter de nombreux contrats Solidity qui suivent les soldes des utilisateurs.</p>
 </li>
 <li class="data-line-68">
-<p>June 12, 2016: Stephen Tual <a href="http://bit.ly/2qmo3g1" data-href="http://bit.ly/2qmo3g1">declares</a> that The DAO&#8217;s funds are not at risk.</p>
+<p>12 juin 2016 : Stephen Tual <a href="http://bit.ly/2qmo3g1" data-href="http://bit.ly/2qmo3g1">déclare</a> que les fonds du DAO ne sont pas à risque.</p>
 </li>
 <li class="data-line-69">
-<p>June 17, 2016: <a href="http://bit.ly/2EQaLCI" data-href="http://bit.ly/2EQaLCI">The DAO is exploited</a> and a variant of the discovered bug (termed the "reentrancy bug") is used to start draining the funds, eventually nabbing ~30% of the ether.</p>
+<p>17 juin 2016 : <a href="http://bit.ly/2EQaLCI" data-href="http://bit.ly/2EQaLCI">Le DAO est exploité</a> et une variante du bogue découvert (appelé le « bogue de réentrance ») est utilisée pour commencer à drainer les fonds, finissant par attraper environ 30 % de l&#39;ether.</p>
 </li>
 <li class="data-line-70">
-<p>June 21, 2016: The RHG <a href="http://bit.ly/2zgl3Gk" data-href="http://bit.ly/2zgl3Gk">announces</a> it has secured the other ~70% of the ether stored within The DAO.</p>
+<p>21 juin 2016 : Le RHG <a href="http://bit.ly/2zgl3Gk" data-href="http://bit.ly/2zgl3Gk">annonce</a> qu&#39;il a sécurisé les autres ~70 % de l&#39;ether stocké au sein du DAO.</p>
 </li>
 <li class="data-line-71">
-<p>June 24, 2016: A <a href="http://bit.ly/2qhruEK" data-href="http://bit.ly/2qhruEK">soft fork vote</a> is announced via opt-in signaling through Geth and Parity clients, designed to temporarily withhold funds until the community can better decide what to do.</p>
+<p>24 juin 2016 : Un <a href="http://bit.ly/2qhruEK" data-href="http://bit.ly/2qhruEK">vote d&#8217;embranchement convergent</a> est annoncé via une signalisation opt-in via les clients Geth et Parity, conçu pour retenir temporairement les fonds jusqu&#39;à ce que la communauté puisse mieux décider quoi faire.</p>
 </li>
 <li class="data-line-72">
-<p>June 28, 2016: A <a href="http://bit.ly/2zgOxUn" data-href="http://bit.ly/2zgOxUn">vulnerability</a> is discovered in the soft fork and it&#8217;s abandoned.</p>
+<p>28 juin 2016 : Une <a href="http://bit.ly/2zgOxUn" data-href="http://bit.ly/2zgOxUn">vulnérabilité</a> est découverte dans l&#8217;embranchement convergent et elle est abandonnée.</p>
 </li>
 <li class="data-line-73">
-<p>June 28, 2016 to July 15: Users debate whether or not to hard fork; most of the vocal public debate occurs on the <em>/r/ethereum</em> subreddit.</p>
+<p>Du 28 juin 2016 au 15 juillet : les utilisateurs débattent de l&#8217;embranchement divergent ou non ; la plupart des débats publics vocaux se déroulent sur le subreddit <em>/r/ethereum</em>.</p>
 </li>
 <li class="data-line-74">
-<p>July 15, 2016: The <a href="http://bit.ly/2qmo3g1" data-href="http://bit.ly/2qmo3g1">DAO hard fork</a> is proposed, to return the funds taken in the DAO attack.</p>
+<p>15 juillet 2016 : <a href="http://bit.ly/2qmo3g1" data-href="http://bit.ly/2qmo3g1">L&#8217;embranchement divergent DAO</a> est proposé, pour restituer les fonds pris lors de l&#39;attaque DAO.</p>
 </li>
 <li class="data-line-75">
-<p>July 15, 2016: A <a href="http://bit.ly/2ABkTuV" data-href="http://bit.ly/2ABkTuV">vote is held</a> on CarbonVote to decide if the DAO hard fork will be opt-in (don&#8217;t fork by default) or opt-out (fork by default).</p>
+<p>15 juillet 2016 : Un <a href="http://bit.ly/2ABkTuV" data-href="http://bit.ly/2ABkTuV">vote a lieu</a> sur CarbonVote pour décider si l&#8217;embranchement divergent DAO sera opt-in (ne pas fork par défaut) ou opt-out (fork by défaut).</p>
 </li>
 <li class="data-line-76">
-<p>July 16, 2016: <a href="http://bit.ly/2RuUrJh" data-href="http://bit.ly/2RuUrJh">5.5% of the total ether supply votes</a>; ~80% of the votes (~4.5% of the total supply) are pro the opt-out hard fork, with one-quarter of the pro-vote coming from a single address.</p>
+<p>16 juillet 2016 : <a href="http://bit.ly/2RuUrJh" data-href="http://bit.ly/2RuUrJh">5,5 % des votes sur l&#39;offre totale d&#39;ether</a> ; ~80 % des votes (~4,5 % de l&#39;offre totale) sont en faveur d&#8217;un embranchement divergent opt-out, un quart des votes pro provenant d&#39;une seule adresse.</p>
 </li>
 <li class="data-line-77">
-<p>July 20, 2016: The <a href="http://bit.ly/2yJxZ83" data-href="http://bit.ly/2yJxZ83">hard fork</a> occurs at block 1,920,000.</p>
+<p>20 juillet 2016 : <a href="http://bit.ly/2yJxZ83" data-href="http://bit.ly/2yJxZ83">L&#8217;embranchement divergent</a> se produit au bloc 1 920 000.</p>
 </li>
 <li class="data-line-78">
-<p>July 20, 2016: Those against the DAO hard fork continue running the old client software; this leads to issues with <a href="http://bit.ly/2qjJm27" data-href="http://bit.ly/2qjJm27">transactions being replayed on both chains</a>.</p>
+<p>20 juillet 2016 : Ceux qui s&#39;opposent à l&#8217;embranchement divergent DAO continuent d&#39;utiliser l&#39;ancien logiciel client ; cela entraîne des problèmes, <a href="http://bit.ly/2qjJm27" data-href="http://bit.ly/2qjJm27">les transactions sont rejouées sur les deux chaînes</a>.</p>
 </li>
 <li class="data-line-79">
-<p>July 24, 2016: <a href="http://bit.ly/2qhuNvP" data-href="http://bit.ly/2qhuNvP">Poloniex lists</a> the original Ethereum chain under the ticker symbol ETC; it&#8217;s the first exchange to do so.</p>
+<p>24 juillet 2016 : <a href="http://bit.ly/2qhuNvP" data-href="http://bit.ly/2qhuNvP">Poloniex répertorie</a> la chaîne Ethereum originale sous le symbole ETC ; c&#39;est le premier échange à le faire.</p>
 </li>
 <li class="data-line-80">
-<p>August 10, 2016: The RHG <a href="http://bit.ly/2JrLpK2" data-href="http://bit.ly/2JrLpK2">transfers 2.9</a> million of the recovered ETC to Poloniex in order to convert it to ETH on the advice of Bity SA; 14% of the total RHG holdings are converted from ETC to ETH and other cryptocurrencies, and <a href="http://bit.ly/2ETDdUc" data-href="http://bit.ly/2ETDdUc">Poloniex freezes</a> the other 86% of deposited ETH.</p>
+<p>10 août 2016 : Le RHG <a href="http://bit.ly/2JrLpK2" data-href="http://bit.ly/2JrLpK2">transfère 2,9</a> millions de l&#39;ETC récupéré à Poloniex afin de le convertir en ETH sur les conseils de Bity SA ; 14% du total des avoirs RHG sont convertis d&#39;ETC en ETH et autres crypto-monnaies, et <a href="http://bit.ly/2ETDdUc" data-href="http://bit.ly/2ETDdUc">Poloniex gèle</a> les 86% restants des ETH déposés.</p>
 </li>
 <li class="data-line-81">
-<p>August 30, 2016: The frozen funds are sent by Poloniex back to the RHG, which then sets up a refund contract on the ETC chain.</p>
+<p>30 août 2016 : Les fonds gelés sont renvoyés par Poloniex au RHG, qui met alors en place un contrat de remboursement sur la chaîne ETC.</p>
 </li>
 <li class="data-line-82">
-<p>December 11, 2016: IOHK&#8217;s ETC development team forms, led by Ethereum founding member Charles Hoskinson.</p>
+<p>11 décembre 2016 : L&#39;équipe de développement ETC d&#39;IOHK se forme, dirigée par le membre fondateur d&#39;Ethereum, Charles Hoskinson.</p>
 </li>
 <li class="data-line-83">
-<p>January 13, 2017: The ETC network is updated to resolve transaction replay issues; the chains are now functionally separate.</p>
+<p>13 janvier 2017 : Le réseau ETC est mis à jour pour résoudre les problèmes de relecture des transactions ; les chaînes sont maintenant fonctionnellement séparées.</p>
 </li>
 <li class="data-line-84">
-<p>February 20, 2017: The ETCDEVTeam forms, led by early ETC developer Igor Artamonov (splix).</p>
+<p>20 février 2017 : L&#39;équipe ETCDEVTeam se forme, dirigée par le premier développeur ETC Igor Artamonov (splix).</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2 data-line-87">
-<h3 id="eth_etc_differences">Ethereum and Ethereum Classic</h3>
+<h3 id="eth_etc_differences">Ethereum et Ethereum Classic</h3>
 <div class="paragraph data-line-89">
-<p>While the initial split was centered around The DAO, the two networks, Ethereum and Ethereum Classic, are now separate projects, although most development is still done by the Ethereum community and simply ported to Ethereum Classic codebases. Nevertheless, the full set of differences is constantly evolving and too extensive to cover in this appendix. However, it is worth noting that the chains do differ significantly in their core development and community structure. A few of the technical differences are discussed next.</p>
+<p>Alors que la scission initiale était centrée sur le DAO, les deux réseaux, Ethereum et Ethereum Classic, sont désormais des projets distincts, bien que la plupart des développements soient toujours effectués par la communauté Ethereum et simplement porté sur les bases de code Ethereum Classic. Néanmoins, l&#39;ensemble des différences est en constante évolution et trop étendu pour être couvert dans cette annexe. Cependant, il convient de noter que les chaînes diffèrent considérablement dans leur développement de base et leur structure communautaire. Quelques-unes des différences techniques sont discutées ci-dessous.</p>
 </div>
 <div class="sect3 data-line-93">
-<h4 id="eth_etc_differences_evm">The EVM</h4>
+<h4 id="eth_etc_differences_evm">L&#39;EVM</h4>
 <div class="paragraph data-line-94">
-<p>For the most part (at the time of writing), the two networks remain highly compatible: contract code produced for one chain runs as expected on the other; but there are some small differences in EVM OPCODES (see EIPs <a href="http://bit.ly/2yIajkF" data-href="http://bit.ly/2yIajkF">140</a>, <a href="http://bit.ly/2qhKz9Y" data-href="http://bit.ly/2qhKz9Y">145</a>, and <a href="http://bit.ly/2SxsrFR" data-href="http://bit.ly/2SxsrFR">214</a>).</p>
+<p>Pour la plupart (au moment de la rédaction), les deux réseaux restent hautement compatibles : le code de contrat produit pour une chaîne fonctionne comme prévu sur l&#39;autre ; mais il y a quelques petites différences dans les OPCODES EVM (voir lien EIP : <a href="http://bit.ly/2yIajkF" data-href="http://bit.ly/2yIajkF">140</a>, lien : <a href="http://bit.ly/2qhKz9Y" data-href="http://bit.ly/2qhKz9Y">145</a> et lien : <a href="http://bit.ly/2SxsrFR" data-href="http://bit.ly/2SxsrFR">214</a>).</p>
 </div>
 </div>
 <div class="sect3 data-line-97">
-<h4 id="eth_etc_differences_core_development">Core Network Development</h4>
+<h4 id="eth_etc_differences_core_development">Développement du réseau central</h4>
 <div class="paragraph data-line-98">
-<p>Being open projects, blockchain platforms often have many users and contributors. However, the core network development (i.e., of the code that runs the network) is often done by small groups due to the expertise and knowledge required to develop this type of software. On Ethereum, this work is done by the Ethereum Foundation and volunteers. On Ethereum Classic, it&#8217;s done by ETCDEV, IOHK, and volunteers.</p>
+<p>Étant des projets ouverts, les plateformes de chaîne de blocs comptent souvent de nombreux utilisateurs et contributeurs. Cependant, le développement du réseau central (c&#39;est-à-dire du code qui gère le réseau) est souvent effectué par de petits groupes en raison de l&#39;expertise et des connaissances requises pour développer ce type de logiciel. Sur Ethereum, ce travail est effectué par la Fondation Ethereum et des bénévoles. Sur Ethereum Classic, c&#39;est fait par ETCDEV, IOHK et des volontaires.</p>
 </div>
 </div>
 </div>
 <div class="sect2 data-line-101">
-<h3 id="ethereum_forks">Other Notable Ethereum Forks</h3>
+<h3 id="ethereum_forks">Autres fourches Ethereum notables</h3>
 <div class="paragraph data-line-103">
-<p><a href="https://ellaism.org/about/" data-href="https://ellaism.org/about/">Ellaism</a> is an Ethereum-based network that intends to use PoW exclusively to secure the blockchain. It has no pre-mine and no mandatory developer fees, with all support and development donated freely by the community. Its developers believe this makes theirs &#x201c;one of the most honest pure Ethereum projects,&#x201d; and one that is &#x201c;uniquely interesting as a platform for serious developers, educators, and enthusiasts. Ellaism is a pure smart contract platform. Its goal is to create a smart contract platform that is both fair and trustworthy.&#x201d; The principles of the platform are as follows:</p>
+<p><a href="https://ellaism.org/about/" data-href="https://ellaism.org/about/">Ellaism</a> est un réseau basé sur Ethereum qui a l&#39;intention d&#39;utiliser PoW exclusivement pour sécuriser la chaîne de blocs. Il n&#39;y a pas de pré-minage et pas de frais de développement obligatoires, avec tout le support et le développement donnés gratuitement par la communauté. Ses développeurs pensent que cela fait du leur «l&#39;un des projets Ethereum purs les plus honnêtes», et celui qui est «particulièrement intéressant en tant que plate-forme pour les développeurs sérieux, les éducateurs et les passionnés. Ellaism est une pure plateforme de contrats intelligents. Son objectif est de créer une plate-forme de contrats intelligents à la fois équitable et digne de confiance. » Les principes de la plateforme sont les suivants :</p>
 </div>
 <div class="quoteblock data-line-105">
 <blockquote>
 <div class="ulist data-line-106">
 <ul>
 <li class="data-line-106">
-<p>All changes and upgrades to the protocol should strive to maintain and reinforce these Principles of Ellaism.</p>
+<p>Toutes les modifications et mises à niveau du protocole doivent s&#39;efforcer de maintenir et de renforcer ces principes d&#8217;Ellaism.</p>
 </li>
 <li class="data-line-107">
-<p>Monetary Policy: 280 million coins.</p>
+<p>Politique monétaire : 280 millions de pièces.</p>
 </li>
 <li class="data-line-108">
-<p>No Censorship: Nobody should be able to prevent valid txs from being confirmed.</p>
+<p>Pas de censure : personne ne devrait pouvoir empêcher la confirmation de txs valides.</p>
 </li>
 <li class="data-line-109">
-<p>Open-Source: Ellaism source code should always be open for anyone to read, modify, copy, share.</p>
+<p>À source ouverte : le code source d&#39;Ellaism doit toujours être ouvert à quiconque pour le lire, le modifier, le copier, le partager.</p>
 </li>
 <li class="data-line-110">
-<p>Permissionless: No arbitrary gatekeepers should ever prevent anybody from being part of the network (user, node, miner, etc).</p>
+<p>Sans permission : Aucune décision arbitraire ne devrait jamais empêcher quiconque de faire partie du réseau (utilisateur, nœud, mineur, etc.).</p>
 </li>
 <li class="data-line-111">
-<p>Pseudonymous: No ID should be required to own, use Ellaism.</p>
+<p>Pseudonyme : Aucune pièce d&#39;identité ne devrait être exigée pour posséder, utiliser Ellaism.</p>
 </li>
 <li class="data-line-112">
-<p>Fungible: All coins are equal and should be equally spendable.</p>
+<p>Fongible : toutes les pièces sont égales et doivent pouvoir être dépensées de la même manière.</p>
 </li>
 <li class="data-line-113">
-<p>Irreversible Transactions: Confirmed blocks should be set in stone. Blockchain History should be immutable.</p>
+<p>Transactions irréversibles : les blocs confirmés doivent être gravés dans le marbre. L&#39;historique de la chaîne de blocs doit être immuable.</p>
 </li>
 <li class="data-line-114">
-<p>No Contentious Hard Forks: Never hard fork without consensus from the whole community. Only break the existing consensus when necessary.</p>
+<p>Pas d&#8217;embranchements divergents contentieux : jamais d&#8217;embranchement divergent sans consensus de toute la communauté. Ne brisez le consensus existant que lorsque cela est nécessaire.</p>
 </li>
 <li class="data-line-115">
-<p>Many feature upgrades can be carried out without a hard fork, such as improving the performance of the EVM.</p>
+<p>De nombreuses mises à niveau de fonctionnalités peuvent être effectuées sans embranchement divergent, telles que l&#39;amélioration des performances de l&#39;EVM.</p>
 </li>
 </ul>
 </div>
 </blockquote>
 </div>
 <div class="paragraph data-line-118">
-<p>Several other forks have occurred on Ethereum as well. Some of these are hard forks, in the sense that they split directly off of the preexisting Ethereum network. Others are software forks: they use Ethereum&#8217;s client/node software but run entirely separate networks without any history shared with Ethereum. There will likely be more forks over the life of Ethereum.</p>
+<p>Plusieurs autres embranchements se sont également produites sur Ethereum. Certains d&#39;entre eux sont des embranchements divergents, en ce sens qu&#39;ils se séparent directement du réseau Ethereum préexistant. D&#39;autres sont des fourches logiciels : ils utilisent le logiciel client/nœud d&#39;Ethereum mais exécutent des réseaux entièrement séparés sans aucun historique partagé avec Ethereum. Il y aura probablement plus de fourches au cours de la vie d&#39;Ethereum.</p>
 </div>
 <div class="paragraph data-line-120">
-<p>There are also several other projects that claim to be Ethereum forks but are actually based on ERC20 tokens and run on the Ethereum network. Two examples of these are EtherBTC (ETHB) and Ethereum Modification (EMOD). These are not forks in the traditional sense, and may sometimes be called &#x201c;airdrops.&#x201d;</p>
+<p>Il existe également plusieurs autres projets qui prétendent être des fourches Ethereum mais qui sont en fait basés sur des jetons ERC20 et exécutés sur le réseau Ethereum. Deux exemples de ceux-ci sont EtherBTC (ETHB) et Ethereum Modification (EMOD). Ce ne sont pas des fourches au sens traditionnel du terme, et peuvent parfois être appelés « airdrops ».</p>
 </div>
 <div class="paragraph data-line-122">
-<p>Here&#8217;s a brief rundown of some of the more notable forks that have occurred:</p>
+<p>Voici un bref aperçu de certaines des fourches les plus notables qui se sont produites :</p>
 </div>
 <div class="ulist data-line-124">
 <ul>
 <li class="data-line-124">
-<p><em>Expanse</em> was the first fork of the Ethereum blockchain to gain traction. It was announced via the Bitcoin Talk forum on September 7, 2015. The actual fork occurred a week later on September 14, 2015, at a block height of 800,000. It was originally founded by Christopher Franko and James Clayton. Their stated vision was to create an advanced chain for: "identity, governance, charity, commerce, and equity".</p>
+<p><em>Expanse</em> a été le premier embranchement de la chaîne de blocs Ethereum à gagner du terrain. Il a été annoncé via le forum Bitcoin Talk le 7 septembre 2015. La véritable fourche s&#39;est produit une semaine plus tard, le 14 septembre 2015, à une hauteur de bloc de 800 000. Il a été fondé à l&#39;origine par Christopher Franko et James Clayton. Leur vision déclarée était de créer une chaîne avancée pour: &quot;l&#39;identité, la gouvernance, la charité, le commerce et l&#39;équité&quot;.</p>
 </li>
 <li class="data-line-125">
-<p><em>EthereumFog</em> (ETF) was launched on December 14, 2017, and forked at a block height of 4,730,660. The project&#8217;s stated aim is to develop "world decentralized fog computing" by focusing on fog computing and decentralized storage. There is still little information on what this will actually entail.</p>
+<p><em>EthereumFog</em> (ETF) a été lancé le 14 décembre 2017 et a bifurqué à une hauteur de bloc de 4 730 660. L&#39;objectif déclaré du projet est de développer &quot;l&#8217;informatique géodistribuée décentralisée mondiale&quot; en se concentrant sur l&#39;informatique géodistribuée et le stockage décentralisé. Il y a encore peu d&#39;informations sur ce que cela impliquera réellement.</p>
 </li>
 <li class="data-line-126">
-<p><em>EtherZero</em> (ETZ) was launched on January 19, 2018, at a block height of 4,936,270. Its notable innovations were the introduction of a masternode architecture and the removal of transaction fees for smart contracts to enable a wider diversity of DApps. There has been some criticism from some prominent members of the Ethereum community, MyEtherWallet, and MetaMask, due to the lack of clarity surrounding development and some accusations of possible phishing.</p>
+<p><em>EtherZero</em> (ETZ)  a été lancé le 19 janvier 2018, à une hauteur de bloc de 4 936 270. Ses innovations notables ont été l&#39;introduction d&#39;une architecture de masternode et la suppression des frais de transaction pour les contrats intelligents afin de permettre une plus grande diversité de DApps. Il y a eu quelques critiques de certains membres éminents de la communauté Ethereum, MyEtherWallet et MetaMask, en raison du manque de clarté entourant le développement et de certaines accusations de phishing possible.</p>
 </li>
 <li class="data-line-127">
-<p><em>EtherInc</em> (ETI) was launched on February 13, 2018, at a block height of 5,078,585, with a focus on building decentralized organizations. Stated goals include the reduction of block times, increased miner rewards, the removal of uncle rewards, and setting a cap on mineable coins. EtherInc uses the same private keys as Ethereum and has implemented replay protection to protect ether on the original non-forked chain.</p>
+<p><em>EtherInc</em> (ETI) a été lancé le 13 février 2018, à une hauteur de bloc de 5 078 585, avec un accent sur la construction d&#8217;organisations décentralisées. Les objectifs déclarés incluent la réduction des temps de blocage, l&#39;augmentation des récompenses des mineurs, la suppression des récompenses de l&#39;Uncle et la fixation d&#39;un plafond sur les pièces exploitables. EtherInc utilise les mêmes clés privées qu&#39;Ethereum et a mis en place une protection contre la relecture pour protéger l&#8217;ether sur la chaîne originale non embranchée.</p>
 </li>
 </ul>
 </div>
@@ -696,7 +696,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-26 12:15:29 -0400
+Last updated 2022-05-14 17:18:10 -0400
 </div>
 </div>
 </body>
