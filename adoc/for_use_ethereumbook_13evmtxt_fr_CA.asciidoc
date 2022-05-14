@@ -128,7 +128,7 @@ STATICCALL   // Message-appel statique dans un compte
 REVERT       // Arrête l&#39;exécution, annule les changements d&#39;état mais retourne
              // des données et le gaz restant
 INVALID      // L&#39;instruction invalide désignée
-SELFDESTRUCT //Arrête l&#39;exécution et enregistre le compte pour suppression
+SELFDESTRUCT // Arrête l&#39;exécution et enregistre le compte pour suppression
 ----
 
 [[logic_opcides]]
