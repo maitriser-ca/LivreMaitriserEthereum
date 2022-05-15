@@ -491,7 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Les transactions sont <em>atomique</em>, quel que soit le nombre de contrats qu&#39;elles appellent ou ce que ces contrats font lorsqu&#39;ils sont appelés. Les transactions s&#39;exécutent dans leur intégralité, avec tout changement dans l&#39;état global (contrats, comptes, etc.) enregistré uniquement si toutes les exécutions se terminent avec succès. Une fin réussie signifie que le programme s&#39;est exécuté sans erreur et a atteint la fin de l&#39;exécution. Si l&#39;exécution échoue en raison d&#39;une erreur, tous ses effets (changements d&#39;état) sont &quot;annulés&quot; comme si la transaction n&#39;avait jamais été exécutée. Une transaction échouée est toujours enregistrée comme ayant été tentée, et l&#39;ether dépensé en gaz pour l&#39;exécution est déduit du compte d&#39;origine, mais cela n&#39;a par ailleurs aucun autre effet sur le contrat ou l&#39;état du compte.</p>
 </div>
 <div class="paragraph">
-<p>Comme mentionné précédemment, il est important de se rappeler que le code d&#39;un contrat ne peut pas être modifié. Cependant, un contrat peut être &quot;supprimé&quot;, supprimant le code et son état interne (stockage) de son adresse, laissant un compte vide. Toutes les transactions envoyées à cette adresse de compte après la suppression du contrat n&#39;entraînent aucune exécution de code, car il n&#39;y a plus de code à exécuter. Pour supprimer un contrat, vous exécutez un opcode EVM appelé SELFDESTRUCT (précédemment appelé SUICIDE). Cette opération coûte du &quot;gaz négatif&quot;, un remboursement de gaz, incitant ainsi à libérer les ressources du client du réseau à partir de la suppression de l&#39;état stocké. La suppression d&#39;un contrat de cette manière ne supprime pas l&#39;historique des transactions (passé) du contrat, car la blockchain elle-même est immuable. Il est également important de noter que la capacité SELFDESTRUCT ne sera disponible que si l&#39;auteur du contrat a programmé le contrat intelligent pour avoir cette fonctionnalité. Si le code du contrat n&#39;a pas d&#39;opcode SELFDESTRUCT, ou s&#39;il est inaccessible, le contrat intelligent ne peut pas être supprimé.</p>
+<p>Comme mentionné précédemment, il est important de se rappeler que le code d&#39;un contrat ne peut pas être modifié. Cependant, un contrat peut être &quot;supprimé&quot;, supprimant le code et son état interne (stockage) de son adresse, laissant un compte vide. Toutes les transactions envoyées à cette adresse de compte après la suppression du contrat n&#39;entraînent aucune exécution de code, car il n&#39;y a plus de code à exécuter. Pour supprimer un contrat, vous exécutez un opcode EVM appelé SELFDESTRUCT (précédemment appelé SUICIDE). Cette opération coûte du &quot;gaz négatif&quot;, un remboursement de gaz, incitant ainsi à libérer les ressources du client du réseau à partir de la suppression de l&#39;état stocké. La suppression d&#39;un contrat de cette manière ne supprime pas l&#39;historique des transactions (passé) du contrat, car la chaîne de blocs elle-même est immuable. Il est également important de noter que la capacité SELFDESTRUCT ne sera disponible que si l&#39;auteur du contrat a programmé le contrat intelligent pour avoir cette fonctionnalité. Si le code du contrat n&#39;a pas d&#39;opcode SELFDESTRUCT, ou s&#39;il est inaccessible, le contrat intelligent ne peut pas être supprimé.</p>
 </div>
 </div>
 <div class="sect2">
@@ -551,7 +551,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Solidity a été créé par Dr. Gavin Wood (co-auteur de ce livre) en tant que langage explicite pour écrire des contrats intelligents avec des fonctionnalités permettant de prendre directement en charge l&#39;exécution dans l&#39;environnement décentralisé de l&#39;ordinateur mondial Ethereum. Les attributs résultants sont assez généraux et ont donc fini par être utilisés pour coder des contrats intelligents sur plusieurs autres plateformes de chaîne de blocs. Il a été développé par Christian Reitiwessner puis également par Alex Beregszaszi, Liana Husikyan, Yoichi Hirai et plusieurs anciens contributeurs principaux d&#39;Ethereum. Solidity est maintenant développé et maintenu en tant que projet indépendant <a href="https://github.com/ethereum/solidity">sur GitHub</a>.</p>
 </div>
 <div class="paragraph">
-<p>Le &quot;produit&quot; principal du projet Solidity est le compilateur Solidity, solc, qui convertit les programmes écrits dans le langage Solidity en bytecode EVM. Le projet gère également l&#39;importante norme d&#39;interface binaire d&#39;application (ABI) pour les contrats intelligents Ethereum, que nous explorerons en détail dans ce chapitre. Chaque version du compilateur Solidity correspond à et compile une version spécifique de <span class="keep-together">language</span> de Solidity.</p>
+<p>Le &quot;produit&quot; principal du projet Solidity est le compilateur Solidity, solc, qui convertit les programmes écrits dans le langage Solidity en code intermédiaire EVM. Le projet gère également l&#39;importante norme d&#39;interface binaire d&#39;application (ABI) pour les contrats intelligents Ethereum, que nous explorerons en détail dans ce chapitre. Chaque version du compilateur Solidity correspond à et compile une version spécifique de <span class="keep-together">language</span> de Solidity.</p>
 </div>
 <div class="paragraph">
 <p>Pour commencer, nous allons télécharger un exécutable binaire du compilateur Solidity. Ensuite, nous développerons et compilerons un contrat simple, à la suite de l&#39;exemple avec lequel nous avons commencé dans <a href="#intro_chapter">[intro_chapter]</a>.</p>
@@ -708,7 +708,7 @@ Contract JSON ABI
 <div class="sect3">
 <h4 id="solidity_pragma">Sélection d&#39;un compilateur Solidity et d&#39;une version linguistique</h4>
 <div class="paragraph">
-<p>Comme nous l&#39;avons vu dans le code précédent, notre contrat Faucet se compile avec succès avec Solidity version 0.4.21. Et si nous avions utilisé une version différente du compilateur Solidity ? Le language est toujours en constante évolution et les choses peuvent changer de manière inattendue. Notre contrat est assez simple, mais que se passerait-il si notre programme utilisait une fonctionnalité qui n&#39;a été ajoutée que dans la version 0.4.19 de Solidity et que nous essayions de la compiler avec la version 0.4.18 ?</p>
+<p>Comme nous l&#39;avons vu dans le code précédent, notre contrat Faucet se compile avec succès avec Solidity version 0.4.21. Et si nous avions utilisé une version différente du compilateur Solidity ? Le langage est toujours en constante évolution et les choses peuvent changer de manière inattendue. Notre contrat est assez simple, mais que se passerait-il si notre programme utilisait une fonctionnalité qui n&#39;a été ajoutée que dans la version 0.4.19 de Solidity et que nous essayions de la compiler avec la version 0.4.18 ?</p>
 </div>
 <div class="paragraph">
 <p>Pour résoudre ces problèmes, Solidity propose une <em>directive du compilateur</em> connue sous le nom de <em>version pragma</em> qui indique au compilateur que le programme attend un compilateur (et un langage) spécifique à une version. Regardons un exemple :</p>
@@ -1126,7 +1126,7 @@ function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">contract MEContract {
 	function MEContract() {
-// C&amp;#39;est le constructeur
+	// C&amp;#39;est le constructeur
 	}
 }</code></pre>
 </div>
@@ -1142,7 +1142,7 @@ function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">pragma ^0.4.22
 contract MEContract {
 	constructor () {
-// C&amp;#39;est le constructeur
+	// C&amp;#39;est le constructeur
 	}
 }</code></pre>
 </div>
@@ -1151,7 +1151,7 @@ contract MEContract {
 <p>Pour résumer, le cycle de vie d&#39;un contrat commence par une transaction de création à partir d&#39;un compte EOA ou un contrat. S&#39;il existe un constructeur, il est exécuté dans le cadre de la création du contrat, pour initialiser l&#39;état du contrat lors de sa création, puis est supprimé.</p>
 </div>
 <div class="paragraph">
-<p>L&#39;autre la fin du cycle de vie du contrat est la <em>destruction du contrat</em>. Les contrats sont détruits par un opcode EVM spécial appelé SELFDESTRUCT. Il s&#39;appelait autrefois <span class="keep-together"><code>SUICIDE</code></span>, mais ce nom a été déprécié en raison des associations négatives du mot. Dans Solidity, cet opcode est exposé sous la forme d&#39;une fonction intégrée de haut niveau appelée selfdestruct, qui prend un argument : l&#39;adresse pour recevoir tout solde d&#39;éther restant dans le compte du contrat. Il ressemble à ceci :</p>
+<p>L&#39;autre la fin du cycle de vie du contrat est la <em>destruction du contrat</em>. Les contrats sont détruits par un opcode EVM spécial appelé SELFDESTRUCT. Il s&#39;appelait autrefois <span class="keep-together"><code>SUICIDE</code></span>, mais ce nom a été déprécié en raison des associations négatives du mot. Dans Solidity, cet opcode est exposé sous la forme d&#39;une fonction intégrée de haut niveau appelée selfdestruct, qui prend un argument : l&#39;adresse pour recevoir tout solde d&#39;ether restant dans le compte du contrat. Il ressemble à ceci :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1180,7 +1180,7 @@ contract Faucet {
 
 	address owner;
 
-// Initialiser le contrat Faucet : définir le propriétaire
+	// Initialiser le contrat Faucet : définir le propriétaire
 	constructor() {
 		owner = msg.sender;
 	}
@@ -1288,12 +1288,12 @@ function destroy() public {
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">contract owned {
 	address owner;
 
-// Constructeur de contrat : définit le propriétaire
+	// Constructeur de contrat : définit le propriétaire
 	constructor() {
 		owner = msg.sender;
 	}
 
-// Modificateur de contrôle d&amp;#39;accès
+	// Modificateur de contrôle d&amp;#39;accès
 	modifier onlyOwner {
 	    require(msg.sender == owner);
 	    _;
@@ -1323,14 +1323,14 @@ function destroy() public {
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">contract Faucet is mortal {
-// Donnez de l&amp;#39;éther à quiconque demande
+	// Donnez de l&amp;#39;ether à quiconque demande
     function withdraw(uint withdraw_amount) public {
-// Limiter le montant du retrait
+	// Limiter le montant du retrait
         require(withdraw_amount &lt;= 0.1 ether);
-// Envoie le montant à l&amp;#39;adresse qui l&amp;#39;a demandé
+	// Envoie le montant à l&amp;#39;adresse qui l&amp;#39;a demandé
         msg.sender.transfer(withdraw_amount);
     }
-// Accepte tout montant entrant
+	// Accepte tout montant entrant
     function () external payable {}
 }</code></pre>
 </div>
@@ -1373,7 +1373,7 @@ function destroy() public {
 <p>Les fonctions revert et throw interrompent l&#39;exécution du contrat et annulent tout changement d&#39;état. La fonction throw est obsolète et sera supprimée dans les futures versions de Solidity ; vous devriez utiliser revert à la place. La fonction revert peut également prendre un message d&#39;erreur comme seul argument, qui est enregistré dans le journal des transactions.</p>
 </div>
 <div class="paragraph">
-<p>Certaines conditions d&#39;un contrat généreront des erreurs, que nous les vérifiions explicitement ou non. Par exemple, dans notre contrat Faucet, nous ne vérifions pas s&#39;il y a suffisamment d&#39;éther pour satisfaire une demande de retrait. En effet, la fonction transfer échouera avec une erreur et annulera la transaction si le solde est insuffisant pour effectuer le transfert :</p>
+<p>Certaines conditions d&#39;un contrat généreront des erreurs, que nous les vérifiions explicitement ou non. Par exemple, dans notre contrat Faucet, nous ne vérifions pas s&#39;il y a suffisamment d&#39;ether pour satisfaire une demande de retrait. En effet, la fonction transfer échouera avec une erreur et annulera la transaction si le solde est insuffisant pour effectuer le transfert :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1426,7 +1426,7 @@ msg.sender.transfer(withdraw_amount);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Donnez de l&amp;#39;éther à quiconque demande
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Donnez de l&amp;#39;ether à quiconque demande
 function withdraw(uint withdraw_amount) public {
     [...]
     msg.sender.transfer(withdraw_amount);
@@ -1860,7 +1860,7 @@ from: '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f'</pre>
 <p>L&#39;état du contrat avant l&#39;exécution est restauré (inversé).</p>
 </li>
 <li>
-<p>Tout l&#39;éther utilisé pour payer le gaz est considéré comme des frais de transaction ; il n&#39;est <em>pas</em> remboursé.</p>
+<p>Tout l&#39;ether utilisé pour payer le gaz est considéré comme des frais de transaction ; il n&#39;est <em>pas</em> remboursé.</p>
 </li>
 </ul>
 </div>
@@ -1870,7 +1870,7 @@ from: '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f'</pre>
 <div class="sect3">
 <h4 id="_évitez_les_tableaux_dimensionnés_dynamiquement">Évitez les tableaux dimensionnés dynamiquement</h4>
 <div class="paragraph">
-<p>Toute boucle à travers un tableau de taille dynamique où une fonction effectue des opérations sur chaque élément ou recherche un élément particulier introduit le risque d&#39;utiliser trop de gaz. En effet, le contrat peut s&#39;essouffler avant d&#39;avoir trouvé le résultat souhaité, ou avant d&#39;agir sur chaque élément, perdant ainsi du temps et de l&#39;éther sans donner le moindre résultat.</p>
+<p>Toute boucle à travers un tableau de taille dynamique où une fonction effectue des opérations sur chaque élément ou recherche un élément particulier introduit le risque d&#39;utiliser trop de gaz. En effet, le contrat peut s&#39;essouffler avant d&#39;avoir trouvé le résultat souhaité, ou avant d&#39;agir sur chaque élément, perdant ainsi du temps et de l&#39;ether sans donner le moindre résultat.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1927,11 +1927,11 @@ FaucetContract.web3.eth.getGasPrice(function(error, result) {
     var gasPrice = Number(result);
     console.log("Gas Price is " + gasPrice + " wei"); // "10000000000000"
 
-// Récupère l&amp;#39;instance de contrat
+	// Récupère l&amp;#39;instance de contrat
     FaucetContract.deployed().then(function(FaucetContractInstance) {
 
-// Utilisez le mot clé &amp;#39;estimateGas&amp;#39; après le nom de la fonction pour obtenir le gaz
-// estimation pour cette fonction particulière (aprove)
+	// Utilisez le mot clé &amp;#39;estimateGas&amp;#39; après le nom de la fonction pour obtenir le gaz
+	// estimation pour cette fonction particulière (aprove)
 		FaucetContractInstance.send(web3.utils.toWei(1, "ether"));
         return FaucetContractInstance.withdraw.estimateGas(web3.utils.toWei(0.1, "ether"));
 
@@ -1979,7 +1979,7 @@ gas cost estimation = 0.00062794 ether
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 00:59:50 -0400
+Last updated 2022-05-15 04:01:21 -0400
 </div>
 </div>
 </body>

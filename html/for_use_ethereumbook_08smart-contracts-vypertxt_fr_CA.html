@@ -537,7 +537,7 @@ modifier stageTimeConfirmation() {
 function a()
     public
     stageTimeConfirmation
-// Plus de code va ici
+    // Plus de code va ici
 {
 }</code></pre>
 </div>
@@ -785,7 +785,7 @@ def lowerFunction():
 <div class="sect2">
 <h3 id="online_code_editor_and_compiler_sec">Compilation</h3>
 <div class="paragraph">
-<p>Vyper a son propre <a href="https://vyper.online">éditeur de code et compilateur en ligne</a>, qui vous permet d&#39;écrire puis compilez vos contrats intelligents en bytecode, ABI et LLL en utilisant uniquement votre navigateur Web. Le compilateur en ligne Vyper propose une variété de contrats intelligents pré-écrits pour votre commodité, y compris des contrats pour une simple enchère ouverte, des achats à distance sécurisés, des jetons ERC20, etc. Cet outil, propose une seule version du logiciel de compilation. Il est mis à jour régulièrement mais ne garantit pas toujours la dernière version. Etherscan a un <a href="https://etherscan.io/vyper">compilateur Vyper en ligne</a> qui vous permet de sélectionner la version du compilateur. De plus, <a href="https://remix.ethereum.org">Remix</a>, conçu à l&#39;origine pour les contrats intelligents Solidity, dispose désormais d&#39;un plug-in Vyper disponible dans l&#39;onglet Paramètres.</p>
+<p>Vyper a son propre <a href="https://vyper.online">éditeur de code et compilateur en ligne</a>, qui vous permet d&#39;écrire puis compilez vos contrats intelligents en code intermédiaire, ABI et LLL en utilisant uniquement votre navigateur Web. Le compilateur en ligne Vyper propose une variété de contrats intelligents pré-écrits pour votre commodité, y compris des contrats pour une simple enchère ouverte, des achats à distance sécurisés, des jetons ERC20, etc. Cet outil, propose une seule version du logiciel de compilation. Il est mis à jour régulièrement mais ne garantit pas toujours la dernière version. Etherscan a un <a href="https://etherscan.io/vyper">compilateur Vyper en ligne</a> qui vous permet de sélectionner la version du compilateur. De plus, <a href="https://remix.ethereum.org">Remix</a>, conçu à l&#39;origine pour les contrats intelligents Solidity, dispose désormais d&#39;un plug-in Vyper disponible dans l&#39;onglet Paramètres.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -825,12 +825,12 @@ Une fois installé, vous pouvez compiler un contrat avec Vyper en exécutant la 
 </div>
 </div>
 <div class="sect2">
-<h3 id="protecting_against_overflows_sec">Protection contre les erreurs de débordement au niveau du compilateur</h3>
+<h3 id="protecting_against_overflows_sec">Protection contre les erreurs de dépassement au niveau du compilateur</h3>
 <div class="paragraph">
-<p>Les erreurs de débordement dans le logiciel peut être catastrophique lorsqu&#39;il s&#39;agit de valeur réelle. Par exemple, une <a href="http://bit.ly/2yHfvoF">transaction de la mi-avril 2018</a> montre le <span class="keep-together">transfert malveillant de plus de 57 896 044 618 658 100 000 000 000 000 000 000 000 000,</span>000 000 000 000 000 000 tokens ou jetons BEC. Cette transaction était le résultat d&#39;un problème de débordement d&#39;entier dans le contrat de jeton ERC20 de BeautyChain (<em>BecToken.sol</em>). Les développeurs de Solidity ont accès à des bibliothèques comme <a href="http://bit.ly/2ABhb4l">SafeMath</a> ainsi qu&#39;à des outils d&#39;analyse de la sécurité des contrats intelligents Ethereum comme <a href="http://bit.ly/2CQRoGU">Mythril OSS</a>. Cependant, les développeurs ne sont pas obligés d&#39;utiliser les outils de sécurité. En termes simples, si la sécurité n&#39;est pas appliquée par le langage, les développeurs peuvent écrire du code non sécurisé qui se compilera avec succès et s&#39;exécutera plus tard &quot;avec succès&quot;.</p>
+<p>Les erreurs de dépassement dans le logiciel peut être catastrophique lorsqu&#39;il s&#39;agit de valeur réelle. Par exemple, une <a href="http://bit.ly/2yHfvoF">transaction de la mi-avril 2018</a> montre le <span class="keep-together">transfert malveillant de plus de 57 896 044 618 658 100 000 000 000 000 000 000 000 000,</span>000 000 000 000 000 000 tokens ou jetons BEC. Cette transaction était le résultat d&#39;un problème de dépassement d&#39;entier dans le contrat de jeton ERC20 de BeautyChain (<em>BecToken.sol</em>). Les développeurs de Solidity ont accès à des bibliothèques comme <a href="http://bit.ly/2ABhb4l">SafeMath</a> ainsi qu&#39;à des outils d&#39;analyse de la sécurité des contrats intelligents Ethereum comme <a href="http://bit.ly/2CQRoGU">Mythril OSS</a>. Cependant, les développeurs ne sont pas obligés d&#39;utiliser les outils de sécurité. En termes simples, si la sécurité n&#39;est pas appliquée par le langage, les développeurs peuvent écrire du code non sécurisé qui se compilera avec succès et s&#39;exécutera plus tard &quot;avec succès&quot;.</p>
 </div>
 <div class="paragraph">
-<p>Vyper dispose d&#39;une protection intégrée contre les débordements, mise en œuvre selon une approche à deux volets. Tout d&#39;abord, Vyper fournit <a href="http://bit.ly/2PuDfpB">un SafeMath équivalent</a> qui inclut les cas d&#39;exception nécessaires pour l&#39;arithmétique entière. Deuxièmement, Vyper utilise des pinces chaque fois qu&#39;une constante littérale est chargée, qu&#39;une valeur est transmise à une fonction ou qu&#39;une variable est affectée. Les pinces sont implémentées via des fonctions personnalisées dans le compilateur LLL (Low-level Lisp-like Language) et ne peuvent pas être désactivées. (Le compilateur Vyper génère LLL plutôt que le bytecode EVM ; cela simplifie le développement de Vyper lui-même.)</p>
+<p>Vyper dispose d&#39;une protection intégrée contre les débordements, mise en œuvre selon une approche à deux volets. Tout d&#39;abord, Vyper fournit <a href="http://bit.ly/2PuDfpB">un SafeMath équivalent</a> qui inclut les cas d&#39;exception nécessaires pour l&#39;arithmétique entière. Deuxièmement, Vyper utilise des pinces chaque fois qu&#39;une constante littérale est chargée, qu&#39;une valeur est transmise à une fonction ou qu&#39;une variable est affectée. Les pinces sont implémentées via des fonctions personnalisées dans le compilateur LLL (Low-level Lisp-like Language) et ne peuvent pas être désactivées. (Le compilateur Vyper génère LLL plutôt que le code intermédiaire EVM ; cela simplifie le développement de Vyper lui-même.)</p>
 </div>
 </div>
 <div class="sect2">
@@ -865,7 +865,7 @@ Une fois installé, vous pouvez compiler un contrat avec Vyper en exécutant la 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 00:20:13 -0400
+Last updated 2022-05-15 04:01:20 -0400
 </div>
 </div>
 </body>

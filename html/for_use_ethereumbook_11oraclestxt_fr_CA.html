@@ -508,7 +508,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Vérification des dommages : pour les contrats d&#39;assurance</p>
 </li>
 <li>
-<p>Événements survenant sur d&#39;autres blockchains : fonctions d&#39;interopérabilité</p>
+<p>Événements survenant sur d&#39;autres chaînes de blocs : fonctions d&#39;interopérabilité</p>
 </li>
 <li>
 <p>Prix du marché de l&#39;ether : par exemple, oracles pour le prix du gaz en fiat</p>
@@ -657,7 +657,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="oracle_client_interfaces_in_solidity_sec">Interfaces clients Oracle en solidité</h3>
+<h3 id="oracle_client_interfaces_in_solidity_sec">Interfaces clients Oracle en Solidity</h3>
 <div class="paragraph">
 <p><a href="#using_oraclize_to_update_the_eth_usd">Utilisation d&#39;Oraclize pour mettre à jour le taux de change ETH/USD à partir d&#39;une source externe</a> est un exemple Solidity démontrant comment Oraclize peut être utilisé pour interroger en continu le prix ETH/USD à partir d&#39;une API et stocker le résultat de manière utilisable.</p>
 </div>
@@ -687,10 +687,10 @@ contract EthUsdPriceTicker is usingOraclize {
     event newCallbackResult(string result);
 
     function EthUsdPriceTicker() payable {
-        // signals TLSN proof generation and storage on IPFS
+        // signale la génération et le stockage de la preuve TLSN sur IPFS
         oraclize_setProof(proofType_TLSNotary | proofStorage_IPFS);
 
-        // requests query
+        // demande de requête
         queryTicker();
     }
 
@@ -802,7 +802,7 @@ contract OracleB1IQClient {
         uint256 ask = oracle.getResponseUint(id, "ask");
         uint256 timestamp = oracle.getResponseUint(id, "timestamp");
         oracle.deleteResponse(id);
-// Faire quelque chose avec les données de prix
+        // Faire quelque chose avec les données de prix
     }
 
     function handleFailure(uint256 id) public {
@@ -839,7 +839,7 @@ Cela renvoie un identifiant uint256 qui peut ensuite être utilisé pour fournir
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 01:05:00 -0400
+Last updated 2022-05-15 04:05:07 -0400
 </div>
 </div>
 </body>

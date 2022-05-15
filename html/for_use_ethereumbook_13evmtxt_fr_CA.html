@@ -444,7 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="evm_chapter">La machine virtuelle Ethereum</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Au cœur du protocole et du fonctionnement Ethereum se trouve la machine virtuelle Ethereum, ou EVM en abrégé. Comme vous pouvez le deviner d&#39;après son nom, il s&#39;agit d&#39;un moteur de calcul, pas très différent des machines virtuelles du cadre de développement .NET de Microsoft, ou des interprètes d&#39;autres langages de programmation compilés par bytecode tels que Java. Dans ce chapitre, nous examinons en détail l&#39;EVM, y compris son jeu d&#39;instructions, sa structure et son fonctionnement, dans le contexte des mises à jour d&#39;état d&#39;Ethereum.</p>
+<p>Au cœur du protocole et du fonctionnement Ethereum se trouve la machine virtuelle Ethereum, ou EVM en abrégé. Comme vous pouvez le deviner d&#39;après son nom, il s&#39;agit d&#39;un moteur de calcul, pas très différent des machines virtuelles du cadre de développement .NET de Microsoft, ou des interprètes d&#39;autres langages de programmation compilés par code intermédiaire tels que Java. Dans ce chapitre, nous examinons en détail l&#39;EVM, y compris son jeu d&#39;instructions, sa structure et son fonctionnement, dans le contexte des mises à jour d&#39;état d&#39;Ethereum.</p>
 </div>
 <div class="sect2">
 <h3 id="evm_description">Qu&#39;est-ce que l&#39;EVM ?</h3>
@@ -460,7 +460,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist pagebreak-before">
 <ul>
 <li>
-<p>Un <em>code de programme ROM</em> immuable, chargé avec le bytecode du smart contract à exécuter</p>
+<p>Un <em>code de programme ROM</em> immuable, chargé avec le code intermédiaire du smart contract à exécuter</p>
 </li>
 <li>
 <p>Une <em>mémoire</em> volatile, avec chaque emplacement explicitement initialisé à zéro</p>
@@ -488,14 +488,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Le terme &quot;machine virtuelle&quot; est souvent appliqué à la virtualisation d&#39;un ordinateur réel, typiquement par un &quot;hyperviseur&quot; tel que VirtualBox ou QEMU, ou d&#39;une instance entière du système d&#39;exploitation, comme le KVM de Linux. Ceux-ci doivent fournir une abstraction logicielle, respectivement, du matériel réel, des appels système et des autres fonctionnalités du noyau.</p>
 </div>
 <div class="paragraph">
-<p>L&#39;EVM fonctionne dans un domaine beaucoup plus limité : c&#39;est juste un moteur de calcul, et en tant que tel fournit une abstraction du calcul et du stockage, similaire à la spécification Java Virtual Machine (JVM), par exemple. D&#39;un point de vue de haut niveau, la JVM est conçue pour fournir un environnement d&#39;exécution indépendant du système d&#39;exploitation ou du matériel hôte sous-jacent, permettant la compatibilité entre une grande variété de systèmes. Les langages de programmation de haut niveau tels que Java ou Scala (qui utilisent la JVM) ou C# (qui utilise .NET) sont compilés dans le jeu d&#39;instructions bytecode de leur machine virtuelle respective. De la même manière, l&#39;EVM exécute son propre jeu d&#39;instructions de bytecode (décrit dans la section suivante), dans lequel sont compilés des langages de programmation de contrats intelligents de niveau supérieur tels que LLL, Serpent, Mutan ou Solidity.</p>
+<p>L&#39;EVM fonctionne dans un domaine beaucoup plus limité : c&#39;est juste un moteur de calcul, et en tant que tel fournit une abstraction du calcul et du stockage, similaire à la spécification Java Virtual Machine (JVM), par exemple. D&#39;un point de vue de haut niveau, la JVM est conçue pour fournir un environnement d&#39;exécution indépendant du système d&#39;exploitation ou du matériel hôte sous-jacent, permettant la compatibilité entre une grande variété de systèmes. Les langages de programmation de haut niveau tels que Java ou Scala (qui utilisent la JVM) ou C# (qui utilise .NET) sont compilés dans le jeu d&#39;instructions code intermédiaire de leur machine virtuelle respective. De la même manière, l&#39;EVM exécute son propre jeu d&#39;instructions de code intermédiaire (décrit dans la section suivante), dans lequel sont compilés des langages de programmation de contrats intelligents de niveau supérieur tels que LLL, Serpent, Mutan ou Solidity.</p>
 </div>
 <div class="paragraph">
 <p>L&#39;EVM n&#39;a donc aucune capacité de planification, car l&#39;ordre d&#39;exécution est organisé en externe - les clients Ethereum exécutent des transactions de bloc vérifiées pour déterminer quels contrats intelligents doivent être exécutés et dans quel ordre. En ce sens, l&#39;ordinateur mondial Ethereum est mono-fil (d&#8217;exécution), comme JavaScript. L&#39;EVM n&#39;a pas non plus de gestion &quot;d&#39;interface système&quot; ou de &quot;support matériel&quot; - il n&#39;y a pas de machine physique avec laquelle s&#39;interfacer. L&#39;ordinateur mondial Ethereum est entièrement virtuel.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="evm_bytecode_overview">Le jeu d&#39;instructions EVM (opérations de bytecode)</h4>
+<h4 id="evm_bytecode_overview">Le jeu d&#39;instructions EVM (opérations de code intermédiaire)</h4>
 <div class="paragraph">
 <p>Le jeu d&#39;instructions EVM offre la plupart des opérations que l&#8217;on peut s&#39;attendre, y compris :</p>
 </div>
@@ -801,7 +801,7 @@ EXTCODESIZE 0xe2 0xb8 SWAP10 0xed 0x</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Compiler l&#39;exemple avec l&#39;option --asm produit un fichier nommé <em>example.evm</em> dans notre répertoire <em>BytecodeDir</em>. Celui-ci contient une description de niveau légèrement supérieur des instructions du bytecode EVM, ainsi que quelques annotations utiles :</p>
+<p>Compiler l&#39;exemple avec l&#39;option --asm produit un fichier nommé <em>example.evm</em> dans notre répertoire <em>BytecodeDir</em>. Celui-ci contient une description de niveau légèrement supérieur des instructions du code intermédiaire EVM, ainsi que quelques annotations utiles :</p>
 </div>
 <div id="asm_output" class="listingblock">
 <div class="content">
@@ -871,7 +871,7 @@ ffffffffffffffffffffffffffffffffffffffff
 </div>
 </div>
 <div class="paragraph">
-<p>Vous pouvez enquêter sur ce qui se passe ici en détail en utilisant la liste des opcodes donnée dans <a href="#evm_bytecode_overview">Le jeu d&#39;instructions EVM (opérations de bytecode)</a>. Cependant, c&#39;est toute une tâche, alors commençons par examiner les quatre premières instructions :</p>
+<p>Vous pouvez enquêter sur ce qui se passe ici en détail en utilisant la liste des opcodes donnée dans <a href="#evm_bytecode_overview">Le jeu d&#39;instructions EVM (opérations de code intermédiaire)</a>. Cependant, c&#39;est toute une tâche, alors commençons par examiner les quatre premières instructions :</p>
 </div>
 <div id="opcode_analysis_1" class="listingblock">
 <div class="content">
@@ -911,7 +911,7 @@ ffffffffffffffffffffffffffffffffffffffff
 <p>Le code intermédiaire de déploiement est utilisé pour chaque aspect de l&#39;initialisation d&#39;un nouveau compte de contrat, y compris le code intermédiaire qui finira par être exécuté lorsque les transactions appelleront ce nouveau contrat (c&#39;est-à-dire le code intermédiaire d&#39;exécution) et le code pour tout initialiser en fonction du constructeur du contrat.</p>
 </div>
 <div class="paragraph">
-<p>Le code intermédiaire d&#8217;exécution, en revanche, est exactement le bytecode qui finit par être exécuté lorsque le nouveau contrat est appelé, et rien de plus ; il n&#39;inclut pas le code intermédiaire nécessaire pour initialiser le contrat lors du déploiement.</p>
+<p>Le code intermédiaire d&#8217;exécution, en revanche, est exactement le code intermédiaire qui finit par être exécuté lorsque le nouveau contrat est appelé, et rien de plus ; il n&#39;inclut pas le code intermédiaire nécessaire pour initialiser le contrat lors du déploiement.</p>
 </div>
 <div class="paragraph">
 <p>Prenons comme exemple le simple contrat <em>Faucet.sol</em> que nous avons créé précédemment :</p>
@@ -924,7 +924,7 @@ pragma solidity ^0.4.19;
 // Notre premier contrat est un robinet !
 contract Faucet {
 
-  // Donnez de l&amp;#39;éther à quiconque demande
+  // Donnez de l&amp;#39;ether à quiconque demande
   function withdraw(uint withdraw_amount) public {
 
       // Limiter le montant du retrait
@@ -1428,7 +1428,7 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <div class="sect2">
 <h3 id="_conclusion">Conclusion</h3>
 <div class="paragraph">
-<p>Dans ce chapitre, nous avons exploré la machine virtuelle Ethereum, en retraçant l&#39;exécution de divers contrats intelligents et en examinant comment l&#39;EVM exécute le bytecode. Nous avons également examiné le gaz, le mécanisme de comptabilité de l&#39;EVM, et avons vu comment il résout le problème d&#39;arrêt et protège Ethereum des attaques par déni de service. Ensuite, dans <a href="#consensus">[consensus]</a>, nous examinerons le mécanisme utilisé par Ethereum pour parvenir à un consensus décentralisé.</p>
+<p>Dans ce chapitre, nous avons exploré la machine virtuelle Ethereum, en retraçant l&#39;exécution de divers contrats intelligents et en examinant comment l&#39;EVM exécute le code intermédiaire. Nous avons également examiné le gaz, le mécanisme de comptabilité de l&#39;EVM, et avons vu comment il résout le problème d&#39;arrêt et protège Ethereum des attaques par déni de service. Ensuite, dans <a href="#consensus">[consensus]</a>, nous examinerons le mécanisme utilisé par Ethereum pour parvenir à un consensus décentralisé.</p>
 </div>
 </div>
 </div>
@@ -1436,7 +1436,7 @@ ether remboursé = gaz restant * prix du gaz</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 00:35:12 -0400
+Last updated 2022-05-15 03:50:44 -0400
 </div>
 </div>
 </body>

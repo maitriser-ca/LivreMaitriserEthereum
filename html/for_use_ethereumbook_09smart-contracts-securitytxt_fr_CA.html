@@ -470,7 +470,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">Lisibilité/auditabilité</dt>
 <dd>
-<p>Votre code doit être clair et facile à comprendre. Plus c&#8217;est facile à lire, plus c&#8217;est facile à auditer. Les contrats intelligents sont publics, car tout le monde peut lire le bytecode et tout le monde peut le désosser. Par conséquent, il est avantageux de développer votre travail en public, en utilisant des méthodologies collaboratives et à source libre, pour tirer parti de la sagesse collective de la communauté des développeurs et bénéficier du plus grand dénominateur commun du développement à source libre. Vous devez écrire un code bien documenté et facile à lire, en suivant les conventions de style et de nommage qui font partie de la communauté Ethereum.</p>
+<p>Votre code doit être clair et facile à comprendre. Plus c&#8217;est facile à lire, plus c&#8217;est facile à auditer. Les contrats intelligents sont publics, car tout le monde peut lire le code intermédiaire et tout le monde peut le désosser. Par conséquent, il est avantageux de développer votre travail en public, en utilisant des méthodologies collaboratives et à source libre, pour tirer parti de la sagesse collective de la communauté des développeurs et bénéficier du plus grand dénominateur commun du développement à source libre. Vous devez écrire un code bien documenté et facile à lire, en suivant les conventions de style et de nommage qui font partie de la communauté Ethereum.</p>
 </dd>
 <dt class="hdlist1">Couverture de test</dt>
 <dd>
@@ -730,7 +730,7 @@ contract Attack {
 <p>Ce contrat est conçu pour agir comme un coffre-fort temporel : les utilisateurs peuvent déposer de l&#8217;ether dans le contrat et il y sera verrouillé pendant au moins une semaine. L&#8217;utilisateur peut prolonger le temps d&#8217;attente à plus d&#8217;une semaine s&#8217;il le souhaite, mais une fois déposé, l&#8217;utilisateur peut être sûr que son ether est verrouillé en toute sécurité pendant au moins une semaine, du moins c&#8217;est ce que prévoit ce contrat.</p>
 </div>
 <div class="paragraph">
-<p>Dans le cas où un utilisateur est obligé de remettre sa clé privée, un contrat comme celui-ci peut être utile pour s&#8217;assurer que son ether est introuvable pendant une courte période. Mais si un utilisateur avait verrouillé <code>100 ether</code> dans ce contrat et remis ses clés à un attaquant, l&#8217;attaquant pourrait utiliser un débordement pour recevoir l&#8217;ether, quel que soit le <code>lockTime</code>.</p>
+<p>Dans le cas où un utilisateur est obligé de remettre sa clé privée, un contrat comme celui-ci peut être utile pour s&#8217;assurer que son ether est introuvable pendant une courte période. Mais si un utilisateur avait verrouillé <code>100 ether</code> dans ce contrat et remis ses clés à un attaquant, l&#8217;attaquant pourrait utiliser un dépassement pour recevoir l&#8217;ether, quel que soit le <code>lockTime</code>.</p>
 </div>
 <div class="paragraph">
 <p>L&#8217;attaquant pourrait déterminer le <code>lockTime</code> actuel pour l&#8217;adresse pour laquelle il détient maintenant la clé (c&#8217;est une variable publique). Appelons le <code>userLockTime</code> . Ils pourraient alors appeler la fonction <code>increaseLockTime</code> et passer en argument le nombre <code>2^256 - userLockTime</code> . Ce nombre serait ajouté à l' <code>userLockTime</code> actuel et provoquerait un dépassement, réinitialisant <code>lockTime[msg.sender]</code> à <code>0</code>. L&#8217;attaquant pourrait alors simplement appeler la fonction <code>withdraw</code> pour obtenir sa récompense.</p>
@@ -788,7 +788,7 @@ contract Token {
 <p><a href="https://github.com/OpenZeppelin/openzeppelin-solidity">OpenZeppelin</a> a fait un excellent travail de création et d&#8217;audit de bibliothèques sécurisées pour la communauté Ethereum. En particulier, la <a href="http://bit.ly/2ABhb4l">bibliothèque SafeMath</a> peut être utilisée pour éviter les vulnérabilités de soupassement/dépassement.</p>
 </div>
 <div class="paragraph">
-<p>Pour montrer comment ces bibliothèques sont utilisées dans Solidity, corrigeons le contrat <code>TimeLock</code> à l&#8217;aide de la bibliothèque <code>SafeMath</code>. La version sans débordement du contrat est :</p>
+<p>Pour montrer comment ces bibliothèques sont utilisées dans Solidity, corrigeons le contrat <code>TimeLock</code> à l&#8217;aide de la bibliothèque <code>SafeMath</code>. La version sans dépassement du contrat est :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -850,9 +850,9 @@ contract TimeLock {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_exemples_concrets_powhc_et_débordement_de_transfert_par_lots_cve_201810299">Exemples concrets : PoWHC et débordement de transfert par lots (CVE-2018–10299)</h4>
+<h4 id="_exemples_concrets_powhc_et_dépassement_de_transfert_par_lots_cve_201810299">Exemples concrets : PoWHC et dépassement de transfert par lots (CVE-2018–10299)</h4>
 <div class="paragraph">
-<p>Proof of Weak Hands Coin ( PoWHC ), conçu à l&#8217;origine comme une sorte de blague, était un stratagème de Ponzi écrit par un collectif Internet. Malheureusement , il semble que l&#8217;auteur ou les auteurs du contrat n&#8217;avaient pas vu de soupassement/dépassement auparavant, et par conséquent 866 ethers ont été libérés de son contrat. Eric Banisadr donne un bon aperçu de la façon dont le débordement s&#8217;est produit (ce qui n&#8217;est pas trop différent du défi Ethernaut décrit précédemment) dans son <a href="https://bit.ly/2wrxIFJ">article de blog</a> sur l&#8217;événement.</p>
+<p>Proof of Weak Hands Coin ( PoWHC ), conçu à l&#8217;origine comme une sorte de blague, était un stratagème de Ponzi écrit par un collectif Internet. Malheureusement , il semble que l&#8217;auteur ou les auteurs du contrat n&#8217;avaient pas vu de soupassement/dépassement auparavant, et par conséquent 866 ethers ont été libérés de son contrat. Eric Banisadr donne un bon aperçu de la façon dont le dépassement s&#8217;est produit (ce qui n&#8217;est pas trop différent du défi Ethernaut décrit précédemment) dans son <a href="https://bit.ly/2wrxIFJ">article de blog</a> sur l&#8217;événement.</p>
 </div>
 <div class="paragraph">
 <p><a href="http://bit.ly/2CUf7WG">Un autre exemple</a> provient de l&#8217;implémentation d&#8217;une fonction <code>batchTransfer()</code> dans un groupe de contrats de jetons ERC20. L&#8217;implémentation contenait une vulnérabilité de dépassement; vous pouvez lire les détails dans le <a href="https://bit.ly/2HDlIs8">compte rendu de PeckShield</a>.</p>
@@ -882,7 +882,7 @@ contract TimeLock {
 <dl>
 <dt class="hdlist1">Autodestruction/suicide</dt>
 <dd>
-<p>Tout contrat est capable d' implémenter la <a href="http://bit.ly/2RovrDf">fonction</a> <code>selfdestruct</code> , qui supprime tout le bytecode de l&#8217;adresse du contrat et envoie tout l&#8217;ether qui y est stocké à l&#8217;adresse spécifiée par le paramètre. Si cette adresse spécifiée est également un contrat, aucune fonction (y compris la fonction de secours) n&#8217;est appelée. Par conséquent, la fonction <code>selfdestruct</code> peut être utilisée pour envoyer de force de l&#8217;ether à n&#8217;importe quel contrat, quel que soit le code pouvant exister dans le contrat, même les contrats sans fonctions payantes. Cela signifie que tout attaquant peut créer un contrat avec une fonction <code>selfdestruct</code> , lui envoyer de l&#8217;ether, appeler <code>selfdestruct(target)</code> et forcer l&#8217;ether à être envoyé à un contrat <code>target</code> . Martin Swende a un excellent <a href="http://bit.ly/2OfLukM">article de blog</a> décrivant certaines bizarreries de l&#8217;opcode d&#8217;autodestruction (Quirk # 2) ainsi qu&#8217;un compte rendu de la façon dont les nœuds clients vérifiaient des invariants incorrects, ce qui aurait pu conduire à un crash plutôt catastrophique du réseau Ethereum.</p>
+<p>Tout contrat est capable d' implémenter la <a href="http://bit.ly/2RovrDf">fonction</a> <code>selfdestruct</code> , qui supprime tout le code intermédiaire de l&#8217;adresse du contrat et envoie tout l&#8217;ether qui y est stocké à l&#8217;adresse spécifiée par le paramètre. Si cette adresse spécifiée est également un contrat, aucune fonction (y compris la fonction de secours) n&#8217;est appelée. Par conséquent, la fonction <code>selfdestruct</code> peut être utilisée pour envoyer de force de l&#8217;ether à n&#8217;importe quel contrat, quel que soit le code pouvant exister dans le contrat, même les contrats sans fonctions payantes. Cela signifie que tout attaquant peut créer un contrat avec une fonction <code>selfdestruct</code> , lui envoyer de l&#8217;ether, appeler <code>selfdestruct(target)</code> et forcer l&#8217;ether à être envoyé à un contrat <code>target</code> . Martin Swende a un excellent <a href="http://bit.ly/2OfLukM">article de blog</a> décrivant certaines bizarreries de l&#8217;opcode d&#8217;autodestruction (Quirk # 2) ainsi qu&#8217;un compte rendu de la façon dont les nœuds clients vérifiaient des invariants incorrects, ce qui aurait pu conduire à un crash plutôt catastrophique du réseau Ethereum.</p>
 </dd>
 <dt class="hdlist1">Ether pré-envoyé</dt>
 <dd>
@@ -910,7 +910,7 @@ contract TimeLock {
     mapping(address =&gt; uint) redeemableEther;
     // Les utilisateurs paient 0,5 ether. À des étapes spécifiques, créditez leurs comptes.
     function play() external payable {
-        require(msg.value == 0.5 ether); // each play is 0.5 ether
+        require(msg.value == 0.5 ether); // chaque jeu est 0.5 ether
         uint currentBalance = this.balance + msg.value;
         // s'assure qu'il n'y a plus de joueurs après la fin du jeu
         require(currentBalance &lt;= finalMileStone);
@@ -1140,9 +1140,9 @@ contract FibonacciLib {
 
     // défaut - cela s'exécutera si une fonction spécifiée n'est pas trouvée
     function() public {
-        storageSlot1 = 0; // we set calculatedFibNumber to 0, so if withdraw
+        storageSlot1 = 0; // nous définissons calculateFibNumber sur 0, donc si retirer
         // s'appelle nous n'envoyons pas d'ether
-        &lt;attacker_address&gt;.transfer(this.balance); // we take all the ether
+        &lt;attacker_address&gt;.transfer(this.balance); // on prend tout l'ether
     }
  }</code></pre>
 </div>
@@ -1388,7 +1388,7 @@ contract Rot13Encryption {
                 // soustraire du nombre ASCII 'a',
                 // la différence entre le caractère &lt;char&gt; et 'z'
                 { char:= sub(0x60, sub(0x7A,char)) }
-                if iszero(eq(char, 0x20)) // ignore spaces
+                if iszero(eq(char, 0x20)) // ignore espaces
                 // ajoute 13 au caractère
                 {mstore8(add(add(text,0x20), mul(i,1)), add(char,13))}
             }
@@ -1827,7 +1827,7 @@ ddeaddeaddeaddeaddeaddeadde00000000000000
     bytes32 constant public hash =
       0xb5b5b97fafd9855eec9b41f74dfb6c38f5951141f9a3ecd7f44d5479b630ee0a;
 
-    constructor() external payable {} // load with ether
+    constructor() external payable {} // charge de l'ether
 
     function solve(string solution) public {
         // Si vous pouvez trouver la pré-image du hachage, recevez 1000 ether
@@ -1918,11 +1918,11 @@ ddeaddeaddeaddeaddeaddeadde00000000000000
 
     function invest() external payable {
         investors.push(msg.sender);
-        investorTokens.push(msg.value * 5); // 5 times the wei sent
+        investorTokens.push(msg.value * 5); // 5 fois de wei envoyé
         }
 
     function distribute() public {
-        require(msg.sender == owner); // only owner
+        require(msg.sender == owner); // seulement le propriétaire
         for(uint i = 0; i &lt; investors.length; i++) {
             // ici transferToken(to,amount) transfère le "montant" de
             // jetons à l'adresse "to"
@@ -2040,7 +2040,7 @@ function transfer(address _to, uint _value) returns (bool) {
         require(msg.value == 10 ether); // doit envoyer 10 ether pour jouer
         require(now != pastBlockTime); // seulement 1 transaction par bloc
         pastBlockTime = now;
-        if(now % 15 == 0) { // winner
+        if(now % 15 == 0) { // gagnant
             msg.sender.transfer(this.balance);
         }
     }
@@ -2442,7 +2442,7 @@ contract AttackContract {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-09 14:11:13 -0400
+Last updated 2022-05-15 04:05:16 -0400
 </div>
 </div>
 </body>
