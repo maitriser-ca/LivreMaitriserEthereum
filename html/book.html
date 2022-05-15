@@ -636,7 +636,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dd>
 <p>Ethereum fonctionne sur le <em>réseau principal Ethereum</em>, qui est adressable sur le port TCP 30303, et exécute un protocole appelé <em>ÐΞVp2p</em>.</p>
 </dd>
-<dt class="hdlist1">Règles de consensus </dt>
+<dt class="hdlist1">Règles de consensus</dt>
 <dd>
 <p>Les règles de consensus d&#8217;Ethereum sont définies dans la spécification de référence, le Yellow Paper (voir <a href="#references">Lectures complémentaires</a>).</p>
 </dd>
@@ -2440,19 +2440,19 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
 </div>
 <div class="dlist data-line-443">
 <dl>
-<dt class="hdlist1">jsonrpc </dt>
+<dt class="hdlist1">jsonrpc</dt>
 <dd>
 <p>Version du protocole JSON-RPC. Cela DOIT être exactement "2.0".</p>
 </dd>
-<dt class="hdlist1">method </dt>
+<dt class="hdlist1">method</dt>
 <dd>
 <p>Le nom de la méthode à invoquer.</p>
 </dd>
-<dt class="hdlist1">params </dt>
+<dt class="hdlist1">params</dt>
 <dd>
 <p>Une valeur structurée qui contient les valeurs de paramètre à utiliser lors de l&#8217;invocation de la méthode. Ce membre PEUT être omis.</p>
 </dd>
-<dt class="hdlist1">id </dt>
+<dt class="hdlist1">id</dt>
 <dd>
 <p>Un identifiant établi par le client qui DOIT contenir une valeur <code>String</code>,Number ou NULL si elle est incluse. Le serveur DOIT répondre avec la même valeur dans l&#8217;objet de réponse s&#8217;il est inclus. Ce membre est utilisé pour corréler le contexte entre les deux objets.</p>
 </dd>
@@ -3223,11 +3223,11 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </div>
 <div class="dlist data-line-363">
 <dl>
-<dt class="hdlist1">Déterministe </dt>
+<dt class="hdlist1">Déterministe</dt>
 <dd>
 <p>Un message d&#8217;entrée donné produit toujours la même sortie de hachage.</p>
 </dd>
-<dt class="hdlist1">Vérifiable </dt>
+<dt class="hdlist1">Vérifiable</dt>
 <dd>
 <p>Le calcul du hachage d&#8217;un message est efficace (complexité linéaire).</p>
 </dd>
@@ -6199,7 +6199,7 @@ function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 <dd>
 <p>Les fonctions externes sont comme des fonctions publiques, sauf qu&#8217;elles ne peuvent pas être appelées depuis le contrat à moins d&#8217;être explicitement préfixées avec le mot-clé this.</p>
 </dd>
-<dt class="hdlist1">interne </dt>
+<dt class="hdlist1">interne</dt>
 <dd>
 <p>Les fonctions internes ne sont accessibles qu&#8217;à partir du contrat - elles ne peuvent pas être appelées par un autre contrat ou une transaction EOA. Ils peuvent être appelés par des contrats dérivés (ceux qui héritent de celui-ci).</p>
 </dd>
@@ -6217,7 +6217,7 @@ function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 </div>
 <div class="dlist data-line-395">
 <dl>
-<dt class="hdlist1">constant ou view </dt>
+<dt class="hdlist1">constant ou view</dt>
 <dd>
 <p>Une fonction marquée comme <em>view</em> promet de ne modifier aucun état. Le terme <em>constant</em> est un alias pour la vue qui sera obsolète dans une future version. Pour le moment, le compilateur n&#8217;applique pas le modificateur <code>view</code>,ne produisant qu&#8217;un avertissement, mais cela devrait devenir un mot-clé appliqué dans la v0.5 de Solidity.</p>
 </dd>
@@ -7357,19 +7357,19 @@ def to_int128(expr, args, kwargs, context):
 </div>
 <div class="dlist data-line-205">
 <dl>
-<dt class="hdlist1">@private </dt>
+<dt class="hdlist1">@private</dt>
 <dd>
 <p>Le décorateur <code>@private</code> rend la fonction inaccessible depuis l&#8217;extérieur du contrat.</p>
 </dd>
-<dt class="hdlist1">@public </dt>
+<dt class="hdlist1">@public</dt>
 <dd>
 <p>Le décorateur <code>@public</code> rend la fonction à la fois visible et exécutable publiquement. Par exemple, même le portefeuille Ethereum affichera de telles fonctions lors de la visualisation du contrat.</p>
 </dd>
-<dt class="hdlist1">@constant </dt>
+<dt class="hdlist1">@constant</dt>
 <dd>
 <p>Les fonctions avec le décorateur <code>@constant</code> ne sont pas autorisées à modifier les variables d&#8217;état. En fait, le compilateur rejettera le programme entier (avec une erreur appropriée) si la fonction essaie de changer une variable d&#8217;état.</p>
 </dd>
-<dt class="hdlist1">@payable </dt>
+<dt class="hdlist1">@payable</dt>
 <dd>
 <p>Seules les fonctions avec le décorateur <code>@payable</code> sont autorisées à transférer de la valeur.</p>
 </dd>
@@ -12470,7 +12470,7 @@ SHA3       // Calcule le hachage Keccak-256 d'un bloc de mémoire</pre>
 </div>
 <div id="stack_opcodes" class="dlist data-line-81">
 <dl>
-<dt class="hdlist1">Opérations de pile </dt>
+<dt class="hdlist1">Opérations de pile</dt>
 <dd>
 <p>Instructions de gestion de la pile, de la mémoire et du stockage :</p>
 <div class="listingblock data-line-83">
@@ -12495,7 +12495,7 @@ SWAPx      // Échangez les 1er et (x+1)-ème éléments de la pile, où x peut 
 </div>
 <div id="flow_opcodes" class="dlist data-line-101">
 <dl>
-<dt class="hdlist1">Opérations de flux de processus </dt>
+<dt class="hdlist1">Opérations de flux de processus</dt>
 <dd>
 <p>Instructions pour le flux de contrôle :</p>
 <div class="listingblock data-line-103">
@@ -12513,7 +12513,7 @@ JUMPDEST // Marquer une destination valide pour les sauts</pre>
 </div>
 <div id="system_opcodes" class="dlist data-line-113">
 <dl>
-<dt class="hdlist1">Opérations système </dt>
+<dt class="hdlist1">Opérations système</dt>
 <dd>
 <p>Opcodes pour le système exécutant le programme :</p>
 <div class="listingblock data-line-115">
@@ -12541,7 +12541,7 @@ SELFDESTRUCT // Arrête l'exécution et enregistre le compte pour suppression</p
 </div>
 <div id="logic_opcides" class="dlist data-line-135">
 <dl>
-<dt class="hdlist1">Opérations logiques </dt>
+<dt class="hdlist1">Opérations logiques</dt>
 <dd>
 <p>Opcodes pour les comparaisons et la logique au niveau du bit :</p>
 <div class="listingblock data-line-137">
@@ -12564,7 +12564,7 @@ BYTE   // Récupérer un seul octet d'un mot pleine largeur de 256 bits</pre>
 </div>
 <div id="environment_opcodes" class="dlist data-line-152">
 <dl>
-<dt class="hdlist1">Opérations environnementales </dt>
+<dt class="hdlist1">Opérations environnementales</dt>
 <dd>
 <p>Opcodes traitant des informations sur l&#8217;environnement d&#8217;exécution :</p>
 <div class="listingblock data-line-154">
@@ -16595,7 +16595,7 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:40:58 -0400
+Last updated 2022-05-15 05:56:56 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

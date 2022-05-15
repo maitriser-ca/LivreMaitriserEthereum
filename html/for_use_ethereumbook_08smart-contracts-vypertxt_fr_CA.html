@@ -436,25 +436,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article data-line-1">
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1">
+<div class="sect1 data-line-2">
 <h2 id="vyper_chap">Contrats intelligents et Vyper</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph data-line-4">
 <p>Vyper est un langage de programmation expérimental orienté contrat pour la machine virtuelle Ethereum qui s&#8217;efforce de fournir une auditabilité supérieure, en permettant aux développeurs de produire plus facilement du code intelligible. En fait, l&#8217;un des principes de Vyper est de rendre pratiquement impossible pour les développeurs d&#8217;écrire du code trompeur.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-6">
 <p>Dans ce chapitre, nous examinerons les problèmes courants liés aux contrats intelligents, présenterons le langage de programmation de contrats Vyper et le comparerons à Solidity, en démontrant les différences.</p>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-8">
 <h3 id="_vulnérabilités_et_vyper">Vulnérabilités et Vyper</h3>
-<div class="paragraph">
-<p><a href="https://arxiv.org/pdf/1802.06038.pdf">Une étude récente</a>  a analysé près d&#8217;un million de contrats intelligents Ethereum déployés et a constaté que nombre de ces contrats contenaient de graves vulnérabilités. Au cours de leur analyse, les chercheurs ont défini trois catégories de base de vulnérabilités en trace:</p>
+<div class="paragraph data-line-10">
+<p><a href="https://arxiv.org/pdf/1802.06038.pdf" data-href="https://arxiv.org/pdf/1802.06038.pdf">Une étude récente</a>  a analysé près d&#8217;un million de contrats intelligents Ethereum déployés et a constaté que nombre de ces contrats contenaient de graves vulnérabilités. Au cours de leur analyse, les chercheurs ont défini trois catégories de base de vulnérabilités en trace:</p>
 </div>
-<div class="dlist">
+<div class="dlist data-line-12">
 <dl>
 <dt class="hdlist1">Contrats suicidaires</dt>
 <dd>
@@ -470,21 +470,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 </dl>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-18">
 <p>Les vulnérabilités sont introduites dans les contrats intelligents via le code. Il peut être fortement soutenu que ces vulnérabilités et d&#8217;autres ne sont pas introduites intentionnellement, mais quoi qu&#8217;il en soit, un code de contrat intelligent indésirable entraîne évidemment une perte de fonds inattendue pour les utilisateurs d&#8217;Ethereum, et ce n&#8217;est pas idéal. Vyper est conçu pour faciliter l&#8217;écriture de code sécurisé, ou également pour rendre plus difficile l&#8217;écriture accidentelle de code trompeur ou vulnérable.</p>
 </div>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-21">
 <h3 id="comparison_to_solidity_sec">Comparaison avec Solidity</h3>
-<div class="paragraph">
+<div class="paragraph data-line-23">
 <p>L&#8217;une des façons dont Vyper essaie de rendre le code dangereux plus difficile à écrire est en <em>omettant</em> délibérément certaines fonctionnalités de Solidity. Il est important pour ceux qui envisagent de développer des contrats intelligents dans Vyper de comprendre quelles fonctionnalités Vyper n&#8217;a <em>pas</em>, et pourquoi. Par conséquent, dans cette section, nous allons explorer ces fonctionnalités et expliquer pourquoi elles ont été omises.</p>
 </div>
-<div class="sect3">
+<div class="sect3 data-line-25">
 <h4 id="_modificateurs">Modificateurs</h4>
-<div class="paragraph">
+<div class="paragraph data-line-27">
 <p>Comme nous l&#8217;avons vu dans le chapitre précédent, dans Solidity vous pouvez écrire une fonction à l&#8217;aide de modificateurs (modifiers). Par exemple, la fonction suivante, <code>changeOwner</code>, exécutera le code dans un modificateur appelé <code>onlyBy</code> dans le cadre de son exécution :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-30">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">function changeOwner(address _newOwner)
     public
@@ -494,10 +494,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-39">
 <p>Ce modificateur applique une règle relative à la propriété. Comme vous pouvez le voir, ce modificateur particulier agit comme un mécanisme pour effectuer une pré-vérification au nom de la fonction <code>changeOwner</code> :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-42">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">modifier onlyBy(address _account)
 {
@@ -506,13 +506,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-50">
 <p>Mais les modificateurs ne sont pas là uniquement pour effectuer des vérifications, comme illustré ici. En fait, en tant que modificateurs, ils peuvent modifier considérablement l&#8217;environnement d&#8217;un contrat intelligent, dans le contexte de la fonction appelante. En termes simples, les modificateurs sont <em>omniprésents</em>.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-52">
 <p>Regardons un autre exemple de style Solidity :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-55">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">enum Stages {
     SafeStage,
@@ -542,42 +542,42 @@ function a()
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-84">
 <p>D&#8217;une part, les développeurs doivent toujours vérifier tout autre code que leur propre code appelle. Cependant, il est possible que dans certaines situations (comme lorsque les contraintes de temps ou l&#8217;épuisement entraînent un manque de concentration), un développeur oublie une seule ligne de code. Cela est encore plus probable si le développeur doit se déplacer dans un fichier volumineux tout en gardant mentalement une trace de la hiérarchie des appels de fonction et en mémorisant l&#8217;état des variables de contrat intelligent.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-86">
 <p>Regardons l&#8217;exemple précédent un peu plus en profondeur. Imaginez qu&#8217;un développeur écrive une fonction publique appelée "a". Le développeur est nouveau dans ce contrat et utilise un modificateur écrit par quelqu&#8217;un d&#8217;autre. En un coup d&#8217;œil, il semble que le modificateur <code>stageTimeConfirmation</code> effectue simplement quelques vérifications concernant l&#8217;âge du contrat par rapport à la fonction appelante. Ce que le développeur peut <em>ne pas</em> réaliser, c&#8217;est que le modificateur appelle également une autre fonction, <code>nextStage</code>. Dans ce scénario de démonstration simpliste, le simple fait d&#8217;appeler la fonction publique "a" entraîne le déplacement de la variable "stage" du contrat intelligent de "SafeStage" à "DangerStage".</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-88">
 <p>Vyper a complètement supprimé les modificateurs. Les recommandations de Vyper sont les suivantes : si vous n&#8217;exécutez que des assertions avec des modificateurs, utilisez simplement des vérifications et des assertions en ligne dans le cadre de la fonction ; si vous modifiez l&#8217;état du contrat intelligent, etc., intégrez à nouveau ces modifications explicitement à la fonction. Cela améliore l&#8217;auditabilité et la lisibilité, car le lecteur n&#8217;a pas à "envelopper" mentalement (ou manuellement) le code du modificateur autour de la fonction pour voir ce qu&#8217;elle fait.</p>
 </div>
 </div>
-<div class="sect3">
+<div class="sect3 data-line-90">
 <h4 id="_héritage_de_classe">Héritage de classe</h4>
-<div class="paragraph">
-<p>L&#8217;héritage permet aux programmeurs pour exploiter la puissance du code pré-écrit en acquérant des fonctionnalités, des propriétés et des comportements préexistants à partir de bibliothèques de logiciels existantes. L&#8217;héritage est puissant et favorise la réutilisation du code. Solidity prend en charge l&#8217;héritage multiple ainsi que le polymorphisme, mais bien que ce soient des fonctionnalités clés de la programmation orientée objet, Vyper ne les prend pas en charge. Vyper soutient que la mise en œuvre de l&#8217;héritage nécessite que les codeurs et les auditeurs sautent entre plusieurs fichiers afin de comprendre ce que fait le programme. Vyper considère également que l&#8217;héritage multiple peut rendre le code trop compliqué à comprendre - un point de vue tacitement admis par la <a href="http://bit.ly/2Q6Azvo">documentation</a> Solidity, qui donne un exemple de la façon dont l&#8217;héritage multiple peut être problématique.</p>
+<div class="paragraph data-line-92">
+<p>L&#8217;héritage permet aux programmeurs pour exploiter la puissance du code pré-écrit en acquérant des fonctionnalités, des propriétés et des comportements préexistants à partir de bibliothèques de logiciels existantes. L&#8217;héritage est puissant et favorise la réutilisation du code. Solidity prend en charge l&#8217;héritage multiple ainsi que le polymorphisme, mais bien que ce soient des fonctionnalités clés de la programmation orientée objet, Vyper ne les prend pas en charge. Vyper soutient que la mise en œuvre de l&#8217;héritage nécessite que les codeurs et les auditeurs sautent entre plusieurs fichiers afin de comprendre ce que fait le programme. Vyper considère également que l&#8217;héritage multiple peut rendre le code trop compliqué à comprendre - un point de vue tacitement admis par la <a href="http://bit.ly/2Q6Azvo" data-href="http://bit.ly/2Q6Azvo">documentation</a> Solidity, qui donne un exemple de la façon dont l&#8217;héritage multiple peut être problématique.</p>
 </div>
 </div>
-<div class="sect3">
+<div class="sect3 data-line-94">
 <h4 id="_assemblage_en_ligne">Assemblage en ligne</h4>
-<div class="paragraph">
+<div class="paragraph data-line-96">
 <p>L&#8217;assemblage en ligne donne aux développeurs un accès de bas niveau à Ethereum Virtual Machine, permettant aux programmes Solidity d&#8217;effectuer des opérations en accédant directement aux instructions EVM. Par exemple, le code assembleur en ligne suivant ajoute 3 à l&#8217;emplacement mémoire 0x80 :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-98">
 <div class="content">
 <pre>3 0x80 mload add 0x80 mstore</pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-102">
 <p>Vyper considère que la perte de lisibilité est un prix trop élevé à payer pour la puissance supplémentaire et ne prend donc pas en charge l&#8217;assemblage en ligne.</p>
 </div>
 </div>
-<div class="sect3">
+<div class="sect3 data-line-104">
 <h4 id="_surcharge_de_fonction">Surcharge de fonction</h4>
-<div class="paragraph">
+<div class="paragraph data-line-106">
 <p>La surcharge de fonction permet aux développeurs d&#8217;écrire plusieurs fonctions du même nom. La fonction utilisée à une occasion donnée dépend des types d&#8217;arguments fournis. Prenons par exemple les deux fonctions suivantes :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-109">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">function f(uint _in) public pure returns (uint out) {
     out = 1;
@@ -588,32 +588,32 @@ function f(uint _in, bytes32 _key) public pure returns (uint out) {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-119">
 <p>La première fonction (nommée <code>f</code>)accepte un argument d&#8217;entrée de type uint ; la deuxième fonction (également nommée <code>f</code>)accepte deux arguments, un de type uint et un de type <code>bytes32</code>.Avoir plusieurs définitions de fonction avec le même nom prenant des arguments différents peut être déroutant, donc Vyper ne prend pas en charge la surcharge de fonction.</p>
 </div>
 </div>
-<div class="sect3">
+<div class="sect3 data-line-121">
 <h4 id="_conversion_de_type_variable">Conversion de type variable</h4>
-<div class="paragraph">
+<div class="paragraph data-line-123">
 <p>Il existe deux types de typage : <em>implicite</em> et <em>explicite</em></p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-125">
 <p>Le transtypage implicite est souvent effectué au moment de la compilation. Par exemple, si une conversion de type est sémantiquement correcte et qu&#8217;aucune information n&#8217;est susceptible d&#8217;être perdue, le compilateur peut effectuer une conversion implicite, telle que la conversion d&#8217;une variable de type uint8 en <code>uint16</code>.Les premières versions de Vyper autorisaient le transtypage implicite des variables, mais pas les versions récentes.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-127">
 <p>Les transtypages explicites peuvent être insérés dans Solidity. Malheureusement, ils peuvent entraîner des comportements inattendus. Par exemple, convertir un uint32 en un type plus petit uint16 supprime simplement les bits d&#8217;ordre supérieur, comme illustré ici :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-130">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">uint32 a = 0x12345678;
 uint16 b = uint16(a);
 // La variable b est 0x5678 maintenant</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Vyper a à la place une fonction convert pour effectuer des transtypages explicites. La fonction convert (trouvée à la ligne 82 de <a href="http://bit.ly/2P36ZKT"><em>convert.py</em></a>) :</p>
+<div class="paragraph data-line-136">
+<p>Vyper a à la place une fonction convert pour effectuer des transtypages explicites. La fonction convert (trouvée à la ligne 82 de <a href="http://bit.ly/2P36ZKT" data-href="http://bit.ly/2P36ZKT"><em>convert.py</em></a>) :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-139">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">def convert(expr, context):
     output_type = expr.args[1].s
@@ -623,10 +623,10 @@ uint16 b = uint16(a);
         raise Exception("Conversion to {} is invalid.".format(output_type))</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-148">
 <p>Notez l&#8217;utilisation de conversion_table (trouvé à la ligne 90 du même fichier), qui ressemble à ceci :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-151">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">conversion_table = {
     'int128': to_int128,
@@ -636,10 +636,10 @@ uint16 b = uint16(a);
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-160">
 <p>Lorsqu&#8217;un développeur appelle <code>convert</code>,il fait référence à <code>conversion_table</code>,ce qui garantit que la conversion appropriée est effectuée. Par exemple, si un développeur passe un int128 à la fonction <code>convert</code>,la fonction to_int128 à la ligne 26 du même fichier (<em>convert.py</em>) sera exécutée. La fonction to_int128 est la suivante :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-163">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">@signature(('int128', 'uint256', 'bytes32', 'bytes'), 'str_literal')
 def to_int128(expr, args, kwargs, context):
@@ -660,19 +660,19 @@ def to_int128(expr, args, kwargs, context):
         return byte_array_to_num(in_node, expr, 'int128')</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-183">
 <p>Comme vous pouvez le constater, le processus de conversion garantit qu&#8217;aucune information ne peut être perdue. si c&#8217;est possible, une exception est levée. Le code de conversion empêche la troncation ainsi que d&#8217;autres anomalies qui seraient normalement autorisées par un transtypage implicite.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-185">
 <p>Choisir un transtypage explicite plutôt qu&#8217;implicite signifie que le développeur est responsable de l&#8217;exécution de tous les transtypages. Bien que cette approche produise un code plus détaillé, elle améliore également la sécurité et la vérifiabilité des contrats intelligents.</p>
 </div>
 </div>
-<div class="sect3">
+<div class="sect3 data-line-188">
 <h4 id="_préconditions_et_postconditions">Préconditions et Postconditions</h4>
-<div class="paragraph">
+<div class="paragraph data-line-190">
 <p>Vyper gère explicitement les préconditions, les postconditions et les changements d&#8217;état. Bien que cela produise un code redondant, cela permet également une lisibilité et une sécurité maximales. Lors de la rédaction d&#8217;un contrat intelligent dans Vyper, un développeur doit observer les trois points suivants :</p>
 </div>
-<div class="dlist">
+<div class="dlist data-line-192">
 <dl>
 <dt class="hdlist1">Condition</dt>
 <dd>
@@ -688,46 +688,46 @@ def to_int128(expr, args, kwargs, context):
 </dd>
 </dl>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-199">
 <p>Idéalement, chacun de ces points devrait être soigneusement examiné puis documenté de manière approfondie dans le code. Cela améliorera la conception du code, le rendant finalement plus lisible et auditable.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-202">
 <h3 id="decorators_sec">Décorateurs</h3>
-<div class="paragraph">
+<div class="paragraph data-line-203">
 <p>Les décorateurs suivants peuvent être utilisés au début de chaque fonction :</p>
 </div>
-<div class="dlist">
+<div class="dlist data-line-205">
 <dl>
-<dt class="hdlist1">@private </dt>
+<dt class="hdlist1">@private</dt>
 <dd>
 <p>Le décorateur <code>@private</code> rend la fonction inaccessible depuis l&#8217;extérieur du contrat.</p>
 </dd>
-<dt class="hdlist1">@public </dt>
+<dt class="hdlist1">@public</dt>
 <dd>
 <p>Le décorateur <code>@public</code> rend la fonction à la fois visible et exécutable publiquement. Par exemple, même le portefeuille Ethereum affichera de telles fonctions lors de la visualisation du contrat.</p>
 </dd>
-<dt class="hdlist1">@constant </dt>
+<dt class="hdlist1">@constant</dt>
 <dd>
 <p>Les fonctions avec le décorateur <code>@constant</code> ne sont pas autorisées à modifier les variables d&#8217;état. En fait, le compilateur rejettera le programme entier (avec une erreur appropriée) si la fonction essaie de changer une variable d&#8217;état.</p>
 </dd>
-<dt class="hdlist1">@payable </dt>
+<dt class="hdlist1">@payable</dt>
 <dd>
 <p>Seules les fonctions avec le décorateur <code>@payable</code> sont autorisées à transférer de la valeur.</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>Vyper implémente explicitement <a href="http://bit.ly/2P14RDq">la logique des décorateurs</a>. Par exemple, le processus de compilation de Vyper échouera si une fonction a à la fois un décorateur <code>@payable</code> et un décorateur <code>@constant</code>. Cela a du sens car une fonction qui transfère une valeur a par définition mis à jour l&#8217;état, elle ne peut donc pas être <code>@constant</code>. Chaque fonction Vyper doit être décorée avec <code>@public</code> ou <code>@private</code> (mais pas les deux !).</p>
+<div class="paragraph data-line-213">
+<p>Vyper implémente explicitement <a href="http://bit.ly/2P14RDq" data-href="http://bit.ly/2P14RDq">la logique des décorateurs</a>. Par exemple, le processus de compilation de Vyper échouera si une fonction a à la fois un décorateur <code>@payable</code> et un décorateur <code>@constant</code>. Cela a du sens car une fonction qui transfère une valeur a par définition mis à jour l&#8217;état, elle ne peut donc pas être <code>@constant</code>. Chaque fonction Vyper doit être décorée avec <code>@public</code> ou <code>@private</code> (mais pas les deux !).</p>
 </div>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-216">
 <h3 id="order_of_functions_sec">Ordre des fonctions et des variables</h3>
-<div class="paragraph">
+<div class="paragraph data-line-218">
 <p>Chaque contrat intelligent Vyper individuel se compose d&#8217;un seul fichier Vyper uniquement. En d&#8217;autres termes, tout le code d&#8217;un contrat intelligent Vyper donné, y compris toutes les fonctions, variables, etc., existe au même endroit. Vyper exige que la fonction et les déclarations de variables de chaque contrat intelligent soient écrites physiquement dans un ordre particulier. Solidity n&#8217;a pas du tout cette exigence. Jetons un coup d&#8217;œil à un exemple Solidity :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-221">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">pragma solidity ^0.4.0;
 
@@ -753,13 +753,13 @@ contract ordering {
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-246">
 <p>Dans cet exemple, la fonction appelée topFunction appelle une autre fonction, <code>lowerFunction</code>.topFunction attribue également une valeur à une variable appelée <code>initiatizedBelowTopFunction</code>.Comme vous pouvez le voir, Solidity n&#8217;exige pas que ces fonctions et variables soient physiquement déclarées avant d&#8217;être appelées par le code d&#8217;exécution. Il s&#8217;agit d&#8217;un code Solidity valide qui se compilera avec succès.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-248">
 <p>Les exigences de commande de Vyper ne sont pas une nouveauté ; en fait, ces exigences de commande ont toujours été présentes dans la programmation Python. La commande requise par Vyper est simple et logique, comme illustré dans cet exemple suivant :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-251">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python"># Déclarez une variable appelée theBool
 theBool: public(bool)
@@ -778,26 +778,26 @@ def lowerFunction():
     assert self.topFunction()</code></pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-269">
 <p>Cela montre le bon ordre des fonctions et des variables dans un contrat intelligent Vyper. Notez comment la variable theBool et la fonction topFunction sont déclarées avant qu&#8217;elles ne reçoivent une valeur et ne soient appelées, respectivement. Si theBool était déclaré sous topFunction ou si topFunction était déclaré sous <code>lowerFunction</code>,ce contrat ne serait pas compilé.</p>
 </div>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-272">
 <h3 id="online_code_editor_and_compiler_sec">Compilation</h3>
-<div class="paragraph">
-<p>Vyper a son propre <a href="https://vyper.online">éditeur de code et compilateur en ligne</a>, qui vous permet d&#8217;écrire puis compilez vos contrats intelligents en code intermédiaire, ABI et LLL en utilisant uniquement votre navigateur Web. Le compilateur en ligne Vyper propose une variété de contrats intelligents pré-écrits pour votre commodité, y compris des contrats pour une simple enchère ouverte, des achats à distance sécurisés, des jetons ERC20, etc. Cet outil, propose une seule version du logiciel de compilation. Il est mis à jour régulièrement mais ne garantit pas toujours la dernière version. Etherscan a un <a href="https://etherscan.io/vyper">compilateur Vyper en ligne</a> qui vous permet de sélectionner la version du compilateur. De plus, <a href="https://remix.ethereum.org">Remix</a>, conçu à l&#8217;origine pour les contrats intelligents Solidity, dispose désormais d&#8217;un plug-in Vyper disponible dans l&#8217;onglet Paramètres.</p>
+<div class="paragraph data-line-273">
+<p>Vyper a son propre <a href="https://vyper.online" data-href="https://vyper.online">éditeur de code et compilateur en ligne</a>, qui vous permet d&#8217;écrire puis compilez vos contrats intelligents en code intermédiaire, ABI et LLL en utilisant uniquement votre navigateur Web. Le compilateur en ligne Vyper propose une variété de contrats intelligents pré-écrits pour votre commodité, y compris des contrats pour une simple enchère ouverte, des achats à distance sécurisés, des jetons ERC20, etc. Cet outil, propose une seule version du logiciel de compilation. Il est mis à jour régulièrement mais ne garantit pas toujours la dernière version. Etherscan a un <a href="https://etherscan.io/vyper" data-href="https://etherscan.io/vyper">compilateur Vyper en ligne</a> qui vous permet de sélectionner la version du compilateur. De plus, <a href="https://remix.ethereum.org" data-href="https://remix.ethereum.org">Remix</a>, conçu à l&#8217;origine pour les contrats intelligents Solidity, dispose désormais d&#8217;un plug-in Vyper disponible dans l&#8217;onglet Paramètres.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock note data-line-276">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph">
+<div class="paragraph data-line-277">
 <p>Vyper implémente ERC20 en tant que contrat précompilé, ce qui permet d&#8217;utiliser facilement ces contrats intelligents prêts à l&#8217;emploi. Les contrats dans Vyper doivent être déclarés en tant que variables globales. Un exemple de déclaration de la variable ERC20 est le suivant :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-280">
 <div class="content">
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">token: address(ERC20)</code></pre>
 </div>
@@ -806,39 +806,39 @@ def lowerFunction():
 </tr>
 </table>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-285">
 <p>Vous pouvez également compiler un contrat à l&#8217;aide de la ligne de commande. Chaque contrat Vyper est enregistré dans un seul fichier avec l&#8217;extension <em>.vy</em>.
 Une fois installé, vous pouvez compiler un contrat avec Vyper en exécutant la commande suivante :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-288">
 <div class="content">
 <pre>vyper ~/hello_world.vy</pre>
 </div>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-292">
 <p>La description ABI lisible par l&#8217;homme (au format JSON) peut ensuite être obtenue en exécutant la commande suivante :</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-294">
 <div class="content">
 <pre>vyper -f json ~/hello_world.v.py</pre>
 </div>
 </div>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-299">
 <h3 id="protecting_against_overflows_sec">Protection contre les erreurs de dépassement au niveau du compilateur</h3>
-<div class="paragraph">
-<p>Les erreurs de dépassement dans le logiciel peut être catastrophique lorsqu&#8217;il s&#8217;agit de valeur réelle. Par exemple, une <a href="http://bit.ly/2yHfvoF">transaction de la mi-avril 2018</a> montre le <span class="keep-together">transfert malveillant de plus de 57 896 044 618 658 100 000 000 000 000 000 000 000 000,</span>000 000 000 000 000 000 tokens ou jetons BEC. Cette transaction était le résultat d&#8217;un problème de dépassement d&#8217;entier dans le contrat de jeton ERC20 de BeautyChain (<em>BecToken.sol</em>). Les développeurs de Solidity ont accès à des bibliothèques comme <a href="http://bit.ly/2ABhb4l"><code>SafeMath</code></a>ainsi qu&#8217;à des outils d&#8217;analyse de la sécurité des contrats intelligents Ethereum comme <a href="http://bit.ly/2CQRoGU">Mythril OSS</a>. Cependant, les développeurs ne sont pas obligés d&#8217;utiliser les outils de sécurité. En termes simples, si la sécurité n&#8217;est pas appliquée par le langage, les développeurs peuvent écrire du code non sécurisé qui se compilera avec succès et s&#8217;exécutera plus tard "avec succès".</p>
+<div class="paragraph data-line-301">
+<p>Les erreurs de dépassement dans le logiciel peut être catastrophique lorsqu&#8217;il s&#8217;agit de valeur réelle. Par exemple, une <a href="http://bit.ly/2yHfvoF" data-href="http://bit.ly/2yHfvoF">transaction de la mi-avril 2018</a> montre le <span class="keep-together">transfert malveillant de plus de 57 896 044 618 658 100 000 000 000 000 000 000 000 000,</span>000 000 000 000 000 000 tokens ou jetons BEC. Cette transaction était le résultat d&#8217;un problème de dépassement d&#8217;entier dans le contrat de jeton ERC20 de BeautyChain (<em>BecToken.sol</em>). Les développeurs de Solidity ont accès à des bibliothèques comme <a href="http://bit.ly/2ABhb4l" data-href="http://bit.ly/2ABhb4l"><code>SafeMath</code></a>ainsi qu&#8217;à des outils d&#8217;analyse de la sécurité des contrats intelligents Ethereum comme <a href="http://bit.ly/2CQRoGU" data-href="http://bit.ly/2CQRoGU">Mythril OSS</a>. Cependant, les développeurs ne sont pas obligés d&#8217;utiliser les outils de sécurité. En termes simples, si la sécurité n&#8217;est pas appliquée par le langage, les développeurs peuvent écrire du code non sécurisé qui se compilera avec succès et s&#8217;exécutera plus tard "avec succès".</p>
 </div>
-<div class="paragraph">
-<p>Vyper dispose d&#8217;une protection intégrée contre les débordements, mise en œuvre selon une approche à deux volets. Tout d&#8217;abord, Vyper fournit <a href="http://bit.ly/2PuDfpB">un SafeMath équivalent</a> qui inclut les cas d&#8217;exception nécessaires pour l&#8217;arithmétique entière. Deuxièmement, Vyper utilise des pinces chaque fois qu&#8217;une constante littérale est chargée, qu&#8217;une valeur est transmise à une fonction ou qu&#8217;une variable est affectée. Les pinces sont implémentées via des fonctions personnalisées dans le compilateur LLL (Low-level Lisp-like Language) et ne peuvent pas être désactivées. (Le compilateur Vyper génère LLL plutôt que le code intermédiaire EVM ; cela simplifie le développement de Vyper lui-même.)</p>
+<div class="paragraph data-line-303">
+<p>Vyper dispose d&#8217;une protection intégrée contre les débordements, mise en œuvre selon une approche à deux volets. Tout d&#8217;abord, Vyper fournit <a href="http://bit.ly/2PuDfpB" data-href="http://bit.ly/2PuDfpB">un SafeMath équivalent</a> qui inclut les cas d&#8217;exception nécessaires pour l&#8217;arithmétique entière. Deuxièmement, Vyper utilise des pinces chaque fois qu&#8217;une constante littérale est chargée, qu&#8217;une valeur est transmise à une fonction ou qu&#8217;une variable est affectée. Les pinces sont implémentées via des fonctions personnalisées dans le compilateur LLL (Low-level Lisp-like Language) et ne peuvent pas être désactivées. (Le compilateur Vyper génère LLL plutôt que le code intermédiaire EVM ; cela simplifie le développement de Vyper lui-même.)</p>
 </div>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-307">
 <h3 id="reading_and_writing_data_sec">Lecture et écriture de données</h3>
-<div class="paragraph">
+<div class="paragraph data-line-308">
 <p>Bien qu&#8217;il soit coûteux de stocker, lire et modifier des données, ces opérations de stockage sont une composante nécessaire de la plupart des contrats intelligents. Les contrats intelligents peuvent écrire des données à deux endroits :</p>
 </div>
-<div class="dlist">
+<div class="dlist data-line-310">
 <dl>
 <dt class="hdlist1">État global</dt>
 <dd>
@@ -850,13 +850,13 @@ Une fois installé, vous pouvez compiler un contrat avec Vyper en exécutant la 
 </dd>
 </dl>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-314">
 <p>Bien que les contrats intelligents puissent écrire dans les données de la chaîne d&#8217;Ethereum (via des événements de journal), ils ne peuvent pas lire les événements de journal en chaîne qu&#8217;ils ont créés. Néanmoins, l&#8217;un des avantages de l&#8217;écriture dans les données de la chaîne d&#8217;Ethereum via des événements de journal est que les journaux peuvent être découverts et lus, sur la chaîne publique, par des clients légers. Par exemple, la valeur logsBloom dans un bloc extrait peut indiquer si un événement de journal est présent ou non. Une fois que l&#8217;existence d&#8217;événements de journal a été établie, les données de journal peuvent être obtenues à partir d&#8217;un reçu de transaction donné.</p>
 </div>
 </div>
-<div class="sect2">
+<div class="sect2 data-line-317">
 <h3 id="_conclusion">Conclusion</h3>
-<div class="paragraph">
+<div class="paragraph data-line-319">
 <p>Vyper est un nouveau langage de programmation orienté contrat puissant et intéressant. Sa conception est biaisée vers "l&#8217;exactitude", au détriment d&#8217;une certaine flexibilité. Cela peut permettre aux programmeurs de rédiger de meilleurs contrats intelligents et d&#8217;éviter certains pièges qui provoquent l&#8217;apparition de graves vulnérabilités. Ensuite, nous examinerons plus en détail la sécurité des contrats intelligents. Certaines des nuances de la conception de Vyper peuvent devenir plus apparentes une fois que vous avez lu tous les problèmes de sécurité possibles qui peuvent survenir dans les contrats intelligents.</p>
 </div>
 </div>
@@ -865,7 +865,7 @@ Une fois installé, vous pouvez compiler un contrat avec Vyper en exécutant la 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:07:59 -0400
+Last updated 2022-05-15 05:56:40 -0400
 </div>
 </div>
 </body>
