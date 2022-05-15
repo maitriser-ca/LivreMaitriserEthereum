@@ -510,7 +510,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>nonce : Une valeur scalaire égale au nombre de transactions émises depuis cette adresse ou, dans le cas de comptes avec code associé, au nombre de créations de contrats effectuées par ce compte.</p>
+<p>nonce : Une valeur scalaire égale au nombre de transactions émises depuis cette adresse ou, dans le cas de comptes avec code associé, au nombre de créations de contrats effectuées par ce compte.</p>
 </div>
 </blockquote>
 </div>
@@ -526,7 +526,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Imaginez que vous souhaitiez effectuer deux transactions. Vous avez un paiement important à effectuer de 6 ethers, et aussi un autre paiement de 8 ethers. Vous signez et diffusez d&#8217;abord la transaction à 6 ethers, car c&#8217;est la plus importante, puis vous signez et diffusez la deuxième transaction à 8 ethers. Malheureusement, vous avez oublié le fait que votre compte ne contient que 10 ethers, donc le réseau ne peut pas accepter les deux transactions : l&#8217;une d&#8217;entre elles échouera. Parce que vous avez envoyé le 6-ether le plus important en premier, vous vous attendez naturellement à ce que celui-ci passe et que le 8-ether soit rejeté. Cependant, dans un système décentralisé comme Ethereum, les nœuds peuvent recevoir les transactions dans n&#8217;importe quel ordre ; il n&#8217;y a aucune garantie qu&#8217;un nœud particulier aura une transaction qui lui sera propagée avant l&#8217;autre. En tant que tel, il sera presque certainement le cas que certains nœuds reçoivent la transaction à 6 ethers en premier et que d&#8217;autres reçoivent la transaction à 8 ethers en premier. Sans le nonce, il serait aléatoire de savoir lequel est accepté et lequel est rejeté. Cependant, avec le nonce inclus, la première transaction que vous avez envoyée aura un nonce de, disons, 3, tandis que la transaction 8-ether a la valeur de nonce suivante (c&#8217;est-à-dire 4). Ainsi, cette transaction sera ignorée jusqu&#8217;à ce que les transactions avec des nonces de 0 à 3 aient été traitées, même si elle est reçue en premier. Phew!</p>
 </li>
 <li>
-<p>Imaginez maintenant que vous avez un compte avec 100 ethers. Fantastique! Vous trouvez quelqu&#8217;un en ligne qui acceptera le paiement en ether pour un mcguffin-widget que vous voulez vraiment acheter. Vous leur envoyez 2 ethers et ils vous envoient le widget mcguffin. Beau. Pour effectuer ce paiement à 2 ethers, vous avez signé une transaction en envoyant 2 ethers de votre compte à leur compte, puis vous les avez diffusés sur le réseau Ethereum pour qu&#8217;ils soient vérifiés et inclus dans la chaîne de blocs. Maintenant, sans valeur nonce dans la transaction, une seconde transaction envoyant 2 ethers à la même adresse une seconde fois aura exactement la même apparence que la première transaction. Cela signifie que toute personne qui voit votre transaction sur le réseau Ethereum (ce qui signifie que tout le monde, y compris le destinataire ou vos ennemis) peut "rejouer" la transaction encore et encore et encore jusqu&#8217;à ce que tout votre ether soit parti simplement en copiant et collant votre transaction d&#8217;origine et le renvoyer sur le réseau. Cependant, avec la valeur nonce incluse dans les données de transaction, <em>chaque transaction est unique</em>, même lors de l&#8217;envoi de la même quantité d&#8217;ether à la même adresse de destinataire plusieurs fois. Ainsi, en ayant le nonce incrémenté dans le cadre de la transaction, il n&#8217;est tout simplement pas possible pour quiconque de "dupliquer" un paiement que vous avez effectué.</p>
+<p>Imaginez maintenant que vous avez un compte avec 100 ethers. Fantastique ! Vous trouvez quelqu&#8217;un en ligne qui acceptera le paiement en ether pour un mcguffin-widget que vous voulez vraiment acheter. Vous leur envoyez 2 ethers et ils vous envoient le widget mcguffin. Beau. Pour effectuer ce paiement à 2 ethers, vous avez signé une transaction en envoyant 2 ethers de votre compte à leur compte, puis vous les avez diffusés sur le réseau Ethereum pour qu&#8217;ils soient vérifiés et inclus dans la chaîne de blocs. Maintenant, sans valeur nonce dans la transaction, une seconde transaction envoyant 2 ethers à la même adresse une seconde fois aura exactement la même apparence que la première transaction. Cela signifie que toute personne qui voit votre transaction sur le réseau Ethereum (ce qui signifie que tout le monde, y compris le destinataire ou vos ennemis) peut "rejouer" la transaction encore et encore et encore jusqu&#8217;à ce que tout votre ether soit parti simplement en copiant et collant votre transaction d&#8217;origine et le renvoyer sur le réseau. Cependant, avec la valeur nonce incluse dans les données de transaction, <em>chaque transaction est unique</em>, même lors de l&#8217;envoi de la même quantité d&#8217;ether à la même adresse de destinataire plusieurs fois. Ainsi, en ayant le nonce incrémenté dans le cadre de la transaction, il n&#8217;est tout simplement pas possible pour quiconque de "dupliquer" un paiement que vous avez effectué.</p>
 </li>
 </ol>
 </div>
@@ -1093,7 +1093,7 @@ Binary:
 <p>L&#8217;algorithme de signature numérique utilisé dans Ethereum est l'<em>Elliptic Curve Digital Signature Algorithm</em> ( ECDSA). Il est basé sur des paires de clés privées-publiques à courbe elliptique, comme décrit dans <a href="#elliptic_curve">[elliptic_curve]</a>.</p>
 </div>
 <div class="paragraph">
-<p>Une signature numérique sert trois objectifs dans Ethereum (voir l&#8217;encadré suivant). Premièrement, la signature prouve que le propriétaire de la clé privée, qui est implicitement le propriétaire d&#8217;un compte Ethereum, a <em>autorisé</em> la dépense d&#8217;ether ou l&#8217;exécution d&#8217;un contrat. Deuxièmement, il garantit la <em>non-répudiation</em> : la preuve de l&#8217;autorisation est indéniable. Troisièmement, la signature prouve que les données de transaction n&#8217;ont pas été et <em>ne peuvent pas être modifiées</em> par quiconque après la signature de la transaction.</p>
+<p>Une signature numérique sert trois objectifs dans Ethereum (voir l&#8217;encadré suivant). Premièrement, la signature prouve que le propriétaire de la clé privée, qui est implicitement le propriétaire d&#8217;un compte Ethereum, a <em>autorisé</em> la dépense d&#8217;ether ou l&#8217;exécution d&#8217;un contrat. Deuxièmement, il garantit la <em>non-répudiation</em> : la preuve de l&#8217;autorisation est indéniable. Troisièmement, la signature prouve que les données de transaction n&#8217;ont pas été et <em>ne peuvent pas être modifiées</em> par quiconque après la signature de la transaction.</p>
 </div>
 <div id="digital_signature_definition" class="sidebarblock">
 <div class="content">
@@ -1143,7 +1143,7 @@ Binary:
 </math>
 </div>
 <div class="paragraph">
-<p>où:</p>
+<p>où :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1226,7 +1226,7 @@ Binary:
 <li><em>s</em> &#8801; <em>q</em><sup>-1</sup> (<em>Keccak256</em>(<em>m</em>) + <em>r</em> * <em>k</em>)  &nbsp;  &nbsp; (<em>mod p</em>)</li>
 </ul>
 <div class="paragraph">
-<p>où:</p>
+<p>où :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1270,7 +1270,7 @@ Binary:
 </ol>
 </div>
 <div class="paragraph">
-<p>où:</p>
+<p>où :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1305,7 +1305,7 @@ Binary:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>ECDSA est nécessairement un calcul assez compliqué; une explication complète est au-delà de la portée de ce livre. Un certain nombre d&#8217;excellents guides en ligne vous guident étape par étape : recherchez "ECDSA expliqué" ou essayez celui-ci : <a href="http://bit.ly/2r0HhGB" class="bare">http://bit.ly/2r0HhGB</a>.</p>
+<p>ECDSA est nécessairement un calcul assez compliqué ; une explication complète est au-delà de la portée de ce livre. Un certain nombre d&#8217;excellents guides en ligne vous guident étape par étape : recherchez "ECDSA expliqué" ou essayez celui-ci : <a href="http://bit.ly/2r0HhGB" class="bare">http://bit.ly/2r0HhGB</a>.</p>
 </div>
 </td>
 </tr>
@@ -1515,7 +1515,7 @@ Signed Raw Transaction: 0xf866808609184e72a0008303000094b0920c523d582040f2bcb1..
 <li><em>K</em><sub>2</sub> = <em>r</em><sup>&#x2013;1</sup> (<em>sR</em><sup>'</sup> &#x2013; <em>zG</em>)</li>
 </ul>
 <div class="paragraph">
-<p>où:</p>
+<p>où :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1630,7 +1630,7 @@ Signed Raw Transaction: 0xf866808609184e72a0008303000094b0920c523d582040f2bcb1..
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 04:35:18 -0400
+Last updated 2022-05-15 05:36:16 -0400
 </div>
 </div>
 </body>

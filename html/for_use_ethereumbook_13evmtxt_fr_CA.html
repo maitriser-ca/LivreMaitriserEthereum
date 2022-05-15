@@ -488,7 +488,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Le terme "machine virtuelle" est souvent appliqué à la virtualisation d&#8217;un ordinateur réel, typiquement par un "hyperviseur" tel que VirtualBox ou QEMU, ou d&#8217;une instance entière du système d&#8217;exploitation, comme le KVM de Linux. Ceux-ci doivent fournir une abstraction logicielle, respectivement, du matériel réel, des appels système et des autres fonctionnalités du noyau.</p>
 </div>
 <div class="paragraph">
-<p>L&#8217;EVM fonctionne dans un domaine beaucoup plus limité : c&#8217;est juste un moteur de calcul, et en tant que tel fournit une abstraction du calcul et du stockage, similaire à la spécification Java Virtual Machine (JVM), par exemple. D&#8217;un point de vue de haut niveau, la JVM est conçue pour fournir un environnement d&#8217;exécution indépendant du système d&#8217;exploitation ou du matériel hôte sous-jacent, permettant la compatibilité entre une grande variété de systèmes. Les langages de programmation de haut niveau tels que Java ou Scala (qui utilisent la JVM) ou C# (qui utilise .NET) sont compilés dans le jeu d&#8217;instructions code intermédiaire de leur machine virtuelle respective. De la même manière, l&#8217;EVM exécute son propre jeu d&#8217;instructions de code intermédiaire (décrit dans la section suivante), dans lequel sont compilés des langages de programmation de contrats intelligents de niveau supérieur tels que LLL, Serpent, Mutan ou Solidity.</p>
+<p>L&#8217;EVM fonctionne dans un domaine beaucoup plus limité : c&#8217;est juste un moteur de calcul, et en tant que tel fournit une abstraction du calcul et du stockage, similaire à la spécification Java Virtual Machine (JVM), par exemple. D&#8217;un point de vue de haut niveau, la JVM est conçue pour fournir un environnement d&#8217;exécution indépendant du système d&#8217;exploitation ou du matériel hôte sous-jacent, permettant la compatibilité entre une grande variété de systèmes. Les langages de programmation de haut niveau tels que Java ou Scala (qui utilisent la JVM) ou C# (qui utilise .NET) sont compilés dans le jeu d&#8217;instructions code intermédiaire de leur machine virtuelle respective. De la même manière, l&#8217;EVM exécute son propre jeu d&#8217;instructions de code intermédiaire (décrit dans la section suivante), dans lequel sont compilés des langages de programmation de contrats intelligents de niveau supérieur tels que LLL, Serpent, Mutan ou Solidity.</p>
 </div>
 <div class="paragraph">
 <p>L&#8217;EVM n&#8217;a donc aucune capacité de planification, car l&#8217;ordre d&#8217;exécution est organisé en externe - les clients Ethereum exécutent des transactions de bloc vérifiées pour déterminer quels contrats intelligents doivent être exécutés et dans quel ordre. En ce sens, l&#8217;ordinateur mondial Ethereum est mono-fil (d&#8217;exécution), comme JavaScript. L&#8217;EVM n&#8217;a pas non plus de gestion "d&#8217;interface système" ou de "support matériel" - il n&#8217;y a pas de machine physique avec laquelle s&#8217;interfacer. L&#8217;ordinateur mondial Ethereum est entièrement virtuel.</p>
@@ -1436,7 +1436,7 @@ ether remboursé = gaz restant * prix du gaz</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 04:38:29 -0400
+Last updated 2022-05-15 05:26:45 -0400
 </div>
 </div>
 </body>
