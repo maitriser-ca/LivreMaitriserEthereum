@@ -41,8 +41,8 @@ Thank you Dr. Gavin!</p><br>
 
 * Traduction
   - [x] Phase de traduction (DONE1) : 👍
-  - [ ] Phase de révision (DONE2) : en cours...
-  - [ ] Phase de conclusion (DONEF) : en attente
+  - [x] Phase de révision (DONE2) : 👍
+  - [ ] Phase de conclusion (DONEF) : en cours...
 * Révision
   - [ ] Phase de révision externe
 
