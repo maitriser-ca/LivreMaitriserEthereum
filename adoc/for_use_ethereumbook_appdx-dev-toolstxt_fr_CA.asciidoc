@@ -665,7 +665,7 @@ Documentation : https://docs.etcdevteam.com[]
 [[testing_frameworks]]
 === Tester les contrats intelligents
 
-(((&quot;cadres de développement&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc11&quot;, range=&quot;startofrange&quot;)))(((&quot;contrat intelligent&quot;,&quot;cadres de développement test&quot;, id=&quot; ix_appdx-dev-tools-asciidoc12&quot;, range=&quot;startofrange&quot;)))(((&quot;cadres de développement de test&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc13&quot;, range=&quot;startofrange&quot;) ))Il existe plusieurs cadres de test couramment utilisés pour le développement de contrats intelligents, résumés dans <<testing_frameworks_table>> :
+(((&quot;cadres de développement&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc11&quot;, range=&quot;startofrange&quot;)))(((&quot;contrat intelligent&quot;,&quot;cadres de développement test&quot;, id=&quot; ix_appdx-dev-tools-asciidoc12&quot;, range=&quot;startofrange&quot;)))(((&quot;cadres de développement de test&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc13&quot;, range=&quot;startofrange&quot;)))Il existe plusieurs cadres de test couramment utilisés pour le développement de contrats intelligents, résumés dans <<testing_frameworks_table>> :
 
 [[testing_frameworks_table]]
 [options="header"]

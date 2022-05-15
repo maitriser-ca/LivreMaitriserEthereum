@@ -386,7 +386,7 @@ Le prochain ensemble de mots clés (+public+, +private+, +internal+, +external+)
 
 +interne+ :: (((&quot;fonction interne&quot;)))Les fonctions internes ne sont accessibles qu&#39;à partir du contrat - elles ne peuvent pas être appelées par un autre contrat ou une transaction EOA. Ils peuvent être appelés par des contrats dérivés (ceux qui héritent de celui-ci).
 
-+private+:: (((&quot;fonction privée&quot;)))Les fonctions privées sont comme des fonctions internes mais ne peuvent pas être appelées par les pass:[ <span class="keep-together">contrats</span>] dérivés.
++private+:: (((&quot;fonction privée&quot;)))Les fonctions privées sont comme des fonctions internes mais ne peuvent pas être appelées par les pass:[<span class="keep-together">contrats</span>] dérivés.
 
 Gardez à l&#39;esprit que les termes _internal_ et _private_ sont quelque peu trompeurs. Toute fonction ou donnée à l&#39;intérieur d&#39;un contrat est toujours _visible_ sur la chaîne de blocs publique, ce qui signifie que n&#39;importe qui peut voir le code ou les données. Les mots clés décrits ici n&#39;affectent que comment et quand une fonction peut être _appelée_.
 

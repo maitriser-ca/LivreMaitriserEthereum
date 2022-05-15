@@ -1,7 +1,7 @@
 [[oracles_chap]]
 == Oracles
 
-(((&quot;oracles&quot;, id=&quot;ix_11oracles-asciidoc0&quot;, range=&quot;startofrange&quot;)))Dans ce chapitre, nous discutons des _oracles_, qui sont des systèmes qui peuvent fournir des sources de données externes aux contrats intelligents Ethereum. Le terme « oracle » vient de la mythologie grecque, où il faisait référence à une personne en communication avec les dieux qui pouvait avoir des visions du futur. Dans le contexte des chaînes de blocs, un oracle est un système qui peut répondre à des questions externes à Ethereum. (((&quot;systèmes sans confiance&quot;, voiraussi=&quot;oracles&quot;)))Idéalement, les oracles sont des systèmes _sans confiance_, ce qui signifie qu&#39;ils n&#39;ont pas besoin d&#39;être fiables car ils fonctionnent selon des principes décentralisés.
+(((&quot;oracles&quot;, id=&quot;ix_11oracles-asciidoc0&quot;, range=&quot;startofrange&quot;)))Dans ce chapitre, nous discutons des _oracles_, qui sont des systèmes qui peuvent fournir des sources de données externes aux contrats intelligents Ethereum. Le terme « oracle » vient de la mythologie grecque, où il faisait référence à une personne en communication avec les dieux qui pouvait avoir des visions du futur. Dans le contexte des chaînes de blocs, un oracle est un système qui peut répondre à des questions externes à Ethereum. (((&quot;systèmes sans confiance&quot;, seealso=&quot;oracles&quot;)))Idéalement, les oracles sont des systèmes _sans confiance_, ce qui signifie qu&#39;ils n&#39;ont pas besoin d&#39;être fiables car ils fonctionnent selon des principes décentralisés.
 
 [[why_oracles]]
 === Pourquoi les oracles sont nécessaires
