@@ -7,7 +7,7 @@
 
 La bibliothèque JavaScript web3.js est une collection de modules qui contiennent des fonctionnalités spécifiques pour l&#39;écosystème Ethereum, ainsi qu&#39;une API JavaScript compatible Ethereum qui implémente la spécification Generic JSON RPC.
 
-Pour exécuter ce script, vous n&#39;avez pas besoin d&#39;exécuter votre propre nœud local, car il utilise https://infura.io [services Infura].
+Pour exécuter ce script, vous n&#39;avez pas besoin d&#39;exécuter votre propre nœud local, car il utilise https://infura.io[services Infura].
 
 === Interaction de base du contrat web3.js de manière non bloquée (asynchrone)
 
