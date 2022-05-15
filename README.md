@@ -74,8 +74,8 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 15. [Chapitre 13 - La machine virtuelle Ethereum](html/for_use_ethereumbook_13evmtxt_fr_CA.html) 👍
 16. [Chapitre 14 - Consensus](html/for_use_ethereumbook_14consensustxt_fr_CA.html) 👍
 17. [Annexe A - Historique de la fourche Ethereum](html/for_use_ethereumbook_appdx-forks-historytxt_fr_CA.html) 👍
-18. [Annexe B - Normes Ethereum](html/for_use_ethereumbook_appdx-standards-eip-erctxt_fr_CA.html) ❌
-19. [Annexe C - Opcodes Ethereum EVM et consommation de gaz](html/for_use_ethereumbook_appdx-evm-opcodes-gastxt_fr_CA.html) ❌
+18. [Annexe B - Normes Ethereum](html/for_use_ethereumbook_appdx-standards-eip-erctxt_fr_CA.html) 👍
+19. [Annexe C - Opcodes Ethereum EVM et consommation de gaz](html/for_use_ethereumbook_appdx-evm-opcodes-gastxt_fr_CA.html) 👍
 20. [Annexe D - Outils de développement, cadres de développement, et bibliothèques](html/for_use_ethereumbook_appdx-dev-toolstxt_fr_CA.html) ❌
 21. [Annexe E - Tutoriel web3.js](html/for_use_ethereumbook_appdx-web3js-tutorialtxt_fr_CA.html) ❌
 

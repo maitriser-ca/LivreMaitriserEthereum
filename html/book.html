@@ -13230,7 +13230,7 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <div class="sect3 data-line-633">
 <h4 id="_considérations_sur_la_comptabilisation_du_gaz">Considérations sur la comptabilisation du gaz</h4>
 <div class="paragraph data-line-635">
-<p>Les coûts relatifs du gaz des différentes opérations pouvant être effectuées par l&#39;EVM ont ont été soigneusement choisis pour protéger au mieux la chaîne de blocs Ethereum contre les attaques. Vous pouvez voir un tableau détaillé des coûts de gaz pour différents opcodes EVM dans <a href="#evm_opcodes_table">EVM opcodes and gas cost</a>.</p>
+<p>Les coûts relatifs du gaz des différentes opérations pouvant être effectuées par l&#39;EVM ont ont été soigneusement choisis pour protéger au mieux la chaîne de blocs Ethereum contre les attaques. Vous pouvez voir un tableau détaillé des coûts de gaz pour différents opcodes EVM dans <a href="#evm_opcodes_table">Opcodes EVM et coût du gaz</a>.</p>
 </div>
 <div class="paragraph data-line-637">
 <p>Les opérations plus intensives en calcul coûtent plus de gaz. Par exemple, l&#39;exécution de la fonction SHA3 est 10 fois plus coûteuse (30 gaz) que l&#39;opération ADD (3 gaz). Plus important encore, certaines opérations, telles que EXP, nécessitent un paiement supplémentaire en fonction de la taille de l&#39;opérande. L&#39;utilisation de la mémoire EVM et le stockage des données dans le stockage en chaîne d&#39;un contrat entraînent également un coût en gaz.</p>
@@ -13753,31 +13753,31 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <h2 id="ethereum_standards">Appendix B: Normes Ethereum</h2>
 <div class="sectionbody">
 <div class="sect2 data-line-6">
-<h3 id="eips">Ethereum Improvement Proposals (EIPs)</h3>
+<h3 id="eips">Propositions d&#39;amélioration d&#39;Ethereum (EIPs)</h3>
 <div class="paragraph data-line-8">
-<p>The Ethereum Improvement Proposal repository is located at <a href="https://github.com/ethereum/EIPs/" class="undefined" data-href="https://github.com/ethereum/EIPs/">https://github.com/ethereum/EIPs/</a>. The workflow is illustrated in <a href="#eip_workflow">Ethereum Improvement Proposal workflow</a>.</p>
+<p>Le référentiel des propositions d&#39;amélioration d&#39;Ethereum est situé sur <a href="https://github.com/ethereum/EIPs/" class="undefined" data-href="https://github.com/ethereum/EIPs/">https://github.com/ethereum/EIPs/</a>. Le flux de travail est illustré dans <a href="#eip_workflow">Flux de travail des propositions d&#39;amélioration Ethereum</a>.</p>
 </div>
 <div class="paragraph data-line-10">
-<p>From <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md" data-href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md">EIP-1</a>:</p>
+<p>Depuis <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md" data-href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md">EIP-1</a> :</p>
 </div>
 <div class="quoteblock data-line-12">
 <blockquote>
 <div class="paragraph data-line-13">
-<p>EIP stands for Ethereum Improvement Proposal. An EIP is a design document providing information to the Ethereum community, or describing a new feature for Ethereum or its processes or environment. The EIP should provide a concise technical specification of the feature and a rationale for the feature. The EIP author is responsible for building consensus within the community and documenting dissenting opinions.</p>
+<p>EIP signifie Ethereum Improvement Proposal (Proposition d&#39;amélioration d&#39;Ethereum). Un EIP est un document de conception fournissant des informations à la communauté Ethereum ou décrivant une nouvelle fonctionnalité pour Ethereum ou ses processus ou son environnement. L&#39;EIP doit fournir une spécification technique concise de la fonctionnalité et une justification de la fonctionnalité. L&#39;auteur de l&#39;EIP est responsable de la recherche d&#39;un consensus au sein de la communauté et de la documentation des opinions dissidentes.</p>
 </div>
 </blockquote>
 </div>
 <div id="eip_workflow" class="imageblock data-line-18">
 <div class="content">
-<img src="images/eip_workflow.png" alt="Ethereum Improvement Proposal Workflow">
+<img src="images/eip_workflow.png" alt="&quot;Flux de travail des propositions d&#39;amélioration d&#39;Ethereum&quot;">
 </div>
-<div class="title">Figure 58. Ethereum Improvement Proposal workflow</div>
+<div class="title">Figure 58. Flux de travail des propositions d&#39;amélioration Ethereum</div>
 </div>
 </div>
 <div class="sect2 data-line-21">
-<h3 id="eip_table">Table of Most Important EIPs and ERCs</h3>
+<h3 id="eip_table">Tableau des EIP et ERC les plus importants</h3>
 <table class="tableblock frame-all grid-all stretch data-line-25">
-<caption class="title">Table 8. Important EIPs and ERCs</caption>
+<caption class="title">Table 8. EIP et ERC importants</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -13788,189 +13788,189 @@ ether remboursé = gaz restant * prix du gaz</pre>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">EIP/ERC #</th>
-<th class="tableblock halign-left valign-top">Title/Description</th>
-<th class="tableblock halign-left valign-top">Author</th>
-<th class="tableblock halign-left valign-top">Layer</th>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Created</th>
+<th class="tableblock halign-left valign-top">N° EIP/ERC</th>
+<th class="tableblock halign-left valign-top">Titre/Description</th>
+<th class="tableblock halign-left valign-top">Auteur</th>
+<th class="tableblock halign-left valign-top">Couche</th>
+<th class="tableblock halign-left valign-top">Statut</th>
+<th class="tableblock halign-left valign-top">Créé par</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OVq6qa" data-href="http://bit.ly/2OVq6qa">EIP-1</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EIP Purpose and Guidelines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objectif et lignes directrices de l&#39;EIP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Martin Becze, Hudson Jameson</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meta</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Méta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2yJtTNa" data-href="http://bit.ly/2yJtTNa">EIP-2</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Homestead Hard-fork Changes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changements à la fourchette dure de Homestead</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2Jrx93V" data-href="http://bit.ly/2Jrx93V">EIP-5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gas Usage for <code>RETURN</code> and <code>CALL*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Consommation de gaz pour <code>RETURN</code> et <code>CALL*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Christian Reitwiessner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OYbc2t" data-href="http://bit.ly/2OYbc2t">EIP-6</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Renaming SUICIDE Opcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Renommer SUICIDE Opcode</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hudson Jameson</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2JxdBeN" data-href="http://bit.ly/2JxdBeN">EIP-7</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DELEGATECALL</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2Q6Oly6" data-href="http://bit.ly/2Q6Oly6">EIP-8</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">devp2p Forward Compatibility Requirements for Homestead</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Felix Lange</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Networking</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exigences de compatibilité ascendante devp2p pour Homestead</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Félix Lange</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Réseautage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CUf7WG" data-href="http://bit.ly/2CUf7WG">EIP-20</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC-20 Token Standard. Describes standard functions a token contract may implement to allow DApps and wallets to handle tokens across multiple interfaces/DApps. Methods include: <code>totalSupply</code>, balanceOf(address), <code>transfer</code>, <code>transferFrom</code>, <code>approve</code>, <code>allowance</code>. Events include: <code>Transfer</code> (triggered when tokens are transferred), <span class="keep-together"><code>Approval</code></span> (triggered when <code>approve</code> is called).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norme de jeton ERC-20. Décrit les fonctions standard qu&#39;un contrat de jeton peut implémenter pour permettre aux DApp et aux portefeuilles de gérer les jetons sur plusieurs interfaces/DApp. Les méthodes incluent : <code>totalSupply</code>, balanceOf(address), <code>transfer</code>, <code>transferFrom</code>, <code>approve</code>, <code>allowance</code>. Les événements incluent : <code>Transfer</code> (déclenché lorsque les jetons sont transférés), <span class="keep-together"><code>Approval</code></span> (déclenché lorsque <code>approve</code> est appelé).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fabian Vogelsteller, Vitalik Buterin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Frontier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Frontière</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2Q6R4YB" data-href="http://bit.ly/2Q6R4YB">EIP-55</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mixed-case checksum address encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Codage d&#39;adresse de somme de contrôle à casse mixte</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OgE5la" data-href="http://bit.ly/2OgE5la">EIP-86</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Abstraction of transaction origin and signature. Sets the stage for "abstracting out" account security and allowing users to create "account contracts," moving toward a model where in the long term all accounts are contracts that can pay for gas, and users are free to define their own security models that perform any desired signature verification and nonce checks (instead of using the in-protocol mechanism where ECDSA and the default nonce scheme are the only "standard" way to secure an account, which is currently hardcoded into transaction processing).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abstraction de l&#39;origine et de la signature de la transaction. prépare le terrain pour &quot;abstraire&quot; la sécurité des comptes et permettre aux utilisateurs de créer des &quot;contrats de compte&quot;, en évoluant vers un modèle où, à long terme, tous les comptes sont des contrats qui peuvent payer pour le gaz, et les utilisateurs sont libres de définir leurs propres modèles de sécurité qui effectuer toute vérification de signature et vérifications nonce souhaitées (au lieu d&#39;utiliser le mécanisme dans le protocole où ECDSA et le schéma nonce par défaut sont le seul moyen &quot;standard&quot; de sécuriser un compte, qui est actuellement codé en dur dans le traitement des transactions).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deferred (to be replaced)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Différé (à remplacer)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Constantinople</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2QedSFC" data-href="http://bit.ly/2QedSFC">EIP-96</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Blockhash and state root changes. Stores blockhashes in the state to reduce protocol complexity and need for complex client implementations to process the <code>BLOCKHASH</code> opcode. Extends range of how far back blockhash checking may go, with the side effect of creating direct links between blocks with very distant block numbers to facilitate much more efficient initial light client syncing.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blockhash et changements de racine d&#39;état. Stocke les hachages de bloc dans l&#39;état pour réduire la complexité du protocole et le besoin d&#39;implémentations client complexes pour traiter l&#39;opcode <code>BLOCKHASH</code>. Étend la portée de la vérification des blocs de hachage, avec pour effet secondaire de créer des liens directs entre les blocs avec des numéros de bloc très éloignés pour faciliter une synchronisation initiale beaucoup plus efficace du client léger.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deferred</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Différé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Constantinople</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2AC05DM" data-href="http://bit.ly/2AC05DM">EIP-100</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Change difficulty adjustment to target mean block time and including uncles.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modifie l&#39;ajustement de la difficulté pour cibler le temps de blocage moyen et inclure les oncles.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2Jr1zDv" data-href="http://bit.ly/2Jr1zDv">EIP-101</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serenity Currency and Crypto Abstraction. Abstracts ether up a level with the benefit of allowing ether and subtokens to be treated similarly by contracts, reduces the level of indirection required for custom-policy accounts such as multisigs, and purifies the underlying Ethereum protocol by reducing the minimal consensus implementation complexity.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Monnaie de sérénité et abstraction cryptographique. Rend abstrait l&#8217;ether d&#39;un niveau avec l&#39;avantage de permettre à l&#39;ether et aux sous-jetons d&#39;être traités de manière similaire par des contrats, réduisant le niveau d&#39;indirection requis pour les comptes de politique personnalisée tels que les multisigs et purifiant le protocole Ethereum sous-jacent en réduisant la complexité minimale de mise en œuvre du consensus.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Active</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serenity feature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serenity Casper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Actif</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fonction Sérénité</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sérénité Casper</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2Q5sdEv" data-href="http://bit.ly/2Q5sdEv">EIP-105</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Binary sharding plus contract calling semantics. "Sharding scaffolding" EIP to allow Ethereum transactions to be parallelized using a binary tree sharding mechanism, and to set the stage for a later sharding scheme. Research in progress; see <a href="https://github.com/ethereum/sharding" class="undefined" data-href="https://github.com/ethereum/sharding">https://github.com/ethereum/sharding</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Partage binaire plus sémantique d&#39;appel de contrat. &quot;Échafaudage de partitionnement&quot; EIP pour permettre aux transactions Ethereum d&#39;être parallélisées à l&#39;aide d&#39;un mécanisme de partitionnement d&#39;arbre binaire, et pour préparer le terrain pour un schéma de partitionnement ultérieur. Recherche en cours; voir <a href="https://github.com/ethereum/sharding" class="undefined" data-href="https://github.com/ethereum/sharding">https://github.com/ethereum/sharding</a>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Active</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serenity feature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serenity Casper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Actif</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fonction Sérénité</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sérénité Casper</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2yG2Dzi" data-href="http://bit.ly/2yG2Dzi">EIP-137</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ethereum Domain Name Service - Specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service de nom de domaine Ethereum - Spécification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nick Johnson</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2yJtWZm" data-href="http://bit.ly/2yJtWZm">EIP-140</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New Opcode: REVERT. Adds <code>REVERT</code> opcode instruction, which stops execution and rolls back the EVM execution state changes without consuming all provided gas (instead the contract only has to pay for memory) or losing logs, and returns to the caller a pointer to the memory location with the error code or message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nouvel Opcode : REVERT. Ajoute l&#39;instruction d&#39;opcode <code>REVERT</code>, qui arrête l&#39;exécution et annule les changements d&#39;état d&#39;exécution EVM sans consommer tout le gaz fourni (au lieu de cela, le contrat ne doit payer que pour la mémoire) ou perdre les journaux, et renvoie à l&#39;appelant un pointeur vers l&#39;emplacement de la mémoire avec le code ou le message d&#39;erreur.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alex Beregszaszi, Nikolai Mushegian</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CQMXfe" data-href="http://bit.ly/2CQMXfe">EIP-141</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Designated invalid EVM instruction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instruction EVM invalide désignée</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alex Beregszaszi</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2qhKz9Y" data-href="http://bit.ly/2qhKz9Y">EIP-145</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise shifting instructions in EVM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alex Beregszaszi, Paweł Bylica</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deferred</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instructions de décalage au niveau du bit dans EVM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alex Beregszaszi, Pawel Bylica</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Différé</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2qhxflQ" data-href="http://bit.ly/2qhxflQ">EIP-150</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gas cost changes for IO-heavy operations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changements de coût du gaz pour les opérations lourdes d&#39;E/S</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CQUgne" data-href="http://bit.ly/2CQUgne">EIP-155</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simple replay attack protection. Replay Attack allows any transaction using a pre-EIP-155 Ethereum node or client to become signed so it is valid and executed on both the Ethereum and Ethereum Classic chains.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Protection simple contre les attaques par relecture. Replay Attack permet à toute transaction utilisant un nœud ou un client Ethereum pré-EIP-155 d&#39;être signée afin qu&#39;elle soit valide et exécutée sur les chaînes Ethereum et Ethereum Classic.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Homestead</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Propriété</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2JryBmT" data-href="http://bit.ly/2JryBmT">EIP-158</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">State clearing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dédouanement de l&#39;État</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Superseded</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remplacé</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR6VGY" data-href="http://bit.ly/2CR6VGY">EIP-160</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EXP cost increase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Augmentation du coût de l&#39;EXP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OfU96M" data-href="http://bit.ly/2OfU96M">EIP-161</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">State trie clearing (invariant-preserving alternative)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gavin Wood</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Effacement de trie d&#39;état (alternative préservant l&#39;invariant)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bois Gavin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -13978,183 +13978,183 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Initial ENS Hash Registrar</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maurelian, Nick Johnson, Alex Van de Sande</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OgsOkO" data-href="http://bit.ly/2OgsOkO">EIP-165</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC-165 Standard Interface Detection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Détection d&#39;interface standard ERC-165</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Christian Reitwiessner et al.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OgCWu1" data-href="http://bit.ly/2OgCWu1">EIP-170</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Contract code size limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limite de taille du code de contrat</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2ERNv7g" data-href="http://bit.ly/2ERNv7g">EIP-181</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ENS support for reverse resolution of Ethereum addresses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prise en charge de l&#39;ENS pour la résolution inverse des adresses Ethereum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nick Johnson</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2P0wPz5" data-href="http://bit.ly/2P0wPz5">EIP-190</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ethereum Smart Contract Packaging Standard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norme d&#39;emballage du contrat intelligent Ethereum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Piper Merriam et al.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2SwNQiz" data-href="http://bit.ly/2SwNQiz">EIP-196</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Precompiled contracts for addition and scalar multiplication on the elliptic curve alt_bn128. Required in order to perform zkSNARK verification within the block gas limit.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contrats précompilés pour l&#39;addition et la multiplication scalaire sur la courbe elliptique alt_bn128. Requis pour effectuer la vérification zkSNARK dans la limite de gaz du bloc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Christian Reitwiessner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2ETDC9a" data-href="http://bit.ly/2ETDC9a">EIP-197</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Precompiled contracts for optimal ate pairing check on the elliptic curve alt_bn128. Combined with EIP-196.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contrats précompilés pour un contrôle d&#39;appariement optimal sur la courbe elliptique alt_bn128. Combiné avec EIP-196.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin, Christian Reitwiessner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2DdTCRN" data-href="http://bit.ly/2DdTCRN">EIP-198</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Big integer modular exponentiation. Precompile enabling RSA signature verification and other cryptographic applications.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exponentiation modulaire des grands entiers. Précompilation permettant la vérification de signature RSA et d&#39;autres applications cryptographiques.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2qjYJr3" data-href="http://bit.ly/2qjYJr3">EIP-211</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New opcodes: <code>RETURNDATASIZE</code> and <code>RETURNDATACOPY</code>. Adds support for returning variable-length values inside the EVM with simple gas charging and minimal change to calling opcodes using new opcodes <code>RETURNDATASIZE</code> and <code>RETURNDATACOPY</code>. Handles similar to existing <code>calldata</code>, whereby after a call, return data is kept inside a virtual buffer from which the caller can copy it (or parts thereof) into memory, and upon the next call, the buffer is overwritten.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nouveaux opcodes : <code>RETURNDATASIZE</code> et <code>RETURNDATACOPY</code>. Ajoute la prise en charge du retour de valeurs de longueur variable à l&#39;intérieur de l&#39;EVM avec une simple charge de gaz et une modification minimale des opcodes d&#39;appel à l&#39;aide des nouveaux opcodes <code>RETURNDATASIZE</code> et <code>RETURNDATACOPY</code>. Poignées similaires aux <code>calldata</code> existantes, dans lesquelles après un appel, les données de retour sont conservées dans un tampon virtuel à partir duquel l&#39;appelant peut les copier (ou des parties de celui-ci) dans la mémoire, et lors du prochain appel, le tampon est écrasé.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Christian Reitwiessner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OgV0Eb" data-href="http://bit.ly/2OgV0Eb">EIP-214</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New opcode: <code>STATICCALL</code>. Permits non-state-changing calls to itself or other contracts while disallowing any modifications to state during the call (and its subcalls, if present) to increase smart contract security and assure developers that re-entrancy bugs cannot arise from the call. Calls the child with <code>STATIC</code> flag set to <code>true</code> for execution of child, causing exception to be thrown upon any attempts to make state-changing operations inside an execution instance where <code>STATIC</code> is <code>true</code>, and resets flag once call returns.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nouvel opcode : <code>STATICCALL</code>. Autorise les appels sans changement d&#39;état à lui-même ou à d&#39;autres contrats tout en interdisant toute modification d&#39;état pendant l&#39;appel (et ses sous-appels, le cas échéant) pour augmenter la sécurité des contrats intelligents et assurer aux développeurs que les bogues de réentrance ne peuvent pas résulter de l&#39;appel. Appelle l&#39;enfant avec l&#39;indicateur &#39;STATIC&#39; défini sur &#39;true&#39; pour l&#39;exécution de l&#39;enfant, provoquant la levée d&#39;une exception lors de toute tentative d&#39;opérations de changement d&#39;état à l&#39;intérieur d&#39;une instance d&#39;exécution où &#39;STATIC&#39; est &#39;true&#39;, et réinitialise l&#39;indicateur une fois l&#39;appel Retour.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vitalik Buterin, Christian Reitwiessner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2JssHlJ" data-href="http://bit.ly/2JssHlJ">EIP-225</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rinkeby testnet using proof of authority where blocks are only mined by trusted signers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rinkeby testnet utilise une preuve d&#39;autorité où les blocs ne sont extraits que par des signataires de confiance.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Péter Szilágyi</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Homestead</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Propriété</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2yPBavd" data-href="http://bit.ly/2yPBavd">EIP-234</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add <code>blockHash</code> to JSON-RPC filter options</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Micah Zoltu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajouter <code>blockHash</code> aux options de filtre JSON-RPC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Michée Zoltu</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2yKrBNM" data-href="http://bit.ly/2yKrBNM">EIP-615</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subroutines and Static Jumps for the EVM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sous-programmes et sauts statiques pour l&#39;EVM</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Greg Colvin, Paweł Bylica, Christian Reitwiessner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2AzGX99" data-href="http://bit.ly/2AzGX99">EIP-616</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SIMD Operations for the EVM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opérations SIMD pour l&#39;EVM</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Greg Colvin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2qjYX1n" data-href="http://bit.ly/2qjYX1n">EIP-681</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL Format for Transaction Requests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Format d&#39;URL pour les demandes de transaction</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Daniel A. Nagy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2OYgE5n" data-href="http://bit.ly/2OYgE5n">EIP-649</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Difficulty Bomb Delay and Block Reward Reduction. Delayed the Ice Age (aka Difficulty Bomb) by 1 year, and reduced the block reward from 5 to 3 ether.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Délai de bombe de difficulté Metropolis et réduction de récompense de bloc. Retardé l&#39;ère glaciaire (aka Difficulty Bomb) de 1 an et réduit la récompense de bloc de 5 à 3 éther.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Afri Schoedon, Vitalik Buterin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2RoGCvH" data-href="http://bit.ly/2RoGCvH">EIP-658</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Embedding transaction status code in receipts. Fetches and embeds a status field indicative of success or failure state to transaction receipts for callers, as it&#8217;s no longer possible to assume the transaction failed if and only if it consumed all gas after the introduction of the <code>REVERT</code> opcode in EIP-140.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intégration du code d&#39;état de la transaction dans les reçus. Récupère et intègre un champ d&#39;état indiquant l&#39;état de réussite ou d&#39;échec des reçus de transaction pour les appelants, car il n&#39;est plus possible de supposer que la transaction a échoué si et seulement si elle a consommé tout le gaz après l&#39;introduction de l&#39;opcode &quot;REVERT&quot; dans EIP-140.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nick Johnson</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metropolis Byzantinium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noyau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Métropole Byzantinium</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2Ogwpzs" data-href="http://bit.ly/2Ogwpzs">EIP-706</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DEVp2p snappy compression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compression rapide DEVp2p</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Péter Szilágyi</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Networking</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Réseautage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finale</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2AAkCIP" data-href="http://bit.ly/2AAkCIP">EIP-721</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC-721 Non-Fungible Token Standard. A standard API that allows smart contracts to operate as unique tradable non-fungible tokens (NFTs) that may be tracked in standardized wallets and traded on exchanges as assets of value, similar to ERC20. CryptoKitties was the first popularly adopted implementation of a digital NFT in the Ethereum ecosystem.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norme de jeton non fongible ERC-721. Une API standard qui permet aux contrats intelligents de fonctionner comme des jetons non fongibles (NFT) négociables uniques qui peuvent être suivis dans des portefeuilles standardisés et échangés sur des bourses en tant qu&#39;actifs de valeur, similaires à ERC20. CryptoKitties a été la première implémentation populairement adoptée d&#39;un NFT numérique dans l&#39;écosystème Ethereum.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">William Entriken, Dieter Shirley, Jacob Evans, Nastassia Sachs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2qmuDmJ" data-href="http://bit.ly/2qmuDmJ">EIP-758</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subscriptions and filters for completed transactions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abonnements et filtres pour les transactions terminées</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jack Peterson</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2RnqlHy" data-href="http://bit.ly/2RnqlHy">EIP-801</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC-801 Canary Standard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norme canari ERC-801</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ligi</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2DdTKkf" data-href="http://bit.ly/2DdTKkf">EIP-827</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC827 Token Standard. An extension of the standard interface ERC20 for tokens with methods that allow the execution of calls inside transfer and approvals. This standard provides basic functionality to transfer tokens, as well as allowing tokens to be approved so they can be spent by another on-chain third party. Also, it allows the developer to execute calls on transfers and approvals.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norme de jeton ERC827. Une extension de l&#39;interface standard ERC20 pour les jetons avec des méthodes qui permettent l&#39;exécution d&#39;appels à l&#39;intérieur de transfer et d&#39;approbations. Cette norme fournit des fonctionnalités de base pour transférer des jetons, ainsi que permettre aux jetons d&#39;être approuvés afin qu&#39;ils puissent être dépensés par un autre tiers sur la chaîne. En outre, il permet au développeur d&#39;exécuter des appels sur les transferts et les approbations.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Augusto Lemble</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2Jq2hAM" data-href="http://bit.ly/2Jq2hAM">EIP-930</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ERC930 Eternal Storage. The ES (Eternal Storage) contract is owned by an address that has write permissions. The storage is public, which means everyone has read permissions. It stores the data in mappings, using one mapping per type of variable. The use of this contract allows the developer to migrate the storage easily to another contract if needed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stockage éternel ERC930. Le contrat ES (Eternal Storage) appartient à une adresse disposant d&#39;autorisations d&#39;écriture. Le stockage est public, ce qui signifie que tout le monde a des autorisations de lecture. Il stocke les données dans des mappages, en utilisant un mappage par type de variable. L&#39;utilisation de ce contrat permet au développeur de migrer facilement le stockage vers un autre contrat si nécessaire.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Augusto Lemble</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ERC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Draft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brouillon</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -14166,10 +14166,10 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <h2 id="evm_opcodes">Appendix C: Opcodes Ethereum EVM et consommation de gaz</h2>
 <div class="sectionbody">
 <div class="paragraph data-line-5">
-<p>This appendix is based on the consolidation work done by the people of <a href="https://github.com/trailofbits/evm-opcodes" class="undefined" data-href="https://github.com/trailofbits/evm-opcodes">https://github.com/trailofbits/evm-opcodes</a> as a reference for Ethereum VM (EVM) opcodes and instruction information licensed under the <a href="http://bit.ly/2zfrv0b" data-href="http://bit.ly/2zfrv0b">Apache License 2.0</a>.</p>
+<p>Cette annexe est basée sur le travail de consolidation effectué par les personnes de <a href="https://github.com/trailofbits/evm-opcodes" class="undefined" data-href="https://github.com/trailofbits/evm-opcodes">https://github.com/trailofbits/evm-opcodes</a> comme référence pour les opcodes Ethereum VM (EVM) et les informations d&#39;instruction sous licence <a href="http://bit.ly/2zfrv0b" data-href="http://bit.ly/2zfrv0b">Apache License 2.0</a>.</p>
 </div>
 <table id="evm_opcodes_table" class="tableblock frame-all grid-all stretch data-line-10">
-<caption class="title">Table 9. EVM opcodes and gas cost</caption>
+<caption class="title">Table 9. Opcodes EVM et coût du gaz</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -14180,310 +14180,310 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Opcode</th>
-<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Nom</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Extra info</th>
-<th class="tableblock halign-left valign-top">Gas</th>
+<th class="tableblock halign-left valign-top">Infos supplémentaires</th>
+<th class="tableblock halign-left valign-top">Gaz</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x00</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">STOP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Halts execution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arrête l&#39;exécution</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x01</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Addition operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération d&#39;addition</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x02</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MUL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplication operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération de multiplication</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x03</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SUB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subtraction operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération de soustraction</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x04</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DIV</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer division operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération de division d&#8217;entier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x05</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SDIV</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signed integer division operation (truncated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération de division d&#39;entier signé (tronqué)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x06</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MOD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Modulo remainder operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération de reste modulo</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x07</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SMOD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signed modulo remainder operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération de reste modulo signé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x08</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADDMOD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Modulo addition operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération d&#39;addition modulo</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x09</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MULMOD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Modulo multiplication operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération de multiplication modulo</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x0a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EXP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exponential operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération exponentielle</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10***</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x0b</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SIGNEXTEND</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extend length of two&#8217;s complement signed integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Étend la longueur de l&#39;entier signé complément à deux</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x0c</code> - <code>0x0f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x10</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Less-than comparison</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comparaison inférieure à</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x11</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Greater-than comparison</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comparaison supérieure à</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x12</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SLT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signed less-than comparison</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comparaison signé inférieur à</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x13</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SGT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Signed greater-than comparison</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comparaison signé supérieure à</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x14</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EQ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Equality comparison</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comparaison d&#39;égalité</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x15</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISZERO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simple NOT operator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opérateur NOT simple</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x16</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AND</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise AND operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération AND bit à bit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x17</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OR</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise OR operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération OR bit à bit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x18</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">XOR</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise XOR operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération XOR bit à bit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x19</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NOT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise NOT operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opération NOT au niveau du bit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x1a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BYTE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve single byte from word</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Récupérer un seul octet du mot machine</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x1b</code> - <code>0x1f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x20</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SHA3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Compute Keccak-256 hash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calculer le hachage Keccak-256</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x21</code> - <code>0x2f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x30</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ADDRESS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get address of currently executing account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir l&#39;adresse du compte en cours d&#39;exécution</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x31</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BALANCE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get balance of the given account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir le solde du compte donné</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x32</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ORIGIN</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get execution origination address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir l&#39;adresse d&#39;origine de l&#39;exécution</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x33</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CALLER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get caller address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir l&#39;adresse de l&#39;appelant</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x34</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CALLVALUE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get deposited value by the instruction/transaction responsible for this execution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir la valeur déposée par l&#39;instruction/transaction responsable de cette exécution</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x35</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CALLDATALOAD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get input data of current environment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir les données d&#39;entrée de l&#39;environnement actuel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x36</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CALLDATASIZE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get size of input data in current environment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir la taille des données d&#39;entrée dans l&#39;environnement actuel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x37</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CALLDATACOPY</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy input data in current environment to memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copier les données d&#39;entrée dans l&#39;environnement actuel vers la mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x38</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CODESIZE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get size of code running in current environment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir la taille du code exécuté dans l&#39;environnement actuel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x39</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CODECOPY</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy code running in current environment to memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copier le code en cours d&#39;exécution dans l&#39;environnement actuel vers la mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GASPRICE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get price of gas in current environment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir le prix du gaz dans l&#39;environnement actuel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3b</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EXTCODESIZE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get size of an account&#8217;s code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir la taille du code d&#39;un compte</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">700</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3c</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EXTCODECOPY</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy an account&#8217;s code to memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copier le code d&#39;un compte en mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">700</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RETURNDATASIZE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pushes the size of the return data buffer onto the stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pousse la taille du tampon de données de retour sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2zaBcNe" data-href="http://bit.ly/2zaBcNe">EIP-211</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3e</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RETURNDATACOPY</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copies data from the return data buffer to memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copie les données du tampon de données de retour vers la mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2zaBcNe" data-href="http://bit.ly/2zaBcNe">EIP-211</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -14491,48 +14491,48 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x40</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BLOCKHASH</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the hash of one of the 256 most recent complete blocks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir le hachage de l&#39;un des 256 blocs complets les plus récents</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x41</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">COINBASE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the block&#8217;s beneficiary address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir l&#39;adresse du bénéficiaire du bloc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x42</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the block&#8217;s timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir l&#39;horodatage du bloc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x43</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NUMBER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the block&#8217;s number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Récupérer le numéro du bloc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x44</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DIFFICULTY</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the block&#8217;s difficulty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir la difficulté du bloc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x45</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GASLIMIT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the block&#8217;s gas limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtenir la limite de gaz du bloc</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x46</code> - <code>0x4f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -14540,90 +14540,90 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x50</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">POP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Remove word from stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supprime le mot machine de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x51</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MLOAD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Load word from memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Charge le mot machine de la mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x52</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MSTORE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Save word to memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enregistre le mot machine en mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3*</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x53</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MSTORE8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Save byte to memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enregistre l&#39;octet en mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x54</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SLOAD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Load word from storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Charge le mot du stockage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x55</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SSTORE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Save word to storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enregistre le mot dans la mémoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0*</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x56</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alter the program counter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modifie le compteur de programme</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x57</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conditionally alter the program counter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modifie conditionnellement le compteur de programme</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x58</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GETPC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the value of the program counter prior to the increment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtient la valeur du compteur de programme avant l&#39;incrément</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x59</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MSIZE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the size of active memory in bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtient la taille de la mémoire active en octets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x5a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GAS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get the amount of available gas, including the corresponding reduction in the amount of available gas</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obtient la quantité de gaz disponible, y compris la réduction correspondante de la quantité de gaz disponible</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x5b</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPDEST</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mark a valid destination for jumps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marque une destination valide pour les sauts</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x5c</code> - <code>0x5f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -14631,489 +14631,489 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x60</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 1-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 1 octet sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x61</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 2-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 2 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x62</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 3-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 3 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x63</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 4-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 4 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x64</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 5-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 5 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x65</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 6-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 6 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x66</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 7-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 7 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x67</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 8-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 8 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x68</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 9-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 9 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x69</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 10-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 10 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x6a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 11-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 11 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x6b</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 12-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 12 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x6c</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 13-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 13 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x6d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 14-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 14 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x6e</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 15-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 15 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x6f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 16-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 16 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x70</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH17</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 17-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 17 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x71</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH18</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 18-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 18 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x72</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 19-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 19 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x73</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 20-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 20 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x74</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 21-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 21 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x75</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 22-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 22 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x76</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH23</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 23-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 23 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x77</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH24</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 24-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 24 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x78</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH25</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 25-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 25 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x79</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH26</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 26-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 26 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x7a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH27</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 27-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 27 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x7b</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH28</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 28-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 28 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x7c</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH29</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 29-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 29 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x7d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH30</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 30-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 30 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x7e</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH31</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 31-byte item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 31 octets sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x7f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUSH32</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place 32-byte (full word) item on stack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place un élément de 32 octets (mot machine complet) sur la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x80</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 1st stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 1er élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x81</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 2nd stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 2ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x82</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 3rd stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 3ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x83</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 4th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 4ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x84</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 5th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 5ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x85</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 6th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 6ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x86</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 7th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 7ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x87</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 8th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 8ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x88</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 9th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 9ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x89</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 10th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 10ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x8a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 11th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 11ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x8b</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 12th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 12ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x8c</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 13th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 13ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x8d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 14th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 14ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x8e</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 15th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 15ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x8f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DUP16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duplicate 16th stack item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duplique le 16ème élément de la pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x90</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 2nd stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange les éléments de la 1ère et de la 2ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x91</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 3rd stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange les éléments de la 1ère et de la 3ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x92</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 4th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange les éléments de la 1ère et de la 4ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x93</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 5th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange les éléments de la 1ère et de la 5ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x94</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 6th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange les éléments de la 1ère et de la 6ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x95</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 7th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 7ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x96</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 8th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 8ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x97</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 9th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 9ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x98</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 10th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échanger les éléments de la 1ère et de la 10ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x99</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 11th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 11ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x9a</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 12th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 12ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x9b</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 13th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 13ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x9c</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 14th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 14ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x9d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 15th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 15ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x9e</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 16th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 16ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x9f</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SWAP16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exchange 1st and 17th stack items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Échange des éléments de la 1ère et de la 17ème pile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xa0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LOG0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Append log record with no topics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajoute un enregistrement de journal sans sujet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">375</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xa1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LOG1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Append log record with one topic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajoute un enregistrement de journal avec un sujet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">750</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xa2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LOG2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Append log record with two topics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajoute un enregistrement de journal avec deux sujets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1125</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xa3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LOG3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Append log record with three topics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajoute un enregistrement de journal avec trois sujets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1500</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xa4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LOG4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Append log record with four topics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajoute un enregistrement de journal avec quatre sujets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1875</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xa5</code> - <code>0xaf</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -15121,69 +15121,69 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPTO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative <a href="http://bit.ly/2Sx2Vkg" data-href="http://bit.ly/2Sx2Vkg">libevmasm has different numbers</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire <a href="http://bit.ly/2Sx2Vkg" data-href="http://bit.ly/2Sx2Vkg">libevmasm a des numéros différents</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP 615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPIF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPSUB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPSUBV</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb5</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BEGINSUB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb6</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BEGINDATA</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb8</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RETURNSUB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb9</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUTLOCAL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xba</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GETLOCA</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tentative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xbb</code> - <code>0xe0</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -15191,27 +15191,27 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xe1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SLOADBYTES</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only referenced in pyethereum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Référencé uniquement dans pyethereum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xe2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SSTOREBYTES</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only referenced in pyethereum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Référencé uniquement dans pyethereum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xe3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SSIZE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only referenced in pyethereum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Référencé uniquement dans pyethereum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xe4</code> - <code>0xef</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -15219,48 +15219,48 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xf0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CREATE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create a new account with associated code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Créer un nouveau compte avec le code associé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">32000</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xf1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CALL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message-call into an account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message-appel dans un compte</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Complicated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compliqué</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xf2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CALLCODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message-call into this account with alternative account&#8217;s code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message-call dans ce compte avec un autre code de compte</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Complicated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compliqué</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xf3</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RETURN</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Halt execution returning output data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arrêter l&#39;exécution renvoyant les données de sortie</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xf4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DELEGATECALL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message-call into this account with an alternative account&#8217;s code, but persisting into this account with an alternative account&#8217;s code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message-call dans ce compte avec le code d&#39;un autre compte, mais persistant dans ce compte avec le code d&#39;un autre compte</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Complicated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compliqué</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xf5</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CALLBLACKBOX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">APPELBLACKBOX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">40</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xf6</code> - <code>0xf9</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unused</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inutilisé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -15268,42 +15268,42 @@ ether remboursé = gaz restant * prix du gaz</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xfa</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">STATICCALL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Similar to CALL, but does not modify state</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semblable à CALL, mais ne modifie pas l&#39;état</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">40</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xfb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CREATE2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create a new account and set creation address to <code>sha3(sender + sha3(init code)) % 2**160</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Crée un nouveau compte et défini l&#39;adresse de création sur <code>sha3(sender + sha3(init code)) % 2**160</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xfc</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TXEXECGAS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not in yellow paper FIXME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pas dans le papier jaune FIXME</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xfd</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">REVERT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stop execution and revert state changes, without consuming all provided gas and providing a reason</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arrête l&#39;exécution et annule les changements d&#39;état, sans consommer tout le gaz fourni et sans fournir de raison</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xfe</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INVALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Designated invalid instruction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instruction invalide désignée</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xff</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SELFDESTRUCT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Halt execution and register account for later deletion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arrêter l&#39;exécution et enregistrer le compte pour une suppression ultérieure</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5000*</p></td>
 </tr>
@@ -16559,7 +16559,7 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-14 17:18:49 -0400
+Last updated 2022-05-14 21:29:18 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
