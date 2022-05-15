@@ -23,9 +23,9 @@ Référentiel de packages +npm+ : https://www.npmjs.com/package/truffle
 [[installing_truffle]]
 ===== Installation du cadre de développement Truffle
 
-((("Node.js")))((("Truffle","installation")))Le cadre de développement Truffle comprend plusieurs packages Node.js. Avant d'installer +truffle+, vous devez avoir une installation à jour et fonctionnelle de Node.js et du Node Package Manager (+npm+).
+((("Node.js")))((("Truffle","installation")))Le cadre de développement Truffle comprend plusieurs packages Node.js. Avant d'installer `+truffle+`,vous devez avoir une installation à jour et fonctionnelle de Node.js et du Node Package Manager (+npm+).
 
-La méthode recommandée pour installer Node.js et +npm+ consiste à utiliser le gestionnaire de version de nœud (+nvm+). Une fois que vous avez installé +nvm+, il gérera toutes les dépendances et mises à jour pour vous. Suivez les instructions trouvées sur http://nvm.sh[].
+La méthode recommandée pour installer Node.js et +npm+ consiste à utiliser le gestionnaire de version de nœud (+nvm+). Une fois que vous avez installé `+nvm+`,il gérera toutes les dépendances et mises à jour pour vous. Suivez les instructions trouvées sur http://nvm.sh[].
 
 Une fois que +nvm+ est installé sur votre système d'exploitation, l'installation de Node.js est simple. Utilisez le drapeau +--lts+ pour dire à +nvm+ que vous voulez la version la plus récente de "support à long terme" (LTS) de Node.js :
 
@@ -85,7 +85,7 @@ $ <strong>truffle unbox <em>BOX_NAME</em></strong>
 [[truffle_project_directory]]
 ===== Création d'un répertoire de projet truffle
 
-((("Truffle","création d'un répertoire de projet", id="ix_appdx-dev-tools-asciidoc3", range="startofrange")))Pour chaque projet où vous utiliserez +truffle+, créez un répertoire de projet et initialisez +truffle+ dans ce répertoire. +truffle+ créera la structure de répertoire nécessaire dans le répertoire de votre projet. Il est d'usage de donner au répertoire du projet un nom qui décrit le projet. Pour cet exemple, nous utiliserons +truffle+ pour déployer notre contrat +Faucet+ depuis <<simple_contract_example>>, et donc nous nommerons le dossier du projet __Faucet__ :
+((("Truffle","création d'un répertoire de projet", id="ix_appdx-dev-tools-asciidoc3", range="startofrange")))Pour chaque projet où vous utiliserez `+truffle+`,créez un répertoire de projet et initialisez +truffle+ dans ce répertoire. +truffle+ créera la structure de répertoire nécessaire dans le répertoire de votre projet. Il est d'usage de donner au répertoire du projet un nom qui décrit le projet. Pour cet exemple, nous utiliserons +truffle+ pour déployer notre contrat +Faucet+ depuis <<simple_contract_example>>, et donc nous nommerons le dossier du projet __Faucet__ :
 
 ++++
 <pre data-type="programlisting">
@@ -118,7 +118,7 @@ Faucet
 `---- truffle.js
 ----
 
-Nous utiliserons également un certain nombre de packages de support JavaScript (Node.js), en plus de +truffle+ lui-même. Nous pouvons les installer avec +npm+. Nous initialisons la structure de répertoires +npm+ et acceptons les valeurs par défaut suggérées par +npm+ :
+Nous utiliserons également un certain nombre de packages de support JavaScript (Node.js), en plus de +truffle+ lui-même. Nous pouvons les installer avec `+npm+`.Nous initialisons la structure de répertoires +npm+ et acceptons les valeurs par défaut suggérées par +npm+ :
 
 ++++
 <pre data-type="programlisting">
@@ -249,9 +249,9 @@ Nous avons besoin d'un deuxième script de migration, pour déployer _Faucet.sol
 include::code/truffle/Faucet/migrations/2_deploy_contracts.js[]
 ----
 
-Le script initialise une variable +Faucet+, identifiant le code source Solidity _Faucet.sol_ comme l'artefact qui définit +Faucet+. Ensuite, il appelle la fonction "deploy" pour déployer ce contrat.
+Le script initialise une variable `+Faucet+`,identifiant le code source Solidity _Faucet.sol_ comme l'artefact qui définit `+Faucet+`.Ensuite, il appelle la fonction "deploy" pour déployer ce contrat.
 
-Nous sommes prêts. Utilisons +truffle migrate+ pour le déployer. Nous devons spécifier sur quel réseau déployer le contrat, en utilisant l'argument +--network+ . Nous n'avons qu'un seul réseau spécifié dans le fichier de configuration, que nous avons nommé +localnode+. Assurez-vous que votre client Ethereum local est en cours d'exécution, puis tapez :
+Nous sommes prêts. Utilisons +truffle migrate+ pour le déployer. Nous devons spécifier sur quel réseau déployer le contrat, en utilisant l'argument +--network+ . Nous n'avons qu'un seul réseau spécifié dans le fichier de configuration, que nous avons nommé `+localnode+`.Assurez-vous que votre client Ethereum local est en cours d'exécution, puis tapez :
 
 ++++
 <pre data-type="programlisting">
@@ -260,13 +260,13 @@ Faucet $ <strong>truffle migrate --network localnode</strong>
 </pre>
 ++++
 
-Comme nous utilisons un nœud local pour nous connecter au réseau Ethereum et gérer notre portefeuille, nous devons autoriser la transaction créée par +truffle+. Nous exécutons +parity+ connecté à la chaîne de blocs de test de Ropsten, donc pendant la migration, nous verrons une fenêtre contextuelle comme celle de <<parity_deployment_confirmation>> sur la console web de Parity.
+Comme nous utilisons un nœud local pour nous connecter au réseau Ethereum et gérer notre portefeuille, nous devons autoriser la transaction créée par `+truffle+`.Nous exécutons +parity+ connecté à la chaîne de blocs de test de Ropsten, donc pendant la migration, nous verrons une fenêtre contextuelle comme celle de <<parity_deployment_confirmation>> sur la console web de Parity.
 
 [[parity_deployment_confirmation]]
 .Parity demandant confirmation pour déployer Faucet
 image::images/parity_deployment_confirmation.png["Parité demandant confirmation pour déployer Faucet"]
 
-Il y a quatre transactions au total : une pour déployer +Migrations+, une pour mettre à jour le compteur de déploiements à +1+, une pour déployer +Faucet+ et une pour mettre à jour le compteur de déploiements à +2+.
+Il y a quatre transactions au total : une pour déployer `+Migrations+`,une pour mettre à jour le compteur de déploiements à `+1+`,une pour déployer +Faucet+ et une pour mettre à jour le compteur de déploiements à `+2+`.
 
 Truffle affichera les migrations terminées, affichera chacune des transactions et affichera les adresses de contrat :(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc6")))(((range="endofrange" , startref="ix_appdx-dev-tools-asciidoc5")))(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc4")))
 
@@ -328,7 +328,7 @@ __defineGetter__ __defineSetter__ __lookupGetter__ __lookupSetter__ __proto__ co
 </pre>
 ++++
 
-La grande majorité des fonctions liées au portefeuille et aux nœuds sont fournies par l'objet +web3+, qui est une instance de la bibliothèque web3.js. L'objet +web3+ résume l'interface RPC à notre nœud Parity. Vous remarquerez également deux objets aux noms familiers : +Migrations+ et +Faucet+. Ceux-ci représentent les contrats que nous venons de déployer. Nous utiliserons la console Truffle pour interagir avec un contrat. Tout d'abord, vérifions notre wallet via l'objet +web3+ :
+La grande majorité des fonctions liées au portefeuille et aux nœuds sont fournies par l'objet `+web3+`,qui est une instance de la bibliothèque web3.js. L'objet +web3+ résume l'interface RPC à notre nœud Parity. Vous remarquerez également deux objets aux noms familiers : +Migrations+ et `+Faucet+`.Ceux-ci représentent les contrats que nous venons de déployer. Nous utiliserons la console Truffle pour interagir avec un contrat. Tout d'abord, vérifions notre wallet via l'objet +web3+ :
 
 ++++
 <pre data-type="programlisting">
@@ -363,7 +363,7 @@ truffle(localnode)&gt;
 </pre>
 ++++
 
-Ensuite, nous utiliserons +sendTransaction+ pour envoyer de l'ether de test afin de financer le contrat +Faucet+. Notez l'utilisation de +web3.utils.toWei+ pour convertir les unités ether pour nous. Taper 18 zéros sans se tromper est à la fois difficile et dangereux, il est donc toujours préférable d'utiliser un convertisseur d'unités pour les valeurs. Voici comment nous envoyons la transaction :
+Ensuite, nous utiliserons +sendTransaction+ pour envoyer de l'ether de test afin de financer le contrat `+Faucet+`.Notez l'utilisation de +web3.utils.toWei+ pour convertir les unités ether pour nous. Taper 18 zéros sans se tromper est à la fois difficile et dangereux, il est donc toujours préférable d'utiliser un convertisseur d'unités pour les valeurs. Voici comment nous envoyons la transaction :
 
 ++++
 <pre data-type="programlisting">
@@ -384,7 +384,7 @@ truffle(localnode)&gt; <strong>web3.eth.getBalance(Faucet.address).toNumber()</s
 </pre>
 ++++
 
-Appelons maintenant la fonction +withdraw+, pour retirer de l'ether de test du contrat :
+Appelons maintenant la fonction `+withdraw+`,pour retirer de l'ether de test du contrat :
 
 ++++
 <pre data-type="programlisting">
@@ -475,9 +475,9 @@ Créons un jeton ERC20 monnayable, ce qui signifie que l'approvisionnement initi
 include::code/OpenZeppelin/contracts/SampleToken.sol[]
 ----
 
-OpenZeppelin fournit déjà un contrat +MintableToken+ que nous pouvons utiliser comme base pour notre jeton, nous ne définissons donc que les détails spécifiques à notre cas. Ensuite, faisons le contrat de vente publique. Tout comme avec les jetons, OpenZeppelin propose déjà une grande variété de saveurs de vente publique. Actuellement, vous trouverez des contrats pour divers scénarios impliquant la distribution, l'émission, le prix et la validation. Donc, disons que vous voulez fixer un objectif pour votre vente publique et s'il n'est pas atteint au moment où la vente se termine, vous voulez rembourser tous vos investisseurs. Pour cela, vous pouvez utiliser le contrat http://bit.ly/2yHoh65[+RefundableCrowdsale+]. Ou peut-être souhaitez-vous définir une vente publique avec un prix croissant pour inciter les premiers acheteurs ; il y a un contrat http://bit.ly/2PtWOys[+IncreasingPriceCrowdsale+] juste pour ça. Vous pouvez également mettre fin à la vente publique lorsqu'une quantité spécifiée d'ether a été reçue par le contrat (http://bit.ly/2OVsCN8[+CappedCrowdsale+]), ou définir une heure de fin avec le contrat http://bit.ly/2zp2Nuz[+TimedCrowdsale+], ou créez une liste blanche d'acheteurs avec le contrat http://bit.ly/2CN8Hc9[+WhitelistedCrowdsale+].
+OpenZeppelin fournit déjà un contrat +MintableToken+ que nous pouvons utiliser comme base pour notre jeton, nous ne définissons donc que les détails spécifiques à notre cas. Ensuite, faisons le contrat de vente publique. Tout comme avec les jetons, OpenZeppelin propose déjà une grande variété de saveurs de vente publique. Actuellement, vous trouverez des contrats pour divers scénarios impliquant la distribution, l'émission, le prix et la validation. Donc, disons que vous voulez fixer un objectif pour votre vente publique et s'il n'est pas atteint au moment où la vente se termine, vous voulez rembourser tous vos investisseurs. Pour cela, vous pouvez utiliser le contrat http://bit.ly/2yHoh65[+RefundableCrowdsale+]. Ou peut-être souhaitez-vous définir une vente publique avec un prix croissant pour inciter les premiers acheteurs ; il y a un contrat http://bit.ly/2PtWOys[`+IncreasingPriceCrowdsale+`]juste pour ça. Vous pouvez également mettre fin à la vente publique lorsqu'une quantité spécifiée d'ether a été reçue par le contrat (http://bit.ly/2OVsCN8[+CappedCrowdsale+]), ou définir une heure de fin avec le contrat http://bit.ly/2zp2Nuz[+TimedCrowdsale+], ou créez une liste blanche d'acheteurs avec le contrat http://bit.ly/2CN8Hc9[+WhitelistedCrowdsale+].
 
-Comme nous l'avons dit précédemment, les contrats OpenZeppelin sont des éléments de base. Ces contrats de crowdsale ont été conçus pour être combinés ; il suffit de lire le code source du contrat de base http://bit.ly/2ABIQSI[+Crowdsale+] pour savoir comment l'étendre. Pour la vente publique de notre jeton, nous devons créer des jetons lorsque l'ether est reçu par le contrat de vente publique, utilisons donc http://bit.ly/2Sx3HOc[+MintedCrowdsale+] comme base. Et pour le rendre plus intéressant, faisons-en également une http://bit.ly/2Qef0Jm[+PostDeliveryCrowdsale+] afin que les jetons ne puissent être retirés qu'après la fin de la vente publique. Pour ce faire, nous allons écrire ce qui suit dans _contracts/SampleCrowdsale.sol_ :
+Comme nous l'avons dit précédemment, les contrats OpenZeppelin sont des éléments de base. Ces contrats de crowdsale ont été conçus pour être combinés ; il suffit de lire le code source du contrat de base http://bit.ly/2ABIQSI[`+Crowdsale+`]pour savoir comment l'étendre. Pour la vente publique de notre jeton, nous devons créer des jetons lorsque l'ether est reçu par le contrat de vente publique, utilisons donc http://bit.ly/2Sx3HOc[`+MintedCrowdsale+`]comme base. Et pour le rendre plus intéressant, faisons-en également une http://bit.ly/2Qef0Jm[`+PostDeliveryCrowdsale+`]afin que les jetons ne puissent être retirés qu'après la fin de la vente publique. Pour ce faire, nous allons écrire ce qui suit dans _contracts/SampleCrowdsale.sol_ :
 
 [source,solidity]
 ----
@@ -513,7 +513,7 @@ Contrairement au code d'OpenZeppelin, qui doit être redéployé avec chaque app
 
 ((("proxy")))Au cœur de ZeppelinOS se trouve un contrat très intelligent connu sous le nom de _proxy_. Un proxy est un contrat capable d'encapsuler n'importe quel autre contrat, d'exposer son interface sans avoir à implémenter manuellement des setters et des getters pour celui-ci, et de le mettre à niveau sans perdre son état. En termes de solidité, il peut être considéré comme un contrat normal dont la logique métier est contenue dans une bibliothèque, qui peut être échangée contre une nouvelle bibliothèque à tout moment sans perdre son état. La manière dont le proxy est lié à son implémentation est entièrement automatisée et encapsulée pour le développeur. Pratiquement n'importe quel contrat peut être mis à niveau avec peu ou pas de changement dans son code. Plus d'informations sur le mécanisme de proxy de ZeppelinOS peuvent être trouvées dans le http://bit.ly/2OfuNpu[blog], et un exemple de la façon de l'utiliser peut être trouvé http://bit.ly/2OfuE5q[sur GitHub].
 
-Le développement d'applications à l'aide de ZeppelinOS est similaire au développement d'applications JavaScript à l'aide de +npm+. Un +AppManager+ gère un package d'application pour chaque version de l'application. Un package est simplement un répertoire de contrats, chacun pouvant avoir un ou plusieurs proxys pouvant être mis à niveau. Le +AppManager+ fournit non seulement des proxys pour les contrats spécifiques à l'application, mais le fait également pour les implémentations de ZeppelinOS, sous la forme d'une bibliothèque standard. Pour en voir un exemple complet, veuillez visiter http://bit.ly/2PtyJb3[examples/complex].
+Le développement d'applications à l'aide de ZeppelinOS est similaire au développement d'applications JavaScript à l'aide de `+npm+`.Un +AppManager+ gère un package d'application pour chaque version de l'application. Un package est simplement un répertoire de contrats, chacun pouvant avoir un ou plusieurs proxys pouvant être mis à niveau. Le +AppManager+ fournit non seulement des proxys pour les contrats spécifiques à l'application, mais le fait également pour les implémentations de ZeppelinOS, sous la forme d'une bibliothèque standard. Pour en voir un exemple complet, veuillez visiter http://bit.ly/2PtyJb3[examples/complex].
 
 Bien qu'actuellement en développement, ZeppelinOS vise à fournir un large éventail de fonctionnalités supplémentaires, telles que des outils de développement, un planificateur qui automatise les opérations en arrière-plan dans les contrats, des primes de développement, un marché qui facilite la communication et l'échange de valeur entre les applications, et bien plus encore. Tout cela est décrit dans le http://bit.ly/2QcxV7K[whitepaper].(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc0"))) de ZeppelinOS
 
@@ -584,7 +584,7 @@ evmdis est un désassembleur EVM ; il effectue une analyse statique sur le code 
 
 ==== SputnikVM
 
-https://github.com/etcdevteam/sputnikvm[SputnikVM] ((("SputnikVM")))((("utilitaires","SputnikVM")))est une machine virtuelle enfichable autonome pour différentes chaînes de blocs basées sur Ethereum. Il est écrit en Rust et peut être utilisé comme binaire, caisse de chargement ou bibliothèque partagée, ou intégré via les interfaces FFI, Protobuf et JSON. Il a un binaire séparé, +sputnikvm-dev+, destiné à des fins de test, qui émule la plupart de l'API JSON-RPC et de l'extraction de blocs.
+https://github.com/etcdevteam/sputnikvm[SputnikVM] ((("SputnikVM")))((("utilitaires","SputnikVM")))est une machine virtuelle enfichable autonome pour différentes chaînes de blocs basées sur Ethereum. Il est écrit en Rust et peut être utilisé comme binaire, caisse de chargement ou bibliothèque partagée, ou intégré via les interfaces FFI, Protobuf et JSON. Il a un binaire séparé, `+sputnikvm-dev+`,destiné à des fins de test, qui émule la plupart de l'API JSON-RPC et de l'extraction de blocs.
 
 === Bibliothèques
 
@@ -681,9 +681,9 @@ Documentation : https://docs.etcdevteam.com[]
 
 Truffle:: ((("Truffle","comme cadre de développement de test")))Truffle permet d'écrire des tests unitaires en JavaScript (basé sur Mocha) ou Solidity. Ces tests sont exécutés contre Ganache.
 
-Embark:: ((("Embark")))Embark s'intègre à Mocha pour exécuter des tests unitaires écrits en JavaScript. Les tests sont à leur tour exécutés sur des contrats déployés sur TestRPC/Ganache. Le framework Embark déploie automatiquement les contrats intelligents et redéploie automatiquement les contrats lorsqu'ils sont modifiés. Il assure également le suivi des contrats déployés et ne déploie les contrats que lorsque cela est vraiment nécessaire. Embark inclut une bibliothèque de test pour exécuter et tester rapidement vos contrats dans un EVM, avec des fonctions comme +assert.equal+. La commande +embark test+ exécutera tous les fichiers de test sous le répertoire _test_.
+Embark:: ((("Embark")))Embark s'intègre à Mocha pour exécuter des tests unitaires écrits en JavaScript. Les tests sont à leur tour exécutés sur des contrats déployés sur TestRPC/Ganache. Le framework Embark déploie automatiquement les contrats intelligents et redéploie automatiquement les contrats lorsqu'ils sont modifiés. Il assure également le suivi des contrats déployés et ne déploie les contrats que lorsque cela est vraiment nécessaire. Embark inclut une bibliothèque de test pour exécuter et tester rapidement vos contrats dans un EVM, avec des fonctions comme `+assert.equal+`.La commande +embark test+ exécutera tous les fichiers de test sous le répertoire _test_.
 
-Dapp:: ((("Dapp")))Dapp utilise le code Solidity natif (une bibliothèque appelée +ds-test+) et une bibliothèque Rust construite par Parity appelée +ethrun+ pour exécuter le code intermédiaire Ethereum, puis affirmer l'exactitude. La bibliothèque +ds-test+ fournit des fonctions d'assertion pour valider l'exactitude et les événements pour la journalisation des données dans la console.
+Dapp:: ((("Dapp")))Dapp utilise le code Solidity natif (une bibliothèque appelée `+ds-test+`)et une bibliothèque Rust construite par Parity appelée +ethrun+ pour exécuter le code intermédiaire Ethereum, puis affirmer l'exactitude. La bibliothèque +ds-test+ fournit des fonctions d'assertion pour valider l'exactitude et les événements pour la journalisation des données dans la console.
 +
 Les fonctions d'assertion incluent :
 +
@@ -710,13 +710,13 @@ log_named_decimal_int(bytes32 key, int val, uint decimals)
 log_named_decimal_uint(bytes32 key, uint val, uint decimals)
 ----
 
-Populus:: ((("Populus")))Populus utilise Python et son propre émulateur de chaîne pour exécuter des contrats écrits en Solidity. Les tests unitaires sont écrits en Python avec la bibliothèque +pytest+. Populus prend en charge la rédaction de contrats spécifiquement pour les tests. Ces noms de fichiers de contrat doivent correspondre au modèle global _Test*.sol_ et se trouver n'importe où dans le répertoire des tests du projet, _tests_.
+Populus:: ((("Populus")))Populus utilise Python et son propre émulateur de chaîne pour exécuter des contrats écrits en Solidity. Les tests unitaires sont écrits en Python avec la bibliothèque `+pytest+`.Populus prend en charge la rédaction de contrats spécifiquement pour les tests. Ces noms de fichiers de contrat doivent correspondre au modèle global _Test*.sol_ et se trouver n'importe où dans le répertoire des tests du projet, _tests_.
 
 
 [[on_blockchain_testing_sec]]
 ==== Test embarqué sur la chaîne de blocs
 
-((("chaîne de blocs","test embarqué sur")))((("cadres de développement de test","tests embarqués sur")))Bien que la plupart des tests ne devraient pas avoir lieu sur les contrats déployés, le comportement d'un contrat peut être vérifié via les clients Ethereum. Les commandes suivantes peuvent être utilisées pour évaluer l'état d'un contrat intelligent. Ces commandes doivent être tapées sur le terminal +geth+, bien que n'importe quelle console web3 les prenne également en charge.
+((("chaîne de blocs","test embarqué sur")))((("cadres de développement de test","tests embarqués sur")))Bien que la plupart des tests ne devraient pas avoir lieu sur les contrats déployés, le comportement d'un contrat peut être vérifié via les clients Ethereum. Les commandes suivantes peuvent être utilisées pour évaluer l'état d'un contrat intelligent. Ces commandes doivent être tapées sur le terminal `+geth+`,bien que n'importe quelle console web3 les prenne également en charge.
 
 Pour obtenir l'adresse d'un contrat à __++txhash++__, utilisez :
 
@@ -758,11 +758,11 @@ web3.eth.getStorageAt(<em>address</em>, <em>position</em>)
 [[ganache]]
 ==== Ganache : une chaîne de blocs de test locale
 
-((("Ganache","test de chaîne de blocs local avec")))Ganache est une chaîne de blocs de test locale que vous pouvez utiliser pour déployer des contrats, développer vos applications et exécuter des tests. Il est disponible en tant qu'application de bureau (avec une interface utilisateur graphique) pour Windows, macOS et Linux. Il est également disponible sous la forme d'un utilitaire de ligne de commande appelé +ganache-cli+. Pour plus de détails et des instructions d'installation pour l'application de bureau Ganache, voir https://truffleframework.com/ganache[].
+((("Ganache","test de chaîne de blocs local avec")))Ganache est une chaîne de blocs de test locale que vous pouvez utiliser pour déployer des contrats, développer vos applications et exécuter des tests. Il est disponible en tant qu'application de bureau (avec une interface utilisateur graphique) pour Windows, macOS et Linux. Il est également disponible sous la forme d'un utilitaire de ligne de commande appelé `+ganache-cli+`.Pour plus de détails et des instructions d'installation pour l'application de bureau Ganache, voir https://truffleframework.com/ganache[].
 
 Le code +ganache-cli+ peut être trouvé sur https://github.com/trufflesuite/ganache-cli/[].
 
-Pour installer la ligne de commande +ganache-cli+, utilisez +npm+ :
+Pour installer la ligne de commande `+ganache-cli+`,utilisez +npm+ :
 
 ++++
 <pre data-type="programlisting">

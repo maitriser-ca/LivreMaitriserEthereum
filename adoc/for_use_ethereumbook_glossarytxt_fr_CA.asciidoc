@@ -10,7 +10,7 @@ Adresse::
 ((("adresses","défini")))Plus généralement, cela représente un EOA ou un contrat qui peut recevoir (adresse de destination) ou envoyer (adresse source) des transactions sur la chaîne de blocs. Plus précisément, il s'agit des 160 bits les plus à droite d'un hachage Keccak d'une clé publique ECDSA.
 
 Affirmer::
-((("fonction affirmée","defined")))Dans Solidity, +assert(false)+ se compile en +0xfe+, un opcode invalide, qui utilise tout le gaz restant et annule toutes les modifications. Lorsqu'une instruction +assert()+ échoue, quelque chose de très faux et inattendu se produit, et vous devrez corriger votre code. Vous devez utiliser +assert()+ pour éviter les conditions qui ne devraient jamais se produire.
+((("fonction affirmée","defined")))Dans Solidity, +assert(false)+ se compile en `+0xfe+`,un opcode invalide, qui utilise tout le gaz restant et annule toutes les modifications. Lorsqu'une instruction +assert()+ échoue, quelque chose de très faux et inattendu se produit, et vous devrez corriger votre code. Vous devez utiliser +assert()+ pour éviter les conditions qui ne devraient jamais se produire.
 
 Gros-boutiste::
 ((("gros-boutiste, defined")))Une représentation numérique positionnelle où le chiffre le plus significatif est le premier. Le contraire de petit-boutiste, où le chiffre le moins significatif est le premier.

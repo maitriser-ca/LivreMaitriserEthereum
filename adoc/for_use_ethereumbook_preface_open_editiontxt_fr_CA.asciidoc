@@ -34,11 +34,11 @@ Enfin, l'index du livre permet aux lecteurs de trouver facilement des sujets tr�
 
 _Italic_:: Indique de nouveaux termes, URL, adresses e-mail, noms de fichiers et extensions de fichiers.
 
-+Largeur constante+:: Utilisé pour les listes de programmes, ainsi que dans les paragraphes pour faire référence à des éléments de programme tels que des noms de variables ou de fonctions, des bases de données, des types de données, des variables d'environnement, des instructions et des mots-clés.
+`+Largeur constante+`:: Utilisé pour les listes de programmes, ainsi que dans les paragraphes pour faire référence à des éléments de programme tels que des noms de variables ou de fonctions, des bases de données, des types de données, des variables d'environnement, des instructions et des mots-clés.
 
-**`Largeur constante en gras`**:: Affiche les commandes ou tout autre texte qui doit être saisi littéralement par l'utilisateur.
+`**Largeur constante en gras**`:: Affiche les commandes ou tout autre texte qui doit être saisi littéralement par l'utilisateur.
 
-_++Largeur constante en italique++_:: affiche le texte qui doit être remplacé par des valeurs fournies par l'utilisateur ou des valeurs déterminées par le contexte.
+`_++Largeur constante en italique++_`:: affiche le texte qui doit être remplacé par des valeurs fournies par l'utilisateur ou des valeurs déterminées par le contexte.
 
 
 [TIP]

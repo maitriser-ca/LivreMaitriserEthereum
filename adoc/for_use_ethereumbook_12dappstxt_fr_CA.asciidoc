@@ -107,7 +107,7 @@ Le processus global d'enchères peut être vu dans <<auction_dapp_overview>>.
 Les principaux composants de notre DApp d'enchères sont :
 
 * Un contrat intelligent implémentant des jetons "acte" non fongibles ERC721 (pass:[<code><span class="keep-together">DeedRepository</span></code>])
-* Un contrat intelligent mettant en place une enchère (+AuctionRepository+) pour vendre les actes
+* Un contrat intelligent mettant en place une enchère (`+AuctionRepository+`)pour vendre les actes
 * Une interface web utilisant le cadre de développement JavaScript Vue/Vuetify
 * La bibliothèque _web3.js_ pour se connecter aux chaînes Ethereum (via MetaMask ou d'autres clients)
 * Un client Swarm, pour stocker des ressources telles que des images
@@ -124,7 +124,7 @@ Vous pouvez trouver le code source de la DApp d'enchères http://bit.ly/2DcmjyA[
 
 ((("Auction DApp","contrats intelligents dorsaux", id="ix_12dapps-asciidoc4", range="startofrange")))((("contrats intelligents","as DApp backend", id="ix_12dapps-asciidoc5 ", range="startofrange"))) Notre exemple Auction DApp est pris en charge par deux contrats intelligents que nous devons déployer sur une chaîne de blocs Ethereum afin de prendre en charge l'application : pass:[<code><span class="keep-together">AuctionRepository</span></code>] et +DeedRepository+.
 
-Commençons par regarder +DeedRepository+, montré dans <<deed_repository_code>>. Ce contrat est un jeton non fongible compatible ERC721 (voir <<erc721>>).
+Commençons par regarder `+DeedRepository+`,montré dans <<deed_repository_code>>. Ce contrat est un jeton non fongible compatible ERC721 (voir <<erc721>>).
 
 [[deed_repository_code]]
 .DeedRepository.sol : un jeton d'acte ERC721 à utiliser dans une vente aux enchères
@@ -137,7 +137,7 @@ include::code/auction_dapp/backend/contracts/DeedRepository.sol[]
 
 Comme vous pouvez le constater, le contrat +DeedRepository+ est une implémentation simple d'un jeton compatible ERC721.
 
-Notre DApp d'enchères utilise le contrat +DeedRepository+ pour émettre et suivre les jetons pour chaque enchère. L'enchère elle-même est orchestrée par le contrat +AuctionRepository+. Ce contrat est trop long pour être inclus ici dans son intégralité, mais <<auction_repository_code>> montre la définition principale du contrat et des structures de données. L'intégralité du contrat est disponible dans le https://bit.ly/2IaOo9i[référentiel GitHub] du livre.
+Notre DApp d'enchères utilise le contrat +DeedRepository+ pour émettre et suivre les jetons pour chaque enchère. L'enchère elle-même est orchestrée par le contrat `+AuctionRepository+`.Ce contrat est trop long pour être inclus ici dans son intégralité, mais <<auction_repository_code>> montre la définition principale du contrat et des structures de données. L'intégralité du contrat est disponible dans le https://bit.ly/2IaOo9i[référentiel GitHub] du livre.
 
 [[auction_repository_code]]
 .AuctionRepository.sol : le principal contrat intelligent Auction DApp
@@ -261,7 +261,7 @@ frontend/
 |       `-- index.js
 ----
 
-Une fois que vous avez déployé les contrats, modifiez la configuration du frontend dans _frontend/src/config.js_ et entrez les adresses des contrats +DeedRepository+ et +AuctionRepository+, tels que déployés. L'application frontale a également besoin d'accéder à un nœud Ethereum offrant une interface JSON-RPC et WebSockets. Une fois que vous avez configuré l'interface, lancez-la avec un serveur Web sur votre machine locale :
+Une fois que vous avez déployé les contrats, modifiez la configuration du frontend dans _frontend/src/config.js_ et entrez les adresses des contrats +DeedRepository+ et `+AuctionRepository+`,tels que déployés. L'application frontale a également besoin d'accéder à un nœud Ethereum offrant une interface JSON-RPC et WebSockets. Une fois que vous avez configuré l'interface, lancez-la avec un serveur Web sur votre machine locale :
 
 ++++
 <pre data-type="programlisting">
@@ -415,7 +415,7 @@ dist/
 
 ----
 
-Vous pouvez maintenant télécharger l'intégralité du DApp sur Swarm, en utilisant la commande +up+ et l'option +--recursive+. Ici, nous disons également à Swarm que +index.html+ est le +defaultpath+ pour charger cette DApp :
+Vous pouvez maintenant télécharger l'intégralité du DApp sur Swarm, en utilisant la commande +up+ et l'option `+--recursive+`.Ici, nous disons également à Swarm que +index.html+ est le +defaultpath+ pour charger cette DApp :
 
 ++++
 <pre data-type="programlisting">
@@ -478,7 +478,7 @@ Les seules fonctions sur la couche de base sont celles qui permettent à un prop
 
 "Récursif" signifie que nous résolvons le problème en résolvant un sous-problème qui est un problème plus petit du même type, puis utilisons la solution du sous-problème pour résoudre le problème d'origine.
 
-Namehash hache de manière récursive les composants du nom, produisant une chaîne unique de longueur fixe (ou "nœud") pour tout domaine d'entrée valide. Par exemple, le nœud Namehash de +subdomain.example.eth+ est `keccak('<example.eth> ' nœud) + keccak('<subdomain>')'. Le sous-problème que nous devons résoudre est de calculer le nœud pour +example.eth+, qui est `keccak('&lt;.eth&gt;' node) + keccak('<example>')'. Pour commencer, nous devons calculer le nœud pour +eth+, qui est `keccak(<root node>) + keccak('<eth>')'.
+Namehash hache de manière récursive les composants du nom, produisant une chaîne unique de longueur fixe (ou "nœud") pour tout domaine d'entrée valide. Par exemple, le nœud Namehash de +subdomain.example.eth+ est `keccak('<example.eth> ' nœud) + keccak('<subdomain>')'. Le sous-problème que nous devons résoudre est de calculer le nœud pour `+example.eth+`,qui est `keccak('&lt;.eth&gt;' node) + keccak('<example>')'. Pour commencer, nous devons calculer le nœud pour `+eth+`,qui est `keccak(<root node>) + keccak('<eth>')'.
 
 Le nœud racine est ce que nous appelons le "cas de base" de notre récursivité, et nous ne pouvons évidemment pas le définir de manière récursive, sinon l'algorithme ne se terminera jamais ! Le nœud racine est défini comme `0x00000000000000000000000000000000000000000000000000000000000` (32 zéro octets).
 
@@ -511,7 +511,7 @@ namehash('mastering-ethereum.eth')
 ⇒ sha3(sha3(('\0' * 32) + sha3('eth')) + sha3('mastering-ethereum'))
 ....
 
-Bien sûr, les sous-domaines peuvent eux-mêmes avoir des sous-domaines : il peut y avoir un +sub.subdomain.example.eth+ après +subdomain.example.eth+, puis un +sub.sub.subdomain.example.eth+, et ainsi de suite. Pour éviter un recalcul coûteux, puisque Namehash ne dépend que du nom lui-même, le nœud d'un nom donné peut être précalculé et inséré dans un contrat, éliminant ainsi le besoin de manipulation de chaîne et permettant une recherche immédiate des enregistrements ENS quel que soit le nombre de composants dans le nom brut.
+Bien sûr, les sous-domaines peuvent eux-mêmes avoir des sous-domaines : il peut y avoir un +sub.subdomain.example.eth+ après `+subdomain.example.eth+`,puis un `+sub.sub.subdomain.example.eth+`,et ainsi de suite. Pour éviter un recalcul coûteux, puisque Namehash ne dépend que du nom lui-même, le nœud d'un nom donné peut être précalculé et inséré dans un contrat, éliminant ainsi le besoin de manipulation de chaîne et permettant une recherche immédiate des enregistrements ENS quel que soit le nombre de composants dans le nom brut.
 
 ===== Comment choisir un nom valide
 ((("ENS (Ethereum Name Service)","choisir un nom valide")))Les noms consistent en une série d'étiquettes séparées par des points. Bien que les lettres majuscules et minuscules soient autorisées, toutes les étiquettes doivent suivre un processus de normalisation UTS #46 qui plie les étiquettes avant de les hacher, de sorte que les noms avec une casse différente mais une orthographe identique se retrouveront avec le même Namehash.
@@ -547,7 +547,7 @@ Actuellement, le but et l'objectif de ces détenteurs de clés est de travailler
 [NOTE]
 ====
 Des travaux sont en cours pour permettre aux propriétaires de domaines DNS traditionnels de revendiquer la propriété ENS.
-Bien qu'en théorie cela puisse fonctionner pour +.com+, le seul domaine pour lequel cela a été implémenté jusqu'à présent est http://bit.ly/2SwUuFC[+.xyz+, et uniquement sur le testnet de Ropsten].
+Bien qu'en théorie cela puisse fonctionner pour `+.com+`,le seul domaine pour lequel cela a été implémenté jusqu'à présent est http://bit.ly/2SwUuFC[`+.xyz+`,et uniquement sur le testnet de Ropsten].
 ====
 
 Les domaines +.eth+ sont distribués via un système d'enchères. Il n'y a pas de liste réservée ni de priorité, et la seule façon d'acquérir un nom est d'utiliser le système. Le système d'enchères est un morceau de code complexe (plus de 500 lignes) ; la plupart des premiers efforts de développement (et des bugs !) dans ENS concernaient cette partie du système. Cependant, il est également remplaçable et évolutif, sans risque pour les fonds - nous en reparlerons plus tard.
@@ -595,7 +595,7 @@ Cette approche réduit considérablement la surface d'attaque où les bogues peu
 
 Enregistrons notre premier nom !
 
-Nous utiliserons l'une des nombreuses interfaces conviviales disponibles pour rechercher les noms disponibles, placer une enchère sur le nom +ethereumbook.eth+, révéler l'enchère et sécuriser le nom.
+Nous utiliserons l'une des nombreuses interfaces conviviales disponibles pour rechercher les noms disponibles, placer une enchère sur le nom `+ethereumbook.eth+`,révéler l'enchère et sécuriser le nom.
 
 Il existe un certain nombre d'interfaces Web vers ENS qui nous permettent d'interagir avec l'ENS DApp. Pour cet exemple, nous utiliserons l'interface https://mycrypto.com/[MyCrypto], en conjonction avec MetaMask comme portefeuille.
 
@@ -605,7 +605,7 @@ image::images/ens-flow.png[]
 
 
 
-Tout d'abord, nous devons nous assurer que le nom que nous voulons est disponible. En écrivant ce livre, nous voulions vraiment enregistrer le nom +mastering.eth+, mais hélas, <<ens-name-search>> a révélé qu'il était déjà pris ! Comme les inscriptions à l'ENS ne durent qu'un an, il pourrait devenir possible d'obtenir ce nom à l'avenir. En attendant, recherchons +ethereumbook.eth+ (<<ens-name-search>>).
+Tout d'abord, nous devons nous assurer que le nom que nous voulons est disponible. En écrivant ce livre, nous voulions vraiment enregistrer le nom `+mastering.eth+`,mais hélas, <<ens-name-search>> a révélé qu'il était déjà pris ! Comme les inscriptions à l'ENS ne durent qu'un an, il pourrait devenir possible d'obtenir ce nom à l'avenir. En attendant, recherchons +ethereumbook.eth+ (<<ens-name-search>>).
 
 [[ens-name-search]]
 .Recherche de noms ENS sur MyCrypto.com
@@ -656,7 +656,7 @@ image::images/ens-manager.png["L'interface web de l'ENS Manager"]
 
 ===== Création d'un sous-domaine ENS
 
-Commençons par créer un sous-domaine pour notre exemple de DApp d'enchères (voir <<ens-manager-add-subdomain>>). Nous nommerons le sous-domaine +auction+, donc le nom complet sera +auction.ethereumbook.eth+.
+Commençons par créer un sous-domaine pour notre exemple de DApp d'enchères (voir <<ens-manager-add-subdomain>>). Nous nommerons le sous-domaine `+auction+`,donc le nom complet sera +auction.ethereumbook.eth+.
 
 [[ens-manager-ajouter-sous-domaine]]
 .Ajout du sous-domaine auction.ethereumbook.eth

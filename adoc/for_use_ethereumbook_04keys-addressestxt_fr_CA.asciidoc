@@ -136,14 +136,14 @@ Avant de montrer comment générer une clé publique à partir d'une clé privé
 
 [NOTE]
 ====
-((("courbe elliptique secp256k1", id="ix_04keys-addresses-asciidoc10", range="startofrange")))Ethereum utilise exactement la même courbe elliptique, appelée +secp256k1+, que Bitcoin. Cela permet de réutiliser de nombreuses bibliothèques et outils de courbes elliptiques de Bitcoin.
+((("courbe elliptique secp256k1", id="ix_04keys-addresses-asciidoc10", range="startofrange")))Ethereum utilise exactement la même courbe elliptique, appelée `+secp256k1+`,que Bitcoin. Cela permet de réutiliser de nombreuses bibliothèques et outils de courbes elliptiques de Bitcoin.
 ====
 
 [[ecc-curve]]
 .Une visualisation d'une courbe elliptique
 image::images/simple_elliptic_curve.png["ecc-curve"]
 
-Ethereum utilise une courbe elliptique spécifique et un ensemble de constantes mathématiques, telles que définies dans une norme appelée +secp256k1+, établie par le National Institute of Standards and Technology (NIST) des États-Unis. La courbe +secp256k1+ est définie par la fonction suivante, qui produit une courbe elliptique :
+Ethereum utilise une courbe elliptique spécifique et un ensemble de constantes mathématiques, telles que définies dans une norme appelée `+secp256k1+`,établie par le National Institute of Standards and Technology (NIST) des États-Unis. La courbe +secp256k1+ est définie par la fonction suivante, qui produit une courbe elliptique :
 
 ++++
 <div data-type="equation">
@@ -219,7 +219,7 @@ Q =
 59574132161899900045862086493921015780032175291755807399284007721050341297360)
 ----
 
-<<example_1>> montre comment vous pouvez vérifier cela vous-même en utilisant Python. Les variables +x+ et +y+ sont les coordonnées du point _Q_, comme dans l'exemple précédent. La variable +p+ est l'ordre premier de la courbe elliptique (le premier qui est utilisé pour toutes les opérations modulo). La dernière ligne de Python est l'équation de la courbe elliptique (l'opérateur +%+ en Python est l'opérateur modulo). Si +x+ et +y+ sont bien les coordonnées d'un point sur la courbe elliptique, alors elles satisfont l'équation et le résultat est zéro (+0L+ est un entier long valant zéro). Essayez vous-même, en tapant **++python++** sur une ligne de commande et en copiant chaque ligne (après l'invite + &gt;&gt;&gt; +) de la liste(((range="endofrange", startref="ix_04keys-adresses-asciidoc10"))).(((range="endofrange", startref="ix_04keys-addresses-asciidoc9")))
+<<example_1>> montre comment vous pouvez vérifier cela vous-même en utilisant Python. Les variables `+x+` et `+y+` sont les coordonnées du point _Q_, comme dans l'exemple précédent. La variable `+p+` est l'ordre premier de la courbe elliptique (le premier qui est utilisé pour toutes les opérations modulo). La dernière ligne de Python est l'équation de la courbe elliptique (l'opérateur `+%+` en Python est l'opérateur modulo). Si `+x+` et `+y+` sont bien les coordonnées d'un point sur la courbe elliptique, alors elles satisfont l'équation et le résultat est zéro (+0L+ est un entier long valant zéro). Essayez vous-même, en tapant **++python++** sur une ligne de commande et en copiant chaque ligne (après l'invite `+ &gt;&gt;&gt; +`)de la liste(((range="endofrange", startref="ix_04keys-adresses-asciidoc10"))).(((range="endofrange", startref="ix_04keys-addresses-asciidoc9")))
 
 ++++
 <div data-type="example" id="example_1">
@@ -279,7 +279,7 @@ Maintenant que nous avons défini l'addition, nous pouvons définir la multiplic
 </div>
 ++++
 
-((("courbe elliptique secp256k1")))Le point générateur est spécifié dans le cadre de la norme +secp256k1+ ; c'est la même chose pour toutes les implémentations de +secp256k1+, et toutes les clés dérivées de cette courbe utilisent le même point _G_. Comme le point générateur est toujours le même pour tous les utilisateurs d'Ethereum, une clé privée _k_ multipliée par _G_ donnera toujours la même clé publique _K_. La relation entre _k_ et _K_ est fixe, mais ne peut être calculée que dans un sens, de _k_ vers _K_. C'est pourquoi une adresse Ethereum (dérivée de _K_) peut être partagée avec n'importe qui et ne révèle pas la clé privée de l'utilisateur (_k_).
+((("courbe elliptique secp256k1")))Le point générateur est spécifié dans le cadre de la norme +secp256k1+ ; c'est la même chose pour toutes les implémentations de `+secp256k1+`,et toutes les clés dérivées de cette courbe utilisent le même point _G_. Comme le point générateur est toujours le même pour tous les utilisateurs d'Ethereum, une clé privée _k_ multipliée par _G_ donnera toujours la même clé publique _K_. La relation entre _k_ et _K_ est fixe, mais ne peut être calculée que dans un sens, de _k_ vers _K_. C'est pourquoi une adresse Ethereum (dérivée de _K_) peut être partagée avec n'importe qui et ne révèle pas la clé privée de l'utilisateur (_k_).
 
 Comme nous l'avons décrit dans la section précédente, la multiplication de _k_ * _G_ est équivalente à une addition répétée, donc _G_ pass:[+] _G_ pass:[+] _G_ pass:[+] ... pass:[+] _G_, répété _k_ fois. En résumé, pour produire une clé publique _K_ à partir d'une clé privée _k_, on ajoute le point générateur _G_ à lui-même, _k_ fois.
 
@@ -319,11 +319,11 @@ y = 83b5c38e5e2b0c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0
 | Préfixe | Signification | Longueur (octets comptant le préfixe)
 | +0x00+ | Pointe à l'infini | 1
 | +0x04+ | Point non compressé | 65
-| +0x02+ | Point compressé avec pair +y+ | 33
-| +0x03+ | Point compressé avec impair +y+ | 33
+| +0x02+ | Point compressé avec pair `+y+` | 33
+| +0x03+ | Point compressé avec impair `+y+` | 33
 |===
 
-Ethereum utilise uniquement des clés publiques non compressées ; par conséquent, le seul préfixe pertinent est (hex) +04+. La sérialisation concatène les coordonnées _x_ et _y_ de la clé publique :
+Ethereum utilise uniquement des clés publiques non compressées ; par conséquent, le seul préfixe pertinent est (hex) `+04+`.La sérialisation concatène les coordonnées _x_ et _y_ de la clé publique :
 
 [[concat_coordinates]]
 ----
@@ -343,7 +343,7 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0
 
 ((("cryptographie à courbe elliptique","bibliothèques")))((("secp256k1 courbe elliptique")))Il existe quelques implémentations de la courbe elliptique +secp256k1+ qui sont utilisées dans les projets liés à la cryptomonnaie :
 
-((("Bibliothèque cryptographique OpenSSL")))https://www.openssl.org/[OpenSSL]:: La bibliothèque OpenSSL offre un ensemble complet de primitives cryptographiques, y compris une implémentation complète de +secp256k1+. Par exemple, pour dériver la clé publique, la fonction +EC_POINT_mul+ peut être utilisée.
+((("Bibliothèque cryptographique OpenSSL")))https://www.openssl.org/[OpenSSL]:: La bibliothèque OpenSSL offre un ensemble complet de primitives cryptographiques, y compris une implémentation complète de `+secp256k1+`.Par exemple, pour dériver la clé publique, la fonction +EC_POINT_mul+ peut être utilisée.
 
 ((("bibliothèque cryptographique libsecp256k1")))https://github.com/bitcoin-core/secp256k1[libsecp256k1]:: +libsecp256k1+ de Bitcoin Core est une implémentation en langage C de la courbe elliptique +secp256k1+ et d'autres primitives cryptographiques. Il a été écrit à partir de zéro pour remplacer OpenSSL dans le logiciel Bitcoin Core et est considéré comme supérieur en termes de performances et de sécurité.(((range="endofrange", startref="ix_04keys-addresses-asciidoc6")))(((range=" endofrange", startref="ix_04keys-addresses-asciidoc5")))(((range="endofrange", startref="ix_04keys-addresses-asciidoc4")))
 
@@ -416,7 +416,7 @@ Quel que soit le nom de la fonction, vous pouvez la tester pour voir s'il s'agit
 
 [NOTE]
 ====
-En raison de la confusion créée par la différence entre la fonction de hachage utilisée dans Ethereum (Keccak-256) et la norme finalisée (FIP-202 SHA-3), des efforts sont en cours pour renommer toutes les instances de +sha3+ dans tous les codes, opcodes, et des bibliothèques à +keccak256+. Voir https://github.com/ethereum/EIPs/issues/59[ERC59] pour plus de détails.
+En raison de la confusion créée par la différence entre la fonction de hachage utilisée dans Ethereum (Keccak-256) et la norme finalisée (FIP-202 SHA-3), des efforts sont en cours pour renommer toutes les instances de +sha3+ dans tous les codes, opcodes, et des bibliothèques à `+keccak256+`.Voir https://github.com/ethereum/EIPs/issues/59[ERC59] pour plus de détails.
 ====
 
 
@@ -573,7 +573,7 @@ Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0f9") =
 ----
 
 [start=2]
-1. Mettez en majuscule chaque caractère d'adresse alphabétique si le chiffre hexadécimal correspondant du hachage est supérieur ou égal à +0x8+. C'est plus facile à montrer si nous alignons l'adresse et le hachage :
+1. Mettez en majuscule chaque caractère d'adresse alphabétique si le chiffre hexadécimal correspondant du hachage est supérieur ou égal à `+0x8+`.C'est plus facile à montrer si nous alignons l'adresse et le hachage :
 
 [[capitalize_input]]
 ----
@@ -581,7 +581,7 @@ Adresse : 001d3f1ef827552ae1114027bd3ecf1f086ba0f9
 Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...
 ----
 
-Notre adresse contient un caractère alphabétique +d+ en quatrième position. Le quatrième caractère du hachage est +6+, qui est inférieur à +8+. Donc, nous laissons le +d+ minuscule. Le prochain caractère alphabétique de notre adresse est +f+, en sixième position. Le sixième caractère du hachage hexadécimal est +c+, qui est supérieur à +8+. Par conséquent, nous capitalisons le +F+ dans l'adresse, et ainsi de suite. Comme vous pouvez le voir, nous n'utilisons que les 20 premiers octets (40 caractères hexadécimaux) du hachage comme somme de contrôle, car nous n'avons que 20 octets (40 caractères hexadécimaux) dans l'adresse à capitaliser de manière appropriée.
+Notre adresse contient un caractère alphabétique `+d+` en quatrième position. Le quatrième caractère du hachage est `+6+`,qui est inférieur à `+8+`. Donc, nous laissons le `+d+` minuscule. Le prochain caractère alphabétique de notre adresse est `+f+`,en sixième position. Le sixième caractère du hachage hexadécimal est `+c+`,qui est supérieur à `+8+`. Par conséquent, nous capitalisons le `+F+` dans l'adresse, et ainsi de suite. Comme vous pouvez le voir, nous n'utilisons que les 20 premiers octets (40 caractères hexadécimaux) du hachage comme somme de contrôle, car nous n'avons que 20 octets (40 caractères hexadécimaux) dans l'adresse à capitaliser de manière appropriée.
 
 Vérifiez vous-même l'adresse en majuscules mixtes résultante et voyez si vous pouvez dire quels caractères ont été en majuscules et à quels caractères ils correspondent dans le hachage de l'adresse :
 
@@ -601,7 +601,7 @@ Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...
 0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9
 ----
 
-Faisons maintenant une erreur fondamentale en lisant cette adresse. Le caractère avant le dernier est un +F+ majuscule. Pour cet exemple, supposons que nous interprétions cela comme un +E+ majuscule et que nous tapions l'adresse suivante (incorrecte) dans notre portefeuille :
+Faisons maintenant une erreur fondamentale en lisant cette adresse. Le caractère avant le dernier est un `+F+` majuscule. Pour cet exemple, supposons que nous interprétions cela comme un `+E+` majuscule et que nous tapions l'adresse suivante (incorrecte) dans notre portefeuille :
 
 [[incorrect_address]]
 ----
@@ -616,7 +616,7 @@ Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0e9") =
 5429b5d9460122fb4b11af9cb88b7bb76d8928862e0a57d46dd18dd8e08a6927
 ----
 
-Comme vous pouvez le voir, même si l'adresse n'a changé que d'un caractère (en fait, un seul bit, car +e+ et +f+ sont séparés d'un bit), le hachage de l'adresse a radicalement changé. C'est la propriété des fonctions de hachage qui les rend si utiles pour les sommes de contrôle !
+Comme vous pouvez le voir, même si l'adresse n'a changé que d'un caractère (en fait, un seul bit, car `+e+` et `+f+` sont séparés d'un bit), le hachage de l'adresse a radicalement changé. C'est la propriété des fonctions de hachage qui les rend si utiles pour les sommes de contrôle !
 
 Maintenant, alignons les deux et vérifions la capitalisation :
 
