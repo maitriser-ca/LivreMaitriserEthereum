@@ -444,11 +444,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="decentralized_applications_chap">Applications décentralisées (DApps)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dans ce chapitre, nous allons explorer le monde des <em>applications décentralisées</em>, ou <em>DApps</em>. Dès les premiers jours d&#39;Ethereum, la vision des fondateurs était bien plus large que les &quot;contrats intelligents&quot; :  rien de moins que de réinventer le web et de créer un nouveau monde de DApps, appelé à juste titre <em>web3</em>. Les contrats intelligents sont un moyen de décentraliser la logique de contrôle et les fonctions de paiement des applications. Les DApps Web3 consistent à décentraliser tous les autres aspects d&#39;une application : stockage, messagerie, nommage, etc. (voir <a href="#image_web3_suite">Web3 : Un web décentralisé utilisant des contrats intelligents et des technologies P2P</a>).</p>
+<p>Dans ce chapitre, nous allons explorer le monde des <em>applications décentralisées</em>, ou <em>DApps</em>. Dès les premiers jours d&#8217;Ethereum, la vision des fondateurs était bien plus large que les "contrats intelligents" :  rien de moins que de réinventer le web et de créer un nouveau monde de DApps, appelé à juste titre <em>web3</em>. Les contrats intelligents sont un moyen de décentraliser la logique de contrôle et les fonctions de paiement des applications. Les DApps Web3 consistent à décentraliser tous les autres aspects d&#8217;une application : stockage, messagerie, nommage, etc. (voir <a href="#image_web3_suite">Web3 : Un web décentralisé utilisant des contrats intelligents et des technologies P2P</a>).</p>
 </div>
 <div id="image_web3_suite" class="imageblock">
 <div class="content">
-<img src="images/web3suite.png" alt="&quot;Web3 : un Web décentralisé utilisant des contrats intelligents et les technologies P2P&quot;">
+<img src="images/web3suite.png" alt="Web3 : un Web décentralisé utilisant des contrats intelligents et les technologies P2P">
 </div>
 <div class="title">Figure 1. Web3 : Un web décentralisé utilisant des contrats intelligents et des technologies P2P</div>
 </div>
@@ -460,27 +460,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Alors que les &quot;applications décentralisées&quot; sont une vision audacieuse de l&#39;avenir, le terme &quot;DApp&quot; est souvent appliqué à tout contrat intelligent avec une interface Web. Certaines de ces soi-disant DApps sont des applications hautement centralisées (CApps ?). Méfiez-vous des faux DApps !</p>
+<p>Alors que les "applications décentralisées" sont une vision audacieuse de l&#8217;avenir, le terme "DApp" est souvent appliqué à tout contrat intelligent avec une interface Web. Certaines de ces soi-disant DApps sont des applications hautement centralisées (CApps ?). Méfiez-vous des faux DApps !</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Dans ce chapitre, nous allons développer et déployer un exemple de DApp : une plateforme d&#39;enchères. Vous pouvez trouver le code source dans le référentiel du livre sous <a href="http://bit.ly/2DcmjyA"><em>code/auction_dapp</em></a>. Nous examinerons chaque aspect d&#39;une application d&#39;enchères et verrons comment nous pouvons décentraliser l&#39;application autant que possible. Cependant, examinons d&#39;abord de plus près les caractéristiques et les avantages déterminants des DApps.</p>
+<p>Dans ce chapitre, nous allons développer et déployer un exemple de DApp : une plateforme d&#8217;enchères. Vous pouvez trouver le code source dans le référentiel du livre sous <a href="http://bit.ly/2DcmjyA"><em>code/auction_dapp</em></a>. Nous examinerons chaque aspect d&#8217;une application d&#8217;enchères et verrons comment nous pouvons décentraliser l&#8217;application autant que possible. Cependant, examinons d&#8217;abord de plus près les caractéristiques et les avantages déterminants des DApps.</p>
 </div>
 <div class="sect2">
-<h3 id="what_is_a_dapp_sec">Qu&#39;est-ce qu&#39;un DApp ?</h3>
+<h3 id="what_is_a_dapp_sec">Qu&#8217;est-ce qu&#8217;un DApp ?</h3>
 <div class="paragraph">
 <p>Une DApp est une application qui est principalement ou entièrement décentralisée.</p>
 </div>
 <div class="paragraph">
-<p>Considérez tous les aspects possibles d&#39;une application qui peut être décentralisée :</p>
+<p>Considérez tous les aspects possibles d&#8217;une application qui peut être décentralisée :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Logiciel dorsale (logique d&#39;application)</p>
+<p>Logiciel dorsale (logique d&#8217;application)</p>
 </li>
 <li>
 <p>Logiciel frontal</p>
@@ -497,84 +497,84 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Chacun d&#39;eux peut être quelque peu centralisé ou quelque peu décentralisé. Par exemple, une interface peut être développée comme une application Web qui s&#39;exécute sur un serveur centralisé ou comme une application mobile qui s&#39;exécute sur votre appareil. Le backend et le stockage peuvent être sur des serveurs privés et des bases de données propriétaires, ou vous pouvez utiliser un contrat intelligent et un stockage P2P.</p>
+<p>Chacun d&#8217;eux peut être quelque peu centralisé ou quelque peu décentralisé. Par exemple, une interface peut être développée comme une application Web qui s&#8217;exécute sur un serveur centralisé ou comme une application mobile qui s&#8217;exécute sur votre appareil. Le backend et le stockage peuvent être sur des serveurs privés et des bases de données propriétaires, ou vous pouvez utiliser un contrat intelligent et un stockage P2P.</p>
 </div>
 <div class="paragraph">
-<p>La création d&#39;une DApp présente de nombreux avantages qu&#39;une architecture centralisée typique ne peut pas offrir :</p>
+<p>La création d&#8217;une DApp présente de nombreux avantages qu&#8217;une architecture centralisée typique ne peut pas offrir :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Élasticité</dt>
 <dd>
-<p>Parce que la logique applicative est contrôlée par un contrat intelligent, une DApp dorsale sera entièrement distribué et géré sur une plateforme chaîne de blocs. Contrairement à une application déployée sur un serveur centralisé, une DApp n&#39;aura pas de temps d&#39;arrêt et restera disponible tant que la plateforme fonctionnera.</p>
+<p>Parce que la logique applicative est contrôlée par un contrat intelligent, une DApp dorsale sera entièrement distribué et géré sur une plateforme chaîne de blocs. Contrairement à une application déployée sur un serveur centralisé, une DApp n&#8217;aura pas de temps d&#8217;arrêt et restera disponible tant que la plateforme fonctionnera.</p>
 </dd>
 <dt class="hdlist1">Transparence</dt>
 <dd>
-<p>La nature en chaîne d&#39;une DApp permet à chacun d&#39;inspecter le code et d&#39;être plus sûr de sa fonction. Toute interaction avec la DApp sera stockée pour toujours dans la chaîne de blocs.</p>
+<p>La nature en chaîne d&#8217;une DApp permet à chacun d&#8217;inspecter le code et d&#8217;être plus sûr de sa fonction. Toute interaction avec la DApp sera stockée pour toujours dans la chaîne de blocs.</p>
 </dd>
 <dt class="hdlist1">Résistance à la censure</dt>
 <dd>
-<p>Tant qu&#39;un utilisateur a accès à un nœud Ethereum (en exécutant un si nécessaire), l&#39;utilisateur pourra toujours interagir avec une DApp sans interférence de tout contrôle centralisé. Aucun fournisseur de services, ni même le propriétaire du contrat intelligent, ne peut modifier le code une fois qu&#39;il est déployé sur le réseau.</p>
+<p>Tant qu&#8217;un utilisateur a accès à un nœud Ethereum (en exécutant un si nécessaire), l&#8217;utilisateur pourra toujours interagir avec une DApp sans interférence de tout contrôle centralisé. Aucun fournisseur de services, ni même le propriétaire du contrat intelligent, ne peut modifier le code une fois qu&#8217;il est déployé sur le réseau.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Dans l&#39;écosystème Ethereum tel qu&#39;il se présente aujourd&#39;hui, il existe très peu d&#39;applications véritablement décentralisées, la plupart reposant encore sur des services et des serveurs centralisés pour une partie de leur fonctionnement. À l&#39;avenir, nous prévoyons qu&#39;il sera possible pour chaque partie de n&#39;importe quelle DApp d&#39;être exploitée de manière entièrement décentralisée.</p>
+<p>Dans l&#8217;écosystème Ethereum tel qu&#8217;il se présente aujourd&#8217;hui, il existe très peu d&#8217;applications véritablement décentralisées, la plupart reposant encore sur des services et des serveurs centralisés pour une partie de leur fonctionnement. À l&#8217;avenir, nous prévoyons qu&#8217;il sera possible pour chaque partie de n&#8217;importe quelle DApp d&#8217;être exploitée de manière entièrement décentralisée.</p>
 </div>
 <div class="sect3">
 <h4 id="blockchain_smart_contracts_sec">Environnement dorsale (contrat intelligent)</h4>
 <div class="paragraph">
-<p>Dans une DApp, les contrats intelligents sont utilisés pour stocker la logique applicative (code de programme) et l&#39;état correspondant de votre application. Vous pouvez penser à un contrat intelligent remplaçant un composant côté serveur (alias &quot;backend&quot; ou "environnement dorsale") dans une application standard. C&#39;est une simplification excessive, bien sûr. L&#39;une des principales différences est que tout calcul exécuté dans un contrat intelligent est très coûteux et doit donc être réduit au minimum. Il est donc important d&#39;identifier les aspects de l&#39;application qui nécessitent une plateforme d&#39;exécution fiable et décentralisée.</p>
+<p>Dans une DApp, les contrats intelligents sont utilisés pour stocker la logique applicative (code de programme) et l&#8217;état correspondant de votre application. Vous pouvez penser à un contrat intelligent remplaçant un composant côté serveur (alias "backend" ou "environnement dorsale") dans une application standard. C&#8217;est une simplification excessive, bien sûr. L&#8217;une des principales différences est que tout calcul exécuté dans un contrat intelligent est très coûteux et doit donc être réduit au minimum. Il est donc important d&#8217;identifier les aspects de l&#8217;application qui nécessitent une plateforme d&#8217;exécution fiable et décentralisée.</p>
 </div>
 <div class="paragraph">
-<p>Les contrats intelligents Ethereum vous permettent de créer des architectures dans lesquelles un réseau de contrats intelligents appellent et transmettent des données entre eux, lisant et écrivant leurs propres variables d&#39;état au fur et à mesure, leur complexité n&#39;étant limitée que par la limite de gaz de bloc. Après avoir déployé votre contrat intelligent, votre logique applicative pourrait bien être utilisée par de nombreux autres développeurs à l&#39;avenir.</p>
+<p>Les contrats intelligents Ethereum vous permettent de créer des architectures dans lesquelles un réseau de contrats intelligents appellent et transmettent des données entre eux, lisant et écrivant leurs propres variables d&#8217;état au fur et à mesure, leur complexité n&#8217;étant limitée que par la limite de gaz de bloc. Après avoir déployé votre contrat intelligent, votre logique applicative pourrait bien être utilisée par de nombreux autres développeurs à l&#8217;avenir.</p>
 </div>
 <div class="paragraph">
-<p>L&#39;une des principales considérations de la conception d&#39;une architecture de contrat intelligent est l&#39;impossibilité de modifier le code d&#39;un contrat intelligent une fois qu&#39;il est déployé. Il peut être supprimé s&#39;il est programmé avec un opcode SELFDESTRUCT accessible, mais à part une suppression complète, le code ne peut en aucun cas être modifié.</p>
+<p>L&#8217;une des principales considérations de la conception d&#8217;une architecture de contrat intelligent est l&#8217;impossibilité de modifier le code d&#8217;un contrat intelligent une fois qu&#8217;il est déployé. Il peut être supprimé s&#8217;il est programmé avec un opcode SELFDESTRUCT accessible, mais à part une suppression complète, le code ne peut en aucun cas être modifié.</p>
 </div>
 <div class="paragraph">
-<p>La deuxième considération majeure de la conception de l&#39;architecture des contrats intelligents est la taille du DApp. Un très gros contrat intelligent monolithique peut coûter beaucoup de gaz à déployer et à utiliser. Par conséquent, certaines applications peuvent choisir d&#39;avoir un calcul hors chaîne et une source de données externe. Gardez à l&#39;esprit, cependant, que le fait que la logique applicative de base de la DApp dépende de données externes (par exemple, à partir d&#39;un serveur centralisé) signifie que vos utilisateurs devront faire confiance à ces ressources externes.</p>
+<p>La deuxième considération majeure de la conception de l&#8217;architecture des contrats intelligents est la taille du DApp. Un très gros contrat intelligent monolithique peut coûter beaucoup de gaz à déployer et à utiliser. Par conséquent, certaines applications peuvent choisir d&#8217;avoir un calcul hors chaîne et une source de données externe. Gardez à l&#8217;esprit, cependant, que le fait que la logique applicative de base de la DApp dépende de données externes (par exemple, à partir d&#8217;un serveur centralisé) signifie que vos utilisateurs devront faire confiance à ces ressources externes.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="front_end_web_ui_cec">Environnement frontale (interface utilisateur Web)</h4>
 <div class="paragraph">
-<p>Contrairement à la logique applicative de la DApp, qui nécessite qu&#39;un développeur comprenne l&#39;EVM et de nouveaux langages comme Solidity, l&#39;interface côté client d&#39;une DApp peut utiliser des technologies web standards (HTML, CSS, JavaScript, etc.). Cela permet à un développeur Web traditionnel d&#39;utiliser des outils, des bibliothèques et des frameworks familiers. Les interactions avec Ethereum, telles que la signature de messages, l&#39;envoi de transactions et la gestion de clés, sont souvent effectuées via le navigateur Web, via une extension telle que MetaMask (voir <a href="#intro_chapter">[intro_chapter]</a>).</p>
+<p>Contrairement à la logique applicative de la DApp, qui nécessite qu&#8217;un développeur comprenne l&#8217;EVM et de nouveaux langages comme Solidity, l&#8217;interface côté client d&#8217;une DApp peut utiliser des technologies web standards (HTML, CSS, JavaScript, etc.). Cela permet à un développeur Web traditionnel d&#8217;utiliser des outils, des bibliothèques et des frameworks familiers. Les interactions avec Ethereum, telles que la signature de messages, l&#8217;envoi de transactions et la gestion de clés, sont souvent effectuées via le navigateur Web, via une extension telle que MetaMask (voir <a href="#intro_chapter">[intro_chapter]</a>).</p>
 </div>
 <div class="paragraph">
-<p>Bien qu&#39;il soit également possible de créer un DApp mobile, il existe actuellement peu de ressources pour aider à créer des interfaces DApp mobiles, principalement en raison du manque de clients mobiles pouvant servir de client léger avec une fonctionnalité de gestion des clés.</p>
+<p>Bien qu&#8217;il soit également possible de créer un DApp mobile, il existe actuellement peu de ressources pour aider à créer des interfaces DApp mobiles, principalement en raison du manque de clients mobiles pouvant servir de client léger avec une fonctionnalité de gestion des clés.</p>
 </div>
 <div class="paragraph">
-<p>L&#39;interface est généralement liée à Ethereum via la bibliothèque JavaScript <em>web3.js</em>, qui est fournie avec les ressources de l&#39;interface et servie à un navigateur par un serveur Web.</p>
+<p>L&#8217;interface est généralement liée à Ethereum via la bibliothèque JavaScript <em>web3.js</em>, qui est fournie avec les ressources de l&#8217;interface et servie à un navigateur par un serveur Web.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="data_storage_sec">Stockage de données</h4>
 <div class="paragraph">
-<p>En raison des coûts élevés du gaz et de la limite de gaz actuellement faible, les contrats intelligents ne sont pas bien adapté au stockage ou au traitement de grandes quantités de données. Par conséquent, la plupart des DApps utilisent des services de stockage de données hors chaîne, ce qui signifie qu&#39;ils stockent les données volumineuses de la chaîne Ethereum, sur une plate-forme de stockage de données. Cette plate-forme de stockage de données peut être centralisée (par exemple, une base de données cloud typique), ou les données peuvent être décentralisées, stockées sur une plate-forme P2P telle que l&#39;IPFS ou la propre plate-forme Swarm d&#39;Ethereum.</p>
+<p>En raison des coûts élevés du gaz et de la limite de gaz actuellement faible, les contrats intelligents ne sont pas bien adapté au stockage ou au traitement de grandes quantités de données. Par conséquent, la plupart des DApps utilisent des services de stockage de données hors chaîne, ce qui signifie qu&#8217;ils stockent les données volumineuses de la chaîne Ethereum, sur une plate-forme de stockage de données. Cette plate-forme de stockage de données peut être centralisée (par exemple, une base de données cloud typique), ou les données peuvent être décentralisées, stockées sur une plate-forme P2P telle que l&#8217;IPFS ou la propre plate-forme Swarm d&#8217;Ethereum.</p>
 </div>
 <div class="paragraph">
-<p>Le stockage P2P décentralisé est idéal pour stocker et distribuer de gros actifs statiques tels que des images, des vidéos et les ressources de l&#39;interface Web frontale de l&#39;application (HTML, CSS, JavaScript, etc.). Nous examinerons ensuite quelques-unes des options.</p>
+<p>Le stockage P2P décentralisé est idéal pour stocker et distribuer de gros actifs statiques tels que des images, des vidéos et les ressources de l&#8217;interface Web frontale de l&#8217;application (HTML, CSS, JavaScript, etc.). Nous examinerons ensuite quelques-unes des options.</p>
 </div>
 <div class="sect4">
 <h5 id="ipfs_sec">IPFS</h5>
 <div class="paragraph">
-<p>Le <em>Inter-Planetary File System</em> (IPFS) est un système de stockage décentralisé adressable par le contenu qui distribue les objets stockés entre pairs dans un réseau P2P. &quot;Contenu adressable&quot; signifie que chaque élément de contenu (fichier) est haché et que le hachage est utilisé pour identifier ce fichier. Vous pouvez ensuite récupérer n&#39;importe quel fichier de n&#39;importe quel nœud IPFS en le demandant par son hachage.</p>
+<p>Le <em>Inter-Planetary File System</em> (IPFS) est un système de stockage décentralisé adressable par le contenu qui distribue les objets stockés entre pairs dans un réseau P2P. "Contenu adressable" signifie que chaque élément de contenu (fichier) est haché et que le hachage est utilisé pour identifier ce fichier. Vous pouvez ensuite récupérer n&#8217;importe quel fichier de n&#8217;importe quel nœud IPFS en le demandant par son hachage.</p>
 </div>
 <div class="paragraph">
-<p>IPFS vise à remplacer HTTP comme protocole de choix pour la livraison d&#39;applications Web. Au lieu de stocker une application Web sur un seul serveur, les fichiers sont stockés sur IPFS et peuvent être récupérés à partir de n&#39;importe quel nœud IPFS.</p>
+<p>IPFS vise à remplacer HTTP comme protocole de choix pour la livraison d&#8217;applications Web. Au lieu de stocker une application Web sur un seul serveur, les fichiers sont stockés sur IPFS et peuvent être récupérés à partir de n&#8217;importe quel nœud IPFS.</p>
 </div>
 <div class="paragraph">
-<p>Plus d&#39;informations sur IPFS peuvent être trouvées sur <a href="https://ipfs.io" class="bare">https://ipfs.io</a>.</p>
+<p>Plus d&#8217;informations sur IPFS peuvent être trouvées sur <a href="https://ipfs.io" class="bare">https://ipfs.io</a>.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="swarm_sec">Swarm</h5>
 <div class="paragraph">
-<p>Swarm est un autre système de stockage P2P adressable par le contenu , similaire à IPFS. Swarm a été créé par la Fondation Ethereum, dans le cadre de la suite d&#39;outils Go-Ethereum. Comme IPFS, il vous permet de stocker des fichiers qui sont diffusés et répliqués par les nœuds Swarm. Vous pouvez accéder à n&#39;importe quel fichier Swarm en y faisant référence par un hachage. Swarm vous permet d&#39;accéder à un site Web à partir d&#39;un système P2P décentralisé, au lieu d&#39;un serveur Web central.</p>
+<p>Swarm est un autre système de stockage P2P adressable par le contenu , similaire à IPFS. Swarm a été créé par la Fondation Ethereum, dans le cadre de la suite d&#8217;outils Go-Ethereum. Comme IPFS, il vous permet de stocker des fichiers qui sont diffusés et répliqués par les nœuds Swarm. Vous pouvez accéder à n&#8217;importe quel fichier Swarm en y faisant référence par un hachage. Swarm vous permet d&#8217;accéder à un site Web à partir d&#8217;un système P2P décentralisé, au lieu d&#8217;un serveur Web central.</p>
 </div>
 <div class="paragraph">
-<p>La page d&#39;accueil de Swarm est elle-même stockée sur Swarm et accessible sur votre nœud Swarm ou une passerelle :
+<p>La page d&#8217;accueil de Swarm est elle-même stockée sur Swarm et accessible sur votre nœud Swarm ou une passerelle :
 <a href="https://swarm-gateways.net/bzz:/theswarm.eth/" class="bare">https://swarm-gateways.net/bzz:/theswarm.eth/</a>.</p>
 </div>
 </div>
@@ -582,23 +582,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="interdapp_coammunications_protocol_sec">Protocoles de communication de messages décentralisés</h4>
 <div class="paragraph">
-<p>Un autre composant majeur de toute application est la communication inter-processus. Cela signifie pouvoir échanger des messages entre applications, entre différentes instances de l&#39;application ou entre utilisateurs de l&#39;application. Traditionnellement, cela est réalisé en s&#39;appuyant sur un serveur centralisé. Cependant, il existe une variété d&#39;alternatives décentralisées aux protocoles basés sur serveur, offrant une messagerie sur un réseau P2P. Le protocole de messagerie P2P le plus notable pour les DApps est <a href="http://bit.ly/2CSls5h"><em>Whisper</em></a>, qui fait partie de la suite d&#39;outils Go-Ethereum de la Fondation Ethereum.</p>
+<p>Un autre composant majeur de toute application est la communication inter-processus. Cela signifie pouvoir échanger des messages entre applications, entre différentes instances de l&#8217;application ou entre utilisateurs de l&#8217;application. Traditionnellement, cela est réalisé en s&#8217;appuyant sur un serveur centralisé. Cependant, il existe une variété d&#8217;alternatives décentralisées aux protocoles basés sur serveur, offrant une messagerie sur un réseau P2P. Le protocole de messagerie P2P le plus notable pour les DApps est <a href="http://bit.ly/2CSls5h"><em>Whisper</em></a>, qui fait partie de la suite d&#8217;outils Go-Ethereum de la Fondation Ethereum.</p>
 </div>
 <div class="paragraph">
-<p>Le dernier aspect d&#39;une application qui peut être décentralisée est la résolution de noms. Nous examinerons de près le service de noms d&#39;Ethereum plus loin dans ce chapitre ; maintenant, cependant, montrons un exemple.</p>
+<p>Le dernier aspect d&#8217;une application qui peut être décentralisée est la résolution de noms. Nous examinerons de près le service de noms d&#8217;Ethereum plus loin dans ce chapitre ; maintenant, cependant, montrons un exemple.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="auction_dapp_intro">Un exemple de DApp de base : DApp d&#39;enchères</h3>
+<h3 id="auction_dapp_intro">Un exemple de DApp de base : DApp d&#8217;enchères</h3>
 <div class="paragraph">
 <p>Dans cette section, nous allons commencer à construire un exemple de DApp, pour explorer les différents outils de décentralisation. Notre DApp mettra en place une enchère décentralisée.</p>
 </div>
 <div class="paragraph">
-<p>La DApp d&#39;enchères permet à un utilisateur d&#39;enregistrer un jeton &quot;acte&quot;, qui représente un actif unique, comme une maison, une voiture, une marque, etc. Une fois qu&#39;un jeton a été enregistré, la propriété du jeton est transférée à la DApp d&#39;enchères, ce qui lui permet d&#39;être mis en vente. Le DApp d&#39;enchères répertorie chacun des jetons enregistrés, permettant aux autres utilisateurs de placer des offres. Au cours de chaque enchère, les utilisateurs peuvent rejoindre une salle de discussion créée spécifiquement pour cette enchère. Une fois qu&#39;une enchère est finalisée, la propriété du jeton d&#39;acte est transférée au gagnant de l&#39;enchère.</p>
+<p>La DApp d&#8217;enchères permet à un utilisateur d&#8217;enregistrer un jeton "acte", qui représente un actif unique, comme une maison, une voiture, une marque, etc. Une fois qu&#8217;un jeton a été enregistré, la propriété du jeton est transférée à la DApp d&#8217;enchères, ce qui lui permet d&#8217;être mis en vente. Le DApp d&#8217;enchères répertorie chacun des jetons enregistrés, permettant aux autres utilisateurs de placer des offres. Au cours de chaque enchère, les utilisateurs peuvent rejoindre une salle de discussion créée spécifiquement pour cette enchère. Une fois qu&#8217;une enchère est finalisée, la propriété du jeton d&#8217;acte est transférée au gagnant de l&#8217;enchère.</p>
 </div>
 <div class="paragraph">
-<p>Le processus global d&#39;enchères peut être vu dans <a href="#auction_dapp_overview">Auction DApp : un exemple simple de DApp d&#39;enchères</a>.</p>
+<p>Le processus global d&#8217;enchères peut être vu dans <a href="#auction_dapp_overview">Auction DApp : un exemple simple de DApp d&#8217;enchères</a>.</p>
 </div>
 <div class="paragraph">
 <p>Les principaux composants de notre DApp d&#8217;enchères sont :</p>
@@ -606,16 +606,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Un contrat intelligent implémentant des jetons &quot;acte&quot; non fongibles ERC721 (<code><span class="keep-together">DeedRepository</span></code>)</p>
+<p>Un contrat intelligent implémentant des jetons "acte" non fongibles ERC721 (<code><span class="keep-together">DeedRepository</span></code>)</p>
 </li>
 <li>
-<p>Un contrat intelligent mettant en place une enchère (AuctionRepository) pour vendre les actes</p>
+<p>Un contrat intelligent mettant en place une enchère (<code>AuctionRepository</code>)pour vendre les actes</p>
 </li>
 <li>
 <p>Une interface web utilisant le cadre de développement JavaScript Vue/Vuetify</p>
 </li>
 <li>
-<p>La bibliothèque <em>web3.js</em> pour se connecter aux chaînes Ethereum (via MetaMask ou d&#39;autres clients)</p>
+<p>La bibliothèque <em>web3.js</em> pour se connecter aux chaînes Ethereum (via MetaMask ou d&#8217;autres clients)</p>
 </li>
 <li>
 <p>Un client Swarm, pour stocker des ressources telles que des images</p>
@@ -627,23 +627,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="auction_dapp_overview" class="imageblock">
 <div class="content">
-<img src="images/auction_diagram.png" alt="&quot;DApp d&#39;enchères : un exemple simple de DApp d&#39;enchères&quot;">
+<img src="images/auction_diagram.png" alt="DApp d&#8217;enchères : un exemple simple de DApp d&#8217;enchères">
 </div>
-<div class="title">Figure 2. Auction DApp : un exemple simple de DApp d&#39;enchères</div>
+<div class="title">Figure 2. Auction DApp : un exemple simple de DApp d&#8217;enchères</div>
 </div>
 <div class="paragraph">
-<p>Vous pouvez trouver le code source de la DApp d&#39;enchères <a href="http://bit.ly/2DcmjyA">dans le référentiel du livre</a>.</p>
+<p>Vous pouvez trouver le code source de la DApp d&#8217;enchères <a href="http://bit.ly/2DcmjyA">dans le référentiel du livre</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_dapp_denchères_contrats_intelligents_dorsaux">DApp d&#39;enchères : contrats intelligents dorsaux</h4>
+<h4 id="_dapp_denchères_contrats_intelligents_dorsaux">DApp d&#8217;enchères : contrats intelligents dorsaux</h4>
 <div class="paragraph">
-<p> Notre exemple Auction DApp est pris en charge par deux contrats intelligents que nous devons déployer sur une chaîne de blocs Ethereum afin de prendre en charge l&#39;application : <code><span class="keep-together">AuctionRepository</span></code> et DeedRepository.</p>
+<p> Notre exemple Auction DApp est pris en charge par deux contrats intelligents que nous devons déployer sur une chaîne de blocs Ethereum afin de prendre en charge l&#8217;application : <code><span class="keep-together">AuctionRepository</span></code> et DeedRepository.</p>
 </div>
 <div class="paragraph">
-<p>Commençons par regarder DeedRepository, montré dans <a href="#deed_repository_code">DeedRepository.sol : un jeton d&#39;acte ERC721 à utiliser dans une vente aux enchères</a>. Ce contrat est un jeton non fongible compatible ERC721 (voir <a href="#erc721">[erc721]</a>).</p>
+<p>Commençons par regarder <code>DeedRepository</code>,montré dans <a href="#deed_repository_code">DeedRepository.sol : un jeton d&#8217;acte ERC721 à utiliser dans une vente aux enchères</a>. Ce contrat est un jeton non fongible compatible ERC721 (voir <a href="#erc721">[erc721]</a>).</p>
 </div>
 <div id="deed_repository_code" class="exampleblock">
-<div class="title">Example 1. DeedRepository.sol : un jeton d&#39;acte ERC721 à utiliser dans une vente aux enchères</div>
+<div class="title">Example 1. DeedRepository.sol : un jeton d&#8217;acte ERC721 à utiliser dans une vente aux enchères</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -702,10 +702,10 @@ contract DeedRepository is ERC721Token {
 </div>
 </div>
 <div class="paragraph">
-<p>Comme vous pouvez le constater, le contrat DeedRepository est une implémentation simple d&#39;un jeton compatible ERC721.</p>
+<p>Comme vous pouvez le constater, le contrat DeedRepository est une implémentation simple d&#8217;un jeton compatible ERC721.</p>
 </div>
 <div class="paragraph">
-<p>Notre DApp d&#8217;enchères utilise le contrat DeedRepository pour émettre et suivre les jetons pour chaque enchère. L&#39;enchère elle-même est orchestrée par le contrat AuctionRepository. Ce contrat est trop long pour être inclus ici dans son intégralité, mais <a href="#auction_repository_code">AuctionRepository.sol : le principal contrat intelligent Auction DApp</a> montre la définition principale du contrat et des structures de données. L&#39;intégralité du contrat est disponible dans le <a href="https://bit.ly/2IaOo9i">référentiel GitHub</a> du livre.</p>
+<p>Notre DApp d&#8217;enchères utilise le contrat DeedRepository pour émettre et suivre les jetons pour chaque enchère. L&#8217;enchère elle-même est orchestrée par le contrat <code>AuctionRepository</code>.Ce contrat est trop long pour être inclus ici dans son intégralité, mais <a href="#auction_repository_code">AuctionRepository.sol : le principal contrat intelligent Auction DApp</a> montre la définition principale du contrat et des structures de données. L&#8217;intégralité du contrat est disponible dans le <a href="https://bit.ly/2IaOo9i">référentiel GitHub</a> du livre.</p>
 </div>
 <div id="auction_repository_code" class="exampleblock">
 <div class="title">Example 2. AuctionRepository.sol : le principal contrat intelligent Auction DApp</div>
@@ -717,19 +717,19 @@ contract DeedRepository is ERC721Token {
     // Tableau avec toutes les enchères
     Auction[] public auctions;
 
-    // Mappage de l&amp;#39;index d&amp;#39;enchères aux offres des utilisateurs
+    // Mappage de l'index d'enchères aux offres des utilisateurs
     mapping(uint256 =&gt; Bid[]) public auctionBids;
 
-    // Mappage du propriétaire à une liste d&amp;#39;enchères détenues
+    // Mappage du propriétaire à une liste d'enchères détenues
     mapping(address =&gt; uint[]) public auctionOwner;
 
-    // Structure d&amp;#39;enchères pour retenir l&amp;#39;enchérisseur et le montant
+    // Structure d'enchères pour retenir l'enchérisseur et le montant
     struct Bid {
         address from;
         uint256 amount;
     }
 
-    // Structure d&amp;#39;enchères contenant toutes les informations requises
+    // Structure d'enchères contenant toutes les informations requises
     struct Auction {
         string name;
         uint256 blockDeadline;
@@ -779,26 +779,26 @@ $ <strong>truffle migrate --network ropsten</strong>
 <div class="sect4">
 <h5 id="_dapp_de_gouvernance">DApp de gouvernance</h5>
 <div class="paragraph">
-<p>Si vous lisez les deux contrats intelligents de la DApp d&#39;enchères, vous remarquerez quelque chose d&#39;important : il n&#39;y a pas de compte ou de rôle spécial qui dispose de privilèges spéciaux sur la DApp. Chaque enchère a un propriétaire avec des capacités spéciales, mais la DApp d&#39;enchères elle-même n&#39;a pas d&#39;utilisateur privilégié.</p>
+<p>Si vous lisez les deux contrats intelligents de la DApp d&#8217;enchères, vous remarquerez quelque chose d&#8217;important : il n&#8217;y a pas de compte ou de rôle spécial qui dispose de privilèges spéciaux sur la DApp. Chaque enchère a un propriétaire avec des capacités spéciales, mais la DApp d&#8217;enchères elle-même n&#8217;a pas d&#8217;utilisateur privilégié.</p>
 </div>
 <div class="paragraph">
-<p>Il s&#39;agit d&#39;un choix délibéré de décentraliser la gouvernance de la DApp et de renoncer à tout contrôle une fois celle-ci déployée. Certains DApp, en comparaison, ont un ou plusieurs comptes privilégiés avec des capacités spéciales, telles que la possibilité de résilier le contrat DApp, de remplacer ou de modifier sa configuration, ou d&#39;opposer son veto à certaines opérations. Habituellement, ces fonctions de gouvernance sont introduites dans la DApp afin d&#39;éviter des problèmes inconnus qui pourraient survenir en raison d&#39;un bogue.</p>
+<p>Il s&#8217;agit d&#8217;un choix délibéré de décentraliser la gouvernance de la DApp et de renoncer à tout contrôle une fois celle-ci déployée. Certains DApp, en comparaison, ont un ou plusieurs comptes privilégiés avec des capacités spéciales, telles que la possibilité de résilier le contrat DApp, de remplacer ou de modifier sa configuration, ou d&#8217;opposer son veto à certaines opérations. Habituellement, ces fonctions de gouvernance sont introduites dans la DApp afin d&#8217;éviter des problèmes inconnus qui pourraient survenir en raison d&#8217;un bogue.</p>
 </div>
 <div class="paragraph">
-<p>La question de la gouvernance est particulièrement difficile à résoudre car elle représente une arme à double tranchant. D&#39;un côté, les comptes privilégiés sont dangereux ; s&#39;ils sont compromis, ils peuvent compromettre la sécurité du DApp. De l&#39;autre côté, sans compte privilégié, il n&#39;y a pas d&#39;options de récupération si un bogue est trouvé. Nous avons vu ces deux risques se manifester dans les DApp Ethereum. Dans le cas de The DAO (<a href="#real_world_example_the_dao">[real_world_example_the_dao]</a> et <a href="#ethereum_fork_history">[ethereum_fork_history]</a>), il y avait des comptes privilégiés appelés les &quot;conservateurs&quot;, mais ils étaient très limités dans leurs capacités. Ces comptes n&#39;ont pas pu annuler le retrait des fonds par l&#39;attaquant DAO. Dans un cas plus récent, l&#39;échange décentralisé Bancor a subi un vol massif parce qu&#39;un compte de gestion privilégié a été compromis. Il s&#39;avère que Bancor n&#39;était pas aussi décentralisé qu&#39;on le supposait initialement.</p>
+<p>La question de la gouvernance est particulièrement difficile à résoudre car elle représente une arme à double tranchant. D&#8217;un côté, les comptes privilégiés sont dangereux ; s&#8217;ils sont compromis, ils peuvent compromettre la sécurité du DApp. De l&#8217;autre côté, sans compte privilégié, il n&#8217;y a pas d&#8217;options de récupération si un bogue est trouvé. Nous avons vu ces deux risques se manifester dans les DApp Ethereum. Dans le cas de The DAO (<a href="#real_world_example_the_dao">[real_world_example_the_dao]</a> et <a href="#ethereum_fork_history">[ethereum_fork_history]</a>), il y avait des comptes privilégiés appelés les "conservateurs", mais ils étaient très limités dans leurs capacités. Ces comptes n&#8217;ont pas pu annuler le retrait des fonds par l&#8217;attaquant DAO. Dans un cas plus récent, l&#8217;échange décentralisé Bancor a subi un vol massif parce qu&#8217;un compte de gestion privilégié a été compromis. Il s&#8217;avère que Bancor n&#8217;était pas aussi décentralisé qu&#8217;on le supposait initialement.</p>
 </div>
 <div class="paragraph">
-<p>Lors de la construction d&#39;une DApp, vous devez décider si vous voulez rendre les contrats intelligents vraiment indépendants, les lancer et n&#39;avoir ensuite aucun contrôle, ou créer des comptes privilégiés et courir le risque que ceux-ci soient compromis. L&#39;un ou l&#39;autre choix comporte des risques, mais à long terme, les vraies DApps ne peuvent pas avoir un accès spécialisé pour les comptes privilégiés - ce n&#39;est pas décentralisé.</p>
+<p>Lors de la construction d&#8217;une DApp, vous devez décider si vous voulez rendre les contrats intelligents vraiment indépendants, les lancer et n&#8217;avoir ensuite aucun contrôle, ou créer des comptes privilégiés et courir le risque que ceux-ci soient compromis. L&#8217;un ou l&#8217;autre choix comporte des risques, mais à long terme, les vraies DApps ne peuvent pas avoir un accès spécialisé pour les comptes privilégiés - ce n&#8217;est pas décentralisé.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_dapp_denchères_interface_utilisateur_frontale">DApp d&#39;enchères : interface utilisateur frontale</h4>
+<h4 id="_dapp_denchères_interface_utilisateur_frontale">DApp d&#8217;enchères : interface utilisateur frontale</h4>
 <div class="paragraph">
-<p>Une fois les contrats de la DApp d&#39;enchères déployés, vous pouvez interagir avec eux à l&#39;aide de votre console JavaScript préférée et de web3.js, ou d&#39;une autre bibliothèque web3. Cependant, la plupart des utilisateurs auront besoin d&#39;une interface facile à utiliser. Notre interface utilisateur de la DApp d&#8217;enchères est construite à l&#39;aide du cadre de développement (framework) JavaScript Vue2/Vuetify de Google.</p>
+<p>Une fois les contrats de la DApp d&#8217;enchères déployés, vous pouvez interagir avec eux à l&#8217;aide de votre console JavaScript préférée et de web3.js, ou d&#8217;une autre bibliothèque web3. Cependant, la plupart des utilisateurs auront besoin d&#8217;une interface facile à utiliser. Notre interface utilisateur de la DApp d&#8217;enchères est construite à l&#8217;aide du cadre de développement (framework) JavaScript Vue2/Vuetify de Google.</p>
 </div>
 <div class="paragraph">
-<p>Vous pouvez trouver le code de l&#39;interface utilisateur dans le dossier <em>code/auction_dapp/frontend</em> dans <a href="https://github.com/ethereumbook/ethereumbook" class="bare">https://github.com/ethereumbook/ethereumbook</a> [le référentiel du livre]. Le répertoire a la structure et le contenu suivants :</p>
+<p>Vous pouvez trouver le code de l&#8217;interface utilisateur dans le dossier <em>code/auction_dapp/frontend</em> dans <a href="https://github.com/ethereumbook/ethereumbook" class="bare">https://github.com/ethereumbook/ethereumbook</a> [le référentiel du livre]. Le répertoire a la structure et le contenu suivants :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -839,7 +839,7 @@ $ <strong>truffle migrate --network ropsten</strong>
 </div>
 </div>
 <div class="paragraph">
-<p>Une fois que vous avez déployé les contrats, modifiez la configuration du frontend dans <em>frontend/src/config.js</em> et entrez les adresses des contrats DeedRepository et AuctionRepository, tels que déployés. L&#39;application frontale a également besoin d&#39;accéder à un nœud Ethereum offrant une interface JSON-RPC et WebSockets. Une fois que vous avez configuré l&#39;interface, lancez-la avec un serveur Web sur votre machine locale :</p>
+<p>Une fois que vous avez déployé les contrats, modifiez la configuration du frontend dans <em>frontend/src/config.js</em> et entrez les adresses des contrats DeedRepository et <code>AuctionRepository</code>,tels que déployés. L&#8217;application frontale a également besoin d&#8217;accéder à un nœud Ethereum offrant une interface JSON-RPC et WebSockets. Une fois que vous avez configuré l&#8217;interface, lancez-la avec un serveur Web sur votre machine locale :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>npm install</strong>
@@ -847,29 +847,29 @@ $ <strong>npm run dev</strong>
 
 </pre>
 <div class="paragraph">
-<p>L&#39;interface Auction DApp sera lancée et sera accessible via n&#39;importe quel navigateur Web à l&#39;adresse <a href="http://localhost:8080" class="bare">http://localhost:8080</a>.</p>
+<p>L&#8217;interface Auction DApp sera lancée et sera accessible via n&#8217;importe quel navigateur Web à l&#8217;adresse <a href="http://localhost:8080" class="bare">http://localhost:8080</a>.</p>
 </div>
 <div class="paragraph">
-<p>Si tout se passe bien, vous devriez voir l&#39;écran affiché dans <a href="#auction_dapp_screen">Interface utilisateur de la DApp d&#8217;enchères</a>, qui illustre l&#39;exécution de la DApp d&#39;enchères dans un navigateur Web.</p>
+<p>Si tout se passe bien, vous devriez voir l&#8217;écran affiché dans <a href="#auction_dapp_screen">Interface utilisateur de la DApp d&#8217;enchères</a>, qui illustre l&#8217;exécution de la DApp d&#8217;enchères dans un navigateur Web.</p>
 </div>
 <div id="auction_dapp_screen" class="imageblock">
 <div class="content">
-<img src="images/auction_dapp_home_screen.png" alt="&quot;Interface utilisateur de la DApp d&#39;enchères&quot;">
+<img src="images/auction_dapp_home_screen.png" alt="Interface utilisateur de la DApp d&#8217;enchères">
 </div>
 <div class="title">Figure 3. Interface utilisateur de la DApp d&#8217;enchères</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_décentraliser_davantage_la_dapp_denchères">Décentraliser davantage la DApp d&#39;enchères</h3>
+<h3 id="_décentraliser_davantage_la_dapp_denchères">Décentraliser davantage la DApp d&#8217;enchères</h3>
 <div class="paragraph">
 <p>Notre DApp est déjà assez décentralisé, mais nous pouvons améliorer les choses.</p>
 </div>
 <div class="paragraph">
-<p>Le contrat AuctionRepository fonctionne indépendamment de tout contrôle, ouvert à tous. Une fois déployé, il ne peut pas être arrêté, et aucune enchère ne peut être contrôlée. Chaque enchère a une salle de chat séparée qui permet à quiconque de communiquer sur l&#39;enchère sans censure ni identification. Les différents actifs d&#39;enchères, tels que la description et l&#39;image associée, sont stockés sur Swarm, ce qui les rend difficiles à censurer ou à bloquer.</p>
+<p>Le contrat AuctionRepository fonctionne indépendamment de tout contrôle, ouvert à tous. Une fois déployé, il ne peut pas être arrêté, et aucune enchère ne peut être contrôlée. Chaque enchère a une salle de chat séparée qui permet à quiconque de communiquer sur l&#8217;enchère sans censure ni identification. Les différents actifs d&#8217;enchères, tels que la description et l&#8217;image associée, sont stockés sur Swarm, ce qui les rend difficiles à censurer ou à bloquer.</p>
 </div>
 <div class="paragraph">
-<p>N&#39;importe qui peut interagir avec la DApp en créant des transactions manuellement ou en exécutant l&#39;interface Vue sur sa machine locale. Le code de la DApp lui-même est à source libre et développé en collaboration sur un référentiel public.</p>
+<p>N&#8217;importe qui peut interagir avec la DApp en créant des transactions manuellement ou en exécutant l&#8217;interface Vue sur sa machine locale. Le code de la DApp lui-même est à source libre et développé en collaboration sur un référentiel public.</p>
 </div>
 <div class="paragraph">
 <p>Il y a deux choses que nous pouvons faire pour rendre cette DApp décentralisée et résiliente :</p>
@@ -877,7 +877,7 @@ $ <strong>npm run dev</strong>
 <div class="ulist">
 <ul>
 <li>
-<p>Stockez tout le code d&#39;application sur Swarm ou IPFS.</p>
+<p>Stockez tout le code d&#8217;application sur Swarm ou IPFS.</p>
 </li>
 <li>
 <p>Accédez au DApp par référence à un nom, en utilisant le service de nom Ethereum.</p>
@@ -889,20 +889,20 @@ $ <strong>npm run dev</strong>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_stockage_de_la_dapp_denchères_sur_swarm">Stockage de la DApp d&#39;enchères sur Swarm</h3>
+<h3 id="_stockage_de_la_dapp_denchères_sur_swarm">Stockage de la DApp d&#8217;enchères sur Swarm</h3>
 <div class="paragraph">
-<p>Nous avons introduit Swarm dans <a href="#swarm_sec">Swarm</a>, plus haut dans ce chapitre. Notre DApp d&#8217;enchères utilise déjà Swarm pour stocker l&#39;image de l&#39;icône pour chaque enchère. C&#39;est une solution beaucoup plus efficace que de tenter de stocker des données sur Ethereum, ce qui coûte cher. Il est également beaucoup plus résistant que si ces images étaient stockées dans un service centralisé comme un serveur Web ou un serveur de fichiers.</p>
+<p>Nous avons introduit Swarm dans <a href="#swarm_sec">Swarm</a>, plus haut dans ce chapitre. Notre DApp d&#8217;enchères utilise déjà Swarm pour stocker l&#8217;image de l&#8217;icône pour chaque enchère. C&#8217;est une solution beaucoup plus efficace que de tenter de stocker des données sur Ethereum, ce qui coûte cher. Il est également beaucoup plus résistant que si ces images étaient stockées dans un service centralisé comme un serveur Web ou un serveur de fichiers.</p>
 </div>
 <div class="paragraph">
-<p>Mais on peut aller plus loin. Nous pouvons stocker l&#39;intégralité de l&#39;interface du DApp lui-même dans Swarm et l&#39;exécuter directement à partir d&#39;un nœud Swarm, au lieu d&#39;exécuter un serveur Web.</p>
+<p>Mais on peut aller plus loin. Nous pouvons stocker l&#8217;intégralité de l&#8217;interface du DApp lui-même dans Swarm et l&#8217;exécuter directement à partir d&#8217;un nœud Swarm, au lieu d&#8217;exécuter un serveur Web.</p>
 </div>
 <div class="sect3">
 <h4 id="_préparation_de_swarm">Préparation de Swarm</h4>
 <div class="paragraph">
-<p>Pour commencer, vous devez installer Swarm et initialiser votre nœud Swarm. Swarm fait partie de la suite d&#39;outils Go-Ethereum de la Fondation Ethereum. Reportez-vous aux instructions d&#39;installation de Go-Ethereum dans <a href="#go_ethereum_geth">[go_ethereum_geth]</a>, ou pour installer une version binaire Swarm, suivez les instructions de la <a href="http://bit.ly/2Q75KXw">documentation Swarm</a>.</p>
+<p>Pour commencer, vous devez installer Swarm et initialiser votre nœud Swarm. Swarm fait partie de la suite d&#8217;outils Go-Ethereum de la Fondation Ethereum. Reportez-vous aux instructions d&#8217;installation de Go-Ethereum dans <a href="#go_ethereum_geth">[go_ethereum_geth]</a>, ou pour installer une version binaire Swarm, suivez les instructions de la <a href="http://bit.ly/2Q75KXw">documentation Swarm</a>.</p>
 </div>
 <div class="paragraph">
-<p>Une fois que vous avez installé Swarm, vous pouvez vérifier qu&#39;il fonctionne correctement en le lançant avec la commande version :</p>
+<p>Une fois que vous avez installé Swarm, vous pouvez vérifier qu&#8217;il fonctionne correctement en le lançant avec la commande version :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>swarm version</strong>
@@ -913,7 +913,7 @@ OS: linux
 
 </pre>
 <div class="paragraph">
-<p>Pour commencer à exécuter Swarm, vous devez lui dire comment se connecter à une instance de Geth, pour accéder à l&#39;API JSON-RPC. Commencez en suivant les instructions du <a href="https://swarm-guide.readthedocs.io/en/latest/gettingstarted.html">Guide de démarrage</a>.</p>
+<p>Pour commencer à exécuter Swarm, vous devez lui dire comment se connecter à une instance de Geth, pour accéder à l&#8217;API JSON-RPC. Commencez en suivant les instructions du <a href="https://swarm-guide.readthedocs.io/en/latest/gettingstarted.html">Guide de démarrage</a>.</p>
 </div>
 <div class="paragraph">
 <p>Lorsque vous démarrez Swarm, vous devriez voir quelque chose comme ceci :</p>
@@ -939,15 +939,15 @@ RLPx listener up                         self=enode://f50c8e19ff841bcd5ce7d2d...
 </div>
 </div>
 <div class="paragraph">
-<p>Vous pouvez vérifier que votre nœud Swarm fonctionne correctement en vous connectant à l&#39;interface Web de la passerelle Swarm locale :
+<p>Vous pouvez vérifier que votre nœud Swarm fonctionne correctement en vous connectant à l&#8217;interface Web de la passerelle Swarm locale :
 <a href="http://localhost:8500" class="bare">http://localhost:8500</a>.</p>
 </div>
 <div class="paragraph">
-<p>Vous devriez voir un écran comme celui de <a href="#image_swarm_gateway">Passerelle Swarm sur localhost</a> et pouvoir interroger n&#39;importe quel hachage Swarm ou nom ENS.</p>
+<p>Vous devriez voir un écran comme celui de <a href="#image_swarm_gateway">Passerelle Swarm sur localhost</a> et pouvoir interroger n&#8217;importe quel hachage Swarm ou nom ENS.</p>
 </div>
 <div id="image_swarm_gateway" class="imageblock">
 <div class="content">
-<img src="images/swarm-gateway.png" alt="&quot;Passerelle Swarm sur localhost&quot;">
+<img src="images/swarm-gateway.png" alt="Passerelle Swarm sur localhost">
 </div>
 <div class="title">Figure 4. Passerelle Swarm sur localhost</div>
 </div>
@@ -955,7 +955,7 @@ RLPx listener up                         self=enode://f50c8e19ff841bcd5ce7d2d...
 <div class="sect3">
 <h4 id="_télécharger_des_fichiers_sur_swarm">Télécharger des fichiers sur Swarm</h4>
 <div class="paragraph">
-<p>Une fois que votre nœud et votre passerelle Swarm locaux sont en cours d&#39;exécution, vous pouvez télécharger vers Swarm et les fichiers seront accessible sur n&#39;importe quel nœud Swarm, simplement par référence au hachage du fichier.</p>
+<p>Une fois que votre nœud et votre passerelle Swarm locaux sont en cours d&#8217;exécution, vous pouvez télécharger vers Swarm et les fichiers seront accessible sur n&#8217;importe quel nœud Swarm, simplement par référence au hachage du fichier.</p>
 </div>
 <div class="paragraph">
 <p>Testons cela en téléchargeant un fichier :</p>
@@ -966,10 +966,10 @@ ec13042c83ffc2fb5cb0aa8c53f770d36c9b3b35d0468a0c0a77c97016bb8d7c
 
 </pre>
 <div class="paragraph">
-<p>Swarm a téléchargé le fichier <em>README.md</em> et renvoyé un hachage que vous pouvez utiliser pour accéder au fichier à partir de n&#39;importe quel nœud Swarm. Par exemple, vous pouvez utiliser la <a href="https://bit.ly/2znWUP9" class="bare">https://bit.ly/2znWUP9</a> [passerelle Swarm publique].</p>
+<p>Swarm a téléchargé le fichier <em>README.md</em> et renvoyé un hachage que vous pouvez utiliser pour accéder au fichier à partir de n&#8217;importe quel nœud Swarm. Par exemple, vous pouvez utiliser la <a href="https://bit.ly/2znWUP9" class="bare">https://bit.ly/2znWUP9</a> [passerelle Swarm publique].</p>
 </div>
 <div class="paragraph">
-<p>Bien que le téléchargement d&#39;un fichier soit relativement simple, il est un peu plus complexe de télécharger une interface DApp entière. En effet, les différentes ressources DApp (HTML, CSS, JavaScript, bibliothèques, etc.) ont des références intégrées les unes aux autres. Normalement, un serveur Web traduit les URL en fichiers locaux et fournit les bonnes ressources. Nous pouvons obtenir la même chose pour Swarm en empaquetant notre DApp.</p>
+<p>Bien que le téléchargement d&#8217;un fichier soit relativement simple, il est un peu plus complexe de télécharger une interface DApp entière. En effet, les différentes ressources DApp (HTML, CSS, JavaScript, bibliothèques, etc.) ont des références intégrées les unes aux autres. Normalement, un serveur Web traduit les URL en fichiers locaux et fournit les bonnes ressources. Nous pouvons obtenir la même chose pour Swarm en empaquetant notre DApp.</p>
 </div>
 <div class="paragraph">
 <p>Dans la DApp d&#8217;enchères, il existe un script pour regrouper toutes les ressources :</p>
@@ -999,7 +999,7 @@ Build complete.
 
 </pre>
 <div class="paragraph">
-<p>Le résultat de cette commande sera un nouveau répertoire, <em>code/auction_dapp/frontend/dist</em>, qui contient l&#39;intégralité de l&#39;interface Auction DApp, regroupée :</p>
+<p>Le résultat de cette commande sera un nouveau répertoire, <em>code/auction_dapp/frontend/dist</em>, qui contient l&#8217;intégralité de l&#8217;interface Auction DApp, regroupée :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1019,7 +1019,7 @@ Build complete.
 </div>
 </div>
 <div class="paragraph">
-<p>Vous pouvez maintenant télécharger l&#39;intégralité du DApp sur Swarm, en utilisant la commande up et l&#39;option --recursive. Ici, nous disons également à Swarm que index.html est le defaultpath pour charger cette DApp :</p>
+<p>Vous pouvez maintenant télécharger l&#8217;intégralité du DApp sur Swarm, en utilisant la commande up et l&#8217;option <code>--recursive</code>.Ici, nous disons également à Swarm que index.html est le defaultpath pour charger cette DApp :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>swarm --bzzapi http://localhost:8500 --recursive \
@@ -1029,13 +1029,13 @@ ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581
 
 </pre>
 <div class="paragraph">
-<p>Désormais, l&#39;intégralité de notre DApp d&#8217;enchères est hébergée sur Swarm et accessible par l&#39;URL Swarm :</p>
+<p>Désormais, l&#8217;intégralité de notre DApp d&#8217;enchères est hébergée sur Swarm et accessible par l&#8217;URL Swarm :</p>
 </div>
 <ul class="simplelist">
 <li><em>bzz://ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581</em></li>
 </ul>
 <div class="paragraph">
-<p>Nous avons fait quelques progrès dans la décentralisation de notre DApp, mais nous l&#39;avons rendu plus difficile à utiliser. Une URL comme celle-là est beaucoup moins conviviale qu&#39;un joli nom comme <em>auction_dapp.com</em>. Sommes-nous obligés de sacrifier l&#39;utilisabilité pour gagner en décentralisation ? Pas nécessairement. Dans la section suivante, nous examinerons le service de noms d&#39;Ethereum, qui nous permet d&#39;utiliser des noms faciles à lire tout en préservant la nature décentralisée de notre application.</p>
+<p>Nous avons fait quelques progrès dans la décentralisation de notre DApp, mais nous l&#8217;avons rendu plus difficile à utiliser. Une URL comme celle-là est beaucoup moins conviviale qu&#8217;un joli nom comme <em>auction_dapp.com</em>. Sommes-nous obligés de sacrifier l&#8217;utilisabilité pour gagner en décentralisation ? Pas nécessairement. Dans la section suivante, nous examinerons le service de noms d&#8217;Ethereum, qui nous permet d&#8217;utiliser des noms faciles à lire tout en préservant la nature décentralisée de notre application.</p>
 </div>
 </div>
 </div>
@@ -1045,13 +1045,13 @@ ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581
 <p>Vous pouvez concevoir le meilleur contrat intelligent au monde , mais si vous ne fournissez pas une bonne interface aux utilisateurs, ils ne pourront pas y accéder.</p>
 </div>
 <div class="paragraph">
-<p>Sur Internet traditionnel, le système de noms de domaine (DNS) nous permet d&#39;utiliser des noms lisibles par l&#39;homme dans le navigateur tout en résolvant ces noms en adresses IP ou autres identifiants dans les coulisses. Sur la chaîne de blocs Ethereum, le <em>Ethereum Naming System</em> (ENS) résout le même problème, mais de manière décentralisée.</p>
+<p>Sur Internet traditionnel, le système de noms de domaine (DNS) nous permet d&#8217;utiliser des noms lisibles par l&#8217;homme dans le navigateur tout en résolvant ces noms en adresses IP ou autres identifiants dans les coulisses. Sur la chaîne de blocs Ethereum, le <em>Ethereum Naming System</em> (ENS) résout le même problème, mais de manière décentralisée.</p>
 </div>
 <div class="paragraph">
-<p>Par exemple, l&#39;adresse de don de la Fondation Ethereum est 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359 ; dans un portefeuille qui prend en charge ENS, c&#39;est simplement ethereum.eth.</p>
+<p>Par exemple, l&#8217;adresse de don de la Fondation Ethereum est 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359 ; dans un portefeuille qui prend en charge ENS, c&#8217;est simplement ethereum.eth.</p>
 </div>
 <div class="paragraph">
-<p>ENS est plus qu&#39;un contrat intelligent ; c&#39;est une DApp fondamentale en elle-même, offrant un service de noms décentralisé. En outre, ENS est pris en charge par un certain nombre de DApps pour l&#39;enregistrement, la gestion et les enchères de noms enregistrés. ENS démontre comment les DApps peuvent fonctionner ensemble : c&#39;est une DApp conçue pour servir d&#39;autres DApps, prise en charge par un écosystème de DApps, intégrée dans d&#39;autres DApps, etc.</p>
+<p>ENS est plus qu&#8217;un contrat intelligent ; c&#8217;est une DApp fondamentale en elle-même, offrant un service de noms décentralisé. En outre, ENS est pris en charge par un certain nombre de DApps pour l&#8217;enregistrement, la gestion et les enchères de noms enregistrés. ENS démontre comment les DApps peuvent fonctionner ensemble : c&#8217;est une DApp conçue pour servir d&#8217;autres DApps, prise en charge par un écosystème de DApps, intégrée dans d&#8217;autres DApps, etc.</p>
 </div>
 <div class="paragraph">
 <p>Dans cette section, nous verrons comment fonctionne ENS. Nous montrerons comment vous pouvez configurer votre propre nom et le lier à un portefeuille ou à une adresse Ethereum, comment vous pouvez intégrer ENS dans un autre DApp et comment vous pouvez utiliser ENS pour nommer vos ressources DApp afin de les rendre plus faciles à utiliser.</p>
@@ -1059,10 +1059,10 @@ ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581
 <div class="sect3">
 <h4 id="_histoire_des_services_de_noms_ethereum">Histoire des services de noms Ethereum</h4>
 <div class="paragraph">
-<p> L&#39;enregistrement de noms a été la première application non monétaire des chaînes de blocs, lancée par Namecoin. L&#39;Ethereum <a href="http://bit.ly/2Of1gfZ">White Paper</a> a donné un système d&#39;enregistrement de type Namecoin à deux lignes comme l&#39;un de ses exemples d&#39;applications.</p>
+<p> L&#8217;enregistrement de noms a été la première application non monétaire des chaînes de blocs, lancée par Namecoin. L&#8217;Ethereum <a href="http://bit.ly/2Of1gfZ">White Paper</a> a donné un système d&#8217;enregistrement de type Namecoin à deux lignes comme l&#8217;un de ses exemples d&#8217;applications.</p>
 </div>
 <div class="paragraph">
-<p>Les premières versions de Geth et du client C++ Ethereum avaient un contrat namereg intégré (qui n&#39;est plus utilisé), et de nombreuses propositions et ERC pour les services de noms ont été faites, mais ce n&#39;est que lorsque Nick Johnson a commencé à travailler pour la Fondation Ethereum en 2016. et a pris le projet sous son aile que le travail sérieux sur un registraire a commencé.</p>
+<p>Les premières versions de Geth et du client C++ Ethereum avaient un contrat namereg intégré (qui n&#8217;est plus utilisé), et de nombreuses propositions et ERC pour les services de noms ont été faites, mais ce n&#8217;est que lorsque Nick Johnson a commencé à travailler pour la Fondation Ethereum en 2016. et a pris le projet sous son aile que le travail sérieux sur un registraire a commencé.</p>
 </div>
 <div class="paragraph">
 <p>ENS a été lancé le Star Wars Day, le 4 mai 2017 (après une tentative infructueuse de le lancer le Pi Day, le 15 mars).</p>
@@ -1071,42 +1071,42 @@ ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581
 <div class="sect3">
 <h4 id="_la_spécification_ens">La spécification ENS</h4>
 <div class="paragraph">
-<p>ENS est spécifié principalement dans trois propositions d&#39;amélioration d&#39;Ethereum : EIP-137, qui spécifie les fonctions de base d&#39;ENS ; EIP-162, qui décrit le système d&#39;enchères pour la racine .eth ; et EIP-181, qui spécifie la résolution inverse des adresses.</p>
+<p>ENS est spécifié principalement dans trois propositions d&#8217;amélioration d&#8217;Ethereum : EIP-137, qui spécifie les fonctions de base d&#8217;ENS ; EIP-162, qui décrit le système d&#8217;enchères pour la racine .eth ; et EIP-181, qui spécifie la résolution inverse des adresses.</p>
 </div>
 <div class="paragraph">
-<p>ENS suit une philosophie de conception &quot;sandwich&quot;: une couche très simple en bas, suivie de couches de code plus complexes mais remplaçables, avec une couche supérieure très simple qui conserve tous les fonds dans des comptes séparés.</p>
+<p>ENS suit une philosophie de conception "sandwich": une couche très simple en bas, suivie de couches de code plus complexes mais remplaçables, avec une couche supérieure très simple qui conserve tous les fonds dans des comptes séparés.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_couche_inférieure_nommez_les_propriétaires_et_les_résolveurs">Couche inférieure : nommez les propriétaires et les résolveurs</h4>
 <div class="paragraph">
-<p>L&#39;ENS fonctionne sur des &quot;nœuds&quot; au lieu de noms lisibles par l&#39;homme : un nom lisible par l&#39;homme est converti en nœud à l&#39;aide de l&#39;algorithme &quot;Namehash&quot;.</p>
+<p>L&#8217;ENS fonctionne sur des "nœuds" au lieu de noms lisibles par l&#8217;homme : un nom lisible par l&#8217;homme est converti en nœud à l&#8217;aide de l&#8217;algorithme "Namehash".</p>
 </div>
 <div class="paragraph">
-<p>La couche de base d&#39;ENS est un contrat astucieusement simple (moins de 50 lignes de code) défini par ERC137 qui permet uniquement aux propriétaires de nœuds de définir des informations sur leurs noms et de créer des sous-nœuds (l&#39;équivalent ENS des sous-domaines DNS).</p>
+<p>La couche de base d&#8217;ENS est un contrat astucieusement simple (moins de 50 lignes de code) défini par ERC137 qui permet uniquement aux propriétaires de nœuds de définir des informations sur leurs noms et de créer des sous-nœuds (l&#8217;équivalent ENS des sous-domaines DNS).</p>
 </div>
 <div class="paragraph">
 <p>Les seules fonctions sur la couche de base sont celles qui permettent à un propriétaire de nœud de définir des informations sur son propre nœud (en particulier le résolveur, la durée de vie ou le transfert de propriété) et de créer des propriétaires de nouveaux sous-nœuds.</p>
 </div>
 <div class="sect4">
-<h5 id="_lalgorithme_namehash">L&#39;algorithme Namehash</h5>
+<h5 id="_lalgorithme_namehash">L&#8217;algorithme Namehash</h5>
 <div class="paragraph">
-<p>Namehash est un algorithme récursif qui peut convertir n&#39;importe quel nom en un hachage qui identifie le nom.</p>
+<p>Namehash est un algorithme récursif qui peut convertir n&#8217;importe quel nom en un hachage qui identifie le nom.</p>
 </div>
 <div class="paragraph">
-<p>&quot;Récursif&quot; signifie que nous résolvons le problème en résolvant un sous-problème qui est un problème plus petit du même type, puis utilisons la solution du sous-problème pour résoudre le problème d&#39;origine.</p>
+<p>"Récursif" signifie que nous résolvons le problème en résolvant un sous-problème qui est un problème plus petit du même type, puis utilisons la solution du sous-problème pour résoudre le problème d&#8217;origine.</p>
 </div>
 <div class="paragraph">
-<p>Namehash hache de manière récursive les composants du nom, produisant une chaîne unique de longueur fixe (ou &quot;nœud&quot;) pour tout domaine d&#39;entrée valide. Par exemple, le nœud Namehash de subdomain.example.eth est `keccak(&#39;&lt;example.eth&gt; &#39; nœud) + keccak(&#39;&lt;subdomain&gt;&#39;)&#39;. Le sous-problème que nous devons résoudre est de calculer le nœud pour example.eth, qui est `keccak(&#39;&lt;.eth&gt;&#39; node) + keccak(&#39;&lt;example&gt;&#39;)&#39;. Pour commencer, nous devons calculer le nœud pour eth, qui est `keccak(&lt;root node&gt;) + keccak(&#39;&lt;eth&gt;&#39;)&#39;.</p>
+<p>Namehash hache de manière récursive les composants du nom, produisant une chaîne unique de longueur fixe (ou "nœud") pour tout domaine d&#8217;entrée valide. Par exemple, le nœud Namehash de subdomain.example.eth est <code>keccak('&lt;example.eth&gt; ' nœud) + keccak('&lt;subdomain&gt;')'. Le sous-problème que nous devons résoudre est de calculer le nœud pour `+example.eth+</code>,qui est <code>keccak('&lt;.eth&gt;' node) + keccak('&lt;example&gt;')'. Pour commencer, nous devons calculer le nœud pour `+eth+</code>,qui est `keccak(&lt;root node&gt;) + keccak('&lt;eth&gt;')'.</p>
 </div>
 <div class="paragraph">
-<p>Le nœud racine est ce que nous appelons le &quot;cas de base&quot; de notre récursivité, et nous ne pouvons évidemment pas le définir de manière récursive, sinon l&#39;algorithme ne se terminera jamais ! Le nœud racine est défini comme <code>0x00000000000000000000000000000000000000000000000000000000000</code> (32 zéro octets).</p>
+<p>Le nœud racine est ce que nous appelons le "cas de base" de notre récursivité, et nous ne pouvons évidemment pas le définir de manière récursive, sinon l&#8217;algorithme ne se terminera jamais ! Le nœud racine est défini comme <code>0x00000000000000000000000000000000000000000000000000000000000</code> (32 zéro octets).</p>
 </div>
 <div class="paragraph">
-<p>En mettant tout cela ensemble, le nœud de subdomain.example.eth est donc <code><span class="keep-together">keccak</span>(keccak(keccak(0x0...0 + keccak(&#39;eth&#39;)) + keccak(&#39;example&#39;)) + keccak(&#39;subdomain&#39;))</code>.</p>
+<p>En mettant tout cela ensemble, le nœud de subdomain.example.eth est donc <code><span class="keep-together">keccak</span>(keccak(keccak(0x0...0 + keccak('eth')) + keccak('example')) + keccak('subdomain'))</code>.</p>
 </div>
 <div class="paragraph">
-<p>En généralisant, nous pouvons définir la fonction Namehash comme suit (le cas de base pour le nœud racine, ou nom vide, suivi de l&#39;étape récursive) :</p>
+<p>En généralisant, nous pouvons définir la fonction Namehash comme suit (le cas de base pour le nœud racine, ou nom vide, suivi de l&#8217;étape récursive) :</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1139,16 +1139,16 @@ namehash([label, ...]) = keccak256(namehash(...) + keccak256(label))</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Bien sûr, les sous-domaines peuvent eux-mêmes avoir des sous-domaines : il peut y avoir un sub.subdomain.example.eth après subdomain.example.eth, puis un sub.sub.subdomain.example.eth, et ainsi de suite. Pour éviter un recalcul coûteux, puisque Namehash ne dépend que du nom lui-même, le nœud d&#39;un nom donné peut être précalculé et inséré dans un contrat, éliminant ainsi le besoin de manipulation de chaîne et permettant une recherche immédiate des enregistrements ENS quel que soit le nombre de composants dans le nom brut.</p>
+<p>Bien sûr, les sous-domaines peuvent eux-mêmes avoir des sous-domaines : il peut y avoir un sub.subdomain.example.eth après <code>subdomain.example.eth</code>,puis un <code>sub.sub.subdomain.example.eth</code>,et ainsi de suite. Pour éviter un recalcul coûteux, puisque Namehash ne dépend que du nom lui-même, le nœud d&#8217;un nom donné peut être précalculé et inséré dans un contrat, éliminant ainsi le besoin de manipulation de chaîne et permettant une recherche immédiate des enregistrements ENS quel que soit le nombre de composants dans le nom brut.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_comment_choisir_un_nom_valide">Comment choisir un nom valide</h5>
 <div class="paragraph">
-<p>Les noms consistent en une série d&#39;étiquettes séparées par des points. Bien que les lettres majuscules et minuscules soient autorisées, toutes les étiquettes doivent suivre un processus de normalisation UTS #46 qui plie les étiquettes avant de les hacher, de sorte que les noms avec une casse différente mais une orthographe identique se retrouveront avec le même Namehash.</p>
+<p>Les noms consistent en une série d&#8217;étiquettes séparées par des points. Bien que les lettres majuscules et minuscules soient autorisées, toutes les étiquettes doivent suivre un processus de normalisation UTS #46 qui plie les étiquettes avant de les hacher, de sorte que les noms avec une casse différente mais une orthographe identique se retrouveront avec le même Namehash.</p>
 </div>
 <div class="paragraph">
-<p>Vous pouvez utiliser des étiquettes et des domaines de n&#39;importe quelle longueur, mais pour des raisons de compatibilité avec l&#39;ancien DNS, les règles suivantes sont recommandées :</p>
+<p>Vous pouvez utiliser des étiquettes et des domaines de n&#8217;importe quelle longueur, mais pour des raisons de compatibilité avec l&#8217;ancien DNS, les règles suivantes sont recommandées :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1159,7 +1159,7 @@ namehash([label, ...]) = keccak256(namehash(...) + keccak256(label))</pre>
 <p>Les noms ENS complets ne doivent pas dépasser 255 caractères.</p>
 </li>
 <li>
-<p>Les étiquettes (labels) ne doivent pas commencer ou se terminer par des traits d&#39;union, ni commencer par des chiffres.</p>
+<p>Les étiquettes (labels) ne doivent pas commencer ou se terminer par des traits d&#8217;union, ni commencer par des chiffres.</p>
 </li>
 </ul>
 </div>
@@ -1167,14 +1167,14 @@ namehash([label, ...]) = keccak256(namehash(...) + keccak256(label))</pre>
 <div class="sect4">
 <h5 id="_propriété_du_nœud_racine">Propriété du nœud racine</h5>
 <div class="paragraph">
-<p>L&#39;un des résultats de ce système hiérarchique est qu&#39;il s&#39;appuie sur les propriétaires du nœud racine, qui sont capables de créer des domaines de premier niveau (TLD).</p>
+<p>L&#8217;un des résultats de ce système hiérarchique est qu&#8217;il s&#8217;appuie sur les propriétaires du nœud racine, qui sont capables de créer des domaines de premier niveau (TLD).</p>
 </div>
 <div class="paragraph">
-<p>Alors que l&#39;objectif final est d&#39;adopter un processus décisionnel décentralisé pour les nouveaux TLD, au moment de la rédaction, le nœud racine est contrôlé par un multisig 4 sur 7, détenu par des personnes de différents pays (construit comme un reflet des 7 détenteurs de clés du système DNS).
-En conséquence, une majorité d&#39;au moins 4 des 7 détenteurs de clés est requise pour effectuer tout changement.</p>
+<p>Alors que l&#8217;objectif final est d&#8217;adopter un processus décisionnel décentralisé pour les nouveaux TLD, au moment de la rédaction, le nœud racine est contrôlé par un multisig 4 sur 7, détenu par des personnes de différents pays (construit comme un reflet des 7 détenteurs de clés du système DNS).
+En conséquence, une majorité d&#8217;au moins 4 des 7 détenteurs de clés est requise pour effectuer tout changement.</p>
 </div>
 <div class="paragraph">
-<p>Actuellement, le but et l&#39;objectif de ces détenteurs de clés est de travailler en consensus avec la communauté pour :</p>
+<p>Actuellement, le but et l&#8217;objectif de ces détenteurs de clés est de travailler en consensus avec la communauté pour :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1182,10 +1182,10 @@ En conséquence, une majorité d&#39;au moins 4 des 7 détenteurs de clés est r
 <p>Migrer et mettre à niveau la propriété temporaire du TLD .eth vers un contrat plus permanent une fois le système évalué.</p>
 </li>
 <li>
-<p>Autoriser l&#39;ajout de nouveaux TLD, si la communauté convient qu&#39;ils sont nécessaires.</p>
+<p>Autoriser l&#8217;ajout de nouveaux TLD, si la communauté convient qu&#8217;ils sont nécessaires.</p>
 </li>
 <li>
-<p>Migrer la propriété du multisig racine vers un contrat plus décentralisé, lorsqu&#39;un tel système est convenu, testé et mis en œuvre.</p>
+<p>Migrer la propriété du multisig racine vers un contrat plus décentralisé, lorsqu&#8217;un tel système est convenu, testé et mis en œuvre.</p>
 </li>
 <li>
 <p>Servir de moyen de dernier recours pour traiter les bogues ou les vulnérabilités dans les registres de niveau supérieur.</p>
@@ -1196,7 +1196,7 @@ En conséquence, une majorité d&#39;au moins 4 des 7 détenteurs de clés est r
 <div class="sect4">
 <h5 id="_résolveurs">Résolveurs</h5>
 <div class="paragraph">
-<p>Le contrat ENS de base ne peut pas ajouter de métadonnées aux noms ; c&#39;est le travail des soi-disant « contrats de résolveur ». Ce sont des contrats créés par l&#39;utilisateur qui peuvent répondre à des questions sur le nom, telles que l&#39;adresse Swarm associée à l&#39;application, l&#39;adresse qui reçoit les paiements à l&#39;application (en ether ou en jetons) ou le hachage de l&#39;application (pour vérifier son intégrité).</p>
+<p>Le contrat ENS de base ne peut pas ajouter de métadonnées aux noms ; c&#8217;est le travail des soi-disant « contrats de résolveur ». Ce sont des contrats créés par l&#8217;utilisateur qui peuvent répondre à des questions sur le nom, telles que l&#8217;adresse Swarm associée à l&#8217;application, l&#8217;adresse qui reçoit les paiements à l&#8217;application (en ether ou en jetons) ou le hachage de l&#8217;application (pour vérifier son intégrité).</p>
 </div>
 </div>
 </div>
@@ -1214,19 +1214,19 @@ En conséquence, une majorité d&#39;au moins 4 des 7 détenteurs de clés est r
 <td class="content">
 <div class="paragraph">
 <p>Des travaux sont en cours pour permettre aux propriétaires de domaines DNS traditionnels de revendiquer la propriété ENS.
-Bien qu&#39;en théorie cela puisse fonctionner pour .com, le seul domaine pour lequel cela a été implémenté jusqu&#39;à présent est <a href="http://bit.ly/2SwUuFC">.xyz, et uniquement sur le testnet de Ropsten</a>.</p>
+Bien qu&#8217;en théorie cela puisse fonctionner pour <code>.com</code>,le seul domaine pour lequel cela a été implémenté jusqu&#8217;à présent est <a href="http://bit.ly/2SwUuFC"><code>.xyz</code>,et uniquement sur le testnet de Ropsten</a>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Les domaines .eth sont distribués via un système d&#39;enchères. Il n&#39;y a pas de liste réservée ni de priorité, et la seule façon d&#39;acquérir un nom est d&#39;utiliser le système. Le système d&#39;enchères est un morceau de code complexe (plus de 500 lignes) ; la plupart des premiers efforts de développement (et des bugs !) dans ENS concernaient cette partie du système. Cependant, il est également remplaçable et évolutif, sans risque pour les fonds - nous en reparlerons plus tard.</p>
+<p>Les domaines .eth sont distribués via un système d&#8217;enchères. Il n&#8217;y a pas de liste réservée ni de priorité, et la seule façon d&#8217;acquérir un nom est d&#8217;utiliser le système. Le système d&#8217;enchères est un morceau de code complexe (plus de 500 lignes) ; la plupart des premiers efforts de développement (et des bugs !) dans ENS concernaient cette partie du système. Cependant, il est également remplaçable et évolutif, sans risque pour les fonds - nous en reparlerons plus tard.</p>
 </div>
 <div class="sect4">
 <h5 id="vickrey_auction">Enchères Vickrey</h5>
 <div class="paragraph">
-<p>Les noms sont distribués via une enchère Vickrey modifiée. Dans une enchère Vickrey traditionnelle, chaque enchérisseur soumet une offre scellée, et tous sont révélés simultanément, auquel cas le plus offrant remporte l&#39;enchère mais ne paie que la deuxième offre la plus élevée. Par conséquent, les enchérisseurs sont incités à ne pas enchérir moins que la valeur réelle du nom pour eux, car enchérir sur leur valeur réelle augmente les chances qu&#39;ils gagnent mais n&#39;affecte pas le prix qu&#39;ils paieront finalement.</p>
+<p>Les noms sont distribués via une enchère Vickrey modifiée. Dans une enchère Vickrey traditionnelle, chaque enchérisseur soumet une offre scellée, et tous sont révélés simultanément, auquel cas le plus offrant remporte l&#8217;enchère mais ne paie que la deuxième offre la plus élevée. Par conséquent, les enchérisseurs sont incités à ne pas enchérir moins que la valeur réelle du nom pour eux, car enchérir sur leur valeur réelle augmente les chances qu&#8217;ils gagnent mais n&#8217;affecte pas le prix qu&#8217;ils paieront finalement.</p>
 </div>
 <div class="paragraph">
 <p>Sur une chaîne de blocs, certains changements sont nécessaires :</p>
@@ -1234,36 +1234,36 @@ Bien qu&#39;en théorie cela puisse fonctionner pour .com, le seul domaine pour 
 <div class="ulist">
 <ul>
 <li>
-<p>Pour s&#39;assurer que les enchérisseurs ne soumettent pas d&#39;enchères qu&#39;ils n&#39;ont pas l&#39;intention de payer, ils doivent verrouiller au préalable une valeur égale ou supérieure à leur enchère, afin de garantir la validité de l&#39;enchère.</p>
+<p>Pour s&#8217;assurer que les enchérisseurs ne soumettent pas d&#8217;enchères qu&#8217;ils n&#8217;ont pas l&#8217;intention de payer, ils doivent verrouiller au préalable une valeur égale ou supérieure à leur enchère, afin de garantir la validité de l&#8217;enchère.</p>
 </li>
 <li>
-<p>Étant donné que vous ne pouvez pas cacher de secrets sur une chaîne de blocs, les enchérisseurs doivent exécuter au moins deux transactions (un processus de validation-révélation) afin de masquer la valeur et le nom d&#39;origine sur lesquels ils ont enchéri.</p>
+<p>Étant donné que vous ne pouvez pas cacher de secrets sur une chaîne de blocs, les enchérisseurs doivent exécuter au moins deux transactions (un processus de validation-révélation) afin de masquer la valeur et le nom d&#8217;origine sur lesquels ils ont enchéri.</p>
 </li>
 <li>
-<p>Étant donné que vous ne pouvez pas révéler toutes les offres simultanément dans un système décentralisé, les enchérisseurs doivent révéler eux-mêmes leurs propres offres ; s&#39;ils ne le font pas, ils perdent leurs fonds bloqués. Sans ce forfait, on pourrait faire de nombreuses offres et choisir de n&#39;en révéler qu&#39;une ou deux, transformant une enchère à offre scellée en une <span class="keep-together">enchère</span> de prix croissant traditionnelle.</p>
+<p>Étant donné que vous ne pouvez pas révéler toutes les offres simultanément dans un système décentralisé, les enchérisseurs doivent révéler eux-mêmes leurs propres offres ; s&#8217;ils ne le font pas, ils perdent leurs fonds bloqués. Sans ce forfait, on pourrait faire de nombreuses offres et choisir de n&#8217;en révéler qu&#8217;une ou deux, transformant une enchère à offre scellée en une <span class="keep-together">enchère</span> de prix croissant traditionnelle.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Par conséquent, l&#39;enchère est un processus en quatre étapes :</p>
+<p>Par conséquent, l&#8217;enchère est un processus en quatre étapes :</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Lancez l&#39;enchère. Ceci est nécessaire pour diffuser l&#39;intention d&#39;enregistrer un nom.
-Cela crée toutes les dates limites d&#39;enchères. Les noms sont hachés, de sorte que seuls ceux qui ont le nom dans leur dictionnaire sauront quelle enchère a été ouverte. Cela permet une certaine confidentialité, ce qui est utile si vous créez un nouveau projet et que vous ne souhaitez pas partager de détails à son sujet.
-Vous pouvez ouvrir plusieurs enchères fictives en même temps, donc si quelqu&#39;un vous suit, il ne peut pas simplement enchérir sur toutes les enchères que vous ouvrez.</p>
+<p>Lancez l&#8217;enchère. Ceci est nécessaire pour diffuser l&#8217;intention d&#8217;enregistrer un nom.
+Cela crée toutes les dates limites d&#8217;enchères. Les noms sont hachés, de sorte que seuls ceux qui ont le nom dans leur dictionnaire sauront quelle enchère a été ouverte. Cela permet une certaine confidentialité, ce qui est utile si vous créez un nouveau projet et que vous ne souhaitez pas partager de détails à son sujet.
+Vous pouvez ouvrir plusieurs enchères fictives en même temps, donc si quelqu&#8217;un vous suit, il ne peut pas simplement enchérir sur toutes les enchères que vous ouvrez.</p>
 </li>
 <li>
-<p>Faites une offre scellée. Vous devez le faire avant la date limite d&#39;enchère, en liant une quantité donnée d&#39;ether au hachage d&#39;un message secret (contenant, entre autres, le hachage du nom, le montant réel de l&#39;enchère et un sel).
-Vous pouvez verrouiller plus d&#39;ether que vous n&#39;enchérissez réellement afin de masquer votre véritable évaluation.</p>
+<p>Faites une offre scellée. Vous devez le faire avant la date limite d&#8217;enchère, en liant une quantité donnée d&#8217;ether au hachage d&#8217;un message secret (contenant, entre autres, le hachage du nom, le montant réel de l&#8217;enchère et un sel).
+Vous pouvez verrouiller plus d&#8217;ether que vous n&#8217;enchérissez réellement afin de masquer votre véritable évaluation.</p>
 </li>
 <li>
-<p>Révélez l&#39;enchère. Pendant la période de révélation, vous devez effectuer une transaction qui révèle l&#39;enchère, qui calculera ensuite l&#39;enchère la plus élevée et la deuxième enchère la plus élevée et renverra l&#39;ether aux enchérisseurs non retenus.
-Chaque fois que l&#39;enchère est révélée, le gagnant actuel est recalculé ; par conséquent, le dernier à être défini avant l&#39;expiration du délai de révélation devient le grand gagnant.</p>
+<p>Révélez l&#8217;enchère. Pendant la période de révélation, vous devez effectuer une transaction qui révèle l&#8217;enchère, qui calculera ensuite l&#8217;enchère la plus élevée et la deuxième enchère la plus élevée et renverra l&#8217;ether aux enchérisseurs non retenus.
+Chaque fois que l&#8217;enchère est révélée, le gagnant actuel est recalculé ; par conséquent, le dernier à être défini avant l&#8217;expiration du délai de révélation devient le grand gagnant.</p>
 </li>
 <li>
-<p>Nettoyer après. Si vous êtes le gagnant, vous pouvez finaliser l&#39;enchère afin de récupérer la différence entre votre enchère et la deuxième enchère la plus élevée.
+<p>Nettoyer après. Si vous êtes le gagnant, vous pouvez finaliser l&#8217;enchère afin de récupérer la différence entre votre enchère et la deuxième enchère la plus élevée.
 Si vous avez oublié de révéler, vous pouvez faire une révélation tardive et récupérer une partie de votre enchère.</p>
 </li>
 </ol>
@@ -1273,53 +1273,53 @@ Si vous avez oublié de révéler, vous pouvez faire une révélation tardive et
 <div class="sect3">
 <h4 id="_couche_supérieure_les_actes">Couche supérieure : les actes</h4>
 <div class="paragraph">
-<p>La couche supérieure d&#39;ENS est encore un autre contrat super simple avec un seul but : détenir les fonds.</p>
+<p>La couche supérieure d&#8217;ENS est encore un autre contrat super simple avec un seul but : détenir les fonds.</p>
 </div>
 <div class="paragraph">
 <p>Lorsque vous gagnez un nom, les fonds ne sont en fait envoyés nulle part, mais sont simplement bloqués pendant la période pendant laquelle vous souhaitez conserver le nom (au moins un an).
-Cela fonctionne comme un rachat garanti : si le propriétaire ne veut plus du nom, il peut le revendre au système et récupérer son ether (ainsi, le coût de détention du nom est le coût d&#39;opportunité de faire quelque chose avec un rendement supérieur à zéro ).</p>
+Cela fonctionne comme un rachat garanti : si le propriétaire ne veut plus du nom, il peut le revendre au système et récupérer son ether (ainsi, le coût de détention du nom est le coût d&#8217;opportunité de faire quelque chose avec un rendement supérieur à zéro ).</p>
 </div>
 <div class="paragraph">
-<p>Bien sûr, avoir un seul contrat détenant des millions de dollars en ether s&#39;est avéré très risqué, donc à la place, ENS crée un contrat d&#39;acte pour chaque nouveau nom.
-Le contrat d&#39;acte est très simple (environ 50 lignes de code), et il ne permet que les fonds d&#39;être transférés vers un seul compte (le propriétaire de l&#39;acte) et d&#39;être appelés par une seule entité (le contrat du registraire).
-Cette approche réduit considérablement la surface d&#39;attaque où les bogues peuvent mettre les fonds en danger.</p>
+<p>Bien sûr, avoir un seul contrat détenant des millions de dollars en ether s&#8217;est avéré très risqué, donc à la place, ENS crée un contrat d&#8217;acte pour chaque nouveau nom.
+Le contrat d&#8217;acte est très simple (environ 50 lignes de code), et il ne permet que les fonds d&#8217;être transférés vers un seul compte (le propriétaire de l&#8217;acte) et d&#8217;être appelés par une seule entité (le contrat du registraire).
+Cette approche réduit considérablement la surface d&#8217;attaque où les bogues peuvent mettre les fonds en danger.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_enregistrer_un_nom">Enregistrer un nom</h4>
 <div class="paragraph">
-<p>L&#39;enregistrement d&#39;un nom dans ENS est un processus en quatre étapes, comme nous l&#39;avons vu dans <a href="#vickrey_auction">Enchères Vickrey</a>. Nous plaçons d&#39;abord une enchère pour n&#39;importe quel nom disponible, puis nous révélons notre enchère après 48 heures pour sécuriser le nom. <a href="#ens_registration_timeline">Calendrier ENS pour l&#39;enregistrement</a> est un schéma montrant le calendrier d&#39;enregistrement.</p>
+<p>L&#8217;enregistrement d&#8217;un nom dans ENS est un processus en quatre étapes, comme nous l&#8217;avons vu dans <a href="#vickrey_auction">Enchères Vickrey</a>. Nous plaçons d&#8217;abord une enchère pour n&#8217;importe quel nom disponible, puis nous révélons notre enchère après 48 heures pour sécuriser le nom. <a href="#ens_registration_timeline">Calendrier ENS pour l&#8217;enregistrement</a> est un schéma montrant le calendrier d&#8217;enregistrement.</p>
 </div>
 <div class="paragraph">
 <p>Enregistrons notre premier nom !</p>
 </div>
 <div class="paragraph">
-<p>Nous utiliserons l&#39;une des nombreuses interfaces conviviales disponibles pour rechercher les noms disponibles, placer une enchère sur le nom ethereumbook.eth, révéler l&#39;enchère et sécuriser le nom.</p>
+<p>Nous utiliserons l&#8217;une des nombreuses interfaces conviviales disponibles pour rechercher les noms disponibles, placer une enchère sur le nom <code>ethereumbook.eth</code>,révéler l&#8217;enchère et sécuriser le nom.</p>
 </div>
 <div class="paragraph">
-<p>Il existe un certain nombre d&#39;interfaces Web vers ENS qui nous permettent d&#39;interagir avec l&#39;ENS DApp. Pour cet exemple, nous utiliserons l&#39;interface <a href="https://mycrypto.com/">MyCrypto</a>, en conjonction avec MetaMask comme portefeuille.</p>
+<p>Il existe un certain nombre d&#8217;interfaces Web vers ENS qui nous permettent d&#8217;interagir avec l&#8217;ENS DApp. Pour cet exemple, nous utiliserons l&#8217;interface <a href="https://mycrypto.com/">MyCrypto</a>, en conjonction avec MetaMask comme portefeuille.</p>
 </div>
 <div id="ens_registration_timeline" class="imageblock">
 <div class="content">
 <img src="images/ens-flow.png" alt="ens flow">
 </div>
-<div class="title">Figure 5. Calendrier ENS pour l&#39;enregistrement</div>
+<div class="title">Figure 5. Calendrier ENS pour l&#8217;enregistrement</div>
 </div>
 <div class="paragraph">
-<p>Tout d&#39;abord, nous devons nous assurer que le nom que nous voulons est disponible. En écrivant ce livre, nous voulions vraiment enregistrer le nom mastering.eth, mais hélas, <a href="#ens-name-search">Recherche de noms ENS sur MyCrypto.com</a> a révélé qu&#39;il était déjà pris ! Comme les inscriptions à l&#39;ENS ne durent qu&#39;un an, il pourrait devenir possible d&#39;obtenir ce nom à l&#39;avenir. En attendant, recherchons ethereumbook.eth (<a href="#ens-name-search">Recherche de noms ENS sur MyCrypto.com</a>).</p>
+<p>Tout d&#8217;abord, nous devons nous assurer que le nom que nous voulons est disponible. En écrivant ce livre, nous voulions vraiment enregistrer le nom <code>mastering.eth</code>,mais hélas, <a href="#ens-name-search">Recherche de noms ENS sur MyCrypto.com</a> a révélé qu&#8217;il était déjà pris ! Comme les inscriptions à l&#8217;ENS ne durent qu&#8217;un an, il pourrait devenir possible d&#8217;obtenir ce nom à l&#8217;avenir. En attendant, recherchons ethereumbook.eth (<a href="#ens-name-search">Recherche de noms ENS sur MyCrypto.com</a>).</p>
 </div>
 <div id="ens-name-search" class="imageblock">
 <div class="content">
-<img src="images/ens-checkname.png" alt="&quot;Recherche de noms ENS sur MyCrypto.com&quot;">
+<img src="images/ens-checkname.png" alt="Recherche de noms ENS sur MyCrypto.com">
 </div>
 <div class="title">Figure 6. Recherche de noms ENS sur MyCrypto.com</div>
 </div>
 <div class="paragraph">
-<p>Génial! Le nom est disponible. Pour l&#39;enregistrer, nous devons avancer avec <a href="#ens-auction">Démarrer une offre d&#8217;enchère pour un nom ENS</a>. Débloquons MetaMask et commençons notre enregistrement pour ethereumbook.eth.</p>
+<p>Génial! Le nom est disponible. Pour l&#8217;enregistrer, nous devons avancer avec <a href="#ens-auction">Démarrer une offre d&#8217;enchère pour un nom ENS</a>. Débloquons MetaMask et commençons notre enregistrement pour ethereumbook.eth.</p>
 </div>
 <div id="ens-auction" class="imageblock">
 <div class="content">
-<img src="images/ens-auction.png" alt="&quot;Démarrer une offre d&#8217;enchère pour un nom ENS&quot;">
+<img src="images/ens-auction.png" alt="Démarrer une offre d&#8217;enchère pour un nom ENS">
 </div>
 <div class="title">Figure 7. Démarrer une offre d&#8217;enchère pour un nom ENS</div>
 </div>
@@ -1328,7 +1328,7 @@ Cette approche réduit considérablement la surface d&#39;attaque où les bogues
 </div>
 <div id="ens-bid" class="imageblock">
 <div class="content">
-<img src="images/ens-bid.png" alt="&quot;Placer une offre d&#8217;enchère pour un nom ENS&quot;">
+<img src="images/ens-bid.png" alt="Placer une offre d&#8217;enchère pour un nom ENS">
 </div>
 <div class="title">Figure 8. Placer une offre pour un nom ENS</div>
 </div>
@@ -1340,10 +1340,10 @@ Cette approche réduit considérablement la surface d&#39;attaque où les bogues
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Comme mentionné dans <a href="#vickrey_auction">Enchères Vickrey</a>, vous devez révéler votre enchère dans les 48 heures suivant la fin de l&#39;enchère, sinon vous <em>perdez les fonds de votre enchère</em>. Avons-nous oublié de le faire et avons-nous perdu 0,01 ETH nous-mêmes ? Vous pariez que nous l&#39;avons fait.</p>
+<p>Comme mentionné dans <a href="#vickrey_auction">Enchères Vickrey</a>, vous devez révéler votre enchère dans les 48 heures suivant la fin de l&#8217;enchère, sinon vous <em>perdez les fonds de votre enchère</em>. Avons-nous oublié de le faire et avons-nous perdu 0,01 ETH nous-mêmes ? Vous pariez que nous l&#8217;avons fait.</p>
 </div>
 <div class="paragraph">
-<p>Prenez une capture d&#39;écran, enregistrez votre phrase secrète (comme sauvegarde pour votre enchère) et ajoutez un rappel dans votre calendrier pour la date et l&#39;heure de révélation, afin de ne pas oublier et de ne pas perdre vos fonds.</p>
+<p>Prenez une capture d&#8217;écran, enregistrez votre phrase secrète (comme sauvegarde pour votre enchère) et ajoutez un rappel dans votre calendrier pour la date et l&#8217;heure de révélation, afin de ne pas oublier et de ne pas perdre vos fonds.</p>
 </div>
 </td>
 </tr>
@@ -1354,39 +1354,39 @@ Cette approche réduit considérablement la surface d&#39;attaque où les bogues
 </div>
 <div id="ens-metamask-enchère" class="imageblock">
 <div class="content">
-<img src="images/ens-metamask-bid.png" alt="&quot;Transaction MetaMask contenant votre enchère&quot;">
+<img src="images/ens-metamask-bid.png" alt="Transaction MetaMask contenant votre enchère">
 </div>
 <div class="title">Figure 9. Transaction MetaMask contenant votre enchère</div>
 </div>
 <div class="paragraph">
-<p>Si tout se passe bien, après avoir soumis une transaction de cette manière, vous pouvez revenir et révéler l&#39;offre dans les 48 heures, et le nom que vous avez demandé sera enregistré sur votre adresse Ethereum.</p>
+<p>Si tout se passe bien, après avoir soumis une transaction de cette manière, vous pouvez revenir et révéler l&#8217;offre dans les 48 heures, et le nom que vous avez demandé sera enregistré sur votre adresse Ethereum.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_gérer_votre_nom_ens">Gérer votre nom ENS</h4>
 <div class="paragraph">
-<p> Une fois que vous avez enregistré un nom ENS, vous pouvez le gérer à l&#39;aide d&#39;une autre interface conviviale : <a href="https://manager.ens.domains/">ENS Manager</a>.</p>
+<p> Une fois que vous avez enregistré un nom ENS, vous pouvez le gérer à l&#8217;aide d&#8217;une autre interface conviviale : <a href="https://manager.ens.domains/">ENS Manager</a>.</p>
 </div>
 <div class="paragraph">
-<p>Une fois là-bas, saisissez le nom que vous souhaitez gérer dans la zone de recherche (voir <a href="#ens-manager">L&#39;interface web ENS Manager</a>). Vous devez avoir votre portefeuille Ethereum (par exemple, MetaMask) déverrouillé, afin que le DApp ENS Manager puisse gérer l&#8217;enregistrement en votre nom.</p>
+<p>Une fois là-bas, saisissez le nom que vous souhaitez gérer dans la zone de recherche (voir <a href="#ens-manager">L&#8217;interface web ENS Manager</a>). Vous devez avoir votre portefeuille Ethereum (par exemple, MetaMask) déverrouillé, afin que le DApp ENS Manager puisse gérer l&#8217;enregistrement en votre nom.</p>
 </div>
 <div id="ens-manager" class="imageblock">
 <div class="content">
-<img src="images/ens-manager.png" alt="&quot;L&#39;interface web de l&#39;ENS Manager&quot;">
+<img src="images/ens-manager.png" alt="L&#8217;interface web de l&#8217;ENS Manager">
 </div>
-<div class="title">Figure 10. L&#39;interface web ENS Manager</div>
+<div class="title">Figure 10. L&#8217;interface web ENS Manager</div>
 </div>
 <div class="paragraph">
-<p>À partir de cette interface, nous pouvons créer des sous-domaines, définir un contrat de résolution (nous en reparlerons plus tard) et connecter chaque nom à la ressource appropriée, telle que l&#39;adresse Swarm d&#39;une interface DApp.</p>
+<p>À partir de cette interface, nous pouvons créer des sous-domaines, définir un contrat de résolution (nous en reparlerons plus tard) et connecter chaque nom à la ressource appropriée, telle que l&#8217;adresse Swarm d&#8217;une interface DApp.</p>
 </div>
 <div class="sect4">
-<h5 id="_création_dun_sous_domaine_ens">Création d&#39;un sous-domaine ENS</h5>
+<h5 id="_création_dun_sous_domaine_ens">Création d&#8217;un sous-domaine ENS</h5>
 <div class="paragraph">
-<p>Commençons par créer un sous-domaine pour notre exemple de DApp d&#8217;enchères (voir <a href="#ens-manager-add-subdomain">[ens-manager-add-subdomain]</a>). Nous nommerons le sous-domaine auction, donc le nom complet sera auction.ethereumbook.eth.</p>
+<p>Commençons par créer un sous-domaine pour notre exemple de DApp d&#8217;enchères (voir <a href="#ens-manager-add-subdomain">[ens-manager-add-subdomain]</a>). Nous nommerons le sous-domaine <code>auction</code>,donc le nom complet sera auction.ethereumbook.eth.</p>
 </div>
 <div id="ens-manager-ajouter-sous-domaine" class="imageblock">
 <div class="content">
-<img src="images/ens_manager_add_subdomain.png" alt="&quot;Ajout du sous-domaine auction.ethereumbook.eth&quot;">
+<img src="images/ens_manager_add_subdomain.png" alt="Ajout du sous-domaine auction.ethereumbook.eth">
 </div>
 <div class="title">Figure 11. Ajout du sous-domaine auction.ethereumbook.eth</div>
 </div>
@@ -1398,13 +1398,13 @@ Cette approche réduit considérablement la surface d&#39;attaque où les bogues
 <div class="sect3 pagebreak-before">
 <h4 id="_résolveurs_ens">Résolveurs ENS</h4>
 <div class="paragraph">
-<p>Dans ENS, la résolution d&#39;un nom est un processus en deux étapes :</p>
+<p>Dans ENS, la résolution d&#8217;un nom est un processus en deux étapes :</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Le registre ENS est appelé avec le nom à résoudre après l&#39;avoir haché.
-Si l&#39;enregistrement existe, le registre renvoie l&#39;adresse de son résolveur.</p>
+<p>Le registre ENS est appelé avec le nom à résoudre après l&#8217;avoir haché.
+Si l&#8217;enregistrement existe, le registre renvoie l&#8217;adresse de son résolveur.</p>
 </li>
 <li>
 <p>Le résolveur est appelé, en utilisant la méthode appropriée à la ressource demandée. Le résolveur renvoie le résultat souhaité.</p>
@@ -1412,31 +1412,31 @@ Si l&#39;enregistrement existe, le registre renvoie l&#39;adresse de son résolv
 </ol>
 </div>
 <div class="paragraph">
-<p>Ce processus en deux étapes présente plusieurs avantages. Séparer la fonctionnalité des résolveurs du système de nommage lui-même nous donne beaucoup plus de flexibilité. Les propriétaires de noms peuvent utiliser des résolveurs personnalisés pour résoudre n&#39;importe quel type ou ressource, étendant ainsi les fonctionnalités d&#39;ENS. Par exemple, si à l&#39;avenir vous vouliez lier une ressource de géolocalisation (longitude/lattitude) à un nom ENS, vous pourriez créer un nouveau résolveur qui répond à une requête de <span class="keep-together"><code>géolocalisation</code></span>. Qui sait quelles applications pourraient être utiles à l&#39;avenir ? Avec les résolveurs personnalisés, la seule limite est votre imagination.</p>
+<p>Ce processus en deux étapes présente plusieurs avantages. Séparer la fonctionnalité des résolveurs du système de nommage lui-même nous donne beaucoup plus de flexibilité. Les propriétaires de noms peuvent utiliser des résolveurs personnalisés pour résoudre n&#8217;importe quel type ou ressource, étendant ainsi les fonctionnalités d&#8217;ENS. Par exemple, si à l&#8217;avenir vous vouliez lier une ressource de géolocalisation (longitude/lattitude) à un nom ENS, vous pourriez créer un nouveau résolveur qui répond à une requête de <span class="keep-together"><code>géolocalisation</code></span>. Qui sait quelles applications pourraient être utiles à l&#8217;avenir ? Avec les résolveurs personnalisés, la seule limite est votre imagination.</p>
 </div>
 <div class="paragraph">
-<p>Pour plus de commodité, il existe un résolveur public par défaut qui peut résoudre une variété de ressources, y compris l&#39;adresse (pour les portefeuilles ou les contrats) et le contenu (un hachage Swarm pour les DApps ou le code source du contrat).</p>
+<p>Pour plus de commodité, il existe un résolveur public par défaut qui peut résoudre une variété de ressources, y compris l&#8217;adresse (pour les portefeuilles ou les contrats) et le contenu (un hachage Swarm pour les DApps ou le code source du contrat).</p>
 </div>
 <div class="paragraph">
-<p>Puisque nous voulons lier notre DApp d&#8217;enchères à un hachage Swarm, nous pouvons utiliser le résolveur public, qui prend en charge la résolution de contenu, comme indiqué dans <a href="#ens-manager-set-default-resolver">Définition du résolveur public par défaut pour auction.ethereumbook.eth</a> ; nous n&#39;avons pas besoin de coder ou de déployer un résolveur personnalisé.</p>
+<p>Puisque nous voulons lier notre DApp d&#8217;enchères à un hachage Swarm, nous pouvons utiliser le résolveur public, qui prend en charge la résolution de contenu, comme indiqué dans <a href="#ens-manager-set-default-resolver">Définition du résolveur public par défaut pour auction.ethereumbook.eth</a> ; nous n&#8217;avons pas besoin de coder ou de déployer un résolveur personnalisé.</p>
 </div>
 <div id="ens-manager-set-default-resolver" class="imageblock">
 <div class="content">
-<img src="images/ens-manager-set-default-resolver.png" alt="&quot;Définir le résolveur public par défaut pour auction.ethereumbook.eth&quot;">
+<img src="images/ens-manager-set-default-resolver.png" alt="Définir le résolveur public par défaut pour auction.ethereumbook.eth">
 </div>
 <div class="title">Figure 12. Définition du résolveur public par défaut pour auction.ethereumbook.eth</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_résolution_dun_nom_en_un_hachage_swarm_contenu">Résolution d&#39;un nom en un hachage Swarm (contenu)</h4>
+<h4 id="_résolution_dun_nom_en_un_hachage_swarm_contenu">Résolution d&#8217;un nom en un hachage Swarm (contenu)</h4>
 <div class="paragraph">
-<p>Une fois que le résolveur pour auction.ethereumbook.eth est défini pour être le résolveur public, nous pouvons le configurer pour qu&#39;il renvoie le hachage Swarm comme contenu de notre nom (voir <a href="#ens-set-content">Définition du &#39;contenu&#39; à retourner pour auction.ethereumbook.eth</a>).</p>
+<p>Une fois que le résolveur pour auction.ethereumbook.eth est défini pour être le résolveur public, nous pouvons le configurer pour qu&#8217;il renvoie le hachage Swarm comme contenu de notre nom (voir <a href="#ens-set-content">Définition du 'contenu' à retourner pour auction.ethereumbook.eth</a>).</p>
 </div>
 <div id="ens-set-content" class="imageblock">
 <div class="content">
-<img src="images/ens-manager-set-content.png" alt="&quot;Définir le retour &#39;contenu&#39; pour auction.ethereumbook.eth&quot;">
+<img src="images/ens-manager-set-content.png" alt="Définir le retour 'contenu' pour auction.ethereumbook.eth">
 </div>
-<div class="title">Figure 13. Définition du &#39;contenu&#39; à retourner pour auction.ethereumbook.eth</div>
+<div class="title">Figure 13. Définition du 'contenu' à retourner pour auction.ethereumbook.eth</div>
 </div>
 <div class="paragraph">
 <p>Après avoir attendu un peu de temps pour que notre transaction soit confirmée, nous devrions être en mesure de résoudre correctement le nom. Avant de définir un nom, notre DApp d&#8217;enchères pouvait être trouvée sur une passerelle Swarm par son hachage :</p>
@@ -1445,47 +1445,47 @@ Si l&#39;enregistrement existe, le registre renvoie l&#39;adresse de son résolv
 <li><em>https://swarm-gateways.net/bzz:/ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581</em></li>
 </ul>
 <div class="paragraph">
-<p>ou en recherchant dans un navigateur DApp ou une passerelle Swarm pour l&#39;URL Swarm :</p>
+<p>ou en recherchant dans un navigateur DApp ou une passerelle Swarm pour l&#8217;URL Swarm :</p>
 </div>
 <ul class="simplelist">
 <li><em>bzz://ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581</em></li>
 </ul>
 <div class="paragraph pagebreak-before">
-<p>Maintenant que nous l&#39;avons attaché à un nom, c&#39;est beaucoup plus simple :</p>
+<p>Maintenant que nous l&#8217;avons attaché à un nom, c&#8217;est beaucoup plus simple :</p>
 </div>
 <ul class="simplelist">
 <li><em>http://swarm-gateways.net/bzz:/auction.ethereumbook.eth/</em></li>
 </ul>
 <div class="paragraph">
-<p>Nous pouvons également le trouver en recherchant &quot;auction.ethereumbook.eth&quot; dans n&#39;importe quel portefeuille compatible ENS ou navigateur DApp (par exemple, Mist).</p>
+<p>Nous pouvons également le trouver en recherchant "auction.ethereumbook.eth" dans n&#8217;importe quel portefeuille compatible ENS ou navigateur DApp (par exemple, Mist).</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_de_lapplication_à_la_dapp">De l&#39;application à la DApp</h3>
+<h3 id="_de_lapplication_à_la_dapp">De l&#8217;application à la DApp</h3>
 <div class="paragraph">
-<p>Au cours des dernières sections, nous avons progressivement construit une application décentralisée. Nous avons commencé avec une paire de contrats intelligents pour organiser une vente aux enchères d&#39;actes ERC721. Ces contrats ont été conçus pour ne pas avoir de compte gouvernant ou privilégié, de sorte que leur fonctionnement est véritablement décentralisé. Nous avons ajouté une interface, implémentée en JavaScript, qui offre une interface pratique et conviviale à notre DApp. La DApp d&#39;enchères utilise le système de stockage décentralisé Swarm pour stocker les ressources d&#39;application telles que les images. La DApp utilise également le protocole de communication décentralisé Whisper pour offrir une salle de chat cryptée pour chaque enchère, sans aucun serveur central.</p>
+<p>Au cours des dernières sections, nous avons progressivement construit une application décentralisée. Nous avons commencé avec une paire de contrats intelligents pour organiser une vente aux enchères d&#8217;actes ERC721. Ces contrats ont été conçus pour ne pas avoir de compte gouvernant ou privilégié, de sorte que leur fonctionnement est véritablement décentralisé. Nous avons ajouté une interface, implémentée en JavaScript, qui offre une interface pratique et conviviale à notre DApp. La DApp d&#8217;enchères utilise le système de stockage décentralisé Swarm pour stocker les ressources d&#8217;application telles que les images. La DApp utilise également le protocole de communication décentralisé Whisper pour offrir une salle de chat cryptée pour chaque enchère, sans aucun serveur central.</p>
 </div>
 <div class="paragraph">
-<p>Nous avons téléchargé l&#39;intégralité de l&#39;interface sur Swarm, afin que notre DApp ne s&#39;appuie sur aucun serveur Web pour servir les fichiers. Enfin, nous avons attribué un nom à notre DApp en utilisant ENS, en le connectant au hachage Swarm de l&#39;interface, afin que les utilisateurs puissent y accéder avec un nom simple et facile à retenir, lisible par l&#39;homme.</p>
+<p>Nous avons téléchargé l&#8217;intégralité de l&#8217;interface sur Swarm, afin que notre DApp ne s&#8217;appuie sur aucun serveur Web pour servir les fichiers. Enfin, nous avons attribué un nom à notre DApp en utilisant ENS, en le connectant au hachage Swarm de l&#8217;interface, afin que les utilisateurs puissent y accéder avec un nom simple et facile à retenir, lisible par l&#8217;homme.</p>
 </div>
 <div class="paragraph">
-<p>A chacune de ces étapes, nous avons augmenté la décentralisation de notre application. Le résultat final est une DApp qui n&#39;a pas de point central d&#39;autorité, pas de point central de défaillance, et exprime la vision &quot;web3&quot;.</p>
+<p>A chacune de ces étapes, nous avons augmenté la décentralisation de notre application. Le résultat final est une DApp qui n&#8217;a pas de point central d&#8217;autorité, pas de point central de défaillance, et exprime la vision "web3".</p>
 </div>
 <div class="paragraph">
-<p><a href="#auction_dapp_final_architecture">Architecture DApp d&#39;enchères</a> montre l&#39;architecture complète de la DApp d&#8217;enchères.</p>
+<p><a href="#auction_dapp_final_architecture">Architecture DApp d&#8217;enchères</a> montre l&#8217;architecture complète de la DApp d&#8217;enchères.</p>
 </div>
 <div id="auction_dapp_final_architecture" class="imageblock">
 <div class="content">
-<img src="images/auction_dapp_final_architecture.png" alt="&quot;Architecture DApp d&#39;enchères&quot;">
+<img src="images/auction_dapp_final_architecture.png" alt="Architecture DApp d&#8217;enchères">
 </div>
-<div class="title">Figure 14. Architecture DApp d&#39;enchères</div>
+<div class="title">Figure 14. Architecture DApp d&#8217;enchères</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_conclusion">Conclusion</h3>
 <div class="paragraph">
-<p>Les applications décentralisées sont l&#39;aboutissement de la vision d&#39;Ethereum, telle qu&#39;exprimée par les fondateurs dès les premières conceptions. Alors que de nombreuses applications s&#39;appellent aujourd&#39;hui &quot;DApps&quot;, la plupart ne sont pas entièrement décentralisées. Cependant, il est déjà possible de construire des applications presque totalement décentralisées. Au fil du temps, à mesure que la technologie mûrit, de plus en plus de nos applications peuvent être décentralisées, ce qui se traduit par un Web plus résilient, résistant à la censure et libre.</p>
+<p>Les applications décentralisées sont l&#8217;aboutissement de la vision d&#8217;Ethereum, telle qu&#8217;exprimée par les fondateurs dès les premières conceptions. Alors que de nombreuses applications s&#8217;appellent aujourd&#8217;hui "DApps", la plupart ne sont pas entièrement décentralisées. Cependant, il est déjà possible de construire des applications presque totalement décentralisées. Au fil du temps, à mesure que la technologie mûrit, de plus en plus de nos applications peuvent être décentralisées, ce qui se traduit par un Web plus résilient, résistant à la censure et libre.</p>
 </div>
 </div>
 </div>
@@ -1493,7 +1493,7 @@ Si l&#39;enregistrement existe, le registre renvoie l&#39;adresse de son résolv
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 03:50:42 -0400
+Last updated 2022-05-15 04:38:05 -0400
 </div>
 </div>
 </body>

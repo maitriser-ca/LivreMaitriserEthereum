@@ -444,75 +444,75 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="smart_contracts_chapter">Contrats intelligents et Solidity</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Comme nous en avons discuté dans <a href="#intro_chapter">[intro_chapter]</a>, il existe deux types de comptes différents dans Ethereum : les comptes externes (EOA) et comptes contractuels. Les EOA sont contrôlés par les utilisateurs, souvent via un logiciel tel qu&#39;une application de portefeuille externe à la plate-forme Ethereum.  contrats ») qui est exécuté par la machine virtuelle Ethereum. En bref, les EOA sont de simples comptes sans code ni stockage de données associés, tandis que les comptes contractuels ont à la fois un code et un stockage de données associés. Les EOA sont contrôlés par des transactions créées et signées cryptographiquement avec une clé privée dans le &quot;monde réel&quot; externe et indépendant du protocole, alors que les comptes contractuels n&#39;ont pas de clés privées et &quot;se contrôlent&quot; donc de la manière prédéterminée prescrite par leur code de contrat intelligent. Les deux types de comptes sont identifiés par une adresse Ethereum. Dans ce chapitre, nous discuterons des comptes contractuels et du code de programme qui les contrôle.</p>
+<p>Comme nous en avons discuté dans <a href="#intro_chapter">[intro_chapter]</a>, il existe deux types de comptes différents dans Ethereum : les comptes externes (EOA) et comptes contractuels. Les EOA sont contrôlés par les utilisateurs, souvent via un logiciel tel qu&#8217;une application de portefeuille externe à la plate-forme Ethereum.  contrats ») qui est exécuté par la machine virtuelle Ethereum. En bref, les EOA sont de simples comptes sans code ni stockage de données associés, tandis que les comptes contractuels ont à la fois un code et un stockage de données associés. Les EOA sont contrôlés par des transactions créées et signées cryptographiquement avec une clé privée dans le "monde réel" externe et indépendant du protocole, alors que les comptes contractuels n&#8217;ont pas de clés privées et "se contrôlent" donc de la manière prédéterminée prescrite par leur code de contrat intelligent. Les deux types de comptes sont identifiés par une adresse Ethereum. Dans ce chapitre, nous discuterons des comptes contractuels et du code de programme qui les contrôle.</p>
 </div>
 <div class="sect2">
-<h3 id="smart_contracts_definition">Qu&#39;est-ce qu&#39;un contrat intelligent ?</h3>
+<h3 id="smart_contracts_definition">Qu&#8217;est-ce qu&#8217;un contrat intelligent ?</h3>
 <div class="paragraph">
-<p>Le terme <em>contrat intelligent</em> a été utilisé au fil des ans pour décrire une grande variété de choses différentes. Dans les années 1990, le cryptographe Nick Szabo a inventé le terme et l&#39;a défini comme &quot;un ensemble de promesses, spécifiées sous forme numérique, y compris des protocoles au sein que les parties exécutent sur les autres promesses. Depuis lors, le concept de contrats intelligents a évolué, notamment après l&#39;introduction de plateformes de chaîne de blocs décentralisées avec l&#39;invention de Bitcoin en 2009. Dans le contexte d&#39;Ethereum, le terme est en fait un peu impropre, étant donné que les contrats intelligents Ethereum ne sont ni des contrats intelligents ni légaux, mais le terme est resté. Dans ce livre, nous utilisons le terme «contrats intelligents» pour désigner des programmes informatiques immuables qui s&#39;exécutent de manière déterministe dans le contexte d&#39;une machine virtuelle Ethereum dans le cadre du protocole réseau Ethereum, c&#39;est-à-dire sur l&#39;ordinateur mondial Ethereum décentralisé.</p>
+<p>Le terme <em>contrat intelligent</em> a été utilisé au fil des ans pour décrire une grande variété de choses différentes. Dans les années 1990, le cryptographe Nick Szabo a inventé le terme et l&#8217;a défini comme "un ensemble de promesses, spécifiées sous forme numérique, y compris des protocoles au sein que les parties exécutent sur les autres promesses. Depuis lors, le concept de contrats intelligents a évolué, notamment après l&#8217;introduction de plateformes de chaîne de blocs décentralisées avec l&#8217;invention de Bitcoin en 2009. Dans le contexte d&#8217;Ethereum, le terme est en fait un peu impropre, étant donné que les contrats intelligents Ethereum ne sont ni des contrats intelligents ni légaux, mais le terme est resté. Dans ce livre, nous utilisons le terme «contrats intelligents» pour désigner des programmes informatiques immuables qui s&#8217;exécutent de manière déterministe dans le contexte d&#8217;une machine virtuelle Ethereum dans le cadre du protocole réseau Ethereum, c&#8217;est-à-dire sur l&#8217;ordinateur mondial Ethereum décentralisé.</p>
 </div>
 <div class="paragraph">
 <p>Déballons cette définition :</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Logiciels d&#39;ordinateur</dt>
+<dt class="hdlist1">Logiciels d&#8217;ordinateur</dt>
 <dd>
-<p>Les contrats intelligents sont simplement des programmes informatiques. Le mot « contrat » n&#39;a aucune signification juridique dans ce contexte.</p>
+<p>Les contrats intelligents sont simplement des programmes informatiques. Le mot « contrat » n&#8217;a aucune signification juridique dans ce contexte.</p>
 </dd>
 <dt class="hdlist1">Immuable</dt>
 <dd>
-<p>Une fois déployé, le code d&#39;un contrat intelligent ne peut pas changer. Contrairement aux logiciels traditionnels, la seule façon de modifier un contrat intelligent est de déployer une nouvelle instance.</p>
+<p>Une fois déployé, le code d&#8217;un contrat intelligent ne peut pas changer. Contrairement aux logiciels traditionnels, la seule façon de modifier un contrat intelligent est de déployer une nouvelle instance.</p>
 </dd>
 <dt class="hdlist1">Déterministe</dt>
 <dd>
-<p>Le résultat de l&#39;exécution d&#39;un contrat intelligent est le même pour tous ceux qui l&#39;exécutent, compte tenu du contexte de la transaction qui a initié son exécution et de l&#39;état de la chaîne de blocs Ethereum au moment de l&#39;exécution.</p>
+<p>Le résultat de l&#8217;exécution d&#8217;un contrat intelligent est le même pour tous ceux qui l&#8217;exécutent, compte tenu du contexte de la transaction qui a initié son exécution et de l&#8217;état de la chaîne de blocs Ethereum au moment de l&#8217;exécution.</p>
 </dd>
 <dt class="hdlist1">Contexte EVM</dt>
 <dd>
-<p>Les contrats intelligents fonctionnent avec un contexte d&#39;exécution très limité. Ils peuvent accéder à leur propre état, au contexte de la transaction qui les a appelés et à certaines informations sur les blocs les plus récents.</p>
+<p>Les contrats intelligents fonctionnent avec un contexte d&#8217;exécution très limité. Ils peuvent accéder à leur propre état, au contexte de la transaction qui les a appelés et à certaines informations sur les blocs les plus récents.</p>
 </dd>
 <dt class="hdlist1">Ordinateur mondial décentralisé</dt>
 <dd>
-<p>L&#39;EVM fonctionne comme une instance locale sur chaque nœud Ethereum, mais comme toutes les instances de l&#39;EVM fonctionnent sur le même état initial et produisent le même état final, le système dans son ensemble fonctionne comme un seul &quot;ordinateur mondial&quot;.</p>
+<p>L&#8217;EVM fonctionne comme une instance locale sur chaque nœud Ethereum, mais comme toutes les instances de l&#8217;EVM fonctionnent sur le même état initial et produisent le même état final, le système dans son ensemble fonctionne comme un seul "ordinateur mondial".</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect2">
-<h3 id="smart_contract_lifecycle">Cycle de vie d&#39;un contrat intelligent</h3>
+<h3 id="smart_contract_lifecycle">Cycle de vie d&#8217;un contrat intelligent</h3>
 <div class="paragraph">
-<p>Les contrats intelligents sont généralement écrits dans un langage de haut niveau, tel que Solidity. Mais pour fonctionner, ils doivent être compilés dans le code intermédiaire (bytecode) de bas niveau qui s&#39;exécute dans l&#39;EVM. Une fois compilés, ils sont déployés sur la plateforme Ethereum à l&#39;aide d&#39;une transaction spéciale de <em>création de contrat</em>, qui est identifiée comme telle en étant envoyée à l&#39;adresse spéciale de création de contrat, à savoir 0x0 (voir <a href="#contract_reg">[contract_reg]</a>). Chaque contrat est identifié par une adresse Ethereum, qui est dérivée de la transaction de création de contrat en fonction du compte d&#39;origine et du nonce. L&#39;adresse Ethereum d&#39;un contrat peut être utilisée dans une transaction en tant que destinataire, envoyer des fonds au contrat ou appeler l&#39;une des fonctions du contrat. Notez que, contrairement aux EOA, il n&#39;y a pas de clés associées à un compte créé pour un nouveau contrat intelligent. En tant que créateur du contrat, vous n&#39;obtenez aucun privilège spécial au niveau du protocole (bien que vous puissiez les coder explicitement dans le contrat intelligent). Vous ne recevez certainement pas la clé privée du compte de contrat, qui en fait n&#39;existe pas - nous pouvons dire que les comptes de contrat intelligents se possèdent eux-mêmes.</p>
+<p>Les contrats intelligents sont généralement écrits dans un langage de haut niveau, tel que Solidity. Mais pour fonctionner, ils doivent être compilés dans le code intermédiaire (bytecode) de bas niveau qui s&#8217;exécute dans l&#8217;EVM. Une fois compilés, ils sont déployés sur la plateforme Ethereum à l&#8217;aide d&#8217;une transaction spéciale de <em>création de contrat</em>, qui est identifiée comme telle en étant envoyée à l&#8217;adresse spéciale de création de contrat, à savoir 0x0 (voir <a href="#contract_reg">[contract_reg]</a>). Chaque contrat est identifié par une adresse Ethereum, qui est dérivée de la transaction de création de contrat en fonction du compte d&#8217;origine et du nonce. L&#8217;adresse Ethereum d&#8217;un contrat peut être utilisée dans une transaction en tant que destinataire, envoyer des fonds au contrat ou appeler l&#8217;une des fonctions du contrat. Notez que, contrairement aux EOA, il n&#8217;y a pas de clés associées à un compte créé pour un nouveau contrat intelligent. En tant que créateur du contrat, vous n&#8217;obtenez aucun privilège spécial au niveau du protocole (bien que vous puissiez les coder explicitement dans le contrat intelligent). Vous ne recevez certainement pas la clé privée du compte de contrat, qui en fait n&#8217;existe pas - nous pouvons dire que les comptes de contrat intelligents se possèdent eux-mêmes.</p>
 </div>
 <div class="paragraph">
-<p>Il est important de noter que les contrats <em>ne s&#39;exécutent que s&#39;ils sont appelés par une transaction</em>. Tous les contrats intelligents dans Ethereum sont exécutés, en fin de compte, en raison d&#39;une transaction initiée à partir d&#39;un EOA. Un contrat peut appeler un autre contrat qui peut appeler un autre contrat, et ainsi de suite, mais le premier contrat d&#39;une telle chaîne d&#39;exécution aura toujours été appelé par une transaction d&#39;un EOA. Les contrats ne fonctionnent jamais &quot;seuls&quot; ou &quot;en arrière-plan&quot;. Les contrats restent effectivement inactifs jusqu&#39;à ce qu&#39;une transaction déclenche l&#39;exécution, soit directement, soit indirectement dans le cadre d&#39;une chaîne d&#39;appels de contrats. Il convient également de noter que les contrats intelligents ne sont en aucun cas exécutés &quot;en parallèle&quot; - l&#39;ordinateur mondial Ethereum peut être considéré comme une machine à un seul fil d&#8217;exécution (thread).</p>
+<p>Il est important de noter que les contrats <em>ne s&#8217;exécutent que s&#8217;ils sont appelés par une transaction</em>. Tous les contrats intelligents dans Ethereum sont exécutés, en fin de compte, en raison d&#8217;une transaction initiée à partir d&#8217;un EOA. Un contrat peut appeler un autre contrat qui peut appeler un autre contrat, et ainsi de suite, mais le premier contrat d&#8217;une telle chaîne d&#8217;exécution aura toujours été appelé par une transaction d&#8217;un EOA. Les contrats ne fonctionnent jamais "seuls" ou "en arrière-plan". Les contrats restent effectivement inactifs jusqu&#8217;à ce qu&#8217;une transaction déclenche l&#8217;exécution, soit directement, soit indirectement dans le cadre d&#8217;une chaîne d&#8217;appels de contrats. Il convient également de noter que les contrats intelligents ne sont en aucun cas exécutés "en parallèle" - l&#8217;ordinateur mondial Ethereum peut être considéré comme une machine à un seul fil d&#8217;exécution (thread).</p>
 </div>
 <div class="paragraph">
-<p>Les transactions sont <em>atomique</em>, quel que soit le nombre de contrats qu&#39;elles appellent ou ce que ces contrats font lorsqu&#39;ils sont appelés. Les transactions s&#39;exécutent dans leur intégralité, avec tout changement dans l&#39;état global (contrats, comptes, etc.) enregistré uniquement si toutes les exécutions se terminent avec succès. Une fin réussie signifie que le programme s&#39;est exécuté sans erreur et a atteint la fin de l&#39;exécution. Si l&#39;exécution échoue en raison d&#39;une erreur, tous ses effets (changements d&#39;état) sont &quot;annulés&quot; comme si la transaction n&#39;avait jamais été exécutée. Une transaction échouée est toujours enregistrée comme ayant été tentée, et l&#39;ether dépensé en gaz pour l&#39;exécution est déduit du compte d&#39;origine, mais cela n&#39;a par ailleurs aucun autre effet sur le contrat ou l&#39;état du compte.</p>
+<p>Les transactions sont <em>atomique</em>, quel que soit le nombre de contrats qu&#8217;elles appellent ou ce que ces contrats font lorsqu&#8217;ils sont appelés. Les transactions s&#8217;exécutent dans leur intégralité, avec tout changement dans l&#8217;état global (contrats, comptes, etc.) enregistré uniquement si toutes les exécutions se terminent avec succès. Une fin réussie signifie que le programme s&#8217;est exécuté sans erreur et a atteint la fin de l&#8217;exécution. Si l&#8217;exécution échoue en raison d&#8217;une erreur, tous ses effets (changements d&#8217;état) sont "annulés" comme si la transaction n&#8217;avait jamais été exécutée. Une transaction échouée est toujours enregistrée comme ayant été tentée, et l&#8217;ether dépensé en gaz pour l&#8217;exécution est déduit du compte d&#8217;origine, mais cela n&#8217;a par ailleurs aucun autre effet sur le contrat ou l&#8217;état du compte.</p>
 </div>
 <div class="paragraph">
-<p>Comme mentionné précédemment, il est important de se rappeler que le code d&#39;un contrat ne peut pas être modifié. Cependant, un contrat peut être &quot;supprimé&quot;, supprimant le code et son état interne (stockage) de son adresse, laissant un compte vide. Toutes les transactions envoyées à cette adresse de compte après la suppression du contrat n&#39;entraînent aucune exécution de code, car il n&#39;y a plus de code à exécuter. Pour supprimer un contrat, vous exécutez un opcode EVM appelé SELFDESTRUCT (précédemment appelé SUICIDE). Cette opération coûte du &quot;gaz négatif&quot;, un remboursement de gaz, incitant ainsi à libérer les ressources du client du réseau à partir de la suppression de l&#39;état stocké. La suppression d&#39;un contrat de cette manière ne supprime pas l&#39;historique des transactions (passé) du contrat, car la chaîne de blocs elle-même est immuable. Il est également important de noter que la capacité SELFDESTRUCT ne sera disponible que si l&#39;auteur du contrat a programmé le contrat intelligent pour avoir cette fonctionnalité. Si le code du contrat n&#39;a pas d&#39;opcode SELFDESTRUCT, ou s&#39;il est inaccessible, le contrat intelligent ne peut pas être supprimé.</p>
+<p>Comme mentionné précédemment, il est important de se rappeler que le code d&#8217;un contrat ne peut pas être modifié. Cependant, un contrat peut être "supprimé", supprimant le code et son état interne (stockage) de son adresse, laissant un compte vide. Toutes les transactions envoyées à cette adresse de compte après la suppression du contrat n&#8217;entraînent aucune exécution de code, car il n&#8217;y a plus de code à exécuter. Pour supprimer un contrat, vous exécutez un opcode EVM appelé SELFDESTRUCT (précédemment appelé SUICIDE). Cette opération coûte du "gaz négatif", un remboursement de gaz, incitant ainsi à libérer les ressources du client du réseau à partir de la suppression de l&#8217;état stocké. La suppression d&#8217;un contrat de cette manière ne supprime pas l&#8217;historique des transactions (passé) du contrat, car la chaîne de blocs elle-même est immuable. Il est également important de noter que la capacité SELFDESTRUCT ne sera disponible que si l&#8217;auteur du contrat a programmé le contrat intelligent pour avoir cette fonctionnalité. Si le code du contrat n&#8217;a pas d&#8217;opcode <code>SELFDESTRUCT</code>,ou s&#8217;il est inaccessible, le contrat intelligent ne peut pas être supprimé.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="high_level_languages">Introduction aux langages de haut niveau Ethereum</h3>
 <div class="paragraph">
-<p>L&#39;EVM est une machine virtuelle qui exécute une forme spéciale de code appelé <em>code intermédiaire EVM</em> ou <em>EVM bytecode</em>, analogue au processeur de votre ordinateur, qui exécute un code machine tel que x86_64. Nous examinerons le fonctionnement et le langage de l&#39;EVM de manière beaucoup plus détaillée dans <a href="#evm_chapter">[evm_chapter]</a>. Dans cette section, nous verrons comment les contrats intelligents sont écrits pour s&#39;exécuter sur l&#39;EVM.</p>
+<p>L&#8217;EVM est une machine virtuelle qui exécute une forme spéciale de code appelé <em>code intermédiaire EVM</em> ou <em>EVM bytecode</em>, analogue au processeur de votre ordinateur, qui exécute un code machine tel que x86_64. Nous examinerons le fonctionnement et le langage de l&#8217;EVM de manière beaucoup plus détaillée dans <a href="#evm_chapter">[evm_chapter]</a>. Dans cette section, nous verrons comment les contrats intelligents sont écrits pour s&#8217;exécuter sur l&#8217;EVM.</p>
 </div>
 <div class="paragraph">
-<p>Bien qu&#39;il soit possible de programmer des contrats intelligents directement en code intermédiaire, le code intermédiaire EVM est plutôt lourd et très difficile à lire et à comprendre pour les programmeurs. Au lieu de cela, la plupart des développeurs Ethereum utilisent un langage de haut niveau pour écrire des programmes et un compilateur pour les convertir en code intermédiaire.</p>
+<p>Bien qu&#8217;il soit possible de programmer des contrats intelligents directement en code intermédiaire, le code intermédiaire EVM est plutôt lourd et très difficile à lire et à comprendre pour les programmeurs. Au lieu de cela, la plupart des développeurs Ethereum utilisent un langage de haut niveau pour écrire des programmes et un compilateur pour les convertir en code intermédiaire.</p>
 </div>
 <div class="paragraph">
-<p>Bien que n&#39;importe quel langage de haut niveau puisse être adapté pour écrire des contrats intelligents, adapter un langage arbitraire pour qu&#39;il soit compilable au code intermédiaire EVM est un exercice assez fastidieux et conduirait en général à une certaine confusion. Les contrats intelligents fonctionnent dans un environnement d&#39;exécution très contraint et minimaliste (l&#39;EVM). De plus, un ensemble spécial de variables système et de fonctions spécifiques à EVM doit être disponible. En tant que tel, il est plus facile de créer un langage de contrat intelligent à partir de zéro que de créer un langage à usage général adapté à l&#39;écriture de contrats intelligents. En conséquence, un certain nombre de langages spéciaux ont émergé pour programmer des contrats intelligents. Ethereum possède plusieurs langages de ce type, ainsi que les compilateurs nécessaires pour produire un code intermédiaire exécutable EVM.</p>
+<p>Bien que n&#8217;importe quel langage de haut niveau puisse être adapté pour écrire des contrats intelligents, adapter un langage arbitraire pour qu&#8217;il soit compilable au code intermédiaire EVM est un exercice assez fastidieux et conduirait en général à une certaine confusion. Les contrats intelligents fonctionnent dans un environnement d&#8217;exécution très contraint et minimaliste (l&#8217;EVM). De plus, un ensemble spécial de variables système et de fonctions spécifiques à EVM doit être disponible. En tant que tel, il est plus facile de créer un langage de contrat intelligent à partir de zéro que de créer un langage à usage général adapté à l&#8217;écriture de contrats intelligents. En conséquence, un certain nombre de langages spéciaux ont émergé pour programmer des contrats intelligents. Ethereum possède plusieurs langages de ce type, ainsi que les compilateurs nécessaires pour produire un code intermédiaire exécutable EVM.</p>
 </div>
 <div class="paragraph">
-<p>En général, les langages de programmation peuvent être classés en deux grands paradigmes de programmation : <em>déclaratif</em> et <em>impératif</em>, également appelés respectivement <em>fonctionnel</em> et <em>procédural</em>. En programmation déclarative, nous écrivons des fonctions qui expriment la <em>logique</em> d&#39;un programme, mais pas son <em>flux</em>. La programmation déclarative est utilisée pour créer des programmes sans <em>effets secondaires</em>, ce qui signifie qu&#39;il n&#39;y a pas de changement d&#39;état en dehors d&#39;une fonction. Les langages de programmation déclaratifs incluent Haskell et SQL. La programmation impérative, en revanche, est l&#39;endroit où un programmeur écrit un ensemble de procédures qui combinent la logique et le déroulement d&#39;un programme. Les langages de programmation impératifs incluent C++ et Java. Certains langages sont « hybrides », ce qui signifie qu&#39;ils encouragent la programmation déclarative mais peuvent également être utilisés pour exprimer un paradigme de programmation impérative. Ces hybrides incluent Lisp, JavaScript et Python. En général, n&#39;importe quel langage impératif peut être utilisé pour écrire dans un paradigme déclaratif, mais il en résulte souvent un code inélégant. Par comparaison, les langages déclaratifs purs ne peuvent pas être utilisés pour écrire dans un paradigme impératif. Dans les langages purement déclaratifs, <em>il n&#39;y a pas de &quot;variables&quot;.</em></p>
+<p>En général, les langages de programmation peuvent être classés en deux grands paradigmes de programmation : <em>déclaratif</em> et <em>impératif</em>, également appelés respectivement <em>fonctionnel</em> et <em>procédural</em>. En programmation déclarative, nous écrivons des fonctions qui expriment la <em>logique</em> d&#8217;un programme, mais pas son <em>flux</em>. La programmation déclarative est utilisée pour créer des programmes sans <em>effets secondaires</em>, ce qui signifie qu&#8217;il n&#8217;y a pas de changement d&#8217;état en dehors d&#8217;une fonction. Les langages de programmation déclaratifs incluent Haskell et SQL. La programmation impérative, en revanche, est l&#8217;endroit où un programmeur écrit un ensemble de procédures qui combinent la logique et le déroulement d&#8217;un programme. Les langages de programmation impératifs incluent C++ et Java. Certains langages sont « hybrides », ce qui signifie qu&#8217;ils encouragent la programmation déclarative mais peuvent également être utilisés pour exprimer un paradigme de programmation impérative. Ces hybrides incluent Lisp, JavaScript et Python. En général, n&#8217;importe quel langage impératif peut être utilisé pour écrire dans un paradigme déclaratif, mais il en résulte souvent un code inélégant. Par comparaison, les langages déclaratifs purs ne peuvent pas être utilisés pour écrire dans un paradigme impératif. Dans les langages purement déclaratifs, <em>il n&#8217;y a pas de "variables".</em></p>
 </div>
 <div class="paragraph">
-<p>Bien que la programmation impérative soit plus couramment utilisée par les programmeurs, il peut être très difficile d&#39;écrire des programmes qui s&#39;exécutent <em>exactement comme prévu</em>. La capacité de n&#39;importe quelle partie du programme à modifier l&#39;état de n&#39;importe quelle autre rend difficile le raisonnement sur l&#39;exécution d&#39;un programme et introduit de nombreuses opportunités de bogues. La programmation déclarative, par comparaison, permet de comprendre plus facilement le comportement d&#39;un programme : puisqu&#39;elle n&#39;a pas d&#39;effets secondaires, n&#39;importe quelle partie d&#39;un programme peut être comprise isolément.</p>
+<p>Bien que la programmation impérative soit plus couramment utilisée par les programmeurs, il peut être très difficile d&#8217;écrire des programmes qui s&#8217;exécutent <em>exactement comme prévu</em>. La capacité de n&#8217;importe quelle partie du programme à modifier l&#8217;état de n&#8217;importe quelle autre rend difficile le raisonnement sur l&#8217;exécution d&#8217;un programme et introduit de nombreuses opportunités de bogues. La programmation déclarative, par comparaison, permet de comprendre plus facilement le comportement d&#8217;un programme : puisqu&#8217;elle n&#8217;a pas d&#8217;effets secondaires, n&#8217;importe quelle partie d&#8217;un programme peut être comprise isolément.</p>
 </div>
 <div class="paragraph">
-<p>Dans les contrats intelligents, les bogues coûtent littéralement de l&#39;argent. Par conséquent, il est extrêmement important de rédiger des contrats intelligents sans effets indésirables. Pour ce faire, vous devez être capable de raisonner clairement sur le comportement attendu du programme. Ainsi, les langages déclaratifs jouent un rôle beaucoup plus important dans les contrats intelligents que dans les logiciels à usage général. Néanmoins, comme vous le verrez, le langage le plus utilisé pour les contrats intelligents (Solidity) est impératif. Les programmeurs, comme la plupart des humains, résistent au changement !</p>
+<p>Dans les contrats intelligents, les bogues coûtent littéralement de l&#8217;argent. Par conséquent, il est extrêmement important de rédiger des contrats intelligents sans effets indésirables. Pour ce faire, vous devez être capable de raisonner clairement sur le comportement attendu du programme. Ainsi, les langages déclaratifs jouent un rôle beaucoup plus important dans les contrats intelligents que dans les logiciels à usage général. Néanmoins, comme vous le verrez, le langage le plus utilisé pour les contrats intelligents (Solidity) est impératif. Les programmeurs, comme la plupart des humains, résistent au changement !</p>
 </div>
 <div class="paragraph">
 <p>Les langages de programmation de haut niveau actuellement pris en charge pour les contrats intelligents incluent (classés par âge approximatif) :</p>
@@ -521,11 +521,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1">LLL</dt>
 <dd>
-<p>Un langage de programmation fonctionnel (déclaratif), avec une syntaxe de type Lisp. C&#39;était le premier langage de haut niveau pour les contrats intelligents Ethereum, mais il est rarement utilisé aujourd&#39;hui.</p>
+<p>Un langage de programmation fonctionnel (déclaratif), avec une syntaxe de type Lisp. C&#8217;était le premier langage de haut niveau pour les contrats intelligents Ethereum, mais il est rarement utilisé aujourd&#8217;hui.</p>
 </dd>
 <dt class="hdlist1">Serpent</dt>
 <dd>
-<p>Un langage de programmation procédural (impératif) avec une syntaxe similaire à Python. Peut également être utilisé pour écrire du code fonctionnel (déclaratif), bien qu&#39;il ne soit pas entièrement exempt d&#39;effets secondaires.</p>
+<p>Un langage de programmation procédural (impératif) avec une syntaxe similaire à Python. Peut également être utilisé pour écrire du code fonctionnel (déclaratif), bien qu&#8217;il ne soit pas entièrement exempt d&#8217;effets secondaires.</p>
 </dd>
 <dt class="hdlist1">Solidity</dt>
 <dd>
@@ -533,45 +533,45 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">Vyper</dt>
 <dd>
-<p>Un langage développé plus récemment, similaire à Serpent et encore une fois avec une syntaxe de type Python. Destiné à se rapprocher d&#39;un langage de type Python purement fonctionnel que Serpent, mais pas à remplacer Serpent.</p>
+<p>Un langage développé plus récemment, similaire à Serpent et encore une fois avec une syntaxe de type Python. Destiné à se rapprocher d&#8217;un langage de type Python purement fonctionnel que Serpent, mais pas à remplacer Serpent.</p>
 </dd>
 <dt class="hdlist1">Bamboo</dt>
 <dd>
-<p>Un langage nouvellement développé, influencé par Erlang, avec des transitions d&#39;état explicites et sans flux itératifs (boucles). Destiné à réduire les effets secondaires et à augmenter l&#39;auditabilité. Très nouveau et en attente d&#8217;être largement adopté.</p>
+<p>Un langage nouvellement développé, influencé par Erlang, avec des transitions d&#8217;état explicites et sans flux itératifs (boucles). Destiné à réduire les effets secondaires et à augmenter l&#8217;auditabilité. Très nouveau et en attente d&#8217;être largement adopté.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Comme vous pouvez le voir, il existe de nombreux languages parmi lesquelles choisir. Cependant, de tous, Solidity est de loin le plus populaire, au point d&#39;être le langage de haut niveau <em>de facto</em> d&#39;Ethereum et même d&#39;autres chaînes de blocs de type EVM. Nous passerons la plupart de notre temps à utiliser Solidity, mais nous explorerons également certains des exemples dans d&#39;autres langages de haut niveau pour comprendre leurs différentes philosophies.</p>
+<p>Comme vous pouvez le voir, il existe de nombreux languages parmi lesquelles choisir. Cependant, de tous, Solidity est de loin le plus populaire, au point d&#8217;être le langage de haut niveau <em>de facto</em> d&#8217;Ethereum et même d&#8217;autres chaînes de blocs de type EVM. Nous passerons la plupart de notre temps à utiliser Solidity, mais nous explorerons également certains des exemples dans d&#8217;autres langages de haut niveau pour comprendre leurs différentes philosophies.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="building_a_smart_contract_sec">Construire un contrat intelligent avec Solidity</h3>
 <div class="paragraph">
-<p>Solidity a été créé par Dr. Gavin Wood (co-auteur de ce livre) en tant que langage explicite pour écrire des contrats intelligents avec des fonctionnalités permettant de prendre directement en charge l&#39;exécution dans l&#39;environnement décentralisé de l&#39;ordinateur mondial Ethereum. Les attributs résultants sont assez généraux et ont donc fini par être utilisés pour coder des contrats intelligents sur plusieurs autres plateformes de chaîne de blocs. Il a été développé par Christian Reitiwessner puis également par Alex Beregszaszi, Liana Husikyan, Yoichi Hirai et plusieurs anciens contributeurs principaux d&#39;Ethereum. Solidity est maintenant développé et maintenu en tant que projet indépendant <a href="https://github.com/ethereum/solidity">sur GitHub</a>.</p>
+<p>Solidity a été créé par Dr. Gavin Wood (co-auteur de ce livre) en tant que langage explicite pour écrire des contrats intelligents avec des fonctionnalités permettant de prendre directement en charge l&#8217;exécution dans l&#8217;environnement décentralisé de l&#8217;ordinateur mondial Ethereum. Les attributs résultants sont assez généraux et ont donc fini par être utilisés pour coder des contrats intelligents sur plusieurs autres plateformes de chaîne de blocs. Il a été développé par Christian Reitiwessner puis également par Alex Beregszaszi, Liana Husikyan, Yoichi Hirai et plusieurs anciens contributeurs principaux d&#8217;Ethereum. Solidity est maintenant développé et maintenu en tant que projet indépendant <a href="https://github.com/ethereum/solidity">sur GitHub</a>.</p>
 </div>
 <div class="paragraph">
-<p>Le &quot;produit&quot; principal du projet Solidity est le compilateur Solidity, solc, qui convertit les programmes écrits dans le langage Solidity en code intermédiaire EVM. Le projet gère également l&#39;importante norme d&#39;interface binaire d&#39;application (ABI) pour les contrats intelligents Ethereum, que nous explorerons en détail dans ce chapitre. Chaque version du compilateur Solidity correspond à et compile une version spécifique de <span class="keep-together">language</span> de Solidity.</p>
+<p>Le "produit" principal du projet Solidity est le compilateur Solidity, <code>solc</code>,qui convertit les programmes écrits dans le langage Solidity en code intermédiaire EVM. Le projet gère également l&#8217;importante norme d&#8217;interface binaire d&#8217;application (ABI) pour les contrats intelligents Ethereum, que nous explorerons en détail dans ce chapitre. Chaque version du compilateur Solidity correspond à et compile une version spécifique de <span class="keep-together">language</span> de Solidity.</p>
 </div>
 <div class="paragraph">
-<p>Pour commencer, nous allons télécharger un exécutable binaire du compilateur Solidity. Ensuite, nous développerons et compilerons un contrat simple, à la suite de l&#39;exemple avec lequel nous avons commencé dans <a href="#intro_chapter">[intro_chapter]</a>.</p>
+<p>Pour commencer, nous allons télécharger un exécutable binaire du compilateur Solidity. Ensuite, nous développerons et compilerons un contrat simple, à la suite de l&#8217;exemple avec lequel nous avons commencé dans <a href="#intro_chapter">[intro_chapter]</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_sélection_dune_version_de_solidity">Sélection d&#39;une version de Solidity</h4>
+<h4 id="_sélection_dune_version_de_solidity">Sélection d&#8217;une version de Solidity</h4>
 <div class="paragraph">
-<p>Solidity suit un modèle de versionnage appelé <a href="https://semver.org/"><em>versionnage de sémantique</em></a> (<em>semantic versioning</em>), qui spécifie les numéros de version structurés comme trois nombres séparés par des points : <em>MAJEUR.MINEUR.CORRECTIF</em>. Le numéro &quot;majeur&quot; est incrémenté pour les modifications majeures et <em>rétro-incompatibles</em>, le numéro &quot;mineur&quot; est incrémenté lorsque des fonctionnalités rétrocompatibles sont ajoutées entre les versions majeures, et le numéro &quot;correctif&quot; est incrémenté pour les corrections de bogues rétrocompatibles.</p>
+<p>Solidity suit un modèle de versionnage appelé <a href="https://semver.org/"><em>versionnage de sémantique</em></a> (<em>semantic versioning</em>), qui spécifie les numéros de version structurés comme trois nombres séparés par des points : <em>MAJEUR.MINEUR.CORRECTIF</em>. Le numéro "majeur" est incrémenté pour les modifications majeures et <em>rétro-incompatibles</em>, le numéro "mineur" est incrémenté lorsque des fonctionnalités rétrocompatibles sont ajoutées entre les versions majeures, et le numéro "correctif" est incrémenté pour les corrections de bogues rétrocompatibles.</p>
 </div>
 <div class="paragraph">
-<p>Au moment de la rédaction, Solidity est à la version 0.4.24. Les règles de la version majeure 0, qui concerne le développement initial d&#39;un projet, sont différentes : tout peut changer à tout moment. En pratique, Solidity traite le numéro &quot;mineur&quot; comme s&#39;il s&#39;agissait de la version majeure et le numéro de &quot;correctif&quot; comme s&#39;il s&#39;agissait de la version mineure. Par conséquent, dans la version 0.4.24, 4 est considérée comme la version majeure et 24 comme la version mineure.</p>
+<p>Au moment de la rédaction, Solidity est à la version 0.4.24. Les règles de la version majeure 0, qui concerne le développement initial d&#8217;un projet, sont différentes : tout peut changer à tout moment. En pratique, Solidity traite le numéro "mineur" comme s&#8217;il s&#8217;agissait de la version majeure et le numéro de "correctif" comme s&#8217;il s&#8217;agissait de la version mineure. Par conséquent, dans la version 0.4.24, 4 est considérée comme la version majeure et 24 comme la version mineure.</p>
 </div>
 <div class="paragraph">
 <p>La sortie de la version majeure 0.5 de Solidity est attendue de manière imminente.</p>
 </div>
 <div class="paragraph">
-<p>Comme vous l&#39;avez vu dans <a href="#intro_chapter">[intro_chapter]</a>, vos programmes Solidity peuvent contenir une directive pragma qui spécifie les versions minimale et maximale de Solidity avec lesquelles il est compatible, et peut être utilisée pour compiler votre contrat.</p>
+<p>Comme vous l&#8217;avez vu dans <a href="#intro_chapter">[intro_chapter]</a>, vos programmes Solidity peuvent contenir une directive pragma qui spécifie les versions minimale et maximale de Solidity avec lesquelles il est compatible, et peut être utilisée pour compiler votre contrat.</p>
 </div>
 <div class="paragraph">
-<p>Étant donné que Solidity évolue rapidement, il est souvent préférable d&#39;installer la dernière version.</p>
+<p>Étant donné que Solidity évolue rapidement, il est souvent préférable d&#8217;installer la dernière version.</p>
 </div>
 </div>
 <div class="sect3">
@@ -580,7 +580,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Il existe un certain nombre de méthodes que vous pouvez utiliser pour télécharger et installer Solidity, soit sous forme de version binaire, soit en compilant à partir du code source. Vous pouvez trouver des instructions détaillées dans <a href="http://bit.ly/2RrZmup" class="bare">http://bit.ly/2RrZmup</a> [la documentation de Solidity].</p>
 </div>
 <div class="paragraph">
-<p>Voici comment installer la dernière version binaire de Solidity sur un système d&#39;exploitation Ubuntu/Debian, en utilisant le gestionnaire de paquets apt :</p>
+<p>Voici comment installer la dernière version binaire de Solidity sur un système d&#8217;exploitation Ubuntu/Debian, en utilisant le gestionnaire de paquets apt :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>sudo add-apt-repository ppa:ethereum/ethereum</strong>
@@ -589,7 +589,7 @@ $ <strong>sudo apt install solc</strong>
 
 </pre>
 <div class="paragraph">
-<p>Une fois que vous avez installé solc, vérifiez la version en exécutant :</p>
+<p>Une fois que vous avez installé <code>solc</code>,vérifiez la version en exécutant :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>solc --version</strong>
@@ -598,25 +598,25 @@ Version: 0.4.24+commit.e67f0147.Linux.g++
 
 </pre>
 <div class="paragraph">
-<p>Il existe plusieurs autres façons d&#39;installer Solidity, en fonction de votre système d&#39;exploitation et de vos exigences, y compris la compilation directe à partir du code source. Pour plus d&#39;informations, consultez <a href="https://github.com/ethereum/solidity" class="bare">https://github.com/ethereum/solidity</a>.</p>
+<p>Il existe plusieurs autres façons d&#8217;installer Solidity, en fonction de votre système d&#8217;exploitation et de vos exigences, y compris la compilation directe à partir du code source. Pour plus d&#8217;informations, consultez <a href="https://github.com/ethereum/solidity" class="bare">https://github.com/ethereum/solidity</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_environnement_de_développement">Environnement de développement</h4>
 <div class="paragraph">
-<p>Pour développer dans Solidity, vous pouvez utiliser n&#39;importe quel éditeur de texte et solc sur la ligne de commande. Cependant, vous constaterez peut-être que certains éditeurs de texte conçus pour le développement, tels que Emacs, Vim et Atom, offrent des fonctionnalités supplémentaires telles que la coloration syntaxique et les macros qui facilitent le développement de Solidity.</p>
+<p>Pour développer dans Solidity, vous pouvez utiliser n&#8217;importe quel éditeur de texte et solc sur la ligne de commande. Cependant, vous constaterez peut-être que certains éditeurs de texte conçus pour le développement, tels que Emacs, Vim et Atom, offrent des fonctionnalités supplémentaires telles que la coloration syntaxique et les macros qui facilitent le développement de Solidity.</p>
 </div>
 <div class="paragraph">
 <p>Il existe également des environnements de développement basés sur le Web, tels que <a href="https://remix.ethereum.org/">Remix IDE</a> et <a href="https://ethfiddle.com/">EthFiddle</a>.</p>
 </div>
 <div class="paragraph">
-<p>Utilisez les outils qui vous rendent productif. En fin de compte, les programmes Solidity ne sont que des fichiers texte. Bien que des éditeurs et des environnements de développement sophistiqués puissent faciliter les choses, vous n&#39;avez besoin de rien de plus qu&#39;un simple éditeur de texte, tel que nano (Linux/Unix), TextEdit (macOS) ou même NotePad (Windows). Enregistrez simplement le code source de votre programme avec une extension <em>.sol</em> et il sera reconnu par le compilateur Solidity comme un programme Solidity.</p>
+<p>Utilisez les outils qui vous rendent productif. En fin de compte, les programmes Solidity ne sont que des fichiers texte. Bien que des éditeurs et des environnements de développement sophistiqués puissent faciliter les choses, vous n&#8217;avez besoin de rien de plus qu&#8217;un simple éditeur de texte, tel que nano (Linux/Unix), TextEdit (macOS) ou même NotePad (Windows). Enregistrez simplement le code source de votre programme avec une extension <em>.sol</em> et il sera reconnu par le compilateur Solidity comme un programme Solidity.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_écrire_un_programme_solidity_simple">Écrire un programme Solidity simple</h4>
 <div class="paragraph">
-<p>Dans <a href="#intro_chapter">[intro_chapter]</a>, nous avons écrit notre premier programme Solidity. Lorsque nous avons créé le contrat Faucet pour la première fois, nous avons utilisé l&#39;IDE Remix pour compiler et déployer le contrat. Dans cette section, nous allons revisiter, améliorer et embellir Faucet.</p>
+<p>Dans <a href="#intro_chapter">[intro_chapter]</a>, nous avons écrit notre premier programme Solidity. Lorsque nous avons créé le contrat Faucet pour la première fois, nous avons utilisé l&#8217;IDE Remix pour compiler et déployer le contrat. Dans cette section, nous allons revisiter, améliorer et embellir Faucet.</p>
 </div>
 <div class="paragraph">
 <p>Notre première tentative ressemblait à <a href="#original_sol_faucet">Faucet.sol : Un contrat Solidity mettant en place un robinet</a>.</p>
@@ -653,7 +653,7 @@ contract Faucet {
 <div class="sect3">
 <h4 id="_compiler_avec_le_compilateur_solidity_solc">Compiler avec le compilateur Solidity (solc)</h4>
 <div class="paragraph">
-<p>Maintenant, nous allons utilisez le compilateur Solidity en ligne de commande pour compiler directement notre contrat. Le compilateur Solidity solc offre une variété d&#39;options, que vous pouvez voir en passant l&#39;argument --help.</p>
+<p>Maintenant, nous allons utilisez le compilateur Solidity en ligne de commande pour compiler directement notre contrat. Le compilateur Solidity solc offre une variété d&#8217;options, que vous pouvez voir en passant l&#8217;argument --help.</p>
 </div>
 <div class="paragraph">
 <p>Nous utilisons les arguments --bin et --optimize de solc pour produire un binaire optimisé de notre exemple de contrat :</p>
@@ -676,18 +676,18 @@ Binary:
 </div>
 </div>
 <div class="sect2">
-<h3 id="eth_contract_abi_sec">L&#39;ABI du contrat Ethereum</h3>
+<h3 id="eth_contract_abi_sec">L&#8217;ABI du contrat Ethereum</h3>
 <div class="paragraph">
-<p>Dans les logiciels informatiques, une <em>interface binaire d&#39;application</em> est une interface entre deux modules de programme ; souvent, entre le système d&#39;exploitation et les programmes utilisateur. Un ABI définit la façon dont les structures de données et les fonctions sont accessibles en <em>code machine</em> ; cela ne doit pas être confondu avec une API, qui définit cet accès dans des formats de haut niveau, souvent lisibles par l&#39;homme, en tant que <em>code source</em>. L&#39;ABI est donc le principal moyen d&#39;encoder et de décoder des données dans et hors du code machine.</p>
+<p>Dans les logiciels informatiques, une <em>interface binaire d&#8217;application</em> est une interface entre deux modules de programme ; souvent, entre le système d&#8217;exploitation et les programmes utilisateur. Un ABI définit la façon dont les structures de données et les fonctions sont accessibles en <em>code machine</em> ; cela ne doit pas être confondu avec une API, qui définit cet accès dans des formats de haut niveau, souvent lisibles par l&#8217;homme, en tant que <em>code source</em>. L&#8217;ABI est donc le principal moyen d&#8217;encoder et de décoder des données dans et hors du code machine.</p>
 </div>
 <div class="paragraph">
-<p>Dans Ethereum, l&#39;ABI est utilisé pour coder les appels de contrat pour l&#39;EVM et pour lire les données des transactions. Le but d&#39;un ABI est de définir les fonctions du contrat qui peuvent être invoquées et de décrire comment chaque fonction acceptera les arguments et renverra son résultat.</p>
+<p>Dans Ethereum, l&#8217;ABI est utilisé pour coder les appels de contrat pour l&#8217;EVM et pour lire les données des transactions. Le but d&#8217;un ABI est de définir les fonctions du contrat qui peuvent être invoquées et de décrire comment chaque fonction acceptera les arguments et renverra son résultat.</p>
 </div>
 <div class="paragraph">
-<p>L&#39;ABI d&#39;un contrat est spécifié sous la forme d&#39;un tableau JSON de descriptions de fonctions (voir <a href="#solidity_functions">Fonctions</a>) et événements (voir <a href="#solidity_events">Événements</a>). Une description de fonction est un objet JSON avec les champs <code>type</code>, <code>name</code>, <code>inputs</code>, <code>outputs</code>, <code>constant</code> et <code>payable</code>. Un objet de description d&#39;événement a des champs <code>type</code>, <code>name</code>, <code>inputs</code> et <code>anonymous</code>.</p>
+<p>L&#8217;ABI d&#8217;un contrat est spécifié sous la forme d&#8217;un tableau JSON de descriptions de fonctions (voir <a href="#solidity_functions">Fonctions</a>) et événements (voir <a href="#solidity_events">Événements</a>). Une description de fonction est un objet JSON avec les champs <code>type</code>, <code>name</code>, <code>inputs</code>, <code>outputs</code>, <code>constant</code> et <code>payable</code>. Un objet de description d&#8217;événement a des champs <code>type</code>, <code>name</code>, <code>inputs</code> et <code>anonymous</code>.</p>
 </div>
 <div class="paragraph">
-<p>Nous utilisons le compilateur Solidity en ligne de commande solc pour produire l&#39;ABI pour notre exemple de contrat <span class="keep-together"><em>Faucet.sol</em></span> :</p>
+<p>Nous utilisons le compilateur Solidity en ligne de commande solc pour produire l&#8217;ABI pour notre exemple de contrat <span class="keep-together"><em>Faucet.sol</em></span> :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>solc --abi Faucet.sol</strong>
@@ -700,15 +700,15 @@ Contract JSON ABI
 
 </pre>
 <div class="paragraph">
-<p>Comme vous pouvez le voir, le compilateur produit un tableau JSON décrivant les deux fonctions définies par <em>Faucet.sol</em>. Ce JSON peut être utilisé par toute application qui souhaite accéder au contrat Faucet une fois qu&#39;il est déployé. À l&#39;aide de l&#39;ABI, une application telle qu&#39;un portefeuille ou un navigateur DApp peut construire des transactions qui appellent les fonctions dans + Faucet + avec les arguments et types d&#39;arguments corrects. Par exemple, un portefeuille saura que pour appeler la fonction withdraw, il devra fournir un argument uint256 nommé withdraw_amount. Le portefeuille pourrait inviter l&#39;utilisateur à fournir cette valeur, puis à créer une transaction qui l&#39;encode et exécute la fonction retirer.</p>
+<p>Comme vous pouvez le voir, le compilateur produit un tableau JSON décrivant les deux fonctions définies par <em>Faucet.sol</em>. Ce JSON peut être utilisé par toute application qui souhaite accéder au contrat Faucet une fois qu&#8217;il est déployé. À l&#8217;aide de l&#8217;ABI, une application telle qu&#8217;un portefeuille ou un navigateur DApp peut construire des transactions qui appellent les fonctions dans + Faucet + avec les arguments et types d&#8217;arguments corrects. Par exemple, un portefeuille saura que pour appeler la fonction <code>withdraw</code>,il devra fournir un argument uint256 nommé <code>withdraw_amount</code>.Le portefeuille pourrait inviter l&#8217;utilisateur à fournir cette valeur, puis à créer une transaction qui l&#8217;encode et exécute la fonction retirer.</p>
 </div>
 <div class="paragraph">
-<p>Tout ce qui est nécessaire pour qu&#39;une application interagisse avec un contrat est un ABI et l&#39;adresse où le contrat a été déployé.</p>
+<p>Tout ce qui est nécessaire pour qu&#8217;une application interagisse avec un contrat est un ABI et l&#8217;adresse où le contrat a été déployé.</p>
 </div>
 <div class="sect3">
-<h4 id="solidity_pragma">Sélection d&#39;un compilateur Solidity et d&#39;une version linguistique</h4>
+<h4 id="solidity_pragma">Sélection d&#8217;un compilateur Solidity et d&#8217;une version linguistique</h4>
 <div class="paragraph">
-<p>Comme nous l&#39;avons vu dans le code précédent, notre contrat Faucet se compile avec succès avec Solidity version 0.4.21. Et si nous avions utilisé une version différente du compilateur Solidity ? Le langage est toujours en constante évolution et les choses peuvent changer de manière inattendue. Notre contrat est assez simple, mais que se passerait-il si notre programme utilisait une fonctionnalité qui n&#39;a été ajoutée que dans la version 0.4.19 de Solidity et que nous essayions de la compiler avec la version 0.4.18 ?</p>
+<p>Comme nous l&#8217;avons vu dans le code précédent, notre contrat Faucet se compile avec succès avec Solidity version 0.4.21. Et si nous avions utilisé une version différente du compilateur Solidity ? Le langage est toujours en constante évolution et les choses peuvent changer de manière inattendue. Notre contrat est assez simple, mais que se passerait-il si notre programme utilisait une fonctionnalité qui n&#8217;a été ajoutée que dans la version 0.4.19 de Solidity et que nous essayions de la compiler avec la version 0.4.18 ?</p>
 </div>
 <div class="paragraph">
 <p>Pour résoudre ces problèmes, Solidity propose une <em>directive du compilateur</em> connue sous le nom de <em>version pragma</em> qui indique au compilateur que le programme attend un compilateur (et un langage) spécifique à une version. Regardons un exemple :</p>
@@ -719,10 +719,10 @@ Contract JSON ABI
 </div>
 </div>
 <div class="paragraph">
-<p>Le compilateur Solidity lit le pragma de version et génère une erreur si la version du compilateur est incompatible avec le pragma de version. Dans ce cas, notre pragma de version indique que ce programme peut être compilé par un compilateur Solidity avec une version minimale de 0.4.19. Le symbole ^ indique, cependant, que nous autorisons la compilation avec toute <em>révision mineure</em> au-dessus de 0.4.19 ; par exemple, 0.4.20, mais pas 0.5.0 (qui est une révision majeure, pas une révision mineure). Les directives Pragma ne sont pas compilées dans le code intermédiaire EVM. Ils ne sont utilisés par le compilateur que pour vérifier la compatibilité.</p>
+<p>Le compilateur Solidity lit le pragma de version et génère une erreur si la version du compilateur est incompatible avec le pragma de version. Dans ce cas, notre pragma de version indique que ce programme peut être compilé par un compilateur Solidity avec une version minimale de 0.4.19. Le symbole <code>^</code> indique, cependant, que nous autorisons la compilation avec toute <em>révision mineure</em> au-dessus de 0.4.19 ; par exemple, 0.4.20, mais pas 0.5.0 (qui est une révision majeure, pas une révision mineure). Les directives Pragma ne sont pas compilées dans le code intermédiaire EVM. Ils ne sont utilisés par le compilateur que pour vérifier la compatibilité.</p>
 </div>
 <div class="paragraph">
-<p>Ajoutons une directive pragma à notre contrat Faucet. Nous nommerons le nouveau fichier <span class="keep-together"><em>Faucet2.sol</em></span>, pour garder une trace de nos modifications au fur et à mesure que nous avancerons dans ces exemples en commençant par <a href="#add_pragma_to_faucet">Faucet2.sol : Ajout du pragma de version à Faucet</a>.</p>
+<p>Ajoutons une directive pragma à notre contrat <code>Faucet</code>.Nous nommerons le nouveau fichier <span class="keep-together"><em>Faucet2.sol</em></span>, pour garder une trace de nos modifications au fur et à mesure que nous avancerons dans ces exemples en commençant par <a href="#add_pragma_to_faucet">Faucet2.sol : Ajout du pragma de version à Faucet</a>.</p>
 </div>
 <div id="add_pragma_to_faucet" class="exampleblock">
 <div class="title">Example 2. Faucet2.sol : Ajout du pragma de version à Faucet</div>
@@ -753,61 +753,61 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph">
-<p>L&#39;ajout d&#39;un pragma de version est une bonne pratique, car il évite les problèmes liés aux versions incompatibles du compilateur et du langage. Nous explorerons d&#39;autres bonnes pratiques et continuerons d&#39;améliorer le contrat Faucet tout au long de ce chapitre.</p>
+<p>L&#8217;ajout d&#8217;un pragma de version est une bonne pratique, car il évite les problèmes liés aux versions incompatibles du compilateur et du langage. Nous explorerons d&#8217;autres bonnes pratiques et continuerons d&#8217;améliorer le contrat Faucet tout au long de ce chapitre.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_programmation_avec_solidity">Programmation avec Solidity</h3>
 <div class="paragraph">
-<p>Dans cette section, nous examinerons certaines des fonctionnalités du langage Solidity. Comme nous l&#39;avons mentionné dans <a href="#intro_chapter">[intro_chapter]</a>, notre premier exemple de contrat était très simple et également défectueux à plusieurs égards. Nous allons l&#39;améliorer progressivement ici, tout en explorant comment utiliser Solidity. Cependant, ce ne sera pas un didacticiel complet sur Solidity, car Solidity est assez complexe et évolue rapidement. Nous couvrirons les bases et vous donnerons suffisamment de bases pour pouvoir explorer le reste par vous-même. La documentation de Solidity se trouve
+<p>Dans cette section, nous examinerons certaines des fonctionnalités du langage Solidity. Comme nous l&#8217;avons mentionné dans <a href="#intro_chapter">[intro_chapter]</a>, notre premier exemple de contrat était très simple et également défectueux à plusieurs égards. Nous allons l&#8217;améliorer progressivement ici, tout en explorant comment utiliser Solidity. Cependant, ce ne sera pas un didacticiel complet sur Solidity, car Solidity est assez complexe et évolue rapidement. Nous couvrirons les bases et vous donnerons suffisamment de bases pour pouvoir explorer le reste par vous-même. La documentation de Solidity se trouve
 <a href="https://solidity.readthedocs.io/en/latest/">sur le site du projet</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_types_de_données">Types de données</h4>
 <div class="paragraph">
-<p>D&#39;abord, examinons certains des types de données de base proposés dans Solidity :</p>
+<p>D&#8217;abord, examinons certains des types de données de base proposés dans Solidity :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Boolean (bool)</dt>
 <dd>
-<p>valeur booléenne, true ou false, avec les opérateurs logiques ! (not), &amp;amp;&amp;amp; (and), || (or), == (equal) et != (non égal).</p>
+<p>valeur booléenne, true ou <code>false</code>,avec les opérateurs logiques <code>!</code> (not), &amp;amp;&amp;amp; (and), || (or), == (equal) et != (non égal).</p>
 </dd>
-<dt class="hdlist1">Integer (int, uint)</dt>
+<dt class="hdlist1">Integer (<code>int</code>,uint)</dt>
 <dd>
-<p>Entiers signés (int) et non signés (uint), déclarés par incréments de 8 bits de int8 à uint256. Sans suffixe de taille, des quantités de 256 bits sont utilisées pour correspondre à la taille de mot de l&#39;EVM.</p>
+<p>Entiers signés (<code>int</code>)et non signés (uint), déclarés par incréments de 8 bits de int8 à <code>uint256</code>.Sans suffixe de taille, des quantités de 256 bits sont utilisées pour correspondre à la taille de mot de l&#8217;EVM.</p>
 </dd>
-<dt class="hdlist1">Fixed point (fixed, ufixed)</dt>
+<dt class="hdlist1">Fixed point (<code>fixed</code>,ufixed)</dt>
 <dd>
-<p>Nombres à virgule fixe, déclarés avec ( <code>u</code>) <code>fixed <em>M</em> x <em>N</em></code> où <em>M</em> est la taille en bits (incréments de 8 jusqu&#39;à 256) et <em>N</em> est le nombre de décimales après le point (jusqu&#39;à 18) ; par exemple, ufixed32x2.</p>
+<p>Nombres à virgule fixe, déclarés avec ( <code>u</code>) <code>fixed <em>M</em> x <em>N</em></code> où <em>M</em> est la taille en bits (incréments de 8 jusqu&#8217;à 256) et <em>N</em> est le nombre de décimales après le point (jusqu&#8217;à 18) ; par exemple, ufixed32x2.</p>
 </dd>
 <dt class="hdlist1">Address</dt>
 <dd>
-<p>Une adresse Ethereum de 20 octets. L&#39;objet address a de nombreuses fonctions membres utiles, les principales étant balance (renvoie le solde du compte) et <span class="keep-together"><code>transfer</code></span> (transfère l&#39;ether au compte).</p>
+<p>Une adresse Ethereum de 20 octets. L&#8217;objet address a de nombreuses fonctions membres utiles, les principales étant balance (renvoie le solde du compte) et <span class="keep-together"><code>transfer</code></span> (transfère l&#8217;ether au compte).</p>
 </dd>
 <dt class="hdlist1">Byte array (fixe)</dt>
 <dd>
-<p>Tableaux d&#39;octets de taille fixe, déclarés avec bytes1 jusqu&#39;à bytes32.</p>
+<p>Tableaux d&#8217;octets de taille fixe, déclarés avec bytes1 jusqu&#8217;à bytes32.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Byte array (dynamique):: tableaux d&#39;octets de taille variable, déclarés avec bytes ou string.</p>
+<p>Byte array (dynamique):: tableaux d&#8217;octets de taille variable, déclarés avec bytes ou string.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Enum</dt>
 <dd>
-<p>Type défini par l&#39;utilisateur pour énumérer des valeurs discrètes : enum NAME {LABEL1, LABEL 2, ...}.</p>
+<p>Type défini par l&#8217;utilisateur pour énumérer des valeurs discrètes : enum NAME {LABEL1, LABEL 2, ...}.</p>
 </dd>
 <dt class="hdlist1">Arrays</dt>
 <dd>
-<p>Un tableau de n&#39;importe quel type, fixe ou dynamique : uint32[][5] est un tableau de taille fixe de cinq tableaux dynamiques d&#39;entiers non signés.</p>
+<p>Un tableau de n&#8217;importe quel type, fixe ou dynamique : uint32[][5] est un tableau de taille fixe de cinq tableaux dynamiques d&#8217;entiers non signés.</p>
 </dd>
 <dt class="hdlist1">Struct</dt>
 <dd>
-<p>Conteneurs de données définis par l&#39;utilisateur pour regrouper les variables : <code>struct NAME {TYPE1 <span class="keep-together">VARIABLE1</span>; TYPE2 VARIABLE2; ...}</code>.</p>
+<p>Conteneurs de données définis par l&#8217;utilisateur pour regrouper les variables : <code>struct NAME {TYPE1 <span class="keep-together">VARIABLE1</span>; TYPE2 VARIABLE2; ...}</code>.</p>
 </dd>
 <dt class="hdlist1">Mapping</dt>
 <dd>
@@ -822,19 +822,19 @@ contract Faucet {
 <dl>
 <dt class="hdlist1">Unités de temps</dt>
 <dd>
-<p>Les unités seconds, minutes, hours et days peuvent être utilisées comme suffixes, convertis en multiples de l&#39;unité de base seconds.</p>
+<p>Les unités <code>seconds</code>,minutes, hours et days peuvent être utilisées comme suffixes, convertis en multiples de l&#8217;unité de base seconds.</p>
 </dd>
-<dt class="hdlist1">Unités d&#39;ether</dt>
+<dt class="hdlist1">Unités d&#8217;ether</dt>
 <dd>
-<p>Les unités wei, finney, szabo et ether peuvent être utilisées comme suffixes, convertis en multiples de l&#39;unité de base wei.</p>
+<p>Les unités <code>wei</code>,finney, szabo et ether peuvent être utilisées comme suffixes, convertis en multiples de l&#8217;unité de base wei.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Dans notre exemple de contrat Faucet, nous avons utilisé un uint (qui est un alias pour uint256) pour la variable withdraw_amount. Nous avons également utilisé indirectement une variable address, que nous avons définie avec msg.sender. Nous utiliserons plus de ces types de données dans nos exemples dans le reste de ce chapitre.</p>
+<p>Dans notre exemple de contrat <code>Faucet</code>,nous avons utilisé un uint (qui est un alias pour <code>uint256</code>)pour la variable <code>withdraw_amount</code>.Nous avons également utilisé indirectement une variable <code>address</code>,que nous avons définie avec <code>msg.sender</code>.Nous utiliserons plus de ces types de données dans nos exemples dans le reste de ce chapitre.</p>
 </div>
 <div class="paragraph">
-<p>Utilisons l&#39;un des multiplicateurs d&#39;unités pour améliorer la lisibilité de notre exemple de contrat. Dans la fonction withdraw nous limitons le retrait maximum, en exprimant la limite en wei, l&#39;unité de base de l&#39;ether :</p>
+<p>Utilisons l&#8217;un des multiplicateurs d&#8217;unités pour améliorer la lisibilité de notre exemple de contrat. Dans la fonction withdraw nous limitons le retrait maximum, en exprimant la limite en wei, l&#8217;unité de base de l&#8217;ether :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -842,7 +842,7 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph">
-<p>Ce n&#39;est pas très facile à lire. Nous pouvons améliorer notre code en utilisant le multiplicateur d&#39;unité ether, pour exprimer la valeur en ether au lieu de wei :</p>
+<p>Ce n&#8217;est pas très facile à lire. Nous pouvons améliorer notre code en utilisant le multiplicateur d&#8217;unité <code>ether</code>,pour exprimer la valeur en ether au lieu de wei :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -853,26 +853,26 @@ contract Faucet {
 <div class="sect3">
 <h4 id="_variables_et_fonctions_globales_prédéfinies">Variables et fonctions globales prédéfinies</h4>
 <div class="paragraph">
-<p>Lorsqu&#39;un contrat est exécuté dans l&#39;EVM, il a accès à un petit ensemble d&#39;objets globaux. Ceux-ci incluent les objets block, msg et tx. De plus, Solidity expose un certain nombre d&#39;opcodes EVM en tant que fonctions prédéfinies. Dans cette section, nous examinerons les variables et les fonctions auxquelles vous pouvez accéder à partir d&#39;un contrat intelligent dans Solidity.</p>
+<p>Lorsqu&#8217;un contrat est exécuté dans l&#8217;EVM, il a accès à un petit ensemble d&#8217;objets globaux. Ceux-ci incluent les objets <code>block</code>,msg et <code>tx</code>.De plus, Solidity expose un certain nombre d&#8217;opcodes EVM en tant que fonctions prédéfinies. Dans cette section, nous examinerons les variables et les fonctions auxquelles vous pouvez accéder à partir d&#8217;un contrat intelligent dans Solidity.</p>
 </div>
 <div class="sect4">
-<h5 id="_contexte_dappel_de_transactionmessage">Contexte d&#39;appel de transaction/message</h5>
+<h5 id="_contexte_dappel_de_transactionmessage">Contexte d&#8217;appel de transaction/message</h5>
 <div class="paragraph">
-<p>L&#39;objet msg est l&#39;appel de transaction (origine EOA) ou l&#39;appel de message (origine contrat) qui lancé l&#39;exécution de ce contrat. Il contient un certain nombre d&#39;attributs utiles :</p>
+<p>L&#8217;objet msg est l&#8217;appel de transaction (origine EOA) ou l&#8217;appel de message (origine contrat) qui lancé l&#8217;exécution de ce contrat. Il contient un certain nombre d&#8217;attributs utiles :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">msg.sender</dt>
 <dd>
-<p>Nous avons déjà utilisé celui-ci. Il représente l&#39;adresse qui a lancé cet appel de contrat, pas nécessairement l&#39;EOA d&#39;origine qui a envoyé la transaction. Si notre contrat a été appelé directement par une transaction EOA, alors c&#39;est l&#39;adresse qui a signé la transaction, mais sinon ce sera une adresse de contrat.</p>
+<p>Nous avons déjà utilisé celui-ci. Il représente l&#8217;adresse qui a lancé cet appel de contrat, pas nécessairement l&#8217;EOA d&#8217;origine qui a envoyé la transaction. Si notre contrat a été appelé directement par une transaction EOA, alors c&#8217;est l&#8217;adresse qui a signé la transaction, mais sinon ce sera une adresse de contrat.</p>
 </dd>
 <dt class="hdlist1">msg.value</dt>
 <dd>
-<p>La valeur d&#39;ether envoyée avec cet appel (en wei).</p>
+<p>La valeur d&#8217;ether envoyée avec cet appel (en wei).</p>
 </dd>
 <dt class="hdlist1">msg.gas</dt>
 <dd>
-<p>La quantité de gaz restant dans l&#39;approvisionnement en gaz de cet environnement d&#39;exécution. Cela a été déprécié dans Solidity v0.4.21 et remplacé par la fonction gasleft.</p>
+<p>La quantité de gaz restant dans l&#8217;approvisionnement en gaz de cet environnement d&#8217;exécution. Cela a été déprécié dans Solidity v0.4.21 et remplacé par la fonction gasleft.</p>
 </dd>
 <dt class="hdlist1">msg.data</dt>
 <dd>
@@ -892,7 +892,7 @@ contract Faucet {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Chaque fois qu&#39;un contrat appelle un autre contrat, les valeurs de tous les attributs de msg changent pour refléter les informations du nouvel appelant. La seule exception à cela est la fonction delegatecall, qui exécute le code d&#39;un autre contrat/bibliothèque dans le <span class="keep-together">contexte</span> de msg.</p>
+<p>Chaque fois qu&#8217;un contrat appelle un autre contrat, les valeurs de tous les attributs de msg changent pour refléter les informations du nouvel appelant. La seule exception à cela est la fonction <code>delegatecall</code>,qui exécute le code d&#8217;un autre contrat/bibliothèque dans le <span class="keep-together">contexte</span> de msg.</p>
 </div>
 </td>
 </tr>
@@ -902,17 +902,17 @@ contract Faucet {
 <div class="sect4">
 <h5 id="_contexte_transactionnel">Contexte transactionnel</h5>
 <div class="paragraph">
-<p>L&#39;objet tx fournit un moyen d&#39;accéder aux informations relatives à la transaction :</p>
+<p>L&#8217;objet tx fournit un moyen d&#8217;accéder aux informations relatives à la transaction :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">tx.gasprice</dt>
 <dd>
-<p>Le prix du gaz dans la transaction d&#39;appel.</p>
+<p>Le prix du gaz dans la transaction d&#8217;appel.</p>
 </dd>
 <dt class="hdlist1">tx.origin</dt>
 <dd>
-<p>L&#39;adresse de l&#39;EOA d&#39;origine pour cette transaction. ATTENTION : dangereux !</p>
+<p>L&#8217;adresse de l&#8217;EOA d&#8217;origine pour cette transaction. ATTENTION : dangereux !</p>
 </dd>
 </dl>
 </div>
@@ -920,17 +920,17 @@ contract Faucet {
 <div class="sect4">
 <h5 id="_contexte_de_bloc">Contexte de bloc</h5>
 <div class="paragraph">
-<p>L&#39;objet block contient des informations sur le bloc courant :</p>
+<p>L&#8217;objet block contient des informations sur le bloc courant :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">block.blockhash(__blockNumber__)</dt>
 <dd>
-<p>Le hachage de bloc du numéro de bloc spécifié, jusqu&#39;à 256 blocs dans le passé. Obsolète et remplacé par la fonction blockhash dans Solidity v0.4.22.</p>
+<p>Le hachage de bloc du numéro de bloc spécifié, jusqu&#8217;à 256 blocs dans le passé. Obsolète et remplacé par la fonction blockhash dans Solidity v0.4.22.</p>
 </dd>
 <dt class="hdlist1">block.coinbase</dt>
 <dd>
-<p>L&#39;adresse du destinataire des frais du bloc actuel et de la récompense du bloc.</p>
+<p>L&#8217;adresse du destinataire des frais du bloc actuel et de la récompense du bloc.</p>
 </dd>
 <dt class="hdlist1">block.difficulty</dt>
 <dd>
@@ -946,41 +946,41 @@ contract Faucet {
 </dd>
 <dt class="hdlist1">block.timestamp</dt>
 <dd>
-<p>L&#39;horodatage placé dans le bloc actuel par le mineur (nombre de secondes depuis l&#39;époque Unix).</p>
+<p>L&#8217;horodatage placé dans le bloc actuel par le mineur (nombre de secondes depuis l&#8217;époque Unix).</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect4">
-<h5 id="solidity_address_object">objet d&#39;adresse</h5>
+<h5 id="solidity_address_object">objet d&#8217;adresse</h5>
 <div class="paragraph">
-<p>Toute adresse, transmise en tant qu&#39;entrée ou extraite d&#39;un objet de contrat, possède un certain nombre d&#39;attributs et de méthodes :</p>
+<p>Toute adresse, transmise en tant qu&#8217;entrée ou extraite d&#8217;un objet de contrat, possède un certain nombre d&#8217;attributs et de méthodes :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">address.balance</dt>
 <dd>
-<p>Le solde de l&#39;adresse, en wei. Par exemple, le solde actuel du contrat est address(this).balance.</p>
+<p>Le solde de l&#8217;adresse, en wei. Par exemple, le solde actuel du contrat est address(this).balance.</p>
 </dd>
 <dt class="hdlist1">address.transfer(__amount__)</dt>
 <dd>
-<p>Transfère le montant (en wei) à cette adresse, en levant une exception en cas d&#39;erreur. Nous avons utilisé cette fonction dans notre exemple Faucet comme méthode sur l&#39;adresse msg.sender, comme msg.sender.transfer.</p>
+<p>Transfère le montant (en wei) à cette adresse, en levant une exception en cas d&#8217;erreur. Nous avons utilisé cette fonction dans notre exemple Faucet comme méthode sur l&#8217;adresse <code>msg.sender</code>,comme msg.sender.transfer.</p>
 </dd>
 <dt class="hdlist1">address.send(__amount__)</dt>
 <dd>
-<p>similaire à transfer, mais au lieu de lancer une exception, il renvoie false en cas d&#39;erreur. ATTENTION : vérifiez toujours la valeur de retour de send.</p>
+<p>similaire à <code>transfer</code>,mais au lieu de lancer une exception, il renvoie false en cas d&#8217;erreur. ATTENTION : vérifiez toujours la valeur de retour de send.</p>
 </dd>
 <dt class="hdlist1">address.call(__payload__)</dt>
 <dd>
-<p>fonction CALL de bas niveau — peut construire un appel de message arbitraire avec une charge utile de données. Renvoie faux en cas d&#39;erreur. AVERTISSEMENT : dangereux : le destinataire peut (accidentellement ou par malveillance) utiliser tout votre gaz, provoquant l&#39;arrêt de votre contrat avec une exception OOG ; vérifiez toujours la valeur de retour de call.</p>
+<p>fonction CALL de bas niveau — peut construire un appel de message arbitraire avec une charge utile de données. Renvoie faux en cas d&#8217;erreur. AVERTISSEMENT : dangereux : le destinataire peut (accidentellement ou par malveillance) utiliser tout votre gaz, provoquant l&#8217;arrêt de votre contrat avec une exception OOG ; vérifiez toujours la valeur de retour de call.</p>
 </dd>
 <dt class="hdlist1">address.callcode(__payload__)</dt>
 <dd>
-<p>fonction CALLCODE de bas niveau, comme address(this).call(...) mais avec le code de ce contrat remplacé par celui de address. Renvoie faux en cas d&#39;erreur. AVERTISSEMENT : utilisation avancée uniquement !</p>
+<p>fonction CALLCODE de bas niveau, comme address(this).call(...) mais avec le code de ce contrat remplacé par celui de <code>address</code>.Renvoie faux en cas d&#8217;erreur. AVERTISSEMENT : utilisation avancée uniquement !</p>
 </dd>
 <dt class="hdlist1">address.delegatecall()</dt>
 <dd>
-<p>Fonction DELEGATECALL de bas niveau, comme callcode(...) mais avec le contexte msg complet vu par le contrat actuel. Renvoie faux en cas d&#39;erreur. AVERTISSEMENT : utilisation avancée uniquement !</p>
+<p>Fonction DELEGATECALL de bas niveau, comme callcode(...) mais avec le contexte msg complet vu par le contrat actuel. Renvoie faux en cas d&#8217;erreur. AVERTISSEMENT : utilisation avancée uniquement !</p>
 </dd>
 </dl>
 </div>
@@ -994,23 +994,23 @@ contract Faucet {
 <dl>
 <dt class="hdlist1">addmod, mulmod</dt>
 <dd>
-<p>Pour l&#39;addition et la multiplication modulo. Par exemple, addmod(x,y,k) calcule (x + y) % k.</p>
+<p>Pour l&#8217;addition et la multiplication modulo. Par exemple, addmod(x,y,k) calcule (x + y) % k.</p>
 </dd>
-<dt class="hdlist1">keccak256, sha256, sha3, ripemd160</dt>
+<dt class="hdlist1">keccak256, <code>sha256</code>,sha3, ripemd160</dt>
 <dd>
 <p>Fonctions pour calculer les hachages avec divers algorithmes de hachage standard.</p>
 </dd>
 <dt class="hdlist1">ecrecover</dt>
 <dd>
-<p>Récupère l&#39;adresse utilisée pour signer un message à partir de la signature.</p>
+<p>Récupère l&#8217;adresse utilisée pour signer un message à partir de la signature.</p>
 </dd>
 <dt class="hdlist1">selfdestruct(__recipient_address__)</dt>
 <dd>
-<p>Supprime le contrat actuel, en envoyant tout ether restant dans le compte à l&#39;adresse du destinataire.</p>
+<p>Supprime le contrat actuel, en envoyant tout ether restant dans le compte à l&#8217;adresse du destinataire.</p>
 </dd>
 <dt class="hdlist1">this</dt>
 <dd>
-<p>L&#39;adresse du compte de contrat en cours d&#39;exécution.</p>
+<p>L&#8217;adresse du compte de contrat en cours d&#8217;exécution.</p>
 </dd>
 </dl>
 </div>
@@ -1022,17 +1022,17 @@ contract Faucet {
 <p>Le type de données principal de Solidity est contract ; notre exemple Faucet définit simplement un objet <span class="keep-together"><code>contract</code></span>. Semblable à tout objet dans un langage orienté objet, le contrat est un conteneur qui inclut des données et des méthodes.</p>
 </div>
 <div class="paragraph">
-<p>Solidity propose deux autres types d&#39;objets qui s&#39;apparentent à un contrat :</p>
+<p>Solidity propose deux autres types d&#8217;objets qui s&#8217;apparentent à un contrat :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">interface</dt>
 <dd>
-<p>Une définition d&#39;interface est structurée exactement comme un contrat, sauf qu&#39;aucune des fonctions n&#39;est définie, elles sont seulement déclarées. Ce type de déclaration est souvent appelé <em>stub</em> ou <em>souche</em> ; il vous indique les arguments des fonctions et les types de retour sans aucune implémentation. Une interface précise la « forme » d&#39;un contrat ; lorsqu&#39;elle est héritée, chacune des fonctions déclarées par l&#39;interface doit être définie par l&#39;enfant.</p>
+<p>Une définition d&#8217;interface est structurée exactement comme un contrat, sauf qu&#8217;aucune des fonctions n&#8217;est définie, elles sont seulement déclarées. Ce type de déclaration est souvent appelé <em>stub</em> ou <em>souche</em> ; il vous indique les arguments des fonctions et les types de retour sans aucune implémentation. Une interface précise la « forme » d&#8217;un contrat ; lorsqu&#8217;elle est héritée, chacune des fonctions déclarées par l&#8217;interface doit être définie par l&#8217;enfant.</p>
 </dd>
 <dt class="hdlist1">library</dt>
 <dd>
-<p>Un contrat de bibliothèque est un contrat destiné à être déployé une seule fois et utilisé par d&#39;autres contrats, en utilisant la méthode delegatecall (voir <a href="#solidity_address_object">objet d&#39;adresse</a>).</p>
+<p>Un contrat de bibliothèque est un contrat destiné à être déployé une seule fois et utilisé par d&#8217;autres contrats, en utilisant la méthode delegatecall (voir <a href="#solidity_address_object">objet d&#8217;adresse</a>).</p>
 </dd>
 </dl>
 </div>
@@ -1040,7 +1040,7 @@ contract Faucet {
 <div class="sect3">
 <h4 id="solidity_functions">Fonctions</h4>
 <div class="paragraph">
-<p>Au sein d&#39;un contrat, on définit des fonctions qui peuvent être appelées par une transaction EOA ou un autre contrat. Dans notre exemple Faucet, nous avons deux fonctions : withdraw et la fonction (sans nom) <em>fallback</em>.</p>
+<p>Au sein d&#8217;un contrat, on définit des fonctions qui peuvent être appelées par une transaction EOA ou un autre contrat. Dans notre exemple <code>Faucet</code>,nous avons deux fonctions : withdraw et la fonction (sans nom) <em>fallback</em>.</p>
 </div>
 <div class="paragraph">
 <p>La syntaxe que nous utilisons pour déclarer une fonction dans Solidity est la suivante :</p>
@@ -1057,30 +1057,30 @@ function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 <dl>
 <dt class="hdlist1">FunctionName</dt>
 <dd>
-<p>Le nom de la fonction, qui est utilisé pour appeler la fonction dans une transaction (à partir d&#39;un EOA), à partir d&#39;un autre contrat, ou même à partir du même contrat. Une fonction dans chaque contrat peut être définie sans nom, auquel cas c&#39;est la fonction <em>fallback</em>, qui est appelée lorsqu&#39;aucune autre fonction n&#39;est nommée. La fonction de secours ne peut pas avoir d&#39;arguments ni rien renvoyer.</p>
+<p>Le nom de la fonction, qui est utilisé pour appeler la fonction dans une transaction (à partir d&#8217;un EOA), à partir d&#8217;un autre contrat, ou même à partir du même contrat. Une fonction dans chaque contrat peut être définie sans nom, auquel cas c&#8217;est la fonction <em>fallback</em>, qui est appelée lorsqu&#8217;aucune autre fonction n&#8217;est nommée. La fonction de secours ne peut pas avoir d&#8217;arguments ni rien renvoyer.</p>
 </dd>
 <dt class="hdlist1"><em>parameters</em></dt>
 <dd>
-<p>Après le nom, nous spécifions les arguments qui doivent être passés à la fonction, avec leurs noms et leurs types. Dans notre exemple Faucet, nous avons défini uint remove_amount comme le seul argument de la fonction <code><span class="keep-together">withdraw</span></code>.</p>
+<p>Après le nom, nous spécifions les arguments qui doivent être passés à la fonction, avec leurs noms et leurs types. Dans notre exemple <code>Faucet</code>,nous avons défini uint remove_amount comme le seul argument de la fonction <code><span class="keep-together">withdraw</span></code>.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Le prochain ensemble de mots clés (public, private, internal, external) spécifie la <em>visibilité</em> de la fonction :</p>
+<p>Le prochain ensemble de mots clés (<code>public</code>,private, <code>internal</code>,external) spécifie la <em>visibilité</em> de la fonction :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">public</dt>
 <dd>
-<p>Public est la valeur par défaut ; ces fonctions peuvent être appelées par d&#39;autres contrats ou transactions EOA, ou depuis le contrat. Dans notre exemple Faucet, les deux fonctions sont définies comme publiques.</p>
+<p>Public est la valeur par défaut ; ces fonctions peuvent être appelées par d&#8217;autres contrats ou transactions EOA, ou depuis le contrat. Dans notre exemple <code>Faucet</code>,les deux fonctions sont définies comme publiques.</p>
 </dd>
 <dt class="hdlist1">external</dt>
 <dd>
-<p>Les fonctions externes sont comme des fonctions publiques, sauf qu&#39;elles ne peuvent pas être appelées depuis le contrat à moins d&#39;être explicitement préfixées avec le mot-clé this.</p>
+<p>Les fonctions externes sont comme des fonctions publiques, sauf qu&#8217;elles ne peuvent pas être appelées depuis le contrat à moins d&#8217;être explicitement préfixées avec le mot-clé this.</p>
 </dd>
 <dt class="hdlist1">interne </dt>
 <dd>
-<p>Les fonctions internes ne sont accessibles qu&#39;à partir du contrat - elles ne peuvent pas être appelées par un autre contrat ou une transaction EOA. Ils peuvent être appelés par des contrats dérivés (ceux qui héritent de celui-ci).</p>
+<p>Les fonctions internes ne sont accessibles qu&#8217;à partir du contrat - elles ne peuvent pas être appelées par un autre contrat ou une transaction EOA. Ils peuvent être appelés par des contrats dérivés (ceux qui héritent de celui-ci).</p>
 </dd>
 <dt class="hdlist1">private</dt>
 <dd>
@@ -1089,16 +1089,16 @@ function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 </dl>
 </div>
 <div class="paragraph">
-<p>Gardez à l&#39;esprit que les termes <em>internal</em> et <em>private</em> sont quelque peu trompeurs. Toute fonction ou donnée à l&#39;intérieur d&#39;un contrat est toujours <em>visible</em> sur la chaîne de blocs publique, ce qui signifie que n&#39;importe qui peut voir le code ou les données. Les mots clés décrits ici n&#39;affectent que comment et quand une fonction peut être <em>appelée</em>.</p>
+<p>Gardez à l&#8217;esprit que les termes <em>internal</em> et <em>private</em> sont quelque peu trompeurs. Toute fonction ou donnée à l&#8217;intérieur d&#8217;un contrat est toujours <em>visible</em> sur la chaîne de blocs publique, ce qui signifie que n&#8217;importe qui peut voir le code ou les données. Les mots clés décrits ici n&#8217;affectent que comment et quand une fonction peut être <em>appelée</em>.</p>
 </div>
 <div class="paragraph">
-<p>Le deuxième ensemble de mots clés (pure, constant, view, payable) affecte le comportement de la fonction :</p>
+<p>Le deuxième ensemble de mots clés (<code>pure</code>,constant, <code>view</code>,payable) affecte le comportement de la fonction :</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">constant ou view </dt>
 <dd>
-<p>Une fonction marquée comme <em>view</em> promet de ne modifier aucun état. Le terme <em>constant</em> est un alias pour la vue qui sera obsolète dans une future version. Pour le moment, le compilateur n&#39;applique pas le modificateur view, ne produisant qu&#39;un avertissement, mais cela devrait devenir un mot-clé appliqué dans la v0.5 de Solidity.</p>
+<p>Une fonction marquée comme <em>view</em> promet de ne modifier aucun état. Le terme <em>constant</em> est un alias pour la vue qui sera obsolète dans une future version. Pour le moment, le compilateur n&#8217;applique pas le modificateur <code>view</code>,ne produisant qu&#8217;un avertissement, mais cela devrait devenir un mot-clé appliqué dans la v0.5 de Solidity.</p>
 </dd>
 <dt class="hdlist1">pure</dt>
 <dd>
@@ -1106,52 +1106,52 @@ function FunctionName([<em>parameters</em>]) {public|private|internal|external}
 </dd>
 <dt class="hdlist1">payable</dt>
 <dd>
-<p>Une fonction payable est une fonction qui peut accepter des paiements entrants. Les fonctions non déclarées comme payable rejetteront les paiements entrants. Il existe deux exceptions, dues à des décisions de conception dans l&#39;EVM : les paiements coinbase et l&#39;héritage SELFDESTRUCT seront payés même si la fonction de secours n&#39;est pas déclarée comme payable, mais cela a du sens car l&#39;exécution de code ne fait pas partie de ces paiements <span class="keep-together">de toute façon</span>.</p>
+<p>Une fonction payable est une fonction qui peut accepter des paiements entrants. Les fonctions non déclarées comme payable rejetteront les paiements entrants. Il existe deux exceptions, dues à des décisions de conception dans l&#8217;EVM : les paiements coinbase et l&#8217;héritage SELFDESTRUCT seront payés même si la fonction de secours n&#8217;est pas déclarée comme <code>payable</code>,mais cela a du sens car l&#8217;exécution de code ne fait pas partie de ces paiements <span class="keep-together">de toute façon</span>.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>Comme vous pouvez le voir dans notre exemple Faucet, nous avons une fonction payante (la fonction de secours), qui est la seule fonction qui peut recevoir des paiements entrants.</p>
+<p>Comme vous pouvez le voir dans notre exemple <code>Faucet</code>,nous avons une fonction payante (la fonction de secours), qui est la seule fonction qui peut recevoir des paiements entrants.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_constructeur_de_contrat_et_autodestruction">Constructeur de contrat et autodestruction</h4>
 <div class="paragraph">
-<p>Il existe une fonction spéciale qui n&#39;est utilisée qu&#39;une seule fois . Lorsqu&#39;un contrat est créé, il exécute également la <em>fonction constructor</em> s&#39;il en existe une, pour initialiser l&#39;état du contrat. Le constructeur est exécuté dans la même transaction que la création du contrat. La fonction constructeur est facultative ; vous remarquerez que notre exemple Faucet n&#39;en a pas.</p>
+<p>Il existe une fonction spéciale qui n&#8217;est utilisée qu&#8217;une seule fois . Lorsqu&#8217;un contrat est créé, il exécute également la <em>fonction constructor</em> s&#8217;il en existe une, pour initialiser l&#8217;état du contrat. Le constructeur est exécuté dans la même transaction que la création du contrat. La fonction constructeur est facultative ; vous remarquerez que notre exemple Faucet n&#8217;en a pas.</p>
 </div>
 <div class="paragraph">
-<p>Les constructeurs peuvent être spécifiés de deux manières. Jusqu&#39;à et y compris dans Solidity v0.4.21, le constructeur est une fonction dont le nom correspond au nom du contrat, comme vous pouvez le voir ici :</p>
+<p>Les constructeurs peuvent être spécifiés de deux manières. Jusqu&#8217;à et y compris dans Solidity v0.4.21, le constructeur est une fonction dont le nom correspond au nom du contrat, comme vous pouvez le voir ici :</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">contract MEContract {
 	function MEContract() {
-	// C&amp;#39;est le constructeur
+	// C'est le constructeur
 	}
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>La difficulté avec ce format est que si le nom du contrat est modifié et que le nom de la fonction constructeur n&#39;est pas modifié, ce n&#39;est plus un constructeur. De même, s&#39;il y a une faute de frappe accidentelle dans la dénomination du contrat et/ou du constructeur, la fonction n&#39;est plus un constructeur. Cela peut provoquer des bogues assez désagréables, inattendus et difficiles à trouver. Imaginez par exemple si le constructeur met le propriétaire du contrat à des fins de contrôle. Si la fonction n&#39;est pas réellement le constructeur en raison d&#39;une erreur de nommage, non seulement le propriétaire ne sera pas défini au moment de la création du contrat, mais la fonction peut également être déployée en tant que partie permanente et &quot;appelable&quot; du contrat, comme un fonction normale, permettant à tout tiers de détourner le contrat et d&#39;en devenir le &quot;propriétaire&quot; après la création du contrat.</p>
+<p>La difficulté avec ce format est que si le nom du contrat est modifié et que le nom de la fonction constructeur n&#8217;est pas modifié, ce n&#8217;est plus un constructeur. De même, s&#8217;il y a une faute de frappe accidentelle dans la dénomination du contrat et/ou du constructeur, la fonction n&#8217;est plus un constructeur. Cela peut provoquer des bogues assez désagréables, inattendus et difficiles à trouver. Imaginez par exemple si le constructeur met le propriétaire du contrat à des fins de contrôle. Si la fonction n&#8217;est pas réellement le constructeur en raison d&#8217;une erreur de nommage, non seulement le propriétaire ne sera pas défini au moment de la création du contrat, mais la fonction peut également être déployée en tant que partie permanente et "appelable" du contrat, comme un fonction normale, permettant à tout tiers de détourner le contrat et d&#8217;en devenir le "propriétaire" après la création du contrat.</p>
 </div>
 <div class="paragraph">
-<p>Pour résoudre les problèmes potentiels avec les fonctions constructeur basées sur le fait d&#39;avoir un nom identique à celui du contrat, Solidity v0.4.22 introduit un mot-clé constructor qui fonctionne comme une fonction constructeur mais n&#39;a pas de nom. Renommer le contrat n&#39;affecte en rien le constructeur. De plus, il est plus facile d&#39;identifier quelle fonction est le constructeur. Il ressemble à ceci :</p>
+<p>Pour résoudre les problèmes potentiels avec les fonctions constructeur basées sur le fait d&#8217;avoir un nom identique à celui du contrat, Solidity v0.4.22 introduit un mot-clé constructor qui fonctionne comme une fonction constructeur mais n&#8217;a pas de nom. Renommer le contrat n&#8217;affecte en rien le constructeur. De plus, il est plus facile d&#8217;identifier quelle fonction est le constructeur. Il ressemble à ceci :</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">pragma ^0.4.22
 contract MEContract {
 	constructor () {
-	// C&amp;#39;est le constructeur
+	// C'est le constructeur
 	}
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Pour résumer, le cycle de vie d&#39;un contrat commence par une transaction de création à partir d&#39;un compte EOA ou un contrat. S&#39;il existe un constructeur, il est exécuté dans le cadre de la création du contrat, pour initialiser l&#39;état du contrat lors de sa création, puis est supprimé.</p>
+<p>Pour résumer, le cycle de vie d&#8217;un contrat commence par une transaction de création à partir d&#8217;un compte EOA ou un contrat. S&#8217;il existe un constructeur, il est exécuté dans le cadre de la création du contrat, pour initialiser l&#8217;état du contrat lors de sa création, puis est supprimé.</p>
 </div>
 <div class="paragraph">
-<p>L&#39;autre la fin du cycle de vie du contrat est la <em>destruction du contrat</em>. Les contrats sont détruits par un opcode EVM spécial appelé SELFDESTRUCT. Il s&#39;appelait autrefois <span class="keep-together"><code>SUICIDE</code></span>, mais ce nom a été déprécié en raison des associations négatives du mot. Dans Solidity, cet opcode est exposé sous la forme d&#39;une fonction intégrée de haut niveau appelée selfdestruct, qui prend un argument : l&#39;adresse pour recevoir tout solde d&#39;ether restant dans le compte du contrat. Il ressemble à ceci :</p>
+<p>L&#8217;autre la fin du cycle de vie du contrat est la <em>destruction du contrat</em>. Les contrats sont détruits par un opcode EVM spécial appelé <code>SELFDESTRUCT</code>.Il s&#8217;appelait autrefois <span class="keep-together"><code>SUICIDE</code></span>, mais ce nom a été déprécié en raison des associations négatives du mot. Dans Solidity, cet opcode est exposé sous la forme d&#8217;une fonction intégrée de haut niveau appelée <code>selfdestruct</code>,qui prend un argument : l&#8217;adresse pour recevoir tout solde d&#8217;ether restant dans le compte du contrat. Il ressemble à ceci :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1159,16 +1159,16 @@ contract MEContract {
 </div>
 </div>
 <div class="paragraph">
-<p>Notez que vous devez explicitement ajouter cette commande à votre contrat si vous voulez qu&#39;il soit supprimable - c&#39;est la seule façon de supprimer un contrat, et il n&#39;est pas présent par défaut. De cette manière, les utilisateurs d&#39;un contrat qui pourraient s&#39;attendre à ce qu&#39;un contrat soit là pour toujours peuvent être certains qu&#39;un contrat ne peut pas être supprimé s&#39;il ne contient pas d&#39;opcode <span class="keep-together"><code>SELFDESTRUCT</code></span>.</p>
+<p>Notez que vous devez explicitement ajouter cette commande à votre contrat si vous voulez qu&#8217;il soit supprimable - c&#8217;est la seule façon de supprimer un contrat, et il n&#8217;est pas présent par défaut. De cette manière, les utilisateurs d&#8217;un contrat qui pourraient s&#8217;attendre à ce qu&#8217;un contrat soit là pour toujours peuvent être certains qu&#8217;un contrat ne peut pas être supprimé s&#8217;il ne contient pas d&#8217;opcode <span class="keep-together"><code>SELFDESTRUCT</code></span>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ajout_dun_constructeur_et_autodestruction_à_notre_exemple_de_robinet">Ajout d&#39;un constructeur et autodestruction à notre exemple de robinet</h4>
+<h4 id="_ajout_dun_constructeur_et_autodestruction_à_notre_exemple_de_robinet">Ajout d&#8217;un constructeur et autodestruction à notre exemple de robinet</h4>
 <div class="paragraph">
-<p>L&#39;exemple de contrat Faucet que nous avons introduit dans <a href="#intro_chapter">[intro_chapter]</a> n&#39;a pas de constructeur ou de fonctions selfdestruct. C&#39;est un contrat éternel qui ne peut pas être supprimé. Changeons cela en ajoutant un constructeur et une fonction selfdestruct. Nous voulons probablement que selfdestruct soit appelable <em>uniquement</em> par l&#39;EOA qui a initialement créé le contrat. Par convention, ceci est généralement stocké dans une variable d&#39;adresse appelée owner. Notre constructeur définit la variable owner, et la fonction selfdestruct vérifiera d&#39;abord que le propriétaire l&#39;a appelée directement.</p>
+<p>L&#8217;exemple de contrat Faucet que nous avons introduit dans <a href="#intro_chapter">[intro_chapter]</a> n&#8217;a pas de constructeur ou de fonctions <code>selfdestruct</code>.C&#8217;est un contrat éternel qui ne peut pas être supprimé. Changeons cela en ajoutant un constructeur et une fonction <code>selfdestruct</code>.Nous voulons probablement que selfdestruct soit appelable <em>uniquement</em> par l&#8217;EOA qui a initialement créé le contrat. Par convention, ceci est généralement stocké dans une variable d&#8217;adresse appelée <code>owner</code>.Notre constructeur définit la variable <code>owner</code>,et la fonction selfdestruct vérifiera d&#8217;abord que le propriétaire l&#8217;a appelée directement.</p>
 </div>
 <div class="paragraph">
-<p>Tout d&#39;abord, notre constructeur :</p>
+<p>Tout d&#8217;abord, notre constructeur :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1189,13 +1189,13 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph">
-<p>Nous avons modifié la directive pragma pour spécifier la v0.4.22 comme version minimale pour cet exemple, car nous utilisons le nouveau mot-clé constructor introduit dans la v0.4.22 de Solidity. Notre contrat a maintenant une variable de type address nommée owner. Le nom &quot;owner&quot; n&#39;est en aucun cas spécial. Nous pourrions appeler cette variable d&#39;adresse &quot;potato&quot; et l&#39;utiliser toujours de la même manière. Le nom owner rend simplement son objectif clair.</p>
+<p>Nous avons modifié la directive pragma pour spécifier la v0.4.22 comme version minimale pour cet exemple, car nous utilisons le nouveau mot-clé constructor introduit dans la v0.4.22 de Solidity. Notre contrat a maintenant une variable de type address nommée <code>owner</code>.Le nom "owner" n&#8217;est en aucun cas spécial. Nous pourrions appeler cette variable d&#8217;adresse "potato" et l&#8217;utiliser toujours de la même manière. Le nom owner rend simplement son objectif clair.</p>
 </div>
 <div class="paragraph">
-<p>Ensuite, notre constructeur, qui s&#39;exécute dans le cadre de la transaction de création de contrat, attribue l&#39;adresse de msg.sender à la variable owner. Nous avons utilisé msg.sender dans la fonction remove pour identifier l&#39;initiateur de la demande de <span class="keep-together"><code>withdraw</code></span>. Dans le constructeur, cependant, le msg.sender est l&#39;EOA ou l&#39;adresse du contrat qui a initié la création du contrat. Nous savons que c&#39;est le cas <em>car</em> il s&#39;agit d&#39;une fonction constructeur : elle ne s&#39;exécute qu&#39;une seule fois, lors de la création du contrat.</p>
+<p>Ensuite, notre constructeur, qui s&#8217;exécute dans le cadre de la transaction de création de contrat, attribue l&#8217;adresse de msg.sender à la variable <code>owner</code>.Nous avons utilisé msg.sender dans la fonction remove pour identifier l&#8217;initiateur de la demande de <span class="keep-together"><code>withdraw</code></span>. Dans le constructeur, cependant, le msg.sender est l&#8217;EOA ou l&#8217;adresse du contrat qui a initié la création du contrat. Nous savons que c&#8217;est le cas <em>car</em> il s&#8217;agit d&#8217;une fonction constructeur : elle ne s&#8217;exécute qu&#8217;une seule fois, lors de la création du contrat.</p>
 </div>
 <div class="paragraph">
-<p>Nous pouvons maintenant ajouter une fonction pour détruire le contrat. Nous devons nous assurer que seul le propriétaire peut exécuter cette fonction, nous utiliserons donc une instruction require pour contrôler l&#39;accès. Voici à quoi cela ressemblera :</p>
+<p>Nous pouvons maintenant ajouter une fonction pour détruire le contrat. Nous devons nous assurer que seul le propriétaire peut exécuter cette fonction, nous utiliserons donc une instruction require pour contrôler l&#8217;accès. Voici à quoi cela ressemblera :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1207,13 +1207,13 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>Si quelqu&#39;un appelle cette fonction destroy depuis une adresse autre que owner, elle échouera. Mais si la même adresse stockée dans owner par le constructeur l&#39;appelle, le contrat s&#39;autodétruira et enverra tout solde restant à l&#39;adresse owner. Notez que nous n&#39;avons pas utilisé le non sécurisé tx.origin pour déterminer si le propriétaire souhaitait détruire le contrat. L&#39;utilisation de tx.origin permettrait à des contrats malveillants de détruire votre contrat sans votre permission.</p>
+<p>Si quelqu&#8217;un appelle cette fonction destroy depuis une adresse autre que <code>owner</code>,elle échouera. Mais si la même adresse stockée dans owner par le constructeur l&#8217;appelle, le contrat s&#8217;autodétruira et enverra tout solde restant à l&#8217;adresse <code>owner</code>.Notez que nous n&#8217;avons pas utilisé le non sécurisé tx.origin pour déterminer si le propriétaire souhaitait détruire le contrat. L&#8217;utilisation de tx.origin permettrait à des contrats malveillants de détruire votre contrat sans votre permission.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_modificateurs_de_fonction">Modificateurs de fonction</h4>
 <div class="paragraph">
-<p>Solidity offre un type spécial de fonction appelé <em>modificateur de fonction</em>. Vous appliquez des modificateurs aux fonctions en ajoutant le nom du modificateur dans la déclaration de la fonction. Les modificateurs sont le plus souvent utilisés pour créer des conditions qui s&#39;appliquent à de nombreuses fonctions au sein d&#39;un contrat. Nous avons déjà une instruction de contrôle d&#39;accès dans notre fonction destroy. Créons un modificateur de fonction qui exprime cette condition :</p>
+<p>Solidity offre un type spécial de fonction appelé <em>modificateur de fonction</em>. Vous appliquez des modificateurs aux fonctions en ajoutant le nom du modificateur dans la déclaration de la fonction. Les modificateurs sont le plus souvent utilisés pour créer des conditions qui s&#8217;appliquent à de nombreuses fonctions au sein d&#8217;un contrat. Nous avons déjà une instruction de contrôle d&#8217;accès dans notre fonction <code>destroy</code>.Créons un modificateur de fonction qui exprime cette condition :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1224,13 +1224,13 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>Ce modificateur de fonction, nommé onlyOwner, définit une condition sur toute fonction qu&#39;il modifie, exigeant que l&#39;adresse stockée en tant que owner du contrat soit la même que l&#39;adresse du msg.sender de la transaction. Il s&#39;agit du modèle de conception de base pour le contrôle d&#39;accès, permettant uniquement au propriétaire d&#39;un contrat d&#39;exécuter toute fonction qui a le modificateur onlyOwner.</p>
+<p>Ce modificateur de fonction, nommé <code>onlyOwner</code>,définit une condition sur toute fonction qu&#8217;il modifie, exigeant que l&#8217;adresse stockée en tant que owner du contrat soit la même que l&#8217;adresse du msg.sender de la transaction. Il s&#8217;agit du modèle de conception de base pour le contrôle d&#8217;accès, permettant uniquement au propriétaire d&#8217;un contrat d&#8217;exécuter toute fonction qui a le modificateur onlyOwner.</p>
 </div>
 <div class="paragraph">
-<p>Vous avez peut-être remarqué que notre modificateur de fonction contient un &quot;espace réservé&quot; syntaxique particulier, un trait de soulignement suivi d&#39;un point-virgule (_;). Cet espace réservé est remplacé par le code de la fonction en cours de modification. Essentiellement, le modificateur est &quot;enroulé autour&quot; de la fonction modifiée, plaçant son code à l&#39;emplacement identifié par le caractère de soulignement.</p>
+<p>Vous avez peut-être remarqué que notre modificateur de fonction contient un "espace réservé" syntaxique particulier, un trait de soulignement suivi d&#8217;un point-virgule (_;). Cet espace réservé est remplacé par le code de la fonction en cours de modification. Essentiellement, le modificateur est "enroulé autour" de la fonction modifiée, plaçant son code à l&#8217;emplacement identifié par le caractère de soulignement.</p>
 </div>
 <div class="paragraph">
-<p>Pour appliquer un modificateur, vous ajoutez son nom à la déclaration de la fonction. Plusieurs modificateurs peuvent être appliqués à une fonction ; ils sont appliqués dans l&#39;ordre dans lequel ils sont déclarés, sous forme de liste séparée par des virgules.</p>
+<p>Pour appliquer un modificateur, vous ajoutez son nom à la déclaration de la fonction. Plusieurs modificateurs peuvent être appliqués à une fonction ; ils sont appliqués dans l&#8217;ordre dans lequel ils sont déclarés, sous forme de liste séparée par des virgules.</p>
 </div>
 <div class="paragraph">
 <p>Réécrivons notre fonction destroy pour utiliser le modificateur onlyOwner :</p>
@@ -1243,19 +1243,19 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>Le nom du modificateur de fonction (onlyOwner) se trouve après le mot-clé public et nous indique que la fonction destroy est modifiée par le modificateur onlyOwner. Essentiellement, vous pouvez lire cela comme &quot;Seul le propriétaire peut détruire ce contrat&quot;. En pratique, le code résultant équivaut à &quot;envelopper&quot; le code de onlyOwner autour de destroy.</p>
+<p>Le nom du modificateur de fonction (<code>onlyOwner</code>)se trouve après le mot-clé public et nous indique que la fonction destroy est modifiée par le modificateur <code>onlyOwner</code>.Essentiellement, vous pouvez lire cela comme "Seul le propriétaire peut détruire ce contrat". En pratique, le code résultant équivaut à "envelopper" le code de onlyOwner autour de destroy.</p>
 </div>
 <div class="paragraph">
-<p>Les modificateurs de fonction sont un outil extrêmement utile car ils nous permettent d&#39;écrire des conditions préalables pour les fonctions et de les appliquer de manière cohérente, ce qui rend le code plus facile à lire et, par conséquent, plus facile à auditer pour la sécurité. Ils sont le plus souvent utilisés pour le contrôle d&#39;accès, mais ils sont assez polyvalents et peuvent être utilisés à diverses autres fins.</p>
+<p>Les modificateurs de fonction sont un outil extrêmement utile car ils nous permettent d&#8217;écrire des conditions préalables pour les fonctions et de les appliquer de manière cohérente, ce qui rend le code plus facile à lire et, par conséquent, plus facile à auditer pour la sécurité. Ils sont le plus souvent utilisés pour le contrôle d&#8217;accès, mais ils sont assez polyvalents et peuvent être utilisés à diverses autres fins.</p>
 </div>
 <div class="paragraph">
-<p>A l&#39;intérieur d&#39;un modificateur, vous pouvez accéder à toutes les valeurs (variables et arguments) visibles par la fonction modifiée. Dans ce cas, nous pouvons accéder à la variable owner, qui est déclarée dans le contrat. Cependant, l&#39;inverse n&#39;est pas vrai : vous ne pouvez accéder à aucune des variables du modificateur à l&#39;intérieur de la fonction modifiée.</p>
+<p>A l&#8217;intérieur d&#8217;un modificateur, vous pouvez accéder à toutes les valeurs (variables et arguments) visibles par la fonction modifiée. Dans ce cas, nous pouvons accéder à la variable <code>owner</code>,qui est déclarée dans le contrat. Cependant, l&#8217;inverse n&#8217;est pas vrai : vous ne pouvez accéder à aucune des variables du modificateur à l&#8217;intérieur de la fonction modifiée.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_héritage_du_contrat">Héritage du contrat</h4>
 <div class="paragraph">
-<p>L&#39;objet contract de Solidity prend en charge l'<em>héritage</em>, qui est un mécanisme permettant d&#39;étendre un contrat de base avec des fonctionnalités supplémentaires. Pour utiliser l&#39;héritage, spécifiez un contrat parent avec le mot-clé is :</p>
+<p>L&#8217;objet contract de Solidity prend en charge l'<em>héritage</em>, qui est un mécanisme permettant d&#8217;étendre un contrat de base avec des fonctionnalités supplémentaires. Pour utiliser l&#8217;héritage, spécifiez un contrat parent avec le mot-clé is :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1265,7 +1265,7 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>Avec cette construction, le contrat Child hérite de toutes les méthodes, fonctionnalités et variables de Parent. Solidity prend également en charge l&#39;héritage multiple, qui peut être spécifié par des noms de contrat séparés par des virgules après le mot-clé is :</p>
+<p>Avec cette construction, le contrat Child hérite de toutes les méthodes, fonctionnalités et variables de <code>Parent</code>.Solidity prend également en charge l&#8217;héritage multiple, qui peut être spécifié par des noms de contrat séparés par des virgules après le mot-clé is :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1275,13 +1275,13 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>L&#39;héritage de contrat nous permet d&#39;écrire nos contrats de manière à atteindre la modularité, l&#39;extensibilité et la réutilisation. Nous commençons par des contrats simples et implémentons les capacités les plus génériques, puis nous les étendons en héritant de ces capacités dans des contrats plus spécialisés.</p>
+<p>L&#8217;héritage de contrat nous permet d&#8217;écrire nos contrats de manière à atteindre la modularité, l&#8217;extensibilité et la réutilisation. Nous commençons par des contrats simples et implémentons les capacités les plus génériques, puis nous les étendons en héritant de ces capacités dans des contrats plus spécialisés.</p>
 </div>
 <div class="paragraph">
-<p>Dans notre contrat Faucet, nous avons introduit le constructeur et le destructeur, ainsi qu&#39;un contrôle d&#39;accès pour un propriétaire, assigné à la construction. Ces capacités sont assez génériques : de nombreux contrats en auront. Nous pouvons les définir comme des contrats génériques, puis utiliser l&#39;héritage pour les étendre au contrat Faucet.</p>
+<p>Dans notre contrat <code>Faucet</code>,nous avons introduit le constructeur et le destructeur, ainsi qu&#8217;un contrôle d&#8217;accès pour un propriétaire, assigné à la construction. Ces capacités sont assez génériques : de nombreux contrats en auront. Nous pouvons les définir comme des contrats génériques, puis utiliser l&#8217;héritage pour les étendre au contrat Faucet.</p>
 </div>
 <div class="paragraph">
-<p>Nous commençons par définir un contrat de base owned, qui a une variable owner, en la définissant dans le constructeur du contrat :</p>
+<p>Nous commençons par définir un contrat de base <code>owned</code>,qui a une variable <code>owner</code>,en la définissant dans le constructeur du contrat :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1293,7 +1293,7 @@ function destroy() public {
 		owner = msg.sender;
 	}
 
-	// Modificateur de contrôle d&amp;#39;accès
+	// Modificateur de contrôle d'accès
 	modifier onlyOwner {
 	    require(msg.sender == owner);
 	    _;
@@ -1302,7 +1302,7 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>Ensuite, nous définissons un contrat de base mortal, qui hérite de owned :</p>
+<p>Ensuite, nous définissons un contrat de base <code>mortal</code>,qui hérite de owned :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1315,19 +1315,19 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>Comme vous pouvez le voir, le contrat mortal peut utiliser le modificateur de fonction onlyOwner, défini dans owned. Il utilise aussi indirectement la variable d&#39;adresse owner et le constructeur défini dans owned. L&#39;héritage rend chaque contrat plus simple et axé sur sa fonctionnalité spécifique, nous permettant de gérer les détails de manière modulaire.</p>
+<p>Comme vous pouvez le voir, le contrat mortal peut utiliser le modificateur de fonction <code>onlyOwner</code>,défini dans <code>owned</code>.Il utilise aussi indirectement la variable d&#8217;adresse owner et le constructeur défini dans <code>owned</code>.L&#8217;héritage rend chaque contrat plus simple et axé sur sa fonctionnalité spécifique, nous permettant de gérer les détails de manière modulaire.</p>
 </div>
 <div class="paragraph">
-<p>Nous pouvons maintenant étendre davantage le contrat owned, en héritant de ses capacités dans Faucet :</p>
+<p>Nous pouvons maintenant étendre davantage le contrat <code>owned</code>,en héritant de ses capacités dans Faucet :</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">contract Faucet is mortal {
-	// Donnez de l&amp;#39;ether à quiconque demande
+	// Donnez de l'ether à quiconque demande
     function withdraw(uint withdraw_amount) public {
 	// Limiter le montant du retrait
         require(withdraw_amount &lt;= 0.1 ether);
-	// Envoie le montant à l&amp;#39;adresse qui l&amp;#39;a demandé
+	// Envoie le montant à l'adresse qui l'a demandé
         msg.sender.transfer(withdraw_amount);
     }
 	// Accepte tout montant entrant
@@ -1336,22 +1336,22 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>En héritant de mortal, qui à son tour hérite de owned, le contrat Faucet a maintenant les fonctions constructeur et destroy, et un propriétaire défini. La fonctionnalité est la même que lorsque ces fonctions étaient dans Faucet, mais maintenant nous pouvons réutiliser ces fonctions dans d&#39;autres contrats sans les réécrire. La réutilisation et la modularité du code rendent notre code plus propre, plus facile à lire et plus facile à auditer.</p>
+<p>En héritant de <code>mortal</code>,qui à son tour hérite de <code>owned</code>,le contrat Faucet a maintenant les fonctions constructeur et <code>destroy</code>,et un propriétaire défini. La fonctionnalité est la même que lorsque ces fonctions étaient dans <code>Faucet</code>,mais maintenant nous pouvons réutiliser ces fonctions dans d&#8217;autres contrats sans les réécrire. La réutilisation et la modularité du code rendent notre code plus propre, plus facile à lire et plus facile à auditer.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_gestion_des_erreurs_assert_require_revert">Gestion des erreurs (assert, require, revert)</h4>
 <div class="paragraph">
-<p>Un appel de contrat peut se terminer et renvoyer une erreur. La gestion des erreurs dans Solidity est gérée par quatre fonctions : assert, require, revert et throw (désormais obsolète).</p>
+<p>Un appel de contrat peut se terminer et renvoyer une erreur. La gestion des erreurs dans Solidity est gérée par quatre fonctions : <code>assert</code>,require, revert et throw (désormais obsolète).</p>
 </div>
 <div class="paragraph">
-<p>Lorsqu&#39;un contrat se termine avec une erreur, tous les changements d&#39;état (changements de variables, de soldes, etc.) sont annulés, tout au long de la chaîne d&#39;appels de contrat si plusieurs contrats ont été appelés. Cela garantit que les transactions sont <em>atomiques</em>, ce qui signifie qu&#39;elles se terminent avec succès ou n&#39;ont aucun effet sur l&#39;état et sont entièrement annulées.</p>
+<p>Lorsqu&#8217;un contrat se termine avec une erreur, tous les changements d&#8217;état (changements de variables, de soldes, etc.) sont annulés, tout au long de la chaîne d&#8217;appels de contrat si plusieurs contrats ont été appelés. Cela garantit que les transactions sont <em>atomiques</em>, ce qui signifie qu&#8217;elles se terminent avec succès ou n&#8217;ont aucun effet sur l&#8217;état et sont entièrement annulées.</p>
 </div>
 <div class="paragraph">
-<p>Les fonctions assert et require fonctionnent de la même manière, évaluant une condition et arrêtant l&#39;exécution avec une erreur si la condition c&#39;est fausse. Par convention, assert est utilisé lorsque le résultat est censé être vrai, ce qui signifie que nous utilisons assert pour tester les conditions internes. Par comparaison, require est utilisé lors du test d&#39;entrées (telles que des arguments de fonction ou des champs de transaction), définissant nos attentes pour ces <span class="keep-together">conditions</span>.</p>
+<p>Les fonctions assert et require fonctionnent de la même manière, évaluant une condition et arrêtant l&#8217;exécution avec une erreur si la condition c&#8217;est fausse. Par convention, assert est utilisé lorsque le résultat est censé être vrai, ce qui signifie que nous utilisons assert pour tester les conditions internes. Par comparaison, require est utilisé lors du test d&#8217;entrées (telles que des arguments de fonction ou des champs de transaction), définissant nos attentes pour ces <span class="keep-together">conditions</span>.</p>
 </div>
 <div class="paragraph">
-<p>Nous avons utilisé require dans notre modificateur de fonction onlyOwner, pour tester que l&#39;expéditeur du message est le propriétaire du contrat :</p>
+<p>Nous avons utilisé require dans notre modificateur de fonction <code>onlyOwner</code>,pour tester que l&#8217;expéditeur du message est le propriétaire du contrat :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1359,21 +1359,21 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>La fonction require agit comme une <em>condition d&#8217;entrée</em>, empêchant l&#39;exécution du reste de la fonction et produisant une erreur si elle n&#39;est pas satisfaite.</p>
+<p>La fonction require agit comme une <em>condition d&#8217;entrée</em>, empêchant l&#8217;exécution du reste de la fonction et produisant une erreur si elle n&#8217;est pas satisfaite.</p>
 </div>
 <div class="paragraph">
-<p>Depuis Solidity v0.4.22, require peut également inclure un message texte utile qui peut être utilisé pour indiquer la raison de l&#39;erreur. Le message d&#39;erreur est enregistré dans le journal des transactions. Ainsi, nous pouvons améliorer notre code en ajoutant un message d&#39;erreur dans notre fonction require :</p>
+<p>Depuis Solidity v0.4.22, require peut également inclure un message texte utile qui peut être utilisé pour indiquer la raison de l&#8217;erreur. Le message d&#8217;erreur est enregistré dans le journal des transactions. Ainsi, nous pouvons améliorer notre code en ajoutant un message d&#8217;erreur dans notre fonction require :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">require(msg.sender == owner, &amp;quot;Seul le propriétaire du contrat peut appeler cette fonction&amp;quot;);</code></pre>
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">require(msg.sender == owner, "Seul le propriétaire du contrat peut appeler cette fonction");</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Les fonctions revert et throw interrompent l&#39;exécution du contrat et annulent tout changement d&#39;état. La fonction throw est obsolète et sera supprimée dans les futures versions de Solidity ; vous devriez utiliser revert à la place. La fonction revert peut également prendre un message d&#39;erreur comme seul argument, qui est enregistré dans le journal des transactions.</p>
+<p>Les fonctions revert et throw interrompent l&#8217;exécution du contrat et annulent tout changement d&#8217;état. La fonction throw est obsolète et sera supprimée dans les futures versions de Solidity ; vous devriez utiliser revert à la place. La fonction revert peut également prendre un message d&#8217;erreur comme seul argument, qui est enregistré dans le journal des transactions.</p>
 </div>
 <div class="paragraph">
-<p>Certaines conditions d&#39;un contrat généreront des erreurs, que nous les vérifiions explicitement ou non. Par exemple, dans notre contrat Faucet, nous ne vérifions pas s&#39;il y a suffisamment d&#39;ether pour satisfaire une demande de retrait. En effet, la fonction transfer échouera avec une erreur et annulera la transaction si le solde est insuffisant pour effectuer le transfert :</p>
+<p>Certaines conditions d&#8217;un contrat généreront des erreurs, que nous les vérifiions explicitement ou non. Par exemple, dans notre contrat <code>Faucet</code>,nous ne vérifions pas s&#8217;il y a suffisamment d&#8217;ether pour satisfaire une demande de retrait. En effet, la fonction transfer échouera avec une erreur et annulera la transaction si le solde est insuffisant pour effectuer le transfert :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1381,32 +1381,32 @@ function destroy() public {
 </div>
 </div>
 <div class="paragraph">
-<p>Cependant, il peut être préférable de vérifier explicitement et de fournir un message d&#39;erreur clair en cas d&#39;échec. Nous pouvons le faire en ajoutant une instruction require avant le transfert :</p>
+<p>Cependant, il peut être préférable de vérifier explicitement et de fournir un message d&#8217;erreur clair en cas d&#8217;échec. Nous pouvons le faire en ajoutant une instruction require avant le transfert :</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">require(this.balance &gt;= withdraw_amount,
-&amp;quot;Solde insuffisant dans le robinet pour la demande de retrait&amp;quot; );
+"Solde insuffisant dans le robinet pour la demande de retrait" );
 msg.sender.transfer(withdraw_amount);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Un code de vérification d&#39;erreur supplémentaire comme celui-ci augmentera légèrement la consommation de gaz, mais il offre un meilleur rapport d&#39;erreur que s&#39;il est omis. Vous devrez trouver le bon équilibre entre la consommation de gaz et la vérification détaillée des erreurs en fonction de l&#39;utilisation prévue de votre contrat. Dans le cas d&#39;un contrat Faucet destiné à un testnet, nous pouvons probablement abuser du côté des rapports supplémentaires même si cela coûte plus cher en gaz. Peut-être que pour un contrat de réseau principal, nous choisirons plutôt d&#39;être économes avec notre consommation de gaz.</p>
+<p>Un code de vérification d&#8217;erreur supplémentaire comme celui-ci augmentera légèrement la consommation de gaz, mais il offre un meilleur rapport d&#8217;erreur que s&#8217;il est omis. Vous devrez trouver le bon équilibre entre la consommation de gaz et la vérification détaillée des erreurs en fonction de l&#8217;utilisation prévue de votre contrat. Dans le cas d&#8217;un contrat Faucet destiné à un testnet, nous pouvons probablement abuser du côté des rapports supplémentaires même si cela coûte plus cher en gaz. Peut-être que pour un contrat de réseau principal, nous choisirons plutôt d&#8217;être économes avec notre consommation de gaz.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="solidity_events">Événements</h4>
 <div class="paragraph">
-<p>Lorsque une transaction se termine (avec succès ou non), elle produit une <em>réception de transaction</em>, comme nous le verrons dans <a href="#evm_chapter">[evm_chapter]</a>. Le reçu de transaction contient des entrées <em>log</em> qui fournissent des informations sur les actions qui se sont produites lors de l&#39;exécution de la transaction. Les <em>Événements</em> ou <em>Events</em> sont les objets de haut niveau de Solidity utilisés pour construire ces journaux.</p>
+<p>Lorsque une transaction se termine (avec succès ou non), elle produit une <em>réception de transaction</em>, comme nous le verrons dans <a href="#evm_chapter">[evm_chapter]</a>. Le reçu de transaction contient des entrées <em>log</em> qui fournissent des informations sur les actions qui se sont produites lors de l&#8217;exécution de la transaction. Les <em>Événements</em> ou <em>Events</em> sont les objets de haut niveau de Solidity utilisés pour construire ces journaux.</p>
 </div>
 <div class="paragraph">
-<p>Les événements sont particulièrement utiles pour les clients légers et les services DApp, qui peuvent &quot;surveiller&quot; des événements spécifiques et les signaler à l&#39;interface utilisateur, ou modifier l&#39;état de l&#39;application pour refléter un événement dans un contrat sous-jacent.</p>
+<p>Les événements sont particulièrement utiles pour les clients légers et les services DApp, qui peuvent "surveiller" des événements spécifiques et les signaler à l&#8217;interface utilisateur, ou modifier l&#8217;état de l&#8217;application pour refléter un événement dans un contrat sous-jacent.</p>
 </div>
 <div class="paragraph">
-<p>Les objets d&#39;événement prennent des arguments qui sont sérialisés et enregistrés dans les journaux de transactions, dans la chaîne de blocs. Vous pouvez fournir le mot-clé indexé avant un argument, pour que la valeur fasse partie d&#39;une table indexée (table de hachage) qui peut être recherchée ou filtrée par une application.</p>
+<p>Les objets d&#8217;événement prennent des arguments qui sont sérialisés et enregistrés dans les journaux de transactions, dans la chaîne de blocs. Vous pouvez fournir le mot-clé indexé avant un argument, pour que la valeur fasse partie d&#8217;une table indexée (table de hachage) qui peut être recherchée ou filtrée par une application.</p>
 </div>
 <div class="paragraph">
-<p>Nous n&#39;avons ajouté aucun événement dans notre exemple Faucet jusqu&#39;à présent, alors faisons cela. Nous ajouterons deux événements, un pour enregistrer les retraits et un pour enregistrer les dépôts. Nous appellerons ces événements Withdrawal et Deposit, respectivement. Tout d&#39;abord, nous définissons les événements dans le contrat Faucet :</p>
+<p>Nous n&#8217;avons ajouté aucun événement dans notre exemple Faucet jusqu&#8217;à présent, alors faisons cela. Nous ajouterons deux événements, un pour enregistrer les retraits et un pour enregistrer les dépôts. Nous appellerons ces événements Withdrawal et <code>Deposit</code>,respectivement. Tout d&#8217;abord, nous définissons les événements dans le contrat Faucet :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1419,14 +1419,14 @@ msg.sender.transfer(withdraw_amount);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Nous avons choisi de rendre les adresses indexed, pour permettre la recherche et le filtrage dans n&#39;importe quelle interface utilisateur conçue pour accéder à notre Faucet.</p>
+<p>Nous avons choisi de rendre les adresses <code>indexed</code>,pour permettre la recherche et le filtrage dans n&#8217;importe quelle interface utilisateur conçue pour accéder à notre Faucet.</p>
 </div>
 <div class="paragraph">
-<p>Ensuite, nous utilisons le mot-clé emit pour incorporer les données d&#39;événement dans les journaux de transactions :</p>
+<p>Ensuite, nous utilisons le mot-clé emit pour incorporer les données d&#8217;événement dans les journaux de transactions :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Donnez de l&amp;#39;ether à quiconque demande
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Donnez de l'ether à quiconque demande
 function withdraw(uint withdraw_amount) public {
     [...]
     msg.sender.transfer(withdraw_amount);
@@ -1505,7 +1505,7 @@ contract Faucet is Mortal {
 <div class="sect4">
 <h5 id="_attraper_des_événements">Attraper des événements</h5>
 <div class="paragraph">
-<p>OK, nous avons donc configuré notre contrat pour émettre des événements. Comment voir les résultats d&#39;une transaction et &quot;attraper&quot; les événements ? La bibliothèque web3.js fournit une structure de données qui contient les journaux d&#39;une transaction. Dans ceux-ci, nous pouvons voir les événements générés par la transaction.</p>
+<p>OK, nous avons donc configuré notre contrat pour émettre des événements. Comment voir les résultats d&#8217;une transaction et "attraper" les événements ? La bibliothèque web3.js fournit une structure de données qui contient les journaux d&#8217;une transaction. Dans ceux-ci, nous pouvons voir les événements générés par la transaction.</p>
 </div>
 <div class="paragraph">
 <p>Utilisons truffle pour exécuter une transaction de test sur le contrat Faucet révisé. Suivez les instructions dans <a href="#truffle">[truffle]</a> pour configurer un répertoire de projet et compiler le code <span class="keep-together"><code>Faucet</code></span>. Le code source peut être trouvé dans <a href="https://github.com/ethereumbook/ethereumbook">le référentiel GitHub du livre</a> sous <em>code/truffle/FaucetEvents</em>.</p>
@@ -1543,7 +1543,7 @@ Withdrawal { to: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
 
 </pre>
 <div class="paragraph">
-<p>Après avoir déployé le contrat à l&#39;aide de la fonction deployed, nous exécutons deux transactions. La première transaction est un dépôt (en utilisant send), qui émet un événement Deposit dans les journaux de transactions :</p>
+<p>Après avoir déployé le contrat à l&#8217;aide de la fonction <code>deployed</code>,nous exécutons deux transactions. La première transaction est un dépôt (en utilisant send), qui émet un événement Deposit dans les journaux de transactions :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1561,7 +1561,7 @@ Withdrawal { to: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
 </div>
 </div>
 <div class="paragraph">
-<p>Pour obtenir ces événements, nous avons examiné le tableau logs renvoyé comme résultat (res) des transactions. La première entrée de journal (logs[0]) contient un nom d&#39;événement dans logs[0].event et les arguments d&#39;événement dans logs[0].args. En les affichant sur la console, nous pouvons voir le nom de l&#39;événement émis et les arguments de l&#39;événement.</p>
+<p>Pour obtenir ces événements, nous avons examiné le tableau logs renvoyé comme résultat (<code>res</code>)des transactions. La première entrée de journal (<code>logs[0]</code>)contient un nom d&#8217;événement dans logs[0].event et les arguments d&#8217;événement dans <code>logs[0].args</code>.En les affichant sur la console, nous pouvons voir le nom de l&#8217;événement émis et les arguments de l&#8217;événement.</p>
 </div>
 <div class="paragraph">
 <p>Les événements sont un mécanisme très utile, non seulement pour la communication intra-contrat, mais aussi pour le débogage pendant le développement.</p>
@@ -1569,14 +1569,14 @@ Withdrawal { to: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
 </div>
 </div>
 <div class="sect3">
-<h4 id="_appel_dautres_contrats_send_call_callcode_delegatecall">Appel d&#39;autres contrats (send, call, callcode, delegatecall)</h4>
+<h4 id="_appel_dautres_contrats_send_call_callcode_delegatecall">Appel d&#8217;autres contrats (send, call, callcode, delegatecall)</h4>
 <div class="paragraph">
-<p>Appeler d&#39;autres contrats depuis votre contrat est une opération très utile mais potentiellement dangereuse. Nous examinerons les différentes façons d&#39;y parvenir et évaluerons les risques de chaque méthode. En bref, les risques découlent du fait que vous ne savez peut-être pas grand-chose sur un contrat auquel vous faites appel ou qui fait appel à votre contrat. Lors de la rédaction de contrats intelligents, vous devez garder à l&#39;esprit que même si vous vous attendez principalement à traiter avec des EOA, rien n&#39;empêche des contrats arbitrairement complexes et peut-être malveillants d&#39;appeler et d&#39;être appelés par votre code.</p>
+<p>Appeler d&#8217;autres contrats depuis votre contrat est une opération très utile mais potentiellement dangereuse. Nous examinerons les différentes façons d&#8217;y parvenir et évaluerons les risques de chaque méthode. En bref, les risques découlent du fait que vous ne savez peut-être pas grand-chose sur un contrat auquel vous faites appel ou qui fait appel à votre contrat. Lors de la rédaction de contrats intelligents, vous devez garder à l&#8217;esprit que même si vous vous attendez principalement à traiter avec des EOA, rien n&#8217;empêche des contrats arbitrairement complexes et peut-être malveillants d&#8217;appeler et d&#8217;être appelés par votre code.</p>
 </div>
 <div class="sect4">
-<h5 id="_création_dune_nouvelle_instance">Création d&#39;une nouvelle instance</h5>
+<h5 id="_création_dune_nouvelle_instance">Création d&#8217;une nouvelle instance</h5>
 <div class="paragraph">
-<p>Le moyen le plus sûr d&#39;appeler un autre contrat est de créer vous-même cet autre contrat. De cette façon, vous êtes certain de ses interfaces et de son comportement. Pour ce faire, vous pouvez simplement l&#39;instancier, en utilisant le mot-clé new, comme dans d&#39;autres langages orientés objet. Dans Solidity, le mot-clé new créera le contrat sur la chaîne de blocs et renverra un objet que vous pourrez utiliser pour le référencer. Supposons que vous souhaitiez créer et appeler un contrat Faucet à partir d&#39;un autre contrat appelé Token :</p>
+<p>Le moyen le plus sûr d&#8217;appeler un autre contrat est de créer vous-même cet autre contrat. De cette façon, vous êtes certain de ses interfaces et de son comportement. Pour ce faire, vous pouvez simplement l&#8217;instancier, en utilisant le mot-clé <code>new</code>,comme dans d&#8217;autres langages orientés objet. Dans Solidity, le mot-clé new créera le contrat sur la chaîne de blocs et renverra un objet que vous pourrez utiliser pour le référencer. Supposons que vous souhaitiez créer et appeler un contrat Faucet à partir d&#8217;un autre contrat appelé Token :</p>
 </div>
 <div class="listingblock pagebreak-before">
 <div class="content">
@@ -1590,7 +1590,7 @@ Withdrawal { to: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
 </div>
 </div>
 <div class="paragraph">
-<p>Ce mécanisme de construction de contrat garantit que vous connaissez le type exact du contrat et son interface. Le contrat Faucet doit être défini dans la portée de Token, ce que vous pouvez faire avec une instruction import si la définition se trouve dans un autre fichier :</p>
+<p>Ce mécanisme de construction de contrat garantit que vous connaissez le type exact du contrat et son interface. Le contrat Faucet doit être défini dans la portée de <code>Token</code>,ce que vous pouvez faire avec une instruction import si la définition se trouve dans un autre fichier :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1606,7 +1606,7 @@ contract Token is mortal {
 </div>
 </div>
 <div class="paragraph">
-<p>Vous pouvez éventuellement spécifier la value du transfert d&#39;ether lors de la création et passer des arguments au constructeur du nouveau contrat :</p>
+<p>Vous pouvez éventuellement spécifier la value du transfert d&#8217;ether lors de la création et passer des arguments au constructeur du nouveau contrat :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1622,7 +1622,7 @@ contract Token is mortal {
 </div>
 </div>
 <div class="paragraph">
-<p>Vous pouvez également appeler ensuite les fonctions Faucet. Dans cet exemple, nous appelons la fonction destroy de Faucet depuis la fonction destroy de Token :</p>
+<p>Vous pouvez également appeler ensuite les fonctions <code>Faucet</code>.Dans cet exemple, nous appelons la fonction destroy de Faucet depuis la fonction destroy de Token :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1642,13 +1642,13 @@ contract Token is mortal {
 </div>
 </div>
 <div class="paragraph">
-<p>Notez que tant que vous êtes le propriétaire du contrat Token, le contrat Token lui-même possède le nouveau contrat Faucet, donc seul le contrat Token peut le détruire.</p>
+<p>Notez que tant que vous êtes le propriétaire du contrat <code>Token</code>,le contrat Token lui-même possède le nouveau contrat <code>Faucet</code>,donc seul le contrat Token peut le détruire.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_adressage_dune_instance_existante">Adressage d&#39;une instance existante</h5>
+<h5 id="_adressage_dune_instance_existante">Adressage d&#8217;une instance existante</h5>
 <div class="paragraph">
-<p>Une autre façon d&#39;appeler un contrat consiste à convertir l&#39;adresse d&#39;une instance existante du contrat. Avec cette méthode, vous appliquez une interface connue à une instance existante. Il est donc extrêmement important que vous sachiez avec certitude que l&#39;instance à laquelle vous vous adressez est en fait du type que vous supposez. Regardons un exemple :</p>
+<p>Une autre façon d&#8217;appeler un contrat consiste à convertir l&#8217;adresse d&#8217;une instance existante du contrat. Avec cette méthode, vous appliquez une interface connue à une instance existante. Il est donc extrêmement important que vous sachiez avec certitude que l&#8217;instance à laquelle vous vous adressez est en fait du type que vous supposez. Regardons un exemple :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1666,13 +1666,13 @@ contract Token is mortal {
 </div>
 </div>
 <div class="paragraph">
-<p>Ici, nous prenons une adresse fournie comme argument au constructeur, _f, et nous la transformons en un objet Faucet. C&#39;est beaucoup plus risqué que le mécanisme précédent, car nous ne savons pas avec certitude si cette adresse est réellement un objet Faucet. Lorsque nous appelons withdraw, nous supposons qu&#39;il accepte les mêmes arguments et exécute le même code que notre déclaration Faucet, mais nous ne pouvons pas en être sûrs. Pour autant que nous sachions, la fonction withdraw à cette adresse pourrait exécuter quelque chose de complètement différent de ce que nous attendons, même si elle porte le même nom. Utiliser des adresses passées en entrée et les intégrer dans des objets spécifiques est donc beaucoup plus dangereux que de créer soi-même le contrat.</p>
+<p>Ici, nous prenons une adresse fournie comme argument au constructeur, <code>_f</code>,et nous la transformons en un objet <code>Faucet</code>.C&#8217;est beaucoup plus risqué que le mécanisme précédent, car nous ne savons pas avec certitude si cette adresse est réellement un objet <code>Faucet</code>.Lorsque nous appelons <code>withdraw</code>,nous supposons qu&#8217;il accepte les mêmes arguments et exécute le même code que notre déclaration <code>Faucet</code>,mais nous ne pouvons pas en être sûrs. Pour autant que nous sachions, la fonction withdraw à cette adresse pourrait exécuter quelque chose de complètement différent de ce que nous attendons, même si elle porte le même nom. Utiliser des adresses passées en entrée et les intégrer dans des objets spécifiques est donc beaucoup plus dangereux que de créer soi-même le contrat.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_appel_brut_call_et_delegatecall">Appel brut call et delegatecall</h5>
 <div class="paragraph">
-<p>Solidity propose des fonctions encore plus &quot;de bas niveau&quot; pour appeler d&#39;autres contrats. Ceux-ci correspondent directement aux opcodes EVM du même nom et nous permettent de construire manuellement un appel de contrat à contrat. En tant que tels, ils représentent les mécanismes les plus flexibles <em>et</em> les plus dangereux pour appeler d&#39;autres contrats.</p>
+<p>Solidity propose des fonctions encore plus "de bas niveau" pour appeler d&#8217;autres contrats. Ceux-ci correspondent directement aux opcodes EVM du même nom et nous permettent de construire manuellement un appel de contrat à contrat. En tant que tels, ils représentent les mécanismes les plus flexibles <em>et</em> les plus dangereux pour appeler d&#8217;autres contrats.</p>
 </div>
 <div class="paragraph">
 <p>Voici le même exemple, en utilisant une méthode call :</p>
@@ -1687,7 +1687,7 @@ contract Token is mortal {
 </div>
 </div>
 <div class="paragraph">
-<p>Comme vous pouvez le voir, ce type de call est un appel <em>aveugle</em> dans une fonction, un peu comme la construction d&#39;une transaction brute, uniquement à partir du contexte d&#39;un contrat. Cela peut exposer votre contrat à un certain nombre de risques de sécurité, le plus important étant la <em>réentrance</em>, dont nous discuterons plus en détail dans <a href="#reentrancy_security">[reentrancy_security]</a>. La fonction call renverra false s&#39;il y a un problème, vous pouvez donc évaluer la valeur de retour pour la gestion des erreurs :</p>
+<p>Comme vous pouvez le voir, ce type de call est un appel <em>aveugle</em> dans une fonction, un peu comme la construction d&#8217;une transaction brute, uniquement à partir du contexte d&#8217;un contrat. Cela peut exposer votre contrat à un certain nombre de risques de sécurité, le plus important étant la <em>réentrance</em>, dont nous discuterons plus en détail dans <a href="#reentrancy_security">[reentrancy_security]</a>. La fonction call renverra false s&#8217;il y a un problème, vous pouvez donc évaluer la valeur de retour pour la gestion des erreurs :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1701,19 +1701,19 @@ contract Token is mortal {
 </div>
 </div>
 <div class="paragraph">
-<p>Une autre variante de call est delegatecall, qui a remplacé le plus dangereux callcode. La méthode <code><span class="keep-together">callcode</span></code> sera bientôt obsolète, elle ne doit donc pas être utilisée.</p>
+<p>Une autre variante de call est <code>delegatecall</code>,qui a remplacé le plus dangereux <code>callcode</code>.La méthode <code><span class="keep-together">callcode</span></code> sera bientôt obsolète, elle ne doit donc pas être utilisée.</p>
 </div>
 <div class="paragraph">
-<p>Comme mentionné dans <a href="#solidity_address_object">objet d&#39;adresse</a>, un delegatecall est différent d&#39;un call en ce que le contexte msg ne change pas. Par exemple, alors qu&#39;un call change la valeur de msg.sender pour être le contrat d&#39;appel, un delegatecall conserve le même msg.sender que dans le contrat d&#39;appel. Essentiellement, delegatecall exécute le code d&#39;un autre contrat dans le contexte de l&#39;exécution du contrat en cours. Il est le plus souvent utilisé pour invoquer du code à partir d&#39;une bibliothèque. Cela vous permet également de dessiner sur le modèle d&#39;utilisation des fonctions de bibliothèque stockées ailleurs, mais de faire fonctionner ce code avec les données de stockage de votre contrat.</p>
+<p>Comme mentionné dans <a href="#solidity_address_object">objet d&#8217;adresse</a>, un delegatecall est différent d&#8217;un call en ce que le contexte msg ne change pas. Par exemple, alors qu&#8217;un call change la valeur de msg.sender pour être le contrat d&#8217;appel, un delegatecall conserve le même msg.sender que dans le contrat d&#8217;appel. Essentiellement, delegatecall exécute le code d&#8217;un autre contrat dans le contexte de l&#8217;exécution du contrat en cours. Il est le plus souvent utilisé pour invoquer du code à partir d&#8217;une bibliothèque. Cela vous permet également de dessiner sur le modèle d&#8217;utilisation des fonctions de bibliothèque stockées ailleurs, mais de faire fonctionner ce code avec les données de stockage de votre contrat.</p>
 </div>
 <div class="paragraph">
-<p>L&#39;appel delegatecall doit être utilisé avec beaucoup de prudence. Cela peut avoir des effets inattendus, surtout si le contrat que vous appelez n&#39;a pas été conçu comme une bibliothèque.</p>
+<p>L&#8217;appel delegatecall doit être utilisé avec beaucoup de prudence. Cela peut avoir des effets inattendus, surtout si le contrat que vous appelez n&#8217;a pas été conçu comme une bibliothèque.</p>
 </div>
 <div class="paragraph">
-<p>Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#39;appel utilisées par call et delegatecall pour appeler des bibliothèques et des contrats. Dans <a href="#call_examples_code">CallExamples.sol : un exemple de différentes sémantiques d&#39;appel</a>, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#39;appel change en fonction du type d&#39;appel.</p>
+<p>Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#8217;appel utilisées par call et delegatecall pour appeler des bibliothèques et des contrats. Dans <a href="#call_examples_code">CallExamples.sol : un exemple de différentes sémantiques d&#8217;appel</a>, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#8217;appel change en fonction du type d&#8217;appel.</p>
 </div>
 <div id="call_examples_code" class="exampleblock">
-<div class="title">Example 4. CallExamples.sol : un exemple de différentes sémantiques d&#39;appel</div>
+<div class="title">Example 4. CallExamples.sol : un exemple de différentes sémantiques d&#8217;appel</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -1756,10 +1756,10 @@ contract caller {
 </div>
 </div>
 <div class="paragraph">
-<p>Comme vous pouvez le voir dans cet exemple, notre contrat principal est caller, qui appelle une bibliothèque calledLibrary et un contrat calledContract. La bibliothèque appelée et le contrat ont des fonctions calledFunction identiques, qui émettent un événement calledEvent. L&#39;événement calledEvent enregistre trois éléments de données : msg.sender, tx.origin et this. Chaque fois que calledFunction est appelé, il peut avoir un contexte d&#39;exécution différent (avec des valeurs différentes pour potentiellement toutes les variables de contexte), selon qu&#39;il est appelé directement ou via delegatecall.</p>
+<p>Comme vous pouvez le voir dans cet exemple, notre contrat principal est <code>caller</code>,qui appelle une bibliothèque calledLibrary et un contrat <code>calledContract</code>.La bibliothèque appelée et le contrat ont des fonctions calledFunction identiques, qui émettent un événement <code>calledEvent</code>.L&#8217;événement calledEvent enregistre trois éléments de données : <code>msg.sender</code>,tx.origin et <code>this</code>.Chaque fois que calledFunction est appelé, il peut avoir un contexte d&#8217;exécution différent (avec des valeurs différentes pour potentiellement toutes les variables de contexte), selon qu&#8217;il est appelé directement ou via delegatecall.</p>
 </div>
 <div class="paragraph">
-<p>Dans caller, nous appelons d&#39;abord le contrat et la bibliothèque directement, en invoquant calledFunction dans chacun. Ensuite, nous utilisons explicitement les fonctions de bas niveau call et delegatecall pour appeler calledContract.calledFunction. De cette façon, nous pouvons voir comment les différents mécanismes d&#39;appel se comportent.</p>
+<p>Dans <code>caller</code>,nous appelons d&#8217;abord le contrat et la bibliothèque directement, en invoquant calledFunction dans chacun. Ensuite, nous utilisons explicitement les fonctions de bas niveau call et delegatecall pour appeler <code>calledContract.calledFunction</code>.De cette façon, nous pouvons voir comment les différents mécanismes d&#8217;appel se comportent.</p>
 </div>
 <div class="paragraph">
 <p>Exécutons ceci dans un environnement de développement Truffle et capturons les événements, pour voir à quoi cela ressemble :</p>
@@ -1796,7 +1796,7 @@ truffle(develop)> <strong>callerDeployed.make_calls(calledContract.address).then
 
 </pre>
 <div class="paragraph">
-<p>Voyons ce qui s&#39;est passé ici. Nous avons appelé la fonction make_calls et passé l&#39;adresse de calledContract, puis avons intercepté les quatre événements émis par chacun des différents appels. Examinons la fonction make_calls et passons en revue chaque étape.</p>
+<p>Voyons ce qui s&#8217;est passé ici. Nous avons appelé la fonction make_calls et passé l&#8217;adresse de <code>calledContract</code>,puis avons intercepté les quatre événements émis par chacun des différents appels. Examinons la fonction make_calls et passons en revue chaque étape.</p>
 </div>
 <div class="paragraph">
 <p>Le premier appel est :</p>
@@ -1807,7 +1807,7 @@ truffle(develop)> <strong>callerDeployed.make_calls(calledContract.address).then
 </div>
 </div>
 <div class="paragraph">
-<p>Ici, nous appelons calledContract.calledFunction directement, en utilisant l&#39;ABI de haut niveau pour calledFunction. L&#39;événement émis est :</p>
+<p>Ici, nous appelons calledContract.calledFunction directement, en utilisant l&#8217;ABI de haut niveau pour <code>calledFunction</code>.L&#8217;événement émis est :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1817,7 +1817,7 @@ from: '0x345ca3e014aaf5dca488057592ee47305d9b3e10'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Comme vous pouvez le voir, msg.sender est l&#39;adresse du contrat caller. Le tx.origin est l&#39;adresse de notre compte, web3.eth.accounts[0], qui a envoyé la transaction à caller. L&#39;événement a été émis par calledContract, comme nous pouvons le voir sur le dernier argument de l&#39;événement.</p>
+<p>Comme vous pouvez le voir, msg.sender est l&#8217;adresse du contrat <code>caller</code>.Le tx.origin est l&#8217;adresse de notre compte, <code>web3.eth.accounts[0]</code>,qui a envoyé la transaction à <code>caller</code>.L&#8217;événement a été émis par <code>calledContract</code>,comme nous pouvons le voir sur le dernier argument de l&#8217;événement.</p>
 </div>
 <div class="paragraph">
 <p>Le prochain appel dans make_calls est vers la bibliothèque :</p>
@@ -1838,7 +1838,7 @@ from: '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Cette fois, le msg.sender n&#39;est pas l&#39;adresse de caller. Au lieu de cela, c&#39;est l&#39;adresse de notre compte, et c&#39;est la même que l&#39;origine de la transaction. En effet, lorsque vous appelez une bibliothèque, l&#39;appel est toujours delegatecall et s&#39;exécute dans le contexte de l&#39;appelant. Ainsi, lorsque le code calledLibrary s&#39;exécutait, il héritait du contexte d&#39;exécution de caller, comme si son code s&#39;exécutait à l&#39;intérieur de caller. La variable this (affichée comme from dans l&#39;événement émis) est l&#39;adresse de caller, même si elle est accessible depuis <span class="keep-together"><code>calledLibrary</code></span>.</p>
+<p>Cette fois, le msg.sender n&#8217;est pas l&#8217;adresse de <code>caller</code>.Au lieu de cela, c&#8217;est l&#8217;adresse de notre compte, et c&#8217;est la même que l&#8217;origine de la transaction. En effet, lorsque vous appelez une bibliothèque, l&#8217;appel est toujours delegatecall et s&#8217;exécute dans le contexte de l&#8217;appelant. Ainsi, lorsque le code calledLibrary s&#8217;exécutait, il héritait du contexte d&#8217;exécution de <code>caller</code>,comme si son code s&#8217;exécutait à l&#8217;intérieur de <code>caller</code>.La variable this (affichée comme from dans l&#8217;événement émis) est l&#8217;adresse de <code>caller</code>,même si elle est accessible depuis <span class="keep-together"><code>calledLibrary</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>Les deux appels suivants, utilisant les appels call et delegatecall de bas niveau, vérifient nos attentes, émettant des événements qui reflètent ce que nous venons de faire</p>
@@ -1849,40 +1849,40 @@ from: '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f'</pre>
 <div class="sect2">
 <h3 id="gas_sec">Considérations sur le gaz</h3>
 <div class="paragraph">
-<p>Le gaz, décrit dans plus de détails dans <a href="#gas">[gas]</a>, est une considération extrêmement importante dans la programmation de contrats intelligents. Le gaz est une ressource limitant la quantité maximale de calculs qu&#39;Ethereum permettra à une transaction de consommer. Si la limite de gaz est dépassée pendant le calcul, la série d&#39;événements suivante se produit :</p>
+<p>Le gaz, décrit dans plus de détails dans <a href="#gas">[gas]</a>, est une considération extrêmement importante dans la programmation de contrats intelligents. Le gaz est une ressource limitant la quantité maximale de calculs qu&#8217;Ethereum permettra à une transaction de consommer. Si la limite de gaz est dépassée pendant le calcul, la série d&#8217;événements suivante se produit :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Une exception &quot;out of gas&quot; est levée.</p>
+<p>Une exception "out of gas" est levée.</p>
 </li>
 <li>
-<p>L&#39;état du contrat avant l&#39;exécution est restauré (inversé).</p>
+<p>L&#8217;état du contrat avant l&#8217;exécution est restauré (inversé).</p>
 </li>
 <li>
-<p>Tout l&#39;ether utilisé pour payer le gaz est considéré comme des frais de transaction ; il n&#39;est <em>pas</em> remboursé.</p>
+<p>Tout l&#8217;ether utilisé pour payer le gaz est considéré comme des frais de transaction ; il n&#8217;est <em>pas</em> remboursé.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Étant donné que le gaz est payé par l&#39;utilisateur qui initie la transaction, les utilisateurs sont découragés d&#39;appeler des fonctions qui ont un coût de gaz élevé. Il est donc dans l&#39;intérêt du programmeur de minimiser le coût en gaz des fonctions d&#39;un contrat. À cette fin, certaines pratiques sont recommandées lors de la construction de contrats intelligents, afin de minimiser le coût en gaz d&#39;un appel de fonction.</p>
+<p>Étant donné que le gaz est payé par l&#8217;utilisateur qui initie la transaction, les utilisateurs sont découragés d&#8217;appeler des fonctions qui ont un coût de gaz élevé. Il est donc dans l&#8217;intérêt du programmeur de minimiser le coût en gaz des fonctions d&#8217;un contrat. À cette fin, certaines pratiques sont recommandées lors de la construction de contrats intelligents, afin de minimiser le coût en gaz d&#8217;un appel de fonction.</p>
 </div>
 <div class="sect3">
 <h4 id="_évitez_les_tableaux_dimensionnés_dynamiquement">Évitez les tableaux dimensionnés dynamiquement</h4>
 <div class="paragraph">
-<p>Toute boucle à travers un tableau de taille dynamique où une fonction effectue des opérations sur chaque élément ou recherche un élément particulier introduit le risque d&#39;utiliser trop de gaz. En effet, le contrat peut s&#39;essouffler avant d&#39;avoir trouvé le résultat souhaité, ou avant d&#39;agir sur chaque élément, perdant ainsi du temps et de l&#39;ether sans donner le moindre résultat.</p>
+<p>Toute boucle à travers un tableau de taille dynamique où une fonction effectue des opérations sur chaque élément ou recherche un élément particulier introduit le risque d&#8217;utiliser trop de gaz. En effet, le contrat peut s&#8217;essouffler avant d&#8217;avoir trouvé le résultat souhaité, ou avant d&#8217;agir sur chaque élément, perdant ainsi du temps et de l&#8217;ether sans donner le moindre résultat.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_évitez_les_appels_vers_dautres_contrats">Évitez les appels vers d&#39;autres contrats</h4>
+<h4 id="_évitez_les_appels_vers_dautres_contrats">Évitez les appels vers d&#8217;autres contrats</h4>
 <div class="paragraph">
-<p>Appeler d&#39;autres contrats, surtout lorsque le coût en gaz de leurs fonctions n&#39;est pas connu, introduit le risque de manquer de gaz. Évitez d&#39;utiliser des bibliothèques qui ne sont pas bien testées et largement utilisées. Moins une bibliothèque a été examinée par d&#39;autres programmeurs, plus le risque de l&#39;utiliser est grand.</p>
+<p>Appeler d&#8217;autres contrats, surtout lorsque le coût en gaz de leurs fonctions n&#8217;est pas connu, introduit le risque de manquer de gaz. Évitez d&#8217;utiliser des bibliothèques qui ne sont pas bien testées et largement utilisées. Moins une bibliothèque a été examinée par d&#8217;autres programmeurs, plus le risque de l&#8217;utiliser est grand.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_estimation_du_coût_du_gaz">Estimation du coût du gaz</h4>
 <div class="paragraph">
-<p>Si vous avez besoin d&#39;estimer le gaz nécessaire pour exécuter une certaine méthode d&#39;un contrat en tenant compte ses arguments, vous pouvez utiliser la procédure suivante :</p>
+<p>Si vous avez besoin d&#8217;estimer le gaz nécessaire pour exécuter une certaine méthode d&#8217;un contrat en tenant compte ses arguments, vous pouvez utiliser la procédure suivante :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1892,7 +1892,7 @@ var gasEstimate = contract.myAweSomeMethod.estimateGas(arg1, arg2,
 </div>
 </div>
 <div class="paragraph">
-<p>gasEstimate vous indiquera le nombre d&#39;unités de gaz nécessaires à son exécution. Il s&#39;agit d&#39;une estimation en raison de l&#39;exhaustivité de Turing de l&#39;EVM - il est relativement trivial de créer une fonction qui prendra des quantités de gaz très différentes pour exécuter différents appels. Même le code de production peut modifier les chemins d&#39;exécution de manière subtile, ce qui entraîne des coûts de gaz extrêmement différents d&#39;un appel à l&#39;autre. Cependant, la plupart des fonctions sont sensibles et estimateGas donnera une bonne estimation la plupart du temps.</p>
+<p>gasEstimate vous indiquera le nombre d&#8217;unités de gaz nécessaires à son exécution. Il s&#8217;agit d&#8217;une estimation en raison de l&#8217;exhaustivité de Turing de l&#8217;EVM - il est relativement trivial de créer une fonction qui prendra des quantités de gaz très différentes pour exécuter différents appels. Même le code de production peut modifier les chemins d&#8217;exécution de manière subtile, ce qui entraîne des coûts de gaz extrêmement différents d&#8217;un appel à l&#8217;autre. Cependant, la plupart des fonctions sont sensibles et estimateGas donnera une bonne estimation la plupart du temps.</p>
 </div>
 <div class="paragraph">
 <p>Pour obtenir le prix du gaz du réseau, vous pouvez utiliser :</p>
@@ -1911,7 +1911,7 @@ var gasEstimate = contract.myAweSomeMethod.estimateGas(arg1, arg2,
 </div>
 </div>
 <div class="paragraph">
-<p>Appliquons nos fonctions d&#39;estimation de gaz pour estimer le coût du gaz de notre exemple Faucet, en utilisant le code <a href="http://bit.ly/2zf0SIO">du référentiel du livre</a>.</p>
+<p>Appliquons nos fonctions d&#8217;estimation de gaz pour estimer le coût du gaz de notre exemple <code>Faucet</code>,en utilisant le code <a href="http://bit.ly/2zf0SIO">du référentiel du livre</a>.</p>
 </div>
 <div class="paragraph">
 <p>Démarrez Truffle en mode développement et exécutez le fichier JavaScript dans <a href="#estimateGas_function">gas_estimates.js : Utilisation de la fonction estimateGas</a>, <em>gas_estimates.js</em>.</p>
@@ -1927,10 +1927,10 @@ FaucetContract.web3.eth.getGasPrice(function(error, result) {
     var gasPrice = Number(result);
     console.log("Gas Price is " + gasPrice + " wei"); // "10000000000000"
 
-	// Récupère l&amp;#39;instance de contrat
+	// Récupère l'instance de contrat
     FaucetContract.deployed().then(function(FaucetContractInstance) {
 
-	// Utilisez le mot clé &amp;#39;estimateGas&amp;#39; après le nom de la fonction pour obtenir le gaz
+	// Utilisez le mot clé 'estimateGas' après le nom de la fonction pour obtenir le gaz
 	// estimation pour cette fonction particulière (aprove)
 		FaucetContractInstance.send(web3.utils.toWei(1, "ether"));
         return FaucetContractInstance.withdraw.estimateGas(web3.utils.toWei(0.1, "ether"));
@@ -1964,14 +1964,14 @@ gas cost estimation = 0.00062794 ether
 
 </pre>
 <div class="paragraph">
-<p>Il est recommandé d&#39;évaluer le coût en gaz des fonctions dans le cadre de votre workflow de développement, afin d&#39;éviter toute surprise lors du déploiement de contrats sur le réseau principal.</p>
+<p>Il est recommandé d&#8217;évaluer le coût en gaz des fonctions dans le cadre de votre workflow de développement, afin d&#8217;éviter toute surprise lors du déploiement de contrats sur le réseau principal.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_conclusion">Conclusion</h3>
 <div class="paragraph">
-<p>Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity. Nous avons pris un exemple de contrat simple, <em>Faucet.sol</em>, et l&#39;avons progressivement amélioré et rendu plus complexe, en l&#39;utilisant pour explorer divers aspects du langage Solidity. Dans <a href="#vyper_chap">[vyper_chap]</a> nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.</p>
+<p>Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity. Nous avons pris un exemple de contrat simple, <em>Faucet.sol</em>, et l&#8217;avons progressivement amélioré et rendu plus complexe, en l&#8217;utilisant pour explorer divers aspects du langage Solidity. Dans <a href="#vyper_chap">[vyper_chap]</a> nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.</p>
 </div>
 </div>
 </div>
@@ -1979,7 +1979,7 @@ gas cost estimation = 0.00062794 ether
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 04:01:21 -0400
+Last updated 2022-05-15 04:36:48 -0400
 </div>
 </div>
 </body>
