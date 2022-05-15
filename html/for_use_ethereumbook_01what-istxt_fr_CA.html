@@ -436,150 +436,150 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article data-line-1">
+<body class="article">
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1 pagenumrestart data-line-3">
+<div class="sect1 pagenumrestart">
 <h2 id="whatis_chapter">Qu&#8217;est-ce qu&#8217;Ethereum ?</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-5">
+<div class="paragraph">
 <p>Ethereum est souvent décrit comme "l&#8217;ordinateur du monde." Mais qu&#8217;est-ce que cela signifie ? Commençons par une description axée sur l&#8217;informatique, puis essayons de décrypter cela avec une analyse plus pratique des capacités et des caractéristiques d&#8217;Ethereum, tout en le comparant à Bitcoin et à d&#8217;autres plateformes d&#8217;échange d&#8217;informations décentralisées (ou « chaînes de blocs » pour court).</p>
 </div>
-<div class="paragraph data-line-7">
+<div class="paragraph">
 <p>D&#8217;un point de vue informatique, Ethereum est une machine à états déterministe mais pratiquement illimitée, composée d&#8217;un état singleton globalement accessible et d&#8217;une machine virtuelle qui applique des modifications à cet état.</p>
 </div>
-<div class="paragraph data-line-9">
+<div class="paragraph">
 <p>D&#8217;un point de vue plus pratique, Ethereum est une infrastructure informatique à source libre décentralisée à l&#8217;échelle mondiale qui exécute des programmes appelés <em>contrats intelligents</em>. Il utilise une chaîne de blocs pour synchroniser et stocker les changements d&#8217;état du système, ainsi qu&#8217;une cryptomonnaie appelée <em>ether</em> pour mesurer et limiter les coûts des ressources d&#8217;exécution.</p>
 </div>
-<div class="paragraph data-line-11">
+<div class="paragraph">
 <p>La plate-forme Ethereum permet aux développeurs de créer de puissantes applications décentralisées avec des fonctions économiques intégrées. Tout en offrant une disponibilité, une auditabilité, une transparence et une neutralité élevées, il réduit ou élimine également la censure et réduit certains risques de contrepartie.</p>
 </div>
-<div class="sect2 data-line-14">
+<div class="sect2">
 <h3 id="bitcoin_comparison">Comparé à Bitcoin</h3>
-<div class="paragraph data-line-16">
+<div class="paragraph">
 <p>Beaucoup de gens viendront à Ethereum avec une expérience préalable des cryptomonnaies, en particulier du Bitcoin. Ethereum partage de nombreux éléments communs avec d&#8217;autres chaînes de blocs ouvertes : un réseau pair à pair reliant les participants, un algorithme de consensus byzantin tolérant aux pannes pour la synchronisation des mises à jour d&#8217;état (une chaîne de blocs de preuve de travail), l&#8217;utilisation de primitives cryptographiques telles que le numérique signatures et hachages, et une monnaie numérique (ether).</p>
 </div>
-<div class="paragraph data-line-18">
+<div class="paragraph">
 <p>Pourtant, à bien des égards, le but et la construction d&#8217;Ethereum sont étonnamment différents de ceux des chaînes de blocs ouvertes qui l&#8217;ont précédé, y compris Bitcoin.</p>
 </div>
-<div class="paragraph data-line-20">
+<div class="paragraph">
 <p> Le but d&#8217;Ethereum n&#8217;est pas principalement d&#8217;être un réseau de paiement en monnaie numérique. Alors que la monnaie numérique ether fait à la fois partie intégrante et nécessaire au fonctionnement d&#8217;Ethereum, l&#8217;ether est conçu comme une <em>monnaie d&#8217;utilité</em> pour payer l&#8217;utilisation de la plate-forme Ethereum en tant qu&#8217;ordinateur mondial.</p>
 </div>
-<div class="paragraph data-line-22">
+<div class="paragraph">
 <p>Contrairement à Bitcoin, qui a un langage de script très limité, Ethereum est conçu pour être une chaîne de blocs programmable à usage général qui exécute une <em>machine virtuelle</em> capable d&#8217;exécuter du code d&#8217;une complexité arbitraire et illimitée. Là où le langage de script de Bitcoin est, intentionnellement, contraint à une simple évaluation vrai/faux des conditions de dépenses, le langage d&#8217;Ethereum est <em>Turing complet</em>, ce qui signifie qu&#8217;Ethereum peut fonctionner directement comme un ordinateur à usage général.</p>
 </div>
 </div>
-<div class="sect2 data-line-25">
+<div class="sect2">
 <h3 id="blockchain_components">Composantes d&#8217;une chaîne de blocs</h3>
-<div class="paragraph data-line-27">
+<div class="paragraph">
 <p>Les composantes d&#8217;une chaîne de blocs ouverte et publique sont (généralement) :</p>
 </div>
-<div class="ulist data-line-29">
+<div class="ulist">
 <ul>
-<li class="data-line-29">
+<li>
 <p>Un réseau pair à pair (P2P) connectant les participants et propageant les transactions et les blocs de transactions vérifiées, basé sur un "échange" <span class="keep-together">protocolaire</span> standardisé.</p>
 </li>
-<li class="data-line-30">
+<li>
 <p>Messages, sous forme de transactions, représentant des transitions d&#8217;état</p>
 </li>
-<li class="data-line-31">
+<li>
 <p>Un ensemble de règles consensuelles, régissant ce qui constitue une transaction et ce qui constitue une transition d&#8217;état valide</p>
 </li>
-<li class="data-line-32">
+<li>
 <p>Une machine à états qui traite les transactions selon les règles du consensus</p>
 </li>
-<li class="data-line-33">
+<li>
 <p>Une chaîne de blocs cryptographiquement sécurisés qui agit comme un journal de toutes les transitions d&#8217;état vérifiées et acceptées</p>
 </li>
-<li class="data-line-34">
+<li>
 <p>Un algorithme de consensus qui décentralise le contrôle sur la chaîne de blocs, en forçant les participants à coopérer à l&#8217;application des règles de consensus</p>
 </li>
-<li class="data-line-35">
+<li>
 <p>Un schéma d&#8217;incitation théoriquement valable (par exemple, les coûts de la preuve de travail plus les récompenses globales) pour sécuriser économiquement la machine d&#8217;état dans un <span class="keep-together">environnement</span> ouvert.</p>
 </li>
-<li class="data-line-36">
+<li>
 <p>Une ou plusieurs implémentations logicielles à source libre des éléments ci-dessus ("clients")</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-38">
+<div class="paragraph">
 <p>Tous ou la plupart de ces composants sont généralement combinés dans un seul client logiciel. Par exemple, dans Bitcoin, l&#8217;implémentation de référence est développée par le projet à source libre <em>Bitcoin Core</em> et implémentée en tant que client <em>bitcoind</em>. Dans Ethereum, plutôt qu&#8217;une implémentation de référence, il existe une <em>spécification de référence</em>, une description mathématique du système dans le livre jaune (voir <a href="#references">Lectures complémentaires</a>). Il existe un certain nombre de clients, qui sont construits selon la spécification de référence.</p>
 </div>
-<div class="paragraph data-line-40">
+<div class="paragraph">
 <p>Dans le passé, nous utilisions le terme "chaîne de blocs" pour représenter tous les composants que nous venons d&#8217;énumérer, comme une référence abrégée à la combinaison de technologies qui englobent toutes les caractéristiques décrites. Aujourd&#8217;hui, cependant, il existe une grande variété de chaînes de blocs avec des propriétés différentes. Nous avons besoin de qualificatifs pour nous aider à comprendre les caractéristiques de la chaîne de blocs en question, telles que <em>ouverte, publique, globale, décentralisée, neutre,</em> et <em>résistante à la censure</em>, pour identifier les caractéristiques émergentes importantes d&#8217;un système "chaîne de blocs" que ces composants permettent.</p>
 </div>
-<div class="paragraph data-line-42">
+<div class="paragraph">
 <p>Toutes les chaînes de blocs ne sont pas créées égales. Quand quelqu&#8217;un vous dit que quelque chose est une chaîne de blocs, vous n&#8217;avez pas reçu de réponse ; vous devez plutôt commencer à poser beaucoup de questions pour clarifier ce qu&#8217;elles veulent dire lorsqu&#8217;elles utilisent le mot "chaîne de blocs". Commencez par demander une description des composants de la liste précédente, puis demandez si cette "chaîne de blocs" présente les caractéristiques d&#8217;être <em>ouverte, publique</em>, etc.</p>
 </div>
 </div>
-<div class="sect2 data-line-45">
+<div class="sect2">
 <h3 id="ethereum_birth">La naissance d&#8217;Ethereum</h3>
-<div class="paragraph data-line-47">
+<div class="paragraph">
 <p> Toutes les grandes innovations résolvent de vrais problèmes, et Ethereum ne fait pas exception. Ethereum a été conçu à une époque où les gens reconnaissaient la puissance du modèle Bitcoin et essayaient d&#8217;aller au-delà des applications de cryptomonnaie. Mais les développeurs étaient confrontés à une énigme : ils devaient soit construire sur Bitcoin, soit démarrer une nouvelle chaîne de blocs. S&#8217;appuyer sur Bitcoin signifiait vivre dans les limites intentionnelles du réseau et essayer de trouver des solutions de contournement. L&#8217;ensemble limité de types de transactions, de types de données et de tailles de stockage de données semblait limiter les types d&#8217;applications pouvant s&#8217;exécuter directement sur Bitcoin ; tout le reste nécessitait des couches hors chaîne supplémentaires, ce qui annulait immédiatement bon nombre des avantages de l&#8217;utilisation d&#8217;une chaîne de blocs publique. Pour les projets qui avaient besoin de plus de liberté et de flexibilité tout en restant pertinent, une nouvelle chaîne de blocs était la seule option. Mais cela signifiait beaucoup de travail : démarrage de tous les éléments de l&#8217;infrastructure, tests exhaustifs, etc.</p>
 </div>
-<div class="paragraph data-line-49">
+<div class="paragraph">
 <p> Vers la fin de 2013, Vitalik Buterin, un jeune programmeur et passionné de Bitcoin, a commencé à réfléchir à l&#8217;extension des capacités de Bitcoin et Mastercoin (un protocole Bitcoin de superposition étendu pour offrir des contrats intelligents rudimentaires). En octobre de la même année, Vitalik a proposé une approche plus généralisée à l&#8217;équipe Mastercoin, qui permettait à des contrats flexibles et scriptables (mais pas Turing-complets) de remplacer le langage contractuel spécialisé de Mastercoin. Bien que l&#8217;équipe Mastercoin ait été impressionnée, cette proposition était un changement trop radical pour s&#8217;intégrer dans leur feuille de route de développement.</p>
 </div>
-<div class="paragraph data-line-51">
+<div class="paragraph">
 <p>En décembre 2013, Vitalik a commencé à partager un livre blanc qui décrivait l&#8217;idée derrière Ethereum : une chaîne de blocs à usage général complète de Turing. Quelques dizaines de personnes ont vu cette première ébauche et ont fait part de leurs commentaires, aidant Vitalik à faire évoluer la proposition.</p>
 </div>
-<div class="paragraph data-line-53">
+<div class="paragraph">
 <p>Les deux auteurs de ce livre ont reçu une première ébauche du livre blanc et l&#8217;ont commentée. Andreas M. Antonopoulos a été intrigué par l&#8217;idée et a posé de nombreuses questions à Vitalik sur l&#8217;utilisation d&#8217;une chaîne de blocs distincte pour appliquer des règles de consensus sur l&#8217;exécution de contrats intelligents et les implications d&#8217;un langage Turing-complet. Andreas a continué à suivre les progrès d&#8217;Ethereum avec beaucoup d&#8217;intérêt, mais en était aux premiers stades de l&#8217;écriture de son livre <em>Mastering Bitcoin</em>, et n&#8217;a participé directement à Ethereum que bien plus tard. Dr. Gavin Wood, cependant, a été l&#8217;une des premières personnes à contacter Vitalik et à lui proposer de l&#8217;aider avec ses compétences en programmation C++. Gavin est devenu le cofondateur, le codesigner et le CTO d&#8217;Ethereum.</p>
 </div>
-<div class="paragraph data-line-55">
-<p>Comme le raconte Vitalik dans son <a href="http://bit.ly/2T2t6zs" data-href="http://bit.ly/2T2t6zs">article "Ethereum Prehistory"</a> :</p>
+<div class="paragraph">
+<p>Comme le raconte Vitalik dans son <a href="http://bit.ly/2T2t6zs">article "Ethereum Prehistory"</a> :</p>
 </div>
-<div class="quoteblock data-line-57">
+<div class="quoteblock">
 <blockquote>
-<div class="paragraph data-line-58">
+<div class="paragraph">
 <p>C&#8217;était l&#8217;époque où le protocole Ethereum était entièrement ma propre création. À partir de là, cependant, de nouveaux participants ont commencé à rejoindre le giron. De loin, le plus important du côté du protocole était Gavin Wood&#8230;&#8203;</p>
 </div>
-<div class="paragraph data-line-60">
+<div class="paragraph">
 <p>Gavin peut également être largement crédité du changement subtil de vision d&#8217;Ethereum comme une plate-forme pour créer de l&#8217;argent programmable, avec des contrats basés sur la chaîne de blocs qui peuvent contenir des actifs numériques et les transférer selon des règles prédéfinies, à une plate-forme informatique à usage général. Cela a commencé par de subtils changements d&#8217;accent et de terminologie, et plus tard cette influence s&#8217;est renforcée avec l&#8217;accent croissant mis sur l&#8217;ensemble "Web 3", qui considérait Ethereum comme un élément d&#8217;une suite de technologies décentralisées, les deux autres étant Whisper et Swarm.</p>
 </div>
 </blockquote>
 </div>
-<div class="paragraph data-line-63">
+<div class="paragraph">
 <p>À partir de décembre 2013, Vitalik et Gavin ont affiné et fait évoluer l&#8217;idée, construisant ensemble la couche de protocole qui est devenue Ethereum.</p>
 </div>
-<div class="paragraph data-line-65">
+<div class="paragraph">
 <p>Les fondateurs d&#8217;Ethereum pensaient à une chaîne de blocs sans but précis, qui pourrait prendre en charge une grande variété d&#8217;applications en étant <em>programmée</em>. L&#8217;idée était qu&#8217;en utilisant une chaîne de blocs à usage général comme Ethereum, un développeur pouvait programmer son application particulière sans avoir à mettre en œuvre les mécanismes sous-jacents des réseaux pair à pair, des chaînes de blocs, des algorithmes de consensus, etc. La plateforme Ethereum a été conçue pour abstraire ces détails en fournissant un environnement de programmation déterministe et sécurisé pour les applications chaîne de blocs décentralisées.</p>
 </div>
-<div class="paragraph data-line-67">
+<div class="paragraph">
 <p>Tout comme Satoshi, Vitalik et Gavin n&#8217;ont pas simplement inventé une nouvelle technologie ; ils ont combiné de nouvelles inventions avec des technologies existantes d&#8217;une manière nouvelle et ont livré le code prototype pour prouver leurs idées au monde.</p>
 </div>
-<div class="paragraph data-line-69">
+<div class="paragraph">
 <p>Les fondateurs ont travaillé pendant des années, construisant et affinant la vision. Et le 30 juillet 2015, le premier bloc Ethereum a été miné. L&#8217;ordinateur du monde a commencé à servir le monde.</p>
 </div>
-<div class="admonitionblock note data-line-72">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-73">
+<div class="paragraph">
 <p>L&#8217;article de Vitalik Buterin "A Prehistory of Ethereum" a été publié en septembre 2017 et offre une vue fascinante à la première personne des premiers instants d&#8217;Ethereum.</p>
 </div>
-<div class="paragraph data-line-75">
+<div class="paragraph">
 <p>Vous pouvez le lire sur
-<a href="https://vitalik.ca/general/2017/09/14/prehistory.html" class="undefined" data-href="https://vitalik.ca/general/2017/09/14/prehistory.html">https://vitalik.ca/general/2017/09/14/prehistory.html</a>.</p>
+<a href="https://vitalik.ca/general/2017/09/14/prehistory.html" class="bare">https://vitalik.ca/general/2017/09/14/prehistory.html</a>.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 </div>
-<div class="sect2 data-line-80">
+<div class="sect2">
 <h3 id="development_stages">Les quatre étapes de développement d&#8217;Ethereum</h3>
-<div class="paragraph data-line-82">
+<div class="paragraph">
 <p>Le développement d&#8217;Ethereum a été planifié en quatre étapes distinctes, avec des changements majeurs à chaque étape.  Une étape peut inclure des sous-versions, appelées "embranchements divergents" (hard forks), qui modifient les fonctionnalités d&#8217;une manière qui n&#8217;est pas rétrocompatible .</p>
 </div>
-<div class="paragraph data-line-84">
+<div class="paragraph">
 <p>Les quatre principales étapes de développement portent le nom de code <em>Frontier</em>, <em>Homestead</em>, <em>Metropolis</em> et <em>Serenity</em>. Les embranchements divergents intermédiaires qui se sont produits (ou sont prévus) à ce jour portent les noms de code <em>Ice Age</em>, <em>DAO</em>, <em>Tangerine Whistle</em>, <em>Spurious Dragon</em>, <em>Byzantium</em> et <em>Constantinople</em>. Les étapes de développement et les embranchements divergents intermédiaires sont présentées sur la chronologie suivante, qui est "datée" par numéro de bloc :</p>
 </div>
-<div class="dlist data-line-87">
+<div class="dlist">
 <dl>
 <dt class="hdlist1">Bloc #0</dt>
 <dd>
@@ -611,25 +611,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 </dl>
 </div>
-<div class="paragraph data-line-103">
+<div class="paragraph">
 <p>Après Byzance, il y a un autre embranchement divergent prévu pour Metropolis : Constantinople. Metropolis sera suivi de la dernière étape du déploiement d&#8217;Ethereum, baptisée Serenity.</p>
 </div>
 </div>
-<div class="sect2 data-line-107">
+<div class="sect2">
 <h3 id="general_purpose_blockchain">Ethereum : une chaîne de blocs à usage général</h3>
-<div class="paragraph data-line-109">
+<div class="paragraph">
 <p>La chaîne de blocs d&#8217;origine, à savoir la chaîne de blocs de Bitcoin, suit l&#8217;état de unités de bitcoin et leur propriété.  Vous pouvez considérer Bitcoin comme une <em>machine à états</em> à consensus distribué, où les transactions provoquent une <em>transition d&#8217;état</em> globale, modifiant la propriété des pièces. Les transitions d&#8217;état sont contraintes par les règles du consensus, permettant à tous les participants de (éventuellement) converger vers un état commun (consensus) du système, après que plusieurs blocs aient été minés.</p>
 </div>
-<div class="paragraph data-line-111">
+<div class="paragraph">
 <p>Ethereum est également une machine à états distribuée. Mais au lieu de suivre uniquement l&#8217;état de la propriété de la devise, Ethereum suit les transitions d&#8217;état d&#8217;un magasin de données à usage général, c&#8217;est-à-dire un magasin pouvant contenir toutes les données exprimables en tant que <em>uplet clé–valeur</em>. Un magasin de données clé-valeur contient des valeurs arbitraires, chacune référencée par une clé ; par exemple, la valeur "Mastering Ethereum" référencée par la clé "Titre du livre". À certains égards, cela sert le même objectif que le modèle de stockage de données de <em>Random Access Memory</em> (RAM) utilisé par la plupart des ordinateurs à usage général. Ethereum a une mémoire qui stocke à la fois le code et les données, et il utilise la chaîne de blocs Ethereum pour suivre l&#8217;évolution de cette mémoire au fil du temps. Comme un ordinateur à programme stocké à usage général, Ethereum peut charger du code dans sa machine d&#8217;état et <em>exécuter</em> ce code, en stockant les changements d&#8217;état résultants dans sa chaîne de blocs. Deux des différences critiques par rapport à la plupart des ordinateurs à usage général sont que les changements d&#8217;état d&#8217;Ethereum sont régis par les règles du consensus et que l&#8217;état est distribué à l&#8217;échelle mondiale. Ethereum répond à la question : "Et si nous pouvions suivre n&#8217;importe quel état arbitraire et programmer la machine à états pour créer un ordinateur mondial fonctionnant par consensus ?"</p>
 </div>
 </div>
-<div class="sect2 data-line-114">
+<div class="sect2">
 <h3 id="ethereum_components">Composants d&#8217;Ethereum</h3>
-<div class="paragraph data-line-116">
+<div class="paragraph">
 <p>Dans Ethereum, les composantes d&#8217;un système de chaîne de blocs décrit dans <a href="#blockchain_components">Composantes d&#8217;une chaîne de blocs</a> sont, plus précisément :</p>
 </div>
-<div class="dlist data-line-119">
+<div class="dlist">
 <dl>
 <dt class="hdlist1">Réseau P2P</dt>
 <dd>
@@ -645,7 +645,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 </dl>
 </div>
-<div class="dlist pagebreak-before data-line-126">
+<div class="dlist pagebreak-before">
 <dl>
 <dt class="hdlist1">Machine d&#8217;état</dt>
 <dd>
@@ -669,193 +669,193 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 </dl>
 </div>
-<div class="sect3 data-line-137">
+<div class="sect3">
 <h4 id="references">Lectures complémentaires</h4>
-<div class="paragraph data-line-139">
+<div class="paragraph">
 <p>Les références suivantes fournissent des informations supplémentaires sur les technologies mentionnées ici :</p>
 </div>
-<div class="ulist data-line-141">
+<div class="ulist">
 <ul>
-<li class="data-line-141">
+<li>
 <p>Le livre jaune Ethereum:
-<a href="https://ethereum.github.io/yellowpaper/paper.pdf" class="undefined" data-href="https://ethereum.github.io/yellowpaper/paper.pdf">https://ethereum.github.io/yellowpaper/paper.pdf</a></p>
+<a href="https://ethereum.github.io/yellowpaper/paper.pdf" class="bare">https://ethereum.github.io/yellowpaper/paper.pdf</a></p>
 </li>
-<li class="data-line-144">
+<li>
 <p>Le Livre Beige, une réécriture du Livre Jaune pour un public plus large dans un langage moins formel:
-<a href="https://github.com/chronaeon/beigepaper" class="undefined" data-href="https://github.com/chronaeon/beigepaper">https://github.com/chronaeon/beigepaper</a></p>
+<a href="https://github.com/chronaeon/beigepaper" class="bare">https://github.com/chronaeon/beigepaper</a></p>
 </li>
-<li class="data-line-147">
+<li>
 <p>Protocole réseau ÐΞVp2p:
-<a href="http://bit.ly/2quAlTE" class="undefined" data-href="http://bit.ly/2quAlTE">http://bit.ly/2quAlTE</a></p>
+<a href="http://bit.ly/2quAlTE" class="bare">http://bit.ly/2quAlTE</a></p>
 </li>
-<li class="data-line-150">
+<li>
 <p>Liste des ressources de la machine virtuelle Ethereum:
-<a href="http://bit.ly/2PmtjiS" class="undefined" data-href="http://bit.ly/2PmtjiS">http://bit.ly/2PmtjiS</a></p>
+<a href="http://bit.ly/2PmtjiS" class="bare">http://bit.ly/2PmtjiS</a></p>
 </li>
-<li class="data-line-153">
+<li>
 <p>Base de données LevelDB (utilisée le plus souvent pour stocker la copie locale de la chaîne de blocs):
-<a href="https://github.com/google/leveldb" class="undefined" data-href="https://github.com/google/leveldb">https://github.com/google/leveldb</a></p>
+<a href="https://github.com/google/leveldb" class="bare">https://github.com/google/leveldb</a></p>
 </li>
-<li class="data-line-156">
+<li>
 <p>Arbres Merkle Patricia:
-<a href="https://github.com/ethereum/wiki/wiki/Patricia-Tree" class="undefined" data-href="https://github.com/ethereum/wiki/wiki/Patricia-Tree">https://github.com/ethereum/wiki/wiki/Patricia-Tree</a></p>
+<a href="https://github.com/ethereum/wiki/wiki/Patricia-Tree" class="bare">https://github.com/ethereum/wiki/wiki/Patricia-Tree</a></p>
 </li>
-<li class="data-line-159">
+<li>
 <p>Algorithme Ethash PoW:
-<a href="https://github.com/ethereum/wiki/wiki/Ethash" class="undefined" data-href="https://github.com/ethereum/wiki/wiki/Ethash">https://github.com/ethereum/wiki/wiki/Ethash</a></p>
+<a href="https://github.com/ethereum/wiki/wiki/Ethash" class="bare">https://github.com/ethereum/wiki/wiki/Ethash</a></p>
 </li>
-<li class="data-line-162">
+<li>
 <p>Guide de mise en œuvre de Casper PoS v1:
-<a href="http://bit.ly/2DyPr3l" class="undefined" data-href="http://bit.ly/2DyPr3l">http://bit.ly/2DyPr3l</a></p>
+<a href="http://bit.ly/2DyPr3l" class="bare">http://bit.ly/2DyPr3l</a></p>
 </li>
-<li class="data-line-165">
+<li>
 <p>Client Go-Ethereum (Geth):
-<a href="https://geth.ethereum.org/" class="undefined" data-href="https://geth.ethereum.org/">https://geth.ethereum.org/</a></p>
+<a href="https://geth.ethereum.org/" class="bare">https://geth.ethereum.org/</a></p>
 </li>
-<li class="data-line-168">
+<li>
 <p>Client Ethereum Parity:
-<a href="https://parity.io/" class="undefined" data-href="https://parity.io/">https://parity.io/</a></p>
+<a href="https://parity.io/" class="bare">https://parity.io/</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-172">
+<div class="sect2">
 <h3 id="turing_completeness">Complétude d&#8217;Ethereum et de Turing</h3>
-<div class="paragraph data-line-174">
+<div class="paragraph">
 <p>Dès que vous commencez à lire sur Ethereum, vous rencontrerez immédiatement le terme "Turing complet". Ethereum, disent-ils, contrairement à Bitcoin, est Turing complet. Qu&#8217;est-ce que cela veut dire exactement?</p>
 </div>
-<div class="paragraph data-line-176">
+<div class="paragraph">
 <p>Le terme fait référence au mathématicien anglais Alan Turing, qui est considéré comme le père de l&#8217;informatique. En 1936, il crée un modèle mathématique d&#8217;ordinateur consistant en une machine à états qui manipule des symboles en les lisant et en les écrivant sur une mémoire séquentielle (ressemblant à une bande de papier de longueur infinie). Avec cette construction, Turing a continué à fournir une base mathématique pour répondre (par la négative) aux questions sur la <em>calculabilité universelle</em>, c&#8217;est-à-dire si tous les problèmes peuvent être résolus. Il a prouvé qu&#8217;il existe des classes de problèmes qui ne sont pas calculables. Plus précisément, il a prouvé que le <em>problème d&#8217;arrêt</em> (s&#8217;il est possible, étant donné un programme arbitraire et son entrée, de déterminer si le programme finira par s&#8217;arrêter) n&#8217;est pas résoluble.</p>
 </div>
-<div class="paragraph data-line-178">
+<div class="paragraph">
 <p>Alan Turing a en outre défini un système comme étant <em>Turing complet</em> s&#8217;il peut être utilisé pour simuler n&#8217;importe quelle machine de Turing. Un tel système s&#8217;appelle une <em>machine de Turing universelle</em> (UTM).</p>
 </div>
-<div class="paragraph data-line-180">
+<div class="paragraph">
 <p>La capacité d&#8217;Ethereum à exécuter un programme stocké, dans une machine à états appelée Ethereum Virtual Machine, tout en lisant et en écrivant des données dans la mémoire en fait un système Turing complet et donc un UTM. Ethereum peut calculer n&#8217;importe quel algorithme pouvant être calculé par n&#8217;importe quelle machine de Turing, compte tenu des limites de la mémoire finie.</p>
 </div>
-<div class="paragraph data-line-182">
+<div class="paragraph">
 <p>L&#8217;innovation révolutionnaire d&#8217;Ethereum consiste à combiner l&#8217;architecture informatique à usage général d&#8217;un ordinateur à programme stocké avec une chaîne de blocs décentralisée, créant ainsi un ordinateur mondial distribué à un seul état (singleton). Les programmes Ethereum s&#8217;exécutent "partout", mais produisent un état commun qui est sécurisé par les règles de <span class="keep-together">consensus</span>.</p>
 </div>
-<div class="sect3 data-line-185">
+<div class="sect3">
 <h4 id="turing_completeness_feature">Complétude de Turing en tant que "fonctionnalité"</h4>
-<div class="paragraph data-line-187">
-<p> En entendant qu&#8217;Ethereum est Turing complet, vous pourriez arriver à la conclusion qu&#8217;il s&#8217;agit d&#8217;une <em>fonctionnalité</em> qui manque d&#8217;une manière ou d&#8217;une autre dans un système qui est incomplet de Turing. C&#8217;est plutôt le contraire. La complétude de Turing est très facile à réaliser ; en fait, <a href="http://bit.ly/2ABft33" class="undefined" data-href="http://bit.ly/2ABft33">http://bit.ly/2ABft33</a> [la machine d&#8217;état Turing complète la plus simple connue] a 4 états et utilise 6 symboles, avec une définition d&#8217;état qui ne compte que 22 instructions. En effet, il arrive parfois que des systèmes soient « accidentellement Turing complets ». Une référence amusante de tels systèmes peut être trouvée à <a href="http://bit.ly/2Og1VgX" class="undefined" data-href="http://bit.ly/2Og1VgX">http://bit.ly/2Og1VgX</a>.</p>
+<div class="paragraph">
+<p> En entendant qu&#8217;Ethereum est Turing complet, vous pourriez arriver à la conclusion qu&#8217;il s&#8217;agit d&#8217;une <em>fonctionnalité</em> qui manque d&#8217;une manière ou d&#8217;une autre dans un système qui est incomplet de Turing. C&#8217;est plutôt le contraire. La complétude de Turing est très facile à réaliser ; en fait, <a href="http://bit.ly/2ABft33" class="bare">http://bit.ly/2ABft33</a> [la machine d&#8217;état Turing complète la plus simple connue] a 4 états et utilise 6 symboles, avec une définition d&#8217;état qui ne compte que 22 instructions. En effet, il arrive parfois que des systèmes soient « accidentellement Turing complets ». Une référence amusante de tels systèmes peut être trouvée à <a href="http://bit.ly/2Og1VgX" class="bare">http://bit.ly/2Og1VgX</a>.</p>
 </div>
-<div class="paragraph data-line-189">
+<div class="paragraph">
 <p>Cependant, l&#8217;exhaustivité de Turing est très dangereuse, en particulier dans les systèmes à accès ouvert comme les chaînes de blocs publiques, en raison du problème d&#8217;arrêt que nous avons évoqué plus tôt. Par exemple, les imprimantes modernes sont Turing complètes et peuvent recevoir des fichiers à imprimer qui les envoient dans un état figé. Le fait qu&#8217;Ethereum soit Turing complet signifie que n&#8217;importe quel programme de n&#8217;importe quelle complexité peut être calculé par Ethereum. Mais cette flexibilité pose des problèmes épineux de sécurité et de gestion des ressources. Une imprimante qui ne répond pas peut être éteinte et rallumée. Ce n&#8217;est pas possible avec une chaîne de blocs publique.</p>
 </div>
 </div>
-<div class="sect3 data-line-192">
+<div class="sect3">
 <h4 id="turing_completeness_implications">Implications de la complétude de Turing</h4>
-<div class="paragraph data-line-194">
+<div class="paragraph">
 <p>Turing a prouvé que vous ne pouvez pas prédire si un programme se terminera en le simulant sur un ordinateur. En termes simples, nous ne pouvons pas prédire le chemin d&#8217;un programme sans l&#8217;exécuter. Les systèmes Turing-complets peuvent s&#8217;exécuter en "boucles infinies", un terme utilisé (en simplifiant à l&#8217;extrême) pour décrire un programme qui ne se termine pas. Il est trivial de créer un programme qui exécute une boucle qui ne se termine jamais. Mais des boucles sans fin involontaires peuvent survenir sans avertissement, en raison d&#8217;interactions complexes entre les conditions de départ et le code. Dans Ethereum, cela pose un défi : chaque nœud participant (client) doit valider chaque transaction, en exécutant tous les contrats intelligents qu&#8217;il appelle. Mais comme Turing l&#8217;a prouvé, Ethereum ne peut pas prédire si un contrat intelligent prendra fin, ou combien de temps il durera, sans réellement l&#8217;exécuter (éventuellement pour toujours). Que ce soit par accident ou exprès, un contrat intelligent peut être créé de telle sorte qu&#8217;il s&#8217;exécute indéfiniment lorsqu&#8217;un nœud tente de le valider. Il s&#8217;agit en fait d&#8217;une attaque DoS. Et bien sûr, entre un programme qui prend une milliseconde à valider et un autre qui s&#8217;exécute indéfiniment, il existe une gamme infinie de programmes désagréables, monopolisant les ressources, gonflant la mémoire et provoquant une surchauffe du processeur qui gaspillent simplement des ressources. Dans un ordinateur mondial, un programme qui abuse des ressources arrive à abuser des ressources mondiales. Comment Ethereum limite-t-il les ressources utilisées par un contrat intelligent s&#8217;il ne peut pas prédire l&#8217;utilisation des ressources à l&#8217;avance ?</p>
 </div>
-<div class="paragraph data-line-196">
+<div class="paragraph">
 <p>Pour répondre à ce défi, Ethereum introduit un mécanisme de mesure appelé <em>gaz</em>. Comme l&#8217;EVM exécute un contrat intelligent, il comptabilise soigneusement chaque instruction (calcul, accès aux données, etc.). Chaque instruction a un coût prédéterminé en unités de gaz. Lorsqu&#8217;une transaction déclenche l&#8217;exécution d&#8217;un contrat intelligent, elle doit inclure une quantité de gaz qui fixe la limite supérieure de ce qui peut être consommé en exécutant le contrat intelligent. L&#8217;EVM terminera l&#8217;exécution si la quantité de gaz consommée par le calcul dépasse le gaz disponible dans la transaction. Le gaz est le mécanisme utilisé par Ethereum pour permettre un calcul complet de Turing tout en limitant les ressources que tout programme peut consommer.</p>
 </div>
-<div class="paragraph data-line-198">
+<div class="paragraph">
 <p>La question suivante est, "comment obtenir du gaz pour payer le calcul sur l&#8217;ordinateur mondial Ethereum?" Vous ne trouverez pas de gaz sur les échanges.  Il ne peut être acheté que dans le cadre d&#8217;une transaction et ne peut être acheté qu&#8217;avec de l&#8217;ether. L&#8217;ether doit être envoyé avec une transaction et il doit être explicitement affecté à l&#8217;achat de gaz, avec un prix du gaz acceptable. Comme à la pompe, le prix de l&#8217;essence n&#8217;est pas fixe. Le gaz est acheté pour la transaction, le calcul est exécuté et tout gaz non utilisé est remboursé à l&#8217;expéditeur de la transaction.</p>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-201">
+<div class="sect2">
 <h3 id="DApp">Des chaînes de blocs à usage général aux applications décentralisées (DApps)</h3>
-<div class="paragraph data-line-203">
+<div class="paragraph">
 <p>Ethereum a commencé comme un moyen de créer une chaîne de blocs à usage général qui peut être programmé pour une variété d&#8217;utilisations. Mais très rapidement, la vision d&#8217;Ethereum s&#8217;est élargie pour devenir une plateforme de programmation de DApps. Les DApps représentent une perspective plus large que les contrats intelligents. Un DApp est, à tout le moins, un contrat intelligent et une interface utilisateur Web. Plus généralement, une DApp est une application Web qui repose sur des services d&#8217;infrastructure ouverts, décentralisés et pair à pair.</p>
 </div>
-<div class="paragraph data-line-205">
+<div class="paragraph">
 <p>Une DApp est composée d&#8217;au moins :</p>
 </div>
-<div class="ulist data-line-207">
+<div class="ulist">
 <ul>
-<li class="data-line-207">
+<li>
 <p>Contrats intelligents sur une chaîne de blocs</p>
 </li>
-<li class="data-line-208">
+<li>
 <p>Une interface utilisateur Web frontale</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-210">
+<div class="paragraph">
 <p>De plus, de nombreux DApps incluent d&#8217;autres composants décentralisés, tels que :</p>
 </div>
-<div class="ulist data-line-212">
+<div class="ulist">
 <ul>
-<li class="data-line-212">
+<li>
 <p>Un protocole et une plateforme de stockage décentralisé (P2P)</p>
 </li>
-<li class="data-line-213">
+<li>
 <p>Un protocole et une plateforme de messagerie décentralisée (P2P)</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock tip data-line-216">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-217">
-<p>Vous pouvez voir des DApps orthographiés comme <em>ÐApps</em>. Le caractère Ð est le caractère latin appelé "ETH", faisant allusion à Ethereum. Pour afficher ce caractère, utilisez le point de code Unicode <code>0xD0</code>,ou si nécessaire l&#8217;entité caractère HTML eth (ou entité décimale #208).</p>
+<div class="paragraph">
+<p>Vous pouvez voir des DApps orthographiés comme <em>ÐApps</em>. Le caractère Ð est le caractère latin appelé "ETH", faisant allusion à Ethereum. Pour afficher ce caractère, utilisez le point de code Unicode <code>0xD0</code>, ou si nécessaire l&#8217;entité caractère HTML eth (ou entité décimale #208).</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 </div>
-<div class="sect2 data-line-221">
+<div class="sect2">
 <h3 id="evolving_WWW">Le troisième âge d&#8217;Internet</h3>
-<div class="paragraph data-line-223">
+<div class="paragraph">
 <p>En 2004, le terme "Web 2.0" a pris de l&#8217;importance, décrivant une évolution du Web vers un contenu généré par l&#8217;utilisateur, des interfaces réactives et l&#8217;interactivité. Web 2.0 n&#8217;est pas une spécification technique, mais plutôt un terme décrivant le nouveau centre d&#8217;intérêt des <span class="keep-together">applications</span> Web.</p>
 </div>
-<div class="paragraph data-line-225">
+<div class="paragraph">
 <p>Le concept de DApps est destiné à faire passer le World Wide Web à sa prochaine étape d&#8217;évolution naturelle, en introduisant la décentralisation avec des protocoles pair à pair dans tous les aspects d&#8217;une application Web. Le terme utilisé pour décrire cette évolution est <em>web3</em>, c&#8217;est-à-dire la troisième "version" du web.  Proposé pour la première fois par le Dr Gavin Wood, web3 représente une nouvelle vision et une nouvelle orientation pour les applications Web : des applications détenues et gérées de manière centralisée aux applications basées sur des protocoles décentralisés .</p>
 </div>
-<div class="paragraph data-line-227">
+<div class="paragraph">
 <p>Dans les chapitres suivants, nous explorerons la bibliothèque JavaScript Ethereum web3.js, qui relie les applications JavaScript qui s&#8217;exécutent dans votre navigateur avec la chaîne de blocs Ethereum. La bibliothèque web3.js comprend également une interface vers un réseau de stockage P2P appelé <em>Swarm</em> et un service de messagerie P2P appelé <em>Whisper</em>. Avec ces trois composants inclus dans une bibliothèque JavaScript exécutée dans votre navigateur Web, les développeurs disposent d&#8217;une suite complète de développement d&#8217;applications qui leur permet de créer des DApps web3.</p>
 </div>
 </div>
-<div class="sect2 data-line-230">
+<div class="sect2">
 <h3 id="development_culture">Culture de développement d&#8217;Ethereum</h3>
-<div class="paragraph data-line-232">
+<div class="paragraph">
 <p> Jusqu&#8217;à présent, nous avons expliqué en quoi les objectifs et la technologie d&#8217;Ethereum diffèrent de ceux des autres chaînes de blocs qui l&#8217;ont précédé , comme Bitcoin. Ethereum a également une culture de développement très différente.</p>
 </div>
-<div class="paragraph data-line-234">
+<div class="paragraph">
 <p>Dans Bitcoin, le développement est guidé par des principes conservateurs : tous les changements sont soigneusement étudiés pour s&#8217;assurer qu&#8217;aucun des systèmes existants ne soit perturbé. Pour la plupart, les modifications ne sont mises en œuvre que si elles sont rétrocompatibles. Les clients existants sont autorisés à s&#8217;inscrire, mais continueront à fonctionner s&#8217;ils décident de ne pas effectuer la mise à niveau.</p>
 </div>
-<div class="paragraph data-line-236">
+<div class="paragraph">
 <p>Dans Ethereum, en comparaison, la culture de développement de la communauté est axée sur l&#8217;avenir plutôt que sur le passé. Le mantra (pas tout à fait sérieux) est "avancez vite et cassez des choses". Si un changement est nécessaire, il est mis en œuvre, même si cela signifie invalider les hypothèses précédentes, rompre la compatibilité ou forcer les clients à se mettre à jour. La culture de développement d&#8217;Ethereum se caractérise par une innovation et une évolution rapide et une volonté de déployer des améliorations tournées vers l&#8217;avenir, même si cela se fait au détriment d&#8217;une certaine rétrocompatibilité.</p>
 </div>
-<div class="paragraph data-line-238">
+<div class="paragraph">
 <p>Cela signifie pour vous, en tant que développeur, que vous devez rester flexible et être prêt à reconstruire votre infrastructure à mesure que certaines des hypothèses sous-jacentes changent. L&#8217;un des grands défis auxquels sont confrontés les développeurs d&#8217;Ethereum est la contradiction inhérente entre le déploiement de code sur un système immuable et une plate-forme de développement en constante évolution. Vous ne pouvez pas simplement "mettre à niveau" vos contrats intelligents. Vous devez être prêt à en déployer de nouveaux, à migrer les utilisateurs, les applications et les fonds, et à recommencer.</p>
 </div>
-<div class="paragraph data-line-240">
+<div class="paragraph">
 <p>Ironiquement, cela signifie également que l&#8217;objectif de construire des systèmes avec plus d&#8217;autonomie et moins de contrôle centralisé n&#8217;est toujours pas pleinement atteint. L&#8217;autonomie et la décentralisation nécessitent un peu plus de stabilité dans la plate-forme que vous n&#8217;obtiendrez probablement dans Ethereum dans les prochaines années. Afin de "faire évoluer" la plateforme, vous devez être prêt à supprimer et redémarrer vos contrats intelligents, ce qui signifie que vous devez conserver un certain degré de contrôle sur eux.</p>
 </div>
-<div class="paragraph data-line-242">
+<div class="paragraph">
 <p>Mais, du côté positif, Ethereum avance très vite. Il y a peu d&#8217;opportunités pour la "bike-shedding", une expression qui signifie retarder le développement en se disputant sur des détails mineurs tels que la façon de construire le garage à vélos à l&#8217;arrière d&#8217;une centrale nucléaire. Si vous commencez à faire du vélo, vous découvrirez peut-être soudainement que pendant que vous étiez distrait, le reste de l&#8217;équipe de développement a changé le plan et a abandonné les vélos en faveur de l&#8217;aéroglisseur autonome.</p>
 </div>
-<div class="paragraph data-line-244">
+<div class="paragraph">
 <p>A terme, le développement de la plateforme Ethereum ralentira et ses interfaces deviendront fixes. Mais en attendant, l&#8217;innovation est le principe moteur. Vous feriez mieux de suivre, car personne ne ralentira pour vous.</p>
 </div>
 </div>
-<div class="sect2 data-line-247">
+<div class="sect2">
 <h3 id="why_learn">Pourquoi apprendre Ethereum ?</h3>
-<div class="paragraph data-line-249">
+<div class="paragraph">
 <p>Les chaînes de blocs ont une courbe d&#8217;apprentissage très abrupte, car elles combinent plusieurs disciplines en un seul domaine: programmation, sécurité de l&#8217;information, cryptographie, économie, systèmes distribués, réseaux pair à pair, etc. Ethereum rend cette courbe d&#8217;apprentissage beaucoup moins abrupte, vous pouvez donc démarrer rapidement. Mais juste sous la surface d&#8217;un environnement d&#8217;une simplicité trompeuse se cache bien plus. Au fur et à mesure que vous apprenez et commencez à chercher plus profondément, il y a toujours une autre couche de complexité et d&#8217;émerveillement.</p>
 </div>
-<div class="paragraph data-line-251">
+<div class="paragraph">
 <p>Ethereum est une excellente plate-forme pour en savoir plus sur les chaînes de blocs et construit une communauté massive de développeurs, plus rapidement que toute autre plate-forme de chaîne de blocs. Plus que tout autre, Ethereum est une <em>chaîne de blocs de développeurs</em>, construite par des développeurs pour des développeurs. Un développeur familiarisé avec les applications JavaScript peut se lancer dans Ethereum et commencer à produire du code fonctionnel très rapidement. Pendant les premières années de la vie d&#8217;Ethereum, il était courant de voir des T-shirts annonçant que vous pouvez créer un jeton en seulement cinq lignes de code. Bien sûr, c&#8217;est une épée à double tranchant. Il est facile d&#8217;écrire du code, mais il est très difficile d&#8217;écrire du <em>bon</em> code <em>sécurisé</em>.</p>
 </div>
 </div>
-<div class="sect2 data-line-254">
+<div class="sect2">
 <h3 id="teaching_objectives">Ce que ce livre vous apprendra</h3>
-<div class="paragraph data-line-256">
+<div class="paragraph">
 <p>Ce livre plonge dans Ethereum et examine chaque composant. Vous commencerez par une transaction simple, décortiquerez son fonctionnement, établirez un contrat simple, l&#8217;améliorerez et suivrez son parcours dans le système Ethereum.</p>
 </div>
-<div class="paragraph data-line-258">
+<div class="paragraph">
 <p>Vous apprendrez non seulement comment utiliser Ethereum - comment cela fonctionne - mais aussi pourquoi il est conçu comme il est. Vous pourrez comprendre comment chacune des pièces fonctionne, comment elles s&#8217;emboîtent et pourquoi. </p>
 </div>
 </div>
@@ -864,7 +864,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:55:53 -0400
+Last updated 2022-05-15 08:23:08 -0400
 </div>
 </div>
 </body>

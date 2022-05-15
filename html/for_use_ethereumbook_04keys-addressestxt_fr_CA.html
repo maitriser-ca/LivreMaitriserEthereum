@@ -436,86 +436,86 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article data-line-1">
+<body class="article">
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1 data-line-2">
+<div class="sect1">
 <h2 id="keys_addresses">Cryptographie</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-4">
+<div class="paragraph">
 <p>L&#8217;une des technologies fondamentales d&#8217;Ethereum est la <em>cryptographie</em>, qui est une branche des mathématiques largement utilisées en sécurité informatique. La cryptographie signifie "écriture secrète" en grec, mais l&#8217;étude de la cryptographie englobe plus que la simple écriture secrète, appelée <em>cryptage</em>. La cryptographie peut, par exemple, également être utilisée pour prouver la connaissance d&#8217;un secret sans le révéler (par exemple, avec une signature numérique), ou pour prouver l&#8217;authenticité des données (par exemple, avec des empreintes digitales, également appelées "hachages"). Ces types de preuves cryptographiques sont des outils mathématiques essentiels au fonctionnement de la plate-forme Ethereum (et, en fait, de tous les systèmes de chaîne de blocs), et sont également largement utilisés dans les applications Ethereum. </p>
 </div>
-<div class="paragraph data-line-6">
+<div class="paragraph">
 <p>Notez qu&#8217;au moment de la publication, aucune partie du protocole Ethereum n&#8217;implique de cryptage ; c&#8217;est-à-dire que toutes les communications avec la plateforme Ethereum et entre les nœuds (y compris les données de transaction) sont non cryptées et peuvent (nécessairement) être lues par n&#8217;importe qui. C&#8217;est ainsi que tout le monde peut vérifier l&#8217;exactitude des mises à jour d&#8217;état et qu&#8217;un consensus peut être atteint. À l&#8217;avenir, des outils cryptographiques avancés, tels que les preuves à zéro connaissance et le cryptage homomorphe, seront disponibles, ce qui permettra d&#8217;enregistrer certains calculs cryptés sur la chaîne de blocs tout en permettant le consensus ; cependant, bien que des dispositions aient été prises à leur intention, elles n&#8217;ont pas encore été déployées.</p>
 </div>
-<div class="paragraph data-line-8">
+<div class="paragraph">
 <p>Dans ce chapitre, nous présenterons une partie de la cryptographie utilisée dans Ethereum : à savoir la cryptographie à clé publique (PKC), qui est utilisée pour contrôler la propriété des fonds, sous la forme de clés privées et d&#8217;adresses.</p>
 </div>
-<div class="sect2 data-line-11">
+<div class="sect2">
 <h3 id="keys_addresses_intro">Clés et adresses</h3>
-<div class="paragraph data-line-13">
+<div class="paragraph">
 <p>Comme nous l&#8217;avons vu précédemment dans le livre, Ethereum a deux types de comptes différents : les <em>comptes détenus par des tiers ou en externe</em> (Externally Owned Accounts ou EOA) et les <em>contrats</em>. La propriété de l&#8217;ether par les EOAs est établie par des <em>clés privées</em> numériques, des <em>adresses Ethereum</em> et des <em>signatures numériques</em>. Les clés privées sont au cœur de toutes les interactions des utilisateurs avec Ethereum. En fait, les adresses de compte sont directement dérivées des clés privées : une clé privée détermine de manière unique une seule adresse Ethereum, également appelée <em>compte</em>.</p>
 </div>
-<div class="paragraph data-line-15">
+<div class="paragraph">
 <p>Les clés privées ne sont en aucun cas utilisées directement dans le système Ethereum ; ils ne sont jamais transmis ou stockés sur Ethereum. C&#8217;est-à-dire que les clés privées doivent rester privées et ne jamais apparaître dans les messages transmis au réseau, ni être stockées en chaîne ; seules les adresses de compte et les signatures numériques sont transmises et stockées sur le système Ethereum. Pour plus d&#8217;informations sur la manière de conserver les clés privées en toute sécurité, consultez <a href="#control_responsibility">[control_responsibility]</a> et <a href="#wallets_chapter">[wallets_chapter]</a>.</p>
 </div>
-<div class="paragraph data-line-17">
+<div class="paragraph">
 <p>L&#8217;accès et le contrôle des fonds sont réalisés avec des signatures numériques, qui sont également créées à l&#8217;aide de la clé privée. Les transactions Ethereum nécessitent une signature numérique valide pour être incluses dans la chaîne de blocs. Toute personne disposant d&#8217;une copie d&#8217;une clé privée a le contrôle du compte correspondant et de tout ether qu&#8217;il détient. En supposant qu&#8217;un utilisateur garde sa clé privée en sécurité, les signatures numériques dans les transactions Ethereum prouvent le véritable propriétaire des fonds, car elles prouvent la propriété de la clé privée.</p>
 </div>
-<div class="paragraph data-line-19">
+<div class="paragraph">
 <p> Dans les systèmes basés sur la cryptographie à clé publique, tels que ceux utilisés par Ethereum, les clés sont fournies par paires composées d&#8217;une clé privée (secrète) et d&#8217;une clé publique. Considérez la clé publique comme similaire à un numéro de compte bancaire et la clé privée comme similaire au code PIN secret ; c&#8217;est ce dernier qui fournit le contrôle sur le compte, et le premier qui l&#8217;identifie aux autres. Les clés privées elles-mêmes sont très rarement vues par les utilisateurs d&#8217;Ethereum ; pour la plupart, ils sont stockés (sous forme cryptée) dans des fichiers spéciaux et gérés par le logiciel de portefeuille Ethereum.</p>
 </div>
-<div class="paragraph data-line-21">
+<div class="paragraph">
 <p>Dans la partie paiement d&#8217;une transaction Ethereum, le destinataire prévu est représenté par une adresse Ethereum, qui est utilisée de la même manière que les détails du compte bénéficiaire d&#8217;un virement bancaire. Comme nous le verrons plus en détail sous peu, une adresse Ethereum pour un EOA est générée à partir de la partie clé publique d&#8217;une paire de clés. Cependant, toutes les adresses Ethereum ne représentent pas des paires de clés publiques-privées ; ils peuvent aussi représenter des contrats, qui, comme nous le verrons dans <a href="#smart_contracts_chapter">[smart_contracts_chapter]</a>, ne sont pas soutenus par des clés privées.</p>
 </div>
-<div class="paragraph data-line-23">
+<div class="paragraph">
 <p>Dans le reste de ce chapitre, nous allons d&#8217;abord explorer la cryptographie de base un peu plus en détail et expliquer les mathématiques utilisées dans Ethereum. Ensuite, nous verrons comment les clés sont générées, stockées et gérées. Enfin, nous passerons en revue les différents formats d&#8217;encodage utilisés pour représenter les clés privées, les clés publiques et les adresses.</p>
 </div>
 </div>
-<div class="sect2 data-line-26">
+<div class="sect2">
 <h3 id="pkc">Cryptographie à clé publique et cryptomonnaie</h3>
-<div class="paragraph data-line-28">
+<div class="paragraph">
 <p>La cryptographie à clé publique (également appelée "cryptographie asymétrique") est un élément central de la sécurité de l&#8217;information moderne. Le protocole d&#8217;échange de clé, d&#8217;abord publié dans les années 1970 par Martin Hellman, Whitfield Diffie et Ralph Merkle, a été une percée monumentale qui a suscité la première grande vague d&#8217;intérêt public dans le domaine de la cryptographie. Avant les années 1970, de solides connaissances cryptographiques étaient gardées secrètes par <span class="keep-together">les gouvernements</span>.</p>
 </div>
-<div class="paragraph data-line-30">
+<div class="paragraph">
 <p>La cryptographie à clé publique utilise des clés uniques pour sécuriser les informations. Ces clés sont basées sur des fonctions mathématiques qui ont une propriété particulière : il est facile de les calculer, mais difficile de calculer leur inverse. Sur la base de ces fonctions, la cryptographie permet la création de secrets numériques et de signatures numériques infalsifiables, qui sont sécurisées par les lois des mathématiques.</p>
 </div>
-<div class="paragraph data-line-32">
+<div class="paragraph">
 <p>Par exemple, multiplier deux grands nombres premiers ensemble est trivial. Mais étant donné le produit de deux grands nombres premiers, il est très difficile de trouver les facteurs premiers (un problème appelé <em>factorisation primaire ou première</em>). Disons que nous présentons le nombre 8 018 009 et que nous vous disons qu&#8217;il est le produit de deux nombres premiers. Trouver ces deux nombres premiers est beaucoup plus difficile pour vous que pour moi de les multiplier pour produire 8 018 009.</p>
 </div>
-<div class="paragraph data-line-34">
+<div class="paragraph">
 <p>Certaines de ces fonctions mathématiques peuvent être facilement inversées si vous connaissez des informations secrètes. Dans l&#8217;exemple précédent, si je vous dis que l&#8217;un des facteurs premiers est 2 003, vous pouvez trivialement trouver l&#8217;autre avec une simple division : 8 018 009 ÷ 2 003 = 4 003. Ces fonctions sont souvent appelées <em>fonctions de trappe</em> car elles sont très difficiles à inverser à moins que vous ne receviez une information secrète qui peut être utilisée comme raccourci pour inverser la fonction.</p>
 </div>
-<div class="paragraph data-line-36">
+<div class="paragraph">
 <p>Une catégorie plus avancée de fonctions mathématiques utiles en cryptographie est basée sur des opérations arithmétiques sur une courbe elliptique. Dans l&#8217;arithmétique des courbes elliptiques, la multiplication modulo d&#8217;un nombre premier est simple mais la division (l&#8217;inverse) est pratiquement impossible.  C&#8217;est ce qu&#8217;on appelle le <em>problème de logarithme discret</em> et il n&#8217;y a actuellement aucune trappe connue. La <em>cryptographie à courbe elliptique</em> est largement utilisée dans les systèmes informatiques modernes et constitue la base de l&#8217;utilisation par Ethereum (et d&#8217;autres cryptomonnaies) des clés privées et des signatures numériques.</p>
 </div>
-<div class="admonitionblock note data-line-39">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-40">
+<div class="paragraph">
 <p>Consultez les ressources suivantes si vous souhaitez en savoir plus sur la cryptographie et les fonctions mathématiques utilisées dans la cryptographie moderne :</p>
 </div>
-<div class="ulist data-line-42">
+<div class="ulist">
 <ul>
-<li class="data-line-42">
-<p><a href="http://bit.ly/2DcwNhn" data-href="http://bit.ly/2DcwNhn">Cryptographie</a></p>
+<li>
+<p><a href="http://bit.ly/2DcwNhn">Cryptographie</a></p>
 </li>
-<li class="data-line-44">
-<p><a href="http://bit.ly/2zeZV3c" data-href="http://bit.ly/2zeZV3c">Fonction trappe</a></p>
+<li>
+<p><a href="http://bit.ly/2zeZV3c">Fonction trappe</a></p>
 </li>
-<li class="data-line-46">
-<p><a href="http://bit.ly/2ACJjnV" data-href="http://bit.ly/2ACJjnV">Factorisation première</a></p>
+<li>
+<p><a href="http://bit.ly/2ACJjnV">Factorisation première</a></p>
 </li>
-<li class="data-line-48">
-<p><a href="http://bit.ly/2Q7mZYI" data-href="http://bit.ly/2Q7mZYI">Logarithme discret</a></p>
+<li>
+<p><a href="http://bit.ly/2Q7mZYI">Logarithme discret</a></p>
 </li>
-<li class="data-line-50">
-<p><a href="http://bit.ly/2zfeKCP" data-href="http://bit.ly/2zfeKCP">Cryptage des courbes elliptiques</a></p>
+<li>
+<p><a href="http://bit.ly/2zfeKCP">Cryptage des courbes elliptiques</a></p>
 </li>
 </ul>
 </div>
@@ -523,35 +523,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-53">
+<div class="paragraph">
 <p>Dans Ethereum, nous utilisons la cryptographie à clé publique (également connue sous le nom de cryptographie asymétrique) pour créer la paire de clés publique-privée dont nous avons parlé dans ce chapitre. Ils sont considérés comme une "paire" car la clé publique est dérivée de la clé privée. Ensemble, ils représentent un compte Ethereum en fournissant, respectivement, un identifiant de compte accessible au public (l&#8217;adresse) et un contrôle privé sur l&#8217;accès à tout ether du compte et sur toute authentification dont le compte a besoin lors de l&#8217;utilisation de contrats intelligents. La clé privée contrôle l&#8217;accès en étant l&#8217;élément d&#8217;information unique nécessaire pour créer des <em>signatures numériques</em>, qui sont nécessaires pour signer des transactions afin de dépenser des fonds sur le compte. Les signatures numériques sont également utilisées pour authentifier les propriétaires ou les utilisateurs de contrats, comme nous le verrons dans <a href="#smart_contracts_chapter">[smart_contracts_chapter]</a>.</p>
 </div>
-<div class="admonitionblock tip data-line-56">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-57">
+<div class="paragraph">
 <p>Dans la plupart des implémentations de portefeuille, les clés privées et publiques sont stockées ensemble sous la forme d&#8217;une <em>paire de clés</em> pour plus de commodité. Cependant, la clé publique peut être trivialement calculée à partir de la clé privée, de sorte qu&#8217;il est également possible de ne stocker que la clé privée.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-60">
+<div class="paragraph">
 <p>Une signature numérique peut être créée pour signer n&#8217;importe quel message. Pour les transactions Ethereum, les détails de la transaction elle-même sont utilisés comme message. Les mathématiques de la cryptographie - dans ce cas, la cryptographie à courbe elliptique - permettent de combiner le message (c&#8217;est-à-dire les détails de la transaction) avec la clé privée pour créer un code qui ne peut être produit qu&#8217;avec la connaissance de la clé privée. Ce
 code s&#8217;appelle la signature numérique. Notez qu&#8217;une transaction Ethereum est essentiellement une demande d&#8217;accès à un compte particulier avec une adresse Ethereum particulière. Lorsqu&#8217;une transaction est envoyée au réseau Ethereum afin de déplacer des fonds ou d&#8217;interagir avec des contrats intelligents, elle doit être envoyée avec une signature numérique créée avec la clé privée correspondant à l&#8217;adresse Ethereum en question. Les mathématiques de la courbe elliptique signifient que <em>n&#8217;importe qui</em> peut vérifier qu&#8217;une transaction est valide, en vérifiant que la signature numérique correspond aux détails de la transaction <em>et</em> à l&#8217;adresse Ethereum à laquelle l&#8217;accès est demandé. La vérification n&#8217;implique pas du tout la clé privée ; qui reste privé. Cependant, le processus de vérification détermine sans aucun doute que la transaction ne peut provenir que de quelqu&#8217;un avec la clé privée qui correspond à la clé publique derrière l&#8217;adresse Ethereum. C&#8217;est la « magie » de la cryptographie à clé publique.</p>
 </div>
-<div class="admonitionblock tip data-line-65">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-66">
+<div class="paragraph">
 <p>Il n&#8217;y a pas de cryptage dans le cadre du protocole Ethereum - tous les messages envoyés dans le cadre du fonctionnement du réseau Ethereum peuvent (nécessairement) être lus par tout le monde. En tant que telles, les clés privées ne sont utilisées que pour créer des signatures numériques pour l&#8217;authentification des transactions.</p>
 </div>
 </td>
@@ -559,149 +559,149 @@ code s&#8217;appelle la signature numérique. Notez qu&#8217;une transaction Eth
 </table>
 </div>
 </div>
-<div class="sect2 data-line-70">
+<div class="sect2">
 <h3 id="private_keys">Clés privées</h3>
-<div class="paragraph data-line-72">
+<div class="paragraph">
 <p> Une clé privée est simplement un nombre, choisi au hasard. La propriété et le contrôle de la clé privée sont à la base du contrôle de l&#8217;utilisateur sur tous les fonds associés à l&#8217;adresse Ethereum correspondante, ainsi que de l&#8217;accès aux contrats qui autorisent cette adresse. La clé privée est utilisée pour créer les signatures nécessaires pour dépenser de l&#8217;ether en prouvant la propriété des fonds utilisés dans une transaction. La clé privée doit rester secrète à tout moment, car la révéler à des tiers équivaut à leur donner le contrôle de l&#8217;ether et des contrats sécurisés par cette clé privée. La clé privée doit également être sauvegardée et protégée contre toute perte accidentelle. S&#8217;il est perdu, il ne peut pas être récupéré et les fonds garantis par celui-ci sont également perdus à jamais.</p>
 </div>
-<div class="admonitionblock tip data-line-75">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-76">
+<div class="paragraph">
 <p>La clé privée Ethereum n&#8217;est qu&#8217;un chiffre. Une façon de choisir vos clés privées au hasard consiste simplement à utiliser une pièce de monnaie, un crayon et du papier : lancez une pièce 256 fois et vous obtenez les chiffres binaires d&#8217;une clé privée aléatoire que vous pouvez utiliser dans un portefeuille Ethereum (probablement - voir la section suivante ). La clé publique et l&#8217;adresse peuvent ensuite être générées à partir de la clé privée.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="sect3 data-line-80">
+<div class="sect3">
 <h4 id="generating_private_key">Générer une clé privée à partir d&#8217;un nombre aléatoire</h4>
-<div class="paragraph data-line-82">
+<div class="paragraph">
 <p>Le premier et l&#8217;étape la plus importante dans la génération de clés consiste à trouver une source sécurisée d&#8217;entropie ou de caractère aléatoire. La création d&#8217;une clé privée Ethereum consiste essentiellement à choisir un nombre compris entre 1 et 2<sup>256</sup>. La méthode exacte que vous utilisez pour choisir ce nombre n&#8217;a pas d&#8217;importance tant qu&#8217;elle n&#8217;est pas prévisible ou déterministe. Le logiciel Ethereum utilise le générateur de nombres aléatoires du système d&#8217;exploitation sous-jacent pour produire 256 bits aléatoires. Habituellement, le générateur de nombres aléatoires du système d&#8217;exploitation est initialisé par une source humaine d&#8217;aléatoire, c&#8217;est pourquoi il peut vous être demandé de remuer votre souris pendant quelques secondes ou d&#8217;appuyer sur des touches aléatoires de votre clavier. Une alternative pourrait être le bruit de rayonnement cosmique sur le canal du microphone de l&#8217;ordinateur.</p>
 </div>
-<div class="paragraph data-line-84">
+<div class="paragraph">
 <p>Plus précisément, une clé privée peut être n&#8217;importe quel nombre différent de zéro jusqu&#8217;à un très grand nombre légèrement inférieur à 2<sup>256</sup> - un énorme nombre à 78 chiffres, environ 1,158 * 10<sup>77</sup>. Le nombre exact partage les 38 premiers chiffres avec 2<sup>256</sup> et est défini comme l&#8217;ordre de la courbe elliptique utilisée dans Ethereum (voir <a href="#elliptic_curve">La cryptographie à courbe elliptique expliquée</a>). Pour créer une clé privée, nous choisissons au hasard un nombre de 256 bits et vérifions qu&#8217;il se trouve dans la plage valide. En termes de programmation, cela est généralement réalisé en introduisant une chaîne encore plus grande de bits aléatoires (collectés à partir d&#8217;une source aléatoire sécurisée par cryptographie) dans un algorithme de hachage de 256 bits tel que Keccak-256 ou SHA-256, qui produiront commodément un nombre de 256 bits. Si le résultat est dans la plage valide, nous avons une clé privée appropriée. Sinon, nous réessayons simplement avec un autre nombre aléatoire.</p>
 </div>
-<div class="admonitionblock tip data-line-87">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-88">
+<div class="paragraph">
 <p>2<sup>256</sup> - la taille de l&#8217;espace de clé privée d&#8217;Ethereum - est un nombre insondable. Il est d&#8217;environ 10<sup>77</sup> en décimal ; c&#8217;est-à-dire un nombre à 77 chiffres. À titre de comparaison, on estime que l&#8217;univers visible contient 10<sup>80</sup> atomes. Ainsi, il y a presque assez de clés privées pour donner à chaque atome de l&#8217;univers un compte Ethereum. Si vous choisissez une clé privée au hasard, il est impossible que quelqu&#8217;un la devine ou la choisisse lui-même.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-91">
+<div class="paragraph">
 <p>Notez que le processus de génération de clé privée est hors ligne ; il ne nécessite aucune communication avec le réseau Ethereum, ni même aucune communication avec qui que ce soit. En tant que tel, afin de choisir un nombre que personne d&#8217;autre ne choisira jamais, il doit être vraiment aléatoire. Si vous choisissez vous-même le numéro, la probabilité que quelqu&#8217;un d&#8217;autre l&#8217;essaie (et s&#8217;enfuie ensuite avec votre ether) est trop élevée. Utiliser un mauvais générateur de nombres aléatoires (comme la fonction pseudo-aléatoire rand dans la plupart des langages de programmation) est encore pire, car il est encore plus évident et encore plus facile à reproduire. Tout comme pour les mots de passe des comptes en ligne, la clé privée doit être impossible à deviner. Heureusement, vous n&#8217;avez jamais besoin de vous souvenir de votre clé privée, vous pouvez donc adopter la meilleure approche possible pour la choisir : à savoir, le vrai hasard.</p>
 </div>
-<div class="admonitionblock warning data-line-94">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Warning</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-95">
+<div class="paragraph">
 <p>N&#8217;écrivez pas votre propre code pour créer un nombre aléatoire ou n&#8217;utilisez pas un "simple" générateur de nombres aléatoires proposé par votre langage de programmation. Il est essentiel que vous utilisiez un générateur de nombres pseudo-aléatoires cryptographiquement sécurisé (tel que CSPRNG) avec une valeur d&#8217;amorçage provenant d&#8217;une source d&#8217;entropie suffisante. Étudiez la documentation de la bibliothèque de générateurs de nombres aléatoires que vous choisissez pour vous assurer qu&#8217;elle est cryptographiquement sécurisée. La mise en œuvre correcte de la bibliothèque CSPRNG est essentielle à la sécurité des clés.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-98">
+<div class="paragraph">
 <p>Ce qui suit est une clé privée générée aléatoirement affichée au format hexadécimal (256 bits affichés sous la forme de 64 chiffres hexadécimaux, chacun de 4 bits) :</p>
 </div>
-<div id="prv_key_example" class="listingblock data-line-101">
+<div id="prv_key_example" class="listingblock">
 <div class="content">
 <pre>f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315</pre>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-107">
+<div class="sect2">
 <h3 id="pubkey">Clés publiques</h3>
-<div class="paragraph data-line-109">
+<div class="paragraph">
 <p>Une clé publique Ethereum est un <em>point</em> sur une courbe elliptique, ce qui signifie qu&#8217;il s&#8217;agit d&#8217;un ensemble de coordonnées <em>x</em> et <em>y</em> qui satisfont l&#8217;équation de la courbe elliptique.</p>
 </div>
-<div class="paragraph data-line-111">
+<div class="paragraph">
 <p>En termes plus simples, une clé publique Ethereum est constituée de deux nombres réunis. Ces chiffres sont produits à partir de la clé privée par un calcul qui ne peut <em>aller que dans un sens</em>. Cela signifie qu&#8217;il est trivial de calculer une clé publique si vous avez la clé privée, mais vous ne pouvez pas calculer la clé privée à partir de la clé publique.</p>
 </div>
-<div class="admonitionblock warning data-line-114">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Warning</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-115">
+<div class="paragraph">
 <p>Des MATHÉMATIQUES sont sur le point d&#8217;arriver ! Ne pas paniquer. Si vous commencez à vous perdre à n&#8217;importe quel moment dans les paragraphes suivants, vous pouvez ignorer les quelques sections suivantes. Il existe de nombreux outils et bibliothèques qui feront le calcul pour vous.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-118">
+<div class="paragraph">
 <p>La clé publique est calculée à partir de la clé privée en utilisant la multiplication par courbe elliptique, qui est pratiquement irréversible : <em>K</em> = <em>k</em> * <em>G</em>, où <em>k</em> est la clé privée, <em>G</em> est un point constant appelé le <em>point générateur</em>, <em>K</em> est la clé publique résultante et * est l&#8217;opérateur spécial de "multiplication" de la courbe elliptique. Notez que la multiplication de courbe elliptique n&#8217;est pas comme la multiplication normale. Il partage des attributs fonctionnels avec la multiplication normale, mais c&#8217;est à peu près tout. Par exemple, l&#8217;opération inverse (qui serait une division pour des nombres normaux), connue sous le nom de "trouver le logarithme discret" - c&#8217;est-à-dire calculer <em>k</em> si vous connaissez <em>K</em> - est aussi difficile que d&#8217;essayer toutes les valeurs possibles de <em>k</em> (une recherche par force brute cela prendra probablement plus de temps que cet univers ne le permettra).</p>
 </div>
-<div class="paragraph data-line-120">
+<div class="paragraph">
 <p>En termes plus simples : l&#8217;arithmétique sur la courbe elliptique est différente de l&#8217;arithmétique entière "régulière". Un point (<em>G</em>) peut être multiplié par un entier (<em>k</em>) pour produire un autre point (<em>K</em>). Mais la <em>division</em> n&#8217;existe pas, il n&#8217;est donc pas possible de simplement "diviser" la clé publique <em>K</em> par le point <em>G</em> pour calculer la clé privée <em>k</em>. Il s&#8217;agit de la fonction mathématique à sens unique décrite dans <a href="#pkc">Cryptographie à clé publique et cryptomonnaie</a>.</p>
 </div>
-<div class="admonitionblock note data-line-123">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-124">
+<div class="paragraph">
 <p>La multiplication de courbe elliptique est un type de fonction que les cryptographes appellent une fonction "à sens unique" : elle est facile à faire dans un sens (multiplication) et impossible à faire dans le sens inverse (division). Le propriétaire de la clé privée peut facilement créer la clé publique puis la partager avec le monde, sachant que personne ne peut inverser la fonction et calculer la clé privée à partir de la clé publique. Cette astuce mathématique devient la base de signatures numériques infalsifiables et sécurisées qui prouvent la propriété des fonds Ethereum et le contrôle des contrats.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-127">
+<div class="paragraph">
 <p>Avant de montrer comment générer une clé publique à partir d&#8217;une clé privée, examinons un peu plus en détail la cryptographie à courbe elliptique.</p>
 </div>
-<div class="sect3 data-line-131">
+<div class="sect3">
 <h4 id="elliptic_curve">La cryptographie à courbe elliptique expliquée</h4>
-<div class="paragraph data-line-133">
+<div class="paragraph">
 <p>La courbe elliptique cryptographique est un type de cryptographie asymétrique ou cryptographie à clé publique basée sur le problème du logarithme discret exprimé par addition et multiplication sur les points d&#8217;une courbe elliptique.</p>
 </div>
-<div class="paragraph data-line-135">
+<div class="paragraph">
 <p><a href="#ecc-curve">Une visualisation d&#8217;une courbe elliptique</a> est un exemple de courbe elliptique, similaire à celle utilisée par Ethereum.</p>
 </div>
-<div class="admonitionblock note data-line-138">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-139">
-<p>Ethereum utilise exactement la même courbe elliptique, appelée <code>secp256k1</code>,que Bitcoin. Cela permet de réutiliser de nombreuses bibliothèques et outils de courbes elliptiques de Bitcoin.</p>
+<div class="paragraph">
+<p>Ethereum utilise exactement la même courbe elliptique, appelée <code>secp256k1</code>, que Bitcoin. Cela permet de réutiliser de nombreuses bibliothèques et outils de courbes elliptiques de Bitcoin.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div id="ecc-curve" class="imageblock data-line-144">
+<div id="ecc-curve" class="imageblock">
 <div class="content">
 <img src="images/simple_elliptic_curve.png" alt="ecc-curve">
 </div>
 <div class="title">Figure 1. Une visualisation d&#8217;une courbe elliptique</div>
 </div>
-<div class="paragraph data-line-146">
-<p>Ethereum utilise une courbe elliptique spécifique et un ensemble de constantes mathématiques, telles que définies dans une norme appelée <code>secp256k1</code>,établie par le National Institute of Standards and Technology (NIST) des États-Unis. La courbe secp256k1 est définie par la fonction suivante, qui produit une courbe elliptique :</p>
+<div class="paragraph">
+<p>Ethereum utilise une courbe elliptique spécifique et un ensemble de constantes mathématiques, telles que définies dans une norme appelée <code>secp256k1</code>, établie par le National Institute of Standards and Technology (NIST) des États-Unis. La courbe secp256k1 est définie par la fonction suivante, qui produit une courbe elliptique :</p>
 </div>
 <div data-type="equation">
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -728,7 +728,7 @@ code s&#8217;appelle la signature numérique. Notez qu&#8217;une transaction Eth
   </mrow>
 </math>
 </div>
-<div class="paragraph data-line-176">
+<div class="paragraph">
 <p>ou alors:</p>
 </div>
 <div data-type="equation">
@@ -754,29 +754,29 @@ code s&#8217;appelle la signature numérique. Notez qu&#8217;une transaction Eth
   </mrow>
 </math>
 </div>
-<div class="paragraph data-line-204">
+<div class="paragraph">
 <p>Le <em>mod p</em> (modulo nombre premier <em>p</em>) indique que cette courbe est sur un corps fini d&#8217;ordre premier <em>p</em>, également écrit comme \(\( \mathbb{F}_p \)\), où <em>p</em> = 2<sup>256</sup> – 2<sup>32</sup> – 2<sup>9</sup> – 2<sup>8</sup> – 2<sup>7</sup> – 2<sup>6</sup> – 2<sup>4</sup> – 1, qui est un très grand nombre premier.</p>
 </div>
-<div class="paragraph data-line-206">
+<div class="paragraph">
 <p>Parce que cette courbe est définie sur un champ fini d&#8217;ordre premier au lieu de sur les nombres réels, elle ressemble à un motif de points dispersés en deux dimensions, ce qui la rend difficile à visualiser. Cependant, le calcul est identique à celui d&#8217;une courbe elliptique sur des nombres réels. A titre d&#8217;exemple, <a href="#ecc-over-F17-math">Cryptographie sur courbe elliptique: visualisation d&#8217;une courbe elliptique sur F(p), avec p=17</a> montre la même courbe elliptique sur un champ fini beaucoup plus petit d&#8217;ordre premier 17, montrant un motif de points sur une grille. La courbe elliptique secp256k1 Ethereum peut être considérée comme un motif beaucoup plus complexe de points sur une grille insondable.</p>
 </div>
-<div id="ecc-over-F17-math" class="imageblock smallersixty data-line-211">
+<div id="ecc-over-F17-math" class="imageblock smallersixty">
 <div class="content">
 <img src="images/ec_over_small_prime_field.png" alt="ecc-over-F17-math">
 </div>
 <div class="title">Figure 2. Cryptographie sur courbe elliptique: visualisation d&#8217;une courbe elliptique sur F(p), avec p=17</div>
 </div>
-<div class="paragraph data-line-213">
+<div class="paragraph">
 <p>Ainsi, par exemple, ce qui suit est un point <em>Q</em> avec des coordonnées (<em>x</em>,<em>y</em>) qui est un point sur la courbe secp256k1 :</p>
 </div>
-<div id="coordinates_example" class="listingblock data-line-216">
+<div id="coordinates_example" class="listingblock">
 <div class="content">
 <pre>Q =
 (49790390825249384486033144355916864607616083520101638681403973749255924539515,
 59574132161899900045862086493921015780032175291755807399284007721050341297360)</pre>
 </div>
 </div>
-<div class="paragraph data-line-222">
+<div class="paragraph">
 <p><a href="#example_1">[example_1]</a> montre comment vous pouvez vérifier cela vous-même en utilisant Python. Les variables <code>x</code> et <code>y</code> sont les coordonnées du point <em>Q</em>, comme dans l&#8217;exemple précédent. La variable <code>p</code> est l&#8217;ordre premier de la courbe elliptique (le premier qui est utilisé pour toutes les opérations modulo). La dernière ligne de Python est l&#8217;équation de la courbe elliptique (l&#8217;opérateur <code>%</code> en Python est l&#8217;opérateur modulo). Si <code>x</code> et <code>y</code> sont bien les coordonnées d&#8217;un point sur la courbe elliptique, alors elles satisfont l&#8217;équation et le résultat est zéro (0L est un entier long valant zéro). Essayez vous-même, en tapant <strong>python</strong> sur une ligne de commande et en copiant chaque ligne (après l&#8217;invite <code>+ &gt;&gt;&gt; +</code>)de la liste.</p>
 </div>
 <div data-type="example" id="example_1">
@@ -795,39 +795,39 @@ Type "help", "copyright", "credits" or "license" for more information.
 </pre>
 </div>
 </div>
-<div class="sect3 data-line-243">
+<div class="sect3">
 <h4 id="EC_math">Opérations arithmétiques sur les courbes elliptiques</h4>
-<div class="paragraph data-line-245">
+<div class="paragraph">
 <p>Beaucoup de mathématiques sur les courbes elliptiques ressemblent beaucoup à l&#8217;arithmétique des nombres entiers que nous avons apprise à l&#8217;école. Plus précisément, nous pouvons définir un opérateur d&#8217;addition qui, au lieu de sauter le long de la droite numérique, saute vers d&#8217;autres points de la courbe. Une fois que nous avons l&#8217;opérateur d&#8217;addition, nous pouvons également définir la multiplication d&#8217;un point et d&#8217;un nombre entier, ce qui équivaut à une addition répétée.</p>
 </div>
-<div class="paragraph data-line-247">
+<div class="paragraph">
 <p>L&#8217;addition de courbe elliptique est définie de telle sorte que, étant donné deux points <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> sur la courbe elliptique, il existe un troisième point <em>P</em><sub>3</sub> = <em>P</em><sub>1</sub> + <em>P</em><sub>2</sub>, également sur la courbe elliptique.</p>
 </div>
-<div class="paragraph data-line-249">
+<div class="paragraph">
 <p>Géométriquement, ce troisième point <em>P</em><sub>3</sub> est calculé en traçant une ligne entre <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub>. Cette ligne coupera la courbe elliptique exactement à un endroit supplémentaire (étonnamment). Appelez ce point <em>P</em><sub>3</sub>' = (<em>x</em>, <em>y</em>). Réfléchissez ensuite sur l&#8217;axe des x pour obtenir <em>P</em><sub>3</sub> = (<em>x</em>, <em>–y</em>).</p>
 </div>
-<div class="paragraph data-line-251">
+<div class="paragraph">
 <p>Si <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> sont au même point, la ligne "entre" <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> devrait s&#8217;étendre pour être la tangente à la courbe en ce point <em>P</em><sub>1</sub>. Cette tangente coupera la courbe exactement en un nouveau point. Vous pouvez utiliser des techniques de calcul pour déterminer la pente de la ligne tangente. Curieusement, ces techniques fonctionnent, même si nous restreignons notre intérêt aux points de la courbe à deux coordonnées entières !</p>
 </div>
-<div class="paragraph data-line-253">
+<div class="paragraph">
 <p>Dans les mathématiques des courbes elliptiques, il existe également un point appelé "point à l&#8217;infini", qui correspond à peu près au rôle du nombre zéro en addition. Sur les ordinateurs, il est parfois représenté par <em>x</em> = <em>y</em> = 0 (ce qui ne satisfait pas l&#8217;équation de la courbe elliptique, mais c&#8217;est un cas séparé facile qui peut être vérifié). Il y a quelques cas particuliers qui expliquent la nécessité du point à l&#8217;infini.</p>
 </div>
-<div class="paragraph data-line-255">
+<div class="paragraph">
 <p>Dans certains cas (par exemple, si <em>P</em><sub>1</sub> et <em>P</em><sub>2</sub> ont les mêmes valeurs <em>x</em> mais des valeurs <em>y</em> différentes), la ligne sera exactement verticale, auquel cas <em>P</em><sub>3</sub> = le point à l&#8217;infini.</p>
 </div>
-<div class="paragraph data-line-257">
+<div class="paragraph">
 <p>Si <em>P</em><sub>1</sub> est le point à l&#8217;infini, alors <em>P</em><sub>1</sub> + <em>P</em><sub>2</sub> = <em>P</em><sub>2</sub>. De même, si <em>P</em><sub>2</sub> est le point à l&#8217;infini, alors <em>P</em><sub>1</sub> + <em>P</em><sub>2</sub> = <em>P</em><sub>1</sub>. Cela montre comment le point à l&#8217;infini joue le rôle que joue zéro dans l&#8217;arithmétique "normale".</p>
 </div>
-<div class="paragraph data-line-259">
+<div class="paragraph">
 <p>Il s&#8217;avère que + est associatif, ce qui signifie que (<em>A</em> + <em>B</em>) + <em>C</em> = <em>A</em> + (<em>B</em> + <em>C</em>). Cela signifie que nous pouvons écrire <em>A</em> + <em>B</em> + <em>C</em> (sans parenthèses) sans ambiguïté.</p>
 </div>
-<div class="paragraph data-line-261">
+<div class="paragraph">
 <p>Maintenant que nous avons défini l&#8217;addition, nous pouvons définir la multiplication de la manière standard qui étend l&#8217;addition. Pour un point <em>P</em> sur la courbe elliptique, si <em>k</em> est un nombre entier, alors <em>k</em> * <em>P</em> = <em>P</em> + <em>P</em> + <em>P</em> + &#8230;&#8203; + <em>P</em> (<em>k</em> fois). Notez que <em>k</em> est parfois (peut-être de manière déroutante) appelé un "exposant" dans ce cas.</p>
 </div>
 </div>
-<div class="sect3 data-line-264">
+<div class="sect3">
 <h4 id="public_key_derivation">Génération d&#8217;une clé publique</h4>
-<div class="paragraph data-line-266">
+<div class="paragraph">
 <p>Commencer avec une clé privée sous la forme d&#8217;un nombre <em>k</em> généré aléatoirement, nous le multiplions par un point prédéterminé sur la courbe appelé <em>point générateur</em> <em>G</em> pour produire un autre point ailleurs sur la courbe, qui est la clé publique correspondante <em>K</em> :</p>
 </div>
 <div data-type="equation">
@@ -841,56 +841,56 @@ Type "help", "copyright", "credits" or "license" for more information.
   </mrow>
 </math>
 </div>
-<div class="paragraph data-line-282">
-<p>Le point générateur est spécifié dans le cadre de la norme secp256k1 ; c&#8217;est la même chose pour toutes les implémentations de <code>secp256k1</code>,et toutes les clés dérivées de cette courbe utilisent le même point <em>G</em>. Comme le point générateur est toujours le même pour tous les utilisateurs d&#8217;Ethereum, une clé privée <em>k</em> multipliée par <em>G</em> donnera toujours la même clé publique <em>K</em>. La relation entre <em>k</em> et <em>K</em> est fixe, mais ne peut être calculée que dans un sens, de <em>k</em> vers <em>K</em>. C&#8217;est pourquoi une adresse Ethereum (dérivée de <em>K</em>) peut être partagée avec n&#8217;importe qui et ne révèle pas la clé privée de l&#8217;utilisateur (<em>k</em>).</p>
+<div class="paragraph">
+<p>Le point générateur est spécifié dans le cadre de la norme secp256k1 ; c&#8217;est la même chose pour toutes les implémentations de <code>secp256k1</code>, et toutes les clés dérivées de cette courbe utilisent le même point <em>G</em>. Comme le point générateur est toujours le même pour tous les utilisateurs d&#8217;Ethereum, une clé privée <em>k</em> multipliée par <em>G</em> donnera toujours la même clé publique <em>K</em>. La relation entre <em>k</em> et <em>K</em> est fixe, mais ne peut être calculée que dans un sens, de <em>k</em> vers <em>K</em>. C&#8217;est pourquoi une adresse Ethereum (dérivée de <em>K</em>) peut être partagée avec n&#8217;importe qui et ne révèle pas la clé privée de l&#8217;utilisateur (<em>k</em>).</p>
 </div>
-<div class="paragraph data-line-284">
+<div class="paragraph">
 <p>Comme nous l&#8217;avons décrit dans la section précédente, la multiplication de <em>k</em> * <em>G</em> est équivalente à une addition répétée, donc <em>G</em> + <em>G</em> + <em>G</em> + &#8230;&#8203; + <em>G</em>, répété <em>k</em> fois. En résumé, pour produire une clé publique <em>K</em> à partir d&#8217;une clé privée <em>k</em>, on ajoute le point générateur <em>G</em> à lui-même, <em>k</em> fois.</p>
 </div>
-<div class="admonitionblock tip data-line-287">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-288">
+<div class="paragraph">
 <p>Une clé privée peut être convertie en clé publique, mais une clé publique ne peut pas être reconvertie en clé privée, car le calcul ne fonctionne que dans un sens.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-291">
+<div class="paragraph">
 <p>Appliquons ce calcul pour trouver la clé publique de la clé privée spécifique que nous vous avons montrée dans <a href="#private_keys">Clés privées</a> :</p>
 </div>
-<div id="example_privkey" class="listingblock data-line-296">
+<div id="example_privkey" class="listingblock">
 <div class="title">Exemple de calcul de clé privée à clé publique</div>
 <div class="content">
 <pre>K = f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315 * G</pre>
 </div>
 </div>
-<div class="paragraph data-line-300">
+<div class="paragraph">
 <p>Une bibliothèque cryptographique peut nous aider à calculer <em>K</em>, en utilisant la multiplication de courbes elliptiques. La clé publique résultante <em>K</em> est définie comme le point :</p>
 </div>
-<div class="listingblock data-line-302">
+<div class="listingblock">
 <div class="content">
 <pre>K = (x, y)</pre>
 </div>
 </div>
-<div class="paragraph data-line-306">
+<div class="paragraph">
 <p>où :</p>
 </div>
-<div class="listingblock data-line-308">
+<div class="listingblock">
 <div class="content">
 <pre>x = 6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b
 y = 83b5c38e5e2b0c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </div>
 </div>
-<div class="paragraph data-line-313">
-<p>Dans Ethereum, vous pouvez voir des clés publiques représentées par une sérialisation de 130 caractères hexadécimaux (65 octets ). Ceci est adopté à partir d&#8217;un format de sérialisation standard proposé par le consortium industriel Standards for Efficient Cryptography Group (SECG), documenté dans <a href="http://www.secg.org/sec1-v2.pdf" class="undefined" data-href="http://www.secg.org/sec1-v2.pdf">http://www.secg.org/sec1-v2.pdf</a> [Standards for Efficient Cryptography (SEC1)]. La norme définit quatre préfixes possibles pouvant être utilisés pour identifier des points sur une courbe elliptique, répertoriés dans <a href="#EC_prefix_table">Préfixes de clé publique EC sérialisés</a>.</p>
+<div class="paragraph">
+<p>Dans Ethereum, vous pouvez voir des clés publiques représentées par une sérialisation de 130 caractères hexadécimaux (65 octets ). Ceci est adopté à partir d&#8217;un format de sérialisation standard proposé par le consortium industriel Standards for Efficient Cryptography Group (SECG), documenté dans <a href="http://www.secg.org/sec1-v2.pdf" class="bare">http://www.secg.org/sec1-v2.pdf</a> [Standards for Efficient Cryptography (SEC1)]. La norme définit quatre préfixes possibles pouvant être utilisés pour identifier des points sur une courbe elliptique, répertoriés dans <a href="#EC_prefix_table">Préfixes de clé publique EC sérialisés</a>.</p>
 </div>
-<table id="EC_prefix_table" class="tableblock frame-all grid-all stretch data-line-318">
+<table id="EC_prefix_table" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Préfixes de clé publique EC sérialisés</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -927,36 +927,36 @@ y = 83b5c38e5e2b0c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </tr>
 </tbody>
 </table>
-<div class="paragraph data-line-326">
-<p>Ethereum utilise uniquement des clés publiques non compressées ; par conséquent, le seul préfixe pertinent est (hex) <code>04</code>.La sérialisation concatène les coordonnées <em>x</em> et <em>y</em> de la clé publique :</p>
+<div class="paragraph">
+<p>Ethereum utilise uniquement des clés publiques non compressées ; par conséquent, le seul préfixe pertinent est (hex) <code>04</code>. La sérialisation concatène les coordonnées <em>x</em> et <em>y</em> de la clé publique :</p>
 </div>
-<div id="concat_coordinates" class="listingblock data-line-329">
+<div id="concat_coordinates" class="listingblock">
 <div class="content">
 <pre>04 + coordonnée x (32 octets/64 hex) + coordonnée y (32 octets/64 hex)</pre>
 </div>
 </div>
-<div class="paragraph data-line-333">
+<div class="paragraph">
 <p>Par conséquent, la clé publique que nous avons calculée précédemment est sérialisée comme suit :</p>
 </div>
-<div id="serialized_pubkey" class="listingblock data-line-336">
+<div id="serialized_pubkey" class="listingblock">
 <div class="content">
 <pre>046e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e2b0 \
 c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </div>
 </div>
 </div>
-<div class="sect3 data-line-342">
+<div class="sect3">
 <h4 id="EC_lib">Bibliothèques de courbes elliptiques</h4>
-<div class="paragraph data-line-344">
+<div class="paragraph">
 <p>Il existe quelques implémentations de la courbe elliptique secp256k1 qui sont utilisées dans les projets liés à la cryptomonnaie :</p>
 </div>
-<div class="dlist data-line-346">
+<div class="dlist">
 <dl>
-<dt class="hdlist1"><a href="https://www.openssl.org/" data-href="https://www.openssl.org/">OpenSSL</a></dt>
+<dt class="hdlist1"><a href="https://www.openssl.org/">OpenSSL</a></dt>
 <dd>
-<p>La bibliothèque OpenSSL offre un ensemble complet de primitives cryptographiques, y compris une implémentation complète de <code>secp256k1</code>.Par exemple, pour dériver la clé publique, la fonction EC_POINT_mul peut être utilisée.</p>
+<p>La bibliothèque OpenSSL offre un ensemble complet de primitives cryptographiques, y compris une implémentation complète de <code>secp256k1</code>. Par exemple, pour dériver la clé publique, la fonction EC_POINT_mul peut être utilisée.</p>
 </dd>
-<dt class="hdlist1"><a href="https://github.com/bitcoin-core/secp256k1" data-href="https://github.com/bitcoin-core/secp256k1">libsecp256k1</a></dt>
+<dt class="hdlist1"><a href="https://github.com/bitcoin-core/secp256k1">libsecp256k1</a></dt>
 <dd>
 <p>libsecp256k1 de Bitcoin Core est une implémentation en langage C de la courbe elliptique secp256k1 et d&#8217;autres primitives cryptographiques. Il a été écrit à partir de zéro pour remplacer OpenSSL dans le logiciel Bitcoin Core et est considéré comme supérieur en termes de performances et de sécurité.</p>
 </dd>
@@ -964,24 +964,24 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-351">
+<div class="sect2">
 <h3 id="hash_functions">Fonctions de hachage cryptographique</h3>
-<div class="paragraph data-line-353">
-<p>Les fonctions de hachage cryptographiques sont utilisées dans Ethereum. En fait, les fonctions de hachage sont largement utilisées dans presque tous les systèmes cryptographiques - un fait capturé par <span class="keep-together">cryptographeur</span> <a href="http://bit.ly/2Q79qZp" data-href="http://bit.ly/2Q79qZp">Bruce Schneier</a>, qui a dit , "Bien plus que des algorithmes de chiffrement, les fonctions de hachage unidirectionnelles sont les bêtes de somme de la cryptographie moderne."</p>
+<div class="paragraph">
+<p>Les fonctions de hachage cryptographiques sont utilisées dans Ethereum. En fait, les fonctions de hachage sont largement utilisées dans presque tous les systèmes cryptographiques - un fait capturé par <span class="keep-together">cryptographeur</span> <a href="http://bit.ly/2Q79qZp">Bruce Schneier</a>, qui a dit , "Bien plus que des algorithmes de chiffrement, les fonctions de hachage unidirectionnelles sont les bêtes de somme de la cryptographie moderne."</p>
 </div>
-<div class="paragraph data-line-355">
+<div class="paragraph">
 <p>Dans cette section, nous discuterons des fonctions de hachage, explorerons leurs propriétés de base et verrons comment ces propriétés les rendent si utiles dans de nombreux domaines de la cryptographie moderne. Nous abordons ici les fonctions de hachage car elles font partie de la transformation des clés publiques Ethereum en adresses. Ils peuvent également être utilisés pour créer des <em>empreintes digitales</em>, qui facilitent la vérification des données.</p>
 </div>
-<div class="paragraph data-line-357">
-<p>En termes simples, une <a href="http://bit.ly/2CR26gD" data-href="http://bit.ly/2CR26gD"><em>fonction de hachage</em></a> est "toute fonction qui peut être utilisée pour mapper des données de taille arbitraire à des données de taille fixe. ” L&#8217;entrée d&#8217;une fonction de hachage est appelée une <em>pré-image</em>, le <em>message</em> ou simplement les <em>données d&#8217;entrée</em>. La sortie est appelée <em>hash</em> ou <em>résultat de hachage</em> ou <em>hachage</em> en français. <a href="http://bit.ly/2Jrn3jM" data-href="http://bit.ly/2Jrn3jM"><em>Les fonctions de hachage cryptographiques</em></a> sont une sous-catégorie spéciale qui possède des propriétés spécifiques utiles pour sécuriser les plates-formes, telles qu&#8217;Ethereum.</p>
+<div class="paragraph">
+<p>En termes simples, une <a href="http://bit.ly/2CR26gD"><em>fonction de hachage</em></a> est "toute fonction qui peut être utilisée pour mapper des données de taille arbitraire à des données de taille fixe. ” L&#8217;entrée d&#8217;une fonction de hachage est appelée une <em>pré-image</em>, le <em>message</em> ou simplement les <em>données d&#8217;entrée</em>. La sortie est appelée <em>hash</em> ou <em>résultat de hachage</em> ou <em>hachage</em> en français. <a href="http://bit.ly/2Jrn3jM"><em>Les fonctions de hachage cryptographiques</em></a> sont une sous-catégorie spéciale qui possède des propriétés spécifiques utiles pour sécuriser les plates-formes, telles qu&#8217;Ethereum.</p>
 </div>
-<div class="paragraph data-line-359">
+<div class="paragraph">
 <p>Une fonction de hachage cryptographique est une fonction de hachage <em>unidirectionnelle</em> qui associe des données de taille arbitraire à une chaîne de bits de taille fixe. La nature "unidirectionnelle" signifie qu&#8217;il est impossible de recréer les données d&#8217;entrée si l&#8217;on ne connaît que le hachage de sortie. La seule façon de déterminer une entrée possible est de mener une recherche par force brute, en vérifiant chaque candidat pour une sortie correspondante ; étant donné que l&#8217;espace de recherche est virtuellement infini, il est aisé de comprendre l&#8217;impossibilité pratique de la tâche. Même si vous trouvez des données d&#8217;entrée qui créent un hachage correspondant, il se peut qu&#8217;il ne s&#8217;agisse pas des données d&#8217;entrée d&#8217;origine : les fonctions de hachage sont des fonctions "plusieurs vers un". Trouver deux ensembles de données d&#8217;entrée qui hachent la même sortie s&#8217;appelle trouver une <em>collision de hachage</em>. En gros, plus la fonction de hachage est bonne, plus les collisions de hachage sont rares. Pour Ethereum, ils sont effectivement impossibles.</p>
 </div>
-<div class="paragraph data-line-361">
+<div class="paragraph">
 <p>Regardons de plus près les principales propriétés des fonctions de hachage cryptographiques. Ceux-ci inclus:</p>
 </div>
-<div class="dlist data-line-363">
+<div class="dlist">
 <dl>
 <dt class="hdlist1">Déterministe</dt>
 <dd>
@@ -1005,56 +1005,56 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </dd>
 </dl>
 </div>
-<div class="paragraph data-line-373">
+<div class="paragraph">
 <p>La résistance aux collisions de hachage est particulièrement importante pour éviter la falsification de signature numérique dans Ethereum.</p>
 </div>
-<div class="paragraph data-line-375">
+<div class="paragraph">
 <p>La combinaison de ces propriétés rend les fonctions de hachage cryptographiques utiles pour un large éventail d&#8217;applications de sécurité, notamment :</p>
 </div>
-<div class="ulist data-line-377">
+<div class="ulist">
 <ul>
-<li class="data-line-377">
+<li>
 <p>Empreinte des données</p>
 </li>
-<li class="data-line-378">
+<li>
 <p>Intégrité des messages (détection d&#8217;erreur)</p>
 </li>
-<li class="data-line-379">
+<li>
 <p>Preuve de travail</p>
 </li>
-<li class="data-line-380">
+<li>
 <p>Authentification (hachage de mot de passe et étirement de clé)</p>
 </li>
-<li class="data-line-381">
+<li>
 <p>Générateurs de nombres pseudo-aléatoires</p>
 </li>
-<li class="data-line-382">
+<li>
 <p>Engagement de message (mécanismes de validation-révélation)</p>
 </li>
-<li class="data-line-383">
+<li>
 <p>Identifiants uniques</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-385">
+<div class="paragraph">
 <p>Nous en trouverons beaucoup dans Ethereum au fur et à mesure que nous progressons dans les différentes couches du système.</p>
 </div>
-<div class="sect3 data-line-388">
+<div class="sect3">
 <h4 id="keccak256">Fonction de hachage cryptographique d&#8217;Ethereum : Keccak-256</h4>
-<div class="paragraph data-line-390">
+<div class="paragraph">
 <p>Ethereum utilise le hachage cryptographique <em>Keccak-256</em> dans de nombreux endroits. Keccak-256 a été conçu comme candidat pour le SHA-3 Cryptographic Hash Function Competition organisé en 2007 par le National Institute of Science and Technology (NIST). Keccak était l&#8217;algorithme gagnant, qui a été normalisé en tant que Federal Information Processing Standard (FIPS) 202 en 2015.</p>
 </div>
-<div class="paragraph data-line-392">
+<div class="paragraph">
 <p>Cependant, pendant la période de développement d&#8217;Ethereum, la normalisation du NIST n&#8217;était pas encore finalisée. Le NIST a ajusté certains des paramètres de Keccak après l&#8217;achèvement du processus de normalisation, prétendument pour améliorer son efficacité. Cela se produisait en même temps que le dénonciateur héroïque Edward Snowden a révélé des documents qui impliquent que le NIST pourrait avoir été indûment influencé par la National Security Agency (NSA) pour affaiblir intentionnellement la norme de générateur de nombres aléatoires Dual_EC_DRBG, plaçant effectivement une porte dérobée dans le générateur de nombres aléatoires standard. Le résultat de cette controverse a été une réaction violente contre les modifications proposées et un retard important dans la normalisation de SHA-3. À l&#8217;époque, la Fondation Ethereum a décidé d&#8217;implémenter l&#8217;algorithme Keccak original, tel que proposé par ses inventeurs, plutôt que la norme SHA-3 telle que modifiée par le NIST.</p>
 </div>
-<div class="admonitionblock warning data-line-395">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Warning</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-396">
+<div class="paragraph">
 <p>Bien que vous puissiez voir "SHA-3" mentionné dans les documents et le code Ethereum, beaucoup, sinon toutes, de ces instances font en fait référence à Keccak-256, et non à la norme FIPS-202 SHA-3 finalisée. Les différences d&#8217;implémentation sont légères, liées aux paramètres de remplissage, mais elles sont importantes dans la mesure où Keccak-256 produit des sorties de hachage différentes de FIPS-202 SHA-3 pour la même entrée.</p>
 </div>
 </td>
@@ -1062,15 +1062,15 @@ c8529d7fa3f64d46daa1ece2d9ac14cab9477d042c84c32ccd0</pre>
 </table>
 </div>
 </div>
-<div class="sect3 data-line-400">
+<div class="sect3">
 <h4 id="which_hash">Quelle fonction de hachage suis-je en train d&#8217;utiliser ?</h4>
-<div class="paragraph data-line-402">
+<div class="paragraph">
 <p>Comment pouvez-vous savoir si la bibliothèque de logiciels que vous utilisez implémente FIPS-202 SHA-3 ou Keccak-256, si les deux pouvaient s&#8217;appeler "SHA-3" ?</p>
 </div>
-<div class="paragraph data-line-404">
+<div class="paragraph">
 <p>Un moyen simple de le dire est d&#8217;utiliser un <em>vecteur de test</em>, une sortie attendue pour une entrée donnée. Le test le plus couramment utilisé pour une fonction de hachage est l' <em>entrée vide</em>. Si vous exécutez la fonction de hachage avec une chaîne vide en entrée, vous devriez voir les résultats suivants :</p>
 </div>
-<div class="listingblock data-line-406">
+<div class="listingblock">
 <div class="content">
 <pre>Keccak256("") =
   c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470
@@ -1079,120 +1079,120 @@ SHA3("") =
   a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a</pre>
 </div>
 </div>
-<div class="paragraph data-line-415">
+<div class="paragraph">
 <p>Quel que soit le nom de la fonction, vous pouvez la tester pour voir s&#8217;il s&#8217;agit du Keccak-256 d&#8217;origine ou de la norme NIST finale FIPS-202 SHA-3 en exécutant ce test simple. N&#8217;oubliez pas qu&#8217;Ethereum utilise Keccak-256, même s&#8217;il est souvent appelé SHA-3 dans le code.</p>
 </div>
-<div class="admonitionblock note data-line-418">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-419">
-<p>En raison de la confusion créée par la différence entre la fonction de hachage utilisée dans Ethereum (Keccak-256) et la norme finalisée (FIP-202 SHA-3), des efforts sont en cours pour renommer toutes les instances de sha3 dans tous les codes, opcodes, et des bibliothèques à <code>keccak256</code>.Voir <a href="https://github.com/ethereum/EIPs/issues/59" data-href="https://github.com/ethereum/EIPs/issues/59">ERC59</a> pour plus de détails.</p>
+<div class="paragraph">
+<p>En raison de la confusion créée par la différence entre la fonction de hachage utilisée dans Ethereum (Keccak-256) et la norme finalisée (FIP-202 SHA-3), des efforts sont en cours pour renommer toutes les instances de sha3 dans tous les codes, opcodes, et des bibliothèques à <code>keccak256</code>. Voir <a href="https://github.com/ethereum/EIPs/issues/59">ERC59</a> pour plus de détails.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-423">
+<div class="paragraph">
 <p>Examinons ensuite la première application de Keccak-256 dans Ethereum, qui consiste à produire des adresses Ethereum à partir de clés publiques.</p>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-426">
+<div class="sect2">
 <h3 id="eth_address">Adresses Ethereum</h3>
-<div class="paragraph data-line-428">
+<div class="paragraph">
 <p>Les adresses Ethereum sont des <em>identifiants uniques</em> dérivés de clés publiques ou de contrats utilisant la fonction de hachage unidirectionnelle Keccak-256.</p>
 </div>
-<div class="paragraph data-line-430">
+<div class="paragraph">
 <p>Dans nos exemples précédents, nous avons commencé avec une clé privée et avons utilisé la multiplication par courbe elliptique pour dériver une clé publique :</p>
 </div>
-<div class="paragraph pagebreak-before data-line-433">
+<div class="paragraph pagebreak-before">
 <p>Clé privée <em>k</em> :</p>
 </div>
-<div class="listingblock data-line-435">
+<div class="listingblock">
 <div class="content">
 <pre>k = f8f8a2f43c8376ccb0871305060d7b27b0554d2cc72bccf41b2705608452f315</pre>
 </div>
 </div>
-<div id="concat_pubkey" class="paragraph data-line-440">
+<div id="concat_pubkey" class="paragraph">
 <p>Clé publique <em>K</em> (coordonnées <em>x</em> et <em>y</em> concaténées et affichées en hexadécimal) :</p>
 </div>
-<div class="listingblock data-line-442">
+<div class="listingblock">
 <div class="content">
 <pre>K = 6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b83b5c38e5e...</pre>
 </div>
 </div>
-<div class="admonitionblock note data-line-447">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Note</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-448">
+<div class="paragraph">
 <p>Il est à noter que la clé publique n&#8217;est pas formatée avec le préfixe (hex) 04 lors du calcul de l&#8217;adresse.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-451">
+<div class="paragraph">
 <p>Nous utilisons Keccak-256 pour calculer le <em>hachage</em> de cette clé publique :</p>
 </div>
-<div id="calculate_hash" class="listingblock data-line-454">
+<div id="calculate_hash" class="listingblock">
 <div class="content">
 <pre>Keccak256(K) = 2a5bc342ed616b5ba5732269001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="paragraph data-line-458">
+<div class="paragraph">
 <p>Ensuite, nous ne gardons que les 20 derniers octets (octets les moins significatifs), qui sont notre adresse Ethereum :</p>
 </div>
-<div id="keep_last_20" class="listingblock data-line-461">
+<div id="keep_last_20" class="listingblock">
 <div class="content">
 <pre>001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="paragraph data-line-465">
+<div class="paragraph">
 <p>Le plus souvent, vous verrez des adresses Ethereum avec le préfixe 0x qui indique qu&#8217;elles sont codées en hexadécimal, comme ceci :</p>
 </div>
-<div id="hex_prefix" class="listingblock data-line-468">
+<div id="hex_prefix" class="listingblock">
 <div class="content">
 <pre>0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="sect3 data-line-473">
+<div class="sect3">
 <h4 id="eth_address_format">Formats d&#8217;adresse Ethereum</h4>
-<div class="paragraph data-line-475">
+<div class="paragraph">
 <p>Les adresses Ethereum sont des nombres hexadécimaux, des identifiants dérivés des 20 derniers octets du hachage Keccak-256 de la clé publique.</p>
 </div>
-<div class="paragraph data-line-477">
+<div class="paragraph">
 <p>("somme de contrôle","dans les formats d&#8217;adresses Ethereum"Contrairement aux adresses Bitcoin, qui sont encodées dans l&#8217;interface utilisateur de tous les clients pour inclure une somme de contrôle intégrée pour se protéger contre les adresses mal saisies, les adresses Ethereum sont présentées sous forme hexadécimale brute sans aucune somme de contrôle.</p>
 </div>
-<div class="paragraph data-line-479">
+<div class="paragraph">
 <p>La justification de cette décision était que les adresses Ethereum seraient éventuellement cachées derrière des abstractions (telles que les services de noms) aux couches supérieures du système et que des sommes de contrôle devraient être ajoutées aux couches supérieures si nécessaire.</p>
 </div>
-<div class="paragraph data-line-481">
+<div class="paragraph">
 <p>En réalité, ces couches supérieures ont été développées trop lentement et ce choix de conception a entraîné un certain nombre de problèmes dans les premiers jours de l&#8217;écosystème, notamment la perte de fonds en raison d&#8217;adresses mal saisies et d&#8217;erreurs de validation des entrées. De plus, comme les services de noms Ethereum ont été développés plus lentement que prévu initialement, les encodages alternatifs ont été adoptés très lentement par les développeurs de portefeuilles. Nous examinerons ensuite quelques-unes des options d&#8217;encodage.</p>
 </div>
 </div>
-<div class="sect3 data-line-484">
+<div class="sect3">
 <h4 id="ICAP">Inter Exchange Client Address Protocol (ICAP)</h4>
-<div class="paragraph data-line-486">
-<p>Le client <em>Inter exchange Address Protocol</em> (ICAP) est un codage d&#8217;adresse Ethereum partiellement compatible avec le International Bank Account Number (IBAN), offrant un encodage polyvalent, à somme de contrôle et interopérable pour les adresses Ethereum. Les adresses ICAP peuvent encoder des adresses Ethereum ou des noms communs enregistrés auprès d&#8217;un registre de noms Ethereum. Vous pouvez en savoir plus sur ICAP sur <a href="http://bit.ly/2JsZHKu" data-href="http://bit.ly/2JsZHKu">Ethereum Wiki</a>.</p>
+<div class="paragraph">
+<p>Le client <em>Inter exchange Address Protocol</em> (ICAP) est un codage d&#8217;adresse Ethereum partiellement compatible avec le International Bank Account Number (IBAN), offrant un encodage polyvalent, à somme de contrôle et interopérable pour les adresses Ethereum. Les adresses ICAP peuvent encoder des adresses Ethereum ou des noms communs enregistrés auprès d&#8217;un registre de noms Ethereum. Vous pouvez en savoir plus sur ICAP sur <a href="http://bit.ly/2JsZHKu">Ethereum Wiki</a>.</p>
 </div>
-<div class="paragraph data-line-488">
+<div class="paragraph">
 <p>L&#8217;IBAN est une norme internationale d&#8217;identification des numéros de compte bancaire, principalement utilisée pour les virements électroniques. Il est largement adopté dans l&#8217;espace européen unique de paiements en euros (SEPA) et au-delà. L&#8217;IBAN est un service centralisé et fortement réglementé. ICAP est une implémentation décentralisée mais compatible pour les adresses Ethereum.</p>
 </div>
-<div class="paragraph data-line-490">
+<div class="paragraph">
 <p>Un IBAN consiste en une chaîne de 34 caractères alphanumériques au maximum (insensible à la casse) comprenant un code pays, une somme de contrôle et un identifiant de compte bancaire (qui est spécifique au pays).</p>
 </div>
-<div class="paragraph data-line-492">
+<div class="paragraph">
 <p>ICAP utilise la même structure en introduisant un code de pays non standard, "XE", qui signifie "Ethereum", suivi d&#8217;une somme de contrôle à deux caractères et de trois variantes possibles d&#8217;un identifiant de compte :</p>
 </div>
-<div class="dlist data-line-494">
+<div class="dlist">
 <dl>
 <dt class="hdlist1">Direct</dt>
 <dd>
@@ -1208,17 +1208,17 @@ SHA3("") =
 </dd>
 </dl>
 </div>
-<div class="paragraph data-line-500">
+<div class="paragraph">
 <p>Nous pouvons utiliser l&#8217;outil de ligne de commande helpeth pour créer des adresses ICAP. Vous pouvez obtenir de l&#8217;aide en l&#8217;installant avec :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>npm install -g helpeth</strong>
 
 </pre>
-<div class="paragraph data-line-509">
-<p>Si vous n&#8217;avez pas npm, vous devrez peut-être d&#8217;abord installer nodeJS, ce que vous pouvez faire en suivant les instructions sur <a href="https://nodeJS.org" class="undefined" data-href="https://nodeJS.org">https://nodeJS.org</a>.</p>
+<div class="paragraph">
+<p>Si vous n&#8217;avez pas npm, vous devrez peut-être d&#8217;abord installer nodeJS, ce que vous pouvez faire en suivant les instructions sur <a href="https://nodeJS.org" class="bare">https://nodeJS.org</a>.</p>
 </div>
-<div class="paragraph data-line-511">
+<div class="paragraph">
 <p>Maintenant que nous avons helpeth, essayons de créer une adresse ICAP avec notre exemple de clé privée (préfixée par 0x et passée en paramètre à helpeth).</p>
 </div>
 <pre data-type="programlisting">
@@ -1230,157 +1230,157 @@ ICAP: XE60 HAMI CDXS V5QX VJA7 TJW4 7Q9C HWKJ D
 Public key: 0x6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b...
 
 </pre>
-<div class="paragraph data-line-525">
+<div class="paragraph">
 <p>La commande helpeth construit une adresse Ethereum hexadécimale ainsi qu&#8217;une adresse ICAP pour nous. L&#8217;adresse ICAP de notre exemple de clé est :</p>
 </div>
-<div id="ICAP_example" class="listingblock data-line-528">
+<div id="ICAP_example" class="listingblock">
 <div class="content">
 <pre>XE60HAMICDXSV5QXVJA7TJW47Q9CHWKJD</pre>
 </div>
 </div>
-<div class="paragraph data-line-532">
+<div class="paragraph">
 <p>Étant donné que notre exemple d&#8217;adresse Ethereum commence par un octet zéro, il peut être encodé à l&#8217;aide de la méthode d&#8217;encodage Direct ICAP qui est valide au format IBAN. Vous pouvez le dire car il comporte 33 caractères.</p>
 </div>
-<div class="paragraph data-line-534">
+<div class="paragraph">
 <p>Si notre adresse ne commençait pas par un zéro, elle serait encodée avec l&#8217;encodage Basic, qui comporterait 35 caractères et serait invalide en tant qu&#8217;IBAN.</p>
 </div>
-<div class="admonitionblock tip data-line-537">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
 <div class="title">Tip</div>
 </td>
 <td class="content">
-<div class="paragraph data-line-538">
+<div class="paragraph">
 <p>Les chances qu&#8217;une adresse Ethereum commence par un octet zéro sont de 1 sur 256. Pour en générer une comme celle-là, il faudra en moyenne 256 tentatives avec 256 clés privées aléatoires différentes avant d&#8217;en trouver une qui fonctionne comme un type "Direct" compatible IBAN encodé comme adresse ICAP.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph data-line-541">
+<div class="paragraph">
 <p>À l&#8217;heure actuelle, ICAP n&#8217;est malheureusement pris en charge que par quelques portefeuilles.</p>
 </div>
 </div>
-<div class="sect3 data-line-544">
+<div class="sect3">
 <h4 id="EIP55">Encodage hexadécimal avec somme de contrôle en majuscules (EIP-55)</h4>
-<div class="paragraph data-line-546">
-<p>En raison de la lenteur du déploiement d&#8217;ICAP et des services de noms, une norme a été proposée par la <a href="https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md" data-href="https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md">Proposition d&#8217;amélioration d&#8217;Ethereum 55 (EIP-55)</a>. EIP-55 offre une somme de contrôle rétrocompatible pour les adresses Ethereum en modifiant la capitalisation de l&#8217;adresse hexadécimale. L&#8217;idée est que les adresses Ethereum sont insensibles à la casse et que tous les portefeuilles sont censés accepter les adresses Ethereum exprimées en majuscules ou en minuscules, sans aucune différence d&#8217;interprétation.</p>
+<div class="paragraph">
+<p>En raison de la lenteur du déploiement d&#8217;ICAP et des services de noms, une norme a été proposée par la <a href="https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md">Proposition d&#8217;amélioration d&#8217;Ethereum 55 (EIP-55)</a>. EIP-55 offre une somme de contrôle rétrocompatible pour les adresses Ethereum en modifiant la capitalisation de l&#8217;adresse hexadécimale. L&#8217;idée est que les adresses Ethereum sont insensibles à la casse et que tous les portefeuilles sont censés accepter les adresses Ethereum exprimées en majuscules ou en minuscules, sans aucune différence d&#8217;interprétation.</p>
 </div>
-<div class="paragraph data-line-548">
+<div class="paragraph">
 <p>En modifiant la capitalisation des caractères alphabétiques dans l&#8217;adresse, nous pouvons transmettre une somme de contrôle qui peut être utilisée pour protéger l&#8217;intégrité de l&#8217;adresse contre les erreurs de frappe ou de lecture. Les portefeuilles qui ne prennent pas en charge les sommes de contrôle EIP-55 ignorent simplement le fait que l&#8217;adresse contient des majuscules mixtes, mais ceux qui la prennent en charge peuvent la valider et détecter les erreurs avec une précision de 99,986 %.</p>
 </div>
-<div class="paragraph data-line-550">
+<div class="paragraph">
 <p>L&#8217;encodage en majuscules mixtes est subtil et vous ne le remarquerez peut-être pas au début. Notre exemple d&#8217;adresse est :</p>
 </div>
-<div class="listingblock data-line-552">
+<div class="listingblock">
 <div class="content">
 <pre>0x001d3f1ef827552ae1114027bd3ecf1f086ba0f9</pre>
 </div>
 </div>
-<div class="paragraph data-line-556">
+<div class="paragraph">
 <p>Avec une somme de contrôle à capitalisation mixte EIP-55, cela devient :</p>
 </div>
-<div id="mixed_capitalization" class="listingblock data-line-559">
+<div id="mixed_capitalization" class="listingblock">
 <div class="content">
 <pre>0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9</pre>
 </div>
 </div>
-<div class="paragraph data-line-563">
+<div class="paragraph">
 <p>Pouvez-vous faire la différence ? Certains des caractères alphabétiques (A à F) de l&#8217;alphabet de codage hexadécimal sont désormais en majuscules, tandis que d&#8217;autres sont en minuscules.</p>
 </div>
-<div class="paragraph data-line-565">
+<div class="paragraph">
 <p>EIP-55 est assez simple à mettre en œuvre. Nous prenons le hachage Keccak-256 de l&#8217;adresse hexadécimale minuscule. Ce hachage agit comme une empreinte numérique de l&#8217;adresse, nous donnant une somme de contrôle pratique. Tout petit changement dans l&#8217;entrée (l&#8217;adresse) devrait entraîner un grand changement dans le hachage résultant (la somme de contrôle), nous permettant de détecter efficacement les erreurs. Le hachage de notre adresse est ensuite encodé dans la capitalisation de l&#8217;adresse elle-même. Décomposons-le, étape par étape :</p>
 </div>
-<div class="olist arabic data-line-567">
+<div class="olist arabic">
 <ol class="arabic">
-<li class="data-line-567">
+<li>
 <p>Hachez l&#8217;adresse en minuscules, sans le préfixe 0x :</p>
 </li>
 </ol>
 </div>
-<div id="hash_lower_case_address" class="listingblock data-line-570">
+<div id="hash_lower_case_address" class="listingblock">
 <div class="content">
 <pre>Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0f9") =
 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9695d9a19d8f673ca991deae1</pre>
 </div>
 </div>
-<div class="olist arabic data-line-576">
+<div class="olist arabic">
 <ol class="arabic" start="2">
-<li class="data-line-576">
-<p>Mettez en majuscule chaque caractère d&#8217;adresse alphabétique si le chiffre hexadécimal correspondant du hachage est supérieur ou égal à <code>0x8</code>.C&#8217;est plus facile à montrer si nous alignons l&#8217;adresse et le hachage :</p>
+<li>
+<p>Mettez en majuscule chaque caractère d&#8217;adresse alphabétique si le chiffre hexadécimal correspondant du hachage est supérieur ou égal à <code>0x8</code>. C&#8217;est plus facile à montrer si nous alignons l&#8217;adresse et le hachage :</p>
 </li>
 </ol>
 </div>
-<div id="capitalize_input" class="listingblock data-line-579">
+<div id="capitalize_input" class="listingblock">
 <div class="content">
 <pre>Adresse : 001d3f1ef827552ae1114027bd3ecf1f086ba0f9
 Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...</pre>
 </div>
 </div>
-<div class="paragraph data-line-584">
-<p>Notre adresse contient un caractère alphabétique <code>d</code> en quatrième position. Le quatrième caractère du hachage est <code>6</code>,qui est inférieur à <code>8</code>. Donc, nous laissons le <code>d</code> minuscule. Le prochain caractère alphabétique de notre adresse est <code>f</code>,en sixième position. Le sixième caractère du hachage hexadécimal est <code>c</code>,qui est supérieur à <code>8</code>. Par conséquent, nous capitalisons le <code>F</code> dans l&#8217;adresse, et ainsi de suite. Comme vous pouvez le voir, nous n&#8217;utilisons que les 20 premiers octets (40 caractères hexadécimaux) du hachage comme somme de contrôle, car nous n&#8217;avons que 20 octets (40 caractères hexadécimaux) dans l&#8217;adresse à capitaliser de manière appropriée.</p>
+<div class="paragraph">
+<p>Notre adresse contient un caractère alphabétique <code>d</code> en quatrième position. Le quatrième caractère du hachage est <code>6</code>, qui est inférieur à <code>8</code>. Donc, nous laissons le <code>d</code> minuscule. Le prochain caractère alphabétique de notre adresse est <code>f</code>, en sixième position. Le sixième caractère du hachage hexadécimal est <code>c</code>, qui est supérieur à <code>8</code>. Par conséquent, nous capitalisons le <code>F</code> dans l&#8217;adresse, et ainsi de suite. Comme vous pouvez le voir, nous n&#8217;utilisons que les 20 premiers octets (40 caractères hexadécimaux) du hachage comme somme de contrôle, car nous n&#8217;avons que 20 octets (40 caractères hexadécimaux) dans l&#8217;adresse à capitaliser de manière appropriée.</p>
 </div>
-<div class="paragraph data-line-586">
+<div class="paragraph">
 <p>Vérifiez vous-même l&#8217;adresse en majuscules mixtes résultante et voyez si vous pouvez dire quels caractères ont été en majuscules et à quels caractères ils correspondent dans le hachage de l&#8217;adresse :</p>
 </div>
-<div id="capitalize_output" class="listingblock data-line-589">
+<div id="capitalize_output" class="listingblock">
 <div class="content">
 <pre>Adresse : 001d3F1ef827552Ae1114027BD3ECF1f086bA0F9
 Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...</pre>
 </div>
 </div>
-<div class="sect4 data-line-595">
+<div class="sect4">
 <h5 id="EIP55_error">Détection d&#8217;une erreur dans une adresse encodée EIP-55</h5>
-<div class="paragraph data-line-597">
+<div class="paragraph">
 <p>Maintenant, regardons comment les adresses EIP-55 nous aideront à trouver une erreur. Supposons que nous ayons imprimé une adresse Ethereum, qui est codée EIP-55 :</p>
 </div>
-<div id="correct_address" class="listingblock data-line-600">
+<div id="correct_address" class="listingblock">
 <div class="content">
 <pre>0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9</pre>
 </div>
 </div>
-<div class="paragraph data-line-604">
+<div class="paragraph">
 <p>Faisons maintenant une erreur fondamentale en lisant cette adresse. Le caractère avant le dernier est un <code>F</code> majuscule. Pour cet exemple, supposons que nous interprétions cela comme un <code>E</code> majuscule et que nous tapions l&#8217;adresse suivante (incorrecte) dans notre portefeuille :</p>
 </div>
-<div id="incorrect_address" class="listingblock data-line-607">
+<div id="incorrect_address" class="listingblock">
 <div class="content">
 <pre>0x001d3F1ef827552Ae1114027BD3ECF1f086bA0E9</pre>
 </div>
 </div>
-<div class="paragraph data-line-611">
+<div class="paragraph">
 <p>Heureusement, notre portefeuille est conforme à la norme EIP-55 ! Il remarque les majuscules mixtes et tente de valider l&#8217;adresse. Il le convertit en minuscules et calcule le hachage de la somme de contrôle :</p>
 </div>
-<div id="hash_demo" class="listingblock data-line-614">
+<div id="hash_demo" class="listingblock">
 <div class="content">
 <pre>Keccak256("001d3f1ef827552ae1114027bd3ecf1f086ba0e9") =
 5429b5d9460122fb4b11af9cb88b7bb76d8928862e0a57d46dd18dd8e08a6927</pre>
 </div>
 </div>
-<div class="paragraph data-line-619">
+<div class="paragraph">
 <p>Comme vous pouvez le voir, même si l&#8217;adresse n&#8217;a changé que d&#8217;un caractère (en fait, un seul bit, car <code>e</code> et <code>f</code> sont séparés d&#8217;un bit), le hachage de l&#8217;adresse a radicalement changé. C&#8217;est la propriété des fonctions de hachage qui les rend si utiles pour les sommes de contrôle !</p>
 </div>
-<div class="paragraph data-line-621">
+<div class="paragraph">
 <p>Maintenant, alignons les deux et vérifions la capitalisation :</p>
 </div>
-<div id="incorrect_capitalization" class="listingblock data-line-624">
+<div id="incorrect_capitalization" class="listingblock">
 <div class="content">
 <pre>001d3F1ef827552Ae1114027BD3ECF1f086bA0E9
 5429b5d9460122fb4b11af9cb88b7bb76d892886...</pre>
 </div>
 </div>
-<div class="paragraph data-line-629">
+<div class="paragraph">
 <p>C&#8217;est tout faux ! Plusieurs des caractères alphabétiques sont mal capitalisés. N&#8217;oubliez pas que la capitalisation est l&#8217;encodage de la somme de contrôle <em>correcte</em>.</p>
 </div>
-<div class="paragraph data-line-631">
+<div class="paragraph">
 <p>La casse de l&#8217;adresse que nous avons saisie ne correspond pas à la somme de contrôle que nous venons de calculer, ce qui signifie que quelque chose a changé dans l&#8217;adresse et qu&#8217;une erreur a été <span class="keep-together">introduite</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-635">
+<div class="sect2">
 <h3 id="keys-addresses-conclusions">Conclusion</h3>
-<div class="paragraph data-line-637">
+<div class="paragraph">
 <p>Dans ce chapitre, nous avons fourni un bref aperçu de la cryptographie à clé publique et nous nous sommes concentrés sur l&#8217;utilisation des clés publiques et privées dans Ethereum et l&#8217;utilisation d&#8217;outils cryptographiques, tels que les fonctions de hachage, dans la création et la vérification des adresses Ethereum. Nous avons également examiné les signatures numériques et comment elles peuvent démontrer la propriété d&#8217;une clé privée sans révéler cette clé privée. Dans <a href="#wallets_chapter">[wallets_chapter]</a>, nous allons rassembler ces idées et voir comment les portefeuilles peuvent être utilisés pour gérer les collections de clés.</p>
 </div>
 </div>
@@ -1389,7 +1389,7 @@ Hachage : 23a69c1653e4ebbb619b0b2cb8a9bad49892a8b9...</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:56:25 -0400
+Last updated 2022-05-15 08:23:38 -0400
 </div>
 </div>
 </body>

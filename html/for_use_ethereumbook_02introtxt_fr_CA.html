@@ -942,22 +942,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// SPDX-License-Identifier: CC-BY-SA-4.0
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Identifiant de licence SPDX : CC-BY-SA-4.0
 
-// Version of Solidity compiler this program was written for
+// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity 0.6.4;
 
-// Our first contract is a faucet!
+// Notre premier contrat est un faucet !
 contract Faucet {
-    // Accept any incoming amount
+    // Accepte tout montant entrant
     receive() external payable {}
 
-    // Give out ether to anyone who asks
+    // Donnez de l'éther à quiconque demande
     function withdraw(uint withdraw_amount) public {
-        // Limit withdrawal amount
+        // Limiter le montant du retrait
         require(withdraw_amount &lt;= 100000000000000000);
 
-        // Send the amount to the address that requested it
+        // Envoie le montant à l'adresse qui l'a demandé
         msg.sender.transfer(withdraw_amount);
     }
 }</code></pre>
@@ -996,7 +996,7 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph">
-<p>Les commentaires sont destinés à être lus par des humains et ne sont pas inclus dans le code intermédiaire exécutable de l&#8217;EVM. Nous les plaçons généralement sur la ligne avant le code que nous essayons d&#8217;expliquer, ou parfois sur la même ligne. Les commentaires commencent par deux barres obliques : <code>//</code>.Tout, depuis la première barre oblique jusqu&#8217;à la fin de cette ligne, est traité comme une ligne vide et ignoré.</p>
+<p>Les commentaires sont destinés à être lus par des humains et ne sont pas inclus dans le code intermédiaire exécutable de l&#8217;EVM. Nous les plaçons généralement sur la ligne avant le code que nous essayons d&#8217;expliquer, ou parfois sur la même ligne. Les commentaires commencent par deux barres obliques : <code>//</code>. Tout, depuis la première barre oblique jusqu&#8217;à la fin de cette ligne, est traité comme une ligne vide et ignoré.</p>
 </div>
 <div class="paragraph">
 <p>La ligne suivante est l&#8217;endroit où notre contrat réel commence :</p>
@@ -1007,7 +1007,7 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph">
-<p>Cette ligne déclare un objet <code>contract</code>,similaire à une déclaration class dans d&#8217;autres langages orientés objet. La définition du contrat inclut toutes les lignes entre les accolades (<code>{}</code>), qui définissent une <em>portée</em>, un peu comme la façon dont les accolades sont utilisées dans de nombreux autres langages de programmation.</p>
+<p>Cette ligne déclare un objet <code>contract</code>, similaire à une déclaration class dans d&#8217;autres langages orientés objet. La définition du contrat inclut toutes les lignes entre les accolades (<code>{}</code>), qui définissent une <em>portée</em>, un peu comme la façon dont les accolades sont utilisées dans de nombreux autres langages de programmation.</p>
 </div>
 <div class="paragraph">
 <p>Ensuite, nous déclarons la première fonction du contrat Faucet :</p>
@@ -1018,7 +1018,7 @@ contract Faucet {
 </div>
 </div>
 <div class="paragraph">
-<p>La fonction est nommée <code>withdraw</code>,et elle prend un argument entier non signé (<code>uint</code>)nommé <code>withdraw_amount</code>.Elle est déclarée fonction publique, c&#8217;est-à-dire qu&#8217;elle peut être appelée par d&#8217;autres contrats. La définition de la fonction suit, entre accolades. La première partie de la fonction retirer fixe une limite aux retraits :</p>
+<p>La fonction est nommée <code>withdraw</code>, et elle prend un argument entier non signé (<code>uint</code>)nommé <code>withdraw_amount</code>. Elle est déclarée fonction publique, c&#8217;est-à-dire qu&#8217;elle peut être appelée par d&#8217;autres contrats. La définition de la fonction suit, entre accolades. La première partie de la fonction retirer fixe une limite aux retraits :</p>
 </div>
 <div id="withdraw_limit" class="listingblock">
 <div class="content">
@@ -1057,7 +1057,7 @@ contract Faucet {
 <p>Cette fonction est une fonction dite de <em>secours</em> ou de <em>fallback</em> (ou <em>default</em>), qui est appelée si la transaction qui a déclenché le contrat n&#8217;a nommé aucune des fonctions déclarées dans le contrat, ou aucune fonction du tout , ou ne contenait pas de données. Les contrats peuvent avoir une telle fonction par défaut (sans nom) et c&#8217;est généralement celle qui reçoit l&#8217;ether. C&#8217;est pourquoi il est défini comme une fonction externe et payante, ce qui signifie qu&#8217;il peut accepter de l&#8217;ether dans le contrat. Il ne fait rien d&#8217;autre que d&#8217;accepter l&#8217;ether, comme indiqué par la définition vide entre les accolades (<code>{}</code>). Si nous effectuons une transaction qui envoie de l&#8217;ether à l&#8217;adresse du contrat, comme s&#8217;il s&#8217;agissait d&#8217;un portefeuille, cette fonction s&#8217;en chargera.</p>
 </div>
 <div class="paragraph">
-<p>Juste en dessous de notre fonction par défaut se trouve l&#8217;accolade fermante finale, qui ferme la définition du contrat <code>Faucet</code>.C&#8217;est tout !</p>
+<p>Juste en dessous de notre fonction par défaut se trouve l&#8217;accolade fermante finale, qui ferme la définition du contrat <code>Faucet</code>. C&#8217;est tout !</p>
 </div>
 </div>
 <div class="sect2">
@@ -1143,7 +1143,7 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 <p>Donc, nous avons un contrat. Nous l&#8217;avons compilé en code intermédiaire. Maintenant, nous devons "enregistrer" le contrat sur la chaîne de blocs Ethereum. Nous utiliserons le testnet de Ropsten pour tester notre contrat, c&#8217;est donc la chaîne de blocs à laquelle nous voulons le soumettre.</p>
 </div>
 <div class="paragraph">
-<p>L&#8217;enregistrement d&#8217;un contrat sur la chaîne de blocs implique la création d&#8217;une transaction spéciale dont la destination est l&#8217;adresse <code>0x00000000000000000000000000000000000000</code>,également appelée <em>zero address</em> ou l'<em>adresse zéro</em>. L&#8217;adresse zéro est une adresse spéciale qui indique à la chaîne de blocs Ethereum que vous souhaitez enregistrer un contrat. Heureusement, l&#8217;IDE Remix s&#8217;occupera de tout cela pour vous et enverra la transaction à MetaMask.</p>
+<p>L&#8217;enregistrement d&#8217;un contrat sur la chaîne de blocs implique la création d&#8217;une transaction spéciale dont la destination est l&#8217;adresse <code>0x00000000000000000000000000000000000000</code>, également appelée <em>zero address</em> ou l'<em>adresse zéro</em>. L&#8217;adresse zéro est une adresse spéciale qui indique à la chaîne de blocs Ethereum que vous souhaitez enregistrer un contrat. Heureusement, l&#8217;IDE Remix s&#8217;occupera de tout cela pour vous et enverra la transaction à MetaMask.</p>
 </div>
 <div class="paragraph">
 <p>Tout d&#8217;abord, passez à l&#8217;onglet Run et sélectionnez Injected Web3 dans la zone de sélection déroulante Environment. Cela connecte l&#8217;IDE Remix au portefeuille MetaMask et, via MetaMask, au réseau de test Ropsten. Une fois que vous faites cela, vous pouvez voir Ropsten sous Environment. De plus, dans la zone de sélection du compte, il indique l&#8217;adresse de votre portefeuille (voir <a href="#remix_run">Onglet Run du IDE Remix, avec l&#8217;environnement Injected Web3 sélectionné</a>).</p>
@@ -1155,7 +1155,7 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 <div class="title">Figure 14. Onglet Run du IDE Remix, avec l&#8217;environnement Injected Web3 sélectionné</div>
 </div>
 <div class="paragraph">
-<p>Juste en dessous des paramètres d&#8217;exécution que vous venez de confirmer se trouve le contrat <code>Faucet</code>,prêt à être créé. Cliquez sur le bouton Deploy affiché dans <a href="#remix_run">Onglet Run du IDE Remix, avec l&#8217;environnement Injected Web3 sélectionné</a>.</p>
+<p>Juste en dessous des paramètres d&#8217;exécution que vous venez de confirmer se trouve le contrat <code>Faucet</code>, prêt à être créé. Cliquez sur le bouton Deploy affiché dans <a href="#remix_run">Onglet Run du IDE Remix, avec l&#8217;environnement Injected Web3 sélectionné</a>.</p>
 </div>
 <div class="paragraph">
 <p>Remix construira la transaction spéciale "création" et MetaMask vous demandera de l&#8217;approuver, comme indiqué dans <a href="#remix_metamask_create">MetaMask montrant la transaction de création de contrat</a>. Vous remarquerez que la transaction de création de contrat ne contient pas d&#8217;ether, mais qu&#8217;elle contient 262 octets de données (le contrat compilé) et consommera 10 gwei en gaz. Cliquez sur Soumettre pour l&#8217;approuver.</p>
@@ -1234,13 +1234,13 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Lorsque vous avez envoyé une transaction à l&#8217;adresse du contrat, sans données spécifiant la fonction à appeler, elle a appelé cette fonction par défaut. Parce que nous l&#8217;avons déclaré comme <code>payable</code>,il a accepté et déposé le 1 ether dans le solde du compte du contrat. Votre transaction a entraîné l&#8217;exécution du contrat dans l&#8217;EVM, mettant à jour son solde. Vous avez financé votre robinet !</p>
+<p>Lorsque vous avez envoyé une transaction à l&#8217;adresse du contrat, sans données spécifiant la fonction à appeler, elle a appelé cette fonction par défaut. Parce que nous l&#8217;avons déclaré comme <code>payable</code>, il a accepté et déposé le 1 ether dans le solde du compte du contrat. Votre transaction a entraîné l&#8217;exécution du contrat dans l&#8217;EVM, mettant à jour son solde. Vous avez financé votre robinet !</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="withdraw_from_contract">Faire un retrait sur notre contrat</h4>
 <div class="paragraph">
-<p>Ensuite, retirons des fonds du robinet. Pour retirer, nous devons construire une transaction qui appelle la fonction withdraw et lui passe un argument <code>withdraw_amount</code>.Pour garder les choses simples pour le moment, Remix construira cette transaction pour nous et MetaMask la présentera pour notre approbation.</p>
+<p>Ensuite, retirons des fonds du robinet. Pour retirer, nous devons construire une transaction qui appelle la fonction withdraw et lui passe un argument <code>withdraw_amount</code>. Pour garder les choses simples pour le moment, Remix construira cette transaction pour nous et MetaMask la présentera pour notre approbation.</p>
 </div>
 <div class="paragraph">
 <p>Revenez à l&#8217;onglet Remix et consultez le contrat dans l&#8217;onglet Run. Vous devriez voir une boîte orange intitulée wthdraw (retrait) avec une entrée de champ intitulée uint256 withdraw_amount (voir <a href="#remix_contract_withdraw">La fonction de retrait (withdraw) de Faucet.sol, dans Remix</a>).</p>
@@ -1265,7 +1265,7 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>En raison d&#8217;une limitation de JavaScript, un nombre aussi grand que 10<sup>17</sup> ne peut pas être traité par Remix. Au lieu de cela, nous l&#8217;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un <code>BigNumber</code>.Si nous ne le mettons pas entre guillemets, l&#8217;IDE Remix ne parviendra pas à le traiter et affichera "Error encoding arguments: Error: Assertion failed."</p>
+<p>En raison d&#8217;une limitation de JavaScript, un nombre aussi grand que 10<sup>17</sup> ne peut pas être traité par Remix. Au lieu de cela, nous l&#8217;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un <code>BigNumber</code>. Si nous ne le mettons pas entre guillemets, l&#8217;IDE Remix ne parviendra pas à le traiter et affichera "Error encoding arguments: Error: Assertion failed."</p>
 </div>
 </td>
 </tr>
@@ -1313,7 +1313,7 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Pour récapituler : vous avez envoyé une transaction depuis votre portefeuille MetaMask contenant des instructions de données pour appeler la fonction withdraw avec un argument withdraw_amount de 0,1 ether. Cette transaction a entraîné l&#8217;exécution du contrat à l&#8217;intérieur de l&#8217;EVM. Lorsque l&#8217;EVM a exécuté la fonction withdraw du contrat <code>Faucet</code>,il a d&#8217;abord appelé la fonction require et validé que le montant demandé était inférieur ou égal au retrait maximal autorisé de 0,1 ether. Ensuite, il a appelé la fonction transfer pour vous envoyer l&#8217;ether. L&#8217;exécution de la fonction transfer a généré une transaction interne qui a déposé 0,1 ether dans votre adresse de portefeuille, à partir du solde du contrat. C&#8217;est celui affiché sur l&#8217;onglet Internal Transactions dans Etherscan. </p>
+<p>Pour récapituler : vous avez envoyé une transaction depuis votre portefeuille MetaMask contenant des instructions de données pour appeler la fonction withdraw avec un argument withdraw_amount de 0,1 ether. Cette transaction a entraîné l&#8217;exécution du contrat à l&#8217;intérieur de l&#8217;EVM. Lorsque l&#8217;EVM a exécuté la fonction withdraw du contrat <code>Faucet</code>, il a d&#8217;abord appelé la fonction require et validé que le montant demandé était inférieur ou égal au retrait maximal autorisé de 0,1 ether. Ensuite, il a appelé la fonction transfer pour vous envoyer l&#8217;ether. L&#8217;exécution de la fonction transfer a généré une transaction interne qui a déposé 0,1 ether dans votre adresse de portefeuille, à partir du solde du contrat. C&#8217;est celui affiché sur l&#8217;onglet Internal Transactions dans Etherscan. </p>
 </div>
 <div id="etherscan_withdrawal_internal" class="imageblock">
 <div class="content">
@@ -1343,7 +1343,7 @@ PUSH24 0x7541F409787592C988A079407FB28B4AD000290000000000</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:35:19 -0400
+Last updated 2022-05-15 08:23:18 -0400
 </div>
 </div>
 </body>

@@ -731,7 +731,7 @@ contract EthUsdPriceTicker is usingOraclize {
 </div>
 </div>
 <div class="paragraph">
-<p>Pour s&#8217;intégrer à Oraclize, le contrat EthUsdPriceTicker doit être un enfant de <span class="keep-together"><code>usingOraclize</code></span> ; le contrat usingOraclize est défini dans le fichier <em>oraclizeAPI</em>. La demande de données est effectuée à l&#8217;aide de la fonction <code>oraclize_query</code>,qui est héritée du contrat <code>usingOraclize</code>.Il s&#8217;agit d&#8217;une fonction surchargée qui attend au moins deux arguments :</p>
+<p>Pour s&#8217;intégrer à Oraclize, le contrat EthUsdPriceTicker doit être un enfant de <span class="keep-together"><code>usingOraclize</code></span> ; le contrat usingOraclize est défini dans le fichier <em>oraclizeAPI</em>. La demande de données est effectuée à l&#8217;aide de la fonction <code>oraclize_query</code>, qui est héritée du contrat <code>usingOraclize</code>. Il s&#8217;agit d&#8217;une fonction surchargée qui attend au moins deux arguments :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -744,7 +744,7 @@ contract EthUsdPriceTicker is usingOraclize {
 </ul>
 </div>
 <div class="paragraph">
-<p>La requête de prix est effectuée dans la fonction <code>queryTicker</code>.Afin d&#8217;effectuer la requête, Oraclize exige le paiement d&#8217;une somme modique en ether, couvrant le coût du gaz pour traiter le résultat et le transmettre à la fonction __callback et un supplément d&#8217;accompagnement pour le service. Ce montant dépend de la source de données et, le cas échéant, du type de preuve d&#8217;authenticité requis. Une fois les données récupérées, la fonction __callback est appelée par un compte contrôlé par Oraclize autorisé à effectuer le rappel ; il transmet la valeur de réponse et un argument queryId unique, qui, par exemple, peut être utilisé pour gérer et suivre plusieurs rappels en attente d&#8217;Oraclize.</p>
+<p>La requête de prix est effectuée dans la fonction <code>queryTicker</code>. Afin d&#8217;effectuer la requête, Oraclize exige le paiement d&#8217;une somme modique en ether, couvrant le coût du gaz pour traiter le résultat et le transmettre à la fonction __callback et un supplément d&#8217;accompagnement pour le service. Ce montant dépend de la source de données et, le cas échéant, du type de preuve d&#8217;authenticité requis. Une fois les données récupérées, la fonction __callback est appelée par un compte contrôlé par Oraclize autorisé à effectuer le rappel ; il transmet la valeur de réponse et un argument queryId unique, qui, par exemple, peut être utilisé pour gérer et suivre plusieurs rappels en attente d&#8217;Oraclize.</p>
 </div>
 <div class="paragraph">
 <p>Le fournisseur de données financières Thomson Reuters fournit également un service oracle pour Ethereum, appelé BlockOne IQ, permettant de demander des données de marché et de référence par des contrats intelligents exécutés sur des réseaux privés ou autorisés. <a href="#contract_calling_the_blockone_iq_service_for_market_data">Contrat faisant appel au service BlockOne IQ pour les données de marché</a> montre l&#8217;interface pour l&#8217;oracle, et un contrat client qui fera la demande.</p>
@@ -818,8 +818,8 @@ contract OracleB1IQClient {
 </div>
 </div>
 <div class="paragraph">
-<p>La demande de données est initiée à l&#8217;aide de la fonction <code>initRequest</code>,qui permet de spécifier le type de requête (dans cet exemple, une demande de prix infrajournalier), en plus de deux fonctions de rappel.
-Cela renvoie un identifiant uint256 qui peut ensuite être utilisé pour fournir des arguments supplémentaires. La fonction addArgumentToRequestString permet de spécifier le Reuters Instrument Code (RIC), ici pour le stock IBM, et <span class="keep-together"><code>addArgumentToRequestUint</code></span> permet de spécifier l&#8217;horodatage. Maintenant, passer un alias pour block.timestamp récupérera le prix actuel pour IBM. La requête est alors exécutée par la fonction <code>executeRequest</code>.Une fois la requête traitée, le contrat oracle appellera la fonction callback onSuccess avec l&#8217;identifiant de la requête, permettant de récupérer les données résultantes ; en cas d&#8217;échec de la récupération, le rappel <span class="keep-together"><code>onFailure</code></span> renverra un code d&#8217;erreur à la place. Les champs disponibles qui peuvent être récupérés en cas de succès incluent les prix <code>open</code>,high, <code>low</code>,close (OHLC) et bid/ask.</p>
+<p>La demande de données est initiée à l&#8217;aide de la fonction <code>initRequest</code>, qui permet de spécifier le type de requête (dans cet exemple, une demande de prix infrajournalier), en plus de deux fonctions de rappel.
+Cela renvoie un identifiant uint256 qui peut ensuite être utilisé pour fournir des arguments supplémentaires. La fonction addArgumentToRequestString permet de spécifier le Reuters Instrument Code (RIC), ici pour le stock IBM, et <span class="keep-together"><code>addArgumentToRequestUint</code></span> permet de spécifier l&#8217;horodatage. Maintenant, passer un alias pour block.timestamp récupérera le prix actuel pour IBM. La requête est alors exécutée par la fonction <code>executeRequest</code>. Une fois la requête traitée, le contrat oracle appellera la fonction callback onSuccess avec l&#8217;identifiant de la requête, permettant de récupérer les données résultantes ; en cas d&#8217;échec de la récupération, le rappel <span class="keep-together"><code>onFailure</code></span> renverra un code d&#8217;erreur à la place. Les champs disponibles qui peuvent être récupérés en cas de succès incluent les prix <code>open</code>, high, <code>low</code>, close (OHLC) et bid/ask.</p>
 </div>
 </div>
 <div class="sect2">
@@ -839,7 +839,7 @@ Cela renvoie un identifiant uint256 qui peut ensuite être utilisé pour fournir
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:09:00 -0400
+Last updated 2022-05-15 08:26:48 -0400
 </div>
 </div>
 </body>

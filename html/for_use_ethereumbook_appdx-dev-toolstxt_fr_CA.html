@@ -468,10 +468,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect4">
 <h5 id="installing_truffle">Installation du cadre de développement Truffle</h5>
 <div class="paragraph">
-<p>Le cadre de développement Truffle comprend plusieurs packages Node.js. Avant d&#8217;installer <code>truffle</code>,vous devez avoir une installation à jour et fonctionnelle de Node.js et du Node Package Manager (npm).</p>
+<p>Le cadre de développement Truffle comprend plusieurs packages Node.js. Avant d&#8217;installer <code>truffle</code>, vous devez avoir une installation à jour et fonctionnelle de Node.js et du Node Package Manager (npm).</p>
 </div>
 <div class="paragraph">
-<p>La méthode recommandée pour installer Node.js et npm consiste à utiliser le gestionnaire de version de nœud (nvm). Une fois que vous avez installé <code>nvm</code>,il gérera toutes les dépendances et mises à jour pour vous. Suivez les instructions trouvées sur <a href="http://nvm.sh" class="bare">http://nvm.sh</a>.</p>
+<p>La méthode recommandée pour installer Node.js et npm consiste à utiliser le gestionnaire de version de nœud (nvm). Une fois que vous avez installé <code>nvm</code>, il gérera toutes les dépendances et mises à jour pour vous. Suivez les instructions trouvées sur <a href="http://nvm.sh" class="bare">http://nvm.sh</a>.</p>
 </div>
 <div class="paragraph">
 <p>Une fois que nvm est installé sur votre système d&#8217;exploitation, l&#8217;installation de Node.js est simple. Utilisez le drapeau --lts pour dire à nvm que vous voulez la version la plus récente de "support à long terme" (LTS) de Node.js :</p>
@@ -522,7 +522,7 @@ $ <strong>truffle unbox <em>BOX_NAME</em></strong>
 <div class="sect4">
 <h5 id="truffle_project_directory">Création d&#8217;un répertoire de projet truffle</h5>
 <div class="paragraph">
-<p>Pour chaque projet où vous utiliserez <code>truffle</code>,créez un répertoire de projet et initialisez truffle dans ce répertoire. truffle créera la structure de répertoire nécessaire dans le répertoire de votre projet. Il est d&#8217;usage de donner au répertoire du projet un nom qui décrit le projet. Pour cet exemple, nous utiliserons truffle pour déployer notre contrat Faucet depuis <a href="#simple_contract_example">[simple_contract_example]</a>, et donc nous nommerons le dossier du projet <em>Faucet</em> :</p>
+<p>Pour chaque projet où vous utiliserez <code>truffle</code>, créez un répertoire de projet et initialisez truffle dans ce répertoire. truffle créera la structure de répertoire nécessaire dans le répertoire de votre projet. Il est d&#8217;usage de donner au répertoire du projet un nom qui décrit le projet. Pour cet exemple, nous utiliserons truffle pour déployer notre contrat Faucet depuis <a href="#simple_contract_example">[simple_contract_example]</a>, et donc nous nommerons le dossier du projet <em>Faucet</em> :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>mkdir Faucet</strong>
@@ -553,7 +553,7 @@ Faucet $ <strong>truffle init</strong>
 </div>
 </div>
 <div class="paragraph">
-<p>Nous utiliserons également un certain nombre de packages de support JavaScript (Node.js), en plus de truffle lui-même. Nous pouvons les installer avec <code>npm</code>.Nous initialisons la structure de répertoires npm et acceptons les valeurs par défaut suggérées par npm :</p>
+<p>Nous utiliserons également un certain nombre de packages de support JavaScript (Node.js), en plus de truffle lui-même. Nous pouvons les installer avec <code>npm</code>. Nous initialisons la structure de répertoires npm et acceptons les valeurs par défaut suggérées par npm :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>npm init</strong>
@@ -698,17 +698,17 @@ module.exports = function(deployer) {
 </div>
 </div>
 <div class="paragraph">
-<p>Le script initialise une variable <code>Faucet</code>,identifiant le code source Solidity <em>Faucet.sol</em> comme l&#8217;artefact qui définit <code>Faucet</code>.Ensuite, il appelle la fonction "deploy" pour déployer ce contrat.</p>
+<p>Le script initialise une variable <code>Faucet</code>, identifiant le code source Solidity <em>Faucet.sol</em> comme l&#8217;artefact qui définit <code>Faucet</code>. Ensuite, il appelle la fonction "deploy" pour déployer ce contrat.</p>
 </div>
 <div class="paragraph">
-<p>Nous sommes prêts. Utilisons truffle migrate pour le déployer. Nous devons spécifier sur quel réseau déployer le contrat, en utilisant l&#8217;argument --network . Nous n&#8217;avons qu&#8217;un seul réseau spécifié dans le fichier de configuration, que nous avons nommé <code>localnode</code>.Assurez-vous que votre client Ethereum local est en cours d&#8217;exécution, puis tapez :</p>
+<p>Nous sommes prêts. Utilisons truffle migrate pour le déployer. Nous devons spécifier sur quel réseau déployer le contrat, en utilisant l&#8217;argument --network . Nous n&#8217;avons qu&#8217;un seul réseau spécifié dans le fichier de configuration, que nous avons nommé <code>localnode</code>. Assurez-vous que votre client Ethereum local est en cours d&#8217;exécution, puis tapez :</p>
 </div>
 <pre data-type="programlisting">
 Faucet $ <strong>truffle migrate --network localnode</strong>
 
 </pre>
 <div class="paragraph">
-<p>Comme nous utilisons un nœud local pour nous connecter au réseau Ethereum et gérer notre portefeuille, nous devons autoriser la transaction créée par <code>truffle</code>.Nous exécutons parity connecté à la chaîne de blocs de test de Ropsten, donc pendant la migration, nous verrons une fenêtre contextuelle comme celle de <a href="#parity_deployment_confirmation">Parity demandant confirmation pour déployer Faucet</a> sur la console web de Parity.</p>
+<p>Comme nous utilisons un nœud local pour nous connecter au réseau Ethereum et gérer notre portefeuille, nous devons autoriser la transaction créée par <code>truffle</code>. Nous exécutons parity connecté à la chaîne de blocs de test de Ropsten, donc pendant la migration, nous verrons une fenêtre contextuelle comme celle de <a href="#parity_deployment_confirmation">Parity demandant confirmation pour déployer Faucet</a> sur la console web de Parity.</p>
 </div>
 <div id="parity_deployment_confirmation" class="imageblock">
 <div class="content">
@@ -717,7 +717,7 @@ Faucet $ <strong>truffle migrate --network localnode</strong>
 <div class="title">Figure 1. Parity demandant confirmation pour déployer Faucet</div>
 </div>
 <div class="paragraph">
-<p>Il y a quatre transactions au total : une pour déployer <code>Migrations</code>,une pour mettre à jour le compteur de déploiements à <code>1</code>,une pour déployer Faucet et une pour mettre à jour le compteur de déploiements à <code>2</code>.</p>
+<p>Il y a quatre transactions au total : une pour déployer <code>Migrations</code>, une pour mettre à jour le compteur de déploiements à <code>1</code>, une pour déployer Faucet et une pour mettre à jour le compteur de déploiements à <code>2</code>.</p>
 </div>
 <div class="paragraph">
 <p>Truffle affichera les migrations terminées, affichera chacune des transactions et affichera les adresses de contrat :</p>
@@ -786,7 +786,7 @@ __defineGetter__ __defineSetter__ __lookupGetter__ __lookupSetter__ __proto__ co
 
 </pre>
 <div class="paragraph">
-<p>La grande majorité des fonctions liées au portefeuille et aux nœuds sont fournies par l&#8217;objet <code>web3</code>,qui est une instance de la bibliothèque web3.js. L&#8217;objet web3 résume l&#8217;interface RPC à notre nœud Parity. Vous remarquerez également deux objets aux noms familiers : Migrations et <code>Faucet</code>.Ceux-ci représentent les contrats que nous venons de déployer. Nous utiliserons la console Truffle pour interagir avec un contrat. Tout d&#8217;abord, vérifions notre wallet via l&#8217;objet web3 :</p>
+<p>La grande majorité des fonctions liées au portefeuille et aux nœuds sont fournies par l&#8217;objet <code>web3</code>, qui est une instance de la bibliothèque web3.js. L&#8217;objet web3 résume l&#8217;interface RPC à notre nœud Parity. Vous remarquerez également deux objets aux noms familiers : Migrations et <code>Faucet</code>. Ceux-ci représentent les contrats que nous venons de déployer. Nous utiliserons la console Truffle pour interagir avec un contrat. Tout d&#8217;abord, vérifions notre wallet via l&#8217;objet web3 :</p>
 </div>
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>web3.eth.accounts</strong>
@@ -815,7 +815,7 @@ truffle(localnode)&gt;
 
 </pre>
 <div class="paragraph">
-<p>Ensuite, nous utiliserons sendTransaction pour envoyer de l&#8217;ether de test afin de financer le contrat <code>Faucet</code>.Notez l&#8217;utilisation de web3.utils.toWei pour convertir les unités ether pour nous. Taper 18 zéros sans se tromper est à la fois difficile et dangereux, il est donc toujours préférable d&#8217;utiliser un convertisseur d&#8217;unités pour les valeurs. Voici comment nous envoyons la transaction :</p>
+<p>Ensuite, nous utiliserons sendTransaction pour envoyer de l&#8217;ether de test afin de financer le contrat <code>Faucet</code>. Notez l&#8217;utilisation de web3.utils.toWei pour convertir les unités ether pour nous. Taper 18 zéros sans se tromper est à la fois difficile et dangereux, il est donc toujours préférable d&#8217;utiliser un convertisseur d&#8217;unités pour les valeurs. Voici comment nous envoyons la transaction :</p>
 </div>
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>web3.eth.sendTransaction({from:web3.eth.accounts[0],
@@ -832,7 +832,7 @@ truffle(localnode)&gt; <strong>web3.eth.getBalance(Faucet.address).toNumber()</s
 
 </pre>
 <div class="paragraph">
-<p>Appelons maintenant la fonction <code>withdraw</code>,pour retirer de l&#8217;ether de test du contrat :</p>
+<p>Appelons maintenant la fonction <code>withdraw</code>, pour retirer de l&#8217;ether de test du contrat :</p>
 </div>
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>Faucet.deployed().then(instance =>
@@ -998,7 +998,7 @@ contract SampleCrowdsale is PostDeliveryCrowdsale, MintedCrowdsale {
 const SampleToken = artifacts.require('./SampleToken.sol');
 
 module.exports = function(deployer, network, accounts) {
-  const openingTime = web3.eth.getBlock('latest').timestamp + 2; // 2s in future
+  const openingTime = web3.eth.getBlock('latest').timestamp + 2; // 2s dans le futur
   const closingTime = openingTime + 86400 * 20; // 20 days
   const rate = new web3.BigNumber(1000);
   const wallet = accounts[1];
@@ -1057,7 +1057,7 @@ pour développer et gérer en toute sécurité des applications de contrats inte
 <p>Au cœur de ZeppelinOS se trouve un contrat très intelligent connu sous le nom de <em>proxy</em>. Un proxy est un contrat capable d&#8217;encapsuler n&#8217;importe quel autre contrat, d&#8217;exposer son interface sans avoir à implémenter manuellement des setters et des getters pour celui-ci, et de le mettre à niveau sans perdre son état. En termes de solidité, il peut être considéré comme un contrat normal dont la logique métier est contenue dans une bibliothèque, qui peut être échangée contre une nouvelle bibliothèque à tout moment sans perdre son état. La manière dont le proxy est lié à son implémentation est entièrement automatisée et encapsulée pour le développeur. Pratiquement n&#8217;importe quel contrat peut être mis à niveau avec peu ou pas de changement dans son code. Plus d&#8217;informations sur le mécanisme de proxy de ZeppelinOS peuvent être trouvées dans le <a href="http://bit.ly/2OfuNpu">blog</a>, et un exemple de la façon de l&#8217;utiliser peut être trouvé <a href="http://bit.ly/2OfuE5q">sur GitHub</a>.</p>
 </div>
 <div class="paragraph">
-<p>Le développement d&#8217;applications à l&#8217;aide de ZeppelinOS est similaire au développement d&#8217;applications JavaScript à l&#8217;aide de <code>npm</code>.Un AppManager gère un package d&#8217;application pour chaque version de l&#8217;application. Un package est simplement un répertoire de contrats, chacun pouvant avoir un ou plusieurs proxys pouvant être mis à niveau. Le AppManager fournit non seulement des proxys pour les contrats spécifiques à l&#8217;application, mais le fait également pour les implémentations de ZeppelinOS, sous la forme d&#8217;une bibliothèque standard. Pour en voir un exemple complet, veuillez visiter <a href="http://bit.ly/2PtyJb3">examples/complex</a>.</p>
+<p>Le développement d&#8217;applications à l&#8217;aide de ZeppelinOS est similaire au développement d&#8217;applications JavaScript à l&#8217;aide de <code>npm</code>. Un AppManager gère un package d&#8217;application pour chaque version de l&#8217;application. Un package est simplement un répertoire de contrats, chacun pouvant avoir un ou plusieurs proxys pouvant être mis à niveau. Le AppManager fournit non seulement des proxys pour les contrats spécifiques à l&#8217;application, mais le fait également pour les implémentations de ZeppelinOS, sous la forme d&#8217;une bibliothèque standard. Pour en voir un exemple complet, veuillez visiter <a href="http://bit.ly/2PtyJb3">examples/complex</a>.</p>
 </div>
 <div class="paragraph">
 <p>Bien qu&#8217;actuellement en développement, ZeppelinOS vise à fournir un large éventail de fonctionnalités supplémentaires, telles que des outils de développement, un planificateur qui automatise les opérations en arrière-plan dans les contrats, des primes de développement, un marché qui facilite la communication et l&#8217;échange de valeur entre les applications, et bien plus encore. Tout cela est décrit dans le <a href="http://bit.ly/2QcxV7K">whitepaper</a>. de ZeppelinOS</p>
@@ -1141,7 +1141,7 @@ Options:
 <div class="sect3">
 <h4 id="_sputnikvm">SputnikVM</h4>
 <div class="paragraph">
-<p><a href="https://github.com/etcdevteam/sputnikvm">SputnikVM</a> est une machine virtuelle enfichable autonome pour différentes chaînes de blocs basées sur Ethereum. Il est écrit en Rust et peut être utilisé comme binaire, caisse de chargement ou bibliothèque partagée, ou intégré via les interfaces FFI, Protobuf et JSON. Il a un binaire séparé, <code>sputnikvm-dev</code>,destiné à des fins de test, qui émule la plupart de l&#8217;API JSON-RPC et de l&#8217;extraction de blocs.</p>
+<p><a href="https://github.com/etcdevteam/sputnikvm">SputnikVM</a> est une machine virtuelle enfichable autonome pour différentes chaînes de blocs basées sur Ethereum. Il est écrit en Rust et peut être utilisé comme binaire, caisse de chargement ou bibliothèque partagée, ou intégré via les interfaces FFI, Protobuf et JSON. Il a un binaire séparé, <code>sputnikvm-dev</code>, destiné à des fins de test, qui émule la plupart de l&#8217;API JSON-RPC et de l&#8217;extraction de blocs.</p>
 </div>
 </div>
 </div>
@@ -1318,7 +1318,7 @@ Options:
 </dd>
 <dt class="hdlist1">Embark</dt>
 <dd>
-<p>Embark s&#8217;intègre à Mocha pour exécuter des tests unitaires écrits en JavaScript. Les tests sont à leur tour exécutés sur des contrats déployés sur TestRPC/Ganache. Le framework Embark déploie automatiquement les contrats intelligents et redéploie automatiquement les contrats lorsqu&#8217;ils sont modifiés. Il assure également le suivi des contrats déployés et ne déploie les contrats que lorsque cela est vraiment nécessaire. Embark inclut une bibliothèque de test pour exécuter et tester rapidement vos contrats dans un EVM, avec des fonctions comme <code>assert.equal</code>.La commande embark test exécutera tous les fichiers de test sous le répertoire <em>test</em>.</p>
+<p>Embark s&#8217;intègre à Mocha pour exécuter des tests unitaires écrits en JavaScript. Les tests sont à leur tour exécutés sur des contrats déployés sur TestRPC/Ganache. Le framework Embark déploie automatiquement les contrats intelligents et redéploie automatiquement les contrats lorsqu&#8217;ils sont modifiés. Il assure également le suivi des contrats déployés et ne déploie les contrats que lorsque cela est vraiment nécessaire. Embark inclut une bibliothèque de test pour exécuter et tester rapidement vos contrats dans un EVM, avec des fonctions comme <code>assert.equal</code>. La commande embark test exécutera tous les fichiers de test sous le répertoire <em>test</em>.</p>
 </dd>
 <dt class="hdlist1">Dapp</dt>
 <dd>
@@ -1355,14 +1355,14 @@ log_named_decimal_uint(bytes32 key, uint val, uint decimals)</pre>
 </dd>
 <dt class="hdlist1">Populus</dt>
 <dd>
-<p>Populus utilise Python et son propre émulateur de chaîne pour exécuter des contrats écrits en Solidity. Les tests unitaires sont écrits en Python avec la bibliothèque <code>pytest</code>.Populus prend en charge la rédaction de contrats spécifiquement pour les tests. Ces noms de fichiers de contrat doivent correspondre au modèle global <em>Test*.sol</em> et se trouver n&#8217;importe où dans le répertoire des tests du projet, <em>tests</em>.</p>
+<p>Populus utilise Python et son propre émulateur de chaîne pour exécuter des contrats écrits en Solidity. Les tests unitaires sont écrits en Python avec la bibliothèque <code>pytest</code>. Populus prend en charge la rédaction de contrats spécifiquement pour les tests. Ces noms de fichiers de contrat doivent correspondre au modèle global <em>Test*.sol</em> et se trouver n&#8217;importe où dans le répertoire des tests du projet, <em>tests</em>.</p>
 </dd>
 </dl>
 </div>
 <div class="sect3">
 <h4 id="on_blockchain_testing_sec">Test embarqué sur la chaîne de blocs</h4>
 <div class="paragraph">
-<p>Bien que la plupart des tests ne devraient pas avoir lieu sur les contrats déployés, le comportement d&#8217;un contrat peut être vérifié via les clients Ethereum. Les commandes suivantes peuvent être utilisées pour évaluer l&#8217;état d&#8217;un contrat intelligent. Ces commandes doivent être tapées sur le terminal <code>geth</code>,bien que n&#8217;importe quelle console web3 les prenne également en charge.</p>
+<p>Bien que la plupart des tests ne devraient pas avoir lieu sur les contrats déployés, le comportement d&#8217;un contrat peut être vérifié via les clients Ethereum. Les commandes suivantes peuvent être utilisées pour évaluer l&#8217;état d&#8217;un contrat intelligent. Ces commandes doivent être tapées sur le terminal <code>geth</code>, bien que n&#8217;importe quelle console web3 les prenne également en charge.</p>
 </div>
 <div class="paragraph">
 <p>Pour obtenir l&#8217;adresse d&#8217;un contrat à <em>txhash</em>, utilisez :</p>
@@ -1396,13 +1396,13 @@ web3.eth.getStorageAt(<em>address</em>, <em>position</em>)
 <div class="sect3">
 <h4 id="ganache">Ganache : une chaîne de blocs de test locale</h4>
 <div class="paragraph">
-<p>Ganache est une chaîne de blocs de test locale que vous pouvez utiliser pour déployer des contrats, développer vos applications et exécuter des tests. Il est disponible en tant qu&#8217;application de bureau (avec une interface utilisateur graphique) pour Windows, macOS et Linux. Il est également disponible sous la forme d&#8217;un utilitaire de ligne de commande appelé <code>ganache-cli</code>.Pour plus de détails et des instructions d&#8217;installation pour l&#8217;application de bureau Ganache, voir <a href="https://truffleframework.com/ganache" class="bare">https://truffleframework.com/ganache</a>.</p>
+<p>Ganache est une chaîne de blocs de test locale que vous pouvez utiliser pour déployer des contrats, développer vos applications et exécuter des tests. Il est disponible en tant qu&#8217;application de bureau (avec une interface utilisateur graphique) pour Windows, macOS et Linux. Il est également disponible sous la forme d&#8217;un utilitaire de ligne de commande appelé <code>ganache-cli</code>. Pour plus de détails et des instructions d&#8217;installation pour l&#8217;application de bureau Ganache, voir <a href="https://truffleframework.com/ganache" class="bare">https://truffleframework.com/ganache</a>.</p>
 </div>
 <div class="paragraph">
 <p>Le code ganache-cli peut être trouvé sur <a href="https://github.com/trufflesuite/ganache-cli/" class="bare">https://github.com/trufflesuite/ganache-cli/</a>.</p>
 </div>
 <div class="paragraph">
-<p>Pour installer la ligne de commande <code>ganache-cli</code>,utilisez npm :</p>
+<p>Pour installer la ligne de commande <code>ganache-cli</code>, utilisez npm :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>npm install -g ganache-cli</strong>
@@ -1443,7 +1443,7 @@ $ <strong>ganache-cli \
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:27:08 -0400
+Last updated 2022-05-15 08:27:37 -0400
 </div>
 </div>
 </body>

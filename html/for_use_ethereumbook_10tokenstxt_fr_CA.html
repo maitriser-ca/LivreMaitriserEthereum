@@ -707,7 +707,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">decimals</dt>
 <dd>
-<p>Renvoie le nombre de décimales utilisées pour diviser les quantités de jetons. Par exemple, si decimals vaut <code>2</code>,alors le montant du jeton est divisé par 100 pour obtenir sa <span class="keep-together">représentation</span> d&#8217;usage.</p>
+<p>Renvoie le nombre de décimales utilisées pour diviser les quantités de jetons. Par exemple, si decimals vaut <code>2</code>, alors le montant du jeton est divisé par 100 pour obtenir sa <span class="keep-together">représentation</span> d&#8217;usage.</p>
 </dd>
 </dl>
 </div>
@@ -762,13 +762,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>La norme de jeton ERC20 a deux fonctions de transfert. Vous vous demandez peut-être pourquoi.</p>
 </div>
 <div class="paragraph">
-<p>ERC20 permet deux flux de travail différents. Le premier est un flux de travail simple et à transaction unique utilisant la fonction <code>transfer</code>.Ce flux de travail est celui utilisé par les portefeuilles pour envoyer des jetons à d&#8217;autres portefeuilles. La grande majorité des transactions de jetons se produisent avec le flux de travail transfer.</p>
+<p>ERC20 permet deux flux de travail différents. Le premier est un flux de travail simple et à transaction unique utilisant la fonction <code>transfer</code>. Ce flux de travail est celui utilisé par les portefeuilles pour envoyer des jetons à d&#8217;autres portefeuilles. La grande majorité des transactions de jetons se produisent avec le flux de travail transfer.</p>
 </div>
 <div class="paragraph">
 <p>L&#8217;exécution du contrat de transfert est très simple. Si Alice veut envoyer 10 jetons à Bob, son portefeuille envoie une transaction à l&#8217;adresse du contrat de jeton, en appelant la fonction <span class="keep-together"><code>transfer</code></span> avec l&#8217;adresse de Bob et 10 comme arguments. Le contrat de jeton ajuste le solde d&#8217;Alice (–10) et le solde de Bob (+10) et émet un événement Transfer.</p>
 </div>
 <div class="paragraph">
-<p>Le deuxième flux de travail est un processus à deux transactions qui utilise approve suivi de <code>transferFrom</code>.Ce workflow permet à un propriétaire de jeton de déléguer son contrôle à une autre adresse. Il est le plus souvent utilisé pour déléguer le contrôle à un contrat de distribution de jetons, mais il peut également être utilisé par les échanges.</p>
+<p>Le deuxième flux de travail est un processus à deux transactions qui utilise approve suivi de <code>transferFrom</code>. Ce workflow permet à un propriétaire de jeton de déléguer son contrôle à une autre adresse. Il est le plus souvent utilisé pour déléguer le contrôle à un contrat de distribution de jetons, mais il peut également être utilisé par les échanges.</p>
 </div>
 <div class="paragraph">
 <p>Par exemple, si une entreprise vend des tokens pour une ICO (Initial Coin Offerings ou "offres initiales de pièces"), elle peut approve (approuver) une adresse de contrat de crowdsale pour distribuer une certaine quantité de jetons. Le contrat de crowdsale peut alors transferFrom le solde du propriétaire du contrat de jeton à chaque acheteur du jeton, comme illustré dans <a href="#approve_transferFrom_workflow">Le flux de travail d&#8217;approbation et de transfert en deux étapes des jetons ERC20</a>.</p>
@@ -794,10 +794,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Figure 1. Le flux de travail d&#8217;approbation et de transfert en deux étapes des jetons ERC20</div>
 </div>
 <div class="paragraph">
-<p>Pour le flux de travail approve et <code>transferFrom</code>,deux transactions sont nécessaires. Disons qu&#8217;Alice veut autoriser le contrat AliceICO à vendre 50 % de tous les jetons AliceCoin à des acheteurs comme Bob et Charlie. Tout d&#8217;abord, Alice lance le contrat AliceCoin ERC20, émettant tous les AliceCoin à sa propre adresse. Ensuite, Alice lance le contrat AliceICO qui peut vendre des jetons contre de l&#8217;ether. Ensuite, Alice lance le flux de travail approve et <code>transferFrom</code>.Elle envoie une transaction au contrat <code>AliceCoin</code>,en appelant approve avec l&#8217;adresse du contrat AliceICO et 50 % du totalSupply comme arguments. Cela déclenchera l&#8217;événement <code>Approbation</code>.Désormais, le contrat AliceICO peut vendre AliceCoin.</p>
+<p>Pour le flux de travail approve et <code>transferFrom</code>, deux transactions sont nécessaires. Disons qu&#8217;Alice veut autoriser le contrat AliceICO à vendre 50 % de tous les jetons AliceCoin à des acheteurs comme Bob et Charlie. Tout d&#8217;abord, Alice lance le contrat AliceCoin ERC20, émettant tous les AliceCoin à sa propre adresse. Ensuite, Alice lance le contrat AliceICO qui peut vendre des jetons contre de l&#8217;ether. Ensuite, Alice lance le flux de travail approve et <code>transferFrom</code>. Elle envoie une transaction au contrat <code>AliceCoin</code>, en appelant approve avec l&#8217;adresse du contrat AliceICO et 50 % du totalSupply comme arguments. Cela déclenchera l&#8217;événement <code>Approbation</code>. Désormais, le contrat AliceICO peut vendre AliceCoin.</p>
 </div>
 <div class="paragraph">
-<p>Lorsque le contrat AliceICO reçoit de l&#8217;ether de Bob, il doit envoyer des AliceCoin à Bob en retour. Dans le contrat AliceICO se trouve un taux de change entre AliceCoin et de l&#8217;Ether. Le taux de change qu&#8217;Alice a fixé lors de la création du contrat AliceICO détermine le nombre de jetons que Bob recevra pour la quantité d&#8217;ether envoyé au contrat <code>AliceICO</code>.Lorsque le contrat AliceICO appelle la fonction AliceCoin <code>transferFrom</code>,il définit l&#8217;adresse d&#8217;Alice comme expéditeur et l&#8217;adresse de Bob comme destinataire, et utilise le taux de change pour déterminer le nombre de jetons AliceCoin qui seront transférés à Bob dans le champ <code>value</code>.Le contrat AliceCoin transfère le solde de l&#8217;adresse d&#8217;Alice à l&#8217;adresse de Bob et déclenche un événement <code>Transfer</code>.Le contrat AliceICO peut appeler transferFrom un nombre illimité de fois, tant qu&#8217;il ne dépasse pas la limite d&#8217;approbation définie par Alice. Le contrat AliceICO peut suivre le nombre de jetons AliceCoin qu&#8217;il peut vendre en appelant la fonction allowance.</p>
+<p>Lorsque le contrat AliceICO reçoit de l&#8217;ether de Bob, il doit envoyer des AliceCoin à Bob en retour. Dans le contrat AliceICO se trouve un taux de change entre AliceCoin et de l&#8217;Ether. Le taux de change qu&#8217;Alice a fixé lors de la création du contrat AliceICO détermine le nombre de jetons que Bob recevra pour la quantité d&#8217;ether envoyé au contrat <code>AliceICO</code>. Lorsque le contrat AliceICO appelle la fonction AliceCoin <code>transferFrom</code>, il définit l&#8217;adresse d&#8217;Alice comme expéditeur et l&#8217;adresse de Bob comme destinataire, et utilise le taux de change pour déterminer le nombre de jetons AliceCoin qui seront transférés à Bob dans le champ <code>value</code>. Le contrat AliceCoin transfère le solde de l&#8217;adresse d&#8217;Alice à l&#8217;adresse de Bob et déclenche un événement <code>Transfer</code>. Le contrat AliceICO peut appeler transferFrom un nombre illimité de fois, tant qu&#8217;il ne dépasse pas la limite d&#8217;approbation définie par Alice. Le contrat AliceICO peut suivre le nombre de jetons AliceCoin qu&#8217;il peut vendre en appelant la fonction allowance.</p>
 </div>
 </div>
 <div class="sect4">
@@ -949,7 +949,7 @@ contract METoken is StandardToken {
 </div>
 </div>
 <div class="paragraph">
-<p>Ici, nous définissons les variables optionnelles <code>name</code>,symbol et <code>decimals</code>.Nous définissons également une variable <code>_initial_supply</code>,définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d&#8217;unités au total. Dans la fonction d&#8217;initialisation (constructeur) du contrat, nous définissons le totalSupply égal à _initial_supply et allouons tout le _initial_supply au solde du compte (<code>msg.sender</code>)qui crée le contrat METoken.</p>
+<p>Ici, nous définissons les variables optionnelles <code>name</code>, symbol et <code>decimals</code>. Nous définissons également une variable <code>_initial_supply</code>, définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d&#8217;unités au total. Dans la fonction d&#8217;initialisation (constructeur) du contrat, nous définissons le totalSupply égal à _initial_supply et allouons tout le _initial_supply au solde du compte (<code>msg.sender</code>)qui crée le contrat METoken.</p>
 </div>
 <div class="paragraph">
 <p>Nous utilisons maintenant truffle pour compiler le code METoken :</p>
@@ -969,7 +969,7 @@ Compiling openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol...
 <p>Comme vous pouvez le voir, truffle intègre les dépendances nécessaires des bibliothèques OpenZeppelin et compile également ces contrats.</p>
 </div>
 <div class="paragraph">
-<p>Configurons un script de migration pour déployer le contrat <code>METoken</code>.Créez un nouveau fichier appelé <em>2_deploy_contracts.js</em>, dans le dossier <em>METoken/migrations</em>. Copiez le contenu de l&#8217;exemple <a href="http://bit.ly/2P0rHLl">dans le référentiel GitHub</a> :</p>
+<p>Configurons un script de migration pour déployer le contrat <code>METoken</code>. Créez un nouveau fichier appelé <em>2_deploy_contracts.js</em>, dans le dossier <em>METoken/migrations</em>. Copiez le contenu de l&#8217;exemple <a href="http://bit.ly/2P0rHLl">dans le référentiel GitHub</a> :</p>
 </div>
 <div id="METoken_migration" class="listingblock">
 <div class="title">2_deploy_contracts : Migration pour déployer METoken</div>
@@ -977,13 +977,13 @@ Compiling openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol...
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">var METoken = artifacts.require("METoken");
 
 module.exports = function(deployer) {
-  // Deploy the METoken contract as our only task
+  // Déployer le contrat METoken comme seule tâche
   deployer.deploy(METoken);
 };</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Avant de déployer sur l&#8217;un des réseaux de test Ethereum, démarrons une chaîne de blocs locale pour tout tester. Démarrez la chaîne de blocs <code>ganache</code>,soit depuis la ligne de commande avec <code>ganache-cli</code>,soit depuis l&#8217;interface utilisateur graphique.</p>
+<p>Avant de déployer sur l&#8217;un des réseaux de test Ethereum, démarrons une chaîne de blocs locale pour tout tester. Démarrez la chaîne de blocs <code>ganache</code>, soit depuis la ligne de commande avec <code>ganache-cli</code>, soit depuis l&#8217;interface utilisateur graphique.</p>
 </div>
 <div class="paragraph">
 <p>Une fois ganache lancé, nous pouvons déployer notre contrat METoken et voir si tout fonctionne comme prévu :</p>
@@ -1009,7 +1009,7 @@ Saving artifacts...
 
 </pre>
 <div class="paragraph">
-<p>Sur la console <code>ganache</code>,nous devrions voir que notre déploiement a créé quatre nouvelles transactions, comme illustré dans <a href="#ganache_METoken">Déploiement METoken sur ganache</a>.</p>
+<p>Sur la console <code>ganache</code>, nous devrions voir que notre déploiement a créé quatre nouvelles transactions, comme illustré dans <a href="#ganache_METoken">Déploiement METoken sur ganache</a>.</p>
 </div>
 <div id="ganache_METoken" class="imageblock">
 <div class="content">
@@ -1028,7 +1028,7 @@ truffle(ganache)&gt;
 
 </pre>
 <div class="paragraph">
-<p>L&#8217;invite truffle(ganache)&amp;gt; indique que nous sommes connectés à la chaîne de blocs ganache et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes <code>truffle</code>,nous pourrions donc compiler et migrer depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat METoken existe en tant qu&#8217;objet JavaScript dans l&#8217;environnement Truffle. Tapez METoken** à l&#8217;invite et il affichera l&#8217;intégralité de la définition du contrat :</p>
+<p>L&#8217;invite truffle(ganache)&amp;gt; indique que nous sommes connectés à la chaîne de blocs ganache et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes <code>truffle</code>, nous pourrions donc compiler et migrer depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat METoken existe en tant qu&#8217;objet JavaScript dans l&#8217;environnement Truffle. Tapez METoken** à l&#8217;invite et il affichera l&#8217;intégralité de la définition du contrat :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken</strong>
@@ -1079,7 +1079,7 @@ truffle(ganache)&gt; <strong>accounts[0]</strong>
 
 </pre>
 <div class="paragraph">
-<p>La liste accounts contient maintenant tous les comptes créés par <code>ganache</code>,et account[0] est le compte qui a déployé le contrat <code>METoken</code>.Il devrait avoir un solde de <span class="keep-together">METoken</span>, car notre constructeur METoken donne l&#8217;intégralité de l&#8217;offre de jetons à l&#8217;adresse qui l&#8217;a créé. Allons vérifier:</p>
+<p>La liste accounts contient maintenant tous les comptes créés par <code>ganache</code>, et account[0] est le compte qui a déployé le contrat <code>METoken</code>. Il devrait avoir un solde de <span class="keep-together">METoken</span>, car notre constructeur METoken donne l&#8217;intégralité de l&#8217;offre de jetons à l&#8217;adresse qui l&#8217;a créé. Allons vérifier:</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken.deployed().then(instance =></strong>
@@ -1089,7 +1089,7 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 9, c: [ 2100000000 ] }</strong
 
 </pre>
 <div class="paragraph">
-<p>Enfin, transférons 1000.00 METoken de account[0] vers <code>account[1]</code>,en appelant la fonction transfer du contrat :</p>
+<p>Enfin, transférons 1000.00 METoken de account[0] vers <code>account[1]</code>, en appelant la fonction transfer du contrat :</p>
 </div>
 <pre data-type="programlist">
 truffle(ganache)&gt; <strong>METoken.deployed().then(instance =>
@@ -1124,7 +1124,7 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 <p>Comme vous pouvez le voir, dans la console, account[0] a maintenant 20 999 000 MET, et account[1] a 1 000 MET.</p>
 </div>
 <div class="paragraph">
-<p>Si vous passez à l&#8217;interface utilisateur graphique <code>ganache</code>,comme indiqué dans <a href="#ganache_METoken_transfer">Transfert METoken sur ganache</a>, vous verrez la transaction qui a appelé la fonction transfer.</p>
+<p>Si vous passez à l&#8217;interface utilisateur graphique <code>ganache</code>, comme indiqué dans <a href="#ganache_METoken_transfer">Transfert METoken sur ganache</a>, vous verrez la transaction qui a appelé la fonction transfer.</p>
 </div>
 <div id="ganache_METoken_transfer" class="imageblock">
 <div class="content">
@@ -1204,10 +1204,10 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 
 </pre>
 <div class="paragraph">
-<p>D&#8217;accord, nous avons transféré 1 000 MET au contrat <code>Faucet</code>.Maintenant, comment retirer ces jetons ?</p>
+<p>D&#8217;accord, nous avons transféré 1 000 MET au contrat <code>Faucet</code>. Maintenant, comment retirer ces jetons ?</p>
 </div>
 <div class="paragraph">
-<p>N&#8217;oubliez pas que <em>Faucet.sol</em> est un contrat assez simple. Il n&#8217;a qu&#8217;une seule fonction, <span class="keep-together"><code>withdraw</code></span>, qui sert à retirer de l'<em>ether</em>. Il n&#8217;a pas de fonction pour retirer le MET, ou tout autre jeton ERC20. Si nous utilisons <code>withdraw</code>,il essaiera d&#8217;envoyer de l&#8217;ether, mais comme Faucet n&#8217;a pas encore de solde d&#8217;ether, il échouera.</p>
+<p>N&#8217;oubliez pas que <em>Faucet.sol</em> est un contrat assez simple. Il n&#8217;a qu&#8217;une seule fonction, <span class="keep-together"><code>withdraw</code></span>, qui sert à retirer de l'<em>ether</em>. Il n&#8217;a pas de fonction pour retirer le MET, ou tout autre jeton ERC20. Si nous utilisons <code>withdraw</code>, il essaiera d&#8217;envoyer de l&#8217;ether, mais comme Faucet n&#8217;a pas encore de solde d&#8217;ether, il échouera.</p>
 </div>
 <div class="paragraph">
 <p>Le contrat METoken sait que Faucet a un solde, mais le seul moyen de transférer ce solde est de recevoir un appel transfer de l&#8217;adresse du contrat. D&#8217;une manière ou d&#8217;une autre, nous devons faire en sorte que le contrat Faucet appelle la fonction transfer dans <span class="keep-together"><code>METoken</code></span>.</p>
@@ -1228,7 +1228,7 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 <p>Notre contrat Faucet ne pouvait pas gérer les jetons ERC20. L&#8217;envoi de jetons à l&#8217;aide de la fonction + transfer + a entraîné la perte de ces jetons. Réécrivons maintenant le contrat et faisons en sorte qu&#8217;il gère les jetons ERC20. Plus précisément, nous allons le transformer en un robinet qui donne du MET à quiconque le demande.</p>
 </div>
 <div class="paragraph">
-<p>Pour cet exemple, nous allons faire une copie du répertoire du projet <em>truffle</em> (nous l&#8217;appellerons <em>METoken_METFaucet</em>), initialiser truffle et <code>npm</code>,installer les dépendances OpenZeppelin et copier le contrat <em>METoken.sol</em>. Voir notre premier exemple, dans <a href="#METoken_example">Lancement de notre propre jeton ERC20</a>, pour les instructions détaillées.</p>
+<p>Pour cet exemple, nous allons faire une copie du répertoire du projet <em>truffle</em> (nous l&#8217;appellerons <em>METoken_METFaucet</em>), initialiser truffle et <code>npm</code>, installer les dépendances OpenZeppelin et copier le contrat <em>METoken.sol</em>. Voir notre premier exemple, dans <a href="#METoken_example">Lancement de notre propre jeton ERC20</a>, pour les instructions détaillées.</p>
 </div>
 <div class="paragraph">
 <p>Notre nouveau contrat de robinetterie, <em>METFaucet.sol</em>, ressemblera à <a href="#METFaucet">METFaucet.sol : Un robinet pour METoken</a>.</p>
@@ -1238,37 +1238,37 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Version of Solidity compiler this program was written for
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity ^0.4.19;
 
 import 'openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol';
 
 
-// A faucet for ERC20 token MET
+// Un robinet pour le jeton ERC20 MET
 contract METFaucet {
 
 	StandardToken public METoken;
 	address public METOwner;
 
-	// METFaucet constructor, provide the address of METoken contract and
-	// the owner address we will be approved to transferFrom
+	// Constructeur METFaucet, indique l'adresse du contrat METoken et
+	// l'adresse du propriétaire que nous serons autorisés pour transferFrom
 	function METFaucet(address _METoken, address _METOwner) public {
 
-		// Initialize the METoken from the address provided
+		// Initialise le METoken à partir de l'adresse fournie
 		METoken = StandardToken(_METoken);
 		METOwner = _METOwner;
 	}
 
 	function withdraw(uint withdraw_amount) public {
 
-    	// Limit withdrawal amount to 10 MET
+		// Limiter le montant du retrait à 10 MET
     	require(withdraw_amount &lt;= 1000);
 
-		// Use the transferFrom function of METoken
+		// Utiliser la fonction transferFrom de METoken
 		METoken.transferFrom(METOwner, msg.sender, withdraw_amount);
     }
 
-	// REJECT any incoming ether
+	// REJETER tout éther entrant
 	function () external payable { revert(); }
 
 }</code></pre>
@@ -1277,7 +1277,7 @@ contract METFaucet {
 </div>
 </div>
 <div class="paragraph">
-<p>Nous avons apporté quelques modifications à l&#8217;exemple de base de <code>Faucet</code>.Puisque METFaucet utilisera la fonction transferFrom dans <code>METoken</code>,il aura besoin de deux variables supplémentaires. L&#8217;un contiendra l&#8217;adresse du contrat METoken déployé. L&#8217;autre détiendra l&#8217;adresse du propriétaire du MET, qui approuvera les retraits du robinet. Le contrat METFaucet appellera METoken.transferFrom et lui demandera de déplacer le MET du propriétaire vers l&#8217;adresse d&#8217;où provient la demande de retrait du robinet.</p>
+<p>Nous avons apporté quelques modifications à l&#8217;exemple de base de <code>Faucet</code>. Puisque METFaucet utilisera la fonction transferFrom dans <code>METoken</code>, il aura besoin de deux variables supplémentaires. L&#8217;un contiendra l&#8217;adresse du contrat METoken déployé. L&#8217;autre détiendra l&#8217;adresse du propriétaire du MET, qui approuvera les retraits du robinet. Le contrat METFaucet appellera METoken.transferFrom et lui demandera de déplacer le MET du propriétaire vers l&#8217;adresse d&#8217;où provient la demande de retrait du robinet.</p>
 </div>
 <div class="paragraph">
 <p>Nous déclarons ici ces deux variables :</p>
@@ -1289,7 +1289,7 @@ address public METOwner;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Étant donné que notre robinet doit être initialisé avec les adresses correctes pour METoken et <code>METOwner</code>,nous devons déclarer un constructeur personnalisé :</p>
+<p>Étant donné que notre robinet doit être initialisé avec les adresses correctes pour METoken et <code>METOwner</code>, nous devons déclarer un constructeur personnalisé :</p>
 </div>
 <div id="custom_constructor" class="listingblock">
 <div class="content">
@@ -1304,7 +1304,7 @@ function METFaucet(address _METoken, address _METOwner) public {
 </div>
 </div>
 <div class="paragraph">
-<p>Le prochain changement concerne la fonction <code>withdraw</code>.Au lieu d&#8217;appeler <code>transfer</code>,METFaucet utilise la fonction transferFrom dans METoken et demande à METoken de transférer MET au destinataire du robinet :</p>
+<p>Le prochain changement concerne la fonction <code>withdraw</code>. Au lieu d&#8217;appeler <code>transfer</code>, METFaucet utilise la fonction transferFrom dans METoken et demande à METoken de transférer MET au destinataire du robinet :</p>
 </div>
 <div id="transfer_met" class="listingblock">
 <div class="content">
@@ -1313,7 +1313,7 @@ METoken.transferFrom(METOwner, msg.sender, withdraw_amount);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Enfin, puisque notre robinet n&#8217;envoie plus d&#8217;ether, nous devrions probablement empêcher quiconque d&#8217;envoyer de l&#8217;ether à <code>METFaucet</code>,car nous ne voudrions pas qu&#8217;il reste bloqué. Nous modifions la fonction de paiement de secours pour rejeter l&#8217;ether entrant, en utilisant la fonction revert pour annuler tout paiement entrant :</p>
+<p>Enfin, puisque notre robinet n&#8217;envoie plus d&#8217;ether, nous devrions probablement empêcher quiconque d&#8217;envoyer de l&#8217;ether à <code>METFaucet</code>, car nous ne voudrions pas qu&#8217;il reste bloqué. Nous modifions la fonction de paiement de secours pour rejeter l&#8217;ether entrant, en utilisant la fonction revert pour annuler tout paiement entrant :</p>
 </div>
 <div id="reject_incoming_eth" class="listingblock">
 <div class="content">
@@ -1322,7 +1322,7 @@ function () external payable { revert(); }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Maintenant que notre code <em>METFaucet.sol</em> est prêt, nous devons modifier le script de migration pour le déployer. Ce script de migration sera un peu plus complexe, car METFaucet dépend de l&#8217;adresse de <code>METoken</code>.Nous utiliserons une promesse JavaScript pour déployer les deux contrats en séquence. Créez <em>2_deploy_contracts.js</em> comme suit :</p>
+<p>Maintenant que notre code <em>METFaucet.sol</em> est prêt, nous devons modifier le script de migration pour le déployer. Ce script de migration sera un peu plus complexe, car METFaucet dépend de l&#8217;adresse de <code>METoken</code>. Nous utiliserons une promesse JavaScript pour déployer les deux contrats en séquence. Créez <em>2_deploy_contracts.js</em> comme suit :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1342,7 +1342,7 @@ module.exports = function(deployer) {
 </div>
 </div>
 <div class="paragraph">
-<p>Maintenant, nous pouvons tout tester dans la console Truffle. Tout d&#8217;abord, nous utilisons migrate pour déployer les contrats. Lorsque METoken est déployé, il alloue tout le MET au compte qui l&#8217;a créé, <code>web3.eth.accounts[0]</code>.Ensuite, nous appelons la fonction approve dans <code><span class="keep-together">METoken</span></code> pour approuver METFaucet afin d&#8217;envoyer jusqu&#8217;à 1 000 MET au nom de <code>web3.eth.accounts[0]</code>.Enfin, pour tester notre faucet, nous appelons METFaucet.withdraw depuis web3.eth.accounts[1] et essayons de retirer 10 MET. Voici les commandes de la console :</p>
+<p>Maintenant, nous pouvons tout tester dans la console Truffle. Tout d&#8217;abord, nous utilisons migrate pour déployer les contrats. Lorsque METoken est déployé, il alloue tout le MET au compte qui l&#8217;a créé, <code>web3.eth.accounts[0]</code>. Ensuite, nous appelons la fonction approve dans <code><span class="keep-together">METoken</span></code> pour approuver METFaucet afin d&#8217;envoyer jusqu&#8217;à 1 000 MET au nom de <code>web3.eth.accounts[0]</code>. Enfin, pour tester notre faucet, nous appelons METFaucet.withdraw depuis web3.eth.accounts[1] et essayons de retirer 10 MET. Voici les commandes de la console :</p>
 </div>
 <pre data-type="programlist">
 $ <strong>truffle console --network ganache</strong>
@@ -1409,7 +1409,7 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 <div class="sect3">
 <h4 id="ERC223_std">ERC223 : une norme d&#8217;interface de contrat de jeton proposée</h4>
 <div class="paragraph">
-<p>La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l&#8217;adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée <code>tokenFallback</code>.Si la destination d&#8217;un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c&#8217;est-à-dire qu&#8217;il n&#8217;implémente pas tokenFallback), le transfert échoue.</p>
+<p>La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l&#8217;adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée <code>tokenFallback</code>. Si la destination d&#8217;un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c&#8217;est-à-dire qu&#8217;il n&#8217;implémente pas tokenFallback), le transfert échoue.</p>
 </div>
 <div id="is_contract" class="paragraph">
 <p>Pour détecter si l&#8217;adresse de destination est un contrat, l&#8217;implémentation de référence ERC223 utilise un petit segment de code intermédiaire en ligne d&#8217;une manière plutôt créative :</p>
@@ -1465,7 +1465,7 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 <p>Offrir une interface compatible ERC20</p>
 </li>
 <li>
-<p>Pour transférer des jetons à l&#8217;aide d&#8217;une fonction <code>send</code>,similaire aux transferts d&#8217;ether</p>
+<p>Pour transférer des jetons à l&#8217;aide d&#8217;une fonction <code>send</code>, similaire aux transferts d&#8217;ether</p>
 </li>
 <li>
 <p>Pour être compatible avec ERC820 pour l&#8217;enregistrement de contrat de jeton</p>
@@ -1818,7 +1818,7 @@ mapping (uint256 =&gt; address) private deedOwner;</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 05:36:38 -0400
+Last updated 2022-05-15 08:26:42 -0400
 </div>
 </div>
 </body>
