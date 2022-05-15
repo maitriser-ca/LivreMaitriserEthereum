@@ -144,7 +144,7 @@ image::images/metamask_account.png["Page de compte MetaMask"]
 
 La page de votre compte affiche le nom de votre compte ("Account 1" par défaut), une adresse Ethereum (+0x9E713...+ dans l'exemple), et une icône colorée pour vous aider à distinguer visuellement ce compte des autres comptes. En haut de la page du compte, vous pouvez voir sur quel réseau Ethereum vous travaillez actuellement ("Main Network" dans l'exemple).
 
-Toutes nos félicitations! Vous avez configuré votre premier portefeuille Ethereum.(((range="endofrange", startref="ix_02intro-asciidoc4")))
+Toutes nos félicitations ! Vous avez configuré votre premier portefeuille Ethereum.(((range="endofrange", startref="ix_02intro-asciidoc4")))
 
 [[switching_networks]]
 ==== Changer le réseau
@@ -210,7 +210,7 @@ Heureusement, nous ne sommes pas des accumulateurs d'ether de test. Cliquez sur 
 .Envoi de 1 ether au robinet
 image::images/send_to_faucet.png["Envoi d'1 ether au robinet"]
 
-Oups! Vous avez probablement remarqué que vous ne pouvez pas terminer la transaction - MetaMask indique que vous avez un solde insuffisant. À première vue, cela peut sembler déroutant : vous avez 1 ETH, vous voulez envoyer 1 ETH, alors pourquoi MetaMask dit-il que vous avez des fonds insuffisants ?
+Oups ! Vous avez probablement remarqué que vous ne pouvez pas terminer la transaction - MetaMask indique que vous avez un solde insuffisant. À première vue, cela peut sembler déroutant : vous avez 1 ETH, vous voulez envoyer 1 ETH, alors pourquoi MetaMask dit-il que vous avez des fonds insuffisants ?
 
 ((("gas","basics")))La réponse est à cause du coût de _gaz_. Chaque transaction Ethereum nécessite le paiement d'une redevance, qui est perçue par les mineurs pour valider la transaction. Les frais d'Ethereum sont facturés dans une monnaie virtuelle appelée gaz. Vous payez le gaz avec de l'ether, dans le cadre de la transaction.
 

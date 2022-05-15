@@ -611,7 +611,7 @@ Tout d'abord, nous devons nous assurer que le nom que nous voulons est disponibl
 .Recherche de noms ENS sur MyCrypto.com
 image::images/ens-checkname.png["Recherche de noms ENS sur MyCrypto.com"]
 
-Génial! Le nom est disponible. Pour l'enregistrer, nous devons avancer avec <<ens-auction>>. Débloquons MetaMask et commençons notre enregistrement pour +ethereumbook.eth+.
+Génial ! Le nom est disponible. Pour l'enregistrer, nous devons avancer avec <<ens-auction>>. Débloquons MetaMask et commençons notre enregistrement pour +ethereumbook.eth+.
 
 
 [[ens-auction]]

@@ -959,7 +959,7 @@ interface ERC721Enumerable /* is ERC721 */ {
 [[token_std_review]]
 === Utilisation des normes de jeton
 
-((("normes de jetons (généralement)", seealso="normes spécifiques, par exemple : norme de jeton ERC20", id="ix_10tokens-asciidoc24", range="startofrange")))((("jetons","usage de jetons standards", id="ix_10tokens-asciidoc25", range="startofrange")))Dans la section précédente, nous avons examiné plusieurs normes proposées et quelques normes largement déployées pour les contrats de jetons. A quoi servent exactement ces normes ? Devez-vous utiliser ces normes ? Comment devriez-vous les utiliser? Devriez-vous ajouter des fonctionnalités au-delà de ces normes ? Quelles normes devez-vous utiliser ? Nous examinerons ensuite certaines de ces questions.
+((("normes de jetons (généralement)", seealso="normes spécifiques, par exemple : norme de jeton ERC20", id="ix_10tokens-asciidoc24", range="startofrange")))((("jetons","usage de jetons standards", id="ix_10tokens-asciidoc25", range="startofrange")))Dans la section précédente, nous avons examiné plusieurs normes proposées et quelques normes largement déployées pour les contrats de jetons. A quoi servent exactement ces normes ? Devez-vous utiliser ces normes ? Comment devriez-vous les utiliser ? Devriez-vous ajouter des fonctionnalités au-delà de ces normes ? Quelles normes devez-vous utiliser ? Nous examinerons ensuite certaines de ces questions.
 
 [[token_std_purpose]]
 ==== Que sont les normes de jeton ? Quel est leur but ?

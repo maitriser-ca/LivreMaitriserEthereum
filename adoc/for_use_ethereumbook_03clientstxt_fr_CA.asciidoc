@@ -268,7 +268,7 @@ $
 </pre>
 ++++
 
-Génial! Maintenant que Parity est installé, vous pouvez synchroniser la chaîne de blocs et commencer avec quelques options de ligne de commande de base.
+Génial ! Maintenant que Parity est installé, vous pouvez synchroniser la chaîne de blocs et commencer avec quelques options de ligne de commande de base.
 
 [[go_ethereum_geth]]
 ==== Go-Ethereum (Geth)
@@ -318,7 +318,7 @@ Receiving objects: 100% (86915/86915), 134.73 MiB | 29.30 MiB/s, done.
 Resolving deltas: 100% (57590/57590), done.
 ----
 
-Génial! Maintenant que vous avez une copie locale de Geth, vous pouvez compiler un exécutable pour votre plate-forme.
+Génial ! Maintenant que vous avez une copie locale de Geth, vous pouvez compiler un exécutable pour votre plate-forme.
 
 [[build_geth_src]]
 ===== Construire Geth à partir du code source

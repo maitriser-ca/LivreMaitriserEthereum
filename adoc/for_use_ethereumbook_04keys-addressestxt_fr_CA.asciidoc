@@ -112,7 +112,7 @@ En termes plus simples, une clé publique Ethereum est constituée de deux nombr
 
 [WARNING]
 ====
-Des MATHÉMATIQUES sont sur le point d'arriver! Ne pas paniquer. Si vous commencez à vous perdre à n'importe quel moment dans les paragraphes suivants, vous pouvez ignorer les quelques sections suivantes. Il existe de nombreux outils et bibliothèques qui feront le calcul pour vous.
+Des MATHÉMATIQUES sont sur le point d'arriver ! Ne pas paniquer. Si vous commencez à vous perdre à n'importe quel moment dans les paragraphes suivants, vous pouvez ignorer les quelques sections suivantes. Il existe de nombreux outils et bibliothèques qui feront le calcul pour vous.
 ====
 
 La clé publique est calculée à partir de la clé privée en utilisant la multiplication par courbe elliptique, qui est pratiquement irréversible : _K_ = _k_ * _G_, où _k_ est la clé privée, _G_ est un point constant appelé ((("point générateur")))le _point générateur_, _K_ est la clé publique résultante et * est l'opérateur spécial de "multiplication" de la courbe elliptique. Notez que la multiplication de courbe elliptique n'est pas comme la multiplication normale. Il partage des attributs fonctionnels avec la multiplication normale, mais c'est à peu près tout. Par exemple, l'opération inverse (qui serait une division pour des nombres normaux), connue sous le nom de "trouver le logarithme discret" - c'est-à-dire calculer _k_ si vous connaissez __K__ - est aussi difficile que d'essayer toutes les valeurs possibles de _k_ (une recherche par force brute cela prendra probablement plus de temps que cet univers ne le permettra).
@@ -560,7 +560,7 @@ Avec une somme de contrôle à capitalisation mixte EIP-55, cela devient :
 0x001d3F1ef827552Ae1114027BD3ECF1f086bA0F9
 ----
 
-Pouvez-vous faire la différence? Certains des caractères alphabétiques (A à F) de l'alphabet de codage hexadécimal sont désormais en majuscules, tandis que d'autres sont en minuscules.
+Pouvez-vous faire la différence ? Certains des caractères alphabétiques (A à F) de l'alphabet de codage hexadécimal sont désormais en majuscules, tandis que d'autres sont en minuscules.
 
 EIP-55 est assez simple à mettre en œuvre. Nous prenons le hachage Keccak-256 de l'adresse hexadécimale minuscule. Ce hachage agit comme une empreinte numérique de l'adresse, nous donnant une somme de contrôle pratique. Tout petit changement dans l'entrée (l'adresse) devrait entraîner un grand changement dans le hachage résultant (la somme de contrôle), nous permettant de détecter efficacement les erreurs. Le hachage de notre adresse est ensuite encodé dans la capitalisation de l'adresse elle-même. Décomposons-le, étape par étape :
 
@@ -626,7 +626,7 @@ Maintenant, alignons les deux et vérifions la capitalisation :
 5429b5d9460122fb4b11af9cb88b7bb76d892886...
 ----
 
-C'est tout faux! Plusieurs des caractères alphabétiques sont mal capitalisés. N'oubliez pas que la capitalisation est l'encodage de la somme de contrôle _correcte_.
+C'est tout faux ! Plusieurs des caractères alphabétiques sont mal capitalisés. N'oubliez pas que la capitalisation est l'encodage de la somme de contrôle _correcte_.
 
 La casse de l'adresse que nous avons saisie ne correspond pas à la somme de contrôle que nous venons de calculer, ce qui signifie que quelque chose a changé dans l'adresse et qu'une erreur a été pass:[<span class="keep-together">introduite</span>](((range="endofrange", startref="ix_04keys-addresses-asciidoc21")))(((range="endofrange", startref="ix_04keys-addresses-asciidoc20")))(((range="endofrange", startref="ix_04keys-addresses-asciidoc19"))).(((range="endofrange", startref="ix_04keys-addresses-asciidoc15")))(((range="endofrange", startref="ix_04keys-addresses-asciidoc14")))
 
