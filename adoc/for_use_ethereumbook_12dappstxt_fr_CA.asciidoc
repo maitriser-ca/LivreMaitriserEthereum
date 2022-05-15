@@ -444,7 +444,7 @@ Nous avons fait quelques progrès dans la décentralisation de notre DApp, mais 
 
 Sur Internet traditionnel, le système de noms de domaine (DNS) nous permet d'utiliser des noms lisibles par l'homme dans le navigateur tout en résolvant ces noms en adresses IP ou autres identifiants dans les coulisses. Sur la chaîne de blocs Ethereum, le _Ethereum Naming System_ (ENS) résout le même problème, mais de manière décentralisée.
 
-Par exemple, l'adresse de don de la Fondation Ethereum est +0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359+ ; dans un portefeuille qui prend en charge ENS, c'est simplement +ethereum.eth+.
+Par exemple, l'adresse de don de la Fondation Ethereum est +0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359+ ; dans un portefeuille qui prend en charge ENS, c'est simplement +ethereum.eth+.
 
 ENS est plus qu'un contrat intelligent ; c'est une DApp fondamentale en elle-même, offrant un service de noms décentralisé. En outre, ENS est pris en charge par un certain nombre de DApps pour l'enregistrement, la gestion et les enchères de noms enregistrés. ENS démontre comment les DApps peuvent fonctionner ensemble : c'est une DApp conçue pour servir d'autres DApps, prise en charge par un écosystème de DApps, intégrée dans d'autres DApps, etc.
 
@@ -550,7 +550,7 @@ Des travaux sont en cours pour permettre aux propriétaires de domaines DNS trad
 Bien qu'en théorie cela puisse fonctionner pour `+.com+`,le seul domaine pour lequel cela a été implémenté jusqu'à présent est http://bit.ly/2SwUuFC[`+.xyz+`,et uniquement sur le testnet de Ropsten].
 ====
 
-Les domaines +.eth+ sont distribués via un système d'enchères. Il n'y a pas de liste réservée ni de priorité, et la seule façon d'acquérir un nom est d'utiliser le système. Le système d'enchères est un morceau de code complexe (plus de 500 lignes) ; la plupart des premiers efforts de développement (et des bugs !) dans ENS concernaient cette partie du système. Cependant, il est également remplaçable et évolutif, sans risque pour les fonds - nous en reparlerons plus tard.
+Les domaines +.eth+ sont distribués via un système d'enchères. Il n'y a pas de liste réservée ni de priorité, et la seule façon d'acquérir un nom est d'utiliser le système. Le système d'enchères est un morceau de code complexe (plus de 500 lignes) ; la plupart des premiers efforts de développement (et des bugs !) dans ENS concernaient cette partie du système. Cependant, il est également remplaçable et évolutif, sans risque pour les fonds - nous en reparlerons plus tard.
 
 [[vickrey_auction]]
 ===== Enchères Vickrey

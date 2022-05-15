@@ -352,7 +352,7 @@ Les autres fonctions à noter sont :
 
 Solidity propose deux autres types d'objets qui s'apparentent à un contrat :
 
-+interface+:: ((("type de donnée interface")))((("stub")))Une définition d'interface est structurée exactement comme un contrat, sauf qu'aucune des fonctions n'est définie, elles sont seulement déclarées. Ce type de déclaration est souvent appelé _stub_ ou _souche_ ; il vous indique les arguments des fonctions et les types de retour sans aucune implémentation. Une interface précise la « forme » d'un contrat ; lorsqu'elle est héritée, chacune des fonctions déclarées par l'interface doit être définie par l'enfant.
++interface+:: ((("type de donnée interface")))((("stub")))Une définition d'interface est structurée exactement comme un contrat, sauf qu'aucune des fonctions n'est définie, elles sont seulement déclarées. Ce type de déclaration est souvent appelé _stub_ ou _souche_ ; il vous indique les arguments des fonctions et les types de retour sans aucune implémentation. Une interface précise la « forme » d'un contrat ; lorsqu'elle est héritée, chacune des fonctions déclarées par l'interface doit être définie par l'enfant.
 
 +library+:: ((("contrat de bibliothèque")))Un contrat de bibliothèque est un contrat destiné à être déployé une seule fois et utilisé par d'autres contrats, en utilisant la méthode +delegatecall+ (voir <<solidity_address_object>>).
 

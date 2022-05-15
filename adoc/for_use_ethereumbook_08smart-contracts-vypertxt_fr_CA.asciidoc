@@ -245,7 +245,7 @@ contract ordering {
 
 Dans cet exemple, la fonction appelée +topFunction+ appelle une autre fonction, `+lowerFunction+`.+topFunction+ attribue également une valeur à une variable appelée `+initiatizedBelowTopFunction+`.Comme vous pouvez le voir, Solidity n'exige pas que ces fonctions et variables soient physiquement déclarées avant d'être appelées par le code d'exécution. Il s'agit d'un code Solidity valide qui se compilera avec succès.
 
-Les exigences de commande de Vyper ne sont pas une nouveauté ; en fait, ces exigences de commande ont toujours été présentes dans la programmation Python. La commande requise par Vyper est simple et logique, comme illustré dans cet exemple suivant :
+Les exigences de commande de Vyper ne sont pas une nouveauté ; en fait, ces exigences de commande ont toujours été présentes dans la programmation Python. La commande requise par Vyper est simple et logique, comme illustré dans cet exemple suivant :
 
 [source,python]
 ----

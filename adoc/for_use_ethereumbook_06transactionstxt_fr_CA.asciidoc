@@ -633,7 +633,7 @@ Notez qu'en vérifiant la signature, la clé privée n'est ni connue ni révél�
 
 [TIP]
 ====
-ECDSA est nécessairement un calcul assez compliqué; une explication complète est au-delà de la portée de ce livre. Un certain nombre d'excellents guides en ligne vous guident étape par étape : recherchez "ECDSA expliqué" ou essayez celui-ci : http://bit.ly/2r0HhGB[].(((range="endofrange", startref="ix_06transactions -asciidoc17")))(((range="endofrange", startref="ix_06transactions-asciidoc16")))
+ECDSA est nécessairement un calcul assez compliqué ; une explication complète est au-delà de la portée de ce livre. Un certain nombre d'excellents guides en ligne vous guident étape par étape : recherchez "ECDSA expliqué" ou essayez celui-ci : http://bit.ly/2r0HhGB[].(((range="endofrange", startref="ix_06transactions -asciidoc17")))(((range="endofrange", startref="ix_06transactions-asciidoc16")))
 ====
 
 [[tx_sign]]

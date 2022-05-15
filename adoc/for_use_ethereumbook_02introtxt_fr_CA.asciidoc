@@ -125,7 +125,7 @@ image::images/metamask_password.png["Page de mot de passe du métamasque"]
 Le mot de passe contrôle l'accès à MetaMask, de sorte qu'il ne peut être utilisé par personne ayant accès à votre navigateur.
 ====
 
-((("mots de code mnémonique","MetaMask and", id="ix_02intro-asciidoc5", range="startofrange")))Une fois que vous avez défini un mot de passe, MetaMask générera un portefeuille pour vous et vous montrera un _mnémonique de sauvegarde_ composé de 12 mots anglais (voir <<metamask_mnemonic>>). Ces mots peuvent être utilisés dans n'importe quel portefeuille compatible pour récupérer l'accès à vos fonds si quelque chose arrivait à MetaMask ou à votre ordinateur. Vous n'avez pas besoin du mot de passe pour cette récupération ; les 12 mots suffisent.
+((("mots de code mnémonique","MetaMask and", id="ix_02intro-asciidoc5", range="startofrange")))Une fois que vous avez défini un mot de passe, MetaMask générera un portefeuille pour vous et vous montrera un _mnémonique de sauvegarde_ composé de 12 mots anglais (voir <<metamask_mnemonic>>). Ces mots peuvent être utilisés dans n'importe quel portefeuille compatible pour récupérer l'accès à vos fonds si quelque chose arrivait à MetaMask ou à votre ordinateur. Vous n'avez pas besoin du mot de passe pour cette récupération ; les 12 mots suffisent.
 
 [TIP]
 ====

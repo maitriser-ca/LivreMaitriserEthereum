@@ -197,7 +197,7 @@ contract EthUsdPriceTicker is usingOraclize {
 ----
 ====
 
-Pour s'intégrer à Oraclize, le contrat +EthUsdPriceTicker+ doit être un enfant de pass:[<span class="keep-together"><code>usingOraclize</code></span>]; le contrat +usingOraclize+ est défini dans le fichier _oraclizeAPI_. La demande de données est effectuée à l'aide de la fonction `+oraclize_query+`,qui est héritée du contrat `+usingOraclize+`.Il s'agit d'une fonction surchargée qui attend au moins deux arguments :
+Pour s'intégrer à Oraclize, le contrat +EthUsdPriceTicker+ doit être un enfant de pass:[<span class="keep-together"><code>usingOraclize</code></span>] ; le contrat +usingOraclize+ est défini dans le fichier _oraclizeAPI_. La demande de données est effectuée à l'aide de la fonction `+oraclize_query+`,qui est héritée du contrat `+usingOraclize+`.Il s'agit d'une fonction surchargée qui attend au moins deux arguments :
 
 * La source de données prise en charge à utiliser, telle que URL, WolframAlpha, IPFS ou calculation
 * L'argument de la source de données donnée, qui peut inclure l'utilisation d'assistants d'analyse JSON ou XML
