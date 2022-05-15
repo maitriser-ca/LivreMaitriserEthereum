@@ -1,17 +1,17 @@
-// SPDX-License-Identifier: CC-BY-SA-4.0
+// Identifiant de licence SPDX : CC-BY-SA-4.0
 
-// Version of Solidity compiler this program was written for
+// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity ^0.6.4;
 
 contract Owned {
     address payable owner;
 
-    // Contract constructor: set owner
+    // Constructeur de contrat : définit le propriétaire
     constructor() public {
         owner = msg.sender;
     }
 
-    // Access control modifier
+    // Modificateur de contrôle d'accès
     modifier onlyOwner {
         require(msg.sender == owner, "Only the contract owner can call this function");
         _;
@@ -19,7 +19,7 @@ contract Owned {
 }
 
 contract Mortal is Owned {
-    // Contract destructor
+    // Destructeur de contrat
     function destroy() public onlyOwner {
         selfdestruct(owner);
     }
@@ -29,14 +29,14 @@ contract Faucet is Mortal {
     event Withdrawal(address indexed to, uint amount);
     event Deposit(address indexed from, uint amount);
 
-    // Accept any incoming amount
+    // Accepte tout montant entrant
     receive() external payable {
         emit Deposit(msg.sender, msg.value);
     }
 
-    // Give out ether to anyone who asks
+    // Donnez de l'éther à quiconque demande
     function withdraw(uint withdraw_amount) public {
-        // Limit withdrawal amount
+        // Limiter le montant du retrait
         require(withdraw_amount <= 0.1 ether);
 
         require(
@@ -44,7 +44,7 @@ contract Faucet is Mortal {
             "Insufficient balance in faucet for withdrawal request"
         );
 
-        // Send the amount to the address that requested it
+        // Envoie le montant à l'adresse qui l'a demandé
         msg.sender.transfer(withdraw_amount);
 
         emit Withdrawal(msg.sender, withdraw_amount);

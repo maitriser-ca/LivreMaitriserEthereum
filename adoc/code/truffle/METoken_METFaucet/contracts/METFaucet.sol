@@ -1,34 +1,34 @@
-// Version of Solidity compiler this program was written for
+// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity ^0.4.19;
 
 import 'openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol';
 
 
-// A faucet for ERC20 token MET
+// Un robinet pour le jeton ERC20 MET
 contract METFaucet {
 
 	StandardToken public METoken;
 	address public METOwner;
 
-	// METFaucet constructor, provide the address of METoken contract and
-	// the owner address we will be approved to transferFrom
+	// Constructeur METFaucet, indique l'adresse du contrat METoken et
+	// l'adresse du propriétaire que nous serons autorisés pour transferFrom
 	function METFaucet(address _METoken, address _METOwner) public {
 
-		// Initialize the METoken from the address provided
+		// Initialise le METoken à partir de l'adresse fournie
 		METoken = StandardToken(_METoken);
 		METOwner = _METOwner;
 	}
 
 	function withdraw(uint withdraw_amount) public {
 
-    	// Limit withdrawal amount to 10 MET
+		// Limiter le montant du retrait à 10 MET
     	require(withdraw_amount <= 1000);
 
-		// Use the transferFrom function of METoken
+		// Utiliser la fonction transferFrom de METoken
 		METoken.transferFrom(METOwner, msg.sender, withdraw_amount);
     }
 
-	// REJECT any incoming ether
+	// REJETER tout éther entrant
 	function () external payable { revert(); }
 
 }

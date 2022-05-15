@@ -1,6 +1,6 @@
 var METoken = artifacts.require("METoken");
 
 module.exports = function(deployer) {
-  // Deploy the METoken contract as our only task
+  // Déployer le contrat METoken comme seule tâche
   deployer.deploy(METoken);
 };

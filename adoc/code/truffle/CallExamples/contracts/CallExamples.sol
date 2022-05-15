@@ -18,17 +18,14 @@ contract caller {
 
     function make_calls(calledContract _calledContract) public {
 
-    // Calling calledContract and calledLibrary directly
-    _calledContract.calledFunction();
-    calledLibrary.calledFunction();
+        // Appel calledContract et callLibrary directement
+        _calledContract.calledFunction();
+        calledLibrary.calledFunction();
 
-    // Low-level calls using the address object for calledContract
-    require(address(_calledContract).
-            call(bytes4(keccak256("calledFunction()"))));
-    require(address(_calledContract).
-            delegatecall(bytes4(keccak256("calledFunction()"))));
-
-
-
+        // Appels de bas niveau utilisant l'objet d'adresse pour le contrat appelé
+        require(address(_calledContract).
+        call(bytes4(keccak256("calledFunction()"))));
+        require(address(_calledContract).
+        delegatecall(bytes4(keccak256("calledFunction()"))));
 	}
 }

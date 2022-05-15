@@ -21,10 +21,10 @@ const txData = {
 tx = new ethTx(txData);
 console.log('RLP-Encoded Tx: 0x' + tx.serialize().toString('hex'))
 
-txHash = tx.hash(); // This step encodes into RLP and calculates the hash
+txHash = tx.hash(); // Cette étape encode en RLP et calcule le hachage
 console.log('Tx Hash: 0x' + txHash.toString('hex'))
 
-// Sign transaction
+// Signer la transaction
 const privKey = Buffer.from(
     '91c8360c4cb4b5fac45513a7213f31d4e4a7bfcb4630e9fbf074f42a203ac0b9', 'hex');
 tx.sign(privKey);
