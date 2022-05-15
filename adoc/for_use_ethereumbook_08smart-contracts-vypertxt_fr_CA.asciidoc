@@ -76,7 +76,7 @@ modifier stageTimeConfirmation() {
 function a()
     public
     stageTimeConfirmation
-// Plus de code va ici
+    // Plus de code va ici
 {
 }
 ----

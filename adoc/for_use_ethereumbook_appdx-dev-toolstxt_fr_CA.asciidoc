@@ -186,8 +186,8 @@ Maintenant, nous éditons _truffle-config.js_ et remplaçons le contenu par l&#3
 ----
 module.exports = {
   networks: {
-    localnode: { // Whatever network our local node connects to
-      network_id: "*", // Match any network ID
+    localnode: { // Quel que soit le réseau auquel notre nœud local se connecte
+      network_id: "*", // Correspond à n'importe quel ID de réseau
       host: "localhost",
       port: 8545,
     }

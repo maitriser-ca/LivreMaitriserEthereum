@@ -155,10 +155,10 @@ contract EthUsdPriceTicker is usingOraclize {
     event newCallbackResult(string result);
 
     function EthUsdPriceTicker() payable {
-        // signals TLSN proof generation and storage on IPFS
+        // signale la génération et le stockage de la preuve TLSN sur IPFS
         oraclize_setProof(proofType_TLSNotary | proofStorage_IPFS);
 
-        // requests query
+        // demande de requête
         queryTicker();
     }
 
@@ -259,7 +259,7 @@ contract OracleB1IQClient {
         uint256 ask = oracle.getResponseUint(id, "ask");
         uint256 timestamp = oracle.getResponseUint(id, "timestamp");
         oracle.deleteResponse(id);
-// Faire quelque chose avec les données de prix
+        // Faire quelque chose avec les données de prix
     }
 
     function handleFailure(uint256 id) public {

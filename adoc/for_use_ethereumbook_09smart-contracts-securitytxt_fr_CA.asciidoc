@@ -382,7 +382,7 @@ contract EtherGame {
     mapping(address => uint) redeemableEther;
     // Les utilisateurs paient 0,5 ether. À des étapes spécifiques, créditez leurs comptes.
     function play() external payable {
-        require(msg.value == 0.5 ether); // each play is 0.5 ether
+        require(msg.value == 0.5 ether); // chaque jeu est 0.5 ether
         uint currentBalance = this.balance + msg.value;
         // s'assure qu'il n'y a plus de joueurs après la fin du jeu
         require(currentBalance <= finalMileStone);
@@ -584,9 +584,9 @@ contract Attack {
 
     // défaut - cela s'exécutera si une fonction spécifiée n'est pas trouvée
     function() public {
-        storageSlot1 = 0; // we set calculatedFibNumber to 0, so if withdraw
+        storageSlot1 = 0; // nous définissons calculateFibNumber sur 0, donc si retirer
         // s'appelle nous n'envoyons pas d'ether
-        <attacker_address>.transfer(this.balance); // we take all the ether
+        <attacker_address>.transfer(this.balance); // on prend tout l'ether
     }
  }
 ----
@@ -807,7 +807,7 @@ contract Rot13Encryption {
                 // soustraire du nombre ASCII 'a',
                 // la différence entre le caractère <char> et 'z'
                 { char:= sub(0x60, sub(0x7A,char)) }
-                if iszero(eq(char, 0x20)) // ignore spaces
+                if iszero(eq(char, 0x20)) // ignore espaces
                 // ajoute 13 au caractère
                 {mstore8(add(add(text,0x20), mul(i,1)), add(char,13))}
             }
@@ -1193,7 +1193,7 @@ contract FindThisHash {
     bytes32 constant public hash =
       0xb5b5b97fafd9855eec9b41f74dfb6c38f5951141f9a3ecd7f44d5479b630ee0a;
 
-    constructor() external payable {} // load with ether
+    constructor() external payable {} // charge de l'ether
 
     function solve(string solution) public {
         // Si vous pouvez trouver la pré-image du hachage, recevez 1000 ether
@@ -1261,11 +1261,11 @@ contract DistributeTokens {
 
     function invest() external payable {
         investors.push(msg.sender);
-        investorTokens.push(msg.value * 5); // 5 times the wei sent
+        investorTokens.push(msg.value * 5); // 5 fois de wei envoyé
         }
 
     function distribute() public {
-        require(msg.sender == owner); // only owner
+        require(msg.sender == owner); // seulement le propriétaire
         for(uint i = 0; i < investors.length; i++) {
             // ici transferToken(to,amount) transfère le "montant" de
             // jetons à l'adresse "to"
@@ -1349,7 +1349,7 @@ contract Roulette {
         require(msg.value == 10 ether); // doit envoyer 10 ether pour jouer
         require(now != pastBlockTime); // seulement 1 transaction par bloc
         pastBlockTime = now;
-        if(now % 15 == 0) { // winner
+        if(now % 15 == 0) { // gagnant
             msg.sender.transfer(this.balance);
         }
     }

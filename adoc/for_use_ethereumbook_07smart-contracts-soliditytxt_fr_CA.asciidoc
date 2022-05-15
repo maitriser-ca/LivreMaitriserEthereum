@@ -410,7 +410,7 @@ Les constructeurs peuvent être spécifiés de deux manières. Jusqu&#39;à et y
 ----
 contract MEContract {
 	function MEContract() {
-// C&#39;est le constructeur
+	// C&#39;est le constructeur
 	}
 }
 ----
@@ -425,7 +425,7 @@ Pour résoudre les problèmes potentiels avec les fonctions constructeur basées
 pragma ^0.4.22
 contract MEContract {
 	constructor () {
-// C&#39;est le constructeur
+	// C&#39;est le constructeur
 	}
 }
 ----
@@ -457,7 +457,7 @@ contract Faucet {
 
 	address owner;
 
-// Initialiser le contrat Faucet : définir le propriétaire
+	// Initialiser le contrat Faucet : définir le propriétaire
 	constructor() {
 		owner = msg.sender;
 	}
@@ -547,12 +547,12 @@ Nous commençons par définir un contrat de base +owned+, qui a une variable +ow
 contract owned {
 	address owner;
 
-// Constructeur de contrat : définit le propriétaire
+	// Constructeur de contrat : définit le propriétaire
 	constructor() {
 		owner = msg.sender;
 	}
 
-// Modificateur de contrôle d&#39;accès
+	// Modificateur de contrôle d&#39;accès
 	modifier onlyOwner {
 	    require(msg.sender == owner);
 	    _;
@@ -579,14 +579,14 @@ Nous pouvons maintenant étendre davantage le contrat +owned+, en héritant de s
 [source,solidity]
 ----
 contract Faucet is mortal {
-// Donnez de l&#39;ether à quiconque demande
+	// Donnez de l&#39;ether à quiconque demande
     function withdraw(uint withdraw_amount) public {
-// Limiter le montant du retrait
+	// Limiter le montant du retrait
         require(withdraw_amount <= 0.1 ether);
-// Envoie le montant à l&#39;adresse qui l&#39;a demandé
+	// Envoie le montant à l&#39;adresse qui l&#39;a demandé
         msg.sender.transfer(withdraw_amount);
     }
-// Accepte tout montant entrant
+	// Accepte tout montant entrant
     function () external payable {}
 }
 ----
@@ -1015,11 +1015,11 @@ FaucetContract.web3.eth.getGasPrice(function(error, result) {
     var gasPrice = Number(result);
     console.log("Gas Price is " + gasPrice + " wei"); // "10000000000000"
 
-// Récupère l&#39;instance de contrat
+	// Récupère l&#39;instance de contrat
     FaucetContract.deployed().then(function(FaucetContractInstance) {
 
-// Utilisez le mot clé &#39;estimateGas&#39; après le nom de la fonction pour obtenir le gaz
-// estimation pour cette fonction particulière (aprove)
+	// Utilisez le mot clé &#39;estimateGas&#39; après le nom de la fonction pour obtenir le gaz
+	// estimation pour cette fonction particulière (aprove)
 		FaucetContractInstance.send(web3.utils.toWei(1, "ether"));
         return FaucetContractInstance.withdraw.estimateGas(web3.utils.toWei(0.1, "ether"));
 
