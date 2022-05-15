@@ -116,13 +116,13 @@ function f(uint _in, bytes32 _key) public pure returns (uint out) {
 }
 ----
 
-La première fonction (nommée `+f+`)accepte un argument d'entrée de type +uint+ ; la deuxième fonction (également nommée `+f+`)accepte deux arguments, un de type +uint+ et un de type `+bytes32+`.Avoir plusieurs définitions de fonction avec le même nom prenant des arguments différents peut être déroutant, donc Vyper ne prend pas en charge la surcharge de fonction.
+La première fonction (nommée `+f+`)accepte un argument d'entrée de type +uint+ ; la deuxième fonction (également nommée `+f+`)accepte deux arguments, un de type +uint+ et un de type `+bytes32+`. Avoir plusieurs définitions de fonction avec le même nom prenant des arguments différents peut être déroutant, donc Vyper ne prend pas en charge la surcharge de fonction.
 
 ==== Conversion de type variable
 
 ((("Solidity","transtypage de variable")))((("transtypage")))((("Vyper","transtypage de variable")))Il existe deux types de typage : _implicite_ et _explicite_
 
-((("transtypage implicite")))Le transtypage implicite est souvent effectué au moment de la compilation. Par exemple, si une conversion de type est sémantiquement correcte et qu'aucune information n'est susceptible d'être perdue, le compilateur peut effectuer une conversion implicite, telle que la conversion d'une variable de type +uint8+ en `+uint16+`.Les premières versions de Vyper autorisaient le transtypage implicite des variables, mais pas les versions récentes.
+((("transtypage implicite")))Le transtypage implicite est souvent effectué au moment de la compilation. Par exemple, si une conversion de type est sémantiquement correcte et qu'aucune information n'est susceptible d'être perdue, le compilateur peut effectuer une conversion implicite, telle que la conversion d'une variable de type +uint8+ en `+uint16+`. Les premières versions de Vyper autorisaient le transtypage implicite des variables, mais pas les versions récentes.
 
 ((("transtypage explicite")))Les transtypages explicites peuvent être insérés dans Solidity. Malheureusement, ils peuvent entraîner des comportements inattendus. Par exemple, convertir un +uint32+ en un type plus petit +uint16+ supprime simplement les bits d'ordre supérieur, comme illustré ici :
 
@@ -157,7 +157,7 @@ conversion_table = {
 }
 ----
 
-Lorsqu'un développeur appelle `+convert+`,il fait référence à `+conversion_table+`,ce qui garantit que la conversion appropriée est effectuée. Par exemple, si un développeur passe un +int128+ à la fonction `+convert+`,la fonction +to_int128+ à la ligne 26 du même fichier (_convert.py_) sera exécutée. La fonction +to_int128+ est la suivante :
+Lorsqu'un développeur appelle `+convert+`, il fait référence à `+conversion_table+`, ce qui garantit que la conversion appropriée est effectuée. Par exemple, si un développeur passe un +int128+ à la fonction `+convert+`, la fonction +to_int128+ à la ligne 26 du même fichier (_convert.py_) sera exécutée. La fonction +to_int128+ est la suivante :
 
 [source,python]
 ----
@@ -243,7 +243,7 @@ contract ordering {
 }
 ----
 
-Dans cet exemple, la fonction appelée +topFunction+ appelle une autre fonction, `+lowerFunction+`.+topFunction+ attribue également une valeur à une variable appelée `+initiatizedBelowTopFunction+`.Comme vous pouvez le voir, Solidity n'exige pas que ces fonctions et variables soient physiquement déclarées avant d'être appelées par le code d'exécution. Il s'agit d'un code Solidity valide qui se compilera avec succès.
+Dans cet exemple, la fonction appelée +topFunction+ appelle une autre fonction, `+lowerFunction+`. +topFunction+ attribue également une valeur à une variable appelée `+initiatizedBelowTopFunction+`. Comme vous pouvez le voir, Solidity n'exige pas que ces fonctions et variables soient physiquement déclarées avant d'être appelées par le code d'exécution. Il s'agit d'un code Solidity valide qui se compilera avec succès.
 
 Les exigences de commande de Vyper ne sont pas une nouveauté ; en fait, ces exigences de commande ont toujours été présentes dans la programmation Python. La commande requise par Vyper est simple et logique, comme illustré dans cet exemple suivant :
 
@@ -266,7 +266,7 @@ def lowerFunction():
     assert self.topFunction()
 ----
 
-Cela montre le bon ordre des fonctions et des variables dans un contrat intelligent Vyper. Notez comment la variable +theBool+ et la fonction +topFunction+ sont déclarées avant qu'elles ne reçoivent une valeur et ne soient appelées, respectivement. Si +theBool+ était déclaré sous +topFunction+ ou si +topFunction+ était déclaré sous `+lowerFunction+`,ce contrat ne serait pas compilé.
+Cela montre le bon ordre des fonctions et des variables dans un contrat intelligent Vyper. Notez comment la variable +theBool+ et la fonction +topFunction+ sont déclarées avant qu'elles ne reçoivent une valeur et ne soient appelées, respectivement. Si +theBool+ était déclaré sous +topFunction+ ou si +topFunction+ était déclaré sous `+lowerFunction+`, ce contrat ne serait pas compilé.
 
 [[online_code_editor_and_compiler_sec]]
 === Compilation

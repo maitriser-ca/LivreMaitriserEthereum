@@ -28,7 +28,7 @@ v,r,s:: Les trois composants d'une signature numérique ECDSA de l'EOA d'origine
 
 ((("Recursive Length Prefix (RLP)")))((("RLP (Recursive Length Prefix)")))La structure du message de transaction est sérialisée à l'aide du schéma de codage Recursive Length Prefix (RLP) (ou Préfixe de longueur récursif), qui a été créé spécifiquement pour sérialisation de données simple et parfaite dans Ethereum. Tous les nombres dans Ethereum sont codés sous forme d'entiers gros-boutiste, de longueurs multiples de 8 bits.
 
-Notez que les étiquettes de champ (`+to+`,+gas limit+, etc.) sont affichées ici pour plus de clarté, mais ne font pas partie des données sérialisées de la transaction, qui contiennent les valeurs de champ codées RLP. En général, RLP ne contient aucun délimiteur de champ ou étiquette. Le préfixe de longueur de RLP est utilisé pour identifier la longueur de chaque champ. Tout ce qui dépasse la longueur définie appartient au champ suivant dans la structure.
+Notez que les étiquettes de champ (`+to+`, +gas limit+, etc.) sont affichées ici pour plus de clarté, mais ne font pas partie des données sérialisées de la transaction, qui contiennent les valeurs de champ codées RLP. En général, RLP ne contient aucun délimiteur de champ ou étiquette. Le préfixe de longueur de RLP est utilisé pour identifier la longueur de chaque champ. Tout ce qui dépasse la longueur définie appartient au champ suivant dans la structure.
 
 Bien qu'il s'agisse de la structure de transaction réelle transmise, la plupart des représentations internes et des visualisations d'interface utilisateur l'agrémentent d'informations supplémentaires, dérivées de la transaction ou de la chaîne de blocs.
 
@@ -116,7 +116,7 @@ Comme vous pouvez le voir, la première transaction que nous avons envoyée a au
 
 Lorsque vous construisez une application qui construit des transactions, elle ne peut pas s'appuyer sur pass:[<span class="keep-together"><code>getTransactionCount</code></span>] pour les transactions en attente. Ce n'est que lorsque les nombres en attente et confirmés sont égaux (toutes les transactions en attente sont confirmées) que vous pouvez faire confiance à la sortie de +getTransactionCount+ pour démarrer votre compteur de nonce. Par la suite, gardez une trace du nonce dans votre application jusqu'à ce que chaque transaction soit confirmée.
 
-((("Parity","nonce counting")))L'interface JSON RPC de Parity propose la fonction `+parity_nextNonce+`,qui renvoie le prochain nonce à utiliser dans une transaction. La fonction +parity_nextNonce+ compte correctement les nonces, même si vous construisez plusieurs transactions en succession rapide sans les confirmer :
+((("Parity","nonce counting")))L'interface JSON RPC de Parity propose la fonction `+parity_nextNonce+`, qui renvoie le prochain nonce à utiliser dans une transaction. La fonction +parity_nextNonce+ compte correctement les nonces, même si vous construisez plusieurs transactions en succession rapide sans les confirmer :
 
 ++++
 <pre data-type="programlisting">
@@ -190,7 +190,7 @@ Le +gasPrice+ minimum acceptable est zéro. Cela signifie que les portefeuilles 
 ====
 
 [[gas_price_suggestion]]
-L'interface web3 propose une suggestion `+gasPrice+`,en calculant un prix médian sur plusieurs blocs (nous pouvons utiliser la console truffle ou n'importe quelle console web3 JavaScript pour le faire) :
+L'interface web3 propose une suggestion `+gasPrice+`, en calculant un prix médian sur plusieurs blocs (nous pouvons utiliser la console truffle ou n'importe quelle console web3 JavaScript pour le faire) :
 
 ++++
 <pre data-type="programlisting">
@@ -201,7 +201,7 @@ L'interface web3 propose une suggestion `+gasPrice+`,en calculant un prix média
 ++++
 
 [[calc_gas_price]]
-((("champ gasLimit")))Le deuxième champ important lié au gaz est `+gasLimit+`.En termes simples, +gasLimit+ donne le nombre maximum d'unités de gaz que l'initiateur de la transaction est prêt à acheter pour finaliser la transaction. Pour les paiements simples, c'est-à-dire les transactions qui transfèrent de l'ether d'un EOA à un autre EOA, la quantité de gaz nécessaire est fixée à 21 000 unités de gaz. Pour calculer combien d'ether cela coûtera, vous multipliez 21 000 par le +gasPrice+ que vous êtes prêt à payer. Par example:
+((("champ gasLimit")))Le deuxième champ important lié au gaz est `+gasLimit+`. En termes simples, +gasLimit+ donne le nombre maximum d'unités de gaz que l'initiateur de la transaction est prêt à acheter pour finaliser la transaction. Pour les paiements simples, c'est-à-dire les transactions qui transfèrent de l'ether d'un EOA à un autre EOA, la quantité de gaz nécessaire est fixée à 21 000 unités de gaz. Pour calculer combien d'ether cela coûtera, vous multipliez 21 000 par le +gasPrice+ que vous êtes prêt à payer. Par example:
 
 ++++
 <pre data-type="programlisting">
@@ -215,12 +215,12 @@ Si l'adresse de destination de votre transaction est un contrat, la quantité de
 
 Pour emprunter une analogie courante utilisée dans Ethereum, vous pouvez considérer +gasLimit+ comme la capacité du réservoir de carburant de votre voiture (votre voiture est la transaction). Vous remplissez le réservoir avec autant d'essence que vous pensez qu'il en aura besoin pour le trajet (le calcul nécessaire pour valider votre transaction). Vous pouvez estimer le montant dans une certaine mesure, mais il peut y avoir des changements inattendus dans votre trajet, comme une déviation (un chemin d'exécution plus complexe), qui augmentent la consommation de carburant.
 
-L'analogie avec un réservoir de carburant est cependant quelque peu trompeuse. Il s'agit en fait plus d'un compte de crédit pour une entreprise de station-service, où vous payez une fois le voyage terminé, en fonction de la quantité d'essence que vous avez réellement utilisée. Lorsque vous transmettez votre transaction, l'une des premières étapes de validation consiste à vérifier que le compte dont elle provient dispose de suffisamment d'ether pour payer la limite `+gasPrice * gaz+`.Mais le montant n'est pas réellement déduit de votre compte tant que la transaction n'est pas terminée. Vous n'êtes facturé que pour le gaz réellement consommé par votre transaction, mais vous devez disposer d'un solde suffisant pour le montant maximum que vous êtes prêt à payer avant d'envoyer votre transaction.(((range="endofrange", startref="ix_06transactions-asciidoc4" )))(((range="endofrange", startref="ix_06transactions-asciidoc3")))
+L'analogie avec un réservoir de carburant est cependant quelque peu trompeuse. Il s'agit en fait plus d'un compte de crédit pour une entreprise de station-service, où vous payez une fois le voyage terminé, en fonction de la quantité d'essence que vous avez réellement utilisée. Lorsque vous transmettez votre transaction, l'une des premières étapes de validation consiste à vérifier que le compte dont elle provient dispose de suffisamment d'ether pour payer la limite `+gasPrice * gaz+`. Mais le montant n'est pas réellement déduit de votre compte tant que la transaction n'est pas terminée. Vous n'êtes facturé que pour le gaz réellement consommé par votre transaction, mais vous devez disposer d'un solde suffisant pour le montant maximum que vous êtes prêt à payer avant d'envoyer votre transaction.(((range="endofrange", startref="ix_06transactions-asciidoc4" )))(((range="endofrange", startref="ix_06transactions-asciidoc3")))
 
 [[tx_recipient]]
 === Destinataire de la transaction
 
-((("transactions","destinataire de")))Le destinataire d'une transaction est spécifié dans le champ `+to+`.Celui-ci contient une adresse Ethereum de 20 octets. L'adresse peut être une EOA ou une adresse de contrat.
+((("transactions","destinataire de")))Le destinataire d'une transaction est spécifié dans le champ `+to+`. Celui-ci contient une adresse Ethereum de 20 octets. L'adresse peut être une EOA ou une adresse de contrat.
 
 Ethereum ne valide plus ce champ. Toute valeur de 20 octets est considérée comme valide. Si la valeur de 20 octets correspond à une adresse sans clé privée correspondante, ou sans contrat correspondant, la transaction est toujours valide. Ethereum n'a aucun moyen de savoir si une adresse a été correctement dérivée d'une clé publique (et donc d'une clé privée) existante.
 
@@ -234,7 +234,7 @@ Le protocole Ethereum ne valide pas les adresses des destinataires dans les tran
 [[tx_value_data]]
 === Valeur et données de la transaction
 
-((("transactions","valeur et champs de données", id="ix_06transactions-asciidoc5", range="startofrange")))La "charge utile" principale d'une transaction est contenue dans ((("champ de valeur", id ="ix_06transactions-asciidoc6", range="startofrange")))((("champ de valeur", id="ix_06transactions-asciidoc7", range="startofrange")))deux champs : +value+ et `+data+`.Les transactions peuvent avoir à la fois une valeur et des données, uniquement une valeur, uniquement des données ou ni valeur ni données. Les quatre combinaisons sont valides.
+((("transactions","valeur et champs de données", id="ix_06transactions-asciidoc5", range="startofrange")))La "charge utile" principale d'une transaction est contenue dans ((("champ de valeur", id ="ix_06transactions-asciidoc6", range="startofrange")))((("champ de valeur", id="ix_06transactions-asciidoc7", range="startofrange")))deux champs : +value+ et `+data+`. Les transactions peuvent avoir à la fois une valeur et des données, uniquement une valeur, uniquement des données ou ni valeur ni données. Les quatre combinaisons sont valides.
 
 ((("invocation")))((("paiement")))Une transaction avec seulement une valeur est un _paiement_. Une transaction avec uniquement des données est une _invocation_. Une transaction comportant à la fois de la valeur et des données est à la fois un paiement et une invocation. Une transaction sans valeur ni données - eh bien, ce n'est probablement qu'un gaspillage de gaz ! Mais c'est encore possible.
 
@@ -355,9 +355,9 @@ Calculons le hachage Keccak-256 de cette chaîne :
 </pre>
 ++++
 
-Les 4 premiers octets du hachage sont `+0x2e1a7d4d+`.C'est notre valeur "sélecteur de fonction", qui indiquera au contrat quelle fonction nous voulons appeler.
+Les 4 premiers octets du hachage sont `+0x2e1a7d4d+`. C'est notre valeur "sélecteur de fonction", qui indiquera au contrat quelle fonction nous voulons appeler.
 
-Ensuite, calculons une valeur à passer comme argument `+withdraw_amount+`.Nous voulons retirer 0,01 ether. Encodons cela en un entier 256 bits non signé gros-boutiste hexa-sérialisé, libellé en wei :
+Ensuite, calculons une valeur à passer comme argument `+withdraw_amount+`. Nous voulons retirer 0,01 ether. Encodons cela en un entier 256 bits non signé gros-boutiste hexa-sérialisé, libellé en wei :
 
 ++++
 <pre data-type="programlisting">
@@ -380,7 +380,7 @@ C'est la charge utile de données pour notre transaction, appelant la fonction +
 [[contract_reg]]
 === Transaction spéciale : création de contrat
 
-((("transaction de création de contrat", id="ix_06transactions-asciidoc12", range="startofrange")))((("transactions","création de contrat", id="ix_06transactions-asciidoc13", range="startofrange" )))Un cas particulier que nous devrions mentionner est une transaction qui _crée un nouveau contrat_ sur la chaîne de blocs, le déployant pour une utilisation future. ((("adresse zéro","création de contrat")))Les transactions de création de contrat sont envoyées à une adresse de destination spéciale appelée _adresse zéro_ ; le champ +to+ dans une transaction d'enregistrement de contrat contient l'adresse `+0x0+`.Cette adresse ne représente ni un EOA (il n'y a pas de paire de clés privée-publique correspondante) ni un contrat. Il ne peut jamais dépenser d'ether ou initier une transaction. Il n'est utilisé que comme destination, avec la signification spéciale "créer ce contrat".
+((("transaction de création de contrat", id="ix_06transactions-asciidoc12", range="startofrange")))((("transactions","création de contrat", id="ix_06transactions-asciidoc13", range="startofrange" )))Un cas particulier que nous devrions mentionner est une transaction qui _crée un nouveau contrat_ sur la chaîne de blocs, le déployant pour une utilisation future. ((("adresse zéro","création de contrat")))Les transactions de création de contrat sont envoyées à une adresse de destination spéciale appelée _adresse zéro_ ; le champ +to+ dans une transaction d'enregistrement de contrat contient l'adresse `+0x0+`. Cette adresse ne représente ni un EOA (il n'y a pas de paire de clés privée-publique correspondante) ni un contrat. Il ne peut jamais dépenser d'ether ou initier une transaction. Il n'est utilisé que comme destination, avec la signification spéciale "créer ce contrat".
 
 Alors que l'adresse zéro est destinée uniquement à la création de contrats, elle reçoit parfois des paiements de différentes adresses. ((("brûlure d'ether")))Il y a deux explications à cela : soit c'est par accident, entraînant la perte d'ether, soit c'est une _brûlure d'ether_ intentionnelle (détruisant délibérément l'ether en l'envoyant à une adresse d'où il ne peut jamais être dépensé). Cependant, si vous souhaitez effectuer une brûlure intentionnelle d'ether, vous devez indiquer clairement votre intention au réseau et utiliser à la place l'adresse de brpulure spécialement désignée :
 
@@ -425,7 +425,7 @@ Nous pouvons maintenant créer la transaction :
 </pre>
 ++++
 
-Il est recommandé de toujours spécifier un paramètre `+to+`,même dans le cas d'une création de contrat sans adresse, car le coût d'envoyer accidentellement votre ether à +0x0+ et de le perdre pour toujours est trop élevé. Vous devez également spécifier un +gasPrice+ et un +gasLimit+.
+Il est recommandé de toujours spécifier un paramètre `+to+`, même dans le cas d'une création de contrat sans adresse, car le coût d'envoyer accidentellement votre ether à +0x0+ et de le perdre pour toujours est trop élevé. Vous devez également spécifier un +gasPrice+ et un +gasLimit+.
 
 Une fois le contrat extrait, nous pouvons le voir sur l'explorateur de blocs Etherscan, comme indiqué dans <<publish_contract_from_web3>>.
 
@@ -643,11 +643,11 @@ ECDSA est nécessairement un calcul assez compliqué ; une explication complèt
 
 Pour signer une transaction dans Ethereum, l'initiateur doit :
 
-1. Créez une structure de données de transaction contenant neuf champs : `+nonce+`,+gasPrice+, `+gasLimit+`,+to+, `+value+`,+data+, `+chainID+`,+0+, `+0+`.
+1. Créez une structure de données de transaction contenant neuf champs : `+nonce+`, +gasPrice+, `+gasLimit+`, +to+, `+value+`, +data+, `+chainID+`, +0+, `+0+`.
 2. Produire un message sérialisé codé RLP de la structure de données de transaction.
 3. Calculez le hachage Keccak-256 de ce message sérialisé.
 4. Calculez la signature ECDSA, en signant le hachage avec la clé privée de l'EOA d'origine.
-5. Ajoutez les valeurs `+v+`,`+r+` et `+s+` calculées de la signature ECDSA à la transaction.
+5. Ajoutez les valeurs `+v+`, `+r+` et `+s+` calculées de la signature ECDSA à la transaction.
 
 La variable de signature spéciale `+v+` indique deux choses : l'ID (identifiant) de chaîne et l'identifiant de récupération pour aider la fonction +ECDSArecover+ à vérifier la signature. Il est calculé comme l'un des 27 ou 28, ou comme l'ID de chaîne doublé plus 35 ou 36. Pour plus d'informations sur l'ID de chaîne, voir <<raw_tx_eip155>>. L'identifiant de récupération (27 ou 28 dans les signatures "à l'ancienne", ou 35 ou 36 dans les transactions complètes de type Spurious Dragon) est utilisé pour indiquer la parité du composant `+y+` de la clé publique (voir <<sign_prefix>> pour plus de détails).
 
@@ -661,7 +661,7 @@ La variable de signature spéciale `+v+` indique deux choses : l'ID (identifian
 [[raw_tx]]
 ==== Création et signature de transactions brutes
 
-((("EthereumJS")))((("transactions","création/signature de transaction brute")))Dans cette section, nous allons créer une transaction brute et la signer, en utilisant la bibliothèque `+ethereumjs-tx+`,qui peut être installé avec npm. Cela démontre les fonctions qui seraient normalement utilisées dans un portefeuille ou une application qui signe des transactions au nom d'un utilisateur. Le code source de cet exemple se trouve dans le fichier __raw_tx_demo.js__ dans le http://bit.ly/2yI2GL3[référentiel GitHub] du livre :
+((("EthereumJS")))((("transactions","création/signature de transaction brute")))Dans cette section, nous allons créer une transaction brute et la signer, en utilisant la bibliothèque `+ethereumjs-tx+`, qui peut être installé avec npm. Cela démontre les fonctions qui seraient normalement utilisées dans un portefeuille ou une application qui signe des transactions au nom d'un utilisateur. Le code source de cet exemple se trouve dans le fichier __raw_tx_demo.js__ dans le http://bit.ly/2yI2GL3[référentiel GitHub] du livre :
 
 [[raw_tx_demo_source]]
 [source,javascript]
@@ -722,7 +722,7 @@ Pour plus de détails, voir http://bit.ly/2CQUgne[la spécification EIP-155].(((
 
 Tout d'abord, nous calculons deux points de courbe elliptique, _R_ et __R__^__'__^, à partir de la coordonnée _x_ `+r+` valeur qui se trouve dans la signature. Il y a deux points parce que la courbe elliptique est symétrique sur l'axe des x, de sorte que pour toute valeur `+x+` il y a deux valeurs possibles qui correspondent à la courbe, une de chaque côté de l'axe des x.
 
-À partir de `+r+`,nous calculons également __r__^-1^, qui est l'inverse multiplicatif de `+r+`.
+À partir de `+r+`, nous calculons également __r__^-1^, qui est l'inverse multiplicatif de `+r+`.
 
 Enfin, nous calculons _z_, qui correspond aux _n_ bits les plus bas du hachage du message, où _n_ est l'ordre de la courbe elliptique.
 
@@ -751,12 +751,12 @@ où :
 * _z_ correspond aux __n__ bits les plus bas du hachage du message.
 * _G_ est le point générateur de la courbe elliptique.
 
-Pour rendre les choses plus efficaces, la signature de la transaction inclut une valeur de préfixe `+v+`,qui nous indique laquelle des deux valeurs _R_ possibles est la clé publique éphémère. Si `+v+` est pair, alors _R_ est la valeur correcte. Si `+v+` est impair, alors c'est __R__^'^. De cette façon, nous devons calculer une seule valeur pour _R_ et une seule valeur pour _K_.
+Pour rendre les choses plus efficaces, la signature de la transaction inclut une valeur de préfixe `+v+`, qui nous indique laquelle des deux valeurs _R_ possibles est la clé publique éphémère. Si `+v+` est pair, alors _R_ est la valeur correcte. Si `+v+` est impair, alors c'est __R__^'^. De cette façon, nous devons calculer une seule valeur pour _R_ et une seule valeur pour _K_.
 
 [[offline_sign]]
 === Séparer la signature et la transmission (signature hors ligne)
 
-((("signatures numériques","séparer la signature et la transmission", id="ix_06transactions-asciidoc18", range="startofrange")))((("signature hors ligne", id="ix_06transactions-asciidoc19", range=" startofrange")))((("transactions","séparer la signature et la transmission", id="ix_06transactions-asciidoc20", range="startofrange")))Une fois qu'une transaction est signée, elle est prête à être transmise au réseau Ethereum . Les trois étapes de création, de signature et de diffusion d'une transaction se déroulent normalement en une seule opération, par exemple en utilisant `+web3.eth.sendTransaction+`.Cependant, comme vous l'avez vu dans <<raw_tx>>, vous pouvez créer et signer la transaction en deux étapes distinctes. Une fois que vous avez une transaction signée, vous pouvez ensuite la transmettre à l'aide de `+web3.eth.sendSignedTransaction+`,qui prend une transaction codée en hexadécimal et signée et la transmet sur le réseau Ethereum.
+((("signatures numériques","séparer la signature et la transmission", id="ix_06transactions-asciidoc18", range="startofrange")))((("signature hors ligne", id="ix_06transactions-asciidoc19", range=" startofrange")))((("transactions","séparer la signature et la transmission", id="ix_06transactions-asciidoc20", range="startofrange")))Une fois qu'une transaction est signée, elle est prête à être transmise au réseau Ethereum . Les trois étapes de création, de signature et de diffusion d'une transaction se déroulent normalement en une seule opération, par exemple en utilisant `+web3.eth.sendTransaction+`. Cependant, comme vous l'avez vu dans <<raw_tx>>, vous pouvez créer et signer la transaction en deux étapes distinctes. Une fois que vous avez une transaction signée, vous pouvez ensuite la transmettre à l'aide de `+web3.eth.sendSignedTransaction+`, qui prend une transaction codée en hexadécimal et signée et la transmet sur le réseau Ethereum.
 
 Pourquoi voudriez-vous séparer la signature et la transmission des transactions ? La raison la plus courante est la sécurité. L'ordinateur qui signe une transaction doit avoir des clés privées déverrouillées chargées en mémoire. L'ordinateur qui effectue la transmission doit être connecté à Internet (et exécuter un client Ethereum). Si ces deux fonctions sont sur un seul ordinateur, alors vous avez des clés privées sur un système en ligne, ce qui est assez dangereux. Séparer les fonctions de signature et de transmission et les exécuter sur différentes machines (sur un appareil hors ligne et en ligne, respectivement) est appelé _signature hors ligne_ et est une pratique de sécurité courante.
 

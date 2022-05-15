@@ -162,7 +162,7 @@ http://bit.ly/2CUf7WG[La norme ERC20] définit une interface commune pour les co
 
 +symbol+:: Renvoie un symbole lisible par l'homme (par exemple, "USD") pour le jeton.
 
-+decimals+:: Renvoie le nombre de décimales utilisées pour diviser les quantités de jetons. Par exemple, si +decimals+ vaut `+2+`,alors le montant du jeton est divisé par 100 pour obtenir sa pass:[<span class="keep-together">représentation</span>] d'usage.
++decimals+:: Renvoie le nombre de décimales utilisées pour diviser les quantités de jetons. Par exemple, si +decimals+ vaut `+2+`, alors le montant du jeton est divisé par 100 pour obtenir sa pass:[<span class="keep-together">représentation</span>] d'usage.
 
 [[ERC20_interface]]
 ===== L'interface ERC20 définie dans Solidity
@@ -213,11 +213,11 @@ mapping (address => mapping (address => uint256)) public allowed;
 
 ((("standard de jeton ERC20","fonctions de transfert", id="ix_10tokens-asciidoc7", range="startofrange")))((("fonction transfer","standard de jeton ERC20", id="ix_10tokens-asciidoc8 ", range="startofrange")))La norme de jeton ERC20 a deux fonctions de transfert. Vous vous demandez peut-être pourquoi.
 
-ERC20 permet deux flux de travail différents. Le premier est un flux de travail simple et à transaction unique utilisant la fonction `+transfer+`.Ce flux de travail est celui utilisé par les portefeuilles pour envoyer des jetons à d'autres portefeuilles. La grande majorité des transactions de jetons se produisent avec le flux de travail +transfer+.
+ERC20 permet deux flux de travail différents. Le premier est un flux de travail simple et à transaction unique utilisant la fonction `+transfer+`. Ce flux de travail est celui utilisé par les portefeuilles pour envoyer des jetons à d'autres portefeuilles. La grande majorité des transactions de jetons se produisent avec le flux de travail +transfer+.
 
 L'exécution du contrat de transfert est très simple. Si Alice veut envoyer 10 jetons à Bob, son portefeuille envoie une transaction à l'adresse du contrat de jeton, en appelant la fonction pass:[<span class="keep-together"><code>transfer</code></span>] avec l'adresse de Bob et +10+ comme arguments. Le contrat de jeton ajuste le solde d'Alice (–10) et le solde de Bob (pass:[+10]) et émet un événement +Transfer+.
 
-((("approve &amp; transferFrom flux de travail")))Le deuxième flux de travail est un processus à deux transactions qui utilise +approve+ suivi de `+transferFrom+`.Ce workflow permet à un propriétaire de jeton de déléguer son contrôle à une autre adresse. Il est le plus souvent utilisé pour déléguer le contrôle à un contrat de distribution de jetons, mais il peut également être utilisé par les échanges.
+((("approve &amp; transferFrom flux de travail")))Le deuxième flux de travail est un processus à deux transactions qui utilise +approve+ suivi de `+transferFrom+`. Ce workflow permet à un propriétaire de jeton de déléguer son contrôle à une autre adresse. Il est le plus souvent utilisé pour déléguer le contrôle à un contrat de distribution de jetons, mais il peut également être utilisé par les échanges.
 
 ((("Initial Coin Offerings (ICOs)","jetons et")))Par exemple, si une entreprise vend des tokens pour une ICO (Initial Coin Offerings ou "offres initiales de pièces"), elle peut +approve+ (approuver) une adresse de contrat de crowdsale pour distribuer une certaine quantité de jetons. Le contrat de crowdsale peut alors +transferFrom+ le solde du propriétaire du contrat de jeton à chaque acheteur du jeton, comme illustré dans <<approve_transferFrom_workflow>>.
 
@@ -230,9 +230,9 @@ L'exécution du contrat de transfert est très simple. Si Alice veut envoyer 10 
 .Le flux de travail d'approbation et de transfert en deux étapes des jetons ERC20
 image::images/approve_transferFrom_workflow.png["Le flux de travail d'approbation et de transfert en deux étapes des jetons ERC20"]
 
-Pour le flux de travail +approve+ et `+transferFrom+`,deux transactions sont nécessaires. Disons qu'Alice veut autoriser le contrat +AliceICO+ à vendre 50 % de tous les jetons AliceCoin à des acheteurs comme Bob et Charlie. Tout d'abord, Alice lance le contrat +AliceCoin+ ERC20, émettant tous les AliceCoin à sa propre adresse. Ensuite, Alice lance le contrat +AliceICO+ qui peut vendre des jetons contre de l'ether. Ensuite, Alice lance le flux de travail +approve+ et `+transferFrom+`.Elle envoie une transaction au contrat `+AliceCoin+`,en appelant +approve+ avec l'adresse du contrat +AliceICO+ et 50 % du +totalSupply+ comme arguments. Cela déclenchera l'événement `+Approbation+`.Désormais, le contrat +AliceICO+ peut vendre AliceCoin.
+Pour le flux de travail +approve+ et `+transferFrom+`, deux transactions sont nécessaires. Disons qu'Alice veut autoriser le contrat +AliceICO+ à vendre 50 % de tous les jetons AliceCoin à des acheteurs comme Bob et Charlie. Tout d'abord, Alice lance le contrat +AliceCoin+ ERC20, émettant tous les AliceCoin à sa propre adresse. Ensuite, Alice lance le contrat +AliceICO+ qui peut vendre des jetons contre de l'ether. Ensuite, Alice lance le flux de travail +approve+ et `+transferFrom+`. Elle envoie une transaction au contrat `+AliceCoin+`, en appelant +approve+ avec l'adresse du contrat +AliceICO+ et 50 % du +totalSupply+ comme arguments. Cela déclenchera l'événement `+Approbation+`. Désormais, le contrat +AliceICO+ peut vendre AliceCoin.
 
-Lorsque le contrat +AliceICO+ reçoit de l'ether de Bob, il doit envoyer des AliceCoin à Bob en retour. Dans le contrat +AliceICO+ se trouve un taux de change entre AliceCoin et de l'Ether. Le taux de change qu'Alice a fixé lors de la création du contrat +AliceICO+ détermine le nombre de jetons que Bob recevra pour la quantité d'ether envoyé au contrat `+AliceICO+`.Lorsque le contrat +AliceICO+ appelle la fonction AliceCoin `+transferFrom+`,il définit l'adresse d'Alice comme expéditeur et l'adresse de Bob comme destinataire, et utilise le taux de change pour déterminer le nombre de jetons AliceCoin qui seront transférés à Bob dans le champ `+value+`.Le contrat +AliceCoin+ transfère le solde de l'adresse d'Alice à l'adresse de Bob et déclenche un événement `+Transfer+`.Le contrat +AliceICO+ peut appeler +transferFrom+ un nombre illimité de fois, tant qu'il ne dépasse pas la limite d'approbation définie par Alice. Le contrat +AliceICO+ peut suivre le nombre de jetons AliceCoin qu'il peut vendre en appelant la fonction +allowance+.(((range="endofrange", startref="ix_10tokens-asciidoc8")))(((range="endofrange", startref="ix_10tokens-asciidoc7")))
+Lorsque le contrat +AliceICO+ reçoit de l'ether de Bob, il doit envoyer des AliceCoin à Bob en retour. Dans le contrat +AliceICO+ se trouve un taux de change entre AliceCoin et de l'Ether. Le taux de change qu'Alice a fixé lors de la création du contrat +AliceICO+ détermine le nombre de jetons que Bob recevra pour la quantité d'ether envoyé au contrat `+AliceICO+`. Lorsque le contrat +AliceICO+ appelle la fonction AliceCoin `+transferFrom+`, il définit l'adresse d'Alice comme expéditeur et l'adresse de Bob comme destinataire, et utilise le taux de change pour déterminer le nombre de jetons AliceCoin qui seront transférés à Bob dans le champ `+value+`. Le contrat +AliceCoin+ transfère le solde de l'adresse d'Alice à l'adresse de Bob et déclenche un événement `+Transfer+`. Le contrat +AliceICO+ peut appeler +transferFrom+ un nombre illimité de fois, tant qu'il ne dépasse pas la limite d'approbation définie par Alice. Le contrat +AliceICO+ peut suivre le nombre de jetons AliceCoin qu'il peut vendre en appelant la fonction +allowance+.(((range="endofrange", startref="ix_10tokens-asciidoc8")))(((range="endofrange", startref="ix_10tokens-asciidoc7")))
 
 [[ERC20_implémentation]]
 ===== Implémentations ERC20
@@ -334,7 +334,7 @@ include::code/truffle/METoken/contracts/METoken.sol[]
 ----
 ====
 
-Ici, nous définissons les variables optionnelles `+name+`,+symbol+ et `+decimals+`.Nous définissons également une variable `+_initial_supply+`,définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d'unités au total. Dans la fonction d'initialisation (constructeur) du contrat, nous définissons le +totalSupply+ égal à +_initial_supply+ et allouons tout le +_initial_supply+ au solde du compte (`+msg.sender+`)qui crée le contrat +METoken+.
+Ici, nous définissons les variables optionnelles `+name+`, +symbol+ et `+decimals+`. Nous définissons également une variable `+_initial_supply+`, définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d'unités au total. Dans la fonction d'initialisation (constructeur) du contrat, nous définissons le +totalSupply+ égal à +_initial_supply+ et allouons tout le +_initial_supply+ au solde du compte (`+msg.sender+`)qui crée le contrat +METoken+.
 
 Nous utilisons maintenant +truffle+ pour compiler le code +METoken+ :
 
@@ -354,7 +354,7 @@ Compiling openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol...
 
 Comme vous pouvez le voir, +truffle+ intègre les dépendances nécessaires des bibliothèques OpenZeppelin et compile également ces contrats.
 
-Configurons un script de migration pour déployer le contrat `+METoken+`.Créez un nouveau fichier appelé __2_deploy_contracts.js__, dans le dossier _METoken/migrations_. Copiez le contenu de l'exemple http://bit.ly/2P0rHLl[dans le référentiel GitHub] :
+Configurons un script de migration pour déployer le contrat `+METoken+`. Créez un nouveau fichier appelé __2_deploy_contracts.js__, dans le dossier _METoken/migrations_. Copiez le contenu de l'exemple http://bit.ly/2P0rHLl[dans le référentiel GitHub] :
 
 
 [[METoken_migration]]
@@ -364,7 +364,7 @@ Configurons un script de migration pour déployer le contrat `+METoken+`.Créez 
 include::code/truffle/METoken/migrations/2_deploy_contracts.js[]
 ----
 
-Avant de déployer sur l'un des réseaux de test Ethereum, démarrons une chaîne de blocs locale pour tout tester. Démarrez la chaîne de blocs `+ganache+`,soit depuis la ligne de commande avec `+ganache-cli+`,soit depuis l'interface utilisateur graphique.
+Avant de déployer sur l'un des réseaux de test Ethereum, démarrons une chaîne de blocs locale pour tout tester. Démarrez la chaîne de blocs `+ganache+`, soit depuis la ligne de commande avec `+ganache-cli+`, soit depuis l'interface utilisateur graphique.
 
 Une fois +ganache+ lancé, nous pouvons déployer notre contrat +METoken+ et voir si tout fonctionne comme prévu :
 
@@ -391,7 +391,7 @@ Saving artifacts...
 </pre>
 ++++
 
-Sur la console `+ganache+`,nous devrions voir que notre déploiement a créé quatre nouvelles transactions, comme illustré dans <<ganache_METoken>>.
+Sur la console `+ganache+`, nous devrions voir que notre déploiement a créé quatre nouvelles transactions, comme illustré dans <<ganache_METoken>>.
 
 [[ganache_METoken]]
 .Déploiement METoken sur ganache
@@ -410,7 +410,7 @@ truffle(ganache)&gt;
 </pre>
 ++++
 
-L'invite +truffle(ganache)&gt;+ indique que nous sommes connectés à la chaîne de blocs +ganache+ et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes `+truffle+`,nous pourrions donc +compiler+ et +migrer+ depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat +METoken+ existe en tant qu'objet JavaScript dans l'environnement Truffle. Tapez ++METoken**++ à l'invite et il affichera l'intégralité de la définition du contrat :
+L'invite +truffle(ganache)&gt;+ indique que nous sommes connectés à la chaîne de blocs +ganache+ et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes `+truffle+`, nous pourrions donc +compiler+ et +migrer+ depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat +METoken+ existe en tant qu'objet JavaScript dans l'environnement Truffle. Tapez ++METoken**++ à l'invite et il affichera l'intégralité de la définition du contrat :
 
 ++++
 <pre data-type="programlist">
@@ -469,7 +469,7 @@ truffle(ganache)&gt; <strong>accounts[0]</strong>
 </pre>
 ++++
 
-La liste +accounts+ contient maintenant tous les comptes créés par `+ganache+`,et +account[0]+ est le compte qui a déployé le contrat `+METoken+`.Il devrait avoir un solde de pass:[<span class="keep-together">METoken</span>], car notre constructeur METoken donne l'intégralité de l'offre de jetons à l'adresse qui l'a créé. Allons vérifier:
+La liste +accounts+ contient maintenant tous les comptes créés par `+ganache+`, et +account[0]+ est le compte qui a déployé le contrat `+METoken+`. Il devrait avoir un solde de pass:[<span class="keep-together">METoken</span>], car notre constructeur METoken donne l'intégralité de l'offre de jetons à l'adresse qui l'a créé. Allons vérifier:
 
 ++++
 <pre data-type="programlist">
@@ -481,7 +481,7 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 9, c: [ 2100000000 ] }</strong
 </pre>
 ++++
 
-Enfin, transférons 1000.00 METoken de +account[0]+ vers `+account[1]+`,en appelant la fonction +transfer+ du contrat :
+Enfin, transférons 1000.00 METoken de +account[0]+ vers `+account[1]+`, en appelant la fonction +transfer+ du contrat :
 
 ++++
 <pre data-type="programlist">
@@ -508,7 +508,7 @@ METoken a 2 décimales de précision, ce qui signifie que 1 METoken correspond �
 
 Comme vous pouvez le voir, dans la console, +account[0]+ a maintenant 20 999 000 MET, et +account[1]+ a 1 000 MET.
 
-Si vous passez à l'interface utilisateur graphique `+ganache+`,comme indiqué dans <<ganache_METoken_transfer>>, vous verrez la transaction qui a appelé la fonction +transfer+.(((range="endofrange", startref="ix_10tokens-asciidoc12")))(((range="endofrange", startref="ix_10tokens-asciidoc11")))
+Si vous passez à l'interface utilisateur graphique `+ganache+`, comme indiqué dans <<ganache_METoken_transfer>>, vous verrez la transaction qui a appelé la fonction +transfer+.(((range="endofrange", startref="ix_10tokens-asciidoc12")))(((range="endofrange", startref="ix_10tokens-asciidoc11")))
 
 [[ganache_METoken_transfer]]
 .Transfert METoken sur ganache
@@ -587,9 +587,9 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 </pre>
 ++++
 
-D'accord, nous avons transféré 1 000 MET au contrat `+Faucet+`.Maintenant, comment retirer ces jetons ?
+D'accord, nous avons transféré 1 000 MET au contrat `+Faucet+`. Maintenant, comment retirer ces jetons ?
 
-N'oubliez pas que _Faucet.sol_ est un contrat assez simple. Il n'a qu'une seule fonction, pass:[<span class="keep-together"><code>withdraw</code></span>], qui sert à retirer de l'_ether_. Il n'a pas de fonction pour retirer le MET, ou tout autre jeton ERC20. Si nous utilisons `+withdraw+`,il essaiera d'envoyer de l'ether, mais comme +Faucet+ n'a pas encore de solde d'ether, il échouera.
+N'oubliez pas que _Faucet.sol_ est un contrat assez simple. Il n'a qu'une seule fonction, pass:[<span class="keep-together"><code>withdraw</code></span>], qui sert à retirer de l'_ether_. Il n'a pas de fonction pour retirer le MET, ou tout autre jeton ERC20. Si nous utilisons `+withdraw+`, il essaiera d'envoyer de l'ether, mais comme +Faucet+ n'a pas encore de solde d'ether, il échouera.
 
 Le contrat +METoken+ sait que +Faucet+ a un solde, mais le seul moyen de transférer ce solde est de recevoir un appel +transfer+ de l'adresse du contrat. D'une manière ou d'une autre, nous devons faire en sorte que le contrat +Faucet+ appelle la fonction +transfer+ dans pass:[<span class="keep-together"><code>METoken</code></span>].
 
@@ -604,7 +604,7 @@ L'une des façons dont les utilisateurs de jetons ERC20 peuvent perdre par inadv
 
 ((("flux de travail approve et transferFrom", id="ix_10tokens-asciidoc15", range="startofrange")))((("Contrat Faucet.sol (exemple de test)","démonstration de flux de travail METoken approve et transferFrom", id ="ix_10tokens-asciidoc16", range="startofrange")))((("METoken (Mastering Ethereum Token)","démonstration du flux de travail approve et transferFrom", id="ix_10tokens-asciidoc17", range="startofrange")))Notre contrat +Faucet+ ne pouvait pas gérer les jetons ERC20. L'envoi de jetons à l'aide de la fonction + transfer + a entraîné la perte de ces jetons. Réécrivons maintenant le contrat et faisons en sorte qu'il gère les jetons ERC20. Plus précisément, nous allons le transformer en un robinet qui donne du MET à quiconque le demande.
 
-Pour cet exemple, nous allons faire une copie du répertoire du projet _truffle_ (nous l'appellerons __METoken_METFaucet__), initialiser +truffle+ et `+npm+`,installer les dépendances OpenZeppelin et copier le contrat _METoken.sol_. Voir notre premier exemple, dans <<METoken_example>>, pour les instructions détaillées.
+Pour cet exemple, nous allons faire une copie du répertoire du projet _truffle_ (nous l'appellerons __METoken_METFaucet__), initialiser +truffle+ et `+npm+`, installer les dépendances OpenZeppelin et copier le contrat _METoken.sol_. Voir notre premier exemple, dans <<METoken_example>>, pour les instructions détaillées.
 
 Notre nouveau contrat de robinetterie, _METFaucet.sol_, ressemblera à <<METFaucet>>.
 
@@ -617,7 +617,7 @@ include::code/truffle/METoken_METFaucet/contracts/METFaucet.sol[]
 ----
 ====
 
-Nous avons apporté quelques modifications à l'exemple de base de `+Faucet+`.Puisque +METFaucet+ utilisera la fonction +transferFrom+ dans `+METoken+`,il aura besoin de deux variables supplémentaires. L'un contiendra l'adresse du contrat +METoken+ déployé. L'autre détiendra l'adresse du propriétaire du MET, qui approuvera les retraits du robinet. Le contrat +METFaucet+ appellera +METoken.transferFrom+ et lui demandera de déplacer le MET du propriétaire vers l'adresse d'où provient la demande de retrait du robinet.
+Nous avons apporté quelques modifications à l'exemple de base de `+Faucet+`. Puisque +METFaucet+ utilisera la fonction +transferFrom+ dans `+METoken+`, il aura besoin de deux variables supplémentaires. L'un contiendra l'adresse du contrat +METoken+ déployé. L'autre détiendra l'adresse du propriétaire du MET, qui approuvera les retraits du robinet. Le contrat +METFaucet+ appellera +METoken.transferFrom+ et lui demandera de déplacer le MET du propriétaire vers l'adresse d'où provient la demande de retrait du robinet.
 
 
 Nous déclarons ici ces deux variables :
@@ -628,7 +628,7 @@ StandardToken public METoken;
 address public METOwner;
 ----
 
-Étant donné que notre robinet doit être initialisé avec les adresses correctes pour +METoken+ et `+METOwner+`,nous devons déclarer un constructeur personnalisé :
+Étant donné que notre robinet doit être initialisé avec les adresses correctes pour +METoken+ et `+METOwner+`, nous devons déclarer un constructeur personnalisé :
 
 [[custom_constructor]]
 [source,solidity]
@@ -643,7 +643,7 @@ function METFaucet(address _METoken, address _METOwner) public {
 }
 ----
 
-Le prochain changement concerne la fonction `+withdraw+`.Au lieu d'appeler `+transfer+`,+METFaucet+ utilise la fonction +transferFrom+ dans +METoken+ et demande à +METoken+ de transférer MET au destinataire du robinet :
+Le prochain changement concerne la fonction `+withdraw+`. Au lieu d'appeler `+transfer+`, +METFaucet+ utilise la fonction +transferFrom+ dans +METoken+ et demande à +METoken+ de transférer MET au destinataire du robinet :
 
 [[transfer_met]]
 [source,solidity]
@@ -652,7 +652,7 @@ Le prochain changement concerne la fonction `+withdraw+`.Au lieu d'appeler `+tra
 METoken.transferFrom(METOwner, msg.sender, withdraw_amount);
 ----
 
-Enfin, puisque notre robinet n'envoie plus d'ether, nous devrions probablement empêcher quiconque d'envoyer de l'ether à `+METFaucet+`,car nous ne voudrions pas qu'il reste bloqué. Nous modifions la fonction de paiement de secours pour rejeter l'ether entrant, en utilisant la fonction +revert+ pour annuler tout paiement entrant :
+Enfin, puisque notre robinet n'envoie plus d'ether, nous devrions probablement empêcher quiconque d'envoyer de l'ether à `+METFaucet+`, car nous ne voudrions pas qu'il reste bloqué. Nous modifions la fonction de paiement de secours pour rejeter l'ether entrant, en utilisant la fonction +revert+ pour annuler tout paiement entrant :
 
 [[reject_incoming_eth]]
 [source,solidity]
@@ -661,7 +661,7 @@ Enfin, puisque notre robinet n'envoie plus d'ether, nous devrions probablement e
 function () external payable { revert(); }
 ----
 
-Maintenant que notre code _METFaucet.sol_ est prêt, nous devons modifier le script de migration pour le déployer. Ce script de migration sera un peu plus complexe, car +METFaucet+ dépend de l'adresse de `+METoken+`.Nous utiliserons une promesse JavaScript pour déployer les deux contrats en séquence. Créez __2_deploy_contracts.js__ comme suit :
+Maintenant que notre code _METFaucet.sol_ est prêt, nous devons modifier le script de migration pour le déployer. Ce script de migration sera un peu plus complexe, car +METFaucet+ dépend de l'adresse de `+METoken+`. Nous utiliserons une promesse JavaScript pour déployer les deux contrats en séquence. Créez __2_deploy_contracts.js__ comme suit :
 
 [source,solidity]
 ----
@@ -680,7 +680,7 @@ module.exports = function(deployer) {
 }
 ----
 
-Maintenant, nous pouvons tout tester dans la console Truffle. Tout d'abord, nous utilisons +migrate+ pour déployer les contrats. Lorsque +METoken+ est déployé, il alloue tout le MET au compte qui l'a créé, `+web3.eth.accounts[0]+`.Ensuite, nous appelons la fonction +approve+ dans pass:[<code><span class="keep-together">METoken</span></code>] pour approuver +METFaucet+ afin d'envoyer jusqu'à 1 000 MET au nom de `+web3.eth.accounts[0]+`.Enfin, pour tester notre faucet, nous appelons +METFaucet.withdraw+ depuis +web3.eth.accounts[1]+ et essayons de retirer 10 MET. Voici les commandes de la console :
+Maintenant, nous pouvons tout tester dans la console Truffle. Tout d'abord, nous utilisons +migrate+ pour déployer les contrats. Lorsque +METoken+ est déployé, il alloue tout le MET au compte qui l'a créé, `+web3.eth.accounts[0]+`. Ensuite, nous appelons la fonction +approve+ dans pass:[<code><span class="keep-together">METoken</span></code>] pour approuver +METFaucet+ afin d'envoyer jusqu'à 1 000 MET au nom de `+web3.eth.accounts[0]+`. Enfin, pour tester notre faucet, nous appelons +METFaucet.withdraw+ depuis +web3.eth.accounts[1]+ et essayons de retirer 10 MET. Voici les commandes de la console :
 
 ++++
 <pre data-type="programlist">
@@ -739,7 +739,7 @@ Dans les prochaines sections, nous examinerons diverses propositions qui tentent
 [[ERC223_std]]
 ==== ERC223 : une norme d'interface de contrat de jeton proposée
 
-((("Proposition de norme de jeton ERC223")))((("jetons","Proposition de norme ERC223")))La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l'adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée `+tokenFallback+`.Si la destination d'un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c'est-à-dire qu'il n'implémente pas +tokenFallback+), le transfert échoue.
+((("Proposition de norme de jeton ERC223")))((("jetons","Proposition de norme ERC223")))La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l'adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée `+tokenFallback+`. Si la destination d'un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c'est-à-dire qu'il n'implémente pas +tokenFallback+), le transfert échoue.
 
 [[is_contract]]
 Pour détecter si l'adresse de destination est un contrat, l'implémentation de référence ERC223 utilise un petit segment de code intermédiaire en ligne d'une manière plutôt créative :
@@ -787,7 +787,7 @@ ERC223 n'est pas largement mis en œuvre, et il y a un débat dans le fil https:
 ((("Proposition de norme de jeton ERC777", id="ix_10tokens-asciidoc18", range="startofrange")))((("jetons","Proposition de norme ERC777", id="ix_10tokens-asciidoc19", range=" startofrange")))Une autre proposition pour une norme de contrat de jeton améliorée est https://eips.ethereum.org/EIPS/eip-777[ERC777]. Cette proposition a plusieurs objectifs, notamment :
 
 * Offrir une interface compatible ERC20
-* Pour transférer des jetons à l'aide d'une fonction `+send+`,similaire aux transferts d'ether
+* Pour transférer des jetons à l'aide d'une fonction `+send+`, similaire aux transferts d'ether
 * Pour être compatible avec ERC820 pour l'enregistrement de contrat de jeton
 * Pour permettre aux contrats et aux adresses de contrôler les jetons qu'ils envoient via une fonction `tokensToSend` qui est appelée avant l'envoi
 * Pour permettre aux contrats et aux adresses d'être informés de la réception des jetons en appelant une fonction `tokensReceived` dans le destinataire, et pour réduire la probabilité que les jetons soient verrouillés dans des contrats en exigeant que les contrats fournissent une fonction pass:[<span class="keep-together"><code>tokensReceived</code></span>]

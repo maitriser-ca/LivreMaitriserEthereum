@@ -299,7 +299,7 @@ La première ligne est un commentaire :
 // Notre premier contrat est un robinet (faucet) !
 ----
 
-Les commentaires sont destinés à être lus par des humains et ne sont pas inclus dans le code intermédiaire exécutable de l'EVM. Nous les plaçons généralement sur la ligne avant le code que nous essayons d'expliquer, ou parfois sur la même ligne. Les commentaires commencent par deux barres obliques : `+//+`.Tout, depuis la première barre oblique jusqu'à la fin de cette ligne, est traité comme une ligne vide et ignoré.
+Les commentaires sont destinés à être lus par des humains et ne sont pas inclus dans le code intermédiaire exécutable de l'EVM. Nous les plaçons généralement sur la ligne avant le code que nous essayons d'expliquer, ou parfois sur la même ligne. Les commentaires commencent par deux barres obliques : `+//+`. Tout, depuis la première barre oblique jusqu'à la fin de cette ligne, est traité comme une ligne vide et ignoré.
 
 La ligne suivante est l'endroit où notre contrat réel commence :
 
@@ -309,7 +309,7 @@ La ligne suivante est l'endroit où notre contrat réel commence :
 contract Faucet {
 ----
 
-Cette ligne déclare un objet `+contract+`,similaire à une déclaration +class+ dans d'autres langages orientés objet. La définition du contrat inclut toutes les lignes entre les accolades (pass:[<code>{}</code>]), qui définissent une _portée_, un peu comme la façon dont les accolades sont utilisées dans de nombreux autres langages de programmation.
+Cette ligne déclare un objet `+contract+`, similaire à une déclaration +class+ dans d'autres langages orientés objet. La définition du contrat inclut toutes les lignes entre les accolades (pass:[<code>{}</code>]), qui définissent une _portée_, un peu comme la façon dont les accolades sont utilisées dans de nombreux autres langages de programmation.
 
 Ensuite, nous déclarons la première fonction du contrat +Faucet+ :
 
@@ -319,7 +319,7 @@ Ensuite, nous déclarons la première fonction du contrat +Faucet+ :
 function withdraw(uint withdraw_amount) public {
 ----
 
-La fonction est nommée `+withdraw+`,et elle prend un argument entier non signé (`+uint+`)nommé `+withdraw_amount+`.Elle est déclarée fonction publique, c'est-à-dire qu'elle peut être appelée par d'autres contrats. La définition de la fonction suit, entre accolades. La première partie de la fonction +retirer+ fixe une limite aux retraits :
+La fonction est nommée `+withdraw+`, et elle prend un argument entier non signé (`+uint+`)nommé `+withdraw_amount+`. Elle est déclarée fonction publique, c'est-à-dire qu'elle peut être appelée par d'autres contrats. La définition de la fonction suit, entre accolades. La première partie de la fonction +retirer+ fixe une limite aux retraits :
 
 [[withdraw_limit]]
 [source,solidity]
@@ -353,7 +353,7 @@ function () external payable {}
 
 ((("fallback function")))Cette fonction est une fonction dite de _secours_ ou de _fallback_ (ou _default_), qui est appelée si la transaction qui a déclenché le contrat n'a nommé aucune des fonctions déclarées dans le contrat, ou aucune fonction du tout , ou ne contenait pas de données. Les contrats peuvent avoir une telle fonction par défaut (sans nom) et c'est généralement celle qui reçoit l'ether. C'est pourquoi il est défini comme une fonction externe et payante, ce qui signifie qu'il peut accepter de l'ether dans le contrat. Il ne fait rien d'autre que d'accepter l'ether, comme indiqué par la définition vide entre les accolades pass:[(<code>{}</code>)]. Si nous effectuons une transaction qui envoie de l'ether à l'adresse du contrat, comme s'il s'agissait d'un portefeuille, cette fonction s'en chargera.
 
-Juste en dessous de notre fonction par défaut se trouve l'accolade fermante finale, qui ferme la définition du contrat `+Faucet+`.C'est tout !(((range="endofrange", startref="ix_02intro-asciidoc11")))(((range="endofrange", startref="ix_02intro-asciidoc10")))
+Juste en dessous de notre fonction par défaut se trouve l'accolade fermante finale, qui ferme la définition du contrat `+Faucet+`. C'est tout !(((range="endofrange", startref="ix_02intro-asciidoc11")))(((range="endofrange", startref="ix_02intro-asciidoc10")))
 
 [[compile_faucet_contract]]
 === Compilation du contrat de robinet
@@ -419,7 +419,7 @@ N'êtes-vous pas content d'utiliser un langage de haut niveau comme Solidity au 
 
 ((("chaîne de blocs","création de contrat sur", id="ix_02intro-asciidoc14", range="startofrange")))((("Contrat Faucet.sol (exemple de test)","sur la chaîne de blocs", id ="ix_02intro-asciidoc15", range="startofrange")))Donc, nous avons un contrat. Nous l'avons compilé en code intermédiaire. Maintenant, nous devons "enregistrer" le contrat sur la chaîne de blocs Ethereum. Nous utiliserons le testnet de Ropsten pour tester notre contrat, c'est donc la chaîne de blocs à laquelle nous voulons le soumettre.
 
-((("adresse zéro","enregistrement d'un contrat")))L'enregistrement d'un contrat sur la chaîne de blocs implique la création d'une transaction spéciale dont la destination est l'adresse `+0x00000000000000000000000000000000000000+`,également appelée _zero address_ ou l'_adresse zéro_. L'adresse zéro est une adresse spéciale qui indique à la chaîne de blocs Ethereum que vous souhaitez enregistrer un contrat. Heureusement, l'IDE Remix s'occupera de tout cela pour vous et enverra la transaction à MetaMask.
+((("adresse zéro","enregistrement d'un contrat")))L'enregistrement d'un contrat sur la chaîne de blocs implique la création d'une transaction spéciale dont la destination est l'adresse `+0x00000000000000000000000000000000000000+`, également appelée _zero address_ ou l'_adresse zéro_. L'adresse zéro est une adresse spéciale qui indique à la chaîne de blocs Ethereum que vous souhaitez enregistrer un contrat. Heureusement, l'IDE Remix s'occupera de tout cela pour vous et enverra la transaction à MetaMask.
 
 ((("IDE Remix", id="ix_02intro-asciidoc16", range="startofrange")))Tout d'abord, passez à l'onglet Run et sélectionnez Injected Web3 dans la zone de sélection déroulante Environment. Cela connecte l'IDE Remix au portefeuille MetaMask et, via MetaMask, au réseau de test Ropsten. Une fois que vous faites cela, vous pouvez voir Ropsten sous Environment. De plus, dans la zone de sélection du compte, il indique l'adresse de votre portefeuille (voir <<remix_run>>).
 
@@ -427,7 +427,7 @@ N'êtes-vous pas content d'utiliser un langage de haut niveau comme Solidity au 
 .Onglet Run du IDE Remix, avec l'environnement Injected Web3 sélectionné
 image::images/remix_run.png["Onglet Run du IDE Remix, avec l'environnement Injected Web3 sélectionné"]
 
-Juste en dessous des paramètres d'exécution que vous venez de confirmer se trouve le contrat `+Faucet+`,prêt à être créé. Cliquez sur le bouton Deploy affiché dans <<remix_run>>.
+Juste en dessous des paramètres d'exécution que vous venez de confirmer se trouve le contrat `+Faucet+`, prêt à être créé. Cliquez sur le bouton Deploy affiché dans <<remix_run>>.
 
 Remix construira la transaction spéciale "création" et MetaMask vous demandera de l'approuver, comme indiqué dans <<remix_metamask_create>>. Vous remarquerez que la transaction de création de contrat ne contient pas d'ether, mais qu'elle contient 262 octets de données (le contrat compilé) et consommera 10 gwei en gaz. Cliquez sur Soumettre pour l'approuver.
 
@@ -486,12 +486,12 @@ Vous souvenez-vous de la fonction de paiement externe par défaut sans nom dans 
 function () external payable {}
 ----
 
-Lorsque vous avez envoyé une transaction à l'adresse du contrat, sans données spécifiant la fonction à appeler, elle a appelé cette fonction par défaut. Parce que nous l'avons déclaré comme `+payable+`,il a accepté et déposé le 1 ether dans le solde du compte du contrat. Votre transaction a entraîné l'exécution du contrat dans l'EVM, mettant à jour son solde. Vous avez financé votre robinet !(((range="endofrange", startref="ix_02intro-asciidoc18")))
+Lorsque vous avez envoyé une transaction à l'adresse du contrat, sans données spécifiant la fonction à appeler, elle a appelé cette fonction par défaut. Parce que nous l'avons déclaré comme `+payable+`, il a accepté et déposé le 1 ether dans le solde du compte du contrat. Votre transaction a entraîné l'exécution du contrat dans l'EVM, mettant à jour son solde. Vous avez financé votre robinet !(((range="endofrange", startref="ix_02intro-asciidoc18")))
 
 [[withdraw_from_contract]]
 ==== Faire un retrait sur notre contrat
 
-((("Contrat Faucet.sol (exemple de test)","retrait de fonds de", id="ix_02intro-asciidoc19", range="startofrange")))((("retrait de fonds du contrat", id=" ix_02intro-asciidoc20", range="startofrange")))Ensuite, retirons des fonds du robinet. Pour retirer, nous devons construire une transaction qui appelle la fonction +withdraw+ et lui passe un argument `+withdraw_amount+`.Pour garder les choses simples pour le moment, Remix construira cette transaction pour nous et MetaMask la présentera pour notre approbation.
+((("Contrat Faucet.sol (exemple de test)","retrait de fonds de", id="ix_02intro-asciidoc19", range="startofrange")))((("retrait de fonds du contrat", id=" ix_02intro-asciidoc20", range="startofrange")))Ensuite, retirons des fonds du robinet. Pour retirer, nous devons construire une transaction qui appelle la fonction +withdraw+ et lui passe un argument `+withdraw_amount+`. Pour garder les choses simples pour le moment, Remix construira cette transaction pour nous et MetaMask la présentera pour notre approbation.
 
 Revenez à l'onglet Remix et consultez le contrat dans l'onglet Run. Vous devriez voir une boîte orange intitulée +wthdraw+ (retrait) avec une entrée de champ intitulée +uint256 withdraw_amount+ (voir <<remix_contract_withdraw>>).
 
@@ -507,7 +507,7 @@ Tout d'abord, déterminons le +withdraw_amount+ (montant de retrait). Nous voulo
 
 [TIP]
 ====
-En raison d'une limitation de JavaScript, un nombre aussi grand que 10^17^ ne peut pas être traité par Remix. Au lieu de cela, nous l'entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un `+BigNumber+`.Si nous ne le mettons pas entre guillemets, l'IDE Remix ne parviendra pas à le traiter et affichera "Error encoding arguments: Error: Assertion failed."
+En raison d'une limitation de JavaScript, un nombre aussi grand que 10^17^ ne peut pas être traité par Remix. Au lieu de cela, nous l'entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un `+BigNumber+`. Si nous ne le mettons pas entre guillemets, l'IDE Remix ne parviendra pas à le traiter et affichera "Error encoding arguments: Error: Assertion failed."
 ====
 
 Tapez "100000000000000000" (avec les guillemets) dans la case +withdraw_amount+ et cliquez sur le bouton de retrait (voir <<remix_withdraw>>).
@@ -542,7 +542,7 @@ Cette "transaction interne" a été envoyée par le contrat dans cette ligne de 
 msg.sender.transfer(withdraw_amount);
 ----
 
-Pour récapituler : vous avez envoyé une transaction depuis votre portefeuille MetaMask contenant des instructions de données pour appeler la fonction +withdraw+ avec un argument +withdraw_amount+ de 0,1 ether. Cette transaction a entraîné l'exécution du contrat à l'intérieur de l'EVM. Lorsque l'EVM a exécuté la fonction +withdraw+ du contrat `+Faucet+`,il a d'abord appelé la fonction +require+ et validé que le montant demandé était inférieur ou égal au retrait maximal autorisé de 0,1 ether. Ensuite, il a appelé la fonction +transfer+ pour vous envoyer l'ether. L'exécution de la fonction +transfer+ a généré une transaction interne qui a déposé 0,1 ether dans votre adresse de portefeuille, à partir du solde du contrat. C'est celui affiché sur l'onglet Internal Transactions dans Etherscan(((range="endofrange", startref="ix_02intro-asciidoc20")))(((range="endofrange", startref="ix_02intro-asciidoc19"))). (((range="endofrange", startref="ix_02intro-asciidoc14")))
+Pour récapituler : vous avez envoyé une transaction depuis votre portefeuille MetaMask contenant des instructions de données pour appeler la fonction +withdraw+ avec un argument +withdraw_amount+ de 0,1 ether. Cette transaction a entraîné l'exécution du contrat à l'intérieur de l'EVM. Lorsque l'EVM a exécuté la fonction +withdraw+ du contrat `+Faucet+`, il a d'abord appelé la fonction +require+ et validé que le montant demandé était inférieur ou égal au retrait maximal autorisé de 0,1 ether. Ensuite, il a appelé la fonction +transfer+ pour vous envoyer l'ether. L'exécution de la fonction +transfer+ a généré une transaction interne qui a déposé 0,1 ether dans votre adresse de portefeuille, à partir du solde du contrat. C'est celui affiché sur l'onglet Internal Transactions dans Etherscan(((range="endofrange", startref="ix_02intro-asciidoc20")))(((range="endofrange", startref="ix_02intro-asciidoc19"))). (((range="endofrange", startref="ix_02intro-asciidoc14")))
 
 [[etherscan_withdrawal_internal]]
 .Etherscan montre la transaction interne transférant l'ether du contrat

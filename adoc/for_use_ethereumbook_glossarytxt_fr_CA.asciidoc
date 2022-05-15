@@ -13,7 +13,7 @@ Adresse zéro::
 ((("zero adresse","défini")))Une adresse Ethereum spéciale, entièrement composée de zéros, qui est spécifiée comme adresse de destination d'une transaction de création de contrat.
 
 Affirmer::
-((("fonction affirmée","defined")))Dans Solidity, +assert(false)+ se compile en `+0xfe+`,un opcode invalide, qui utilise tout le gaz restant et annule toutes les modifications. Lorsqu'une instruction +assert()+ échoue, quelque chose de très faux et inattendu se produit, et vous devrez corriger votre code. Vous devez utiliser +assert()+ pour éviter les conditions qui ne devraient jamais se produire.
+((("fonction affirmée","defined")))Dans Solidity, +assert(false)+ se compile en `+0xfe+`, un opcode invalide, qui utilise tout le gaz restant et annule toutes les modifications. Lorsqu'une instruction +assert()+ échoue, quelque chose de très faux et inattendu se produit, et vous devrez corriger votre code. Vous devez utiliser +assert()+ pour éviter les conditions qui ne devraient jamais se produire.
 
 Arbre Merkle Patricia::
 ((("Merkle Patricia Tree")))Une structure de données utilisée dans Ethereum pour stocker efficacement les paires clé-valeur.

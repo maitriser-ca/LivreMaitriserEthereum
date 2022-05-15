@@ -21,8 +21,8 @@ Actuellement, il existe six implémentations principales du protocole Ethereum, 
 
 * Parity, écrite en Rust
 * Geth, écrit en Go
-* `+cpp-ethereum+`,écrit en Cpass:[++]
-* `+pyethereum+`,écrit en Python
+* `+cpp-ethereum+`, écrit en Cpass:[++]
+* `+pyethereum+`, écrit en Python
 * Mantis, écrit en Scala
 * Harmony, écrit en Java
 
@@ -154,10 +154,10 @@ En règle générale, chaque chaîne de blocs aura sa propre version de Geth, ta
 
 [TIP]
 =====
-((("symbole $")))((("interface de ligne de commande")))((("commandes shell")))((("applications de terminal")))Dans de nombreux exemples de ce chapitre , nous utiliserons l'interface de ligne de commande du système d'exploitation (également appelée "shell"), accessible via une application "terminal". Le shell affichera une invite ; vous tapez une commande et le shell répond avec du texte et une nouvelle invite pour votre prochaine commande. L'invite peut sembler différente sur votre système, mais dans les exemples suivants, elle est indiquée par un symbole `+$+`. Dans les exemples, lorsque vous voyez du texte après un symbole `+$+`,ne tapez pas le symbole `+$+` mais tapez la commande qui le suit immédiatement (en gras), puis appuyez sur Entrée pour exécuter la commande. Dans les exemples, les lignes sous chaque commande sont les réponses du système d'exploitation à cette commande. Lorsque vous verrez le prochain préfixe `+$+`,vous saurez qu'il s'agit d'une nouvelle commande et vous devrez répéter le processus.
+((("symbole $")))((("interface de ligne de commande")))((("commandes shell")))((("applications de terminal")))Dans de nombreux exemples de ce chapitre , nous utiliserons l'interface de ligne de commande du système d'exploitation (également appelée "shell"), accessible via une application "terminal". Le shell affichera une invite ; vous tapez une commande et le shell répond avec du texte et une nouvelle invite pour votre prochaine commande. L'invite peut sembler différente sur votre système, mais dans les exemples suivants, elle est indiquée par un symbole `+$+`. Dans les exemples, lorsque vous voyez du texte après un symbole `+$+`, ne tapez pas le symbole `+$+` mais tapez la commande qui le suit immédiatement (en gras), puis appuyez sur Entrée pour exécuter la commande. Dans les exemples, les lignes sous chaque commande sont les réponses du système d'exploitation à cette commande. Lorsque vous verrez le prochain préfixe `+$+`, vous saurez qu'il s'agit d'une nouvelle commande et vous devrez répéter le processus.
 =====
 
-Avant de commencer, vous devrez peut-être installer certains logiciels. Si vous n'avez jamais fait de développement logiciel sur l'ordinateur que vous utilisez actuellement, vous devrez probablement installer quelques outils de base. Pour les exemples qui suivent, vous devrez installer `+git+`,le système de gestion du code source ; `+golang+`,le langage de programmation Go et les bibliothèques standard ; et Rust, un langage de programmation système.
+Avant de commencer, vous devrez peut-être installer certains logiciels. Si vous n'avez jamais fait de développement logiciel sur l'ordinateur que vous utilisez actuellement, vous devrez probablement installer quelques outils de base. Pour les exemples qui suivent, vous devrez installer `+git+`, le système de gestion du code source ; `+golang+`, le langage de programmation Go et les bibliothèques standard ; et Rust, un langage de programmation système.
 
 ((("git")))Git peut être installé en suivant les instructions sur https://git-scm.com[].
 
@@ -177,7 +177,7 @@ La version de +golang+ installée sur votre système d'exploitation ou disponibl
 Parity nécessite Rust version 1.27 ou supérieure.
 =====
 
-((("Parity","bibliothèques pour")))Parity nécessite également certaines bibliothèques logicielles, telles que OpenSSL et `+libudev+`.Pour les installer sur un système compatible Ubuntu ou Debian GNU/Linux, utilisez la  pass:[<span class="keep-together">commande</span>] suivante :
+((("Parity","bibliothèques pour")))Parity nécessite également certaines bibliothèques logicielles, telles que OpenSSL et `+libudev+`. Pour les installer sur un système compatible Ubuntu ou Debian GNU/Linux, utilisez la  pass:[<span class="keep-together">commande</span>] suivante :
 
 ++++
 <pre data-type="programlisting">
@@ -188,7 +188,7 @@ $ <strong>sudo apt-get install openssl libssl-dev libudev-dev cmake clang</stron
 
 Pour les autres systèmes d'exploitation, utilisez le gestionnaire d'applications de votre système d'exploitation ou suivez les https://github.com/paritytech/parity/wiki/Setup [instructions Wiki] pour installer les bibliothèques requises.
 
-Maintenant que vous avez installé `+git+`,+golang+, Rust et les bibliothèques nécessaires, mettons-nous au travail !
+Maintenant que vous avez installé `+git+`, +golang+, Rust et les bibliothèques nécessaires, mettons-nous au travail !
 
 [[parity]]
 ==== Parity
@@ -417,7 +417,7 @@ La synchronisation de la chaîne de blocs Ethereum prendra entre une demi-journ�
 
 Habituellement, l'interface RPC est proposée en tant que service HTTP sur le port 8545. Pour des raisons de sécurité, il est restreint, par défaut, de n'accepter que les connexions de localhost (l'adresse IP de votre propre ordinateur, qui est 127.0.0.1).
 
-Pour accéder à l'API JSON-RPC, vous pouvez utiliser une bibliothèque spécialisée (écrite dans le langage de programmation de votre choix) qui fournit des appels de fonction "stub" correspondant à chaque commande RPC disponible, ou vous pouvez construire manuellement des requêtes HTTP et envoyer/recevoir des requêtes codées en JSON. Vous pouvez même utiliser un client HTTP de ligne de commande générique, comme `+curl+`,pour appeler l'interface RPC. Essayons ça. Tout d'abord, assurez-vous que Geth est opérationnel, configuré avec --rpc pour autoriser l'accès HTTP à l'interface RPC, puis passez à une nouvelle fenêtre de terminal (par exemple, avec Ctrl-Maj-N ou Ctrl-Maj-T dans un fenêtre de terminal) comme indiqué ici :
+Pour accéder à l'API JSON-RPC, vous pouvez utiliser une bibliothèque spécialisée (écrite dans le langage de programmation de votre choix) qui fournit des appels de fonction "stub" correspondant à chaque commande RPC disponible, ou vous pouvez construire manuellement des requêtes HTTP et envoyer/recevoir des requêtes codées en JSON. Vous pouvez même utiliser un client HTTP de ligne de commande générique, comme `+curl+`, pour appeler l'interface RPC. Essayons ça. Tout d'abord, assurez-vous que Geth est opérationnel, configuré avec --rpc pour autoriser l'accès HTTP à l'interface RPC, puis passez à une nouvelle fenêtre de terminal (par exemple, avec Ctrl-Maj-N ou Ctrl-Maj-T dans un fenêtre de terminal) comme indiqué ici :
 
 ++++
 <pre data-type="programlisting">
@@ -431,7 +431,7 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
 </pre>
 ++++
 
-Dans cet exemple, nous utilisons +curl+ pour établir une connexion HTTP à l'adresse _http://localhost:8545_. Nous exécutons déjà `+geth+`,qui propose l'API JSON-RPC en tant que service HTTP sur le port 8545. Nous demandons à +curl+ d'utiliser la commande HTTP +POST+ et d'identifier le contenu en tant que type `+application/json+`.Enfin, nous transmettons une requête encodée en JSON en tant que composant +data+ de notre requête HTTP. La majeure partie de notre ligne de commande consiste simplement à configurer +curl+ pour établir correctement la connexion HTTP. La partie intéressante est la commande JSON-RPC que nous émettons :
+Dans cet exemple, nous utilisons +curl+ pour établir une connexion HTTP à l'adresse _http://localhost:8545_. Nous exécutons déjà `+geth+`, qui propose l'API JSON-RPC en tant que service HTTP sur le port 8545. Nous demandons à +curl+ d'utiliser la commande HTTP +POST+ et d'identifier le contenu en tant que type `+application/json+`. Enfin, nous transmettons une requête encodée en JSON en tant que composant +data+ de notre requête HTTP. La majeure partie de notre ligne de commande consiste simplement à configurer +curl+ pour établir correctement la connexion HTTP. La partie intéressante est la commande JSON-RPC que nous émettons :
 
 [[JSON_RPC_command]]
 ----
@@ -446,7 +446,7 @@ La requête JSON-RPC est formatée conformément à la https://www.jsonrpc.org/s
 
 ++params++:: Une valeur structurée qui contient les valeurs de paramètre à utiliser lors de l'invocation de la méthode. Ce membre PEUT être omis.
 
-++id++:: Un identifiant établi par le client qui DOIT contenir une valeur `+String+`,+Number+ ou +NULL+ si elle est incluse. Le serveur DOIT répondre avec la même valeur dans l'objet de réponse s'il est inclus. Ce membre est utilisé pour corréler le contexte entre les deux objets.
+++id++:: Un identifiant établi par le client qui DOIT contenir une valeur `+String+`, +Number+ ou +NULL+ si elle est incluse. Le serveur DOIT répondre avec la même valeur dans l'objet de réponse s'il est inclus. Ce membre est utilisé pour corréler le contexte entre les deux objets.
 
 [TIP]
 ====
@@ -476,7 +476,7 @@ $ <strong>curl -X POST -H "Content-Type: application/json" --data \
 </pre>
 ++++
 
-La réponse, `+0x430e23400+`,nous indique que le prix actuel du gaz est de 18 gwei (gigawei ou milliard de wei). Si, comme nous, vous ne pensez pas en hexadécimal, vous pouvez le convertir en décimal sur la ligne de commande avec un petit bash-fu :
+La réponse, `+0x430e23400+`, nous indique que le prix actuel du gaz est de 18 gwei (gigawei ou milliard de wei). Si, comme nous, vous ne pensez pas en hexadécimal, vous pouvez le convertir en décimal sur la ligne de commande avec un petit bash-fu :
 
 ++++
 <pre data-type="programlisting">

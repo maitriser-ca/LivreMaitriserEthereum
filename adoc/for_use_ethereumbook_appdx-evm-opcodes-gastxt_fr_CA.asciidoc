@@ -317,7 +317,7 @@
 
 |`0xf6` - `0xf9` |Inutilisé |- |- |
 
-|`0xfa` |+STATICCALL+ |Semblable à `+CALL+`,mais ne modifie pas l'état |- |40
+|`0xfa` |+STATICCALL+ |Semblable à `+CALL+`, mais ne modifie pas l'état |- |40
 
 |`0xfb` |+CREATE2+ |Crée un nouveau compte et défini l'adresse de création sur `sha3(sender + sha3(init code)) % 2**160` |- |
 

@@ -220,7 +220,7 @@ $ <strong>solc --help</strong>
 ++++
 
 [[solc_opcodes_option]]
-La génération du flux d'opcode brut d'un fichier source Solidity est facilement réalisée avec l'option de ligne de commande `+--opcodes+`.Ce flux d'opcode laisse de côté certaines informations (l'option +--asm+ produit les informations complètes), mais c'est suffisant pour cette discussion. Par exemple, la compilation d'un exemple de fichier Solidity, _Example.sol_, et l'envoi de la sortie de l'opcode dans un répertoire nommé _BytecodeDir_ s'effectuent avec la commande suivante :
+La génération du flux d'opcode brut d'un fichier source Solidity est facilement réalisée avec l'option de ligne de commande `+--opcodes+`. Ce flux d'opcode laisse de côté certaines informations (l'option +--asm+ produit les informations complètes), mais c'est suffisant pour cette discussion. Par exemple, la compilation d'un exemple de fichier Solidity, _Example.sol_, et l'envoi de la sortie de l'opcode dans un répertoire nommé _BytecodeDir_ s'effectuent avec la commande suivante :
 
 ++++
 <pre data-type="programlisting">
@@ -267,7 +267,7 @@ contract example {
 
 Comme vous pouvez le voir, ce contrat ne contient qu'une seule variable d'état persistante, qui est définie comme l'adresse du dernier compte pour exécuter ce contrat.
 
-Si vous regardez dans le répertoire _BytecodeDir_, vous verrez le fichier d'opcode _example.opcode_, qui contient les instructions d'opcode EVM du contrat `+example+`.L'ouverture du fichier _example.opcode_ dans un éditeur de texte affichera ce qui suit :
+Si vous regardez dans le répertoire _BytecodeDir_, vous verrez le fichier d'opcode _example.opcode_, qui contient les instructions d'opcode EVM du contrat `+example+`. L'ouverture du fichier _example.opcode_ dans un éditeur de texte affichera ce qui suit :
 
 [[opcode_output]]
 ----
@@ -358,7 +358,7 @@ Vous pouvez enquêter sur ce qui se passe ici en détail en utilisant la liste d
 PUSH1 0x60 PUSH1 0x40 MSTORE CALLVALUE
 ----
 
-Ici, nous avons +PUSH1+ suivi d'un octet brut de valeur `+0x60+`.Cette instruction EVM prend l'octet unique suivant l'opcode dans le code du programme (en tant que valeur littérale) et le pousse sur la pile. Il est possible de pousser des valeurs de taille jusqu'à 32 octets sur la pile, comme dans :
+Ici, nous avons +PUSH1+ suivi d'un octet brut de valeur `+0x60+`. Cette instruction EVM prend l'octet unique suivant l'opcode dans le code du programme (en tant que valeur littérale) et le pousse sur la pile. Il est possible de pousser des valeurs de taille jusqu'à 32 octets sur la pile, comme dans :
 
 ----
 PUSH32 0x436f6e67726174756c6174696f6e732120536f6f6e20746f206d617374657221
@@ -366,9 +366,9 @@ PUSH32 0x436f6e67726174756c6174696f6e732120536f6f6e20746f206d617374657221
 
 Le deuxième opcode +PUSH1+ de _example.opcode_ stocke +0x40+ en haut de la pile (en poussant le +0x60+ déjà présent d'un emplacement vers le bas).
 
-Vient ensuite `+MSTORE+`,qui est une opération de stockage en mémoire qui enregistre une valeur dans la mémoire de l'EVM. Il prend deux arguments et, comme la plupart des opérations EVM, les obtient de la pile. Pour chaque argument, la pile est “poppée” (popped) c'est-à-dire que la valeur supérieure de la pile est retirée et toutes les autres valeurs de la pile sont décalées d'une position. Le premier argument de +MSTORE+ est l'adresse du mot en mémoire où sera mise la valeur à sauvegarder. Pour ce programme, nous avons +0x40+ en haut de la pile, de sorte qu'il est retiré de la pile et utilisé comme adresse mémoire. Le deuxième argument est la valeur à sauvegarder, qui est +0x60+ ici. Après l'exécution de l'opération `+MSTORE+`,notre pile est à nouveau vide, mais nous avons la valeur +0x60+ (+96+ en décimal) à l'emplacement mémoire +0x40+.
+Vient ensuite `+MSTORE+`, qui est une opération de stockage en mémoire qui enregistre une valeur dans la mémoire de l'EVM. Il prend deux arguments et, comme la plupart des opérations EVM, les obtient de la pile. Pour chaque argument, la pile est “poppée” (popped) c'est-à-dire que la valeur supérieure de la pile est retirée et toutes les autres valeurs de la pile sont décalées d'une position. Le premier argument de +MSTORE+ est l'adresse du mot en mémoire où sera mise la valeur à sauvegarder. Pour ce programme, nous avons +0x40+ en haut de la pile, de sorte qu'il est retiré de la pile et utilisé comme adresse mémoire. Le deuxième argument est la valeur à sauvegarder, qui est +0x60+ ici. Après l'exécution de l'opération `+MSTORE+`, notre pile est à nouveau vide, mais nous avons la valeur +0x60+ (+96+ en décimal) à l'emplacement mémoire +0x40+.
 
-L'opcode suivant est `+CALLVALUE+`,qui est un opcode environnemental qui pousse vers le haut de la pile la quantité d'ether (mesurée en wei) envoyée avec l'appel de message qui a initié cette exécution.
+L'opcode suivant est `+CALLVALUE+`, qui est un opcode environnemental qui pousse vers le haut de la pile la quantité d'ether (mesurée en wei) envoyée avec l'appel de message qui a initié cette exécution.
 
 Nous pourrions continuer à parcourir ce programme de cette manière jusqu'à ce que nous ayons une compréhension complète des changements d'état de bas niveau que ce code effectue, mais cela ne nous aiderait pas à ce stade. Nous y reviendrons plus tard dans le chapitre.(((range="endofrange", startref="ix_13evm-asciidoc6")))(((range="endofrange", startref="ix_13evm-asciidoc5"))) (((range="endofrange", startref="ix_13evm-asciidoc4")))
 
@@ -429,7 +429,7 @@ Dans cette section, nous utiliserons le plug-in Ethersplay pour Binary Ninja et 
 .Démontage du code intermédiaire d'exécution du robinet
 image::images/Faucet_disassembled.png["Le code intermédiaire d'exécution de Faucet.sol a été désassemblé"]
 
-Lorsque vous envoyez une transaction à un contrat intelligent compatible ABI (ce que vous pouvez supposer que tous les contrats le sont), la transaction interagit d'abord avec le _répartiteur_ de ce contrat intelligent. Le répartiteur lit le champ +data+ de la transaction et envoie la partie pertinente à la fonction appropriée. Nous pouvons voir un exemple de répartiteur au début de notre code intermédiaire d'exécution _Faucet.sol_ désassemblé. Après l'instruction familière `+MSTORE+`,nous voyons les instructions suivantes :
+Lorsque vous envoyez une transaction à un contrat intelligent compatible ABI (ce que vous pouvez supposer que tous les contrats le sont), la transaction interagit d'abord avec le _répartiteur_ de ce contrat intelligent. Le répartiteur lit le champ +data+ de la transaction et envoie la partie pertinente à la fonction appropriée. Nous pouvons voir un exemple de répartiteur au début de notre code intermédiaire d'exécution _Faucet.sol_ désassemblé. Après l'instruction familière `+MSTORE+`, nous voyons les instructions suivantes :
 
 [[faucet_instructions]]
 ----
@@ -449,16 +449,16 @@ Comme nous l'avons vu, +PUSH1 0x4+ place +0x4+ en haut de la pile, qui est autre
 |+0x4+
 |======================
 
-Cette instruction suivante est `+LT+`,abréviation de "plus petit que". L'instruction +LT+ vérifie si l'élément du haut de la pile est inférieur à l'élément suivant de la pile. Dans notre cas, il vérifie si le résultat de +CALLDATASIZE+ est inférieur à 4 octets.
+Cette instruction suivante est `+LT+`, abréviation de "plus petit que". L'instruction +LT+ vérifie si l'élément du haut de la pile est inférieur à l'élément suivant de la pile. Dans notre cas, il vérifie si le résultat de +CALLDATASIZE+ est inférieur à 4 octets.
 
-Pourquoi l'EVM vérifie-t-il que les données d'appel de la transaction font au moins 4 octets ? En raison du fonctionnement des identificateurs de fonction. Chaque fonction est identifiée par les 4 premiers octets de son hachage Keccak-256. En plaçant le nom de la fonction et les arguments qu'elle prend dans une fonction de hachage `+keccak256+`,nous pouvons déduire son identifiant de fonction. Dans notre cas, nous avons :
+Pourquoi l'EVM vérifie-t-il que les données d'appel de la transaction font au moins 4 octets ? En raison du fonctionnement des identificateurs de fonction. Chaque fonction est identifiée par les 4 premiers octets de son hachage Keccak-256. En plaçant le nom de la fonction et les arguments qu'elle prend dans une fonction de hachage `+keccak256+`, nous pouvons déduire son identifiant de fonction. Dans notre cas, nous avons :
 
 [[faucet_function_identifier]]
 ```
 keccak256("withdraw(uint256)") = 0x2e1a7d4d...
 ```
 
-Ainsi, l'identifiant de fonction pour la fonction +withdraw(uint256)+ est `+0x2e1a7d4d+`,puisqu'il s'agit des 4 premiers octets du hachage résultant. Un identifiant de fonction a toujours une longueur de 4 octets, donc si le champ entier +data+ de la transaction envoyée au contrat est inférieur à 4 octets, alors il n'y a pas de fonction avec laquelle la transaction pourrait éventuellement communiquer, à moins qu'une _fonction de secours_ ne soit définie. Parce que nous avons implémenté une telle fonction de secours dans _Faucet.sol_, l'EVM saute à cette fonction lorsque la longueur des données d'appel est inférieure à 4 octets.
+Ainsi, l'identifiant de fonction pour la fonction +withdraw(uint256)+ est `+0x2e1a7d4d+`, puisqu'il s'agit des 4 premiers octets du hachage résultant. Un identifiant de fonction a toujours une longueur de 4 octets, donc si le champ entier +data+ de la transaction envoyée au contrat est inférieur à 4 octets, alors il n'y a pas de fonction avec laquelle la transaction pourrait éventuellement communiquer, à moins qu'une _fonction de secours_ ne soit définie. Parce que nous avons implémenté une telle fonction de secours dans _Faucet.sol_, l'EVM saute à cette fonction lorsque la longueur des données d'appel est inférieure à 4 octets.
 
 +LT+ retire les deux premières valeurs de la pile et, si le champ +data+ de la transaction est inférieur à 4 octets, il y pousse un `+1+`. Sinon, il pousse un `+0+`. Dans notre exemple, supposons que le champ +data+ de la transaction envoyée à notre contrat _était_ inférieur à 4 octets.
 
@@ -471,16 +471,16 @@ L'instruction +PUSH1 0x3f+ pousse l'octet +0x3f+ sur la pile. Après cette instr
 |+1+
 |======================
 
-L'instruction suivante est `+JUMPI+`,qui signifie "sauter si". Cela fonctionne comme ceci :
+L'instruction suivante est `+JUMPI+`, qui signifie "sauter si". Cela fonctionne comme ceci :
 
 [[faucet_jump_instruction_text]]
 ----
 jumpi(label, cond) // Aller à "label" si "cond" est vrai
 ----
 
-Dans notre cas, +label+ est `+0x3f+`,où réside notre fonction de secours dans notre contrat intelligent. L'argument +cond+ est `+1+`,qui était le résultat de l'instruction +LT+ précédente. Pour mettre toute cette séquence en mots, le contrat passe à la fonction de repli si les données de transaction sont inférieures à 4 octets.
+Dans notre cas, +label+ est `+0x3f+`, où réside notre fonction de secours dans notre contrat intelligent. L'argument +cond+ est `+1+`, qui était le résultat de l'instruction +LT+ précédente. Pour mettre toute cette séquence en mots, le contrat passe à la fonction de repli si les données de transaction sont inférieures à 4 octets.
 
-À `+0x3f+`,seule une instruction +STOP+ suit, car bien que nous ayons déclaré une fonction de repli, nous l'avons laissée vide. Comme vous pouvez le voir dans <<Faucet_jumpi_instruction>>, si nous n'avions pas implémenté une fonction de secours, le contrat lèverait une exception à la place.
+À `+0x3f+`, seule une instruction +STOP+ suit, car bien que nous ayons déclaré une fonction de repli, nous l'avons laissée vide. Comme vous pouvez le voir dans <<Faucet_jumpi_instruction>>, si nous n'avions pas implémenté une fonction de secours, le contrat lèverait une exception à la place.
 
 [[Faucet_jumpi_instruction]]
 .Instruction JUMPI menant à la fonction de repli
@@ -511,7 +511,7 @@ JUMPI
 calldataload(p) //charge 32 octets de données d'appel à partir de la position d'octet p
 ----
 
-Puisque `+0+` était l'index qui lui a été transmis par la commande `+PUSH1 0x0+`,+CALLDATALOAD+ lit 32 octets de données d'appel à partir de l'octet 0, puis le pousse vers le haut de la pile (après avoir extrait le +0x0+ d'origine). Après l'instruction ++PUSH29 0x1000000++..., la pile est alors :
+Puisque `+0+` était l'index qui lui a été transmis par la commande `+PUSH1 0x0+`, +CALLDATALOAD+ lit 32 octets de données d'appel à partir de l'octet 0, puis le pousse vers le haut de la pile (après avoir extrait le +0x0+ d'origine). Après l'instruction ++PUSH29 0x1000000++..., la pile est alors :
 
 [width="40%",frame="topbot",options="header,footer"]
 |======================
@@ -529,7 +529,7 @@ Puisque `+0+` était l'index qui lui a été transmis par la commande `+PUSH1 0x
 |++0x1000000++... (longueur de 29 octets)
 |======================
 
-L'instruction suivante est `+DIV+`,qui fonctionne comme suit :
+L'instruction suivante est `+DIV+`, qui fonctionne comme suit :
 
 [[faucet_div_instruction_text]]
 ----
@@ -551,7 +551,7 @@ Le résultat du +DIV+ (l'identifiant de la fonction) est poussé sur la pile, et
 |<function identifier sent in +data+>
 |======================
 
-Étant donné que les instructions +PUSH4 0xffffffff+ et +AND+ sont redondantes, nous pouvons les ignorer complètement, car la pile restera la même après leur exécution. L'instruction +DUP1+ duplique le premier élément de la pile, qui est l'identificateur de la fonction. L'instruction suivante, `+PUSH4 0x2e1a7d4d+`,pousse l'identificateur de fonction précalculé de la fonction pass:[<code><span class="keep-together">withdraw</span> (uint256)</code>] sur la pile. La pile est maintenant :
+Étant donné que les instructions +PUSH4 0xffffffff+ et +AND+ sont redondantes, nous pouvons les ignorer complètement, car la pile restera la même après leur exécution. L'instruction +DUP1+ duplique le premier élément de la pile, qui est l'identificateur de la fonction. L'instruction suivante, `+PUSH4 0x2e1a7d4d+`, pousse l'identificateur de fonction précalculé de la fonction pass:[<code><span class="keep-together">withdraw</span> (uint256)</code>] sur la pile. La pile est maintenant :
 
 [width="40%",frame="topbot",options="header,footer"]
 |======================
@@ -561,9 +561,9 @@ Le résultat du +DIV+ (l'identifiant de la fonction) est poussé sur la pile, et
 |<function identifier sent in +data+>
 |======================
 
-L'instruction suivante, `+EQ+`,extrait les deux premiers éléments de la pile et les compare. C'est là que le répartiteur fait son travail principal : il compare si l'identifiant de la fonction envoyé dans le champ +msg.data+ de la transaction correspond à celui de pass:[<code><span class="keep-together">withdraw</span> (uint256)</code>]. S'ils sont égaux, +EQ+ pousse `+1+` sur la pile, qui sera finalement utilisé pour passer à la fonction de retrait. Sinon, +EQ+ pousse `+0+` sur la pile.
+L'instruction suivante, `+EQ+`, extrait les deux premiers éléments de la pile et les compare. C'est là que le répartiteur fait son travail principal : il compare si l'identifiant de la fonction envoyé dans le champ +msg.data+ de la transaction correspond à celui de pass:[<code><span class="keep-together">withdraw</span> (uint256)</code>]. S'ils sont égaux, +EQ+ pousse `+1+` sur la pile, qui sera finalement utilisé pour passer à la fonction de retrait. Sinon, +EQ+ pousse `+0+` sur la pile.
 
-En supposant que la transaction envoyée à notre contrat a bien commencé avec l'identifiant de fonction pour `+withdraw(uint256)+`,notre pile est devenue :
+En supposant que la transaction envoyée à notre contrat a bien commencé avec l'identifiant de fonction pour `+withdraw(uint256)+`, notre pile est devenue :
 
 [width="40%",frame="topbot",options="header,footer"]
 |======================
@@ -572,7 +572,7 @@ En supposant que la transaction envoyée à notre contrat a bien commencé avec 
 |<function identifier sent in `+data+`>(maintenant connu pour être +0x2e1a7d4d+)
 |======================
 
-Ensuite, nous avons `+PUSH1 0x41+`,qui est l'adresse à laquelle la fonction +withdraw(uint256)+ vit dans le contrat. Après cette instruction, la pile ressemble à ceci :
+Ensuite, nous avons `+PUSH1 0x41+`, qui est l'adresse à laquelle la fonction +withdraw(uint256)+ vit dans le contrat. Après cette instruction, la pile ressemble à ceci :
 
 [width="40%",frame="topbot",options="header,footer"]
 |======================
@@ -582,7 +582,7 @@ Ensuite, nous avons `+PUSH1 0x41+`,qui est l'adresse à laquelle la fonction +wi
 |identifiant de la fonction envoyé dans +msg.data+
 |======================
 
-L'instruction +JUMPI+ est la suivante, et elle accepte à nouveau les deux premiers éléments de la pile comme arguments. Dans ce cas, nous avons `+jumpi(0x41, 1)+`,qui indique à l'EVM d'exécuter le saut vers l'emplacement de la fonction `+withdraw(uint256)+`,et l'exécution du code de cette fonction peut continuer.(((range ="endofrange", startref="ix_13evm-asciidoc10")))(((range="endofrange", startref="ix_13evm-asciidoc9")))
+L'instruction +JUMPI+ est la suivante, et elle accepte à nouveau les deux premiers éléments de la pile comme arguments. Dans ce cas, nous avons `+jumpi(0x41, 1)+`, qui indique à l'EVM d'exécuter le saut vers l'emplacement de la fonction `+withdraw(uint256)+`, et l'exécution du code de cette fonction peut continuer.(((range ="endofrange", startref="ix_13evm-asciidoc10")))(((range="endofrange", startref="ix_13evm-asciidoc9")))
 
 [[turing_completeness_and_gas]]
 === Complétude de Turing et Gaz
@@ -634,7 +634,7 @@ Bien que la transaction ait échoué, l'expéditeur se verra facturer des frais 
 
 ((("EVM (Ethereum Virtual Machine)","considérations sur la comptabilité du gaz")))((("gaz","considérations sur la comptabilité")))Les coûts relatifs du gaz des différentes opérations pouvant être effectuées par l'EVM ont ont été soigneusement choisis pour protéger au mieux la chaîne de blocs Ethereum contre les attaques. Vous pouvez voir un tableau détaillé des coûts de gaz pour différents opcodes EVM dans <<evm_opcodes_table>>.
 
-Les opérations plus intensives en calcul coûtent plus de gaz. Par exemple, l'exécution de la fonction +SHA3+ est 10 fois plus coûteuse (30 gaz) que l'opération +ADD+ (3 gaz). Plus important encore, certaines opérations, telles que `+EXP+`,nécessitent un paiement supplémentaire en fonction de la taille de l'opérande. L'utilisation de la mémoire EVM et le stockage des données dans le stockage en chaîne d'un contrat entraînent également un coût en gaz.
+Les opérations plus intensives en calcul coûtent plus de gaz. Par exemple, l'exécution de la fonction +SHA3+ est 10 fois plus coûteuse (30 gaz) que l'opération +ADD+ (3 gaz). Plus important encore, certaines opérations, telles que `+EXP+`, nécessitent un paiement supplémentaire en fonction de la taille de l'opérande. L'utilisation de la mémoire EVM et le stockage des données dans le stockage en chaîne d'un contrat entraînent également un coût en gaz.
 
 L'importance de faire correspondre le coût du gaz au coût réel des ressources a été démontrée en 2016 lorsqu'un attaquant a découvert et exploité une inadéquation des coûts. L'attaque a généré des transactions très coûteuses en calcul et a presque paralysé le réseau principal Ethereum. Cette inadéquation a été résolue par un hard fork (nom de code "Tangerine Whistle") qui a modifié les coûts relatifs du gaz.
 

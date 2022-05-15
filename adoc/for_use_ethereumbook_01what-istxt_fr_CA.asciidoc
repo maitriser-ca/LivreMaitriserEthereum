@@ -214,7 +214,7 @@ De plus, de nombreux DApps incluent d'autres composants décentralisés, tels qu
 
 [TIP]
 ====
-Vous pouvez voir des DApps orthographiés comme _ÐApps_. Le caractère Ð est le caractère latin appelé "ETH", faisant allusion à Ethereum. Pour afficher ce caractère, utilisez le point de code Unicode `+0xD0+`,ou si nécessaire l'entité caractère HTML +eth+ (ou entité décimale +#208+).
+Vous pouvez voir des DApps orthographiés comme _ÐApps_. Le caractère Ð est le caractère latin appelé "ETH", faisant allusion à Ethereum. Pour afficher ce caractère, utilisez le point de code Unicode `+0xD0+`, ou si nécessaire l'entité caractère HTML +eth+ (ou entité décimale +#208+).
 ====
 
 [[evolving_WWW]]

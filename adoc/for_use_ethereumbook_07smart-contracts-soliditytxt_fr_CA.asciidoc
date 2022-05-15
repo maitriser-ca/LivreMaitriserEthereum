@@ -34,7 +34,7 @@ L'EVM fonctionne comme une instance locale sur chaque nœud Ethereum, mais comme
 
 ((("transactions","comme atomique")))Les transactions sont _atomique_, quel que soit le nombre de contrats qu'elles appellent ou ce que ces contrats font lorsqu'ils sont appelés. Les transactions s'exécutent dans leur intégralité, avec tout changement dans l'état global (contrats, comptes, etc.) enregistré uniquement si toutes les exécutions se terminent avec succès. Une fin réussie signifie que le programme s'est exécuté sans erreur et a atteint la fin de l'exécution. Si l'exécution échoue en raison d'une erreur, tous ses effets (changements d'état) sont "annulés" comme si la transaction n'avait jamais été exécutée. Une transaction échouée est toujours enregistrée comme ayant été tentée, et l'ether dépensé en gaz pour l'exécution est déduit du compte d'origine, mais cela n'a par ailleurs aucun autre effet sur le contrat ou l'état du compte.
 
-((("contrats intelligents","suppression")))Comme mentionné précédemment, il est important de se rappeler que le code d'un contrat ne peut pas être modifié. Cependant, un contrat peut être "supprimé", supprimant le code et son état interne (stockage) de son adresse, laissant un compte vide. Toutes les transactions envoyées à cette adresse de compte après la suppression du contrat n'entraînent aucune exécution de code, car il n'y a plus de code à exécuter. ((("SELFDESTRUCT opcode")))Pour supprimer un contrat, vous exécutez un opcode EVM appelé +SELFDESTRUCT+ (précédemment appelé +SUICIDE+). ((("gaz négatif")))Cette opération coûte du "gaz négatif", un remboursement de gaz, incitant ainsi à libérer les ressources du client du réseau à partir de la suppression de l'état stocké. La suppression d'un contrat de cette manière ne supprime pas l'historique des transactions (passé) du contrat, car la chaîne de blocs elle-même est immuable. Il est également important de noter que la capacité +SELFDESTRUCT+ ne sera disponible que si l'auteur du contrat a programmé le contrat intelligent pour avoir cette fonctionnalité. Si le code du contrat n'a pas d'opcode `+SELFDESTRUCT+`,ou s'il est inaccessible, le contrat intelligent ne peut pas être supprimé.
+((("contrats intelligents","suppression")))Comme mentionné précédemment, il est important de se rappeler que le code d'un contrat ne peut pas être modifié. Cependant, un contrat peut être "supprimé", supprimant le code et son état interne (stockage) de son adresse, laissant un compte vide. Toutes les transactions envoyées à cette adresse de compte après la suppression du contrat n'entraînent aucune exécution de code, car il n'y a plus de code à exécuter. ((("SELFDESTRUCT opcode")))Pour supprimer un contrat, vous exécutez un opcode EVM appelé +SELFDESTRUCT+ (précédemment appelé +SUICIDE+). ((("gaz négatif")))Cette opération coûte du "gaz négatif", un remboursement de gaz, incitant ainsi à libérer les ressources du client du réseau à partir de la suppression de l'état stocké. La suppression d'un contrat de cette manière ne supprime pas l'historique des transactions (passé) du contrat, car la chaîne de blocs elle-même est immuable. Il est également important de noter que la capacité +SELFDESTRUCT+ ne sera disponible que si l'auteur du contrat a programmé le contrat intelligent pour avoir cette fonctionnalité. Si le code du contrat n'a pas d'opcode `+SELFDESTRUCT+`, ou s'il est inaccessible, le contrat intelligent ne peut pas être supprimé.
 
 [[high_level_languages]]
 === Introduction aux langages de haut niveau Ethereum
@@ -70,7 +70,7 @@ Comme vous pouvez le voir, il existe de nombreux languages parmi lesquelles choi
 
 ((("contrats intelligents","construire avec Solidity", id="ix_07smart-contracts-solidity-asciidoc3", range="startofrange")))((("Solidity","construire un contrat intelligent avec", id ="ix_07smart-contracts-solidity-asciidoc4", range="startofrange")))Solidity ((("contrats intelligents","Solidity et", id="ix_07smart-contracts-solidity-asciidoc5", range="startofrange" )))((("Solidity","smart contracts and", id="ix_07smart-contracts-solidity-asciidoc6", range="startofrange")))a été créé par ((("Wood, Dr. Gavin", "et Solidity")))Dr. Gavin Wood (co-auteur de ce livre) en tant que langage explicite pour écrire des contrats intelligents avec des fonctionnalités permettant de prendre directement en charge l'exécution dans l'environnement décentralisé de l'ordinateur mondial Ethereum. Les attributs résultants sont assez généraux et ont donc fini par être utilisés pour coder des contrats intelligents sur plusieurs autres plateformes de chaîne de blocs. Il a été développé par Christian Reitiwessner puis également par Alex Beregszaszi, Liana Husikyan, Yoichi Hirai et plusieurs anciens contributeurs principaux d'Ethereum. Solidity est maintenant développé et maintenu en tant que projet indépendant https://github.com/ethereum/solidity[sur GitHub].
 
-Le "produit" principal du projet Solidity est le compilateur Solidity, `+solc+`,qui convertit les programmes écrits dans le langage Solidity en code intermédiaire EVM. Le projet gère également l'importante norme d'interface binaire d'application (ABI) pour les contrats intelligents Ethereum, que nous explorerons en détail dans ce chapitre. Chaque version du compilateur Solidity correspond à et compile une version spécifique de pass:[<span class="keep-together">language</span>] de Solidity.
+Le "produit" principal du projet Solidity est le compilateur Solidity, `+solc+`, qui convertit les programmes écrits dans le langage Solidity en code intermédiaire EVM. Le projet gère également l'importante norme d'interface binaire d'application (ABI) pour les contrats intelligents Ethereum, que nous explorerons en détail dans ce chapitre. Chaque version du compilateur Solidity correspond à et compile une version spécifique de pass:[<span class="keep-together">language</span>] de Solidity.
 
 Pour commencer, nous allons télécharger un exécutable binaire du compilateur Solidity. Ensuite, nous développerons et compilerons un contrat simple, à la suite de l'exemple avec lequel nous avons commencé dans <<intro_chapter>>.
 
@@ -101,7 +101,7 @@ $ <strong>sudo apt install solc</strong>
 </pre>
 ++++
 
-Une fois que vous avez installé `+solc+`,vérifiez la version en exécutant :
+Une fois que vous avez installé `+solc+`, vérifiez la version en exécutant :
 
 ++++
 <pre data-type="programlisting">
@@ -188,7 +188,7 @@ Contract JSON ABI
 </pre>
 ++++
 
-Comme vous pouvez le voir, le compilateur produit un tableau JSON décrivant les deux fonctions définies par _Faucet.sol_. Ce JSON peut être utilisé par toute application qui souhaite accéder au contrat +Faucet+ une fois qu'il est déployé. À l'aide de l'ABI, une application telle qu'un portefeuille ou un navigateur DApp peut construire des transactions qui appellent les fonctions dans + Faucet + avec les arguments et types d'arguments corrects. Par exemple, un portefeuille saura que pour appeler la fonction `+withdraw+`,il devra fournir un argument +uint256+ nommé `+withdraw_amount+`.Le portefeuille pourrait inviter l'utilisateur à fournir cette valeur, puis à créer une transaction qui l'encode et exécute la fonction +retirer+.
+Comme vous pouvez le voir, le compilateur produit un tableau JSON décrivant les deux fonctions définies par _Faucet.sol_. Ce JSON peut être utilisé par toute application qui souhaite accéder au contrat +Faucet+ une fois qu'il est déployé. À l'aide de l'ABI, une application telle qu'un portefeuille ou un navigateur DApp peut construire des transactions qui appellent les fonctions dans + Faucet + avec les arguments et types d'arguments corrects. Par exemple, un portefeuille saura que pour appeler la fonction `+withdraw+`, il devra fournir un argument +uint256+ nommé `+withdraw_amount+`. Le portefeuille pourrait inviter l'utilisateur à fournir cette valeur, puis à créer une transaction qui l'encode et exécute la fonction +retirer+.
 
 Tout ce qui est nécessaire pour qu'une application interagisse avec un contrat est un ABI et l'adresse où le contrat a été déployé.
 
@@ -206,7 +206,7 @@ pragma solidity ^0.4.19;
 
 Le compilateur Solidity lit le pragma de version et génère une erreur si la version du compilateur est incompatible avec le pragma de version. Dans ce cas, notre pragma de version indique que ce programme peut être compilé par un compilateur Solidity avec une version minimale de 0.4.19. Le symbole `+^+` indique, cependant, que nous autorisons la compilation avec toute _révision mineure_ au-dessus de 0.4.19 ; par exemple, 0.4.20, mais pas 0.5.0 (qui est une révision majeure, pas une révision mineure). Les directives Pragma ne sont pas compilées dans le code intermédiaire EVM. Ils ne sont utilisés par le compilateur que pour vérifier la compatibilité.
 
-Ajoutons une directive pragma à notre contrat `+Faucet+`.Nous nommerons le nouveau fichier pass:[<span class="keep-together"><em>Faucet2.sol</em></span>], pour garder une trace de nos modifications au fur et à mesure que nous avancerons dans ces exemples en commençant par <<add_pragma_to_faucet>>.
+Ajoutons une directive pragma à notre contrat `+Faucet+`. Nous nommerons le nouveau fichier pass:[<span class="keep-together"><em>Faucet2.sol</em></span>], pour garder une trace de nos modifications au fur et à mesure que nous avancerons dans ces exemples en commençant par <<add_pragma_to_faucet>>.
 
 [[add_pragma_to_faucet]]
 .Faucet2.sol : Ajout du pragma de version à Faucet
@@ -228,11 +228,11 @@ https://solidity.readthedocs.io/en/latest/[sur le site du projet].
 
 ((("Solidity","types de données", id="ix_07smart-contracts-solidity-asciidoc11", range="startofrange")))D'abord, examinons certains des types de données de base proposés dans Solidity :
 
-Boolean (+bool+):: valeur booléenne, +true+ ou `+false+`,avec les opérateurs logiques `+!+` (not), +&amp;&amp;+ (and), +||+ (or), +==+ (equal) et +!=+ (non égal).
+Boolean (+bool+):: valeur booléenne, +true+ ou `+false+`, avec les opérateurs logiques `+!+` (not), +&amp;&amp;+ (and), +||+ (or), +==+ (equal) et +!=+ (non égal).
 
-Integer (`+int+`,+uint+):: Entiers signés (`+int+`)et non signés (+uint+), déclarés par incréments de 8 bits de +int8+ à `+uint256+`.Sans suffixe de taille, des quantités de 256 bits sont utilisées pour correspondre à la taille de mot de l'EVM.
+Integer (`+int+`, `+uint+`):: Entiers signés (`+int+`)et non signés (+uint+), déclarés par incréments de 8 bits de +int8+ à `+uint256+`. Sans suffixe de taille, des quantités de 256 bits sont utilisées pour correspondre à la taille de mot de l'EVM.
 
-Fixed point (`+fixed+`,+ufixed+):: Nombres à virgule fixe, déclarés avec pass:[( <code>u</code>) <code>fixed <em>M</em> x <em>N</em></code>] où __++M++__ est la taille en bits (incréments de 8 jusqu'à 256) et __++N++__ est le nombre de décimales après le point (jusqu'à 18) ; par exemple, +ufixed32x2+.
+Fixed point (`+fixed+`,`+ufixed+`):: Nombres à virgule fixe, déclarés avec pass:[( <code>u</code>) <code>fixed <em>M</em> x <em>N</em></code>] où __++M++__ est la taille en bits (incréments de 8 jusqu'à 256) et __++N++__ est le nombre de décimales après le point (jusqu'à 18) ; par exemple, +ufixed32x2+.
 
 Address:: Une adresse Ethereum de 20 octets. L'objet +address+ a de nombreuses fonctions membres utiles, les principales étant +balance+ (renvoie le solde du compte) et pass:[<span class="keep-together"><code>transfer</code></span>] (transfère l'ether au compte).
 
@@ -250,11 +250,11 @@ Mapping:: Tables de recherche de hachage pour les paires __++key++__ +=&gt;+ _++
 
 En plus de ces types de données, Solidity propose également une variété de valeurs littérales qui peuvent être utilisées pour calculer différentes unités :
 
-Unités de temps:: Les unités `+seconds+`,+minutes+, +hours+ et +days+ peuvent être utilisées comme suffixes, convertis en multiples de l'unité de base +seconds+.
+Unités de temps:: Les unités `+seconds+`, `+minutes+`, `+hours+` et `+days+` peuvent être utilisées comme suffixes, convertis en multiples de l'unité de base +seconds+.
 
-Unités d'ether:: Les unités `+wei+`,+finney+, +szabo+ et +ether+ peuvent être utilisées comme suffixes, convertis en multiples de l'unité de base +wei+.
+Unités d'ether:: Les unités `+wei+`, `+finney+`, `+szabo+` et `+ether+` peuvent être utilisées comme suffixes, convertis en multiples de l'unité de base +wei+.
 
-Dans notre exemple de contrat `+Faucet+`,nous avons utilisé un +uint+ (qui est un alias pour `+uint256+`)pour la variable `+withdraw_amount+`.Nous avons également utilisé indirectement une variable `+address+`,que nous avons définie avec `+msg.sender+`.Nous utiliserons plus de ces types de données dans nos exemples dans le reste de ce chapitre.
+Dans notre exemple de contrat `+Faucet+`, nous avons utilisé un +uint+ (qui est un alias pour `+uint256+`)pour la variable `+withdraw_amount+`. Nous avons également utilisé indirectement une variable `+address+`, que nous avons définie avec `+msg.sender+`. Nous utiliserons plus de ces types de données dans nos exemples dans le reste de ce chapitre.
 
 Utilisons l'un des multiplicateurs d'unités pour améliorer la lisibilité de notre exemple de contrat. Dans la fonction +withdraw+ nous limitons le retrait maximum, en exprimant la limite en wei, l'unité de base de l'ether :
 
@@ -262,7 +262,7 @@ Utilisons l'un des multiplicateurs d'unités pour améliorer la lisibilité de n
 require(withdraw_amount <= 100000000000000000);
 ----
 
-Ce n'est pas très facile à lire. Nous pouvons améliorer notre code en utilisant le multiplicateur d'unité `+ether+`,pour exprimer la valeur en ether au lieu de wei :(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc11")))
+Ce n'est pas très facile à lire. Nous pouvons améliorer notre code en utilisant le multiplicateur d'unité `+ether+`, pour exprimer la valeur en ether au lieu de wei :(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc11")))
 
 ----
 require(withdraw_amount <= 0.1 ether);
@@ -270,7 +270,7 @@ require(withdraw_amount <= 0.1 ether);
 
 ==== Variables et fonctions globales prédéfinies
 
-((("Solidity","variables/fonctions globales prédéfinies", id="ix_07smart-contracts-solidity-asciidoc12", range="startofrange")))Lorsqu'un contrat est exécuté dans l'EVM, il a accès à un petit ensemble d'objets globaux. Ceux-ci incluent les objets `+block+`,+msg+ et `+tx+`.De plus, Solidity expose un certain nombre d'opcodes EVM en tant que fonctions prédéfinies. Dans cette section, nous examinerons les variables et les fonctions auxquelles vous pouvez accéder à partir d'un contrat intelligent dans Solidity.
+((("Solidity","variables/fonctions globales prédéfinies", id="ix_07smart-contracts-solidity-asciidoc12", range="startofrange")))Lorsqu'un contrat est exécuté dans l'EVM, il a accès à un petit ensemble d'objets globaux. Ceux-ci incluent les objets `+block+`, +msg+ et `+tx+`. De plus, Solidity expose un certain nombre d'opcodes EVM en tant que fonctions prédéfinies. Dans cette section, nous examinerons les variables et les fonctions auxquelles vous pouvez accéder à partir d'un contrat intelligent dans Solidity.
 
 ===== Contexte d'appel de transaction/message
 
@@ -288,7 +288,7 @@ require(withdraw_amount <= 0.1 ether);
 
 [NOTE]
 ====
-Chaque fois qu'un contrat appelle un autre contrat, les valeurs de tous les attributs de +msg+ changent pour refléter les informations du nouvel appelant. La seule exception à cela est la fonction `+delegatecall+`,qui exécute le code d'un autre contrat/bibliothèque dans le pass:[<span class="keep-together">contexte</span>] de +msg+.
+Chaque fois qu'un contrat appelle un autre contrat, les valeurs de tous les attributs de +msg+ changent pour refléter les informations du nouvel appelant. La seule exception à cela est la fonction `+delegatecall+`, qui exécute le code d'un autre contrat/bibliothèque dans le pass:[<span class="keep-together">contexte</span>] de +msg+.
 ====
 
 ===== Contexte transactionnel
@@ -322,13 +322,13 @@ Chaque fois qu'un contrat appelle un autre contrat, les valeurs de tous les attr
 
 +address.balance+:: Le solde de l'adresse, en wei. Par exemple, le solde actuel du contrat est +address(this).balance+.
 
-++address.transfer(__amount__)++:: Transfère le montant (en wei) à cette adresse, en levant une exception en cas d'erreur. Nous avons utilisé cette fonction dans notre exemple +Faucet+ comme méthode sur l'adresse `+msg.sender+`,comme +msg.sender.transfer+.
+++address.transfer(__amount__)++:: Transfère le montant (en wei) à cette adresse, en levant une exception en cas d'erreur. Nous avons utilisé cette fonction dans notre exemple +Faucet+ comme méthode sur l'adresse `+msg.sender+`, comme +msg.sender.transfer+.
 
-++address.send(__amount__)++:: similaire à `+transfer+`,mais au lieu de lancer une exception, il renvoie +false+ en cas d'erreur. ATTENTION : vérifiez toujours la valeur de retour de +send+.
+++address.send(__amount__)++:: similaire à `+transfer+`, mais au lieu de lancer une exception, il renvoie +false+ en cas d'erreur. ATTENTION : vérifiez toujours la valeur de retour de +send+.
 
 ++address.call(__payload__)++:: fonction +CALL+ de bas niveau — peut construire un appel de message arbitraire avec une charge utile de données. Renvoie +faux+ en cas d'erreur. AVERTISSEMENT : dangereux : le destinataire peut (accidentellement ou par malveillance) utiliser tout votre gaz, provoquant l'arrêt de votre contrat avec une exception +OOG+ ; vérifiez toujours la valeur de retour de +call+.
 
-++address.callcode(__payload__)++:: fonction +CALLCODE+ de bas niveau, comme +address(this).call(pass:[...])+ mais avec le code de ce contrat remplacé par celui de `+address+`.Renvoie +faux+ en cas d'erreur. AVERTISSEMENT : utilisation avancée uniquement !
+++address.callcode(__payload__)++:: fonction +CALLCODE+ de bas niveau, comme +address(this).call(pass:[...])+ mais avec le code de ce contrat remplacé par celui de `+address+`. Renvoie +faux+ en cas d'erreur. AVERTISSEMENT : utilisation avancée uniquement !
 
 +address.delegatecall()+:: Fonction +DELEGATECALL+ de bas niveau, comme +callcode(pass:[...])+ mais avec le contexte +msg+ complet vu par le contrat actuel. Renvoie +faux+ en cas d'erreur. AVERTISSEMENT : utilisation avancée uniquement !
 
@@ -338,7 +338,7 @@ Les autres fonctions à noter sont :
 
 +addmod+, +mulmod+:: Pour l'addition et la multiplication modulo. Par exemple, +addmod(x,y,k)+ calcule +pass:[(x + y) % k]+.
 
-+keccak256+, `+sha256+`,+sha3+, +ripemd160+:: Fonctions pour calculer les hachages avec divers algorithmes de hachage standard.
++keccak256+, `+sha256+`, +sha3+, +ripemd160+:: Fonctions pour calculer les hachages avec divers algorithmes de hachage standard.
 
 +ecrecover+:: Récupère l'adresse utilisée pour signer un message à partir de la signature.
 
@@ -359,7 +359,7 @@ Solidity propose deux autres types d'objets qui s'apparentent à un contrat :
 [[solidity_functions]]
 ==== Fonctions
 
-((("Solidity","fonctions", id="ix_07smart-contracts-solidity-asciidoc13", range="startofrange")))Au sein d'un contrat, on définit des fonctions qui peuvent être appelées par une transaction EOA ou un autre contrat. Dans notre exemple `+Faucet+`,nous avons deux fonctions : +withdraw+ et la fonction (sans nom) _fallback_.
+((("Solidity","fonctions", id="ix_07smart-contracts-solidity-asciidoc13", range="startofrange")))Au sein d'un contrat, on définit des fonctions qui peuvent être appelées par une transaction EOA ou un autre contrat. Dans notre exemple `+Faucet+`, nous avons deux fonctions : +withdraw+ et la fonction (sans nom) _fallback_.
 
 ((("Solidity","syntaxe de fonction")))La syntaxe que nous utilisons pour déclarer une fonction dans Solidity est la suivante :
 
@@ -376,11 +376,11 @@ Examinons chacun de ces composants :
 
 ++FunctionName++:: Le nom de la fonction, qui est utilisé pour appeler la fonction dans une transaction (à partir d'un EOA), à partir d'un autre contrat, ou même à partir du même contrat. ((("fonction fallback")))Une fonction dans chaque contrat peut être définie sans nom, auquel cas c'est la fonction _fallback_, qui est appelée lorsqu'aucune autre fonction n'est nommée. La fonction de secours ne peut pas avoir d'arguments ni rien renvoyer.
 
-__++parameters++__:: Après le nom, nous spécifions les arguments qui doivent être passés à la fonction, avec leurs noms et leurs types. Dans notre exemple `+Faucet+`,nous avons défini +uint remove_amount+ comme le seul argument de la fonction pass:[<code><span class="keep-together">withdraw</span></code>].
+__++parameters++__:: Après le nom, nous spécifions les arguments qui doivent être passés à la fonction, avec leurs noms et leurs types. Dans notre exemple `+Faucet+`, nous avons défini +uint remove_amount+ comme le seul argument de la fonction pass:[<code><span class="keep-together">withdraw</span></code>].
 
-Le prochain ensemble de mots clés (`+public+`,+private+, `+internal+`,+external+) spécifie la _visibilité_ de la fonction :
+Le prochain ensemble de mots clés (`+public+`, +private+, `+internal+`, +external+) spécifie la _visibilité_ de la fonction :
 
-+public+:: ((("fonction publique")))Public est la valeur par défaut ; ces fonctions peuvent être appelées par d'autres contrats ou transactions EOA, ou depuis le contrat. Dans notre exemple `+Faucet+`,les deux fonctions sont définies comme publiques.
++public+:: ((("fonction publique")))Public est la valeur par défaut ; ces fonctions peuvent être appelées par d'autres contrats ou transactions EOA, ou depuis le contrat. Dans notre exemple `+Faucet+`, les deux fonctions sont définies comme publiques.
 
 +external+:: ((("fonction externe")))Les fonctions externes sont comme des fonctions publiques, sauf qu'elles ne peuvent pas être appelées depuis le contrat à moins d'être explicitement préfixées avec le mot-clé +this+.
 
@@ -390,15 +390,15 @@ Le prochain ensemble de mots clés (`+public+`,+private+, `+internal+`,+external
 
 Gardez à l'esprit que les termes _internal_ et _private_ sont quelque peu trompeurs. Toute fonction ou donnée à l'intérieur d'un contrat est toujours _visible_ sur la chaîne de blocs publique, ce qui signifie que n'importe qui peut voir le code ou les données. Les mots clés décrits ici n'affectent que comment et quand une fonction peut être _appelée_.
 
-Le deuxième ensemble de mots clés (`+pure+`,+constant+, `+view+`,+payable+) affecte le comportement de la fonction :
+Le deuxième ensemble de mots clés (`+pure+`, +constant+, `+view+`, +payable+) affecte le comportement de la fonction :
 
-+constant+ ou +view+:: ((("view (mot-clé de fonction)")))Une fonction marquée comme _view_ promet de ne modifier aucun état. ((("constant (mot clé de la fonction)")))Le terme _constant_ est un alias pour la vue qui sera obsolète dans une future version. Pour le moment, le compilateur n'applique pas le modificateur `+view+`,ne produisant qu'un avertissement, mais cela devrait devenir un mot-clé appliqué dans la v0.5 de Solidity.
++constant+ ou +view+:: ((("view (mot-clé de fonction)")))Une fonction marquée comme _view_ promet de ne modifier aucun état. ((("constant (mot clé de la fonction)")))Le terme _constant_ est un alias pour la vue qui sera obsolète dans une future version. Pour le moment, le compilateur n'applique pas le modificateur `+view+`, ne produisant qu'un avertissement, mais cela devrait devenir un mot-clé appliqué dans la v0.5 de Solidity.
 
 +pure+:: ((("fonction pure")))Une fonction pure est une fonction qui ne lit ni écrit aucune variable dans le stockage. Il ne peut fonctionner que sur des arguments et renvoyer des données, sans référence à aucune donnée stockée. Les fonctions pures sont destinées à encourager la programmation de style déclaratif sans effets secondaires ni état.
 
-+payable+:: ((("fonction payable")))Une fonction payable est une fonction qui peut accepter des paiements entrants. Les fonctions non déclarées comme +payable+ rejetteront les paiements entrants. Il existe deux exceptions, dues à des décisions de conception dans l'EVM : les paiements coinbase et l'héritage +SELFDESTRUCT+ seront payés même si la fonction de secours n'est pas déclarée comme `+payable+`,mais cela a du sens car l'exécution de code ne fait pas partie de ces paiements pass:[<span class="keep-together">de toute façon</span>].
++payable+:: ((("fonction payable")))Une fonction payable est une fonction qui peut accepter des paiements entrants. Les fonctions non déclarées comme +payable+ rejetteront les paiements entrants. Il existe deux exceptions, dues à des décisions de conception dans l'EVM : les paiements coinbase et l'héritage +SELFDESTRUCT+ seront payés même si la fonction de secours n'est pas déclarée comme `+payable+`, mais cela a du sens car l'exécution de code ne fait pas partie de ces paiements pass:[<span class="keep-together">de toute façon</span>].
 
-Comme vous pouvez le voir dans notre exemple `+Faucet+`,nous avons une fonction payante (la fonction de secours), qui est la seule fonction qui peut recevoir des paiements entrants.(((range="endofrange", startref="ix_07smart-contracts-solidity- asciidoc13")))
+Comme vous pouvez le voir dans notre exemple `+Faucet+`, nous avons une fonction payante (la fonction de secours), qui est la seule fonction qui peut recevoir des paiements entrants.(((range="endofrange", startref="ix_07smart-contracts-solidity- asciidoc13")))
 
 ==== Constructeur de contrat et autodestruction
 
@@ -432,7 +432,7 @@ contract MEContract {
 
 Pour résumer, le cycle de vie d'un contrat commence par une transaction de création à partir d'un compte EOA ou un contrat. S'il existe un constructeur, il est exécuté dans le cadre de la création du contrat, pour initialiser l'état du contrat lors de sa création, puis est supprimé.
 
-L'autre la fin du cycle de vie du contrat est la _destruction du contrat_. ((("SELFDESTRUCT opcode")))Les contrats sont détruits par un opcode EVM spécial appelé `+SELFDESTRUCT+`.Il s'appelait autrefois pass:[<span class="keep-together"><code>SUICIDE</code></span>], mais ce nom a été déprécié en raison des associations négatives du mot. Dans Solidity, cet opcode est exposé sous la forme d'une fonction intégrée de haut niveau appelée `+selfdestruct+`,qui prend un argument : l'adresse pour recevoir tout solde d'ether restant dans le compte du contrat. Il ressemble à ceci :
+L'autre la fin du cycle de vie du contrat est la _destruction du contrat_. ((("SELFDESTRUCT opcode")))Les contrats sont détruits par un opcode EVM spécial appelé `+SELFDESTRUCT+`. Il s'appelait autrefois pass:[<span class="keep-together"><code>SUICIDE</code></span>], mais ce nom a été déprécié en raison des associations négatives du mot. Dans Solidity, cet opcode est exposé sous la forme d'une fonction intégrée de haut niveau appelée `+selfdestruct+`, qui prend un argument : l'adresse pour recevoir tout solde d'ether restant dans le compte du contrat. Il ressemble à ceci :
 
 [source,solidity]
 ----
@@ -443,7 +443,7 @@ Notez que vous devez explicitement ajouter cette commande à votre contrat si vo
 
 ==== Ajout d'un constructeur et autodestruction à notre exemple de robinet
 
-((("fonction constructeur","ajout à l'exemple du robinet")))((("Contrat Faucet.sol (exemple de test)","ajout du constructeur et de l'autodestruction à")))((("Solidity","ajout constructor/selfdestruction to faucet example")))L'exemple de contrat +Faucet+ que nous avons introduit dans <<intro_chapter>> n'a pas de constructeur ou de fonctions `+selfdestruct+`.C'est un contrat éternel qui ne peut pas être supprimé. Changeons cela en ajoutant un constructeur et une fonction `+selfdestruct+`.Nous voulons probablement que +selfdestruct+ soit appelable _uniquement_ par l'EOA qui a initialement créé le contrat. Par convention, ceci est généralement stocké dans une variable d'adresse appelée `+owner+`.Notre constructeur définit la variable `+owner+`,et la fonction +selfdestruct+ vérifiera d'abord que le propriétaire l'a appelée directement.
+((("fonction constructeur","ajout à l'exemple du robinet")))((("Contrat Faucet.sol (exemple de test)","ajout du constructeur et de l'autodestruction à")))((("Solidity","ajout constructor/selfdestruction to faucet example")))L'exemple de contrat +Faucet+ que nous avons introduit dans <<intro_chapter>> n'a pas de constructeur ou de fonctions `+selfdestruct+`. C'est un contrat éternel qui ne peut pas être supprimé. Changeons cela en ajoutant un constructeur et une fonction `+selfdestruct+`. Nous voulons probablement que +selfdestruct+ soit appelable _uniquement_ par l'EOA qui a initialement créé le contrat. Par convention, ceci est généralement stocké dans une variable d'adresse appelée `+owner+`. Notre constructeur définit la variable `+owner+`, et la fonction +selfdestruct+ vérifiera d'abord que le propriétaire l'a appelée directement.
 
 Tout d'abord, notre constructeur :
 
@@ -465,9 +465,9 @@ contract Faucet {
 [...]
 ----
 
-Nous avons modifié la directive pragma pour spécifier la v0.4.22 comme version minimale pour cet exemple, car nous utilisons le nouveau mot-clé +constructor+ introduit dans la v0.4.22 de Solidity. Notre contrat a maintenant une variable de type +address+ nommée `+owner+`.Le nom "owner" n'est en aucun cas spécial. Nous pourrions appeler cette variable d'adresse "potato" et l'utiliser toujours de la même manière. Le nom +owner+ rend simplement son objectif clair.
+Nous avons modifié la directive pragma pour spécifier la v0.4.22 comme version minimale pour cet exemple, car nous utilisons le nouveau mot-clé +constructor+ introduit dans la v0.4.22 de Solidity. Notre contrat a maintenant une variable de type +address+ nommée `+owner+`. Le nom "owner" n'est en aucun cas spécial. Nous pourrions appeler cette variable d'adresse "potato" et l'utiliser toujours de la même manière. Le nom +owner+ rend simplement son objectif clair.
 
-Ensuite, notre constructeur, qui s'exécute dans le cadre de la transaction de création de contrat, attribue l'adresse de +msg.sender+ à la variable `+owner+`.Nous avons utilisé +msg.sender+ dans la fonction pass:[remove] pour identifier l'initiateur de la demande de pass:[<span class="keep-together"><code>withdraw</code></span>]. Dans le constructeur, cependant, le +msg.sender+ est l'EOA ou l'adresse du contrat qui a initié la création du contrat. Nous savons que c'est le cas _car_ il s'agit d'une fonction constructeur : elle ne s'exécute qu'une seule fois, lors de la création du contrat.
+Ensuite, notre constructeur, qui s'exécute dans le cadre de la transaction de création de contrat, attribue l'adresse de +msg.sender+ à la variable `+owner+`. Nous avons utilisé +msg.sender+ dans la fonction pass:[remove] pour identifier l'initiateur de la demande de pass:[<span class="keep-together"><code>withdraw</code></span>]. Dans le constructeur, cependant, le +msg.sender+ est l'EOA ou l'adresse du contrat qui a initié la création du contrat. Nous savons que c'est le cas _car_ il s'agit d'une fonction constructeur : elle ne s'exécute qu'une seule fois, lors de la création du contrat.
 
 Nous pouvons maintenant ajouter une fonction pour détruire le contrat. Nous devons nous assurer que seul le propriétaire peut exécuter cette fonction, nous utiliserons donc une instruction +require+ pour contrôler l'accès. Voici à quoi cela ressemblera :
 
@@ -480,11 +480,11 @@ function destroy() public {
 }
 ----
 
-Si quelqu'un appelle cette fonction +destroy+ depuis une adresse autre que `+owner+`,elle échouera. Mais si la même adresse stockée dans +owner+ par le constructeur l'appelle, le contrat s'autodétruira et enverra tout solde restant à l'adresse `+owner+`.Notez que nous n'avons pas utilisé le non sécurisé +tx.origin+ pour déterminer si le propriétaire souhaitait détruire le contrat. L'utilisation de +tx.origin+ permettrait à des contrats malveillants de détruire votre contrat sans votre permission.
+Si quelqu'un appelle cette fonction +destroy+ depuis une adresse autre que `+owner+`, elle échouera. Mais si la même adresse stockée dans +owner+ par le constructeur l'appelle, le contrat s'autodétruira et enverra tout solde restant à l'adresse `+owner+`. Notez que nous n'avons pas utilisé le non sécurisé +tx.origin+ pour déterminer si le propriétaire souhaitait détruire le contrat. L'utilisation de +tx.origin+ permettrait à des contrats malveillants de détruire votre contrat sans votre permission.
 
 ==== Modificateurs de fonction
 
-((("modificateurs de fonction")))((("Solidity","modificateurs de fonction")))Solidity offre un type spécial de fonction appelé _modificateur de fonction_. Vous appliquez des modificateurs aux fonctions en ajoutant le nom du modificateur dans la déclaration de la fonction. Les modificateurs sont le plus souvent utilisés pour créer des conditions qui s'appliquent à de nombreuses fonctions au sein d'un contrat. Nous avons déjà une instruction de contrôle d'accès dans notre fonction `+destroy+`.Créons un modificateur de fonction qui exprime cette condition :
+((("modificateurs de fonction")))((("Solidity","modificateurs de fonction")))Solidity offre un type spécial de fonction appelé _modificateur de fonction_. Vous appliquez des modificateurs aux fonctions en ajoutant le nom du modificateur dans la déclaration de la fonction. Les modificateurs sont le plus souvent utilisés pour créer des conditions qui s'appliquent à de nombreuses fonctions au sein d'un contrat. Nous avons déjà une instruction de contrôle d'accès dans notre fonction `+destroy+`. Créons un modificateur de fonction qui exprime cette condition :
 
 [source,solidity]
 ----
@@ -495,7 +495,7 @@ modifier onlyOwner {
 ----
 
 
-Ce modificateur de fonction, nommé `+onlyOwner+`,définit une condition sur toute fonction qu'il modifie, exigeant que l'adresse stockée en tant que +owner+ du contrat soit la même que l'adresse du +msg.sender+ de la transaction. Il s'agit du modèle de conception de base pour le contrôle d'accès, permettant uniquement au propriétaire d'un contrat d'exécuter toute fonction qui a le modificateur +onlyOwner+.
+Ce modificateur de fonction, nommé `+onlyOwner+`, définit une condition sur toute fonction qu'il modifie, exigeant que l'adresse stockée en tant que +owner+ du contrat soit la même que l'adresse du +msg.sender+ de la transaction. Il s'agit du modèle de conception de base pour le contrôle d'accès, permettant uniquement au propriétaire d'un contrat d'exécuter toute fonction qui a le modificateur +onlyOwner+.
 
 Vous avez peut-être remarqué que notre modificateur de fonction contient un "espace réservé" syntaxique particulier, un trait de soulignement suivi d'un point-virgule (+_;+). Cet espace réservé est remplacé par le code de la fonction en cours de modification. Essentiellement, le modificateur est "enroulé autour" de la fonction modifiée, plaçant son code à l'emplacement identifié par le caractère de soulignement.
 
@@ -510,11 +510,11 @@ function destroy() public onlyOwner {
 }
 ----
 
-Le nom du modificateur de fonction (`+onlyOwner+`)se trouve après le mot-clé +public+ et nous indique que la fonction +destroy+ est modifiée par le modificateur `+onlyOwner+`.Essentiellement, vous pouvez lire cela comme "Seul le propriétaire peut détruire ce contrat". En pratique, le code résultant équivaut à "envelopper" le code de +onlyOwner+ autour de +destroy+.
+Le nom du modificateur de fonction (`+onlyOwner+`)se trouve après le mot-clé +public+ et nous indique que la fonction +destroy+ est modifiée par le modificateur `+onlyOwner+`. Essentiellement, vous pouvez lire cela comme "Seul le propriétaire peut détruire ce contrat". En pratique, le code résultant équivaut à "envelopper" le code de +onlyOwner+ autour de +destroy+.
 
 Les modificateurs de fonction sont un outil extrêmement utile car ils nous permettent d'écrire des conditions préalables pour les fonctions et de les appliquer de manière cohérente, ce qui rend le code plus facile à lire et, par conséquent, plus facile à auditer pour la sécurité. Ils sont le plus souvent utilisés pour le contrôle d'accès, mais ils sont assez polyvalents et peuvent être utilisés à diverses autres fins.
 
-A l'intérieur d'un modificateur, vous pouvez accéder à toutes les valeurs (variables et arguments) visibles par la fonction modifiée. Dans ce cas, nous pouvons accéder à la variable `+owner+`,qui est déclarée dans le contrat. Cependant, l'inverse n'est pas vrai : vous ne pouvez accéder à aucune des variables du modificateur à l'intérieur de la fonction modifiée.
+A l'intérieur d'un modificateur, vous pouvez accéder à toutes les valeurs (variables et arguments) visibles par la fonction modifiée. Dans ce cas, nous pouvons accéder à la variable `+owner+`, qui est déclarée dans le contrat. Cependant, l'inverse n'est pas vrai : vous ne pouvez accéder à aucune des variables du modificateur à l'intérieur de la fonction modifiée.
 
 ==== Héritage du contrat
 
@@ -527,7 +527,7 @@ contract Child is Parent {
 }
 ----
 
-Avec cette construction, le contrat +Child+ hérite de toutes les méthodes, fonctionnalités et variables de `+Parent+`.Solidity prend également en charge l'héritage multiple, qui peut être spécifié par des noms de contrat séparés par des virgules après le mot-clé +is+ :
+Avec cette construction, le contrat +Child+ hérite de toutes les méthodes, fonctionnalités et variables de `+Parent+`. Solidity prend également en charge l'héritage multiple, qui peut être spécifié par des noms de contrat séparés par des virgules après le mot-clé +is+ :
 
 [source,solidity]
 ----
@@ -538,9 +538,9 @@ contract Child is Parent1, Parent2 {
 
 L'héritage de contrat nous permet d'écrire nos contrats de manière à atteindre la modularité, l'extensibilité et la réutilisation. Nous commençons par des contrats simples et implémentons les capacités les plus génériques, puis nous les étendons en héritant de ces capacités dans des contrats plus spécialisés.
 
-Dans notre contrat `+Faucet+`,nous avons introduit le constructeur et le destructeur, ainsi qu'un contrôle d'accès pour un propriétaire, assigné à la construction. Ces capacités sont assez génériques : de nombreux contrats en auront. Nous pouvons les définir comme des contrats génériques, puis utiliser l'héritage pour les étendre au contrat +Faucet+.
+Dans notre contrat `+Faucet+`, nous avons introduit le constructeur et le destructeur, ainsi qu'un contrôle d'accès pour un propriétaire, assigné à la construction. Ces capacités sont assez génériques : de nombreux contrats en auront. Nous pouvons les définir comme des contrats génériques, puis utiliser l'héritage pour les étendre au contrat +Faucet+.
 
-Nous commençons par définir un contrat de base `+owned+`,qui a une variable `+owner+`,en la définissant dans le constructeur du contrat :
+Nous commençons par définir un contrat de base `+owned+`, qui a une variable `+owner+`, en la définissant dans le constructeur du contrat :
 
 [source,solidity]
 ----
@@ -560,7 +560,7 @@ contract owned {
 }
 ----
 
-Ensuite, nous définissons un contrat de base `+mortal+`,qui hérite de +owned+ :
+Ensuite, nous définissons un contrat de base `+mortal+`, qui hérite de +owned+ :
 
 [source,solidity]
 ----
@@ -572,9 +572,9 @@ contract mortal is owned {
 }
 ----
 
-Comme vous pouvez le voir, le contrat +mortal+ peut utiliser le modificateur de fonction `+onlyOwner+`,défini dans `+owned+`.Il utilise aussi indirectement la variable d'adresse +owner+ et le constructeur défini dans `+owned+`.L'héritage rend chaque contrat plus simple et axé sur sa fonctionnalité spécifique, nous permettant de gérer les détails de manière modulaire.
+Comme vous pouvez le voir, le contrat +mortal+ peut utiliser le modificateur de fonction `+onlyOwner+`, défini dans `+owned+`. Il utilise aussi indirectement la variable d'adresse +owner+ et le constructeur défini dans `+owned+`. L'héritage rend chaque contrat plus simple et axé sur sa fonctionnalité spécifique, nous permettant de gérer les détails de manière modulaire.
 
-Nous pouvons maintenant étendre davantage le contrat `+owned+`,en héritant de ses capacités dans +Faucet+ :
+Nous pouvons maintenant étendre davantage le contrat `+owned+`, en héritant de ses capacités dans +Faucet+ :
 
 [source,solidity]
 ----
@@ -591,17 +591,17 @@ contract Faucet is mortal {
 }
 ----
 
-En héritant de `+mortal+`,qui à son tour hérite de `+owned+`,le contrat +Faucet+ a maintenant les fonctions constructeur et `+destroy+`,et un propriétaire défini. La fonctionnalité est la même que lorsque ces fonctions étaient dans `+Faucet+`,mais maintenant nous pouvons réutiliser ces fonctions dans d'autres contrats sans les réécrire. La réutilisation et la modularité du code rendent notre code plus propre, plus facile à lire et plus facile à auditer.(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc17")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc16")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc15")))(((range="endofrange", startref="ix_07smart -contrats-solidité-asciidoc14")))
+En héritant de `+mortal+`, qui à son tour hérite de `+owned+`, le contrat +Faucet+ a maintenant les fonctions constructeur et `+destroy+`, et un propriétaire défini. La fonctionnalité est la même que lorsque ces fonctions étaient dans `+Faucet+`, mais maintenant nous pouvons réutiliser ces fonctions dans d'autres contrats sans les réécrire. La réutilisation et la modularité du code rendent notre code plus propre, plus facile à lire et plus facile à auditer.(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc17")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc16")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc15")))(((range="endofrange", startref="ix_07smart -contrats-solidité-asciidoc14")))
 
 ==== Gestion des erreurs (assert, require, revert)
 
-((("gestion des erreurs, Solidity")))((("Solidity","gestion des erreurs")))Un appel de contrat peut se terminer et renvoyer une erreur. La gestion des erreurs dans Solidity est gérée par quatre fonctions : `+assert+`,+require+, +revert+ et +throw+ (désormais obsolète).
+((("gestion des erreurs, Solidity")))((("Solidity","gestion des erreurs")))Un appel de contrat peut se terminer et renvoyer une erreur. La gestion des erreurs dans Solidity est gérée par quatre fonctions : `+assert+`, +require+, +revert+ et +throw+ (désormais obsolète).
 
 Lorsqu'un contrat se termine avec une erreur, tous les changements d'état (changements de variables, de soldes, etc.) sont annulés, tout au long de la chaîne d'appels de contrat si plusieurs contrats ont été appelés. Cela garantit que les transactions sont _atomiques_, ce qui signifie qu'elles se terminent avec succès ou n'ont aucun effet sur l'état et sont entièrement annulées.
 
 ((("fonction assert","Solidity et")))((("fonction require")))Les fonctions +assert+ et +require+ fonctionnent de la même manière, évaluant une condition et arrêtant l'exécution avec une erreur si la condition c'est fausse. Par convention, +assert+ est utilisé lorsque le résultat est censé être vrai, ce qui signifie que nous utilisons +assert+ pour tester les conditions internes. Par comparaison, +require+ est utilisé lors du test d'entrées (telles que des arguments de fonction ou des champs de transaction), définissant nos attentes pour ces pass:[<span class="keep-together">conditions</span>].
 
-Nous avons utilisé +require+ dans notre modificateur de fonction `+onlyOwner+`,pour tester que l'expéditeur du message est le propriétaire du contrat :
+Nous avons utilisé +require+ dans notre modificateur de fonction `+onlyOwner+`, pour tester que l'expéditeur du message est le propriétaire du contrat :
 
 [source,solidity]
 ----
@@ -619,7 +619,7 @@ require(msg.sender == owner, "Seul le propriétaire du contrat peut appeler cett
 
 ((("fonction revert")))((("fonction throw")))Les fonctions +revert+ et +throw+ interrompent l'exécution du contrat et annulent tout changement d'état. La fonction +throw+ est obsolète et sera supprimée dans les futures versions de Solidity ; vous devriez utiliser +revert+ à la place. La fonction +revert+ peut également prendre un message d'erreur comme seul argument, qui est enregistré dans le journal des transactions.
 
-Certaines conditions d'un contrat généreront des erreurs, que nous les vérifiions explicitement ou non. Par exemple, dans notre contrat `+Faucet+`,nous ne vérifions pas s'il y a suffisamment d'ether pour satisfaire une demande de retrait. En effet, la fonction +transfer+ échouera avec une erreur et annulera la transaction si le solde est insuffisant pour effectuer le transfert :
+Certaines conditions d'un contrat généreront des erreurs, que nous les vérifiions explicitement ou non. Par exemple, dans notre contrat `+Faucet+`, nous ne vérifions pas s'il y a suffisamment d'ether pour satisfaire une demande de retrait. En effet, la fonction +transfer+ échouera avec une erreur et annulera la transaction si le solde est insuffisant pour effectuer le transfert :
 
 [source,solidity]
 ----
@@ -646,7 +646,7 @@ Les événements sont particulièrement utiles pour les clients légers et les s
 
 Les objets d'événement prennent des arguments qui sont sérialisés et enregistrés dans les journaux de transactions, dans la chaîne de blocs. Vous pouvez fournir le mot-clé +indexé+ avant un argument, pour que la valeur fasse partie d'une table indexée (table de hachage) qui peut être recherchée ou filtrée par une application.
 
-((("Contrat Faucet.sol (exemple de test)","ajout d'événements à", id="ix_07smart-contracts-solidity-asciidoc20", range="startofrange")))Nous n'avons ajouté aucun événement dans notre exemple +Faucet+ jusqu'à présent, alors faisons cela. Nous ajouterons deux événements, un pour enregistrer les retraits et un pour enregistrer les dépôts. Nous appellerons ces événements +Withdrawal+ et `+Deposit+`,respectivement. Tout d'abord, nous définissons les événements dans le contrat +Faucet+ :
+((("Contrat Faucet.sol (exemple de test)","ajout d'événements à", id="ix_07smart-contracts-solidity-asciidoc20", range="startofrange")))Nous n'avons ajouté aucun événement dans notre exemple +Faucet+ jusqu'à présent, alors faisons cela. Nous ajouterons deux événements, un pour enregistrer les retraits et un pour enregistrer les dépôts. Nous appellerons ces événements +Withdrawal+ et `+Deposit+`, respectivement. Tout d'abord, nous définissons les événements dans le contrat +Faucet+ :
 
 [source,solidity]
 ----
@@ -658,7 +658,7 @@ contract Faucet is mortal {
 }
 ----
 
-Nous avons choisi de rendre les adresses `+indexed+`,pour permettre la recherche et le filtrage dans n'importe quelle interface utilisateur conçue pour accéder à notre +Faucet+.
+Nous avons choisi de rendre les adresses `+indexed+`, pour permettre la recherche et le filtrage dans n'importe quelle interface utilisateur conçue pour accéder à notre +Faucet+.
 
 Ensuite, nous utilisons le mot-clé +emit+ pour incorporer les données d'événement dans les journaux de transactions :
 
@@ -728,7 +728,7 @@ Withdrawal { to: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
 </pre>
 ++++
 
-Après avoir déployé le contrat à l'aide de la fonction `+deployed+`,nous exécutons deux transactions. La première transaction est un dépôt (en utilisant +send+), qui émet un événement +Deposit+ dans les journaux de transactions :
+Après avoir déployé le contrat à l'aide de la fonction `+deployed+`, nous exécutons deux transactions. La première transaction est un dépôt (en utilisant +send+), qui émet un événement +Deposit+ dans les journaux de transactions :
 
 ----
 Deposit { from: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
@@ -742,7 +742,7 @@ Withdrawal { to: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
   amount: BigNumber { s: 1, e: 17, c: [ 1000 ] } }
 ----
 
-Pour obtenir ces événements, nous avons examiné le tableau +logs+ renvoyé comme résultat (`+res+`)des transactions. La première entrée de journal (`+logs[0]+`)contient un nom d'événement dans +logs[0].event+ et les arguments d'événement dans `+logs[0].args+`.En les affichant sur la console, nous pouvons voir le nom de l'événement émis et les arguments de l'événement.
+Pour obtenir ces événements, nous avons examiné le tableau +logs+ renvoyé comme résultat (`+res+`)des transactions. La première entrée de journal (`+logs[0]+`)contient un nom d'événement dans +logs[0].event+ et les arguments d'événement dans `+logs[0].args+`. En les affichant sur la console, nous pouvons voir le nom de l'événement émis et les arguments de l'événement.
 
 Les événements sont un mécanisme très utile, non seulement pour la communication intra-contrat, mais aussi pour le débogage pendant le développement(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc20"))).(((range= "endofrange", startref="ix_07smart-contracts-solidity-asciidoc19")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc18")))
 
@@ -752,7 +752,7 @@ Les événements sont un mécanisme très utile, non seulement pour la communica
 
 ===== Création d'une nouvelle instance
 
-((("contrats intelligents","création d'une nouvelle instance")))Le moyen le plus sûr d'appeler un autre contrat est de créer vous-même cet autre contrat. De cette façon, vous êtes certain de ses interfaces et de son comportement. Pour ce faire, vous pouvez simplement l'instancier, en utilisant le mot-clé `+new+`,comme dans d'autres langages orientés objet. Dans Solidity, le mot-clé +new+ créera le contrat sur la chaîne de blocs et renverra un objet que vous pourrez utiliser pour le référencer. Supposons que vous souhaitiez créer et appeler un contrat +Faucet+ à partir d'un autre contrat appelé +Token+ :
+((("contrats intelligents","création d'une nouvelle instance")))Le moyen le plus sûr d'appeler un autre contrat est de créer vous-même cet autre contrat. De cette façon, vous êtes certain de ses interfaces et de son comportement. Pour ce faire, vous pouvez simplement l'instancier, en utilisant le mot-clé `+new+`, comme dans d'autres langages orientés objet. Dans Solidity, le mot-clé +new+ créera le contrat sur la chaîne de blocs et renverra un objet que vous pourrez utiliser pour le référencer. Supposons que vous souhaitiez créer et appeler un contrat +Faucet+ à partir d'un autre contrat appelé +Token+ :
 
 [role="pagebreak-before"]
 [source,solidity]
@@ -766,7 +766,7 @@ contract Token is mortal {
 }
 ----
 
-Ce mécanisme de construction de contrat garantit que vous connaissez le type exact du contrat et son interface. Le contrat +Faucet+ doit être défini dans la portée de `+Token+`,ce que vous pouvez faire avec une instruction +import+ si la définition se trouve dans un autre fichier :
+Ce mécanisme de construction de contrat garantit que vous connaissez le type exact du contrat et son interface. Le contrat +Faucet+ doit être défini dans la portée de `+Token+`, ce que vous pouvez faire avec une instruction +import+ si la définition se trouve dans un autre fichier :
 
 [source,solidity]
 ----
@@ -796,7 +796,7 @@ contract Token is mortal {
 }
 ----
 
-Vous pouvez également appeler ensuite les fonctions `+Faucet+`.Dans cet exemple, nous appelons la fonction +destroy+ de +Faucet+ depuis la fonction +destroy+ de +Token+ :
+Vous pouvez également appeler ensuite les fonctions `+Faucet+`. Dans cet exemple, nous appelons la fonction +destroy+ de +Faucet+ depuis la fonction +destroy+ de +Token+ :
 
 [source,solidity]
 ----
@@ -815,7 +815,7 @@ contract Token is mortal {
 }
 ----
 
-Notez que tant que vous êtes le propriétaire du contrat `+Token+`,le contrat +Token+ lui-même possède le nouveau contrat `+Faucet+`,donc seul le contrat +Token+ peut le détruire.
+Notez que tant que vous êtes le propriétaire du contrat `+Token+`, le contrat +Token+ lui-même possède le nouveau contrat `+Faucet+`, donc seul le contrat +Token+ peut le détruire.
 
 ===== Adressage d'une instance existante
 
@@ -836,7 +836,7 @@ contract Token is mortal {
 }
 ----
 
-Ici, nous prenons une adresse fournie comme argument au constructeur, `+_f+`,et nous la transformons en un objet `+Faucet+`.C'est beaucoup plus risqué que le mécanisme précédent, car nous ne savons pas avec certitude si cette adresse est réellement un objet `+Faucet+`.Lorsque nous appelons `+withdraw+`,nous supposons qu'il accepte les mêmes arguments et exécute le même code que notre déclaration `+Faucet+`,mais nous ne pouvons pas en être sûrs. Pour autant que nous sachions, la fonction +withdraw+ à cette adresse pourrait exécuter quelque chose de complètement différent de ce que nous attendons, même si elle porte le même nom. Utiliser des adresses passées en entrée et les intégrer dans des objets spécifiques est donc beaucoup plus dangereux que de créer soi-même le contrat.
+Ici, nous prenons une adresse fournie comme argument au constructeur, `+_f+`, et nous la transformons en un objet `+Faucet+`. C'est beaucoup plus risqué que le mécanisme précédent, car nous ne savons pas avec certitude si cette adresse est réellement un objet `+Faucet+`. Lorsque nous appelons `+withdraw+`, nous supposons qu'il accepte les mêmes arguments et exécute le même code que notre déclaration `+Faucet+`, mais nous ne pouvons pas en être sûrs. Pour autant que nous sachions, la fonction +withdraw+ à cette adresse pourrait exécuter quelque chose de complètement différent de ce que nous attendons, même si elle porte le même nom. Utiliser des adresses passées en entrée et les intégrer dans des objets spécifiques est donc beaucoup plus dangereux que de créer soi-même le contrat.
 
 ===== Appel brut call et delegatecall
 
@@ -866,7 +866,7 @@ contract Token is mortal {
 }
 ----
 
-((("méthode delegatecall")))((("contrats intelligents","méthode delegatecall")))Une autre variante de +call+ est `+delegatecall+`,qui a remplacé le plus dangereux `+callcode+`.La méthode pass:[<code><span class="keep-together">callcode</span></code>] sera bientôt obsolète, elle ne doit donc pas être utilisée.
+((("méthode delegatecall")))((("contrats intelligents","méthode delegatecall")))Une autre variante de +call+ est `+delegatecall+`, qui a remplacé le plus dangereux `+callcode+`. La méthode pass:[<code><span class="keep-together">callcode</span></code>] sera bientôt obsolète, elle ne doit donc pas être utilisée.
 
 Comme mentionné dans <<solidity_address_object>>, un +delegatecall+ est différent d'un +call+ en ce que le contexte +msg+ ne change pas. Par exemple, alors qu'un +call+ change la valeur de +msg.sender+ pour être le contrat d'appel, un +delegatecall+ conserve le même +msg.sender+ que dans le contrat d'appel. Essentiellement, +delegatecall+ exécute le code d'un autre contrat dans le contexte de l'exécution du contrat en cours. Il est le plus souvent utilisé pour invoquer du code à partir d'une bibliothèque. Cela vous permet également de dessiner sur le modèle d'utilisation des fonctions de bibliothèque stockées ailleurs, mais de faire fonctionner ce code avec les données de stockage de votre contrat.
 
@@ -883,9 +883,9 @@ include::code/truffle/CallExamples/contracts/CallExamples.sol[]
 ----
 ====
 
-Comme vous pouvez le voir dans cet exemple, notre contrat principal est `+caller+`,qui appelle une bibliothèque +calledLibrary+ et un contrat `+calledContract+`.La bibliothèque appelée et le contrat ont des fonctions +calledFunction+ identiques, qui émettent un événement `+calledEvent+`.L'événement +calledEvent+ enregistre trois éléments de données : `+msg.sender+`,+tx.origin+ et `+this+`.Chaque fois que +calledFunction+ est appelé, il peut avoir un contexte d'exécution différent (avec des valeurs différentes pour potentiellement toutes les variables de contexte), selon qu'il est appelé directement ou via +delegatecall+.
+Comme vous pouvez le voir dans cet exemple, notre contrat principal est `+caller+`, qui appelle une bibliothèque +calledLibrary+ et un contrat `+calledContract+`. La bibliothèque appelée et le contrat ont des fonctions +calledFunction+ identiques, qui émettent un événement `+calledEvent+`. L'événement +calledEvent+ enregistre trois éléments de données : `+msg.sender+`, +tx.origin+ et `+this+`. Chaque fois que +calledFunction+ est appelé, il peut avoir un contexte d'exécution différent (avec des valeurs différentes pour potentiellement toutes les variables de contexte), selon qu'il est appelé directement ou via +delegatecall+.
 
-Dans `+caller+`,nous appelons d'abord le contrat et la bibliothèque directement, en invoquant +calledFunction+ dans chacun. Ensuite, nous utilisons explicitement les fonctions de bas niveau +call+ et +delegatecall+ pour appeler `+calledContract.calledFunction+`.De cette façon, nous pouvons voir comment les différents mécanismes d'appel se comportent.
+Dans `+caller+`, nous appelons d'abord le contrat et la bibliothèque directement, en invoquant +calledFunction+ dans chacun. Ensuite, nous utilisons explicitement les fonctions de bas niveau +call+ et +delegatecall+ pour appeler `+calledContract.calledFunction+`. De cette façon, nous pouvons voir comment les différents mécanismes d'appel se comportent.
 
 Exécutons ceci dans un environnement de développement Truffle et capturons les événements, pour voir à quoi cela ressemble :
 
@@ -923,7 +923,7 @@ truffle(develop)> <strong>callerDeployed.make_calls(calledContract.address).then
 </pre>
 ++++
 
-Voyons ce qui s'est passé ici. Nous avons appelé la fonction +make_calls+ et passé l'adresse de `+calledContract+`,puis avons intercepté les quatre événements émis par chacun des différents appels. Examinons la fonction +make_calls+ et passons en revue chaque étape.
+Voyons ce qui s'est passé ici. Nous avons appelé la fonction +make_calls+ et passé l'adresse de `+calledContract+`, puis avons intercepté les quatre événements émis par chacun des différents appels. Examinons la fonction +make_calls+ et passons en revue chaque étape.
 
 Le premier appel est :
 
@@ -931,7 +931,7 @@ Le premier appel est :
 _calledContract.calledFunction();
 ----
 
-Ici, nous appelons +calledContract.calledFunction+ directement, en utilisant l'ABI de haut niveau pour `+calledFunction+`.L'événement émis est :
+Ici, nous appelons +calledContract.calledFunction+ directement, en utilisant l'ABI de haut niveau pour `+calledFunction+`. L'événement émis est :
 
 ----
 sender: '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f',
@@ -939,7 +939,7 @@ origin: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
 from: '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
 ----
 
-Comme vous pouvez le voir, +msg.sender+ est l'adresse du contrat `+caller+`.Le +tx.origin+ est l'adresse de notre compte, `+web3.eth.accounts[0]+`,qui a envoyé la transaction à `+caller+`.L'événement a été émis par `+calledContract+`,comme nous pouvons le voir sur le dernier argument de l'événement.
+Comme vous pouvez le voir, +msg.sender+ est l'adresse du contrat `+caller+`. Le +tx.origin+ est l'adresse de notre compte, `+web3.eth.accounts[0]+`, qui a envoyé la transaction à `+caller+`. L'événement a été émis par `+calledContract+`, comme nous pouvons le voir sur le dernier argument de l'événement.
 
 Le prochain appel dans +make_calls+ est vers la bibliothèque :
 
@@ -955,7 +955,7 @@ origin: '0x627306090abab3a6e1400e9345bc60c78a8bef57',
 from: '0x8f0483125fcb9aaaefa9209d8e9d7b9c8b9fb90f'
 ----
 
-Cette fois, le +msg.sender+ n'est pas l'adresse de `+caller+`.Au lieu de cela, c'est l'adresse de notre compte, et c'est la même que l'origine de la transaction. En effet, lorsque vous appelez une bibliothèque, l'appel est toujours +delegatecall+ et s'exécute dans le contexte de l'appelant. Ainsi, lorsque le code +calledLibrary+ s'exécutait, il héritait du contexte d'exécution de `+caller+`,comme si son code s'exécutait à l'intérieur de `+caller+`.La variable +this+ (affichée comme +from+ dans l'événement émis) est l'adresse de `+caller+`,même si elle est accessible depuis pass:[<span class="keep-together"><code>calledLibrary</code></span>].
+Cette fois, le +msg.sender+ n'est pas l'adresse de `+caller+`. Au lieu de cela, c'est l'adresse de notre compte, et c'est la même que l'origine de la transaction. En effet, lorsque vous appelez une bibliothèque, l'appel est toujours +delegatecall+ et s'exécute dans le contexte de l'appelant. Ainsi, lorsque le code +calledLibrary+ s'exécutait, il héritait du contexte d'exécution de `+caller+`, comme si son code s'exécutait à l'intérieur de `+caller+`. La variable +this+ (affichée comme +from+ dans l'événement émis) est l'adresse de `+caller+`, même si elle est accessible depuis pass:[<span class="keep-together"><code>calledLibrary</code></span>].
 
 Les deux appels suivants, utilisant les appels +call+ et +delegatecall+ de bas niveau, vérifient nos attentes, émettant des événements qui reflètent ce que nous venons de faire(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc23")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc22")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc21")))(((range="endofrange", startref="ix_07smart-contracts-solidity-asciidoc10")))
 
@@ -999,7 +999,7 @@ Et à partir de là, vous pouvez estimer le coût du gaz :
 [source, javascript]
 var gasCostInEther = web3.utils.fromWei((gasEstimate * gasPrice), 'ether');
 
-Appliquons nos fonctions d'estimation de gaz pour estimer le coût du gaz de notre exemple `+Faucet+`,en utilisant le code http://bit.ly/2zf0SIO[du référentiel du livre].
+Appliquons nos fonctions d'estimation de gaz pour estimer le coût du gaz de notre exemple `+Faucet+`, en utilisant le code http://bit.ly/2zf0SIO[du référentiel du livre].
 
 Démarrez Truffle en mode développement et exécutez le fichier JavaScript dans <<estimateGas_function>>, _gas_estimates.js_.
 
