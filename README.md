@@ -40,8 +40,8 @@ Thank you Dr. Gavin!</p><br>
 ## Feuille de route
 
 * Traduction
-  - [ ] Phase de traduction (DONE1) : en cours...
-  - [ ] Phase de révision (DONE2) : en attente
+  - [x] Phase de traduction (DONE1) : 👍
+  - [ ] Phase de révision (DONE2) : en cours...
   - [ ] Phase de conclusion (DONEF) : en attente
 * Révision
   - [ ] Phase de révision externe
