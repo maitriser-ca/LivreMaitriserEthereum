@@ -2,14 +2,14 @@
 [[short_links]]
 == Référence des liens courts
 
-Throughout this book we have used short links. These short links take up less space on the page and make it easier for readers of the print edition to transcribe them into a browser. However, short links can break and the companies providing these services may cease to exist or block certain links. The complete links are shown here in the order they are found in the text.
+Tout au long de ce livre, nous avons utilisé des liens courts. Ces liens courts prennent moins de place sur la page et permettent aux lecteurs de l'édition papier de les retranscrire plus facilement dans un navigateur. Cependant, des liens courts peuvent se rompre et les sociétés fournissant ces services peuvent cesser d'exister ou bloquer certains liens. Les liens complets sont présentés ici dans l'ordre où ils se trouvent dans le texte.
 
 
-=== Smart Contract Security
+=== Sécurité du contrat intelligent
 
 [options="header"]
 |===
-| Short Link | Expanded Link
+| Lien court | Lien étendu
 | 2Ogvnng | https://solidity.readthedocs.io/en/latest/units-and-global-variables.html#address-related
 | 2EVo70v | https://solidity.readthedocs.io/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern
 | 2EQaLCI | http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/
@@ -54,11 +54,11 @@ Throughout this book we have used short links. These short links take up less sp
 | 2P3KVA4 | https://medium.com/coinmonks/solidity-tx-origin-attacks-58211ad95514
 |===
 
-=== Tokens
+=== Jetons
 
 [options="header"]
 |===
-| Short Link | Expanded Link
+| Lien court | Lien étendu
 | 2CUf7WG | https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
 | 2EUYCMR | https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol
 | 2xPYck6 | https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v1.12.0/contracts/token/ERC20/StandardToken.sol

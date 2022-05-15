@@ -77,7 +77,8 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 18. [Annexe B - Normes Ethereum](html/for_use_ethereumbook_appdx-standards-eip-erctxt_fr_CA.html) 👍
 19. [Annexe C - Opcodes Ethereum EVM et consommation de gaz](html/for_use_ethereumbook_appdx-evm-opcodes-gastxt_fr_CA.html) 👍
 20. [Annexe D - Outils de développement, cadres de développement, et bibliothèques](html/for_use_ethereumbook_appdx-dev-toolstxt_fr_CA.html) 👍
-21. [Annexe E - Tutoriel web3.js](html/for_use_ethereumbook_appdx-web3js-tutorialtxt_fr_CA.html) ❌
+21. [Annexe E - Tutoriel web3.js](html/for_use_ethereumbook_appdx-web3js-tutorialtxt_fr_CA.html) 👍
+22. [Annexe F - Référence des liens courts](html/for_use_ethereumbook_appdx-shortlinkstxt_fr_CA.html) 👍
 
 ---
 
@@ -86,7 +87,7 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 
 <p style="color:red;">!!! ATTENTION : Processus intense !!!</p>
 
-<a href="https://ethereum.maitriser.ca/html/book.html" alt="Livre Maîtriser Bitcoin en une seule page html">Livre en une seule page html</a> ❌
+<a href="https://ethereum.maitriser.ca/html/book.html" alt="Livre Maîtriser Bitcoin en une seule page html">Livre en une seule page html</a> 👍
 </center>
 
 ---
