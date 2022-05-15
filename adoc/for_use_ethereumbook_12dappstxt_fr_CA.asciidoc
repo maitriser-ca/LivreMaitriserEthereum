@@ -569,13 +569,13 @@ Par conséquent, l&#39;enchère est un processus en quatre étapes :
 Cela crée toutes les dates limites d&#39;enchères. Les noms sont hachés, de sorte que seuls ceux qui ont le nom dans leur dictionnaire sauront quelle enchère a été ouverte. Cela permet une certaine confidentialité, ce qui est utile si vous créez un nouveau projet et que vous ne souhaitez pas partager de détails à son sujet.
 Vous pouvez ouvrir plusieurs enchères fictives en même temps, donc si quelqu&#39;un vous suit, il ne peut pas simplement enchérir sur toutes les enchères que vous ouvrez.
 
-1. Faites une offre scellée. Vous devez le faire avant la date limite d&#39;enchère, en liant une quantité donnée d&#39;ether au hachage d&#39;un message secret (contenant, entre autres, le hachage du nom, le montant réel de l&#39;enchère et un sel).
+2. Faites une offre scellée. Vous devez le faire avant la date limite d&#39;enchère, en liant une quantité donnée d&#39;ether au hachage d&#39;un message secret (contenant, entre autres, le hachage du nom, le montant réel de l&#39;enchère et un sel).
 Vous pouvez verrouiller plus d&#39;ether que vous n&#39;enchérissez réellement afin de masquer votre véritable évaluation.
 
-2. Révélez l&#39;enchère. Pendant la période de révélation, vous devez effectuer une transaction qui révèle l&#39;enchère, qui calculera ensuite l&#39;enchère la plus élevée et la deuxième enchère la plus élevée et renverra l&#39;ether aux enchérisseurs non retenus.
+3. Révélez l&#39;enchère. Pendant la période de révélation, vous devez effectuer une transaction qui révèle l&#39;enchère, qui calculera ensuite l&#39;enchère la plus élevée et la deuxième enchère la plus élevée et renverra l&#39;ether aux enchérisseurs non retenus.
 Chaque fois que l&#39;enchère est révélée, le gagnant actuel est recalculé ; par conséquent, le dernier à être défini avant l&#39;expiration du délai de révélation devient le grand gagnant.
 
-3. Nettoyer après. Si vous êtes le gagnant, vous pouvez finaliser l&#39;enchère afin de récupérer la différence entre votre enchère et la deuxième enchère la plus élevée.
+4. Nettoyer après. Si vous êtes le gagnant, vous pouvez finaliser l&#39;enchère afin de récupérer la différence entre votre enchère et la deuxième enchère la plus élevée.
 Si vous avez oublié de révéler, vous pouvez faire une révélation tardive et récupérer une partie de votre enchère.
 
 ==== Couche supérieure : les actes
