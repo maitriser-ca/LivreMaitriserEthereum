@@ -325,7 +325,7 @@ Lorsque vous démarrez Swarm, vous devriez voir quelque chose comme ceci :
 Maximum peer count                       ETH=25 LES=0 total=25
 Starting peer-to-peer node               instance=swarm/v0.3.1-225171a4/linux...
 connecting to ENS API                    url=http://127.0.0.1:8545
-swarm[5955]: [189B blob data]
+swarm[5955] : [189B blob data]
 Starting P2P networking
 UDP listener up                          self=enode://f50c8e19ff841bcd5ce7d2d...
 Updated bzz local addr                   oaddr=9c40be8b83e648d50f40ad3... uaddr=e
@@ -462,7 +462,7 @@ ENS a été lancé le Star Wars Day, le 4 mai 2017 (après une tentative infruct
 
 ((("ENS (Ethereum Name Service)","conception de", id="ix_12dapps-asciidoc12", range="startofrange")))ENS est ((("ENS (Ethereum Name Service)","spécification" )))spécifié principalement dans trois propositions d'amélioration d'Ethereum : EIP-137, qui spécifie les fonctions de base d'ENS ; EIP-162, qui décrit le système d'enchères pour la racine +.eth+ ; et EIP-181, qui spécifie la résolution inverse des adresses.
 
-ENS suit une philosophie de conception "sandwich": une couche très simple en bas, suivie de couches de code plus complexes mais remplaçables, avec une couche supérieure très simple qui conserve tous les fonds dans des comptes séparés.
+ENS suit une philosophie de conception "sandwich" : une couche très simple en bas, suivie de couches de code plus complexes mais remplaçables, avec une couche supérieure très simple qui conserve tous les fonds dans des comptes séparés.
 
 ==== Couche inférieure : nommez les propriétaires et les résolveurs
 

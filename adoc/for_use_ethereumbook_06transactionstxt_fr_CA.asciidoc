@@ -40,7 +40,7 @@ Par exemple, vous remarquerez peut-être qu'il n'y a pas de données "from" dans
 ((("nonces", id="ix_06transactions-asciidoc1", range="startofrange")))((("transactions","nonces", id="ix_06transactions-asciidoc2", range="startofrange")))Le nonce est l'un des composants les plus importants et les moins compris d'une transaction. La définition du Livre jaune (voir <<references>>) lit :
 
 ____
-+nonce+ : Une valeur scalaire égale au nombre de transactions émises depuis cette adresse ou, dans le cas de comptes avec code associé, au nombre de créations de contrats effectuées par ce compte.
++nonce+ : Une valeur scalaire égale au nombre de transactions émises depuis cette adresse ou, dans le cas de comptes avec code associé, au nombre de créations de contrats effectuées par ce compte.
 ____
 
 À proprement parler, le nonce est un attribut de l'adresse d'origine ; c'est-à-dire qu'il n'a de sens que dans le contexte de l'adresse d'envoi. Cependant, le nonce n'est pas stocké explicitement dans le cadre de l'état d'un compte sur la chaîne de blocs. Au lieu de cela, il est calculé dynamiquement, en comptant le nombre de transactions confirmées provenant d'une adresse.
@@ -495,7 +495,7 @@ image::images/published_contract_transactions.png["Etherscan affichant les trans
 
 ((("signatures numériques","ECDSA et")))((("Elliptic Curve Digital Signature Algorithm (ECDSA)","à propos")))L'algorithme de signature numérique utilisé dans Ethereum est l'_Elliptic Curve Digital Signature Algorithm_ ( ECDSA). Il est basé sur des paires de clés privées-publiques à courbe elliptique, comme décrit dans <<elliptic_curve>>.
 
-Une signature numérique sert trois objectifs dans Ethereum (voir l'encadré suivant). Premièrement, la signature prouve que le propriétaire de la clé privée, qui est implicitement le propriétaire d'un compte Ethereum, a _autorisé_ la dépense d'ether ou l'exécution d'un contrat. ((("non-répudiation")))Deuxièmement, il garantit la _non-répudiation_ : la preuve de l'autorisation est indéniable. Troisièmement, la signature prouve que les données de transaction n'ont pas été et _ne peuvent pas être modifiées_ par quiconque après la signature de la transaction.
+Une signature numérique sert trois objectifs dans Ethereum (voir l'encadré suivant). Premièrement, la signature prouve que le propriétaire de la clé privée, qui est implicitement le propriétaire d'un compte Ethereum, a _autorisé_ la dépense d'ether ou l'exécution d'un contrat. ((("non-répudiation")))Deuxièmement, il garantit la _non-répudiation_ : la preuve de l'autorisation est indéniable. Troisièmement, la signature prouve que les données de transaction n'ont pas été et _ne peuvent pas être modifiées_ par quiconque après la signature de la transaction.
 
 [[digital_signature_definition]]
 .Définition de Wikipedia d'une signature numérique
@@ -543,7 +543,7 @@ _Source : https://en.wikipedia.org/wiki/Digital_signature_
 </div>
 ++++
 
-où:
+où :
 
 * _k_ est la clé privée de signature.
 * _m_ est la transaction codée RLP.
@@ -603,7 +603,7 @@ A partir de là, l'algorithme calcule la valeur _s_ de la signature, telle que 
 </ul>
 ++++
 
-où:
+où :
 
 * _q_ est la clé privée éphémère.
 * _r_ est la coordonnée _x_ de la clé publique éphémère.
@@ -619,7 +619,7 @@ La vérification est l'inverse de la fonction de génération de signature, util
 4. Calculez _u~2~_ = _r_ * _w_ _mod p_
 5. Enfin, calculez le point sur la courbe elliptique _Q_ ≡ _u~1~_ * _G_ + _u~2~_ * _K_ {nbsp} {nbsp} (_mod p_)
 
-où:
+où :
 
 * _r_ et _s_ sont les valeurs de signature.
 * _K_ est la clé publique du signataire (propriétaire de l'EOA).
@@ -742,7 +742,7 @@ et:
 </ul>
 ++++
 
-où:
+où :
 
 * __K__~1~ et __K__~2~ sont les deux possibilités pour la clé publique du signataire.
 * __r__^-1^ est l'inverse multiplicatif de la valeur `+r+` de la signature.

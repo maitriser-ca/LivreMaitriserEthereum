@@ -6,7 +6,7 @@
 [[ether_units]]
 === L'ether comme unité monétaire
 
-((("unités monétaires")))((("Ethereum (généralement)","unités monétaires")))L'unité monétaire d'Ethereum est appelée _ether_, également identifiée par "ETH" ou avec les symboles &#926; (de la lettre grecque « Xi » qui ressemble à un E majuscule stylisé) ou, moins souvent, &#9830;: par exemple, 1 ether, ou 1 ETH, ou &#926;1, ou &#9830;1.
+((("unités monétaires")))((("Ethereum (généralement)","unités monétaires")))L'unité monétaire d'Ethereum est appelée _ether_, également identifiée par "ETH" ou avec les symboles &#926; (de la lettre grecque « Xi » qui ressemble à un E majuscule stylisé) ou, moins souvent, &#9830; : par exemple, 1 ether, ou 1 ETH, ou &#926;1, ou &#9830;1.
 
 [TIP]
 ====

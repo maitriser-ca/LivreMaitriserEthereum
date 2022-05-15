@@ -303,7 +303,7 @@ Une bibliothèque cryptographique peut nous aider à calculer _K_, en utilisant 
 K = (x, y)
 ----
 
-où:
+où :
 
 ----
 x = 6e145ccef1033dea239875dd00dfb4fee6e3348b84985c92f103444683bae07b
