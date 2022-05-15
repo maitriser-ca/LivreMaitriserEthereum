@@ -1,41 +1,42 @@
 [appendix]
 [[dev_tools_frameworks]]
-== Outils de développement, cadres de développement, pass:[<span class="keep-together">et bibliothèques</span>]
+== Outils, cadres, pass:[<span class="keep-together">et bibliothèques</span>] de développement
 
-=== Frameworks
+=== Cadres de développement (Frameworks)
 
-((("frameworks", id="ix_appdx-dev-tools-asciidoc0", range="startofrange")))Frameworks can be used to ease Ethereum smart contract development. By doing everything yourself you get a better understanding of how everything fits together, but it's a lot of tedious, repetitive work. The frameworks described in this section can automate certain tasks and make development easier.
+(((&quot;cadres de développement&quot;, id=&quot;ix_appdx-dev-tools-asciidoc0&quot;, range=&quot;startofrange&quot;)))Les cadres de développement peuvent être utilisés pour faciliter le développement de contrats intelligents Ethereum. En faisant tout vous-même, vous comprenez mieux comment tout s&#39;emboîte, mais c&#39;est beaucoup de travail fastidieux et répétitif. Les cadres de développement décrits dans cette section permettent d&#39;automatiser certaines tâches et de faciliter la programmation.
 
 [[truffle]]
 ==== Truffle
 
-((("frameworks","Truffle", id="ix_appdx-dev-tools-asciidoc1", range="startofrange")))((("Truffle", id="ix_appdx-dev-tools-asciidoc2", range="startofrange")))GitHub: https://github.com/trufflesuite/truffle
+(((&quot;cadres de développement&quot;,&quot;Truffle&quot;, id=&quot;ix_appdx-dev-tools-asciidoc1&quot;, range=&quot;startofrange&quot;)))(((&quot;Truffle&quot;, id=&quot;ix_appdx-dev-tools-asciidoc2&quot;, range=&quot;startofrange&quot;))) GitHub : https://github.com/trufflesuite/truffle
 
-Website: https://truffleframework.com
+Site Web : https://truffleframework.com
 
-Documentation: https://truffleframework.com/docs
+Documentation : https://truffleframework.com/docs
 
-Truffle Boxes: http://truffleframework.com/boxes/
+Boîtes Truffle : http://truffleframework.com/boxes/
 
-+npm+ package repository: https://www.npmjs.com/package/truffle
+Référentiel de packages +npm+ : https://www.npmjs.com/package/truffle
 
 
 [[installing_truffle]]
-===== Installing the Truffle framework
+===== Installation du cadre de développement Truffle
 
-((("Node.js")))((("Truffle","installing")))The Truffle framework comprises several Node.js packages. Before you install +truffle+, you need to have an up-to-date and working installation of Node.js and the Node Package Manager (+npm+).
+(((&quot;Node.js&quot;)))(((&quot;Truffle&quot;,&quot;installation&quot;)))Le cadre de développement Truffle comprend plusieurs packages Node.js. Avant d&#39;installer +truffle+, vous devez avoir une installation à jour et fonctionnelle de Node.js et du Node Package Manager (+npm+).
 
-The recommended way to install Node.js and +npm+ is to use the Node Version Manager (+nvm+). Once you install +nvm+, it will handle all the dependencies and updates for you. Follow the instructions found at http://nvm.sh[].
+La méthode recommandée pour installer Node.js et +npm+ consiste à utiliser le gestionnaire de version de nœud (+nvm+). Une fois que vous avez installé +nvm+, il gérera toutes les dépendances et mises à jour pour vous. Suivez les instructions trouvées sur http://nvm.sh[].
 
-Once +nvm+ is installed on your operating system, installing Node.js is simple. Use the +--lts+ flag to tell +nvm+ that you want the most recent &#x201c;long-term support&#x201d; (LTS) version of Node.js:
+Une fois que +nvm+ est installé sur votre système d&#39;exploitation, l&#39;installation de Node.js est simple. Utilisez le drapeau +--lts+ pour dire à +nvm+ que vous voulez la version la plus récente de &quot;support à long terme&quot; (LTS) de Node.js :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>nvm install --lts</strong>
+
 </pre>
 ++++
 
-Confirm you have +node+ and +npm+ installed:
+Vérifiez que +node+ et +npm+ sont installés :
 
 ++++
 <pre data-type="programlisting">
@@ -43,19 +44,21 @@ $ <strong>node -v</strong>
 v8.9.4
 $ <strong>npm -v</strong>
 5.6.0
+
 </pre>
 ++++
 
-Next, create a hidden file, _.nvmrc_, that contains the Node.js version supported by your DApp so developers just need to run `nvm install` in the root of the project directory and it will automatically install and switch to using that version:
+Ensuite, créez un fichier caché, _.nvmrc_, qui contient la version Node.js prise en charge par votre DApp afin que les développeurs n&#39;aient qu&#39;à exécuter &quot;nvm install&quot; à la racine du répertoire du projet et il s&#39;installera automatiquement et passera à l&#39;utilisation de cette version. :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>node -v &gt; .nvmrc</strong>
 $ <strong>nvm install</strong>
+
 </pre>
 ++++
 
-Looking good. Now to install +truffle+:
+Ça parait bien. Maintenant, installons +truffle+ :
 
 ++++
 <pre data-type="programlisting">
@@ -63,42 +66,46 @@ $ <strong>npm -g install truffle</strong>
 
 + truffle@4.0.6
 installed 1 package in 37.508s
+
 </pre>
 ++++
 
 [[truffle_box]]
-===== Integrating a prebuilt Truffle project (Truffle Box)
+===== Intégration d&#39;un projet Truffle préconstruit (Truffle Box)
 
-((("Truffle","integrating a prebuilt Truffle project")))((("Truffle Box")))If you want to use or create a DApp that builds upon prebuilt boilerplate, go to the Truffle Boxes website, choose an existing Truffle project, and then run the following command to download and extract it:
+(((&quot;Truffle&quot;,&quot;intégrer un projet Truffle prédéfini&quot;)))(((&quot;Truffle Box&quot;)))Si vous souhaitez utiliser ou créer une DApp qui s&#39;appuie sur un passe-partout prédéfini, accédez au site Web de Truffle Boxes, choisissez un projet Truffle existant, puis exécutez la commande suivante pour le télécharger et l&#39;extraire :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>truffle unbox <em>BOX_NAME</em></strong>
+
 </pre>
 ++++
 
 [[truffle_project_directory]]
-===== Creating a truffle project directory
+===== Création d&#39;un répertoire de projet truffle
 
-((("Truffle","creating a project directory", id="ix_appdx-dev-tools-asciidoc3", range="startofrange")))For each project where you will use +truffle+, create a project directory and initialize +truffle+ within that directory. +truffle+ will create the necessary directory structure inside your project directory. It's customary to give the project directory a name that describes the project. For this example, we will use +truffle+ to deploy our +Faucet+ contract from <<simple_contract_example>>, and therefore we will name the project folder __Faucet__:
+(((&quot;Truffle&quot;,&quot;création d&#39;un répertoire de projet&quot;, id=&quot;ix_appdx-dev-tools-asciidoc3&quot;, range=&quot;startofrange&quot;)))Pour chaque projet où vous utiliserez +truffle+, créez un répertoire de projet et initialisez +truffle+ dans ce répertoire. +truffle+ créera la structure de répertoire nécessaire dans le répertoire de votre projet. Il est d&#39;usage de donner au répertoire du projet un nom qui décrit le projet. Pour cet exemple, nous utiliserons +truffle+ pour déployer notre contrat +Faucet+ depuis &lt;<simple_contract_example>&gt;, et donc nous nommerons le dossier du projet __Faucet__ :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>mkdir Faucet</strong>
 $ <strong>cd Faucet</strong>
 Faucet $
+
 </pre>
 ++++
 
-Once inside the _Faucet_ directory, we initialize +truffle+:
+Une fois dans le répertoire _Faucet_, nous initialisons +truffle+ :
 
 ++++
 <pre data-type="programlisting">
 Faucet $ <strong>truffle init</strong>
+
 </pre>
 ++++
 
-+truffle+ creates a directory structure and some default files:
++truffle+ crée une structure de répertoires et des fichiers par défaut :
 
 ----
 Faucet
@@ -111,7 +118,7 @@ Faucet
 `---- truffle.js
 ----
 
-We will also use a number of JavaScript (Node.js) support packages, in addition to +truffle+ itself. We can install these with +npm+. We initialize the +npm+ directory structure and accept the defaults suggested by +npm+:
+Nous utiliserons également un certain nombre de packages de support JavaScript (Node.js), en plus de +truffle+ lui-même. Nous pouvons les installer avec +npm+. Nous initialisons la structure de répertoires +npm+ et acceptons les valeurs par défaut suggérées par +npm+ :
 
 ++++
 <pre data-type="programlisting">
@@ -145,32 +152,35 @@ About to write to Faucet/package.json:
 
 
 Is this ok? (yes)
+
 </pre>
 ++++
 
-Now, we can install the dependencies that we will use to make working with +truffle+ easier:
+Maintenant, nous pouvons installer les dépendances que nous utiliserons pour faciliter le travail avec +truffle+ :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>npm install dotenv truffle-wallet-provider ethereumjs-wallet</strong>
+
 </pre>
 ++++
 
-We now have a __node_modules__ directory with several thousand files inside our _Faucet_ directory.
+Nous avons maintenant un répertoire __node_modules__ avec plusieurs milliers de fichiers dans notre répertoire _Faucet_.
 
-Prior to deploying a DApp to a cloud production or continuous integration environment, it is important to specify the +engines+ field so that your DApp is built with the correct Node.js version and its associated dependencies are installed. For details on configuring this field, see the http://bit.ly/2zp2GPF[documentation].(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc3")))
+Avant de déployer un DApp dans un environnement de production cloud ou d&#39;intégration continue, il est important de spécifier le champ +engines+ afin que votre DApp soit construit avec la bonne version de Node.js et que ses dépendances associées soient installées. Pour plus de détails sur la configuration de ce champ, consultez la http://bit.ly/2zp2GPF[documentation].(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc3&quot;)))
 
-===== Configuring truffle
+===== Configuration de truffle
 
-((("Truffle","configuring")))+truffle+ creates some empty configuration files, _truffle.js_ and _truffle-config.js_. On Windows systems the _truffle.js_ name may cause a conflict when you try to run the command +truffle+ and Windows attempts to run _truffle.js_ instead. To avoid this, we will delete _truffle.js_ and use _truffle-config.js_ (in support of Windows users, who, honestly, suffer enough already):
+(((&quot;Truffle&quot;,&quot;configuration&quot;)))+truffle+ crée des fichiers de configuration vides, _truffle.js_ et _truffle-config.js_. Sur les systèmes Windows, le nom _truffle.js_ peut provoquer un conflit lorsque vous essayez d&#39;exécuter la commande +truffle+ et que Windows tente d&#39;exécuter _truffle.js_ à la place. Pour éviter cela, nous allons supprimer _truffle.js_ et utiliser _truffle-config.js_ (en soutien aux utilisateurs de Windows, qui, honnêtement, souffrent déjà assez) :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>rm truffle.js</strong>
+
 </pre>
 ++++
 
-Now we edit _truffle-config.js_ and replace the contents with the sample configuation shown here:
+Maintenant, nous éditons _truffle-config.js_ et remplaçons le contenu par l&#39;exemple de configuration montré ici :
 
 [source,javascript]
 ----
@@ -185,15 +195,15 @@ module.exports = {
 };
 ----
 
-This configuration is a good starting point. It sets up one default Ethereum network (named +localnode+), which assumes we are running an Ethereum client such as Parity, either as a full node or as a light client. This configuration will instruct +truffle+ to communicate with the local node over RPC, on port 8545. +truffle+ will use whatever Ethereum network the local node is connected to, such as the Ethereum main network, or a test network like Ropsten. The local node will also be providing the wallet functionality.
+Cette configuration est un bon point de départ. Il configure un réseau Ethereum par défaut (nommé +localnode+), qui suppose que nous exécutons un client Ethereum tel que Parity, soit en tant que nœud complet, soit en tant que client léger. Cette configuration demandera à +truffle+ de communiquer avec le nœud local via RPC, sur le port 8545. +truffle+ utilisera le réseau Ethereum auquel le nœud local est connecté, comme le réseau principal Ethereum ou un réseau de test comme Ropsten. Le nœud local fournira également la fonctionnalité de portefeuille.
 
-In following sections, we will configure additional networks for +truffle+ to use, such as the +ganache+ local test blockchain and Infura, a hosted network provider. As we add more networks, the configuration file will get more complex, but it will also give us more options for our testing and development workflow.
+Dans les sections suivantes, nous configurerons des réseaux supplémentaires pour +truffle+ à utiliser, tels que la chaîne de blocs de test locale +ganache+ et Infura, un fournisseur de réseau hébergé. Au fur et à mesure que nous ajouterons des réseaux, le fichier de configuration deviendra plus complexe, mais il nous donnera également plus d&#39;options pour notre flux de travail de test et de développement.
 
-===== Using truffle to deploy a contract
+===== Utiliser truffle pour déployer un contrat
 
-((("smart contracts","using Truffle to deploy")))((("Truffle","contract deployment with")))We now have a basic working directory for our _Faucet_ project, and we have +truffle+ and its dependencies configured. Contracts go in the _contracts_ subdirectory of our project. The directory already contains a "helper" contract, _Migrations.sol_, which manages contract upgrades for us. We'll examine the use of _Migrations.sol_ in the next section.
+(((&quot;contrats intelligents&quot;,&quot;utiliser Truffle pour déployer&quot;)))(((&quot;Truffle&quot;,&quot;déploiement de contrat avec&quot;)))Nous avons maintenant un répertoire de travail de base pour notre projet _Faucet_, et nous avons +truffle+ et ses dépendances configurées. Les contrats vont dans le sous-répertoire _contracts_ de notre projet. Le répertoire contient déjà un contrat &quot;d'aide&quot;, _Migrations.sol_, qui gère pour nous les mises à jour des contrats. Nous examinerons l&#39;utilisation de _Migrations.sol_ dans la section suivante.
 
-Let's copy the _Faucet.sol_ contract (from <<solidity_faucet_example>>) into the _contracts_ subdirectory, so that the project directory looks like this:
+Copions le contrat _Faucet.sol_ (depuis &lt;<solidity_faucet_example>&gt;) dans le sous-répertoire _contracts_, de sorte que le répertoire du projet ressemble à ceci :
 
 ----
 Faucet
@@ -203,7 +213,7 @@ Faucet
 ...
 ----
 
-We can now ask +truffle+ to compile the contract for us:
+Nous pouvons maintenant demander à +truffle+ de compiler le contrat pour nous :
 
 ++++
 <pre data-type="programlisting">
@@ -211,19 +221,20 @@ $ <strong>truffle compile</strong>
 Compiling ./contracts/Faucet.sol...
 Compiling ./contracts/Migrations.sol...
 Writing artifacts to ./build/contracts
+
 </pre>
 ++++
 
 [[truffle_migrations_understanding_deployment_scripts]]
-===== Truffle migrations&#x2014;understanding deployment scripts
+===== Migrations Truffle—comprendre les scripts de déploiement
 
-((("deployment scripts", id="ix_appdx-dev-tools-asciidoc4", range="startofrange")))((("migrations", id="ix_appdx-dev-tools-asciidoc5", range="startofrange")))((("Truffle","migrations", id="ix_appdx-dev-tools-asciidoc6", range="startofrange")))Truffle offers a deployment system called a _migration_. If you have worked in other frameworks, you may have seen something similar: Ruby on Rails, Python Django, and many other languages and frameworks have a +migrate+ command.
+(((&quot;scripts de déploiement&quot;, id=&quot;ix_appdx-dev-tools-asciidoc4&quot;, range=&quot;startofrange&quot;)))(((&quot;migrations&quot;, id=&quot;ix_appdx-dev-tools-asciidoc5&quot;, range=&quot;startofrange&quot;)))(((&quot;Truffle&quot;,&quot;migrations&quot;, id=&quot;ix_appdx-dev-tools-asciidoc6&quot;, range=&quot;startofrange&quot;)))Truffle propose un système de déploiement appelé _migration_. Si vous avez travaillé dans d&#39;autres cadres de développement, vous avez peut-être vu quelque chose de similaire : Ruby on Rails, Python Django et de nombreux autres langages et cadres de développement ont une commande +migrate+.
 
-In all those frameworks, the purpose of a migration is to handle changes in the data schema between different versions of the software. The purpose of migrations in Ethereum is slightly different. Because Ethereum contracts are immutable and cost gas to deploy, Truffle offers a migration mechanism to keep track of which contracts (and which versions) have already been deployed. In a complex project with dozens of contracts and complex dependencies, you would not want to have to pay to redeploy contracts that haven't changed. You would also not want to manually track which versions of which contracts have been deployed already. The Truffle migration mechanism does all that by deploying the smart contract _Migrations.sol_, which then keeps track of all other contract deployments.
+Dans tous ces cadres de développement, le but d&#39;une migration est de gérer les modifications du schéma de données entre différentes versions du logiciel. Le but des migrations dans Ethereum est légèrement différent. Parce que les contrats Ethereum sont immuables et coûtent du gaz à déployer, Truffle propose un mécanisme de migration pour garder une trace des contrats (et des versions) qui ont déjà été déployés. Dans un projet complexe avec des dizaines de contrats et des dépendances complexes, vous ne voudriez pas avoir à payer pour redéployer des contrats qui n&#39;ont pas changé. Vous ne voudriez pas non plus suivre manuellement quelles versions de quels contrats ont déjà été déployées. Le mécanisme de migration Truffle fait tout cela en déployant le contrat intelligent _Migrations.sol_, qui suit ensuite tous les autres déploiements de contrat.
 
-We have only one contract, _Faucet.sol_, which means that the migration system is overkill, to say the least. Unfortunately, we have to use it. But, by learning how to use it for one contract, we can start practicing some good habits for our development workflow. The effort will pay off as things get more complicated.
+Nous n&#39;avons qu&#39;un seul contrat, _Faucet.sol_, ce qui signifie que le système de migration est pour le moins exagéré. Malheureusement, nous devons l&#39;utiliser. Mais, en apprenant à l&#39;utiliser pour un contrat, nous pouvons commencer à mettre en pratique de bonnes habitudes pour notre flux de travail de développement. L&#39;effort sera payant au fur et à mesure que les choses se compliqueront.
 
-Truffle's _migrations_ directory is where the migration scripts are found. Right now there's only one script, __1_initial_migration.js__, which deploys the _Migrations.sol_ contract itself:
+Le répertoire _migrations_ de Truffle est l&#39;endroit où se trouvent les scripts de migration. À l&#39;heure actuelle, il n&#39;y a qu&#39;un seul script, __1_initial_migration.js__, qui déploie le contrat _Migrations.sol_ lui-même :
 
 
 [source,javascript,linenums]
@@ -231,32 +242,33 @@ Truffle's _migrations_ directory is where the migration scripts are found. Right
 include::code/truffle/Faucet/migrations/1_initial_migration.js[]
 ----
 
-We need a second migration script, to deploy _Faucet.sol_. Let's call it __2_deploy_contracts.js__. It is very simple, just like __1_initial_migration.js__, with only a few small changes. In fact, you can copy the contents of __1_initial_migration.j__ and simply replace all instances of +Migrations+ with +Faucet+:
+Nous avons besoin d&#39;un deuxième script de migration, pour déployer _Faucet.sol_. Appelons-le __2_deploy_contracts.js__. C&#39;est très simple, tout comme __1_initial_migration.js__, avec seulement quelques petites modifications. En fait, vous pouvez copier le contenu de __1_initial_migration.j__ et simplement remplacer toutes les instances de +Migrations+ par +Faucet+ :
 
 [source,javascript,linenums]
 ----
 include::code/truffle/Faucet/migrations/2_deploy_contracts.js[]
 ----
 
-The script initializes a variable +Faucet+, identifying the _Faucet.sol_ Solidity source code as the artifact that defines +Faucet+. Then it calls the `deploy` function to deploy this contract.
+Le script initialise une variable +Faucet+, identifiant le code source Solidity _Faucet.sol_ comme l&#39;artefact qui définit +Faucet+. Ensuite, il appelle la fonction &quot;deploy&quot; pour déployer ce contrat.
 
-We're all set. Let's use +truffle migrate+ to deploy it on. We have to specify which network to deploy the contract, using the +--network+ argument. We only have one network specified in the configuration file, which we named +localnode+. Make sure your local Ethereum client is running and then type:
+Nous sommes prêts. Utilisons +truffle migrate+ pour le déployer. Nous devons spécifier sur quel réseau déployer le contrat, en utilisant l&#39;argument +--network+ . Nous n&#39;avons qu&#39;un seul réseau spécifié dans le fichier de configuration, que nous avons nommé +localnode+. Assurez-vous que votre client Ethereum local est en cours d&#39;exécution, puis tapez :
 
 ++++
 <pre data-type="programlisting">
 Faucet $ <strong>truffle migrate --network localnode</strong>
+
 </pre>
 ++++
 
-Because we are using a local node to connect to the Ethereum network and manage our wallet, we have to authorize the transaction that +truffle+ creates. We're running +parity+ connected to the Ropsten test blockchain, so during the migration we'll see a pop-up like the one in <<parity_deployment_confirmation>> on Parity's web console.
+Comme nous utilisons un nœud local pour nous connecter au réseau Ethereum et gérer notre portefeuille, nous devons autoriser la transaction créée par +truffle+. Nous exécutons +parity+ connecté à la chaîne de blocs de test de Ropsten, donc pendant la migration, nous verrons une fenêtre contextuelle comme celle de &lt;<parity_deployment_confirmation>&gt; sur la console web de Parity.
 
 [[parity_deployment_confirmation]]
-.Parity asking for confirmation to deploy Faucet
-image::images/parity_deployment_confirmation.png["Parity asking for confirmation to deploy Faucet"]
+.Parity demandant confirmation pour déployer Faucet
+image::images/parity_deployment_confirmation.png[&quot;Parité demandant confirmation pour déployer Faucet&quot;]
 
-There are four transactions in total: one to deploy +Migrations+, one to update the deployments counter to +1+, one to deploy +Faucet+, and one to update the deployments counter to +2+.
+Il y a quatre transactions au total : une pour déployer +Migrations+, une pour mettre à jour le compteur de déploiements à +1+, une pour déployer +Faucet+ et une pour mettre à jour le compteur de déploiements à +2+.
 
-Truffle will show the migrations completing, show each of the transactions, and show the contract addresses:(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc6")))(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc5")))(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc4")))
+Truffle affichera les migrations terminées, affichera chacune des transactions et affichera les adresses de contrat :(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc6&quot;)))(((range=&quot;endofrange&quot; , startref=&quot;ix_appdx-dev-tools-asciidoc5&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc4&quot;)))
 
 ++++
 <pre data-type="programlisting">
@@ -277,30 +289,32 @@ Running migration: 2_deploy_contracts.js
 Saving successful migration to network...
   ... 0x11f376bd7307edddfd40dc4a14c3f7cb84b6c921ac2465602060b67d08f9fd8a
 Saving artifacts...
+
 </pre>
 ++++
 
-===== Using the Truffle console
+===== Utilisation de la console Truffle
 
-((("Truffle","console", id="ix_appdx-dev-tools-asciidoc7", range="startofrange")))Truffle offers a JavaScript console that we can use to interact with the Ethereum network (via the local node), interact with deployed contracts, and interact with the wallet provider. In our current configuration (+localnode+), the node and wallet provider is our local Parity client.
+(((&quot;Truffle&quot;,&quot;console&quot;, id=&quot;ix_appdx-dev-tools-asciidoc7&quot;, range=&quot;startofrange&quot;)))Truffle propose une console JavaScript que nous pouvons utiliser pour interagir avec le réseau Ethereum (via le noeud local), interagir avec les contrats déployés et interagir avec le fournisseur de portefeuille. Dans notre configuration actuelle (+localnode+), le fournisseur de nœud et de portefeuille est notre client Parity local.
 
-Let's start the Truffle console and try some commands:
+Démarrons la console Truffle et essayons quelques commandes :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>truffle console --network localnode</strong>
 truffle(localnode)>
+
 </pre>
 ++++
 
-Truffle presents a prompt, showing the selected network configuration (+localnode+).
+Truffle présente une invite indiquant la configuration réseau sélectionnée (+localnode+).
 
 [TIP]
 ====
-It's important to remember and be aware of which network you are using. You wouldn't want to accidentally deploy a test contract or make a transaction on the Ethereum main network. That could be an expensive mistake!
+Il est important de se rappeler et de savoir quel réseau vous utilisez. Vous ne voudriez pas déployer accidentellement un contrat de test ou effectuer une transaction sur le réseau principal Ethereum. Cela pourrait être une erreur coûteuse!
 ====
 
-The Truffle console offers an autocomplete function that makes it easy for us to explore the environment. If we press Tab after a partially completed command, Truffle will complete the command for us. Pressing Tab twice will show all possible completions if more than one command matches our input. In fact, if we press Tab twice on an empty prompt, Truffle lists all the available commands:
+La console Truffle offre une fonction de saisie semi-automatique qui nous permet d&#39;explorer facilement l&#39;environnement. Si nous appuyons sur Tab après une commande partiellement terminée, Truffle terminera la commande pour nous. Appuyer deux fois sur Tab affichera toutes les complétions possibles si plus d&#39;une commande correspond à notre entrée. En fait, si nous appuyons deux fois sur Tab sur une invite vide, Truffle liste toutes les commandes disponibles :
 
 ++++
 <pre data-type="programlisting" class="codewrap">
@@ -310,30 +324,33 @@ Array Boolean Date Error EvalError Function Infinity JSON Math NaN Number Object
 ArrayBuffer Buffer DataView Faucet Float32Array Float64Array GLOBAL Int16Array Int32Array Int8Array Intl Map Migrations Promise Proxy Reflect Set StateManager Symbol Uint16Array Uint32Array Uint8Array Uint8ClampedArray WeakMap WeakSet WebAssembly XMLHttpRequest _ assert async_hooks buffer child_process clearImmediate clearInterval clearTimeout cluster console crypto dgram dns domain escape events fs global http http2 https module net os path perf_hooks process punycode querystring readline repl require root setImmediate setInterval setTimeout stream string_decoder tls tty unescape url util v8 vm web3 zlib
 
 __defineGetter__ __defineSetter__ __lookupGetter__ __lookupSetter__ __proto__ constructor hasOwnProperty isPrototypeOf propertyIsEnumerable toLocaleString toString valueOf
+
 </pre>
 ++++
 
-The vast majority of the wallet- and node-related functions are provided by the +web3+ object, which is an instance of the web3.js library. The +web3+ object abstracts the RPC interface to our Parity node. You will also notice two objects with familiar names: +Migrations+ and +Faucet+. Those represent the contracts we just deployed. We will use the Truffle console to interact with a contract. First, let's check our wallet via the +web3+ object:
+La grande majorité des fonctions liées au portefeuille et aux nœuds sont fournies par l&#39;objet +web3+, qui est une instance de la bibliothèque web3.js. L&#39;objet +web3+ résume l&#39;interface RPC à notre nœud Parity. Vous remarquerez également deux objets aux noms familiers : +Migrations+ et +Faucet+. Ceux-ci représentent les contrats que nous venons de déployer. Nous utiliserons la console Truffle pour interagir avec un contrat. Tout d&#39;abord, vérifions notre wallet via l&#39;objet +web3+ :
 
 ++++
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>web3.eth.accounts</strong>
 [ '0x9e713963a92c02317a681b9bb3065a8249de124f',
   '0xdb5dc1a13e3a55cf3b4587cd8d1e5fdeb6738145' ]
+
 </pre>
 ++++
 
-Our Parity client has two wallets, with some test ether on Ropsten. The +web3.eth.accounts+ attribute contains a list of all the accounts. We can check the balance of the first account using the +getBalance+ function:
+Notre client Parity a deux portefeuilles, avec un peu d&#39;ether de test sur Ropsten. L&#39;attribut +web3.eth.accounts+ contient une liste de tous les comptes. Nous pouvons vérifier le solde du premier compte en utilisant la fonction +getBalance+ :
 
 ++++
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>web3.eth.getBalance(web3.eth.accounts[0]).toNumber()</strong>
 191198572800000000
 truffle(localnode)&gt;
+
 </pre>
 ++++
 
-web3.js is a large JavaScript library that offers a comprehensive interface to the Ethereum system, via a provider such as a local client. We will examine web3.js in more detail in <<web3js_tutorial>>. Now let's try to interact with our contracts:
+web3.js est une grande bibliothèque JavaScript qui offre une interface complète au système Ethereum, via un fournisseur tel qu&#39;un client local. Nous examinerons web3.js plus en détail dans &lt;<web3js_tutorial>&gt;. Essayons maintenant d&#39;interagir avec nos contrats :
 
 ++++
 <pre data-type="programlisting">
@@ -342,39 +359,43 @@ truffle(localnode)&gt; <strong>Faucet.address</strong>
 truffle(localnode)&gt; <strong>web3.eth.getBalance(Faucet.address).toNumber()</strong>
 0
 truffle(localnode)&gt;
+
 </pre>
 ++++
 
-Next, we'll use +sendTransaction+ to send some test ether to fund the +Faucet+ contract. Note the use of +web3.utils.toWei+ to convert ether units for us. Typing 18 zeros without making a mistake is both difficult and dangerous, so it's always better to use a unit converter for values. Here's how we send the transaction:
+Ensuite, nous utiliserons +sendTransaction+ pour envoyer de l&#39;ether de test afin de financer le contrat +Faucet+. Notez l&#39;utilisation de +web3.utils.toWei+ pour convertir les unités ether pour nous. Taper 18 zéros sans se tromper est à la fois difficile et dangereux, il est donc toujours préférable d&#39;utiliser un convertisseur d&#39;unités pour les valeurs. Voici comment nous envoyons la transaction :
 
 ++++
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>web3.eth.sendTransaction({from:web3.eth.accounts[0],
                     to:Faucet.address, value:web3.utils.toWei(0.5, 'ether')});</strong>
 '0xf134c75b985dc0e0c27c2f0412251e0860eb530a5055e660f21e7483ab336808'
+
 </pre>
 ++++
 
-If we switch to the Parity web interface, we'll see a pop-up asking us to confirm this transaction. Once the transaction is mined, we'll be able to see the balance of our +Faucet+ contract:
+Si nous passons à l&#39;interface Web de Parity, nous verrons une fenêtre contextuelle nous demandant de confirmer cette transaction. Une fois la transaction extraite, nous pourrons voir le solde de notre contrat +Faucet+ :
 
 ++++
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>web3.eth.getBalance(Faucet.address).toNumber()</strong>
 500000000000000000
+
 </pre>
 ++++
 
-Let's call the +withdraw+ function now, to withdraw some test ether from the contract:
+Appelons maintenant la fonction +withdraw+, pour retirer de l&#39;ether de test du contrat :
 
 ++++
 <pre data-type="programlisting">
 truffle(localnode)&gt; <strong>Faucet.deployed().then(instance =>
                        {instance.withdraw(web3.utils.toWei(0.1,
                        'ether'))}).then(console.log)</strong>
+
 </pre>
 ++++
 
-Again, we'll need to approve the transaction in the Parity web interface. If we check again we'll see that the balance of the +Faucet+ contract has decreased, and our test wallet has received 0.1 ether(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc7"))):(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc2")))(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc1")))
+Encore une fois, nous devrons approuver la transaction dans l&#39;interface Web de Parity. Si nous vérifions à nouveau, nous verrons que le solde du contrat +Faucet+ a diminué et que notre portefeuille de test a reçu 0,1 ether(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc7&quot;))):(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc2&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc1&quot;)))
 
 ++++
 <pre data-type="programlisting">
@@ -384,54 +405,56 @@ truffle(localnode)&gt; <strong>Faucet.deployed().then(instance =>
                     {instance.withdraw(web3.utils.toWei(1, 'ether'))})</strong>
 StatusError: Transaction: 0xe147ae9e3610334...8612b92d3f9c 
   exited with an error (status 0).
+
 </pre>
 ++++
 
 ==== Embark
 
-((("Embark")))((("frameworks","Embark")))GitHub: https://github.com/embark-framework/embark/[]
+(((&quot;Embark&quot;)))(((&quot;cadres de développement&quot;,&quot;Embark&quot;)))GitHub : https://github.com/embark-framework/embark/[]
 
-Documentation: https://embark.status.im/docs/[]
+Documents : https://embark.status.im/docs/[]
 
-+npm+ package repository: https://www.npmjs.com/package/embark[]
+Référentiel de packages +npm+ : https://www.npmjs.com/package/embark[]
 
-Embark is a framework built to allow developers to easily develop and deploy decentralized applications.
-Embark integrates with Ethereum, IPFS, Whisper, and Swarm to offer the following features:
+Embark est un framework conçu pour permettre aux développeurs de développer et de déployer facilement des applications décentralisées.
+Embark s&#39;intègre à Ethereum, IPFS, Whisper et Swarm pour offrir les fonctionnalités suivantes :
 
-* Automatically deploy contracts and make them available in JS code.
-* Watch for changes and update contracts to redeploy if needed.
-* Manage and interact with different chains (e.g., testnet, local, mainnet).
-* Manage complex systems of interdependent contracts.
-* Store and retrieve data, including uploading and retrieving files hosted in IPFS.
-* Ease the process of deploying the full application to IPFS or Swarm.
-* Send and receive messages through Whisper.
+* Déployer automatiquement les contrats et les rendre disponibles en code JS.
+* Surveiller les changements et mettez à jour les contrats pour les redéployer si nécessaire.
+* Gérer et interagir avec différentes chaînes (par exemple, testnet, local, mainnet).
+* Gérer des systèmes complexes de contrats interdépendants.
+* Stocker et récupérer des données, y compris le téléchargement et la récupération de fichiers hébergés dans IPFS.
+* Faciliter le processus de déploiement de l&#39;application complète sur IPFS ou Swarm.
+* Envoyer et recevoir des messages via Whisper.
 
-You can install it with +npm+:
+Vous pouvez l&#39;installer avec +npm+ :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>npm -g install embark</strong>
+
 </pre>
 ++++
 
 [role="pagebreak-before"]
 ==== OpenZeppelin
 
-((("frameworks","OpenZeppelin suite", id="ix_appdx-dev-tools-asciidoc8", range="startofrange")))((("OpenZeppelin", id="ix_appdx-dev-tools-asciidoc9", range="startofrange")))GitHub: https://github.com/OpenZeppelin/openzeppelin-solidity[]
+(((&quot;cadres de développement&quot;,&quot;Suite OpenZeppelin&quot;, id=&quot;ix_appdx-dev-tools-asciidoc8&quot;, range=&quot;startofrange&quot;)))(((&quot;OpenZeppelin&quot;, id=&quot;ix_appdx-dev-tools-asciidoc9&quot;, range=&quot;startofrange&quot;)))GitHub : https://github.com/OpenZeppelin/openzeppelin-solidity[]
 
-Website: https://openzeppelin.org/[]
+Site Web : https://openzeppelin.org/[]
 
-Documentation: https://openzeppelin.org/api/docs/open-zeppelin.html[]
+Documentation : https://openzeppelin.org/api/docs/open-zeppelin.html[]
 
-https://openzeppelin.org/[OpenZeppelin] is an open framework of reusable and secure smart contracts in the Solidity language.
+https://openzeppelin.org/[OpenZeppelin] est un cadre ouvert de contrats intelligents réutilisables et sécurisés dans le langage Solidity.
 
-It is community-driven, led by the https://zeppelin.solutions/[Zeppelin] team, with over a hundred external contributors. The main focus of the framework is security, achieved by applying industry-standard contract security patterns and best practices, drawing on all the experience the Zeppelin devs have gained from https://blog.zeppelin.solutions/tagged/security[auditing] a huge number of contracts, and through constant testing and auditing from the community that uses the framework as a base for their real-world applications.
+Il est piloté par la communauté, dirigé par l&#39;équipe https://zeppelin.solutions/[Zeppelin], avec plus d&#39;une centaine de contributeurs externes. L&#39;objectif principal du cadre est la sécurité, obtenue en appliquant des modèles de sécurité de contrat standard et les meilleures pratiques, en s&#39;appuyant sur toute l&#39;expérience que les développeurs Zeppelin ont acquise en https://blog.zeppelin.solutions/tagged/security[auditant] un grand nombre de contrats, et grâce à des tests et des audits constants de la part de la communauté qui utilise le cadre de développement comme base pour leurs applications dans le monde réel.
 
-The OpenZeppelin framework is the most widely used solution for Ethereum smart contracts. The framework currently has an ample library of contracts including implementations of ERC20 and ERC721 tokens, many flavors of crowdsale models, and simple behaviors commonly found in contracts such as `Ownable`, `Pausable`, or `LimitBalance`. The contracts in this repository in some cases function as _de facto_ standard implementations.
+Le cadre de développement OpenZeppelin est la solution la plus largement utilisée pour les contrats intelligents Ethereum. Le cadre de développement dispose actuellement d&#39;une vaste bibliothèque de contrats, y compris des implémentations de jetons ERC20 et ERC721, de nombreuses variantes de modèles de vente publique et des comportements simples que l&#39;on trouve couramment dans des contrats tels que &quot;Ownable&quot;, &quot;Pausable&quot; ou &quot;LimitBalance&quot;. Les contrats de ce référentiel fonctionnent dans certains cas comme des implémentations standard _de facto_.
 
-The framework is licensed under an MIT license, and all the contracts have been designed with a modular approach to guarantee ease of reuse and extension. These are clean and basic building blocks, ready to be used in your next Ethereum project. Let's set up the framework and build a simple crowdsale using the OpenZeppelin contracts, to demonstrate how easy it is to use. This example also stresses the importance of reusing secure components instead of writing them by yourself.
+Le cadre est sous licence MIT, et tous les contrats ont été conçus avec une approche modulaire pour garantir la facilité de réutilisation et d&#39;extension. Ce sont des blocs de construction propres et basiques, prêts à être utilisés dans votre prochain projet Ethereum. Configurons le cadre et construisons une simple vente publique à l&#39;aide des contrats OpenZeppelin, pour démontrer à quel point il est facile à utiliser. Cet exemple souligne également l&#39;importance de réutiliser des composants sécurisés au lieu de les écrire par vous-même.
 
-First, we will need to install the +openzeppelin-solidity+ library into our workspace. The latest release as of the time of this writing is v1.9.0, so we will use that one:
+Tout d&#39;abord, nous devrons installer la bibliothèque +openzeppelin-solidity+ dans notre espace de travail. La dernière version au moment d&#39;écrire ces lignes est la v1.9.0, nous allons donc l&#39;utiliser :
 
 ++++
 <pre data-type="programlisting">
@@ -439,30 +462,31 @@ $ <strong>mkdir sample-crowdsale</strong>
 $ <strong>cd sample-crowdsale</strong>
 $ <strong>npm install openzeppelin-solidity@1.9.0</strong>
 $ <strong>mkdir contracts</strong>
+
 </pre>
 ++++
 
-At the time of writing, OpenZeppelin includes multiple basic token contracts that follow the ERC20, ERC721, and ERC827 standards, with different characteristics for emission, limits, vesting, life cycle, etc.
+Au moment de la rédaction, OpenZeppelin comprend plusieurs contrats de jetons de base qui suivent les normes ERC20, ERC721 et ERC827, avec différentes caractéristiques d&#39;émission, de limites, d&#39;acquisition, de cycle de vie, etc.
 
-Let's make an ERC20 token that's mintable, meaning that the initial supply starts at 0 and new tokens can be created by the token owner (in our case, the crowdsale pass:[<span class="keep-together">contract</span>]) and sold to buyers. In order to do this, we'll create a _contracts/SampleToken.sol_ file with the following contents:
+Créons un jeton ERC20 monnayable, ce qui signifie que l&#39;approvisionnement initial commence à 0 et que de nouveaux jetons peuvent être créés par le propriétaire du jeton (dans notre cas, le pass:[<span class="keep-together">contrat</span>] de vente publique) et vendus aux acheteurs. Pour ce faire, nous allons créer un fichier _contracts/SampleToken.sol_ avec le contenu suivant :
 
 [source,solidity]
 ----
 include::code/OpenZeppelin/contracts/SampleToken.sol[]
 ----
 
-OpenZeppelin already provides a +MintableToken+ contract that we can use as a base for our token, so we only define the details that are specific to our case. Next, let's make the crowdsale contract. Just like with tokens, OpenZeppelin already provides a wide variety of crowdsale flavors. Currently, you will find contracts for various scenarios involving distribution, emission, price, and validation. So, let’s say that you want to set a goal for your crowdsale and if it’s not met by the time the sale finishes, you want to refund all your investors. For that, you can use the http://bit.ly/2yHoh65[+RefundableCrowdsale+] contract. Or maybe you want to define a crowdsale with an increasing price to incentivize early buyers; there is an http://bit.ly/2PtWOys[+IncreasingPriceCrowdsale+] contract just for that. You can also end the crowdsale when a specified amount of ether has been received by the contract (http://bit.ly/2OVsCN8[+CappedCrowdsale+]), or set a finishing time with the http://bit.ly/2zp2Nuz[+TimedCrowdsale+] contract, or create a whitelist of buyers with the http://bit.ly/2CN8Hc9[+WhitelistedCrowdsale+] contract.
+OpenZeppelin fournit déjà un contrat +MintableToken+ que nous pouvons utiliser comme base pour notre jeton, nous ne définissons donc que les détails spécifiques à notre cas. Ensuite, faisons le contrat de vente publique. Tout comme avec les jetons, OpenZeppelin propose déjà une grande variété de saveurs de vente publique. Actuellement, vous trouverez des contrats pour divers scénarios impliquant la distribution, l&#39;émission, le prix et la validation. Donc, disons que vous voulez fixer un objectif pour votre vente publique et s&#39;il n&#39;est pas atteint au moment où la vente se termine, vous voulez rembourser tous vos investisseurs. Pour cela, vous pouvez utiliser le contrat http://bit.ly/2yHoh65[+RefundableCrowdsale+]. Ou peut-être souhaitez-vous définir une vente publique avec un prix croissant pour inciter les premiers acheteurs ; il y a un contrat http://bit.ly/2PtWOys[+IncreasingPriceCrowdsale+] juste pour ça. Vous pouvez également mettre fin à la vente publique lorsqu&#39;une quantité spécifiée d&#39;ether a été reçue par le contrat (http://bit.ly/2OVsCN8[+CappedCrowdsale+]), ou définir une heure de fin avec le contrat http://bit.ly/2zp2Nuz[+TimedCrowdsale+], ou créez une liste blanche d&#39;acheteurs avec le contrat http://bit.ly/2CN8Hc9[+WhitelistedCrowdsale+].
 
-As we said before, the OpenZeppelin contracts are basic building blocks. These crowdsale contracts have been designed to be combined; just read the source code of the base http://bit.ly/2ABIQSI[+Crowdsale+] contract for directions on how to extend it. For the crowdsale of our token, we need to mint tokens when ether is received by the crowdsale contract, so let's use http://bit.ly/2Sx3HOc[+MintedCrowdsale+] as a base. And to make it more interesting, let's also make it a http://bit.ly/2Qef0Jm[+PostDeliveryCrowdsale+] so the tokens can only be withdrawn after the crowdsale ends. To do this, we'll write the following into _contracts/SampleCrowdsale.sol_:
+Comme nous l&#39;avons dit précédemment, les contrats OpenZeppelin sont des éléments de base. Ces contrats de crowdsale ont été conçus pour être combinés ; il suffit de lire le code source du contrat de base http://bit.ly/2ABIQSI[+Crowdsale+] pour savoir comment l&#39;étendre. Pour la vente publique de notre jeton, nous devons créer des jetons lorsque l&#39;ether est reçu par le contrat de vente publique, utilisons donc http://bit.ly/2Sx3HOc[+MintedCrowdsale+] comme base. Et pour le rendre plus intéressant, faisons-en également une http://bit.ly/2Qef0Jm[+PostDeliveryCrowdsale+] afin que les jetons ne puissent être retirés qu&#39;après la fin de la vente publique. Pour ce faire, nous allons écrire ce qui suit dans _contracts/SampleCrowdsale.sol_ :
 
 [source,solidity]
 ----
 include::code/OpenZeppelin/contracts/SampleCrowdsale.sol[]
 ----
 
-Again, we barely had to write any code; we just reused the battle-tested code that the OpenZeppelin community made available. However, it is important to note that this case is different than that of our `SampleToken` contract. If you go to the http://bit.ly/2Q8lQ3o[Crowdsale automated tests] you will see that they are tested in isolation. When you integrate different units of code into a bigger component, it's not enough to test all the units separately, because the interactions between them might cause behaviors that you didn't expect. In particular, you will see that here we introduced multiple inheritance, which can surprise the developer if they don't understand the details of Solidity. Our pass:[<span class="keep-together"><code>SampleCrowdsale</code></span>] contract is simple, and it will work just as we expect because the framework was designed to make cases like these straightforward; but do not relax your vigilance because of the simplicity that this framework introduces. Every time you integrate parts of the OpenZeppelin framework to build a more complex solution, you must fully test every aspect of your solution to ensure that all the interactions of the units work as you intend.
+Encore une fois, nous avons à peine eu à écrire du code ; nous venons de réutiliser le code testé au combat que la communauté OpenZeppelin a mis à disposition. Cependant, il est important de noter que ce cas est différent de celui de notre contrat `SampleToken`. Si vous allez sur les http://bit.ly/2Q8lQ3o[Tests automatisés Crowdsale], vous verrez qu&#39;ils sont testés de manière isolée. Lorsque vous intégrez différentes unités de code dans un composant plus gros, il ne suffit pas de tester toutes les unités séparément, car les interactions entre elles peuvent provoquer des comportements auxquels vous ne vous attendiez pas. En particulier, vous verrez qu&#39;ici nous avons introduit l&#39;héritage multiple, ce qui peut surprendre le développeur s&#39;il ne comprend pas les détails de Solidity. Notre pass:[<span class="keep-together"><code>SampleCrowdsale</code></span>] est simple et fonctionnera exactement comme prévu, car le cadre a été conçu pour simplifier des cas comme ceux-ci ; mais ne relâchez pas votre vigilance à cause de la simplicité qu&#39;introduit ce cadre de développement. Chaque fois que vous intégrez des parties du cadre de développement OpenZeppelin pour créer une solution plus complexe, vous devez tester entièrement chaque aspect de votre solution pour vous assurer que toutes les interactions des unités fonctionnent comme vous le souhaitez.
 
-Finally, when we are happy with our solution and have tested it thoroughly, we need to deploy it. OpenZeppelin integrates well with Truffle, so we can just write a migrations file like the following (_migrations/2_deploy_contracts.js_), as explained in <<truffle_migrations_understanding_deployment_scripts>>:
+Enfin, lorsque nous sommes satisfaits de notre solution et que nous l&#39;avons testée de manière approfondie, nous devons la déployer. OpenZeppelin s&#39;intègre bien à Truffle, nous pouvons donc simplement écrire un fichier de migration comme celui-ci (_migrations/2_deploy_contracts.js_), comme expliqué dans &lt;<truffle_migrations_understanding_deployment_scripts>&gt; :
 
 [source,js]
 ----
@@ -471,40 +495,40 @@ include::code/OpenZeppelin/migrations/2_deploy_contracts.js[]
 
 [NOTE]
 ====
-This was just a quick overview of a few of the contracts that are part of the OpenZeppelin framework. You are welcome to join the OpenZeppelin development community to learn and contribute.(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc9")))(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc8")))
+Ce n&#39;était qu&#39;un aperçu rapide de quelques-uns des contrats qui font partie du cadre OpenZeppelin. Vous êtes invités à rejoindre la communauté de développement OpenZeppelin pour apprendre et contribuer.(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc9&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx -dev-tools-asciidoc8&quot;)))
 ====
 
 ==== ZeppelinOS
 
-((("frameworks","ZeppelinOS")))((("ZeppelinOS")))GitHhub: https://github.com/zeppelinos[]
+(((&quot;cadres de développement&quot;,&quot;ZeppelinOS&quot;)))(((&quot;ZeppelinOS&quot;)))GitHhub : https://github.com/zeppelinos[]
 
-Website: https://zeppelinos.org[]
+Site Web : https://zeppelinos.org[]
 
-Blog: https://blog.zeppelinos.org[]
+Blogue : https://blog.zeppelinos.org[]
 
-https://github.com/zeppelinos[ZeppelinOS] is &#x201c;an open source, distributed platform of tools and services on top of the EVM
-to develop and manage smart contract applications securely.&#x201d;
+https://github.com/zeppelinos[ZeppelinOS] est &quot;une plate-forme open source distribuée d&#39;outils et de services au-dessus de l&#39;EVM
+pour développer et gérer en toute sécurité des applications de contrats intelligents.
 
-Unlike OpenZeppelin's code, which needs to be redeployed with each application every time it's used, ZeppelinOS's code lives on-chain. Applications that need a given functionality&#x2014;say, an ERC20 token&#x2014;not only do not have to redesign and reaudit its implementation (something that OpenZeppelin solved) but do not even need to deploy it. With ZeppelinOS, an application interacts with the token's on-chain implementation directly, in much the same way as a desktop application interacts with the components of its underlying OS.
+Contrairement au code d&#39;OpenZeppelin, qui doit être redéployé avec chaque application à chaque utilisation, le code de ZeppelinOS vit en chaîne. Les applications qui ont besoin d&#39;une fonctionnalité donnée, par exemple un jeton ERC20, non seulement n&#39;ont pas à reconcevoir et à réauditer sa mise en œuvre (quelque chose qu&#39;OpenZeppelin a résolu), mais n&#39;ont même pas besoin de la déployer. Avec ZeppelinOS, une application interagit directement avec l&#39;implémentation en chaîne du jeton, de la même manière qu&#39;une application de bureau interagit avec les composants de son système d&#39;exploitation sous-jacent.
 
-((("proxy")))At the core of ZeppelinOS sits a very clever contract known as a _proxy_. A proxy is a contract that is capable of wrapping any other contract, exposing its interface without having to manually implement setters and getters for it, and can upgrade it without losing state. In Solidity terms, it can be seen as a normal contract whose business logic is contained within a library, which can be swapped for a new library at any time without losing its state. The way in which the proxy links to its implementation is completely automated and encapsulated for the developer. Practically any contract can be made upgradeable with little to no change in its code. More about ZeppelinOS's proxy mechanism can be found in the  http://bit.ly/2OfuNpu[blog], and an example of how to use it can be found http://bit.ly/2OfuE5q[on GitHub].
+(((&quot;proxy&quot;)))Au cœur de ZeppelinOS se trouve un contrat très intelligent connu sous le nom de _proxy_. Un proxy est un contrat capable d&#39;encapsuler n&#39;importe quel autre contrat, d&#39;exposer son interface sans avoir à implémenter manuellement des setters et des getters pour celui-ci, et de le mettre à niveau sans perdre son état. En termes de solidité, il peut être considéré comme un contrat normal dont la logique métier est contenue dans une bibliothèque, qui peut être échangée contre une nouvelle bibliothèque à tout moment sans perdre son état. La manière dont le proxy est lié à son implémentation est entièrement automatisée et encapsulée pour le développeur. Pratiquement n&#39;importe quel contrat peut être mis à niveau avec peu ou pas de changement dans son code. Plus d&#39;informations sur le mécanisme de proxy de ZeppelinOS peuvent être trouvées dans le http://bit.ly/2OfuNpu[blog], et un exemple de la façon de l&#39;utiliser peut être trouvé http://bit.ly/2OfuE5q[sur GitHub].
 
-Developing applications using ZeppelinOS is similar to developing JavaScript applications using +npm+. An +AppManager+ handles an application package for each version of the application. A package is simply a directory of contracts, each of which can have one or more upgradeable proxies. The +AppManager+ not only provides proxies for application-specific contracts, but also does so for ZeppelinOS implementations, in the form of a standard library. To see a full example of this, please visit http://bit.ly/2PtyJb3[examples/complex].
+Le développement d&#39;applications à l&#39;aide de ZeppelinOS est similaire au développement d&#39;applications JavaScript à l&#39;aide de +npm+. Un +AppManager+ gère un package d&#39;application pour chaque version de l&#39;application. Un package est simplement un répertoire de contrats, chacun pouvant avoir un ou plusieurs proxys pouvant être mis à niveau. Le +AppManager+ fournit non seulement des proxys pour les contrats spécifiques à l&#39;application, mais le fait également pour les implémentations de ZeppelinOS, sous la forme d&#39;une bibliothèque standard. Pour en voir un exemple complet, veuillez visiter http://bit.ly/2PtyJb3[examples/complex].
 
-Although currently in development, ZeppelinOS aims to provide a wide set of additional features, such as developer tools, a scheduler that automates background operations within contracts, development bounties, a marketplace that facilitates communication and exchange of value between applications, and much more. All of this is described in ZeppelinOS's http://bit.ly/2QcxV7K[whitepaper].(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc0")))
-
-
+Bien qu&#39;actuellement en développement, ZeppelinOS vise à fournir un large éventail de fonctionnalités supplémentaires, telles que des outils de développement, un planificateur qui automatise les opérations en arrière-plan dans les contrats, des primes de développement, un marché qui facilite la communication et l&#39;échange de valeur entre les applications, et bien plus encore. Tout cela est décrit dans le http://bit.ly/2QcxV7K[whitepaper].(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc0&quot;))) de ZeppelinOS
 
 
-=== Utilities
 
-==== EthereumJS helpeth: A Command-Line Utility
 
-((("EthereumJS helpeth")))((("helpeth command-line tool")))((("utilities")))((("utilities","EthereumJS helpeth")))GitHub: https://github.com/ethereumjs/helpeth[]
+=== Utilitaires
 
-+helpeth+ is a command-line tool for key and transaction manipulation that makes a developer's job a lot easier.
+==== EthereumJS aide : un utilitaire de ligne de commande
 
-It is part of the EthereumJS collection of JavaScript-based libraries and tools:
+(((&quot;EthereumJS helpeth&quot;)))(((&quot;helpeth command-line tool&quot;)))(((&quot;utilities&quot;)))(((&quot;utilities&quot;,&quot;EthereumJS helpeth&quot;)))GitHub : https://github.com/ethereumjs/helpeth[]
+
++helpeth+ est un outil en ligne de commande pour la manipulation de clés et de transactions qui facilite grandement le travail d&#39;un développeur.
+
+Il fait partie de la collection EthereumJS de bibliothèques et d&#39;outils basés sur JavaScript :
 
 
 
@@ -540,128 +564,128 @@ Options:
 
 ==== dapp.tools
 
-((("dapp.tools")))((("utilities","dapp.tools")))Website: https://dapp.tools/[]
+(((&quot;dapp.tools&quot;)))(((&quot;utilities&quot;,&quot;dapp.tools&quot;)))Site Web : https://dapp.tools/[]
 
-dapp.tools is a comprehensive suite of blockchain-oriented developer tools created in the spirit of the Unix philosophy. The tools included are:
+dapp.tools est une suite complète d&#39;outils de développement orientés chaîne de blocs créés dans l&#39;esprit de la philosophie Unix. Les outils inclus sont :
 
 
 Dapp::
-Dapp is the basic user-facing tool, for creating new DApps, running Solidity unit tests, debugging and deploying contracts, launching testnets, and more.
+Dapp est l&#39;outil de base destiné à l&#39;utilisateur, permettant de créer de nouveaux DApp, d&#39;exécuter des tests unitaires Solidity, de déboguer et de déployer des contrats, de lancer des réseaux de test, etc.
 
 Seth::
-Seth is used for composing transactions, querying the blockchain, converting between data formats, performing remote calls, and similar everyday tasks.
+Seth est utilisé pour composer des transactions, interroger la chaîne de blocs, convertir entre les formats de données, effectuer des appels à distance et des tâches quotidiennes similaires.
 
 Hevm::
-Hevm is a Haskell EVM implementation with a nimble terminal-based Solidity debugger. It’s used to test and debug DApps.
+Hevm est une implémentation Haskell EVM avec un débogueur Solidity agile basé sur un terminal. Il est utilisé pour tester et déboguer les DApps.
 
 evmdis::
-evmdis is an EVM disassembler; it performs static analysis on the bytecode to provide a higher level of abstraction than raw EVM operations.
+evmdis est un désassembleur EVM ; il effectue une analyse statique sur le bytecode pour fournir un niveau d&#39;abstraction plus élevé que les opérations EVM brutes.
 
 
 ==== SputnikVM
 
-https://github.com/etcdevteam/sputnikvm[SputnikVM] ((("SputnikVM")))((("utilities","SputnikVM")))is a standalone pluggable virtual machine for different Ethereum-based blockchains. It's written in Rust and can be used as a binary, cargo crate, or shared library, or integrated through FFI, Protobuf, and JSON interfaces. It has a separate binary, +sputnikvm-dev+, intended for testing purposes, which emulates most of the JSON-RPC API and block mining.
+https://github.com/etcdevteam/sputnikvm[SputnikVM] (((&quot;SputnikVM&quot;)))(((&quot;utilitaires&quot;,&quot;SputnikVM&quot;)))est une machine virtuelle enfichable autonome pour différentes chaînes de blocs basées sur Ethereum. Il est écrit en Rust et peut être utilisé comme binaire, caisse de chargement ou bibliothèque partagée, ou intégré via les interfaces FFI, Protobuf et JSON. Il a un binaire séparé, +sputnikvm-dev+, destiné à des fins de test, qui émule la plupart de l&#39;API JSON-RPC et de l&#39;extraction de blocs.
 
-=== Libraries
+=== Bibliothèques
 
 ==== web3.js
 
-((("libraries", id="ix_appdx-dev-tools-asciidoc10", range="startofrange")))web3.js ((("libraries","web3.js")))((("web3.js")))is the Ethereum-compatible JavaScript API for communicating with clients via JSON-RPC, developed by the Ethereum Foundation.
+(((&quot;bibliothèques&quot;, id=&quot;ix_appdx-dev-tools-asciidoc10&quot;, range=&quot;startofrange&quot;)))web3.js (((&quot;bibliothèques&quot;,&quot;web3.js&quot;)))(((&quot;web3 .js&quot;)))est l&#39;API JavaScript compatible Ethereum pour communiquer avec les clients via JSON-RPC, développée par la Fondation Ethereum.
 
-GitHub: https://github.com/ethereum/web3.js[]
+GitHub : https://github.com/ethereum/web3.js[]
 
-+npm+ package repository: https://www.npmjs.com/package/web3[]
+Référentiel de packages +npm+ : https://www.npmjs.com/package/web3[]
 
-Documentation for web3.js API 0.2x.x: http://bit.ly/2Qcyq1C[]
+Documentation pour l&#39;API web3.js 0.2xx : http://bit.ly/2Qcyq1C[]
 
-Documentation for web3.js API 1.0.0-beta.xx: http://bit.ly/2CT33p0[]
+Documentation pour l&#39;API web3.js 1.0.0-beta.xx : http://bit.ly/2CT33p0[]
 
 [role="pagebreak-before"]
 ==== web3.py
 
-((("libraries","web3.py")))((("web3.py")))web3.py is a Python library for interacting with the Ethereum blockchain, maintained by the Ethereum Foundation.
+(((&quot;libraries&quot;,&quot;web3.py&quot;)))(((&quot;web3.py&quot;)))web3.py est une bibliothèque Python pour interagir avec la blockchain Ethereum, maintenue par la Fondation Ethereum.
 
-GitHub: https://github.com/ethereum/web3.py[]
+GitHub : https://github.com/ethereum/web3.py[]
 
-PyPi: https://pypi.python.org/pypi/web3/4.0.0b9[]
+PyPi : https://pypi.python.org/pypi/web3/4.0.0b9[]
 
-Documentation: https://web3py.readthedocs.io/[]
+Documentation : https://web3py.readthedocs.io/[]
 
-==== EthereumJS
+==== Ethereum JS
 
-((("EthereumJS")))EthereumJS is collection of libraries and utilities for Ethereum.
+(((&quot;EthereumJS&quot;)))EthereumJS est une collection de bibliothèques et d&#39;utilitaires pour Ethereum.
 
-GitHub: https://github.com/ethereumjs[]
+GitHub : https://github.com/ethereumjs[]
 
-Website: https://ethereumjs.github.io/[]
+Site Web : https://ethereumjs.github.io/[]
 
 ==== web3j
 
-((("libraries","web3j")))((("web3j")))web3j is a Java and Android library for integrating with Ethereum clients and working with smart contracts.
+(((&quot;bibliothèques&quot;,&quot;web3j&quot;)))(((&quot;web3j&quot;)))web3j est une bibliothèque Java et Android pour l&#39;intégration avec les clients Ethereum et l&#39;utilisation de contrats intelligents.
 
-GitHub: https://github.com/web3j/web3j[]
+GitHub : https://github.com/web3j/web3j[]
 
-Website: https://web3j.io[]
+Site Web : https://web3j.io[]
 
-Documentation: https://docs.web3j.io[]
+Documents : https://docs.web3j.io[]
 
 ==== EtherJar
 
-((("EtherJar")))((("libraries","EtherJar")))EtherJar is another Java library for integrating with Ethereum and working with smart contracts. It's designed for server-side projects based on Java 8+ and provides low-level access and a high-level wrapper around RPC, Ethereum data structures, and smart contract access.
+(((&quot;EtherJar&quot;)))(((&quot;bibliothèqies&quot;,&quot;EtherJar&quot;)))EtherJar est une autre bibliothèque Java pour s&#39;intégrer à Ethereum et travailler avec des contrats intelligents. Il est conçu pour les projets côté serveur basés sur Java 8+ et fournit un accès de bas niveau et un wrapper de haut niveau autour de RPC, des structures de données Ethereum et d&#39;un accès aux contrats intelligents.
 
-GitHub: https://github.com/infinitape/etherjar[]
+GitHub : https://github.com/infinitape/etherjar[]
 
 ==== Nethereum
 
-((("libraries","Nethereum")))((("Nethereum")))Nethereum is the .Net integration library for Ethereum.
+(((&quot;bibliothèques&quot;,&quot;Nethereum&quot;)))(((&quot;Nethereum&quot;)))Nethereum est la bibliothèque d&#39;intégration .Net pour Ethereum.
 
-GitHub: https://github.com/Nethereum/Nethereum[]
+GitHub : https://github.com/Nethereum/Nethereum[]
 
-Website: http://nethereum.com/[]
+Site Web : http://nethereum.com/[]
 
-Documentation: https://nethereum.readthedocs.io/en/latest/[]
+Documentation : https://nethereum.readthedocs.io/en/latest/[]
 
 ==== ethers.js
 
-((("ethers.js")))((("libraries","ethers.js")))The ethers.js library is a compact, complete, full-featured, extensively tested MIT-licensed Ethereum library, which has received a DevEx grant from the Ethereum Foundation toward its extension and maintenance.
+(((&quot;ethers.js&quot;)))(((&quot;bibliothèques&quot;,&quot;ethers.js&quot;)))La bibliothèque ethers.js est une bibliothèque Ethereum compacte, complète et largement testée sous licence MIT, qui a reçu une subvention DevEx de la Fondation Ethereum pour son extension et sa maintenance.
 
-GitHub link: https://github.com/ethers-io/ethers.js[]
+Lien GitHub : https://github.com/ethers-io/ethers.js[]
 
-Documentation: https://docs.ethers.io[]
+Documentation : https://docs.ethers.io[]
 
 
 ==== Emerald Platform
 
-((("Emerald Platform")))((("libraries","Emerald Platform")))Emerald Platform provides libraries and UI components to build DApps on top of Ethereum. Emerald JS and Emerald JS UI provide sets of modules and React components to build JavaScript applications and websites; Emerald SVG Icons is a set of blockchain-related icons. In addition to JavaScript libraries Emerald has a Rust library to operate private keys and transaction signatures. All Emerald libraries and components are licensed under the Apache License, version 2.0.(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc10")))
+(((&quot;Emerald Platform&quot;)))(((&quot;bibliothèques&quot;,&quot;Emerald Platform&quot;)))Emerald Platform fournit des bibliothèques et des composants d&#39;interface utilisateur pour créer des DApps au-dessus d&#39;Ethereum. Emerald JS et Emerald JS UI fournissent des ensembles de modules et de composants React pour créer des applications et des sites Web JavaScript ; Emerald SVG Icons est un ensemble d&#39;icônes liées aux chaînes de blocs. En plus des bibliothèques JavaScript, Emerald dispose d&#39;une bibliothèque Rust pour exploiter les clés privées et les signatures de transaction. Toutes les bibliothèques et composantes Emerald sont sous licence Apache, version 2.0.(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc10&quot;)))
 
-GitHub: https://github.com/etcdevteam/emerald-platform[]
+GitHub : https://github.com/etcdevteam/emerald-platform[]
 
-Documentation: https://docs.etcdevteam.com[]
+Documentation : https://docs.etcdevteam.com[]
 
 [[testing_frameworks]]
-=== Testing Smart Contracts
+=== Tester les contrats intelligents
 
-((("frameworks","for smart contract development", id="ix_appdx-dev-tools-asciidoc11", range="startofrange")))((("smart contracts","test frameworks", id="ix_appdx-dev-tools-asciidoc12", range="startofrange")))((("test frameworks","for smart contract development", id="ix_appdx-dev-tools-asciidoc13", range="startofrange")))There are several commonly used test frameworks for smart contract development, summarized in <<testing_frameworks_table>>:
+(((&quot;cadres de développement&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc11&quot;, range=&quot;startofrange&quot;)))(((&quot;contrat intelligent&quot;,&quot;cadres de développement test&quot;, id=&quot; ix_appdx-dev-tools-asciidoc12&quot;, range=&quot;startofrange&quot;)))(((&quot;cadres de développement de test&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc13&quot;, range=&quot;startofrange&quot;) ))Il existe plusieurs cadres de test couramment utilisés pour le développement de contrats intelligents, résumés dans &lt;<testing_frameworks_table>&gt; :
 
 [[testing_frameworks_table]]
 [options="header"]
-.Smart contract test frameworks summary
+.Résumé des cadres de test des contrats intelligents
 |=======
-|Framework | Test language(s)    | Testing framework | Chain emulator       | Website
-|Truffle   | JavaScript/Solidity | Mocha             | TestRPC/Ganache      | https://truffleframework.com/[]
-|Embark    | JavaScript          | Mocha             | TestRPC/Ganache      | https://embark.status.im/docs/[]
-|Dapp      | Solidity            | +ds-test+ (custom)  | +ethrun+ (Parity)      | https://dapp.tools/dapp/[]
-|Populus   | Python              | +pytest+             | Python chain emulator| https://populus.readthedocs.io[]
+|Cadre | Langue(s) d&#39;essai | Cadre de test | Émulateur de chaîne | Site Internet
+|Truffe | JavaScript/Solidity | Moka | TestRPC/Ganache | https://truffeframework.com/[]
+|Embark | JavaScript | Moka | TestRPC/Ganache | https://embark.status.im/docs/[]
+|DApp | Solidity | +ds-test+ (personnalisé) | +ethrun+ (Parity) | https://dapp.tools/dapp/[]
+|Populus | Python | +pytest+ | Émulateur de chaîne Python | https://populus.readthedocs.io[]
 |=======
 
 
-Truffle:: ((("Truffle","as test framework")))Truffle allows for unit tests to be written in JavaScript (Mocha-based) or Solidity. These tests are run against Ganache.
+Truffle:: (((&quot;Truffle&quot;,&quot;comme cadre de développement de test&quot;)))Truffle permet d&#39;écrire des tests unitaires en JavaScript (basé sur Mocha) ou Solidity. Ces tests sont exécutés contre Ganache.
 
-Embark:: ((("Embark")))Embark integrates with Mocha to run unit tests written in JavaScript. The tests are in turn run against contracts deployed on TestRPC/Ganache. The Embark framework automatically deploys smart contracts, and will automatically redeploy the contracts when they are changed. It also keeps track of deployed contracts and deploys contracts only when truly needed. Embark includes a testing library to rapidly run and test your contracts in an EVM, with functions like +assert.equal+. The command +embark test+ will run any test files under the directory _test_.
+Embark:: (((&quot;Embark&quot;)))Embark s&#39;intègre à Mocha pour exécuter des tests unitaires écrits en JavaScript. Les tests sont à leur tour exécutés sur des contrats déployés sur TestRPC/Ganache. Le framework Embark déploie automatiquement les contrats intelligents et redéploie automatiquement les contrats lorsqu&#39;ils sont modifiés. Il assure également le suivi des contrats déployés et ne déploie les contrats que lorsque cela est vraiment nécessaire. Embark inclut une bibliothèque de test pour exécuter et tester rapidement vos contrats dans un EVM, avec des fonctions comme +assert.equal+. La commande +embark test+ exécutera tous les fichiers de test sous le répertoire _test_.
 
-Dapp:: ((("Dapp")))Dapp uses native Solidity code (a library called +ds-test+) and a Parity-built Rust library called +ethrun+ to execute Ethereum bytecode and then assert correctness. The +ds-test+ library provides assertion functions for validating correctness and events for logging data in the console.
+Dapp:: (((&quot;Dapp&quot;)))Dapp utilise le code Solidity natif (une bibliothèque appelée +ds-test+) et une bibliothèque Rust construite par Parity appelée +ethrun+ pour exécuter le code intermédiaire Ethereum, puis affirmer l&#39;exactitude. La bibliothèque +ds-test+ fournit des fonctions d&#39;assertion pour valider l&#39;exactitude et les événements pour la journalisation des données dans la console.
 +
-The assertion functions include:
+Les fonctions d&#39;assertion incluent :
 +
 ----
 assert(bool condition)
@@ -673,7 +697,7 @@ assertEq0(bytes a, bytes b)
 expectEventsExact(address target)
 ----
 +
-The logging commands will log information to the console, making them useful for debugging:
+Les commandes de journalisation consigneront les informations dans la console, ce qui les rendra utiles pour le débogage :
 +
 ----
 logs(bytes)
@@ -686,63 +710,68 @@ log_named_decimal_int(bytes32 key, int val, uint decimals)
 log_named_decimal_uint(bytes32 key, uint val, uint decimals)
 ----
 
-Populus:: ((("Populus")))Populus uses Python and its own chain emulator to run contracts written in Solidity. Unit tests are written in Python with the +pytest+ library. Populus supports writing contracts specifically for testing. These contract filenames should match the glob pattern _Test*.sol_ and be located anywhere under the project tests directory, _tests_.
+Populus:: (((&quot;Populus&quot;)))Populus utilise Python et son propre émulateur de chaîne pour exécuter des contrats écrits en Solidity. Les tests unitaires sont écrits en Python avec la bibliothèque +pytest+. Populus prend en charge la rédaction de contrats spécifiquement pour les tests. Ces noms de fichiers de contrat doivent correspondre au modèle global _Test*.sol_ et se trouver n&#39;importe où dans le répertoire des tests du projet, _tests_.
 
 
 [[on_blockchain_testing_sec]]
-==== On-Blockchain Testing
+==== Test embarqué sur la chaîne de blocs
 
-((("blockchain","on-blockchain testing")))((("test frameworks","on-blockchain testing")))Although most testing shouldn't occur on deployed contracts, a contract's behavior can be checked via Ethereum clients.  The following commands can be used to assess a smart contract's state. These commands should be typed at the +geth+ terminal, although any web3 console will also support them.
+(((&quot;chaîne de blocs&quot;,&quot;test embarqué sur&quot;)))(((&quot;cadres de développement de test&quot;,&quot;tests embarqués sur&quot;)))Bien que la plupart des tests ne devraient pas avoir lieu sur les contrats déployés, le comportement d&#39;un contrat peut être vérifié via les clients Ethereum. Les commandes suivantes peuvent être utilisées pour évaluer l&#39;état d&#39;un contrat intelligent. Ces commandes doivent être tapées sur le terminal +geth+, bien que n&#39;importe quelle console web3 les prenne également en charge.
 
-To get the address of a contract at __++txhash++__, use:
+Pour obtenir l&#39;adresse d&#39;un contrat à __++txhash++__, utilisez :
 
 ++++
 <pre data-type="programlisting">
 web3.eth.getTransactionReceipt(<em>txhash</em>);
+
 </pre>
 ++++
 
 
-This command gets the code of a contract deployed at __++contractaddress++__; this can be used to verify proper deployment:
+Cette commande obtient le code d&#39;un contrat déployé à __++contractaddress++__ ; cela peut être utilisé pour vérifier le bon déploiement :
 
 ++++
 <pre data-type="programlisting">
 web3.eth.getCode(<em>contractaddress</em>)
+
 </pre>
 ++++
 
-This gets the full logs of the contract located at the address specified in __++options++__, which is helpful for viewing the history of a contract's calls:
+Cela permet d&#39;obtenir les journaux complets du contrat situé à l&#39;adresse spécifiée dans __++options++__, ce qui est utile pour afficher l&#39;historique des appels d&#39;un contrat :
 
 ++++
 <pre data-type="programlisting">
 web3.eth.getPastLogs(<em>options</em>)
+
 </pre>
 ++++
 
-Finally, this command gets the storage located at __++address++__ with an offset of __++position++__:
+Enfin, cette commande obtient le stockage situé à __++address++__ avec un décalage de __++position++__ :
 
 ++++
 <pre data-type="programlisting">
 web3.eth.getStorageAt(<em>address</em>, <em>position</em>)
+
 </pre>
 ++++
 
 [[ganache]]
-==== Ganache: A Local Test Blockchain
+==== Ganache : une chaîne de blocs de test locale
 
-((("Ganache","local blockchain testing with")))Ganache is a local test blockchain that you can use to deploy contracts, develop your applications, and run tests. It is available as a desktop application (with a graphical user interface) for Windows, macOS, and Linux. It is also available as a command-line utility called +ganache-cli+. For more details and installation instructions for the Ganache desktop application, see https://truffleframework.com/ganache[].
+(((&quot;Ganache&quot;,&quot;test de chaîne de blocs local avec&quot;)))Ganache est une chaîne de blocs de test locale que vous pouvez utiliser pour déployer des contrats, développer vos applications et exécuter des tests. Il est disponible en tant qu&#39;application de bureau (avec une interface utilisateur graphique) pour Windows, macOS et Linux. Il est également disponible sous la forme d&#39;un utilitaire de ligne de commande appelé +ganache-cli+. Pour plus de détails et des instructions d&#39;installation pour l&#39;application de bureau Ganache, voir https://truffleframework.com/ganache[].
 
-The +ganache-cli+ code can be found at https://github.com/trufflesuite/ganache-cli/[].
+Le code +ganache-cli+ peut être trouvé sur https://github.com/trufflesuite/ganache-cli/[].
 
-To install the command line +ganache-cli+, use +npm+:
+Pour installer la ligne de commande +ganache-cli+, utilisez +npm+ :
 
 ++++
 <pre data-type="programlisting">
 $ <strong>npm install -g ganache-cli</strong>
+
 </pre>
 ++++
 
-You can use +ganache-cli+ to start a local blockchain for testing as follows:
+Vous pouvez utiliser +ganache-cli+ pour démarrer une chaîne de blocs locale à tester comme suit :
 
 ++++
 <pre data-type="programlisting">
@@ -752,11 +781,12 @@ $ <strong>ganache-cli \
   --verbose \
   --gasLimit=8000000 \
   --gasPrice=4000000000;</strong>
+  
 </pre>
 ++++
 
-A few notes on this command line:
+Quelques notes sur cette ligne de commande :
 
-* [ ] Check the `--networkId` and `--port` flag values match your configuration in _truffle.js_.
-* [ ] Check the `--gasLimit` flag value matches the latest mainnet gas limit (e.g., 8,000,000 gas) shown at https://ethstats.net to avoid encountering &#x201c;out of gas&#x201d; exceptions unnecessarily. Note that a `--gasPrice` of +4000000000+ represents a gas price of 4 gwei.
-* [ ] You can optionally enter a `--mnemonic` flag value to restore a previous HD wallet and associated addresses.(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc13")))(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc12")))(((range="endofrange", startref="ix_appdx-dev-tools-asciidoc11")))
+* [ ] Vérifiez que les valeurs des indicateurs `--networkId` et `--port` correspondent à votre configuration dans _truffle.js_.
+* [ ] Vérifiez que la valeur de l&#39;indicateur `--gasLimit` correspond à la dernière limite de gaz du réseau principal (par exemple, 8 000 000 de gaz) indiquée sur https://ethstats.net pour éviter de rencontrer inutilement des exceptions «hors de gaz». Notez qu&#39;un `--gasPrice` de +4000000000+ représente un prix du gaz de 4 gwei.
+* [ ] Vous pouvez éventuellement saisir une valeur d&#39;indicateur `--mnemonic` pour restaurer un portefeuille HD précédent et les adresses associées.(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc13&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc12&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_appdx-dev-tools-asciidoc11&quot;)))
