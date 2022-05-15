@@ -2,16 +2,16 @@
 [[evm_opcodes]]
 == Opcodes Ethereum EVM et consommation de gaz
 
-((("EVM (Ethereum Virtual Machine)","opcodes et consommation de gaz")))((("gas","EVM opcodes et consommation de gaz")))Cette annexe est basée sur le travail de consolidation effectué par les personnes de https://github.com/trailofbits/evm-opcodes comme référence pour les opcodes Ethereum VM (EVM) et les informations d&#39;instruction sous licence http://bit.ly/2zfrv0b[Apache License 2.0].
+((("EVM (Ethereum Virtual Machine)","opcodes et consommation de gaz")))((("gas","EVM opcodes et consommation de gaz")))Cette annexe est basée sur le travail de consolidation effectué par les personnes de https://github.com/trailofbits/evm-opcodes comme référence pour les opcodes Ethereum VM (EVM) et les informations d'instruction sous licence http://bit.ly/2zfrv0b[Apache License 2.0].
 
 [[evm_opcodes_table]]
 [cols=",,,,",options="header",]
 .Opcodes EVM et coût du gaz
 |=======================================================================================================================================================================================================
 |Opcode |Nom |Description |Infos supplémentaires |Gaz
-|`0x00` |+STOP+ |Arrête l&#39;exécution |- |0
+|`0x00` |+STOP+ |Arrête l'exécution |- |0
 
-|`0x01` |+ADD+ |Opération d&#39;addition |- |3
+|`0x01` |+ADD+ |Opération d'addition |- |3
 
 |`0x02` |+MUL+ |Opération de multiplication |- |5
 
@@ -19,19 +19,19 @@
 
 |`0x04` |+DIV+ |Opération de division d'entier |- |5
 
-|`0x05` |+SDIV+ |Opération de division d&#39;entier signé (tronqué) |- |5
+|`0x05` |+SDIV+ |Opération de division d'entier signé (tronqué) |- |5
 
 |`0x06` |+MOD+ |Opération de reste modulo |- |5
 
 |`0x07` |+SMOD+ |Opération de reste modulo signé |- |5
 
-|`0x08` |+ADDMOD+ |Opération d&#39;addition modulo |- |8
+|`0x08` |+ADDMOD+ |Opération d'addition modulo |- |8
 
 |`0x09` |+MULMOD+ |Opération de multiplication modulo |- |8
 
 |`0x0a` |+EXP+ |Opération exponentielle |- |10***
 
-|`0x0b` |+SIGNEXTEND+ |Étend la longueur de l&#39;entier signé complément à deux |- |5
+|`0x0b` |+SIGNEXTEND+ |Étend la longueur de l'entier signé complément à deux |- |5
 
 |`0x0c` - `0x0f` |Inutilisé |Inutilisé |- |
 
@@ -43,7 +43,7 @@
 
 |`0x13` |+SGT+ |Comparaison signé supérieure à |- |3
 
-|`0x14` |+EQ+ |Comparaison d&#39;égalité |- |3
+|`0x14` |+EQ+ |Comparaison d'égalité |- |3
 
 |`0x15` |+ISZERO+ |Opérateur NOT simple |- |3
 
@@ -63,31 +63,31 @@
 
 |`0x21` - `0x2f` |Inutilisé |Inutilisé |- |
 
-|`0x30` |+ADDRESS+ |Obtenir l&#39;adresse du compte en cours d&#39;exécution |- |2
+|`0x30` |+ADDRESS+ |Obtenir l'adresse du compte en cours d'exécution |- |2
 
 |`0x31` |+BALANCE+ |Obtenir le solde du compte donné |- |400
 
-|`0x32` |+ORIGIN+ |Obtenir l&#39;adresse d&#39;origine de l&#39;exécution |- |2
+|`0x32` |+ORIGIN+ |Obtenir l'adresse d'origine de l'exécution |- |2
 
-|`0x33` |+CALLER+ |Obtenir l&#39;adresse de l&#39;appelant |- |2
+|`0x33` |+CALLER+ |Obtenir l'adresse de l'appelant |- |2
 
-|`0x34` |+CALLVALUE+ |Obtenir la valeur déposée par l&#39;instruction/transaction responsable de cette exécution |- |2
+|`0x34` |+CALLVALUE+ |Obtenir la valeur déposée par l'instruction/transaction responsable de cette exécution |- |2
 
-|`0x35` |+CALLDATALOAD+ |Obtenir les données d&#39;entrée de l&#39;environnement actuel |- |3
+|`0x35` |+CALLDATALOAD+ |Obtenir les données d'entrée de l'environnement actuel |- |3
 
-|`0x36` |+CALLDATASIZE+ |Obtenir la taille des données d&#39;entrée dans l&#39;environnement actuel |- |2
+|`0x36` |+CALLDATASIZE+ |Obtenir la taille des données d'entrée dans l'environnement actuel |- |2
 
-|`0x37` |+CALLDATACOPY+ |Copier les données d&#39;entrée dans l&#39;environnement actuel vers la mémoire |- |3
+|`0x37` |+CALLDATACOPY+ |Copier les données d'entrée dans l'environnement actuel vers la mémoire |- |3
 
-|`0x38` |+CODESIZE+ |Obtenir la taille du code exécuté dans l&#39;environnement actuel |- |2
+|`0x38` |+CODESIZE+ |Obtenir la taille du code exécuté dans l'environnement actuel |- |2
 
-|`0x39` |+CODECOPY+ |Copier le code en cours d&#39;exécution dans l&#39;environnement actuel vers la mémoire |- |3
+|`0x39` |+CODECOPY+ |Copier le code en cours d'exécution dans l'environnement actuel vers la mémoire |- |3
 
-|`0x3a` |+GASPRICE+ |Obtenir le prix du gaz dans l&#39;environnement actuel |- |2
+|`0x3a` |+GASPRICE+ |Obtenir le prix du gaz dans l'environnement actuel |- |2
 
-|`0x3b` |+EXTCODESIZE+ |Obtenir la taille du code d&#39;un compte |- |700
+|`0x3b` |+EXTCODESIZE+ |Obtenir la taille du code d'un compte |- |700
 
-|`0x3c` |+EXTCODECOPY+ |Copier le code d&#39;un compte en mémoire |- |700
+|`0x3c` |+EXTCODECOPY+ |Copier le code d'un compte en mémoire |- |700
 
 |`0x3d` |+RETURNDATASIZE+ |Pousse la taille du tampon de données de retour sur la pile |http://bit.ly/2zaBcNe[EIP-211] |2
 
@@ -95,11 +95,11 @@
 
 |`0x3f` |Inutilisé |- |- |
 
-|`0x40` |+BLOCKHASH+ |Obtenir le hachage de l&#39;un des 256 blocs complets les plus récents |- |20
+|`0x40` |+BLOCKHASH+ |Obtenir le hachage de l'un des 256 blocs complets les plus récents |- |20
 
-|`0x41` |+COINBASE+ |Obtenir l&#39;adresse du bénéficiaire du bloc |- |2
+|`0x41` |+COINBASE+ |Obtenir l'adresse du bénéficiaire du bloc |- |2
 
-|`0x42` |+TIMESTAMP+ |Obtenir l&#39;horodatage du bloc |- |2
+|`0x42` |+TIMESTAMP+ |Obtenir l'horodatage du bloc |- |2
 
 |`0x43` |+NUMBER+ |Récupérer le numéro du bloc |- |2
 
@@ -115,7 +115,7 @@
 
 |`0x52` |+MSTORE+ |Enregistre le mot machine en mémoire |- |3*
 
-|`0x53` |+MSTORE8+ |Enregistre l&#39;octet en mémoire |- |3
+|`0x53` |+MSTORE8+ |Enregistre l'octet en mémoire |- |3
 
 |`0x54` |+SLOAD+ |Charge le mot du stockage |- |200
 
@@ -125,7 +125,7 @@
 
 |`0x57` |+JUMPI+ |Modifie conditionnellement le compteur de programme |- |10
 
-|`0x58` |+GETPC+ |Obtient la valeur du compteur de programme avant l&#39;incrément |- |2
+|`0x58` |+GETPC+ |Obtient la valeur du compteur de programme avant l'incrément |- |2
 
 |`0x59` |+MSIZE+ |Obtient la taille de la mémoire active en octets |- |2
 
@@ -309,23 +309,23 @@
 
 |`0xf2` |+CALLCODE+ |Message-call dans ce compte avec un autre code de compte |- |Compliqué
 
-|`0xf3` |+RETURN+ |Arrêter l&#39;exécution renvoyant les données de sortie |- |0
+|`0xf3` |+RETURN+ |Arrêter l'exécution renvoyant les données de sortie |- |0
 
-|`0xf4` |+DELEGATECALL+ |Message-call dans ce compte avec le code d&#39;un autre compte, mais persistant dans ce compte avec le code d&#39;un autre compte |- |Compliqué
+|`0xf4` |+DELEGATECALL+ |Message-call dans ce compte avec le code d'un autre compte, mais persistant dans ce compte avec le code d'un autre compte |- |Compliqué
 
 |`0xf5` |+APPELBLACKBOX+ |- |- |40
 
 |`0xf6` - `0xf9` |Inutilisé |- |- |
 
-|`0xfa` |+STATICCALL+ |Semblable à +CALL+, mais ne modifie pas l&#39;état |- |40
+|`0xfa` |+STATICCALL+ |Semblable à +CALL+, mais ne modifie pas l'état |- |40
 
-|`0xfb` |+CREATE2+ |Crée un nouveau compte et défini l&#39;adresse de création sur `sha3(sender + sha3(init code)) % 2**160` |- |
+|`0xfb` |+CREATE2+ |Crée un nouveau compte et défini l'adresse de création sur `sha3(sender + sha3(init code)) % 2**160` |- |
 
 |`0xfc` |+TXEXECGAS+ |Pas dans le papier jaune FIXME |- |-
 
-|`0xfd` |+REVERT+ |Arrête l&#39;exécution et annule les changements d&#39;état, sans consommer tout le gaz fourni et sans fournir de raison |- |0
+|`0xfd` |+REVERT+ |Arrête l'exécution et annule les changements d'état, sans consommer tout le gaz fourni et sans fournir de raison |- |0
 
 |`0xfe` |+INVALID+ |Instruction invalide désignée |- |0
 
-|`0xff` |+SELFDESTRUCT+ |Arrêter l&#39;exécution et enregistrer le compte pour une suppression ultérieure |- |5000*
+|`0xff` |+SELFDESTRUCT+ |Arrêter l'exécution et enregistrer le compte pour une suppression ultérieure |- |5000*
 |=======================================================================================================================================================================================================

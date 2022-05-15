@@ -5,13 +5,13 @@
 === Descriptif
 ((("web3.js","tutoriel", id="ix_appdx-web3js-tutorial-asciidoc0", range="startofrange")))Ce tutoriel est basé sur web3@1.0.0-beta.29 web3.js . Il est conçu comme une introduction à web3.js.
 
-La bibliothèque JavaScript web3.js est une collection de modules qui contiennent des fonctionnalités spécifiques pour l&#39;écosystème Ethereum, ainsi qu&#39;une API JavaScript compatible Ethereum qui implémente la spécification Generic JSON RPC.
+La bibliothèque JavaScript web3.js est une collection de modules qui contiennent des fonctionnalités spécifiques pour l'écosystème Ethereum, ainsi qu'une API JavaScript compatible Ethereum qui implémente la spécification Generic JSON RPC.
 
-Pour exécuter ce script, vous n&#39;avez pas besoin d&#39;exécuter votre propre nœud local, car il utilise https://infura.io[services Infura].
+Pour exécuter ce script, vous n'avez pas besoin d'exécuter votre propre nœud local, car il utilise https://infura.io[services Infura].
 
 === Interaction de base du contrat web3.js de manière non bloquée (asynchrone)
 
-((("web3.js","Interaction de base du contrat web3.js de manière non bloquée (asynchrone)")))Vérifiez que vous disposez d&#39;une version +npm+ valide :
+((("web3.js","Interaction de base du contrat web3.js de manière non bloquée (asynchrone)")))Vérifiez que vous disposez d'une version +npm+ valide :
 
 ++++
 <pre data-type="programlisting">
@@ -21,7 +21,7 @@ $ <strong>npm -v</strong>
 </pre>
 ++++
 
-Si ce n&#39;est pas le cas, initialisez +npm+ :
+Si ce n'est pas le cas, initialisez +npm+ :
 
 ++++
 <pre data-type="programlisting">
@@ -80,7 +80,7 @@ Cela lira le fichier avec votre propre jeton et le transmettra comme argument de
 
 ((("web3.js","révision du script de démonstration"))) Ensuite, passons en revue notre script de démonstration, _web3-contract-basic-interaction_.
 
-Nous utilisons l&#39;objet +Web3+ pour obtenir un fournisseur web3 de base :
+Nous utilisons l'objet +Web3+ pour obtenir un fournisseur web3 de base :
 
 [source,solidity]
 ----

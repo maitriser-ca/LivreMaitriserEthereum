@@ -2,172 +2,172 @@
 == Jetons
 
 
-((("jetons", id="ix_10tokens-asciidoc0", range="startofrange")))Le mot "token" (jeton) dérive du vieil anglais "tācen", signifiant un signe ou un symbole. Il est couramment utilisé pour désigner des objets de type pièce de monnaie à usage spécial émis par des particuliers et ayant une valeur intrinsèque insignifiante, tels que des token ou jetons de transport, des jetons de blanchisserie et des jetons de jeux d&#39;arcade.
+((("jetons", id="ix_10tokens-asciidoc0", range="startofrange")))Le mot "token" (jeton) dérive du vieil anglais "tācen", signifiant un signe ou un symbole. Il est couramment utilisé pour désigner des objets de type pièce de monnaie à usage spécial émis par des particuliers et ayant une valeur intrinsèque insignifiante, tels que des token ou jetons de transport, des jetons de blanchisserie et des jetons de jeux d'arcade.
 
-De nos jours, les "tokens" ou "jetons" (nous utiliserons le terme français "jeton" pour le restant du chapitre) administrés sur les chaînes de blocs redéfinissent le mot pour désigner des abstractions basées sur la chaîne de blocs qui peuvent être possédées et qui représentent des actifs, des devises ou des droits d&#39;accès.
+De nos jours, les "tokens" ou "jetons" (nous utiliserons le terme français "jeton" pour le restant du chapitre) administrés sur les chaînes de blocs redéfinissent le mot pour désigner des abstractions basées sur la chaîne de blocs qui peuvent être possédées et qui représentent des actifs, des devises ou des droits d'accès.
 
-L&#39;association entre le mot "jeton" et la valeur insignifiante a beaucoup à voir avec l&#39;utilisation limitée des versions physiques des jetons. Souvent limités à des entreprises, des organisations ou des emplacements spécifiques, les jetons physiques ne sont pas facilement échangeables et n&#39;ont généralement qu&#39;une seule fonction. Avec les jetons de chaîne de blocs, ces restrictions sont levées ou, plus précisément, complètement redéfinissables. De nombreux jetons de chaîne de blocs ont plusieurs objectifs à l&#39;échelle mondiale et peuvent être échangés les uns contre les autres ou contre d&#39;autres devises sur les marchés liquides mondiaux. Avec la disparition des restrictions d&#39;utilisation et de propriété, l&#39;attente d&#39;une "valeur insignifiante" appartient également au passé.
+L'association entre le mot "jeton" et la valeur insignifiante a beaucoup à voir avec l'utilisation limitée des versions physiques des jetons. Souvent limités à des entreprises, des organisations ou des emplacements spécifiques, les jetons physiques ne sont pas facilement échangeables et n'ont généralement qu'une seule fonction. Avec les jetons de chaîne de blocs, ces restrictions sont levées ou, plus précisément, complètement redéfinissables. De nombreux jetons de chaîne de blocs ont plusieurs objectifs à l'échelle mondiale et peuvent être échangés les uns contre les autres ou contre d'autres devises sur les marchés liquides mondiaux. Avec la disparition des restrictions d'utilisation et de propriété, l'attente d'une "valeur insignifiante" appartient également au passé.
 
-Dans ce chapitre, nous examinons les différentes utilisations des jetons et comment ils sont créés. Nous discutons également des attributs des jetons tels que la fongibilité et l&#39;intrinsèque. Enfin, nous examinons les normes et les technologies sur lesquelles ils sont basés et expérimentons en créant nos propres jetons.
+Dans ce chapitre, nous examinons les différentes utilisations des jetons et comment ils sont créés. Nous discutons également des attributs des jetons tels que la fongibilité et l'intrinsèque. Enfin, nous examinons les normes et les technologies sur lesquelles ils sont basés et expérimentons en créant nos propres jetons.
 
 [[tokens_use]]
 === Comment les jetons sont utilisés
 
-((("Jetons","usages de", id="ix_10tokens-asciidoc1", range="startofrange")))L&#39;utilisation la plus évidente des jetons est celle des monnaies privées numériques. Cependant, ce n&#39;est qu&#39;une utilisation possible. Les jetons peuvent être programmés pour remplir de nombreuses fonctions différentes, qui se chevauchent souvent. Par exemple, un jeton peut simultanément transmettre un droit de vote, un droit d&#39;accès et la propriété d&#39;une ressource. Comme le montre la liste suivante, la devise n&#39;est que la première "application" :
+((("Jetons","usages de", id="ix_10tokens-asciidoc1", range="startofrange")))L'utilisation la plus évidente des jetons est celle des monnaies privées numériques. Cependant, ce n'est qu'une utilisation possible. Les jetons peuvent être programmés pour remplir de nombreuses fonctions différentes, qui se chevauchent souvent. Par exemple, un jeton peut simultanément transmettre un droit de vote, un droit d'accès et la propriété d'une ressource. Comme le montre la liste suivante, la devise n'est que la première "application" :
 
 Monnaie:: Un jeton peut servir de forme de monnaie, avec une valeur déterminée par le commerce privé.
 
 Ressource:: Un jeton peut représenter une ressource gagnée ou produite dans une économie de partage ou un environnement de partage de ressources ; par exemple, un jeton de stockage ou de processeur représentant des ressources qui peuvent être partagées sur un réseau.
 
-Actif:: un jeton peut représenter la propriété d&#39;un actif intrinsèque ou extrinsèque, tangible ou intangible ; par exemple, de l&#39;or, de l&#39;immobilier, une voiture, du pétrole, de l&#39;énergie, des objets MMOG, etc.
+Actif:: un jeton peut représenter la propriété d'un actif intrinsèque ou extrinsèque, tangible ou intangible ; par exemple, de l'or, de l'immobilier, une voiture, du pétrole, de l'énergie, des objets MMOG, etc.
 
-Accès:: un jeton peut représenter des droits d&#39;accès et accorder l&#39;accès à une propriété numérique ou physique, telle qu&#39;un forum de discussion, un site Web exclusif, une chambre d&#39;hôtel ou une voiture de location.
+Accès:: un jeton peut représenter des droits d'accès et accorder l'accès à une propriété numérique ou physique, telle qu'un forum de discussion, un site Web exclusif, une chambre d'hôtel ou une voiture de location.
 
-Équité:: Un jeton peut représenter l&#39;équité des actionnaires dans une organisation numérique (par exemple, un DAO) ou une entité juridique (par exemple, une société).
+Équité:: Un jeton peut représenter l'équité des actionnaires dans une organisation numérique (par exemple, un DAO) ou une entité juridique (par exemple, une société).
 
 Vote:: Un jeton peut représenter des droits de vote dans un système numérique ou juridique.
 
 Objet de collection:: Un jeton peut représenter un objet de collection numérique (par exemple, CryptoPunks) ou un objet de collection physique (par exemple, une peinture).
 
-Identité:: Un jeton peut représenter une identité numérique (par exemple, un avatar) ou une identité légale (par exemple, une carte d&#39;identité nationale).
+Identité:: Un jeton peut représenter une identité numérique (par exemple, un avatar) ou une identité légale (par exemple, une carte d'identité nationale).
 
 Attestation:: Un jeton peut représenter une certification ou une attestation de fait par une autorité ou par un système de réputation décentralisé (par exemple, acte de mariage, certificat de naissance, diplôme universitaire).
 
 Utilitaire:: Un jeton peut être utilisé pour accéder ou payer un service.
 
-Souvent, un seul jeton englobe plusieurs de ces fonctions. Parfois, il est difficile de les distinguer, car les équivalents physiques ont toujours été inextricablement liés. Par exemple, dans le monde physique, un permis de conduire (attestation) est aussi un document d&#39;identité (identité) et les deux ne peuvent pas être séparés. Dans le domaine numérique, les fonctions précédemment mélangées peuvent être séparées et développées indépendamment (par exemple, une attestation anonyme).(((range="endofrange", startref="ix_10tokens-asciidoc1")))
+Souvent, un seul jeton englobe plusieurs de ces fonctions. Parfois, il est difficile de les distinguer, car les équivalents physiques ont toujours été inextricablement liés. Par exemple, dans le monde physique, un permis de conduire (attestation) est aussi un document d'identité (identité) et les deux ne peuvent pas être séparés. Dans le domaine numérique, les fonctions précédemment mélangées peuvent être séparées et développées indépendamment (par exemple, une attestation anonyme).(((range="endofrange", startref="ix_10tokens-asciidoc1")))
 
 [[tokens_fungibility]]
 === Jetons et fongibilité
 
-((("jetons fongibles", seealso="standard de jeton ERC20")))((("jetons","fongibilité")))https://en.wikipedia.org/wiki/Fungibility[Wikipedia] dit : " En économie, la fongibilité est la propriété d&#39;un bien ou d&#39;une marchandise dont les unités individuelles sont essentiellement interchangeables."
+((("jetons fongibles", seealso="standard de jeton ERC20")))((("jetons","fongibilité")))https://en.wikipedia.org/wiki/Fungibility[Wikipedia] dit : " En économie, la fongibilité est la propriété d'un bien ou d'une marchandise dont les unités individuelles sont essentiellement interchangeables."
 
-Les jetons sont fongibles lorsque nous pouvons remplacer n&#39;importe quelle unité du jeton par une autre sans aucune différence dans sa valeur ou sa fonction.
+Les jetons sont fongibles lorsque nous pouvons remplacer n'importe quelle unité du jeton par une autre sans aucune différence dans sa valeur ou sa fonction.
 
-À proprement parler, si la provenance historique d&#39;un jeton peut être suivie, il n&#39;est pas entièrement fongible. La possibilité de suivre la provenance peut conduire à la mise sur liste noire et à la liste blanche, réduisant ou éliminant la fongibilité.
+À proprement parler, si la provenance historique d'un jeton peut être suivie, il n'est pas entièrement fongible. La possibilité de suivre la provenance peut conduire à la mise sur liste noire et à la liste blanche, réduisant ou éliminant la fongibilité.
 
-((("jetons non fongibles (NFT)")))Les jetons non fongibles sont des jetons qui représentent chacun un élément tangible ou intangible unique et ne sont donc pas interchangeables. Par exemple, un jeton qui représente la propriété d&#39;un tableau _spécifique_ de Van Gogh n&#39;est pas équivalent à un autre jeton qui représente un Picasso, même s&#39;ils peuvent faire partie du même système de "jeton de propriété d&#39;art". De même, un jeton représentant un objet de collection numérique _spécifique_ tel qu&#39;un CryptoKitty spécifique n&#39;est pas interchangeable avec un autre CryptoKitty. Chaque jeton non fongible est associé à un identifiant unique, tel qu&#39;un numéro de série.
+((("jetons non fongibles (NFT)")))Les jetons non fongibles sont des jetons qui représentent chacun un élément tangible ou intangible unique et ne sont donc pas interchangeables. Par exemple, un jeton qui représente la propriété d'un tableau _spécifique_ de Van Gogh n'est pas équivalent à un autre jeton qui représente un Picasso, même s'ils peuvent faire partie du même système de "jeton de propriété d'art". De même, un jeton représentant un objet de collection numérique _spécifique_ tel qu'un CryptoKitty spécifique n'est pas interchangeable avec un autre CryptoKitty. Chaque jeton non fongible est associé à un identifiant unique, tel qu'un numéro de série.
 
 Nous verrons des exemples de jetons fongibles et non fongibles plus loin dans ce chapitre.
 
 [NOTE]
 ====
-Notez que "fongible" est souvent utilisé pour signifier "directement échangeable contre de l&#39;argent" (par exemple, un jeton de casino peut être "encaissé", contrairement aux jetons de blanchisserie). Ce n&#39;est _pas_ le sens dans lequel nous utilisons le mot ici.
+Notez que "fongible" est souvent utilisé pour signifier "directement échangeable contre de l'argent" (par exemple, un jeton de casino peut être "encaissé", contrairement aux jetons de blanchisserie). Ce n'est _pas_ le sens dans lequel nous utilisons le mot ici.
 ====
 
 [[counterparty_risk]]
 === Risque de contrepartie
 
-((("risque de contrepartie")))((("jetons","risque de contrepartie")))Le risque de contrepartie est le risque que l&#39;_autre_ partie à une transaction ne respecte pas ses obligations. Certains types de transactions présentent un risque de contrepartie supplémentaire car il y a plus de deux parties impliquées. Par exemple, si vous détenez un certificat de dépôt pour un métal précieux et que vous le vendez à quelqu&#39;un, il y a au moins trois parties dans cette transaction : le vendeur, l&#39;acheteur et le dépositaire du métal précieux. Quelqu&#39;un détient l&#39;actif physique ; par nécessité, ils deviennent partie à l&#39;exécution de la transaction et ajoutent un risque de contrepartie à toute transaction impliquant cet actif. En général, lorsqu&#39;un actif est négocié indirectement via l&#39;échange d&#39;un jeton de propriété, il existe un risque de contrepartie supplémentaire de la part du dépositaire de l&#39;actif. En ont-ils l&#39;atout ? Reconnaîtront-ils (ou autoriseront-ils) le transfert de propriété basé sur le transfert d&#39;un jeton (tel qu&#39;un certificat, un acte, un titre ou un jeton numérique) ? Dans le monde des jetons numériques représentant des actifs, comme dans le monde non numérique, il est important de comprendre qui détient l&#39;actif représenté par le jeton et quelles règles s&#39;appliquent à cet actif sous-jacent.
+((("risque de contrepartie")))((("jetons","risque de contrepartie")))Le risque de contrepartie est le risque que l'_autre_ partie à une transaction ne respecte pas ses obligations. Certains types de transactions présentent un risque de contrepartie supplémentaire car il y a plus de deux parties impliquées. Par exemple, si vous détenez un certificat de dépôt pour un métal précieux et que vous le vendez à quelqu'un, il y a au moins trois parties dans cette transaction : le vendeur, l'acheteur et le dépositaire du métal précieux. Quelqu'un détient l'actif physique ; par nécessité, ils deviennent partie à l'exécution de la transaction et ajoutent un risque de contrepartie à toute transaction impliquant cet actif. En général, lorsqu'un actif est négocié indirectement via l'échange d'un jeton de propriété, il existe un risque de contrepartie supplémentaire de la part du dépositaire de l'actif. En ont-ils l'atout ? Reconnaîtront-ils (ou autoriseront-ils) le transfert de propriété basé sur le transfert d'un jeton (tel qu'un certificat, un acte, un titre ou un jeton numérique) ? Dans le monde des jetons numériques représentant des actifs, comme dans le monde non numérique, il est important de comprendre qui détient l'actif représenté par le jeton et quelles règles s'appliquent à cet actif sous-jacent.
 
 [[tokens_intrinsicality]]
 === Tokens et Intrinsicité
 
-((("jetons","intrinsicité")))Le mot "intrinsèque" dérive du latin "intra", qui signifie "de l&#39;intérieur".
+((("jetons","intrinsicité")))Le mot "intrinsèque" dérive du latin "intra", qui signifie "de l'intérieur".
 
-Certains jetons représentent des éléments numériques intrinsèques à la chaîne de blocs. Ces actifs numériques sont régis par des règles consensuelles, tout comme les jetons eux-mêmes. Cela a une implication importante : les jetons qui représentent des actifs intrinsèques ne comportent pas de risque de contrepartie supplémentaire. Si vous détenez les clés d&#39;un CryptoKitty, aucune autre partie ne détient ce CryptoKitty pour vous - vous le possédez directement. Les règles de consensus de la chaîne de blocs s&#39;appliquent et votre propriété (c&#39;est-à-dire votre contrôle) des clés privées équivaut à la propriété de l&#39;actif, sans aucun intermédiaire.
+Certains jetons représentent des éléments numériques intrinsèques à la chaîne de blocs. Ces actifs numériques sont régis par des règles consensuelles, tout comme les jetons eux-mêmes. Cela a une implication importante : les jetons qui représentent des actifs intrinsèques ne comportent pas de risque de contrepartie supplémentaire. Si vous détenez les clés d'un CryptoKitty, aucune autre partie ne détient ce CryptoKitty pour vous - vous le possédez directement. Les règles de consensus de la chaîne de blocs s'appliquent et votre propriété (c'est-à-dire votre contrôle) des clés privées équivaut à la propriété de l'actif, sans aucun intermédiaire.
 
-À l&#39;inverse, de nombreux jetons sont utilisés pour représenter des choses _extrinsèques_, telles que l&#39;immobilier, les actions avec droit de vote des entreprises, les marques et les lingots d&#39;or. La propriété de ces éléments, qui ne sont pas "dans" la chaîne de blocs, est régie par la loi, la coutume et la politique, distinctes des règles consensuelles qui régissent le jeton. En d&#39;autres termes, les émetteurs et propriétaires de jetons peuvent toujours dépendre de contrats réels non intelligents. En conséquence, ces actifs extrinsèques comportent un risque de contrepartie supplémentaire car ils sont détenus par des dépositaires, enregistrés dans des registres externes ou contrôlés par des lois et des politiques en dehors de l&#39;environnement de la chaîne de blocs.
+À l'inverse, de nombreux jetons sont utilisés pour représenter des choses _extrinsèques_, telles que l'immobilier, les actions avec droit de vote des entreprises, les marques et les lingots d'or. La propriété de ces éléments, qui ne sont pas "dans" la chaîne de blocs, est régie par la loi, la coutume et la politique, distinctes des règles consensuelles qui régissent le jeton. En d'autres termes, les émetteurs et propriétaires de jetons peuvent toujours dépendre de contrats réels non intelligents. En conséquence, ces actifs extrinsèques comportent un risque de contrepartie supplémentaire car ils sont détenus par des dépositaires, enregistrés dans des registres externes ou contrôlés par des lois et des politiques en dehors de l'environnement de la chaîne de blocs.
 
-L&#39;une des ramifications les plus importantes des jetons basés sur la chaîne de blocs est la capacité de convertir des actifs extrinsèques en actifs intrinsèques et ainsi de supprimer le risque de contrepartie. Un bon exemple est le passage de l&#39;équité dans une société (extrinsèque) à une équité ou à un jeton de vote dans un _DAO_ ou une organisation similaire (intrinsèque).
+L'une des ramifications les plus importantes des jetons basés sur la chaîne de blocs est la capacité de convertir des actifs extrinsèques en actifs intrinsèques et ainsi de supprimer le risque de contrepartie. Un bon exemple est le passage de l'équité dans une société (extrinsèque) à une équité ou à un jeton de vote dans un _DAO_ ou une organisation similaire (intrinsèque).
 
 [[using_tokens]]
 === Utilisation de jetons : utilité ou équité
 
-((("jetons","types d'utilités/équités", id="ix_10tokens-asciidoc2", range="startofrange")))Presque tous les projets d&#39;Ethereum sont lancés aujourd&#39;hui avec une sorte de jeton. Mais est-ce que tous ces projets ont vraiment besoin de jetons ? Y a-t-il des inconvénients à utiliser un jeton, ou verrons-nous le slogan "tokéniser toutes les choses" se concrétiser ? En principe, l&#39;utilisation de jetons peut être considérée comme l&#39;ultime outil de gestion ou d&#39;organisation. Dans la pratique, l&#39;intégration des plateformes de chaîne de blocs, y compris Ethereum, dans les structures existantes de la société signifie que, jusqu&#39;à présent, il existe de nombreuses limites à leur applicabilité.
+((("jetons","types d'utilités/équités", id="ix_10tokens-asciidoc2", range="startofrange")))Presque tous les projets d'Ethereum sont lancés aujourd'hui avec une sorte de jeton. Mais est-ce que tous ces projets ont vraiment besoin de jetons ? Y a-t-il des inconvénients à utiliser un jeton, ou verrons-nous le slogan "tokéniser toutes les choses" se concrétiser ? En principe, l'utilisation de jetons peut être considérée comme l'ultime outil de gestion ou d'organisation. Dans la pratique, l'intégration des plateformes de chaîne de blocs, y compris Ethereum, dans les structures existantes de la société signifie que, jusqu'à présent, il existe de nombreuses limites à leur applicabilité.
 
-Commençons par clarifier le rôle d&#39;un jeton dans un nouveau projet. La majorité des projets utilisent des jetons de deux manières : soit en tant que « jetons utilitaires », soit en tant que « jetons d&#39;équité ». Très souvent, ces deux rôles sont confondus.
+Commençons par clarifier le rôle d'un jeton dans un nouveau projet. La majorité des projets utilisent des jetons de deux manières : soit en tant que « jetons utilitaires », soit en tant que « jetons d'équité ». Très souvent, ces deux rôles sont confondus.
 
-((("jetons utilitaires","définis")))Les jetons utilitaires sont ceux où l&#39;utilisation du jeton est nécessaire pour accéder à un service, une application ou une ressource. Des exemples de jetons utilitaires incluent des jetons qui représentent des ressources telles que le stockage partagé ou l&#39;accès à des services tels que les réseaux de médias sociaux.
+((("jetons utilitaires","définis")))Les jetons utilitaires sont ceux où l'utilisation du jeton est nécessaire pour accéder à un service, une application ou une ressource. Des exemples de jetons utilitaires incluent des jetons qui représentent des ressources telles que le stockage partagé ou l'accès à des services tels que les réseaux de médias sociaux.
 
-((("jetons d'équité","défini")))Les jetons d'équité sont ceux qui représentent des parts dans le contrôle ou la propriété de quelque chose, comme une startup. Les jetons d&#39;équité peuvent être aussi limités que les actions sans droit de vote pour la distribution des dividendes et des bénéfices, ou aussi expansifs que les actions avec droit de vote dans une organisation autonome décentralisée, où la gestion de la plate-forme se fait par un système de gouvernance complexe basé sur les votes des détenteurs de jetons.
+((("jetons d'équité","défini")))Les jetons d'équité sont ceux qui représentent des parts dans le contrôle ou la propriété de quelque chose, comme une startup. Les jetons d'équité peuvent être aussi limités que les actions sans droit de vote pour la distribution des dividendes et des bénéfices, ou aussi expansifs que les actions avec droit de vote dans une organisation autonome décentralisée, où la gestion de la plate-forme se fait par un système de gouvernance complexe basé sur les votes des détenteurs de jetons.
 
 [[its_not_duck]]
-==== C&#39;est un canard !
+==== C'est un canard !
 
 ((("equity tokens","utility tokens as")))((("utility tokens","equity tokens disguised as")))De nombreuses startups sont confrontées à un problème difficile : les jetons sont un excellent mécanisme de collecte de fonds, mais offrir des titres (actions) au public est une activité réglementée dans la plupart des juridictions. En déguisant les jetons d'équité en jetons utilitaires, de nombreuses startups espèrent contourner ces restrictions réglementaires et lever des fonds à partir d'une offre publique tout en la présentant comme une prévente de "bons d'accès au service" ou, comme nous les appelons, de jetons utilitaires. Reste à savoir si ces offres d'actions à peine déguisées pourront contourner les régulateurs.
 
-Comme le dit le dicton populaire : "Si ça marche comme un canard et cancane comme un canard, c&#39;est un canard." Les régulateurs ne risquent pas d&#39;être distraits par ces contorsions sémantiques ; bien au contraire, ils sont plus susceptibles de considérer ce sophisme juridique comme une tentative de tromper le public.
+Comme le dit le dicton populaire : "Si ça marche comme un canard et cancane comme un canard, c'est un canard." Les régulateurs ne risquent pas d'être distraits par ces contorsions sémantiques ; bien au contraire, ils sont plus susceptibles de considérer ce sophisme juridique comme une tentative de tromper le public.
 
 [[who_needs_utility_tokens]]
 ==== Jetons utilitaires : qui en a besoin ?
 
-((("jetons utilitaires","problèmes à prendre en compte lors de l&#39;utilisation", id="ix_10tokens-asciidoc3", range="startofrange")))Le vrai problème est que les jetons utilitaires introduisent des risques importants et des obstacles à l&#39;adoption pour les startups. Peut-être que dans un avenir lointain, "tokéniser toutes les choses" deviendra réalité, mais à l&#39;heure actuelle, l&#39;ensemble des personnes qui comprennent et souhaitent utiliser un jeton est un sous-ensemble du marché déjà petit de la crypto-monnaie.
+((("jetons utilitaires","problèmes à prendre en compte lors de l'utilisation", id="ix_10tokens-asciidoc3", range="startofrange")))Le vrai problème est que les jetons utilitaires introduisent des risques importants et des obstacles à l'adoption pour les startups. Peut-être que dans un avenir lointain, "tokéniser toutes les choses" deviendra réalité, mais à l'heure actuelle, l'ensemble des personnes qui comprennent et souhaitent utiliser un jeton est un sous-ensemble du marché déjà petit de la crypto-monnaie.
 
-Pour une startup, chaque innovation représente un risque et un filtre de marché. L&#39;innovation, c&#39;est emprunter le chemin le moins fréquenté, s&#39;éloigner du chemin de la tradition. C&#39;est déjà une promenade solitaire. Si une startup essaie d&#39;innover dans un nouveau domaine technologique, tel que le partage de stockage sur des réseaux P2P, c&#39;est une voie assez solitaire. L&#39;ajout d&#39;un jeton utilitaire à cette innovation et l&#39;obligation pour les utilisateurs d&#39;adopter des jetons afin d&#39;utiliser le service aggravent le risque et augmentent les obstacles à l&#39;adoption. C&#39;est sortir de la piste déjà solitaire de l&#39;innovation de stockage P2P et dans le désert.
+Pour une startup, chaque innovation représente un risque et un filtre de marché. L'innovation, c'est emprunter le chemin le moins fréquenté, s'éloigner du chemin de la tradition. C'est déjà une promenade solitaire. Si une startup essaie d'innover dans un nouveau domaine technologique, tel que le partage de stockage sur des réseaux P2P, c'est une voie assez solitaire. L'ajout d'un jeton utilitaire à cette innovation et l'obligation pour les utilisateurs d'adopter des jetons afin d'utiliser le service aggravent le risque et augmentent les obstacles à l'adoption. C'est sortir de la piste déjà solitaire de l'innovation de stockage P2P et dans le désert.
 
-Considérez chaque innovation comme un filtre. Cela limite l&#39;adoption au sous-ensemble du marché qui peut devenir les premiers à adopter cette innovation. L&#39;ajout d&#39;un deuxième filtre aggrave cet effet, limitant davantage le marché adressable. Vous demandez à vos premiers utilisateurs d&#39;adopter non pas une mais deux technologies entièrement nouvelles : la nouvelle application/plate-forme/service que vous avez créée et l&#39;économie des jetons.
+Considérez chaque innovation comme un filtre. Cela limite l'adoption au sous-ensemble du marché qui peut devenir les premiers à adopter cette innovation. L'ajout d'un deuxième filtre aggrave cet effet, limitant davantage le marché adressable. Vous demandez à vos premiers utilisateurs d'adopter non pas une mais deux technologies entièrement nouvelles : la nouvelle application/plate-forme/service que vous avez créée et l'économie des jetons.
 
-Pour une startup, chaque innovation introduit des risques qui augmentent les chances d&#39;échec de la startup. Si vous prenez votre idée de démarrage déjà risquée et ajoutez un jeton utilitaire, vous ajoutez tous les risques de la plate-forme sous-jacente (Ethereum), de l&#39;économie plus large (échanges, liquidité), de l&#39;environnement réglementaire (régulateurs des actions/matières premières) et de la technologie (contrats intelligents , normes symboliques). C&#39;est beaucoup de risques pour une startup.
+Pour une startup, chaque innovation introduit des risques qui augmentent les chances d'échec de la startup. Si vous prenez votre idée de démarrage déjà risquée et ajoutez un jeton utilitaire, vous ajoutez tous les risques de la plate-forme sous-jacente (Ethereum), de l'économie plus large (échanges, liquidité), de l'environnement réglementaire (régulateurs des actions/matières premières) et de la technologie (contrats intelligents , normes symboliques). C'est beaucoup de risques pour une startup.
 
-Les partisans de la "tokénisation de toutes les choses" rétorqueront probablement qu&#39;en adoptant des jetons, ils héritent également de l&#39;enthousiasme du marché, des premiers utilisateurs, de la technologie, de l&#39;innovation et de la liquidité de l&#39;ensemble de l&#39;économie des jetons. C&#39;est vrai aussi. La question est de savoir si les avantages et l&#39;enthousiasme l&#39;emportent sur les risques et les incertitudes.
+Les partisans de la "tokénisation de toutes les choses" rétorqueront probablement qu'en adoptant des jetons, ils héritent également de l'enthousiasme du marché, des premiers utilisateurs, de la technologie, de l'innovation et de la liquidité de l'ensemble de l'économie des jetons. C'est vrai aussi. La question est de savoir si les avantages et l'enthousiasme l'emportent sur les risques et les incertitudes.
 
-Néanmoins, certaines des idées commerciales les plus innovantes se déroulent effectivement dans le domaine de la cryptographie. Si les régulateurs ne sont pas assez rapides pour adopter des lois et soutenir de nouveaux modèles commerciaux, les entrepreneurs et les talents associés chercheront à opérer dans d&#39;autres juridictions plus favorables à la cryptographie. Cela se produit déjà.
+Néanmoins, certaines des idées commerciales les plus innovantes se déroulent effectivement dans le domaine de la cryptographie. Si les régulateurs ne sont pas assez rapides pour adopter des lois et soutenir de nouveaux modèles commerciaux, les entrepreneurs et les talents associés chercheront à opérer dans d'autres juridictions plus favorables à la cryptographie. Cela se produit déjà.
 
-Enfin, au début de ce chapitre, lors de l&#39;introduction des jetons, nous avons discuté de la signification familière du « jeton » comme « quelque chose de valeur insignifiante ». La raison sous-jacente de la valeur insignifiante de la plupart des jetons est qu&#39;ils ne peuvent être utilisés que dans un contexte très étroit : une compagnie d'autobus, une buanderie automatique, une arcade, un hôtel ou un magasin d&#39;entreprise. Une liquidité limitée, une applicabilité limitée et des coûts de conversion élevés réduisent la valeur des jetons jusqu&#39;à ce qu&#39;ils n&#39;aient plus qu&#39;une valeur « symbolique ». Ainsi, lorsque vous ajoutez un jeton utilitaire à votre plateforme, mais que le jeton ne peut être utilisé que sur votre seule plateforme avec un petit marché, vous recréez les conditions qui ont rendu les jetons physiques sans valeur. Cela peut en effet être la bonne façon d&#39;intégrer la tokenisation dans votre projet. Cependant, si pour utiliser votre plate-forme, un utilisateur doit convertir quelque chose en votre jeton utilitaire, l&#39;utiliser, puis reconvertir le reste en quelque chose de plus généralement utile, vous avez créé un certificat d&#39;entreprise. Les coûts de commutation d&#39;un jeton numérique sont des ordres de grandeur inférieurs à ceux d&#39;un jeton physique sans marché, mais ils ne sont pas nuls. Les jetons utilitaires qui fonctionnent dans tout un secteur industriel seront très intéressants et probablement très précieux. Mais si vous configurez votre startup pour qu&#39;elle doive amorcer une norme industrielle entière pour réussir, vous avez peut-être déjà échoué.
+Enfin, au début de ce chapitre, lors de l'introduction des jetons, nous avons discuté de la signification familière du « jeton » comme « quelque chose de valeur insignifiante ». La raison sous-jacente de la valeur insignifiante de la plupart des jetons est qu'ils ne peuvent être utilisés que dans un contexte très étroit : une compagnie d'autobus, une buanderie automatique, une arcade, un hôtel ou un magasin d'entreprise. Une liquidité limitée, une applicabilité limitée et des coûts de conversion élevés réduisent la valeur des jetons jusqu'à ce qu'ils n'aient plus qu'une valeur « symbolique ». Ainsi, lorsque vous ajoutez un jeton utilitaire à votre plateforme, mais que le jeton ne peut être utilisé que sur votre seule plateforme avec un petit marché, vous recréez les conditions qui ont rendu les jetons physiques sans valeur. Cela peut en effet être la bonne façon d'intégrer la tokenisation dans votre projet. Cependant, si pour utiliser votre plate-forme, un utilisateur doit convertir quelque chose en votre jeton utilitaire, l'utiliser, puis reconvertir le reste en quelque chose de plus généralement utile, vous avez créé un certificat d'entreprise. Les coûts de commutation d'un jeton numérique sont des ordres de grandeur inférieurs à ceux d'un jeton physique sans marché, mais ils ne sont pas nuls. Les jetons utilitaires qui fonctionnent dans tout un secteur industriel seront très intéressants et probablement très précieux. Mais si vous configurez votre startup pour qu'elle doive amorcer une norme industrielle entière pour réussir, vous avez peut-être déjà échoué.
 
 [NOTE]
 ====
-L&#39;un des avantages du déploiement de services sur des plates-formes à usage général comme Ethereum est de pouvoir connecter des contrats intelligents (et donc l&#39;utilité des jetons) à travers les projets, augmentant ainsi le potentiel de liquidité et l&#39;utilité des jetons.
+L'un des avantages du déploiement de services sur des plates-formes à usage général comme Ethereum est de pouvoir connecter des contrats intelligents (et donc l'utilité des jetons) à travers les projets, augmentant ainsi le potentiel de liquidité et l'utilité des jetons.
 ====
 
-((("jetons","raisons d&#39;adopter")))Prenez cette décision pour les bonnes raisons. Adoptez un jeton car votre application _ne peut pas fonctionner sans jeton_. Adoptez-le car le jeton lève une barrière fondamentale du marché ou résout un problème d&#39;accès. N&#39;introduisez pas de jeton utilitaire car c&#39;est le seul moyen de collecter des fonds rapidement et vous devez prétendre qu&#39;il ne s&#39;agit pas d&#39;une offre publique de titres (((range="endofrange", startref="ix_10tokens-asciidoc3"))).(((range="endofrange", startref="ix_10tokens-asciidoc2")))
+((("jetons","raisons d'adopter")))Prenez cette décision pour les bonnes raisons. Adoptez un jeton car votre application _ne peut pas fonctionner sans jeton_. Adoptez-le car le jeton lève une barrière fondamentale du marché ou résout un problème d'accès. N'introduisez pas de jeton utilitaire car c'est le seul moyen de collecter des fonds rapidement et vous devez prétendre qu'il ne s'agit pas d'une offre publique de titres (((range="endofrange", startref="ix_10tokens-asciidoc3"))).(((range="endofrange", startref="ix_10tokens-asciidoc2")))
 
 [[token_std]]
 === Jetons sur Ethereum
 
-((("jetons","sur Ethereum", id="ix_10tokens-asciidoc4", range="startofrange")))Les jetons de chaîne de blocs existaient avant Ethereum. ((("Bitcoin","comme jeton")))D&#39;une certaine manière, la première monnaie chaîne de blocs, Bitcoin, est un jeton lui-même. De nombreuses plateformes de jetons ont également été développées sur Bitcoin et d&#39;autres crypto-monnaies avant Ethereum. Cependant, l&#39;introduction de la première norme de jeton sur Ethereum a conduit à une explosion de jetons.
+((("jetons","sur Ethereum", id="ix_10tokens-asciidoc4", range="startofrange")))Les jetons de chaîne de blocs existaient avant Ethereum. ((("Bitcoin","comme jeton")))D'une certaine manière, la première monnaie chaîne de blocs, Bitcoin, est un jeton lui-même. De nombreuses plateformes de jetons ont également été développées sur Bitcoin et d'autres crypto-monnaies avant Ethereum. Cependant, l'introduction de la première norme de jeton sur Ethereum a conduit à une explosion de jetons.
 
-((("Buterin, Vitalik","sur les jetons")))Vitalik Buterin a suggéré les jetons comme l&#39;une des applications les plus évidentes et les plus utiles d&#39;une chaîne de blocs programmable généralisée telle qu&#39;Ethereum. En fait, au cours de la première année d&#39;Ethereum, il était courant de voir Vitalik et d&#39;autres porter des T-shirts arborant le logo Ethereum et un échantillon de contrat intelligent au dos. Il y avait plusieurs variantes de ce T-shirt, mais la plus courante montrait une implémentation d&#39;un jeton.
+((("Buterin, Vitalik","sur les jetons")))Vitalik Buterin a suggéré les jetons comme l'une des applications les plus évidentes et les plus utiles d'une chaîne de blocs programmable généralisée telle qu'Ethereum. En fait, au cours de la première année d'Ethereum, il était courant de voir Vitalik et d'autres porter des T-shirts arborant le logo Ethereum et un échantillon de contrat intelligent au dos. Il y avait plusieurs variantes de ce T-shirt, mais la plus courante montrait une implémentation d'un jeton.
 
-Avant de nous plonger dans les détails de la création de jetons sur Ethereum, il est important d&#39;avoir un aperçu du fonctionnement des jetons sur Ethereum. Les jetons sont différents de l&#39;ether car le protocole Ethereum ne sait rien d&#39;eux. L&#39;envoi d&#39;ether est une action intrinsèque de la plateforme Ethereum, mais l&#39;envoi ou même la possession de jetons ne l&#39;est pas. Le solde d&#39;ether des comptes Ethereum est géré au niveau du protocole, tandis que le solde de jetons des comptes Ethereum est géré au niveau du contrat intelligent. Afin de créer un nouveau jeton sur Ethereum, vous devez créer un nouveau contrat intelligent. Une fois déployé, le contrat intelligent gère tout, y compris la propriété, les transferts et les droits d&#39;accès. Vous pouvez rédiger votre contrat intelligent pour effectuer toutes les actions nécessaires comme vous le souhaitez, mais il est probablement plus sage de suivre une norme existante. Nous examinerons ensuite ces normes. Nous discutons des avantages et des inconvénients des normes suivantes à la fin du chapitre.
+Avant de nous plonger dans les détails de la création de jetons sur Ethereum, il est important d'avoir un aperçu du fonctionnement des jetons sur Ethereum. Les jetons sont différents de l'ether car le protocole Ethereum ne sait rien d'eux. L'envoi d'ether est une action intrinsèque de la plateforme Ethereum, mais l'envoi ou même la possession de jetons ne l'est pas. Le solde d'ether des comptes Ethereum est géré au niveau du protocole, tandis que le solde de jetons des comptes Ethereum est géré au niveau du contrat intelligent. Afin de créer un nouveau jeton sur Ethereum, vous devez créer un nouveau contrat intelligent. Une fois déployé, le contrat intelligent gère tout, y compris la propriété, les transferts et les droits d'accès. Vous pouvez rédiger votre contrat intelligent pour effectuer toutes les actions nécessaires comme vous le souhaitez, mais il est probablement plus sage de suivre une norme existante. Nous examinerons ensuite ces normes. Nous discutons des avantages et des inconvénients des normes suivantes à la fin du chapitre.
 
 
 [[ERC20_std]]
 ==== La norme de jeton ERC20
 
-((("norme de jeton ERC20", id="ix_10tokens-asciidoc5", range="startofrange")))((("jetons","norme ERC20", id="ix_10tokens-asciidoc6", range="startofrange" )))La première norme a été introduite en novembre 2015 par Fabian Vogelsteller en tant que demande de commentaires Ethereum (ERC). Il s&#39;est automatiquement vu attribuer le numéro de problème GitHub 20, donnant lieu au nom de "jeton ERC20". La grande majorité des jetons sont actuellement basés sur la norme ERC20. La demande de commentaires ERC20 est finalement devenue la proposition d&#39;amélioration Ethereum 20 (EIP-20), mais elle est encore principalement désignée par le nom d&#39;origine, ERC20.
+((("norme de jeton ERC20", id="ix_10tokens-asciidoc5", range="startofrange")))((("jetons","norme ERC20", id="ix_10tokens-asciidoc6", range="startofrange" )))La première norme a été introduite en novembre 2015 par Fabian Vogelsteller en tant que demande de commentaires Ethereum (ERC). Il s'est automatiquement vu attribuer le numéro de problème GitHub 20, donnant lieu au nom de "jeton ERC20". La grande majorité des jetons sont actuellement basés sur la norme ERC20. La demande de commentaires ERC20 est finalement devenue la proposition d'amélioration Ethereum 20 (EIP-20), mais elle est encore principalement désignée par le nom d'origine, ERC20.
 
-ERC20 est une norme pour les _jetons fongibles_, ce qui signifie que différentes unités d&#39;un token ERC20 sont interchangeables et n&#39;ont pas de propriétés uniques.
+ERC20 est une norme pour les _jetons fongibles_, ce qui signifie que différentes unités d'un token ERC20 sont interchangeables et n'ont pas de propriétés uniques.
 
-http://bit.ly/2CUf7WG[La norme ERC20] définit une interface commune pour les contrats mettant en œuvre un jeton, de sorte que tout jeton compatible est accessible et utilisable de la même manière. L&#39;interface se compose d&#39;un certain nombre de fonctions qui doivent être présentes dans chaque implémentation de la norme, ainsi que de certaines fonctions et attributs facultatifs qui peuvent être ajoutés par les développeurs.
+http://bit.ly/2CUf7WG[La norme ERC20] définit une interface commune pour les contrats mettant en œuvre un jeton, de sorte que tout jeton compatible est accessible et utilisable de la même manière. L'interface se compose d'un certain nombre de fonctions qui doivent être présentes dans chaque implémentation de la norme, ainsi que de certaines fonctions et attributs facultatifs qui peuvent être ajoutés par les développeurs.
 
 [[ERC20_reqd_func]]
 ===== Fonctions et événements requis par ERC20
 
 ((("standard de jeton ERC20","fonctions et événements requis")))Un contrat de jeton conforme à ERC20 doit fournir au moins les fonctions et événements suivants :
 
-+totalSupply+:: Renvoie le nombre total d&#39;unités de ce jeton qui existent actuellement. Les jetons ERC20 peuvent avoir une offre fixe ou variable.
++totalSupply+:: Renvoie le nombre total d'unités de ce jeton qui existent actuellement. Les jetons ERC20 peuvent avoir une offre fixe ou variable.
 
 +balanceOf+:: Étant donné une adresse, renvoie le solde du jeton de cette adresse.
 
-+transfer+:: Étant donné une adresse et un montant, transfère ce montant de jetons à cette adresse, à partir du solde de l&#39;adresse qui a exécuté le transfert.
++transfer+:: Étant donné une adresse et un montant, transfère ce montant de jetons à cette adresse, à partir du solde de l'adresse qui a exécuté le transfert.
 
-+transferFrom+:: Étant donné un expéditeur, un destinataire et un montant, transfère des jetons d&#39;un compte à un autre. Utilisé en combinaison avec +approve+.
++transferFrom+:: Étant donné un expéditeur, un destinataire et un montant, transfère des jetons d'un compte à un autre. Utilisé en combinaison avec +approve+.
 
-+approve+:: Étant donné une adresse et un montant de destinataire, autorise cette adresse à exécuter plusieurs virements jusqu&#39;à ce montant, à partir du compte qui a émis l&#39;approbation.
++approve+:: Étant donné une adresse et un montant de destinataire, autorise cette adresse à exécuter plusieurs virements jusqu'à ce montant, à partir du compte qui a émis l'approbation.
 
 +allowance+:: Étant donné une adresse de propriétaire et une adresse de dépensier, renvoie le montant restant que le dépensier est autorisé à retirer au propriétaire.
 
-+Transfer+:: Evénement déclenché lors d&#39;un transfert réussi (appel à +transfer+ ou +transferFrom+) (même pour les transferts de valeur nulle).
++Transfer+:: Evénement déclenché lors d'un transfert réussi (appel à +transfer+ ou +transferFrom+) (même pour les transferts de valeur nulle).
 
-+Approval+:: Événement enregistré lors d&#39;un appel réussi à +approve+.
++Approval+:: Événement enregistré lors d'un appel réussi à +approve+.
 
 [[ERC20_optional_func]]
 ===== Fonctions optionnelles ERC20
 
 ((("standard de jeton ERC20","fonctions optionnelles")))En plus des fonctions requises listées dans la section précédente, les fonctions optionnelles suivantes sont également définies par la norme :
 
-+name+:: Renvoie le nom lisible par l&#39;homme (par exemple, "US Dollars") du jeton.
++name+:: Renvoie le nom lisible par l'homme (par exemple, "US Dollars") du jeton.
 
-+symbol+:: Renvoie un symbole lisible par l&#39;homme (par exemple, "USD") pour le jeton.
++symbol+:: Renvoie un symbole lisible par l'homme (par exemple, "USD") pour le jeton.
 
 +decimals+:: Renvoie le nombre de décimales utilisées pour diviser les quantités de jetons. Par exemple, si +decimals+ vaut +2+, alors le montant du jeton est divisé par 100 pour obtenir sa pass:[<span class="keep-together">représentation</span>] d'usage.
 
 [[ERC20_interface]]
-===== L&#39;interface ERC20 définie dans Solidity
+===== L'interface ERC20 définie dans Solidity
 
-((("standard de jeton ERC20","interface définie dans Solidity")))Voici à quoi ressemble une spécification d&#39;interface ERC20 dans Solidity :
+((("standard de jeton ERC20","interface définie dans Solidity")))Voici à quoi ressemble une spécification d'interface ERC20 dans Solidity :
 
 [[ERC20_interface_example]]
 [source,solidity]
@@ -189,9 +189,9 @@ contract ERC20 {
 [[ERC20_data_struct]]
 ===== Structures de données ERC20
 
-((("mappage de données")))((("standard de jeton ERC20","structures de données")))Si vous examinez une implémentation ERC20, vous verrez qu&#39;elle contient deux structures de données, une pour suivre les soldes et une pour suivre indemnités. Dans Solidity, ils sont implémentés avec un _data mapping_ ou _mappage de données_.
+((("mappage de données")))((("standard de jeton ERC20","structures de données")))Si vous examinez une implémentation ERC20, vous verrez qu'elle contient deux structures de données, une pour suivre les soldes et une pour suivre indemnités. Dans Solidity, ils sont implémentés avec un _data mapping_ ou _mappage de données_.
 
-Le premier mappage de données implémente une table interne des soldes de jetons, par propriétaire. Cela permet au contrat de jeton de garder une trace de qui possède les jetons. Chaque transfert est une déduction d&#39;un solde et un ajout à un autre solde :
+Le premier mappage de données implémente une table interne des soldes de jetons, par propriétaire. Cela permet au contrat de jeton de garder une trace de qui possède les jetons. Chaque transfert est une déduction d'un solde et un ajout à un autre solde :
 
 [[balance_mapping]]
 [source,solidity]
@@ -199,7 +199,7 @@ Le premier mappage de données implémente une table interne des soldes de jeton
 mapping(address => uint256) balances;
 ----
 
-La deuxième structure de données est un mappage de données d&#39;allocations. Comme nous le verrons dans la section suivante, avec les jetons ERC20, le propriétaire d&#39;un jeton peut déléguer l&#39;autorité à un dépensier, lui permettant de dépenser un montant spécifique (allocation) à partir du solde du propriétaire. Le contrat ERC20 assure le suivi des allocations avec un mappage bidimensionnel, la clé primaire étant l&#39;adresse du propriétaire du jeton, mappée à une adresse de dépense et un montant d&#39;allocation :
+La deuxième structure de données est un mappage de données d'allocations. Comme nous le verrons dans la section suivante, avec les jetons ERC20, le propriétaire d'un jeton peut déléguer l'autorité à un dépensier, lui permettant de dépenser un montant spécifique (allocation) à partir du solde du propriétaire. Le contrat ERC20 assure le suivi des allocations avec un mappage bidimensionnel, la clé primaire étant l'adresse du propriétaire du jeton, mappée à une adresse de dépense et un montant d'allocation :
 
 [[allowance_mapping]]
 [source,solidity]
@@ -213,9 +213,9 @@ mapping (address => mapping (address => uint256)) public allowed;
 
 ((("standard de jeton ERC20","fonctions de transfert", id="ix_10tokens-asciidoc7", range="startofrange")))((("fonction transfer","standard de jeton ERC20", id="ix_10tokens-asciidoc8 ", range="startofrange")))La norme de jeton ERC20 a deux fonctions de transfert. Vous vous demandez peut-être pourquoi.
 
-ERC20 permet deux flux de travail différents. Le premier est un flux de travail simple et à transaction unique utilisant la fonction +transfer+. Ce flux de travail est celui utilisé par les portefeuilles pour envoyer des jetons à d&#39;autres portefeuilles. La grande majorité des transactions de jetons se produisent avec le flux de travail +transfer+.
+ERC20 permet deux flux de travail différents. Le premier est un flux de travail simple et à transaction unique utilisant la fonction +transfer+. Ce flux de travail est celui utilisé par les portefeuilles pour envoyer des jetons à d'autres portefeuilles. La grande majorité des transactions de jetons se produisent avec le flux de travail +transfer+.
 
-L&#39;exécution du contrat de transfert est très simple. Si Alice veut envoyer 10 jetons à Bob, son portefeuille envoie une transaction à l&#39;adresse du contrat de jeton, en appelant la fonction pass:[<span class="keep-together"><code>transfer</code></span>] avec l&#39;adresse de Bob et +10+ comme arguments. Le contrat de jeton ajuste le solde d&#39;Alice (–10) et le solde de Bob (pass:[+10]) et émet un événement +Transfer+.
+L'exécution du contrat de transfert est très simple. Si Alice veut envoyer 10 jetons à Bob, son portefeuille envoie une transaction à l'adresse du contrat de jeton, en appelant la fonction pass:[<span class="keep-together"><code>transfer</code></span>] avec l'adresse de Bob et +10+ comme arguments. Le contrat de jeton ajuste le solde d'Alice (–10) et le solde de Bob (pass:[+10]) et émet un événement +Transfer+.
 
 ((("approve &amp; transferFrom flux de travail")))Le deuxième flux de travail est un processus à deux transactions qui utilise +approve+ suivi de +transferFrom+. Ce workflow permet à un propriétaire de jeton de déléguer son contrôle à une autre adresse. Il est le plus souvent utilisé pour déléguer le contrôle à un contrat de distribution de jetons, mais il peut également être utilisé par les échanges.
 
@@ -223,30 +223,30 @@ L&#39;exécution du contrat de transfert est très simple. Si Alice veut envoyer
 
 [NOTE]
 ====
-((("Initial Coin Offerings (ICOs)","défini"))Une _Initial Coin Offering_ (ICO) ou _Offres initiales de pièces_ est un mécanisme de financement participatif utilisé par les entreprises et les organisations pour collecter des fonds en vendant des jetons. Le terme est dérivé de l&#39;offre publique initiale (IPO), qui est le processus par lequel une société publique propose des actions à vendre aux investisseurs en bourse. Contrairement aux marchés des introductions en bourse hautement réglementés, les ICO sont ouverts, mondiaux et désordonnés. Les exemples et les explications des ICO dans ce livre ne constituent pas une approbation de ce type de collecte de fonds.
+((("Initial Coin Offerings (ICOs)","défini"))Une _Initial Coin Offering_ (ICO) ou _Offres initiales de pièces_ est un mécanisme de financement participatif utilisé par les entreprises et les organisations pour collecter des fonds en vendant des jetons. Le terme est dérivé de l'offre publique initiale (IPO), qui est le processus par lequel une société publique propose des actions à vendre aux investisseurs en bourse. Contrairement aux marchés des introductions en bourse hautement réglementés, les ICO sont ouverts, mondiaux et désordonnés. Les exemples et les explications des ICO dans ce livre ne constituent pas une approbation de ce type de collecte de fonds.
 ====
 
 [[approve_transferFrom_workflow]]
-.Le flux de travail d&#39;approbation et de transfert en deux étapes des jetons ERC20
-image::images/approve_transferFrom_workflow.png["Le flux de travail d&#39;approbation et de transfert en deux étapes des jetons ERC20"]
+.Le flux de travail d'approbation et de transfert en deux étapes des jetons ERC20
+image::images/approve_transferFrom_workflow.png["Le flux de travail d'approbation et de transfert en deux étapes des jetons ERC20"]
 
-Pour le flux de travail +approve+ et +transferFrom+, deux transactions sont nécessaires. Disons qu&#39;Alice veut autoriser le contrat +AliceICO+ à vendre 50 % de tous les jetons AliceCoin à des acheteurs comme Bob et Charlie. Tout d&#39;abord, Alice lance le contrat +AliceCoin+ ERC20, émettant tous les AliceCoin à sa propre adresse. Ensuite, Alice lance le contrat +AliceICO+ qui peut vendre des jetons contre de l&#39;ether. Ensuite, Alice lance le flux de travail +approve+ et +transferFrom+. Elle envoie une transaction au contrat +AliceCoin+, en appelant +approve+ avec l&#39;adresse du contrat +AliceICO+ et 50 % du +totalSupply+ comme arguments. Cela déclenchera l&#39;événement +Approbation+. Désormais, le contrat +AliceICO+ peut vendre AliceCoin.
+Pour le flux de travail +approve+ et +transferFrom+, deux transactions sont nécessaires. Disons qu'Alice veut autoriser le contrat +AliceICO+ à vendre 50 % de tous les jetons AliceCoin à des acheteurs comme Bob et Charlie. Tout d'abord, Alice lance le contrat +AliceCoin+ ERC20, émettant tous les AliceCoin à sa propre adresse. Ensuite, Alice lance le contrat +AliceICO+ qui peut vendre des jetons contre de l'ether. Ensuite, Alice lance le flux de travail +approve+ et +transferFrom+. Elle envoie une transaction au contrat +AliceCoin+, en appelant +approve+ avec l'adresse du contrat +AliceICO+ et 50 % du +totalSupply+ comme arguments. Cela déclenchera l'événement +Approbation+. Désormais, le contrat +AliceICO+ peut vendre AliceCoin.
 
-Lorsque le contrat +AliceICO+ reçoit de l&#39;ether de Bob, il doit envoyer des AliceCoin à Bob en retour. Dans le contrat +AliceICO+ se trouve un taux de change entre AliceCoin et de l'Ether. Le taux de change qu&#39;Alice a fixé lors de la création du contrat +AliceICO+ détermine le nombre de jetons que Bob recevra pour la quantité d&#39;ether envoyé au contrat +AliceICO+. Lorsque le contrat +AliceICO+ appelle la fonction AliceCoin +transferFrom+, il définit l&#39;adresse d&#39;Alice comme expéditeur et l&#39;adresse de Bob comme destinataire, et utilise le taux de change pour déterminer le nombre de jetons AliceCoin qui seront transférés à Bob dans le champ +value+. Le contrat +AliceCoin+ transfère le solde de l&#39;adresse d&#39;Alice à l&#39;adresse de Bob et déclenche un événement +Transfer+. Le contrat +AliceICO+ peut appeler +transferFrom+ un nombre illimité de fois, tant qu&#39;il ne dépasse pas la limite d&#39;approbation définie par Alice. Le contrat +AliceICO+ peut suivre le nombre de jetons AliceCoin qu&#39;il peut vendre en appelant la fonction +allowance+.(((range="endofrange", startref="ix_10tokens-asciidoc8")))(((range="endofrange", startref="ix_10tokens-asciidoc7")))
+Lorsque le contrat +AliceICO+ reçoit de l'ether de Bob, il doit envoyer des AliceCoin à Bob en retour. Dans le contrat +AliceICO+ se trouve un taux de change entre AliceCoin et de l'Ether. Le taux de change qu'Alice a fixé lors de la création du contrat +AliceICO+ détermine le nombre de jetons que Bob recevra pour la quantité d'ether envoyé au contrat +AliceICO+. Lorsque le contrat +AliceICO+ appelle la fonction AliceCoin +transferFrom+, il définit l'adresse d'Alice comme expéditeur et l'adresse de Bob comme destinataire, et utilise le taux de change pour déterminer le nombre de jetons AliceCoin qui seront transférés à Bob dans le champ +value+. Le contrat +AliceCoin+ transfère le solde de l'adresse d'Alice à l'adresse de Bob et déclenche un événement +Transfer+. Le contrat +AliceICO+ peut appeler +transferFrom+ un nombre illimité de fois, tant qu'il ne dépasse pas la limite d'approbation définie par Alice. Le contrat +AliceICO+ peut suivre le nombre de jetons AliceCoin qu'il peut vendre en appelant la fonction +allowance+.(((range="endofrange", startref="ix_10tokens-asciidoc8")))(((range="endofrange", startref="ix_10tokens-asciidoc7")))
 
 [[ERC20_implémentation]]
 ===== Implémentations ERC20
 
-Bien qu&#39;il soit possible d&#39;implémenter un jeton compatible ERC20 dans environ 30 lignes de code Solidity, la plupart des implémentations sont plus complexes. Ceci pour tenir compte des vulnérabilités de sécurité potentielles. Deux implémentations sont mentionnées dans la norme EIP-20 :
+Bien qu'il soit possible d'implémenter un jeton compatible ERC20 dans environ 30 lignes de code Solidity, la plupart des implémentations sont plus complexes. Ceci pour tenir compte des vulnérabilités de sécurité potentielles. Deux implémentations sont mentionnées dans la norme EIP-20 :
 
-http://bit.ly/2EUYCMR[Consensys EIP20]:: Une implémentation simple et facile à lire d&#39;un jeton compatible ERC20.
+http://bit.ly/2EUYCMR[Consensys EIP20]:: Une implémentation simple et facile à lire d'un jeton compatible ERC20.
 
-https://bit.ly/2xPYck6[OpenZeppelin StandardToken]:: Cette implémentation est compatible ERC20, avec des précautions de sécurité supplémentaires. Il constitue la base des bibliothèques OpenZeppelin implémentant des jetons compatibles ERC20 plus complexes avec des plafonds de collecte de fonds, des enchères, des calendriers d&#39;acquisition et d&#39;autres fonctionnalités.(((range="endofrange", startref="ix_10tokens-asciidoc6")))(((range ="endofrange", startref="ix_10tokens-asciidoc5")))
+https://bit.ly/2xPYck6[OpenZeppelin StandardToken]:: Cette implémentation est compatible ERC20, avec des précautions de sécurité supplémentaires. Il constitue la base des bibliothèques OpenZeppelin implémentant des jetons compatibles ERC20 plus complexes avec des plafonds de collecte de fonds, des enchères, des calendriers d'acquisition et d'autres fonctionnalités.(((range="endofrange", startref="ix_10tokens-asciidoc6")))(((range ="endofrange", startref="ix_10tokens-asciidoc5")))
 
 [[METoken_example]]
 ==== Lancement de notre propre jeton ERC20
 
-((("standard de jeton ERC20","Exemple de création/lancement de METoken", id="ix_10tokens-asciidoc9", range="startofrange")))((("METoken (Mastering Ethereum Token)","exemple de création/lancement ", id="ix_10tokens-asciidoc10", range="startofrange"))) Créons et lançons notre propre jeton. Pour cet exemple, nous utiliserons le cadre de développement (framework) Truffle. L&#39;exemple suppose que vous avez déjà installé +truffle+ et que vous l&#39;avez configuré, et que vous êtes familiarisé avec son fonctionnement de base (pour plus de détails, voir <<truffle>>).
+((("standard de jeton ERC20","Exemple de création/lancement de METoken", id="ix_10tokens-asciidoc9", range="startofrange")))((("METoken (Mastering Ethereum Token)","exemple de création/lancement ", id="ix_10tokens-asciidoc10", range="startofrange"))) Créons et lançons notre propre jeton. Pour cet exemple, nous utiliserons le cadre de développement (framework) Truffle. L'exemple suppose que vous avez déjà installé +truffle+ et que vous l'avez configuré, et que vous êtes familiarisé avec son fonctionnement de base (pour plus de détails, voir <<truffle>>).
 
 Nous appellerons notre jeton "Mastering Ethereum Token", avec le symbole "MET".
 
@@ -284,7 +284,7 @@ METoken/
 
 Modifiez le fichier de configuration _truffle.js_ ou _truffle-config.js_ pour configurer votre environnement Truffle, ou copiez ce dernier depuis http://bit.ly/2DdP2mz[le référentiel].
 
-Si vous utilisez l&#39;exemple _truffle-config.js_, pensez à créer un fichier _.env_ dans le dossier _METoken_ contenant vos clés privées de test pour le test et le déploiement sur les réseaux publics de test Ethereum, tels que Ropsten ou Kovan. Vous pouvez exporter votre clé privée de réseau de test à partir de MetaMask.
+Si vous utilisez l'exemple _truffle-config.js_, pensez à créer un fichier _.env_ dans le dossier _METoken_ contenant vos clés privées de test pour le test et le déploiement sur les réseaux publics de test Ethereum, tels que Ropsten ou Kovan. Vous pouvez exporter votre clé privée de réseau de test à partir de MetaMask.
 
 Après cela, votre répertoire devrait ressembler à :
 
@@ -304,7 +304,7 @@ METoken/
 
 [WARNING]
 ====
-N&#39;utilisez que des clés de test ou des mnémoniques de test qui ne sont _pas_ utilisés pour détenir des fonds sur le réseau Ethereum principal. _Ne jamais_ utiliser des clés contenant de l&#39;argent réel pour les tests.
+N'utilisez que des clés de test ou des mnémoniques de test qui ne sont _pas_ utilisés pour détenir des fonds sur le réseau Ethereum principal. _Ne jamais_ utiliser des clés contenant de l'argent réel pour les tests.
 ====
 
 Pour notre exemple, nous allons importer la bibliothèque OpenZeppelin, qui implémente des contrôles de sécurité importants et est facile à étendre :
@@ -319,9 +319,9 @@ added 1 package from 1 contributor and audited 2381 packages in 4.074s
 </pre>
 ++++
 
-Le module de dévelopement +openzeppelin-solidity+ ajoutera environ 250 fichiers sous le répertoire __node_modules__. La bibliothèque OpenZeppelin comprend bien plus que le jeton ERC20, mais nous n&#39;en utiliserons qu&#39;une petite partie.
+Le module de dévelopement +openzeppelin-solidity+ ajoutera environ 250 fichiers sous le répertoire __node_modules__. La bibliothèque OpenZeppelin comprend bien plus que le jeton ERC20, mais nous n'en utiliserons qu'une petite partie.
 
-Ensuite, écrivons notre contrat de jeton. Créez un nouveau fichier, _METoken.sol_, et copiez l&#39;exemple de code depuis http://bit.ly/2qfIFH0[GitHub].
+Ensuite, écrivons notre contrat de jeton. Créez un nouveau fichier, _METoken.sol_, et copiez l'exemple de code depuis http://bit.ly/2qfIFH0[GitHub].
 
 Notre contrat, illustré en <<solidity_token_example>>, est très simple, car il hérite toutes ses fonctionnalités de la bibliothèque OpenZeppelin.
 
@@ -334,7 +334,7 @@ include::code/truffle/METoken/contracts/METoken.sol[]
 ----
 ====
 
-Ici, nous définissons les variables optionnelles +name+, +symbol+ et +decimals+. Nous définissons également une variable +_initial_supply+, définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d&#39;unités au total. Dans la fonction d&#39;initialisation (constructeur) du contrat, nous définissons le +totalSupply+ égal à +_initial_supply+ et allouons tout le +_initial_supply+ au solde du compte (+msg.sender+) qui crée le contrat +METoken+.
+Ici, nous définissons les variables optionnelles +name+, +symbol+ et +decimals+. Nous définissons également une variable +_initial_supply+, définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d'unités au total. Dans la fonction d'initialisation (constructeur) du contrat, nous définissons le +totalSupply+ égal à +_initial_supply+ et allouons tout le +_initial_supply+ au solde du compte (+msg.sender+) qui crée le contrat +METoken+.
 
 Nous utilisons maintenant +truffle+ pour compiler le code +METoken+ :
 
@@ -354,7 +354,7 @@ Compiling openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol...
 
 Comme vous pouvez le voir, +truffle+ intègre les dépendances nécessaires des bibliothèques OpenZeppelin et compile également ces contrats.
 
-Configurons un script de migration pour déployer le contrat +METoken+. Créez un nouveau fichier appelé __2_deploy_contracts.js__, dans le dossier _METoken/migrations_. Copiez le contenu de l&#39;exemple http://bit.ly/2P0rHLl[dans le référentiel GitHub] :
+Configurons un script de migration pour déployer le contrat +METoken+. Créez un nouveau fichier appelé __2_deploy_contracts.js__, dans le dossier _METoken/migrations_. Copiez le contenu de l'exemple http://bit.ly/2P0rHLl[dans le référentiel GitHub] :
 
 
 [[METoken_migration]]
@@ -364,7 +364,7 @@ Configurons un script de migration pour déployer le contrat +METoken+. Créez u
 include::code/truffle/METoken/migrations/2_deploy_contracts.js[]
 ----
 
-Avant de déployer sur l&#39;un des réseaux de test Ethereum, démarrons une chaîne de blocs locale pour tout tester. Démarrez la chaîne de blocs +ganache+, soit depuis la ligne de commande avec +ganache-cli+, soit depuis l&#39;interface utilisateur graphique.
+Avant de déployer sur l'un des réseaux de test Ethereum, démarrons une chaîne de blocs locale pour tout tester. Démarrez la chaîne de blocs +ganache+, soit depuis la ligne de commande avec +ganache-cli+, soit depuis l'interface utilisateur graphique.
 
 Une fois +ganache+ lancé, nous pouvons déployer notre contrat +METoken+ et voir si tout fonctionne comme prévu :
 
@@ -398,9 +398,9 @@ Sur la console +ganache+, nous devrions voir que notre déploiement a créé qua
 image::images/ganache_metoken.png["Déploiement de METoken sur Ganache"]
 
 [[truffle_console]]
-===== Interagir avec METoken à l&#39;aide de la console Truffle
+===== Interagir avec METoken à l'aide de la console Truffle
 
-((("METoken (Mastering Ethereum Token)","interagir avec via la console Truffle", id="ix_10tokens-asciidoc11", range="startofrange")))((("Truffle","interagir avec METoken via la console Truffle", id="ix_10tokens-asciidoc12", range="startofrange"))) Nous pouvons interagir avec notre contrat sur la chaîne de blocs +ganache+ en utilisant la console Truffle. Il s&#39;agit d&#39;un environnement JavaScript interactif qui donne accès à l&#39;environnement Truffle et, via web3, à la chaîne de blocs. Dans ce cas, nous allons connecter la console Truffle à la chaîne de blocs +ganache+ :
+((("METoken (Mastering Ethereum Token)","interagir avec via la console Truffle", id="ix_10tokens-asciidoc11", range="startofrange")))((("Truffle","interagir avec METoken via la console Truffle", id="ix_10tokens-asciidoc12", range="startofrange"))) Nous pouvons interagir avec notre contrat sur la chaîne de blocs +ganache+ en utilisant la console Truffle. Il s'agit d'un environnement JavaScript interactif qui donne accès à l'environnement Truffle et, via web3, à la chaîne de blocs. Dans ce cas, nous allons connecter la console Truffle à la chaîne de blocs +ganache+ :
 
 ++++
 <pre data-type="programlist">
@@ -410,7 +410,7 @@ truffle(ganache)&gt;
 </pre>
 ++++
 
-L&#39;invite +truffle(ganache)&gt;+ indique que nous sommes connectés à la chaîne de blocs +ganache+ et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes +truffle+, nous pourrions donc +compiler+ et +migrer+ depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat +METoken+ existe en tant qu&#39;objet JavaScript dans l&#39;environnement Truffle. Tapez ++METoken**++ à l&#39;invite et il affichera l&#39;intégralité de la définition du contrat :
+L'invite +truffle(ganache)&gt;+ indique que nous sommes connectés à la chaîne de blocs +ganache+ et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes +truffle+, nous pourrions donc +compiler+ et +migrer+ depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat +METoken+ existe en tant qu'objet JavaScript dans l'environnement Truffle. Tapez ++METoken**++ à l'invite et il affichera l'intégralité de la définition du contrat :
 
 ++++
 <pre data-type="programlist">
@@ -435,7 +435,7 @@ network_id: '5777' }
 </pre>
 ++++
 
-L&#39;objet +METoken+ expose également plusieurs attributs, tels que l&#39;adresse du contrat (telle que déployée par la commande +migrate+) :
+L'objet +METoken+ expose également plusieurs attributs, tels que l'adresse du contrat (telle que déployée par la commande +migrate+) :
 
 ++++
 <pre data-type="programlist">
@@ -445,7 +445,7 @@ truffle(ganache)&gt; <strong>METoken.address</strong>
 </pre>
 ++++
 
-Si nous voulons interagir avec le contrat déployé, nous devons utiliser un appel asynchrone, sous la forme d&#39;une "promesse" JavaScript. Nous utilisons la fonction +deployed+ pour obtenir l&#39;instance de contrat, puis appelons la fonction +totalSupply+ :
+Si nous voulons interagir avec le contrat déployé, nous devons utiliser un appel asynchrone, sous la forme d'une "promesse" JavaScript. Nous utilisons la fonction +deployed+ pour obtenir l'instance de contrat, puis appelons la fonction +totalSupply+ :
 
 ++++
 <pre data-type="programlist">
@@ -469,7 +469,7 @@ truffle(ganache)&gt; <strong>accounts[0]</strong>
 </pre>
 ++++
 
-La liste +accounts+ contient maintenant tous les comptes créés par +ganache+, et +account[0]+ est le compte qui a déployé le contrat +METoken+. Il devrait avoir un solde de pass:[<span class="keep-together">METoken</span>], car notre constructeur METoken donne l&#39;intégralité de l&#39;offre de jetons à l&#39;adresse qui l&#39;a créé. Allons vérifier:
+La liste +accounts+ contient maintenant tous les comptes créés par +ganache+, et +account[0]+ est le compte qui a déployé le contrat +METoken+. Il devrait avoir un solde de pass:[<span class="keep-together">METoken</span>], car notre constructeur METoken donne l'intégralité de l'offre de jetons à l'adresse qui l'a créé. Allons vérifier:
 
 ++++
 <pre data-type="programlist">
@@ -503,12 +503,12 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 
 [TIP]
 ====
-METoken a 2 décimales de précision, ce qui signifie que 1 METoken correspond à 100 unités dans le contrat. Lorsque nous transférons 1 000 METoken, nous spécifions la valeur comme +100000+ dans l&#39;appel à la fonction +transfer+.
+METoken a 2 décimales de précision, ce qui signifie que 1 METoken correspond à 100 unités dans le contrat. Lorsque nous transférons 1 000 METoken, nous spécifions la valeur comme +100000+ dans l'appel à la fonction +transfer+.
 ====
 
 Comme vous pouvez le voir, dans la console, +account[0]+ a maintenant 20 999 000 MET, et +account[1]+ a 1 000 MET.
 
-Si vous passez à l&#39;interface utilisateur graphique +ganache+, comme indiqué dans <<ganache_METoken_transfer>>, vous verrez la transaction qui a appelé la fonction +transfer+.(((range="endofrange", startref="ix_10tokens-asciidoc12")))(((range="endofrange", startref="ix_10tokens-asciidoc11")))
+Si vous passez à l'interface utilisateur graphique +ganache+, comme indiqué dans <<ganache_METoken_transfer>>, vous verrez la transaction qui a appelé la fonction +transfer+.(((range="endofrange", startref="ix_10tokens-asciidoc12")))(((range="endofrange", startref="ix_10tokens-asciidoc11")))
 
 [[ganache_METoken_transfer]]
 .Transfert METoken sur ganache
@@ -517,9 +517,9 @@ image::images/ganache_metoken_transfer.png["Transfert METoken sur Ganache"]
 [[sending_erc20_tokens_contracts]]
 ===== Envoi de jetons ERC20 aux adresses contractuelles
 
-((("Contrat Faucet.sol (exemple de test)","Projet METoken", id="ix_10tokens-asciidoc13", range="startofrange")))((("METoken (Mastering Ethereum Token)","envoi à adresses de contrat", id="ix_10tokens-asciidoc14", range="startofrange"))) Jusqu&#39;à présent, nous avons configuré un jeton ERC20 et transféré certains jetons d&#39;un compte à un autre. Tous les comptes que nous avons utilisés pour ces démonstrations sont des comptes externes, ce qui signifie qu&#39;ils sont contrôlés par une clé privée et non par un contrat. Que se passe-t-il si nous envoyons MET à une adresse contractuelle ? Découvrons-le!
+((("Contrat Faucet.sol (exemple de test)","Projet METoken", id="ix_10tokens-asciidoc13", range="startofrange")))((("METoken (Mastering Ethereum Token)","envoi à adresses de contrat", id="ix_10tokens-asciidoc14", range="startofrange"))) Jusqu'à présent, nous avons configuré un jeton ERC20 et transféré certains jetons d'un compte à un autre. Tous les comptes que nous avons utilisés pour ces démonstrations sont des comptes externes, ce qui signifie qu'ils sont contrôlés par une clé privée et non par un contrat. Que se passe-t-il si nous envoyons MET à une adresse contractuelle ? Découvrons-le!
 
-Tout d&#39;abord, déployons un autre contrat dans notre environnement de test. Pour cet exemple, nous utiliserons notre premier contrat, _Faucet.sol_. Ajoutons-le au projet METoken en le copiant dans le répertoire _contracts_. Notre répertoire devrait ressembler à ceci :
+Tout d'abord, déployons un autre contrat dans notre environnement de test. Pour cet exemple, nous utiliserons notre premier contrat, _Faucet.sol_. Ajoutons-le au projet METoken en le copiant dans le répertoire _contracts_. Notre répertoire devrait ressembler à ceci :
 
 [[METoken_directory]]
 ----
@@ -587,24 +587,24 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 </pre>
 ++++
 
-D&#39;accord, nous avons transféré 1 000 MET au contrat +Faucet+. Maintenant, comment retirer ces jetons ?
+D'accord, nous avons transféré 1 000 MET au contrat +Faucet+. Maintenant, comment retirer ces jetons ?
 
-N&#39;oubliez pas que _Faucet.sol_ est un contrat assez simple. Il n&#39;a qu&#39;une seule fonction, pass:[<span class="keep-together"><code>withdraw</code></span>], qui sert à retirer de l'_ether_. Il n&#39;a pas de fonction pour retirer le MET, ou tout autre jeton ERC20. Si nous utilisons +withdraw+, il essaiera d&#39;envoyer de l&#39;ether, mais comme +Faucet+ n&#39;a pas encore de solde d&#39;ether, il échouera.
+N'oubliez pas que _Faucet.sol_ est un contrat assez simple. Il n'a qu'une seule fonction, pass:[<span class="keep-together"><code>withdraw</code></span>], qui sert à retirer de l'_ether_. Il n'a pas de fonction pour retirer le MET, ou tout autre jeton ERC20. Si nous utilisons +withdraw+, il essaiera d'envoyer de l'ether, mais comme +Faucet+ n'a pas encore de solde d'ether, il échouera.
 
-Le contrat +METoken+ sait que +Faucet+ a un solde, mais le seul moyen de transférer ce solde est de recevoir un appel +transfer+ de l&#39;adresse du contrat. D&#39;une manière ou d&#39;une autre, nous devons faire en sorte que le contrat +Faucet+ appelle la fonction +transfer+ dans pass:[<span class="keep-together"><code>METoken</code></span>].
+Le contrat +METoken+ sait que +Faucet+ a un solde, mais le seul moyen de transférer ce solde est de recevoir un appel +transfer+ de l'adresse du contrat. D'une manière ou d'une autre, nous devons faire en sorte que le contrat +Faucet+ appelle la fonction +transfer+ dans pass:[<span class="keep-together"><code>METoken</code></span>].
 
-Si vous vous demandez quoi faire ensuite, ne le faites pas. Il n&#39;y a pas de solution à ce problème. Le MET envoyé à +Faucet+ est bloqué, pour toujours. Seul le contrat +Faucet+ peut le transférer, et le contrat +Faucet+ n&#39;a pas de code pour appeler la fonction +transfer+ d&#39;un contrat de jeton ERC20.
+Si vous vous demandez quoi faire ensuite, ne le faites pas. Il n'y a pas de solution à ce problème. Le MET envoyé à +Faucet+ est bloqué, pour toujours. Seul le contrat +Faucet+ peut le transférer, et le contrat +Faucet+ n'a pas de code pour appeler la fonction +transfer+ d'un contrat de jeton ERC20.
 
-Peut-être avez-vous anticipé ce problème. Très probablement, vous ne l&#39;avez pas fait. En fait, des centaines d&#39;utilisateurs d&#39;Ethereum qui ont accidentellement transféré divers jetons vers des contrats qui n&#39;avaient aucune capacité ERC20 n&#39;en ont pas non plus fait. Selon certaines estimations, des jetons d&#39;une valeur de plus d&#39;environ 2,5 millions de dollars (au moment de la rédaction) sont restés "bloqués" comme ça et sont perdus à jamais.
+Peut-être avez-vous anticipé ce problème. Très probablement, vous ne l'avez pas fait. En fait, des centaines d'utilisateurs d'Ethereum qui ont accidentellement transféré divers jetons vers des contrats qui n'avaient aucune capacité ERC20 n'en ont pas non plus fait. Selon certaines estimations, des jetons d'une valeur de plus d'environ 2,5 millions de dollars (au moment de la rédaction) sont restés "bloqués" comme ça et sont perdus à jamais.
 
-L&#39;une des façons dont les utilisateurs de jetons ERC20 peuvent perdre par inadvertance leurs jetons lors d&#39;un transfert, c&#39;est lorsqu&#39;ils tentent de transférer vers un échange ou un autre service. Ils copient une adresse Ethereum à partir du site Web d&#39;un échange, pensant qu&#39;ils peuvent simplement lui envoyer des jetons. Cependant, de nombreux échanges publient des adresses de réception qui sont en fait des contrats ! Ces contrats sont uniquement destinés à recevoir de l&#39;ether, pas des jetons ERC20, balayant le plus souvent tous les fonds qui leur sont envoyés vers un « stockage à froid » ou un autre portefeuille centralisé. Malgré les nombreux avertissements indiquant "n&#39;envoyez pas de jetons à cette adresse", de nombreux jetons sont perdus de cette façon.(((range="endofrange", startref="ix_10tokens-asciidoc14")))(((range="endofrange" , startref="ix_10tokens-asciidoc13")))
+L'une des façons dont les utilisateurs de jetons ERC20 peuvent perdre par inadvertance leurs jetons lors d'un transfert, c'est lorsqu'ils tentent de transférer vers un échange ou un autre service. Ils copient une adresse Ethereum à partir du site Web d'un échange, pensant qu'ils peuvent simplement lui envoyer des jetons. Cependant, de nombreux échanges publient des adresses de réception qui sont en fait des contrats ! Ces contrats sont uniquement destinés à recevoir de l'ether, pas des jetons ERC20, balayant le plus souvent tous les fonds qui leur sont envoyés vers un « stockage à froid » ou un autre portefeuille centralisé. Malgré les nombreux avertissements indiquant "n'envoyez pas de jetons à cette adresse", de nombreux jetons sont perdus de cette façon.(((range="endofrange", startref="ix_10tokens-asciidoc14")))(((range="endofrange" , startref="ix_10tokens-asciidoc13")))
 
 [[transfer_workflow_demo]]
 ===== Démonstration du flux de travail "approuver et transférer de"
 
-((("flux de travail approve et transferFrom", id="ix_10tokens-asciidoc15", range="startofrange")))((("Contrat Faucet.sol (exemple de test)","démonstration de flux de travail METoken approve et transferFrom", id ="ix_10tokens-asciidoc16", range="startofrange")))((("METoken (Mastering Ethereum Token)","démonstration du flux de travail approve et transferFrom", id="ix_10tokens-asciidoc17", range="startofrange")))Notre contrat +Faucet+ ne pouvait pas gérer les jetons ERC20. L&#39;envoi de jetons à l&#39;aide de la fonction + transfer + a entraîné la perte de ces jetons. Réécrivons maintenant le contrat et faisons en sorte qu&#39;il gère les jetons ERC20. Plus précisément, nous allons le transformer en un robinet qui donne du MET à quiconque le demande.
+((("flux de travail approve et transferFrom", id="ix_10tokens-asciidoc15", range="startofrange")))((("Contrat Faucet.sol (exemple de test)","démonstration de flux de travail METoken approve et transferFrom", id ="ix_10tokens-asciidoc16", range="startofrange")))((("METoken (Mastering Ethereum Token)","démonstration du flux de travail approve et transferFrom", id="ix_10tokens-asciidoc17", range="startofrange")))Notre contrat +Faucet+ ne pouvait pas gérer les jetons ERC20. L'envoi de jetons à l'aide de la fonction + transfer + a entraîné la perte de ces jetons. Réécrivons maintenant le contrat et faisons en sorte qu'il gère les jetons ERC20. Plus précisément, nous allons le transformer en un robinet qui donne du MET à quiconque le demande.
 
-Pour cet exemple, nous allons faire une copie du répertoire du projet _truffle_ (nous l&#39;appellerons __METoken_METFaucet__), initialiser +truffle+ et +npm+, installer les dépendances OpenZeppelin et copier le contrat _METoken.sol_. Voir notre premier exemple, dans <<METoken_example>>, pour les instructions détaillées.
+Pour cet exemple, nous allons faire une copie du répertoire du projet _truffle_ (nous l'appellerons __METoken_METFaucet__), initialiser +truffle+ et +npm+, installer les dépendances OpenZeppelin et copier le contrat _METoken.sol_. Voir notre premier exemple, dans <<METoken_example>>, pour les instructions détaillées.
 
 Notre nouveau contrat de robinetterie, _METFaucet.sol_, ressemblera à <<METFaucet>>.
 
@@ -617,7 +617,7 @@ include::code/truffle/METoken_METFaucet/contracts/METFaucet.sol[]
 ----
 ====
 
-Nous avons apporté quelques modifications à l&#39;exemple de base de +Faucet+. Puisque +METFaucet+ utilisera la fonction +transferFrom+ dans +METoken+, il aura besoin de deux variables supplémentaires. L&#39;un contiendra l&#39;adresse du contrat +METoken+ déployé. L&#39;autre détiendra l&#39;adresse du propriétaire du MET, qui approuvera les retraits du robinet. Le contrat +METFaucet+ appellera +METoken.transferFrom+ et lui demandera de déplacer le MET du propriétaire vers l&#39;adresse d&#39;où provient la demande de retrait du robinet.
+Nous avons apporté quelques modifications à l'exemple de base de +Faucet+. Puisque +METFaucet+ utilisera la fonction +transferFrom+ dans +METoken+, il aura besoin de deux variables supplémentaires. L'un contiendra l'adresse du contrat +METoken+ déployé. L'autre détiendra l'adresse du propriétaire du MET, qui approuvera les retraits du robinet. Le contrat +METFaucet+ appellera +METoken.transferFrom+ et lui demandera de déplacer le MET du propriétaire vers l'adresse d'où provient la demande de retrait du robinet.
 
 
 Nous déclarons ici ces deux variables :
@@ -633,17 +633,17 @@ address public METOwner;
 [[custom_constructor]]
 [source,solidity]
 ----
-// Constructeur METFaucet - fournir l&#39;adresse du contrat METoken et
-// l&#39;adresse du propriétaire que nous serons autorisés à transférer avec transferFrom
+// Constructeur METFaucet - fournir l'adresse du contrat METoken et
+// l'adresse du propriétaire que nous serons autorisés à transférer avec transferFrom
 function METFaucet(address _METoken, address _METOwner) public {
 
-	// Initialise le METoken à partir de l&#39;adresse fournie
+	// Initialise le METoken à partir de l'adresse fournie
 	METoken = StandardToken(_METoken);
 	METOwner = _METOwner;
 }
 ----
 
-Le prochain changement concerne la fonction +withdraw+. Au lieu d&#39;appeler +transfer+, +METFaucet+ utilise la fonction +transferFrom+ dans +METoken+ et demande à +METoken+ de transférer MET au destinataire du robinet :
+Le prochain changement concerne la fonction +withdraw+. Au lieu d'appeler +transfer+, +METFaucet+ utilise la fonction +transferFrom+ dans +METoken+ et demande à +METoken+ de transférer MET au destinataire du robinet :
 
 [[transfer_met]]
 [source,solidity]
@@ -652,7 +652,7 @@ Le prochain changement concerne la fonction +withdraw+. Au lieu d&#39;appeler +t
 METoken.transferFrom(METOwner, msg.sender, withdraw_amount);
 ----
 
-Enfin, puisque notre robinet n&#39;envoie plus d&#39;ether, nous devrions probablement empêcher quiconque d&#39;envoyer de l&#39;ether à +METFaucet+, car nous ne voudrions pas qu&#39;il reste bloqué. Nous modifions la fonction de paiement de secours pour rejeter l&#39;ether entrant, en utilisant la fonction +revert+ pour annuler tout paiement entrant :
+Enfin, puisque notre robinet n'envoie plus d'ether, nous devrions probablement empêcher quiconque d'envoyer de l'ether à +METFaucet+, car nous ne voudrions pas qu'il reste bloqué. Nous modifions la fonction de paiement de secours pour rejeter l'ether entrant, en utilisant la fonction +revert+ pour annuler tout paiement entrant :
 
 [[reject_incoming_eth]]
 [source,solidity]
@@ -661,7 +661,7 @@ Enfin, puisque notre robinet n&#39;envoie plus d&#39;ether, nous devrions probab
 function () external payable { revert(); }
 ----
 
-Maintenant que notre code _METFaucet.sol_ est prêt, nous devons modifier le script de migration pour le déployer. Ce script de migration sera un peu plus complexe, car +METFaucet+ dépend de l&#39;adresse de +METoken+. Nous utiliserons une promesse JavaScript pour déployer les deux contrats en séquence. Créez __2_deploy_contracts.js__ comme suit :
+Maintenant que notre code _METFaucet.sol_ est prêt, nous devons modifier le script de migration pour le déployer. Ce script de migration sera un peu plus complexe, car +METFaucet+ dépend de l'adresse de +METoken+. Nous utiliserons une promesse JavaScript pour déployer les deux contrats en séquence. Créez __2_deploy_contracts.js__ comme suit :
 
 [source,solidity]
 ----
@@ -671,16 +671,16 @@ var owner = web3.eth.accounts[0];
 
 module.exports = function(deployer) {
 
-	// Déployer d&#39;abord le contrat METoken
+	// Déployer d'abord le contrat METoken
 	deployer.deploy(METoken, {from: owner}).then(function() {
-		// Ensuite, déployer METFaucet et passez l&#39;adresse de METoken et
+		// Ensuite, déployer METFaucet et passez l'adresse de METoken et
 		// l'adresse du propriétaire de tous les MET qui agréera METFaucet
 		return deployer.deploy(METFaucet, METoken.address, owner);
   	});
 }
 ----
 
-Maintenant, nous pouvons tout tester dans la console Truffle. Tout d&#39;abord, nous utilisons +migrate+ pour déployer les contrats. Lorsque +METoken+ est déployé, il alloue tout le MET au compte qui l&#39;a créé, +web3.eth.accounts[0]+. Ensuite, nous appelons la fonction +approve+ dans pass:[<code><span class="keep-together">METoken</span></code>] pour approuver +METFaucet+ afin d&#39;envoyer jusqu&#39;à 1 000 MET au nom de +web3.eth.accounts[0]+. Enfin, pour tester notre faucet, nous appelons +METFaucet.withdraw+ depuis +web3.eth.accounts[1]+ et essayons de retirer 10 MET. Voici les commandes de la console :
+Maintenant, nous pouvons tout tester dans la console Truffle. Tout d'abord, nous utilisons +migrate+ pour déployer les contrats. Lorsque +METoken+ est déployé, il alloue tout le MET au compte qui l'a créé, +web3.eth.accounts[0]+. Ensuite, nous appelons la fonction +approve+ dans pass:[<code><span class="keep-together">METoken</span></code>] pour approuver +METFaucet+ afin d'envoyer jusqu'à 1 000 MET au nom de +web3.eth.accounts[0]+. Enfin, pour tester notre faucet, nous appelons +METFaucet.withdraw+ depuis +web3.eth.accounts[1]+ et essayons de retirer 10 MET. Voici les commandes de la console :
 
 ++++
 <pre data-type="programlist">
@@ -715,41 +715,41 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 3, c: [ 1000 ] }</strong>
 </pre>
 ++++
 
-Comme vous pouvez le voir sur les résultats, nous pouvons utiliser le flux de travail +approve+ et +transferFrom+ pour autoriser un contrat à transférer des jetons définis dans un autre jeton. S&#39;ils sont correctement utilisés, les jetons ERC20 peuvent être utilisés par les EOA et d&#39;autres contrats.
+Comme vous pouvez le voir sur les résultats, nous pouvons utiliser le flux de travail +approve+ et +transferFrom+ pour autoriser un contrat à transférer des jetons définis dans un autre jeton. S'ils sont correctement utilisés, les jetons ERC20 peuvent être utilisés par les EOA et d'autres contrats.
 
-Cependant, la charge de gérer correctement les jetons ERC20 est transmise à l&#39;interface utilisateur. Si un utilisateur tente à tort de transférer des jetons ERC20 vers une adresse de contrat et que ce contrat n&#39;est pas équipé pour recevoir des jetons ERC20, les jetons seront perdus(((range="endofrange", startref="ix_10tokens-asciidoc17")))(((range="endofrange", startref="ix_10tokens-asciidoc16")))(((range="endofrange", startref="ix_10tokens-asciidoc15"))).(((range="endofrange", startref="ix_10tokens -asciidoc10")))(((range="endofrange", startref="ix_10tokens-asciidoc9")))
+Cependant, la charge de gérer correctement les jetons ERC20 est transmise à l'interface utilisateur. Si un utilisateur tente à tort de transférer des jetons ERC20 vers une adresse de contrat et que ce contrat n'est pas équipé pour recevoir des jetons ERC20, les jetons seront perdus(((range="endofrange", startref="ix_10tokens-asciidoc17")))(((range="endofrange", startref="ix_10tokens-asciidoc16")))(((range="endofrange", startref="ix_10tokens-asciidoc15"))).(((range="endofrange", startref="ix_10tokens -asciidoc10")))(((range="endofrange", startref="ix_10tokens-asciidoc9")))
 
 [[ERC20_issues]]
 ==== Problèmes avec les jetons ERC20
 
-((("standard de jeton ERC20","problèmes avec les jetons ERC20")))L&#39;adoption de la norme de jeton ERC20 a été vraiment explosive. Des milliers de jetons ont été lancés, à la fois pour expérimenter de nouvelles capacités et pour lever des fonds dans diverses enchères et "financements participatifs" ICO. Cependant, il existe des pièges potentiels, comme nous l&#39;avons vu avec la question du transfert de jetons vers des adresses contractuelles.
+((("standard de jeton ERC20","problèmes avec les jetons ERC20")))L'adoption de la norme de jeton ERC20 a été vraiment explosive. Des milliers de jetons ont été lancés, à la fois pour expérimenter de nouvelles capacités et pour lever des fonds dans diverses enchères et "financements participatifs" ICO. Cependant, il existe des pièges potentiels, comme nous l'avons vu avec la question du transfert de jetons vers des adresses contractuelles.
 
-L&#39;un des problèmes les moins évidents avec les jetons ERC20 est qu&#39;ils exposent des différences subtiles entre les jetons et l&#39;ether lui-même. Lorsque l&#39;ether est transféré par une transaction qui a une adresse de destinataire comme destination, les transferts de jeton se produisent dans l&#39;_état spécifique du contrat de jeton_ et ont le contrat de jeton comme destination, et non l&#39;adresse du destinataire. Le contrat de jeton suit les soldes et émet des événements. Dans un transfert de jeton, aucune transaction n&#39;est réellement envoyée au destinataire du jeton. Au lieu de cela, l&#39;adresse du destinataire est ajoutée à un tableau dans le contrat de jeton lui-même. Une transaction envoyant de l&#39;ether à une adresse modifie l&#39;état d&#39;une adresse. Une transaction transférant un jeton à une adresse ne modifie que l&#39;état du contrat de jeton, pas l&#39;état de l&#39;adresse du destinataire. Même un portefeuille prenant en charge les jetons ERC20 ne prend pas connaissance d&#39;un solde de jetons à moins que l&#39;utilisateur n&#39;ajoute explicitement un contrat de jeton spécifique à « surveiller ». Certains portefeuilles surveillent les contrats de jetons les plus populaires pour détecter les soldes détenus par les adresses qu&#39;ils contrôlent, mais cela est limité à une petite fraction des pass:[<span class="keep-together">contrats</span>] ERC20 existants.
+L'un des problèmes les moins évidents avec les jetons ERC20 est qu'ils exposent des différences subtiles entre les jetons et l'ether lui-même. Lorsque l'ether est transféré par une transaction qui a une adresse de destinataire comme destination, les transferts de jeton se produisent dans l'_état spécifique du contrat de jeton_ et ont le contrat de jeton comme destination, et non l'adresse du destinataire. Le contrat de jeton suit les soldes et émet des événements. Dans un transfert de jeton, aucune transaction n'est réellement envoyée au destinataire du jeton. Au lieu de cela, l'adresse du destinataire est ajoutée à un tableau dans le contrat de jeton lui-même. Une transaction envoyant de l'ether à une adresse modifie l'état d'une adresse. Une transaction transférant un jeton à une adresse ne modifie que l'état du contrat de jeton, pas l'état de l'adresse du destinataire. Même un portefeuille prenant en charge les jetons ERC20 ne prend pas connaissance d'un solde de jetons à moins que l'utilisateur n'ajoute explicitement un contrat de jeton spécifique à « surveiller ». Certains portefeuilles surveillent les contrats de jetons les plus populaires pour détecter les soldes détenus par les adresses qu'ils contrôlent, mais cela est limité à une petite fraction des pass:[<span class="keep-together">contrats</span>] ERC20 existants.
 
-En fait, il est peu probable qu&#39;un utilisateur veuille suivre tous les soldes de tous les contrats de jetons ERC20 possibles. De nombreux jetons ERC20 ressemblent plus à du courrier indésirable qu&#39;à des jetons utilisables. Ils créent automatiquement des soldes pour les comptes qui ont une activité ether, afin d&#39;attirer les utilisateurs. Si vous avez une adresse Ethereum avec une longue histoire d&#39;activité, surtout si elle a été créée lors de la prévente, vous la trouverez pleine de jetons "indésirables" qui sont apparus de nulle part. Bien sûr, l&#39;adresse n&#39;est pas vraiment pleine de jetons ; ce sont les contrats symboliques qui contiennent votre adresse. Vous ne voyez ces soldes que si ces contrats de jetons sont surveillés par l&#39;explorateur de blocs ou le portefeuille que vous utilisez pour afficher votre adresse.
+En fait, il est peu probable qu'un utilisateur veuille suivre tous les soldes de tous les contrats de jetons ERC20 possibles. De nombreux jetons ERC20 ressemblent plus à du courrier indésirable qu'à des jetons utilisables. Ils créent automatiquement des soldes pour les comptes qui ont une activité ether, afin d'attirer les utilisateurs. Si vous avez une adresse Ethereum avec une longue histoire d'activité, surtout si elle a été créée lors de la prévente, vous la trouverez pleine de jetons "indésirables" qui sont apparus de nulle part. Bien sûr, l'adresse n'est pas vraiment pleine de jetons ; ce sont les contrats symboliques qui contiennent votre adresse. Vous ne voyez ces soldes que si ces contrats de jetons sont surveillés par l'explorateur de blocs ou le portefeuille que vous utilisez pour afficher votre adresse.
 
-Les jetons ne se comportent pas de la même manière que l&#39;ether. L'ether est envoyé avec la fonction +send+ et accepté par toute fonction payante dans un contrat ou toute adresse détenue en externe. Les jetons sont envoyés à l&#39;aide des fonctions +transfer+ ou +approve+ et +transferFrom+ qui n&#39;existent que dans le contrat ERC20, et ne déclenchent (du moins dans ERC20) aucune fonction payante dans un contrat destinataire. Les jetons sont censés fonctionner comme une cryptomonnaie telle que l&#39;ether, mais ils présentent certaines différences qui brisent cette illusion.
+Les jetons ne se comportent pas de la même manière que l'ether. L'ether est envoyé avec la fonction +send+ et accepté par toute fonction payante dans un contrat ou toute adresse détenue en externe. Les jetons sont envoyés à l'aide des fonctions +transfer+ ou +approve+ et +transferFrom+ qui n'existent que dans le contrat ERC20, et ne déclenchent (du moins dans ERC20) aucune fonction payante dans un contrat destinataire. Les jetons sont censés fonctionner comme une cryptomonnaie telle que l'ether, mais ils présentent certaines différences qui brisent cette illusion.
 
-((("gaz","jetons et")))((("jetons","gaz et")))Envisagez un autre problème. Pour envoyer de l&#39;ether ou utiliser un contrat Ethereum, vous avez besoin d&#39;ether pour payer le gaz. Pour envoyer des jetons, vous avez _également besoin d&#39;ether_. Vous ne pouvez pas payer le gaz d&#39;une transaction avec un jeton et le contrat de jeton ne peut pas payer le gaz pour vous. Cela peut changer à un moment donné dans un avenir lointain, mais entre-temps, cela peut entraîner des expériences utilisateur plutôt étranges. Par exemple, supposons que vous utilisiez un échange ou ShapeShift pour convertir du bitcoin en jeton. Vous "recevez" le jeton dans un portefeuille qui suit le contrat de ce jeton et affiche votre solde. Il ressemble à toutes les autres crypto-monnaies que vous avez dans votre portefeuille. Essayez d&#39;envoyer le jeton et votre portefeuille vous informera que vous avez besoin d&#39;ether pour le faire. Vous pourriez être confus - après tout, vous n&#39;aviez pas besoin d&#39;ether pour recevoir le jeton. Peut-être que vous n&#39;avez pas d&#39;ether. Peut-être ne saviez-vous même pas que le jeton était un jeton ERC20 sur Ethereum; peut-être pensiez-vous qu&#39;il s&#39;agissait d&#39;une cryptomonnaie avec sa propre chaîne de blocs. L&#39;illusion vient de se briser.
+((("gaz","jetons et")))((("jetons","gaz et")))Envisagez un autre problème. Pour envoyer de l'ether ou utiliser un contrat Ethereum, vous avez besoin d'ether pour payer le gaz. Pour envoyer des jetons, vous avez _également besoin d'ether_. Vous ne pouvez pas payer le gaz d'une transaction avec un jeton et le contrat de jeton ne peut pas payer le gaz pour vous. Cela peut changer à un moment donné dans un avenir lointain, mais entre-temps, cela peut entraîner des expériences utilisateur plutôt étranges. Par exemple, supposons que vous utilisiez un échange ou ShapeShift pour convertir du bitcoin en jeton. Vous "recevez" le jeton dans un portefeuille qui suit le contrat de ce jeton et affiche votre solde. Il ressemble à toutes les autres crypto-monnaies que vous avez dans votre portefeuille. Essayez d'envoyer le jeton et votre portefeuille vous informera que vous avez besoin d'ether pour le faire. Vous pourriez être confus - après tout, vous n'aviez pas besoin d'ether pour recevoir le jeton. Peut-être que vous n'avez pas d'ether. Peut-être ne saviez-vous même pas que le jeton était un jeton ERC20 sur Ethereum; peut-être pensiez-vous qu'il s'agissait d'une cryptomonnaie avec sa propre chaîne de blocs. L'illusion vient de se briser.
 
-Certains de ces problèmes sont spécifiques aux jetons ERC20. D&#39;autres sont des problèmes plus généraux liés à l&#39;abstraction et aux limites d&#39;interface au sein d&#39;Ethereum. Certains peuvent être résolus en modifiant l&#39;interface du jeton, tandis que d&#39;autres peuvent nécessiter des modifications des structures fondamentales au sein d&#39;Ethereum (comme la distinction entre EOA et contrats, et entre transactions et messages). Certains peuvent ne pas être exactement "solvable" et peuvent nécessiter une conception d&#39;interface utilisateur pour masquer les nuances et rendre l&#39;expérience utilisateur cohérente, quelles que soient les distinctions sous-jacentes.
+Certains de ces problèmes sont spécifiques aux jetons ERC20. D'autres sont des problèmes plus généraux liés à l'abstraction et aux limites d'interface au sein d'Ethereum. Certains peuvent être résolus en modifiant l'interface du jeton, tandis que d'autres peuvent nécessiter des modifications des structures fondamentales au sein d'Ethereum (comme la distinction entre EOA et contrats, et entre transactions et messages). Certains peuvent ne pas être exactement "solvable" et peuvent nécessiter une conception d'interface utilisateur pour masquer les nuances et rendre l'expérience utilisateur cohérente, quelles que soient les distinctions sous-jacentes.
 
 Dans les prochaines sections, nous examinerons diverses propositions qui tentent de résoudre certains de ces problèmes.
 
 [[ERC223_std]]
-==== ERC223 : une norme d&#39;interface de contrat de jeton proposée
+==== ERC223 : une norme d'interface de contrat de jeton proposée
 
-((("Proposition de norme de jeton ERC223")))((("jetons","Proposition de norme ERC223")))La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l&#39;adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée +tokenFallback+. Si la destination d&#39;un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c&#39;est-à-dire qu&#39;il n&#39;implémente pas +tokenFallback+), le transfert échoue.
+((("Proposition de norme de jeton ERC223")))((("jetons","Proposition de norme ERC223")))La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l'adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée +tokenFallback+. Si la destination d'un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c'est-à-dire qu'il n'implémente pas +tokenFallback+), le transfert échoue.
 
 [[is_contract]]
-Pour détecter si l&#39;adresse de destination est un contrat, l&#39;implémentation de référence ERC223 utilise un petit segment de code intermédiaire en ligne d&#39;une manière plutôt créative :
+Pour détecter si l'adresse de destination est un contrat, l'implémentation de référence ERC223 utilise un petit segment de code intermédiaire en ligne d'une manière plutôt créative :
 
 [source,solidity]
 ----
 function isContract(address _addr) private view returns (bool is_contract) {
   uint length;
     assembly {
-       // récupère la taille du code sur l&#39;adresse cible ; cela nécessite un assemblage
+       // récupère la taille du code sur l'adresse cible ; cela nécessite un assemblage
        length := extcodesize(_addr)
     }
     return (length>0);
@@ -757,7 +757,7 @@ function isContract(address _addr) private view returns (bool is_contract) {
 ----
 
 [[ERC223_interface]]
-La spécification de l&#39;interface de contrat ERC223 est :
+La spécification de l'interface de contrat ERC223 est :
 
 [source,solidity]
 ----
@@ -780,27 +780,27 @@ interface ERC223Token {
 }
 ----
 
-ERC223 n&#39;est pas largement mis en œuvre, et il y a un débat dans le fil https://github.com/ethereum/EIPs/issues/223[de discussion ERC] sur la rétrocompatibilité et les compromis entre la mise en œuvre des changements au niveau de l&#39;interface du contrat par rapport à l'interface utilisateur. Le débat continue.
+ERC223 n'est pas largement mis en œuvre, et il y a un débat dans le fil https://github.com/ethereum/EIPs/issues/223[de discussion ERC] sur la rétrocompatibilité et les compromis entre la mise en œuvre des changements au niveau de l'interface du contrat par rapport à l'interface utilisateur. Le débat continue.
 
-==== ERC777 : une norme d&#39;interface de contrat de jeton proposée
+==== ERC777 : une norme d'interface de contrat de jeton proposée
 
 ((("Proposition de norme de jeton ERC777", id="ix_10tokens-asciidoc18", range="startofrange")))((("jetons","Proposition de norme ERC777", id="ix_10tokens-asciidoc19", range=" startofrange")))Une autre proposition pour une norme de contrat de jeton améliorée est https://eips.ethereum.org/EIPS/eip-777[ERC777]. Cette proposition a plusieurs objectifs, notamment :
 
 * Offrir une interface compatible ERC20
-* Pour transférer des jetons à l&#39;aide d&#39;une fonction +send+, similaire aux transferts d&#39;ether
-* Pour être compatible avec ERC820 pour l&#39;enregistrement de contrat de jeton
-* Pour permettre aux contrats et aux adresses de contrôler les jetons qu&#39;ils envoient via une fonction `tokensToSend` qui est appelée avant l&#39;envoi
-* Pour permettre aux contrats et aux adresses d&#39;être informés de la réception des jetons en appelant une fonction `tokensReceived` dans le destinataire, et pour réduire la probabilité que les jetons soient verrouillés dans des contrats en exigeant que les contrats fournissent une fonction pass:[<span class="keep-together"><code>tokensReceived</code></span>]
-* Pour permettre aux contrats existants d&#39;utiliser des contrats par procuration pour les fonctions +tokensToSend+ et +tokensReceived+
+* Pour transférer des jetons à l'aide d'une fonction +send+, similaire aux transferts d'ether
+* Pour être compatible avec ERC820 pour l'enregistrement de contrat de jeton
+* Pour permettre aux contrats et aux adresses de contrôler les jetons qu'ils envoient via une fonction `tokensToSend` qui est appelée avant l'envoi
+* Pour permettre aux contrats et aux adresses d'être informés de la réception des jetons en appelant une fonction `tokensReceived` dans le destinataire, et pour réduire la probabilité que les jetons soient verrouillés dans des contrats en exigeant que les contrats fournissent une fonction pass:[<span class="keep-together"><code>tokensReceived</code></span>]
+* Pour permettre aux contrats existants d'utiliser des contrats par procuration pour les fonctions +tokensToSend+ et +tokensReceived+
 * Pour fonctionner de la même manière que vous envoyiez vers un contrat ou un EOA
 * Pour fournir des événements spécifiques pour la frappe et la gravure de jetons
-* Pour permettre aux opérateurs (tiers de confiance, destinés à être des contrats vérifiés) de déplacer des jetons pour le compte d&#39;un détenteur de jetons
+* Pour permettre aux opérateurs (tiers de confiance, destinés à être des contrats vérifiés) de déplacer des jetons pour le compte d'un détenteur de jetons
 * Pour fournir des métadonnées sur les transactions de transfert de jetons dans les champs +userData+ et +operatorData+
 
 La discussion en cours sur ERC777 peut être trouvée https://github.com/ethereum/EIPs/issues/777[sur GitHub].
 
 [[ERC777_interface]]
-La spécification de l&#39;interface de contrat ERC777 est :
+La spécification de l'interface de contrat ERC777 est :
 
 [source,solidity]
 ----
@@ -837,7 +837,7 @@ interface ERC777Token {
 ===== Crochets ERC777
 
 [[ERC777TokensSender_interface]]
-La spécification de crochet d&#39;expéditeur de jetons ERC777 est :
+La spécification de crochet d'expéditeur de jetons ERC777 est :
 
 [source,solidity]
 ----
@@ -847,7 +847,7 @@ interface ERC777TokensSender {
 }
 ----
 
-La mise en place de cette interface est nécessaire pour toute adresse souhaitant être notifiée, gérer ou empêcher le débit de jetons. L&#39;adresse pour laquelle le contrat implémente cette interface doit être enregistrée via ERC820, que le contrat implémente l&#39;interface pour lui-même ou pour une autre adresse.
+La mise en place de cette interface est nécessaire pour toute adresse souhaitant être notifiée, gérer ou empêcher le débit de jetons. L'adresse pour laquelle le contrat implémente cette interface doit être enregistrée via ERC820, que le contrat implémente l'interface pour lui-même ou pour une autre adresse.
 
 [[ERC777TokensRecipient_interface]]
 La spécification du crochet du destinataire des jetons ERC777 est :
@@ -862,30 +862,30 @@ interface ERC777TokensRecipient {
 }
 ----
 
-La mise en place de cette interface est nécessaire pour toute adresse souhaitant être notifiée, traiter ou rejeter la réception de jetons. La même logique et les mêmes exigences s&#39;appliquent au destinataire des jetons qu&#39;à l&#39;interface de l&#39;expéditeur des jetons, avec la contrainte supplémentaire que les contrats destinataires doivent implémenter cette interface pour empêcher le verrouillage des jetons. Si le contrat destinataire n&#39;enregistre pas d&#39;adresse implémentant cette interface, le transfert des jetons échouera.
+La mise en place de cette interface est nécessaire pour toute adresse souhaitant être notifiée, traiter ou rejeter la réception de jetons. La même logique et les mêmes exigences s'appliquent au destinataire des jetons qu'à l'interface de l'expéditeur des jetons, avec la contrainte supplémentaire que les contrats destinataires doivent implémenter cette interface pour empêcher le verrouillage des jetons. Si le contrat destinataire n'enregistre pas d'adresse implémentant cette interface, le transfert des jetons échouera.
 
-Un aspect important est qu&#39;un seul expéditeur de jeton et un seul destinataire de jeton peuvent être enregistrés par adresse. Par conséquent, pour chaque transfert de jeton ERC777, les mêmes fonctions de crochet sont appelées lors du débit et de la réception de chaque transfert de jeton ERC777. Un jeton spécifique peut être identifié dans ces fonctions à l&#39;aide de l&#39;expéditeur du message, qui est l&#39;adresse de contrat de jeton spécifique, pour gérer un cas d&#39;utilisation particulier.
+Un aspect important est qu'un seul expéditeur de jeton et un seul destinataire de jeton peuvent être enregistrés par adresse. Par conséquent, pour chaque transfert de jeton ERC777, les mêmes fonctions de crochet sont appelées lors du débit et de la réception de chaque transfert de jeton ERC777. Un jeton spécifique peut être identifié dans ces fonctions à l'aide de l'expéditeur du message, qui est l'adresse de contrat de jeton spécifique, pour gérer un cas d'utilisation particulier.
 
-D&#39;autre part, les mêmes hooks d&#39;expéditeur et de destinataire de jeton peuvent être enregistrés pour plusieurs adresses et les hooks peuvent distinguer qui sont l&#39;expéditeur et le destinataire prévu à l&#39;aide des paramètres "from" et "to".
+D'autre part, les mêmes hooks d'expéditeur et de destinataire de jeton peuvent être enregistrés pour plusieurs adresses et les hooks peuvent distinguer qui sont l'expéditeur et le destinataire prévu à l'aide des paramètres "from" et "to".
 
-Une http://bit.ly/2qkAKba[implémentation de référence] d&#39;ERC777 est liée dans la proposition. ERC777 dépend d&#39;une proposition parallèle de contrat de registre, spécifiée dans ERC820. Une partie du débat sur ERC777 porte sur la complexité de l&#39;adoption simultanée de deux grands changements : une nouvelle norme de jeton et une norme de registre. La discussion continue.(((range="endofrange", startref="ix_10tokens-asciidoc19")))(((range="endofrange", startref="ix_10tokens-asciidoc18")))
+Une http://bit.ly/2qkAKba[implémentation de référence] d'ERC777 est liée dans la proposition. ERC777 dépend d'une proposition parallèle de contrat de registre, spécifiée dans ERC820. Une partie du débat sur ERC777 porte sur la complexité de l'adoption simultanée de deux grands changements : une nouvelle norme de jeton et une norme de registre. La discussion continue.(((range="endofrange", startref="ix_10tokens-asciidoc19")))(((range="endofrange", startref="ix_10tokens-asciidoc18")))
 
 [[erc721]]
 ==== ERC721 : norme de jeton non fongible (acte)
 
-((("acte", "et norme de jeton non fongible ERC721", id="ix_10tokens-asciidoc20", range="startofrange")))((("norme de jeton non fongible ERC721", id="ix_10tokens- asciidoc21", range="startofrange")))((("jetons non fongibles (NFT)","norme de jeton non fongible ERC721", id="ix_10tokens-asciidoc22", range="startofrange")))((("tokens","ERC721 non-fungible token standard", id="ix_10tokens-asciidoc23", range="startofrange")))Toutes les normes de jeton que nous avons examinées jusqu&#39;à présent concernent les jetons _fungible_, ce qui signifie que les unités de un jeton sont interchangeables. La norme de jeton ERC20 ne suit que le solde final de chaque compte et ne suit pas (explicitement) la provenance d&#39;un jeton.
+((("acte", "et norme de jeton non fongible ERC721", id="ix_10tokens-asciidoc20", range="startofrange")))((("norme de jeton non fongible ERC721", id="ix_10tokens- asciidoc21", range="startofrange")))((("jetons non fongibles (NFT)","norme de jeton non fongible ERC721", id="ix_10tokens-asciidoc22", range="startofrange")))((("tokens","ERC721 non-fungible token standard", id="ix_10tokens-asciidoc23", range="startofrange")))Toutes les normes de jeton que nous avons examinées jusqu'à présent concernent les jetons _fungible_, ce qui signifie que les unités de un jeton sont interchangeables. La norme de jeton ERC20 ne suit que le solde final de chaque compte et ne suit pas (explicitement) la provenance d'un jeton.
 
 ((("acte", "défini"))) La http://bit.ly/2Ogs7Im[proposition ERC721] concerne une norme pour les jetons _non fongibles_, également appelés _actes_.
 
 Extrait du dictionnaire Oxford :
 
 ____
-_acte_ : un document juridique qui est signé et remis, en particulier un document concernant la propriété d&#39;un bien ou des droits légaux.
+_acte_ : un document juridique qui est signé et remis, en particulier un document concernant la propriété d'un bien ou des droits légaux.
 ____
 
-L&#39;utilisation du mot "acte" est destinée à refléter la partie "propriété d&#39;un bien", même si ceux-ci ne sont pas reconnus comme des "documents juridiques" dans aucune juridiction - pour le moment. Il est probable qu&#39;à un moment donné dans le futur, la propriété légale basée sur des signatures numériques sur une plate-forme chaîne de blocs sera légalement reconnue.
+L'utilisation du mot "acte" est destinée à refléter la partie "propriété d'un bien", même si ceux-ci ne sont pas reconnus comme des "documents juridiques" dans aucune juridiction - pour le moment. Il est probable qu'à un moment donné dans le futur, la propriété légale basée sur des signatures numériques sur une plate-forme chaîne de blocs sera légalement reconnue.
 
-Les jetons non fongibles suivent la propriété d&#39;une chose unique. L&#39;objet possédé peut être un objet numérique, tel qu&#39;un objet de jeu ou un objet de collection numérique ; ou la chose peut être un objet physique dont la propriété est suivie par un jeton, comme une maison, une voiture ou une œuvre d&#39;art. Les actes peuvent également représenter des choses de valeur négative, telles que des prêts (dettes), des privilèges, des servitudes, etc. La norme ERC721 n&#39;impose aucune limitation ou attente sur la nature de la chose dont la propriété est suivie par un acte et exige seulement qu&#39;elle puisse être identifié de manière unique, ce qui, dans le cas de cette norme, est obtenu par un pass:[<span class="keep-together">identifiant</span>] de 256 bits .
+Les jetons non fongibles suivent la propriété d'une chose unique. L'objet possédé peut être un objet numérique, tel qu'un objet de jeu ou un objet de collection numérique ; ou la chose peut être un objet physique dont la propriété est suivie par un jeton, comme une maison, une voiture ou une œuvre d'art. Les actes peuvent également représenter des choses de valeur négative, telles que des prêts (dettes), des privilèges, des servitudes, etc. La norme ERC721 n'impose aucune limitation ou attente sur la nature de la chose dont la propriété est suivie par un acte et exige seulement qu'elle puisse être identifié de manière unique, ce qui, dans le cas de cette norme, est obtenu par un pass:[<span class="keep-together">identifiant</span>] de 256 bits .
 
 Les détails de la norme et de la discussion sont suivis sur deux pass:[<span class="keep-together">fils</span>] GitHub différents:
 
@@ -898,14 +898,14 @@ Pour saisir la différence fondamentale entre ERC20 et ERC721, il suffit de rega
 
 [source,solidity]
 ----
-// Mappage de l&#39;ID de l&#39;acte au propriétaire
+// Mappage de l'ID de l'acte au propriétaire
 mapping (uint256 => address) private deedOwner;
 ----
 
-Alors que l&#39;ERC20 suit les soldes appartenant à chaque propriétaire, le propriétaire étant la clé primaire du mappage, l&#39;ERC721 suit chaque ID d&#39;acte et son propriétaire, l&#39;ID d&#39;acte étant la clé primaire du mappage. De cette différence fondamentale découlent toutes les propriétés d&#39;un jeton non fongible.
+Alors que l'ERC20 suit les soldes appartenant à chaque propriétaire, le propriétaire étant la clé primaire du mappage, l'ERC721 suit chaque ID d'acte et son propriétaire, l'ID d'acte étant la clé primaire du mappage. De cette différence fondamentale découlent toutes les propriétés d'un jeton non fongible.
 
 [[ERC721_interface]]
-La spécification de l&#39;interface de contrat ERC721 est :
+La spécification de l'interface de contrat ERC721 est :
 
 [source,solidity]
 ----
@@ -927,10 +927,10 @@ interface ERC721 /* is ERC165 */ {
 }
 ----
 
-ERC721 prend également en charge deux interfaces _optionnelles_, une pour les métadonnées et une pour l&#39;énumération des actes et des propriétaires.
+ERC721 prend également en charge deux interfaces _optionnelles_, une pour les métadonnées et une pour l'énumération des actes et des propriétaires.
 
 [[ERC721_metadata]]
-L&#39;interface optionnelle ERC721 pour les métadonnées est :
+L'interface optionnelle ERC721 pour les métadonnées est :
 
 [source,solidity]
 ----
@@ -942,7 +942,7 @@ interface ERC721Metadata /* is ERC721 */ {
 ----
 
 [[ERC721_enum]]
-L&#39;interface optionnelle ERC721 pour l&#39;énumération est (((range="endofrange", startref="ix_10tokens-asciidoc23")))(((range="endofrange", startref="ix_10tokens-asciidoc22")))(((range= "endofrange", startref="ix_10tokens-asciidoc21")))(((range="endofrange", startref="ix_10tokens-asciidoc20"))):(((range="endofrange", startref="ix_10tokens-asciidoc4")))
+L'interface optionnelle ERC721 pour l'énumération est (((range="endofrange", startref="ix_10tokens-asciidoc23")))(((range="endofrange", startref="ix_10tokens-asciidoc22")))(((range= "endofrange", startref="ix_10tokens-asciidoc21")))(((range="endofrange", startref="ix_10tokens-asciidoc20"))):(((range="endofrange", startref="ix_10tokens-asciidoc4")))
 
 [source,solidity]
 ----
@@ -964,35 +964,35 @@ interface ERC721Enumerable /* is ERC721 */ {
 [[token_std_purpose]]
 ==== Que sont les normes de jeton ? Quel est leur but ?
 
-((("normes de jetons (généralement)","définies")))Les normes de jetons sont les spécifications _minimales_ pour une implémentation. Cela signifie que pour être conforme, par exemple, à ERC20, vous devez au minimum implémenter les fonctions et le comportement spécifiés par la norme ERC20. Vous êtes également libre d&#39;_ajouter_ à la fonctionnalité en implémentant des fonctions qui ne font pas partie de la norme.
+((("normes de jetons (généralement)","définies")))Les normes de jetons sont les spécifications _minimales_ pour une implémentation. Cela signifie que pour être conforme, par exemple, à ERC20, vous devez au minimum implémenter les fonctions et le comportement spécifiés par la norme ERC20. Vous êtes également libre d'_ajouter_ à la fonctionnalité en implémentant des fonctions qui ne font pas partie de la norme.
 
-((("normes symboliques (généralement)", "objectif des")))L&#39;objectif principal de ces normes est d&#39;encourager l&#39;_interopérabilité_ entre les contrats. Ainsi, tous les portefeuilles, échanges, interfaces utilisateur et autres composants d&#39;infrastructure peuvent _s&#39;interfacer_ de manière prévisible avec tout contrat qui suit la spécification. En d&#39;autres termes, si vous déployez un contrat qui suit la norme ERC20, tous les utilisateurs de portefeuille existants peuvent commencer à échanger votre jeton de manière transparente sans aucune mise à niveau de portefeuille ni effort de votre part.
+((("normes symboliques (généralement)", "objectif des")))L'objectif principal de ces normes est d'encourager l'_interopérabilité_ entre les contrats. Ainsi, tous les portefeuilles, échanges, interfaces utilisateur et autres composants d'infrastructure peuvent _s'interfacer_ de manière prévisible avec tout contrat qui suit la spécification. En d'autres termes, si vous déployez un contrat qui suit la norme ERC20, tous les utilisateurs de portefeuille existants peuvent commencer à échanger votre jeton de manière transparente sans aucune mise à niveau de portefeuille ni effort de votre part.
 
-Les normes sont censées être _descriptives_ plutôt que _prescriptives_. La façon dont vous choisissez de mettre en œuvre ces fonctions dépend de vous - le fonctionnement interne du contrat n&#39;est pas pertinent pour la norme. Ils ont des exigences fonctionnelles, qui régissent le comportement dans des circonstances spécifiques, mais ils ne prescrivent pas de mise en œuvre. Un exemple de ceci est le comportement d&#39;une fonction +transfer+ si la valeur est définie sur zéro.
+Les normes sont censées être _descriptives_ plutôt que _prescriptives_. La façon dont vous choisissez de mettre en œuvre ces fonctions dépend de vous - le fonctionnement interne du contrat n'est pas pertinent pour la norme. Ils ont des exigences fonctionnelles, qui régissent le comportement dans des circonstances spécifiques, mais ils ne prescrivent pas de mise en œuvre. Un exemple de ceci est le comportement d'une fonction +transfer+ si la valeur est définie sur zéro.
 
 [[should_use_std]]
 ==== Devriez-vous utiliser ces normes ?
 
-((("standards de jetons (generalement)","raisons d&#39;utilisation")))Compte tenu de tous ces standards, chaque développeur est confronté à un dilemme : utiliser les standards existants ou innover au-delà des contraintes qu&#39;ils imposent ?
+((("standards de jetons (generalement)","raisons d'utilisation")))Compte tenu de tous ces standards, chaque développeur est confronté à un dilemme : utiliser les standards existants ou innover au-delà des contraintes qu'ils imposent ?
 
-Ce dilemme n&#39;est pas facile à résoudre. Les normes restreignent nécessairement votre capacité à innover, en créant une "ornière" étroite que vous devez suivre. D&#39;autre part, les normes de base ont émergé de l&#39;expérience de centaines d&#39;applications et s&#39;adaptent souvent bien à la grande majorité des cas d&#39;utilisation.
+Ce dilemme n'est pas facile à résoudre. Les normes restreignent nécessairement votre capacité à innover, en créant une "ornière" étroite que vous devez suivre. D'autre part, les normes de base ont émergé de l'expérience de centaines d'applications et s'adaptent souvent bien à la grande majorité des cas d'utilisation.
 
-Dans le cadre de cette considération, il y a un problème encore plus important : la valeur de l&#39;interopérabilité et de l&#39;adoption à grande échelle. Si vous choisissez d&#39;utiliser une norme existante, vous gagnez la valeur de tous les systèmes conçus pour fonctionner avec cette norme. Si vous choisissez de vous écarter de la norme, vous devez prendre en compte le coût de la construction de toute l&#39;infrastructure de support par vous-même ou persuader les autres de prendre en charge votre mise en œuvre en tant que nouvelle norme. La tendance à forger votre propre chemin et à ignorer les normes existantes est connue sous le nom de syndrome "Not Invented Here" (Non inventé ici) et est contraire à la culture open source. D&#39;autre part, le progrès et l&#39;innovation dépendent parfois de l&#39;abandon de la tradition. C&#39;est un choix délicat, alors réfléchissez bien !
+Dans le cadre de cette considération, il y a un problème encore plus important : la valeur de l'interopérabilité et de l'adoption à grande échelle. Si vous choisissez d'utiliser une norme existante, vous gagnez la valeur de tous les systèmes conçus pour fonctionner avec cette norme. Si vous choisissez de vous écarter de la norme, vous devez prendre en compte le coût de la construction de toute l'infrastructure de support par vous-même ou persuader les autres de prendre en charge votre mise en œuvre en tant que nouvelle norme. La tendance à forger votre propre chemin et à ignorer les normes existantes est connue sous le nom de syndrome "Not Invented Here" (Non inventé ici) et est contraire à la culture open source. D'autre part, le progrès et l'innovation dépendent parfois de l'abandon de la tradition. C'est un choix délicat, alors réfléchissez bien !
 
 [NOTE]
 ====
-Selon Wikipedia, https://en.wikipedia.org/wiki/Not_invented_here["Not Invented Here"] est une position adoptée par les cultures sociales, d&#39;entreprise ou institutionnelles qui évitent d&#39;utiliser ou d&#39;acheter des produits, des recherches, des normes ou des connaissances déjà existants en raison de leurs origines externes et de leurs coûts, tels que les redevances.
+Selon Wikipedia, https://en.wikipedia.org/wiki/Not_invented_here["Not Invented Here"] est une position adoptée par les cultures sociales, d'entreprise ou institutionnelles qui évitent d'utiliser ou d'acheter des produits, des recherches, des normes ou des connaissances déjà existants en raison de leurs origines externes et de leurs coûts, tels que les redevances.
 ====
 
 
 [[sécurité_maturité]]
 ==== Sécurité par maturité
 
-((("sécurité (contrats intelligents)","choix de mise en œuvre des normes de jeton")))((("normes de jeton (généralement)","choix de mise en œuvre")))Au-delà du choix de la norme, il y a le choix parallèle de _la mise en oeuvre_. Lorsque vous décidez d&#39;utiliser une norme telle que ERC20, vous devez ensuite décider comment mettre en œuvre une conception compatible. Il existe un certain nombre d&#39;implémentations "de référence" existantes qui sont largement utilisées dans l&#39;écosystème Ethereum, ou vous pouvez écrire la vôtre à partir de zéro. Encore une fois, ce choix représente un dilemme qui peut avoir de graves implications en matière de sécurité.
+((("sécurité (contrats intelligents)","choix de mise en œuvre des normes de jeton")))((("normes de jeton (généralement)","choix de mise en œuvre")))Au-delà du choix de la norme, il y a le choix parallèle de _la mise en oeuvre_. Lorsque vous décidez d'utiliser une norme telle que ERC20, vous devez ensuite décider comment mettre en œuvre une conception compatible. Il existe un certain nombre d'implémentations "de référence" existantes qui sont largement utilisées dans l'écosystème Ethereum, ou vous pouvez écrire la vôtre à partir de zéro. Encore une fois, ce choix représente un dilemme qui peut avoir de graves implications en matière de sécurité.
 
-Les implémentations existantes sont "testées au combat". Bien qu&#39;il soit impossible de prouver qu&#39;ils sont sécurisés, beaucoup d&#39;entre eux sous-tendent des millions de dollars de jetons. Ils ont été attaqués, à plusieurs reprises et vigoureusement. Jusqu&#39;à présent, aucune vulnérabilité significative n&#39;a été découverte. Rédiger le vôtre n&#39;est pas facile - il existe de nombreuses façons subtiles de compromettre un contrat. Il est beaucoup plus sûr d&#39;utiliser une implémentation largement testée et largement utilisée. Dans nos exemples, nous avons utilisé l&#39;implémentation OpenZeppelin de la norme ERC20, car cette implémentation est entièrement axée sur la sécurité.
+Les implémentations existantes sont "testées au combat". Bien qu'il soit impossible de prouver qu'ils sont sécurisés, beaucoup d'entre eux sous-tendent des millions de dollars de jetons. Ils ont été attaqués, à plusieurs reprises et vigoureusement. Jusqu'à présent, aucune vulnérabilité significative n'a été découverte. Rédiger le vôtre n'est pas facile - il existe de nombreuses façons subtiles de compromettre un contrat. Il est beaucoup plus sûr d'utiliser une implémentation largement testée et largement utilisée. Dans nos exemples, nous avons utilisé l'implémentation OpenZeppelin de la norme ERC20, car cette implémentation est entièrement axée sur la sécurité.
 
-Si vous utilisez une implémentation existante, vous pouvez également l&#39;étendre. Encore une fois, cependant, soyez prudent avec cette impulsion. La complexité est l&#39;ennemie de la sécurité. ((("surface d&#39;attaque")))Chaque ligne de code que vous ajoutez étend la _surface d&#39;attaque_ de votre contrat et pourrait représenter une vulnérabilité en attente. Vous ne remarquerez peut-être pas un problème jusqu&#39;à ce que vous accordiez beaucoup de valeur au contrat et que quelqu&#39;un le rompe.
+Si vous utilisez une implémentation existante, vous pouvez également l'étendre. Encore une fois, cependant, soyez prudent avec cette impulsion. La complexité est l'ennemie de la sécurité. ((("surface d'attaque")))Chaque ligne de code que vous ajoutez étend la _surface d'attaque_ de votre contrat et pourrait représenter une vulnérabilité en attente. Vous ne remarquerez peut-être pas un problème jusqu'à ce que vous accordiez beaucoup de valeur au contrat et que quelqu'un le rompe.
 
 [TIP]
 ====
@@ -1001,39 +1001,39 @@ Les normes et les choix de mise en œuvre sont des éléments importants de la c
 
 
 [[extend_token_interface]]
-=== Extensions aux normes d&#39;interface de jeton
+=== Extensions aux normes d'interface de jeton
 
 ((("normes de jetons (généralement)", "extensions de")))Les normes de jetons abordées dans ce chapitre fournissent une interface très minimale, avec des fonctionnalités limitées. De nombreux projets ont créé des implémentations étendues pour prendre en charge les fonctionnalités dont ils ont besoin pour leurs applications. Certaines de ces fonctionnalités incluent :
 
-Contrôle du propriétaire:: La possibilité de donner des adresses spécifiques ou des ensembles d&#39;adresses (c&#39;est-à-dire des schémas multisignatures), des capacités spéciales, telles que la liste noire, la liste blanche, la frappe, la récupération, etc.
+Contrôle du propriétaire:: La possibilité de donner des adresses spécifiques ou des ensembles d'adresses (c'est-à-dire des schémas multisignatures), des capacités spéciales, telles que la liste noire, la liste blanche, la frappe, la récupération, etc.
 
-Brûlure:: La capacité de détruire délibérément ("brûler") des jetons en les transférant à une adresse inutilisable ou en effaçant un solde et en réduisant l&#39;approvisionnement.
+Brûlure:: La capacité de détruire délibérément ("brûler") des jetons en les transférant à une adresse inutilisable ou en effaçant un solde et en réduisant l'approvisionnement.
 
-Frappe:: La possibilité d&#39;ajouter à l&#39;offre totale de jetons, à un rythme prévisible ou par "fiat" du créateur du jeton.
+Frappe:: La possibilité d'ajouter à l'offre totale de jetons, à un rythme prévisible ou par "fiat" du créateur du jeton.
 
-Financement participatif:: La possibilité de proposer des jetons à la vente, par exemple par le biais d&#39;une vente aux enchères, d&#39;une vente sur le marché, d&#39;une vente aux enchères inversée, etc.
+Financement participatif:: La possibilité de proposer des jetons à la vente, par exemple par le biais d'une vente aux enchères, d'une vente sur le marché, d'une vente aux enchères inversée, etc.
 
-Limites:: La possibilité de fixer des limites prédéfinies et immuables sur l&#39;offre totale (à l&#39;opposé de la fonction "frappe").
+Limites:: La possibilité de fixer des limites prédéfinies et immuables sur l'offre totale (à l'opposé de la fonction "frappe").
 
-Portes dérobées de récupération:: Fonctions pour récupérer des fonds, annuler des transferts ou démanteler le jeton qui peuvent être activés par une adresse désignée ou un ensemble d&#39;adresses.
+Portes dérobées de récupération:: Fonctions pour récupérer des fonds, annuler des transferts ou démanteler le jeton qui peuvent être activés par une adresse désignée ou un ensemble d'adresses.
 
 Liste blanche:: La possibilité de restreindre les actions (telles que les transferts de jetons) à des adresses spécifiques. Le plus souvent utilisé pour offrir des jetons à des "investisseurs accrédités" après vérification par les règles de différentes juridictions. Il existe généralement un mécanisme de mise à jour de la liste blanche.
 
 Liste noire:: La possibilité de restreindre les transferts de jetons en interdisant des adresses spécifiques. Il existe généralement une fonction de mise à jour de la liste noire.
 
-Il existe des implémentations de référence pour bon nombre de ces fonctions, par exemple dans la bibliothèque OpenZeppelin. Certains d&#39;entre eux sont spécifiques à un cas d&#39;utilisation et ne sont implémentés que dans quelques jetons. Il n&#39;existe pas, à l&#39;heure actuelle, de normes largement acceptées pour les interfaces avec ces fonctions.
+Il existe des implémentations de référence pour bon nombre de ces fonctions, par exemple dans la bibliothèque OpenZeppelin. Certains d'entre eux sont spécifiques à un cas d'utilisation et ne sont implémentés que dans quelques jetons. Il n'existe pas, à l'heure actuelle, de normes largement acceptées pour les interfaces avec ces fonctions.
 
-Comme indiqué précédemment, la décision d&#39;étendre une norme de jeton avec des fonctionnalités supplémentaires représente un compromis entre innovation/risque et interopérabilité/sécurité.
+Comme indiqué précédemment, la décision d'étendre une norme de jeton avec des fonctionnalités supplémentaires représente un compromis entre innovation/risque et interopérabilité/sécurité.
 
 [[tokens_ico]]
 === Jetons et ICO
 
-((("Initial Coin Offerings (ICOs)","jetons et")))((("jetons","ICOs et")))Les jetons ont connu un développement explosif dans l&#39;écosystème Ethereum. Il est probable qu&#39;ils deviendront un élément très important de toutes les plateformes de contrats intelligents comme Ethereum.
+((("Initial Coin Offerings (ICOs)","jetons et")))((("jetons","ICOs et")))Les jetons ont connu un développement explosif dans l'écosystème Ethereum. Il est probable qu'ils deviendront un élément très important de toutes les plateformes de contrats intelligents comme Ethereum.
 
-Néanmoins, l&#39;importance et l&#39;impact futur de ces normes ne doivent pas être confondus avec une approbation des offres de jetons actuelles. Comme dans toute technologie à un stade précoce, la première vague de produits et d&#39;entreprises échouera presque toutes, et certaines échoueront de manière spectaculaire. La plupart des jetons proposés dans Ethereum aujourd&#39;hui sont des escroqueries à peine déguisées, des systèmes pyramidaux et des prises d&#39;argent.
+Néanmoins, l'importance et l'impact futur de ces normes ne doivent pas être confondus avec une approbation des offres de jetons actuelles. Comme dans toute technologie à un stade précoce, la première vague de produits et d'entreprises échouera presque toutes, et certaines échoueront de manière spectaculaire. La plupart des jetons proposés dans Ethereum aujourd'hui sont des escroqueries à peine déguisées, des systèmes pyramidaux et des prises d'argent.
 
-L&#39;astuce consiste à séparer la vision et l&#39;impact à long terme de cette technologie, qui risque d&#39;être énorme, de la bulle à court terme des ICO symboliques, qui sont en proie à la fraude. Les normes de jetons et la plate-forme survivront à la manie actuelle des jetons, puis ils changeront probablement le monde.
+L'astuce consiste à séparer la vision et l'impact à long terme de cette technologie, qui risque d'être énorme, de la bulle à court terme des ICO symboliques, qui sont en proie à la fraude. Les normes de jetons et la plate-forme survivront à la manie actuelle des jetons, puis ils changeront probablement le monde.
 
 === Conclusion
 
-Les jetons sont un concept très puissant dans Ethereum et peuvent constituer la base de nombreuses applications décentralisées importantes. Dans ce chapitre, nous avons examiné les différents types de jetons et les normes de jeton, et vous avez construit votre premier jeton et l&#39;application associée. Nous reviendrons à nouveau sur les jetons dans <<decentralized_applications_chap>>, où vous utiliserez un jeton non fongible comme base pour un DApp d&#39;enchères.(((range="endofrange", startref="ix_10tokens-asciidoc0")))
+Les jetons sont un concept très puissant dans Ethereum et peuvent constituer la base de nombreuses applications décentralisées importantes. Dans ce chapitre, nous avons examiné les différents types de jetons et les normes de jeton, et vous avez construit votre premier jeton et l'application associée. Nous reviendrons à nouveau sur les jetons dans <<decentralized_applications_chap>>, où vous utiliserez un jeton non fongible comme base pour un DApp d'enchères.(((range="endofrange", startref="ix_10tokens-asciidoc0")))
