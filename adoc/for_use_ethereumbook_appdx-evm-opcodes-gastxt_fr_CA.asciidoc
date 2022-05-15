@@ -2,7 +2,7 @@
 [[evm_opcodes]]
 == Opcodes Ethereum EVM et consommation de gaz
 
-(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;opcodes et consommation de gaz&quot;)))(((&quot;gas&quot;,&quot;EVM opcodes et consommation de gaz&quot;)))Cette annexe est basée sur le travail de consolidation effectué par les personnes de https://github.com/trailofbits/evm-opcodes comme référence pour les opcodes Ethereum VM (EVM) et les informations d&#39;instruction sous licence http://bit.ly/2zfrv0b[Apache License 2.0].
+((("EVM (Ethereum Virtual Machine)","opcodes et consommation de gaz")))((("gas","EVM opcodes et consommation de gaz")))Cette annexe est basée sur le travail de consolidation effectué par les personnes de https://github.com/trailofbits/evm-opcodes comme référence pour les opcodes Ethereum VM (EVM) et les informations d&#39;instruction sous licence http://bit.ly/2zfrv0b[Apache License 2.0].
 
 [[evm_opcodes_table]]
 [cols=",,,,",options="header",]

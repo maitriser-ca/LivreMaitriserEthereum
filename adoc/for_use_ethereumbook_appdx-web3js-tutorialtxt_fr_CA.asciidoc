@@ -3,7 +3,7 @@
 == Tutoriel web3.js
 
 === Descriptif
-(((&quot;web3.js&quot;,&quot;tutoriel&quot;, id=&quot;ix_appdx-web3js-tutorial-asciidoc0&quot;, range=&quot;startofrange&quot;)))Ce tutoriel est basé sur web3@1.0.0-beta.29 web3.js . Il est conçu comme une introduction à web3.js.
+((("web3.js","tutoriel", id="ix_appdx-web3js-tutorial-asciidoc0", range="startofrange")))Ce tutoriel est basé sur web3@1.0.0-beta.29 web3.js . Il est conçu comme une introduction à web3.js.
 
 La bibliothèque JavaScript web3.js est une collection de modules qui contiennent des fonctionnalités spécifiques pour l&#39;écosystème Ethereum, ainsi qu&#39;une API JavaScript compatible Ethereum qui implémente la spécification Generic JSON RPC.
 
@@ -11,7 +11,7 @@ Pour exécuter ce script, vous n&#39;avez pas besoin d&#39;exécuter votre propr
 
 === Interaction de base du contrat web3.js de manière non bloquée (asynchrone)
 
-(((&quot;web3.js&quot;,&quot;Interaction de base du contrat web3.js de manière non bloquée (asynchrone)&quot;)))Vérifiez que vous disposez d&#39;une version +npm+ valide :
+((("web3.js","Interaction de base du contrat web3.js de manière non bloquée (asynchrone)")))Vérifiez que vous disposez d&#39;une version +npm+ valide :
 
 ++++
 <pre data-type="programlisting">
@@ -45,7 +45,7 @@ Cela mettra à jour votre fichier de configuration _package.json_ avec vos nouve
 
 ==== Exécution du script Node.js
 
-(((&quot;web3.js&quot;,&quot;exécution du script node.js&quot;)))Exécution de base :
+((("web3.js","exécution du script node.js")))Exécution de base :
 
 ++++
 <pre data-type="programlisting">

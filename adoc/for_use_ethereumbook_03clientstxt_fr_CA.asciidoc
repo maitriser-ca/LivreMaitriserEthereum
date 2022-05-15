@@ -1,19 +1,19 @@
 [[ethereum_clients_chapter]]
 == Clients Ethereum
 
-(((&quot;clients, Ethereum&quot;, id=&quot;ix_03clients-asciidoc0&quot;, range=&quot;startofrange&quot;)))Un client Ethereum est une application logicielle qui implémente la spécification Ethereum et communique sur le réseau pair à pair avec d&#39;autres clients Ethereum. Différents clients Ethereum _interopèrent_ s&#39;ils respectent la spécification de référence et les protocoles de communication standardisés. Bien que ces différents clients soient implémentés par des équipes différentes et dans des langages de programmation différents, ils « parlent » tous le même protocole et suivent les mêmes règles. En tant que tels, ils peuvent tous être utilisés pour fonctionner et interagir avec le même réseau Ethereum.
+((("clients, Ethereum", id="ix_03clients-asciidoc0", range="startofrange")))Un client Ethereum est une application logicielle qui implémente la spécification Ethereum et communique sur le réseau pair à pair avec d&#39;autres clients Ethereum. Différents clients Ethereum _interopèrent_ s&#39;ils respectent la spécification de référence et les protocoles de communication standardisés. Bien que ces différents clients soient implémentés par des équipes différentes et dans des langages de programmation différents, ils « parlent » tous le même protocole et suivent les mêmes règles. En tant que tels, ils peuvent tous être utilisés pour fonctionner et interagir avec le même réseau Ethereum.
 
 Ethereum est un projet à source libre, et le code source de tous les principaux clients est disponible sous des licences à source libre (par exemple, LGPL v3.0), téléchargeable et utilisable à n&#39;importe quelle fin. _Source libre_ signifie cependant plus que simplement libre d&#39;utilisation. Cela signifie également qu&#39;Ethereum est développé par une communauté ouverte de volontaires et peut être modifié par n&#39;importe qui. Plus d&#39;yeux signifie un code plus fiable.
 
-(((&quot;Spécification du papier jaune&quot;)))Ethereum est défini par une spécification formelle appelée le &quot;Papier jaune&quot; (voir <<references>>).
+((("Spécification du papier jaune")))Ethereum est défini par une spécification formelle appelée le "Papier jaune" (voir <<references>>).
 
-(((&quot;Bitcoin&quot;,&quot;Définition d&#39;Ethereum par rapport à&quot;)))Cela contraste avec, par exemple, Bitcoin, qui n&#39;est pas défini de manière formelle. Là où la &quot;spécification&quot; de Bitcoin est l&#39;implémentation de référence de Bitcoin Core, la spécification d&#39;Ethereum est documentée dans un article qui combine une spécification anglaise et une spécification mathématique (formelle). Cette spécification formelle, en plus de diverses propositions d&#39;amélioration Ethereum, définit le comportement standard d&#39;un pass:[<span class="keep-together">client</span>] Ethereum. Le livre jaune est périodiquement mis à jour au fur et à mesure que des modifications majeures sont apportées à pass:[<span class="keep-together">Ethereum</span>].
+((("Bitcoin","Définition d&#39;Ethereum par rapport à")))Cela contraste avec, par exemple, Bitcoin, qui n&#39;est pas défini de manière formelle. Là où la "spécification" de Bitcoin est l&#39;implémentation de référence de Bitcoin Core, la spécification d&#39;Ethereum est documentée dans un article qui combine une spécification anglaise et une spécification mathématique (formelle). Cette spécification formelle, en plus de diverses propositions d&#39;amélioration Ethereum, définit le comportement standard d&#39;un pass:[<span class="keep-together">client</span>] Ethereum. Le livre jaune est périodiquement mis à jour au fur et à mesure que des modifications majeures sont apportées à pass:[<span class="keep-together">Ethereum</span>].
 
 En raison de la spécification formelle claire d&#39;Ethereum, il existe un certain nombre d&#39;implémentations logicielles développées indépendamment, mais interopérables, d&#39;un client Ethereum. Ethereum a une plus grande diversité d&#39;implémentations fonctionnant sur le réseau que toute autre chaîne de blocs, ce qui est généralement considéré comme une bonne chose. En effet, il s&#39;est avéré, par exemple, être un excellent moyen de se défendre contre les attaques sur le réseau, car l&#39;exploitation de la stratégie de mise en œuvre d&#39;un client particulier ne fait qu&#39;embêter les développeurs pendant qu&#39;ils corrigent l&#39;exploit, tandis que d&#39;autres clients maintiennent le réseau en marche presque sans être affecté.
 
 === Réseaux Ethereum
 
-(((&quot;clients, Ethereum&quot;,&quot;réseaux basés sur Ethereum et&quot;, id=&quot;ix_03clients-asciidoc1&quot;, range=&quot;startofrange&quot;)))(((&quot;réseaux (Ethereum)&quot;,&quot;clients et&quot;, id= &quot;ix_03clients-asciidoc2&quot;, range=&quot;startofrange&quot;)))Il existe une variété de réseaux basés sur Ethereum qui sont largement conformes à la spécification formelle définie dans le livre jaune Ethereum, mais qui peuvent ou non interagir les uns avec les autres.
+((("clients, Ethereum","réseaux basés sur Ethereum et", id="ix_03clients-asciidoc1", range="startofrange")))((("réseaux (Ethereum)","clients et", id= "ix_03clients-asciidoc2", range="startofrange")))Il existe une variété de réseaux basés sur Ethereum qui sont largement conformes à la spécification formelle définie dans le livre jaune Ethereum, mais qui peuvent ou non interagir les uns avec les autres.
 
 Parmi ces réseaux basés sur Ethereum figurent Ethereum, Ethereum Classic, Ella, Expanse, Ubiq, Musicoin et bien d&#39;autres. Bien qu&#39;ils soient généralement compatibles au niveau du protocole, ces réseaux ont souvent des fonctionnalités ou des attributs qui obligent les mainteneurs du logiciel client Ethereum à apporter de petites modifications afin de prendre en charge chaque réseau. Pour cette raison, toutes les versions du logiciel client Ethereum n&#39;exécutent pas toutes les chaînes de blocs basées sur Ethereum.
 
@@ -31,7 +31,7 @@ Dans cette section, nous examinerons les deux clients les plus courants, Parity 
 [[full_node_importance]]
 ==== Dois-je exécuter un nœud complet ?
 
-(((&quot;noeud complet&quot;,&quot;réseaux basés sur Ethereum et&quot;, id=&quot;ix_03clients-asciidoc3&quot;, range=&quot;startofrange&quot;)))(((&quot;réseaux (Ethereum)&quot;,&quot;noeuds complets et&quot;, id=&quot;ix_03clients-asciidoc4&quot;, range=&quot;startofrange&quot;)))La santé, la résilience et la résistance à la censure des chaînes de blocs dépendent de leur nombre de nœuds complets exploités indépendamment et dispersés géographiquement. Chaque nœud complet peut aider d&#39;autres nouveaux nœuds à obtenir les données de bloc pour amorcer leur fonctionnement, tout en offrant à l&#39;opérateur une vérification faisant autorité et indépendante de toutes les transactions et contrats.
+((("noeud complet","réseaux basés sur Ethereum et", id="ix_03clients-asciidoc3", range="startofrange")))((("réseaux (Ethereum)","noeuds complets et", id="ix_03clients-asciidoc4", range="startofrange")))La santé, la résilience et la résistance à la censure des chaînes de blocs dépendent de leur nombre de nœuds complets exploités indépendamment et dispersés géographiquement. Chaque nœud complet peut aider d&#39;autres nouveaux nœuds à obtenir les données de bloc pour amorcer leur fonctionnement, tout en offrant à l&#39;opérateur une vérification faisant autorité et indépendante de toutes les transactions et contrats.
 
 Cependant, l&#39;exécution d&#39;un nœud complet entraînera un coût en ressources matérielles et en bande passante. Un nœud complet doit télécharger 80 à 300 Go de données (à compter de janvier 2020, selon la configuration du client) et les stocker sur un disque dur local. Cette charge de données augmente assez rapidement chaque jour à mesure que de nouvelles transactions et de nouveaux blocs sont ajoutés. Nous abordons ce sujet plus en détail dans <<requirements>>.
 
@@ -39,14 +39,14 @@ Un nœud complet fonctionnant sur un réseau _mainnet_ en direct n&#39;est pas n
 
 Vous avez également la possibilité d&#39;exécuter un client distant, qui ne stocke pas de copie locale de la chaîne de blocs ni ne valide les blocs et les transactions. Ces clients offrent la fonctionnalité d&#39;un portefeuille et peuvent créer et diffuser des transactions. Les clients distants peuvent être utilisés pour se connecter à des réseaux existants, tels que votre propre nœud complet, une chaîne de blocs publique, un testnet public ou autorisé (preuve d&#39;autorité), ou une chaîne de blocs locale privée. En pratique, vous utiliserez probablement un client distant tel que MetaMask, Emerald Wallet, pass:[<span class="keep-together">MyEtherWallet</span>] ou MyCrypto comme moyen pratique de basculer entre toutes les différentes options de nœud.
 
-(((&quot;clients distants&quot;,&quot;portefeuille comparé à&quot;)))(((&quot;portefeuilles&quot;,&quot;clients distants comparé à&quot;)))Les termes &quot;client distant&quot; et &quot;portefeuille&quot; sont utilisés de manière interchangeable, bien qu&#39;il existe certains différences. Habituellement, un client distant propose une API (telle que l&#39;API web3.js) en plus de la fonctionnalité de transaction d&#39;un portefeuille.
+((("clients distants","portefeuille comparé à")))((("portefeuilles","clients distants comparé à")))Les termes "client distant" et "portefeuille" sont utilisés de manière interchangeable, bien qu&#39;il existe certains différences. Habituellement, un client distant propose une API (telle que l&#39;API web3.js) en plus de la fonctionnalité de transaction d&#39;un portefeuille.
 
-(((&quot;client léger/léger&quot;)))Ne confondez pas le concept de portefeuille distant dans Ethereum avec celui d&#39;un _client léger_ (qui est analogue à un client de vérification simplifiée des paiements dans Bitcoin). Les clients légers valident les en-têtes de bloc et utilisent les preuves Merkle pour valider l&#39;inclusion des transactions dans la chaîne de blocs et déterminer leurs effets, leur donnant un niveau de sécurité similaire à un nœud complet. Inversement, les clients distants Ethereum ne valident pas les en-têtes de bloc ou les transactions. Ils font entièrement confiance à un client complet pour leur donner accès à la chaîne de blocs, et perdent ainsi d&#39;importantes garanties de sécurité et d&#39;anonymat. Vous pouvez atténuer ces problèmes en utilisant un client complet que vous exécutez vous-même.
+((("client léger/léger")))Ne confondez pas le concept de portefeuille distant dans Ethereum avec celui d&#39;un _client léger_ (qui est analogue à un client de vérification simplifiée des paiements dans Bitcoin). Les clients légers valident les en-têtes de bloc et utilisent les preuves Merkle pour valider l&#39;inclusion des transactions dans la chaîne de blocs et déterminer leurs effets, leur donnant un niveau de sécurité similaire à un nœud complet. Inversement, les clients distants Ethereum ne valident pas les en-têtes de bloc ou les transactions. Ils font entièrement confiance à un client complet pour leur donner accès à la chaîne de blocs, et perdent ainsi d&#39;importantes garanties de sécurité et d&#39;anonymat. Vous pouvez atténuer ces problèmes en utilisant un client complet que vous exécutez vous-même.
 
 [[full_node_adv_disadv]]
 ==== Avantages et désavantages du nœud complet
 
-(((&quot;nœud complet&quot;,&quot;avantages/inconvénients&quot;))) Choisir d&#39;exécuter un nœud complet facilite le fonctionnement des réseaux auxquels vous le connectez, mais entraîne également des coûts légers à modérés pour vous. Regardons quelques-uns des avantages et des inconvénients.
+((("nœud complet","avantages/inconvénients"))) Choisir d&#39;exécuter un nœud complet facilite le fonctionnement des réseaux auxquels vous le connectez, mais entraîne également des coûts légers à modérés pour vous. Regardons quelques-uns des avantages et des inconvénients.
 
 *Avantages:*
 
@@ -61,34 +61,34 @@ Vous avez également la possibilité d&#39;exécuter un client distant, qui ne s
 
 * Nécessite des ressources matérielles et de bande passante importantes et croissantes
 * Peut nécessiter plusieurs jours pour une synchronisation complète lors du premier démarrage
-* Doit être maintenu, mis à jour et maintenu en ligne pour rester synchronisé(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc4&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc3&quot;)))
+* Doit être maintenu, mis à jour et maintenu en ligne pour rester synchronisé(((range="endofrange", startref="ix_03clients-asciidoc4")))(((range="endofrange", startref="ix_03clients-asciidoc3")))
 
 [[pub_test_adv_disadv]]
 ==== Avantages et désavantages du testnet public
 
-(((&quot;réseaux (Ethereum)&quot;,&quot;avantages/inconvénients du réseau de test public&quot;)))(((&quot;réseaux de test publics&quot;)))(((&quot;réseau de test&quot;,&quot;public&quot;)))Que vous choisissiez ou non d&#39;exécuter un nœud complet, vous souhaiterez probablement exécuter un nœud testnet public. Examinons quelques-uns des avantages et des inconvénients de l&#39;utilisation d&#39;un testnet public.
+((("réseaux (Ethereum)","avantages/inconvénients du réseau de test public")))((("réseaux de test publics")))((("réseau de test","public")))Que vous choisissiez ou non d&#39;exécuter un nœud complet, vous souhaiterez probablement exécuter un nœud testnet public. Examinons quelques-uns des avantages et des inconvénients de l&#39;utilisation d&#39;un testnet public.
 
 *Avantages:*
 
 * Un nœud testnet doit synchroniser et stocker beaucoup moins de données - environ 45 Go selon le réseau.
 * Un nœud testnet peut se synchroniser complètement en quelques heures.
-* Le déploiement de contrats ou la réalisation de transactions nécessite un test d&#39;ether, qui n&#39;a aucune valeur et peut être acquis gratuitement à partir de plusieurs &quot;robinets&quot;.
-* Les réseaux de test sont des chaînes de blocs publiques avec de nombreux autres utilisateurs et contrats, fonctionnant &quot;en direct&quot;.
+* Le déploiement de contrats ou la réalisation de transactions nécessite un test d&#39;ether, qui n&#39;a aucune valeur et peut être acquis gratuitement à partir de plusieurs "robinets".
+* Les réseaux de test sont des chaînes de blocs publiques avec de nombreux autres utilisateurs et contrats, fonctionnant "en direct".
 
 *Désavantages:*
 
-* Vous ne pouvez pas utiliser d&#39;argent &quot;réel&quot; sur un testnet ; il fonctionne sur l&#39;ether de test. Par conséquent, vous ne pouvez pas tester la sécurité contre de vrais adversaires, car il n&#39;y a rien en jeu.
+* Vous ne pouvez pas utiliser d&#39;argent "réel" sur un testnet ; il fonctionne sur l&#39;ether de test. Par conséquent, vous ne pouvez pas tester la sécurité contre de vrais adversaires, car il n&#39;y a rien en jeu.
 * Il y a certains aspects d&#39;une chaîne de blocs publique que vous ne pouvez pas tester de manière réaliste sur un testnet. Par exemple, les frais de transaction, bien que nécessaires pour envoyer des transactions, ne sont pas pris en compte sur un testnet, car le gaz est gratuit. De plus, les réseaux de test ne connaissent pas de congestion du réseau comme le fait parfois le réseau principal public.
 
 [[localtest_adv_dis]]
 ==== Avantages et désavantages de la simulation chaîne de blocs locale
 
-(((&quot;Ganache&quot;,&quot;avantages/inconvénients&quot;)))(((&quot;simulation chaîne de blocs locale&quot;)))(((&quot;réseaux (Ethereum)&quot;,&quot;simulation chaîne de blocs locale avantages/inconvénients&quot;)))((( &quot;chaîne de blocs privée&quot;)))(((&quot;chaîne de blocs privée à instance unique&quot;)))À de nombreuses fins de test, la meilleure option consiste à lancer une chaîne de blocs privée à instance unique. Ganache (anciennement nommé +testrpc+) est l&#39;une des simulations de chaîne de blocs locales les plus populaires avec lesquelles vous pouvez interagir, sans aucun autre participant. Il partage de nombreux avantages et inconvénients du testnet public, mais présente également quelques différences.
+((("Ganache","avantages/inconvénients")))((("simulation chaîne de blocs locale")))((("réseaux (Ethereum)","simulation chaîne de blocs locale avantages/inconvénients")))((( "chaîne de blocs privée")))((("chaîne de blocs privée à instance unique")))À de nombreuses fins de test, la meilleure option consiste à lancer une chaîne de blocs privée à instance unique. Ganache (anciennement nommé +testrpc+) est l&#39;une des simulations de chaîne de blocs locales les plus populaires avec lesquelles vous pouvez interagir, sans aucun autre participant. Il partage de nombreux avantages et inconvénients du testnet public, mais présente également quelques différences.
 
 *Avantages:*
 
 * Aucune synchronisation et presque aucune donnée sur le disque ; vous minez vous-même le premier bloc
-* Pas besoin d&#39;obtenir de l&#39;ether de test ; vous vous &quot;attribuez&quot; des récompenses minières que vous pouvez utiliser pour tester
+* Pas besoin d&#39;obtenir de l&#39;ether de test ; vous vous "attribuez" des récompenses minières que vous pouvez utiliser pour tester
 * Aucun autre utilisateur, juste vous
 * Aucun autre contrat, juste ceux que vous déployez après le lancement
 
@@ -97,18 +97,18 @@ Vous avez également la possibilité d&#39;exécuter un client distant, qui ne s
 * Ne pas avoir d&#39;autres utilisateurs signifie qu&#39;il ne se comporte pas de la même manière qu&#39;une chaîne de blocs publique. Il n&#39;y a pas de concurrence pour l&#39;espace de transaction ou le séquençage des pass:[<span class="keep-together">transactions</span>].
 * Aucun mineur autre que vous signifie que l&#39;exploitation minière est plus prévisible ; par conséquent, vous ne pouvez pas tester certains scénarios qui se produisent sur une chaîne de blocs publique.
 * L&#39;absence d&#39;autres contrats signifie que vous devez déployer tout ce que vous souhaitez tester, y compris les dépendances et les bibliothèques de contrats.
-* Vous ne pouvez pas recréer certains contrats publics et leurs adresses pour tester certains scénarios (par exemple, le contrat DAO).(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc2&quot;)))(((range= &quot;fin de gamme&quot;, startref=&quot;ix_03clients-asciidoc1&quot;)))
+* Vous ne pouvez pas recréer certains contrats publics et leurs adresses pour tester certains scénarios (par exemple, le contrat DAO).(((range="endofrange", startref="ix_03clients-asciidoc2")))(((range= "fin de gamme", startref="ix_03clients-asciidoc1")))
 
 
 [[running_client]]
 === Exécuter un client Ethereum
 
-(((&quot;clients, Ethereum&quot;,&quot;exécuter un&quot;, id=&quot;ix_03clients-asciidoc5&quot;, range=&quot;startofrange&quot;)))Si vous avez le temps et les ressources, vous devriez essayer d&#39;exécuter un nœud complet, même si ce n&#39;est que pour en savoir plus sur le processus. Dans cette section, nous expliquons comment télécharger, compiler et exécuter les clients Ethereum Parity et Geth. Cela nécessite une certaine familiarité avec l&#39;utilisation de l&#39;interface de ligne de commande sur votre système d&#39;exploitation. Cela vaut la peine d&#39;installer ces clients, que vous choisissiez de les exécuter en tant que nœuds complets, en tant que nœuds testnet ou en tant que clients d&#39;une chaîne de blocs privée locale.
+((("clients, Ethereum","exécuter un", id="ix_03clients-asciidoc5", range="startofrange")))Si vous avez le temps et les ressources, vous devriez essayer d&#39;exécuter un nœud complet, même si ce n&#39;est que pour en savoir plus sur le processus. Dans cette section, nous expliquons comment télécharger, compiler et exécuter les clients Ethereum Parity et Geth. Cela nécessite une certaine familiarité avec l&#39;utilisation de l&#39;interface de ligne de commande sur votre système d&#39;exploitation. Cela vaut la peine d&#39;installer ces clients, que vous choisissiez de les exécuter en tant que nœuds complets, en tant que nœuds testnet ou en tant que clients d&#39;une chaîne de blocs privée locale.
 
 [[requirements]]
 ==== Configuration matérielle requise pour un nœud complet
 
-(((&quot;clients, Ethereum&quot;,&quot;configuration matérielle requise pour le nœud complet&quot;)))(((&quot;nœud complet&quot;,&quot;configuration matérielle requise&quot;)))Avant de commencer, vous devez vous assurer que vous disposez d&#39;un ordinateur doté de ressources suffisantes pour fonctionner un nœud complet Ethereum. Vous aurez besoin d&#39;au moins 300 Go d&#39;espace disque pour stocker une copie complète de la chaîne de blocs Ethereum. Si vous souhaitez également exécuter un nœud complet sur le testnet Ethereum, vous aurez besoin d&#39;au moins 45 Go supplémentaires. Le téléchargement de 345 Go de données de la chaîne de blocs peut prendre beaucoup de temps, il est donc recommandé de travailler sur une connexion Internet rapide.
+((("clients, Ethereum","configuration matérielle requise pour le nœud complet")))((("nœud complet","configuration matérielle requise")))Avant de commencer, vous devez vous assurer que vous disposez d&#39;un ordinateur doté de ressources suffisantes pour fonctionner un nœud complet Ethereum. Vous aurez besoin d&#39;au moins 300 Go d&#39;espace disque pour stocker une copie complète de la chaîne de blocs Ethereum. Si vous souhaitez également exécuter un nœud complet sur le testnet Ethereum, vous aurez besoin d&#39;au moins 45 Go supplémentaires. Le téléchargement de 345 Go de données de la chaîne de blocs peut prendre beaucoup de temps, il est donc recommandé de travailler sur une connexion Internet rapide.
 
 La synchronisation de la chaîne de blocs Ethereum est très intensive en entrée/sortie (E/S). Il est préférable d&#39;avoir un disque statique électronique (SSD). Si vous avez un disque dur mécanique (HDD), vous aurez besoin d&#39;au moins 8 Go de RAM à utiliser comme cache. Sinon, vous découvrirez peut-être que votre système est trop lent pour suivre et synchroniser complètement.
 
@@ -136,7 +136,7 @@ Il est difficile de prédire à quelle vitesse la taille d&#39;une chaîne de bl
 
 [NOTE]
 ====
-Les exigences de taille de disque répertoriées ici supposent que vous exécuterez un nœud avec les paramètres par défaut, où la chaîne de blocs est &quot;élaguée&quot; des anciennes données d&#39;état. Si vous exécutez à la place un nœud &quot;d&#39;archivage&quot; complet, où tout l&#39;état est conservé sur le disque, il nécessitera probablement plus de 1 To d&#39;espace disque.
+Les exigences de taille de disque répertoriées ici supposent que vous exécuterez un nœud avec les paramètres par défaut, où la chaîne de blocs est "élaguée" des anciennes données d&#39;état. Si vous exécutez à la place un nœud "d&#39;archivage" complet, où tout l&#39;état est conservé sur le disque, il nécessitera probablement plus de 1 To d&#39;espace disque.
 ====
 
 Ces liens fournissent des estimations à jour de la taille de la chaîne de blocs :
@@ -148,36 +148,36 @@ Ces liens fournissent des estimations à jour de la taille de la chaîne de bloc
 [[sw_reqs]]
 ==== Configuration logicielle requise pour créer et exécuter un client (nœud)
 
-(((&quot;clients, Ethereum&quot;,&quot;logiciels requis pour la construction/l&#39;exécution&quot;, id=&quot;ix_03clients-asciidoc6&quot;, range=&quot;startofrange&quot;)))Cette section couvre les logiciels clients Parity et Geth. Il suppose également que vous utilisez un environnement de ligne de commande de type Unix. Les exemples montrent les commandes et la sortie telles qu&#39;elles apparaissent sur un système d&#39;exploitation Ubuntu GNU/Linux exécutant le shell bash (environnement d&#39;exécution en ligne de commande).
+((("clients, Ethereum","logiciels requis pour la construction/l&#39;exécution", id="ix_03clients-asciidoc6", range="startofrange")))Cette section couvre les logiciels clients Parity et Geth. Il suppose également que vous utilisez un environnement de ligne de commande de type Unix. Les exemples montrent les commandes et la sortie telles qu&#39;elles apparaissent sur un système d&#39;exploitation Ubuntu GNU/Linux exécutant le shell bash (environnement d&#39;exécution en ligne de commande).
 
 En règle générale, chaque chaîne de blocs aura sa propre version de Geth, tandis que Parity prend en charge plusieurs chaînes de blocs basées sur Ethereum (Ethereum, Ethereum Classic, pass:[<span class="keep-together">Ellaism</span>], Expanse, Musicoin) avec le même client téléchargé.
 
 [TIP]
 =====
-(((&quot;symbole $&quot;)))(((&quot;interface de ligne de commande&quot;)))(((&quot;commandes shell&quot;)))(((&quot;applications de terminal&quot;)))Dans de nombreux exemples de ce chapitre , nous utiliserons l&#39;interface de ligne de commande du système d&#39;exploitation (également appelée &quot;shell&quot;), accessible via une application &quot;terminal&quot;. Le shell affichera une invite ; vous tapez une commande et le shell répond avec du texte et une nouvelle invite pour votre prochaine commande. L&#39;invite peut sembler différente sur votre système, mais dans les exemples suivants, elle est indiquée par un symbole +$+. Dans les exemples, lorsque vous voyez du texte après un symbole +$+, ne tapez pas le symbole +$+ mais tapez la commande qui le suit immédiatement (en gras), puis appuyez sur Entrée pour exécuter la commande. Dans les exemples, les lignes sous chaque commande sont les réponses du système d&#39;exploitation à cette commande. Lorsque vous verrez le prochain préfixe +$+, vous saurez qu&#39;il s&#39;agit d&#39;une nouvelle commande et vous devrez répéter le processus.
+((("symbole $")))((("interface de ligne de commande")))((("commandes shell")))((("applications de terminal")))Dans de nombreux exemples de ce chapitre , nous utiliserons l&#39;interface de ligne de commande du système d&#39;exploitation (également appelée "shell"), accessible via une application "terminal". Le shell affichera une invite ; vous tapez une commande et le shell répond avec du texte et une nouvelle invite pour votre prochaine commande. L&#39;invite peut sembler différente sur votre système, mais dans les exemples suivants, elle est indiquée par un symbole +$+. Dans les exemples, lorsque vous voyez du texte après un symbole +$+, ne tapez pas le symbole +$+ mais tapez la commande qui le suit immédiatement (en gras), puis appuyez sur Entrée pour exécuter la commande. Dans les exemples, les lignes sous chaque commande sont les réponses du système d&#39;exploitation à cette commande. Lorsque vous verrez le prochain préfixe +$+, vous saurez qu&#39;il s&#39;agit d&#39;une nouvelle commande et vous devrez répéter le processus.
 =====
 
 Avant de commencer, vous devrez peut-être installer certains logiciels. Si vous n&#39;avez jamais fait de développement logiciel sur l&#39;ordinateur que vous utilisez actuellement, vous devrez probablement installer quelques outils de base. Pour les exemples qui suivent, vous devrez installer +git+, le système de gestion du code source ; +golang+, le langage de programmation Go et les bibliothèques standard ; et Rust, un langage de programmation système.
 
-(((&quot;git&quot;)))Git peut être installé en suivant les instructions sur https://git-scm.com[].
+((("git")))Git peut être installé en suivant les instructions sur https://git-scm.com[].
 
-(((&quot;Go&quot;, seealso=&quot;Geth (Go-Ethereum)&quot;)))Go peut être installé en suivant les instructions sur https://golang.org[], ou https://github.com/golang/ go/wiki/Ubuntu[] si vous utilisez Ubuntu.
+((("Go", seealso="Geth (Go-Ethereum)")))Go peut être installé en suivant les instructions sur https://golang.org[], ou https://github.com/golang/ go/wiki/Ubuntu[] si vous utilisez Ubuntu.
 
 [NOTE]
 =====
-(((&quot;Geth (Go-Ethereum)&quot;)))Les exigences de Geth varient, mais si vous vous en tenez à Go version 1.10 ou supérieure, vous devriez pouvoir compiler n&#39;importe quelle version de Geth que vous souhaitez. Bien sûr, vous devriez toujours vous référer à la documentation de la version de Geth que vous avez choisie.
+((("Geth (Go-Ethereum)")))Les exigences de Geth varient, mais si vous vous en tenez à Go version 1.10 ou supérieure, vous devriez pouvoir compiler n&#39;importe quelle version de Geth que vous souhaitez. Bien sûr, vous devriez toujours vous référer à la documentation de la version de Geth que vous avez choisie.
 
 La version de +golang+ installée sur votre système d&#39;exploitation ou disponible à partir du gestionnaire de packages de votre système peut être bien antérieure à la 1.10. Si tel est le cas, supprimez-le et installez la dernière version à partir de https://golang.org/[].
 =====
 
-(((&quot;Rust&quot;)))Rust peut être installé en suivant les instructions sur https://www.rustup.rs/[].
+((("Rust")))Rust peut être installé en suivant les instructions sur https://www.rustup.rs/[].
 
 [NOTE]
 =====
 Parity nécessite Rust version 1.27 ou supérieure.
 =====
 
-(((&quot;Parity&quot;,&quot;bibliothèques pour&quot;)))Parity nécessite également certaines bibliothèques logicielles, telles que OpenSSL et +libudev+. Pour les installer sur un système compatible Ubuntu ou Debian GNU/Linux, utilisez la  pass:[<span class="keep-together">commande</span>] suivante :
+((("Parity","bibliothèques pour")))Parity nécessite également certaines bibliothèques logicielles, telles que OpenSSL et +libudev+. Pour les installer sur un système compatible Ubuntu ou Debian GNU/Linux, utilisez la  pass:[<span class="keep-together">commande</span>] suivante :
 
 ++++
 <pre data-type="programlisting">
@@ -193,7 +193,7 @@ Maintenant que vous avez installé +git+, +golang+, Rust et les bibliothèques n
 [[parity]]
 ==== Parity
 
-(((&quot;clients, Ethereum&quot;,&quot;Parity et&quot;)))(((&quot;Parity&quot;,&quot;bases&quot;)))Parity est une implémentation d&#39;un client Ethereum à nœud complet et d&#39;un navigateur DApp. Il a été écrit « à partir de zéro » en Rust, un langage de programmation système, dans le but de créer un client Ethereum modulaire, sécurisé et évolutif. Parity est développé par Parity Tech, une société britannique, et est publié sous la licence de logiciel libre GPLv3.
+((("clients, Ethereum","Parity et")))((("Parity","bases")))Parity est une implémentation d&#39;un client Ethereum à nœud complet et d&#39;un navigateur DApp. Il a été écrit « à partir de zéro » en Rust, un langage de programmation système, dans le but de créer un client Ethereum modulaire, sécurisé et évolutif. Parity est développé par Parity Tech, une société britannique, et est publié sous la licence de logiciel libre GPLv3.
 
 [NOTE]
 =====
@@ -205,7 +205,7 @@ Pour installer Parity, vous pouvez utiliser le gestionnaire d'applications Rust 
 [[install_parity]]
 ===== Installation de Parity
 
-(((&quot;Parity&quot;,&quot;installation&quot;)))Le https://wiki.parity.io/Setup[Parity Wiki] propose des instructions pour créer Parity dans différents environnements et conteneurs. Nous allons vous montrer comment créer Parity à partir de la source. Cela suppose que vous avez déjà installé Rust en utilisant +rustup+ (voir <<sw_reqs>>).
+((("Parity","installation")))Le https://wiki.parity.io/Setup[Parity Wiki] propose des instructions pour créer Parity dans différents environnements et conteneurs. Nous allons vous montrer comment créer Parity à partir de la source. Cela suppose que vous avez déjà installé Rust en utilisant +rustup+ (voir <<sw_reqs>>).
 
 Tout d&#39;abord, récupérez le code source sur GitHub :
 
@@ -273,7 +273,7 @@ Génial! Maintenant que Parity est installé, vous pouvez synchroniser la chaîn
 [[go_ethereum_geth]]
 ==== Go-Ethereum (Geth)
 
-(((&quot;clients, Ethereum&quot;,&quot;Geth et&quot;, id=&quot;ix_03clients-asciidoc7&quot;, range=&quot;startofrange&quot;)))(((&quot;Geth (Go-Ethereum)&quot;,&quot;bases&quot;, id=&quot;ix_03clients-asciidoc8&quot;, range=&quot;startofrange&quot;)))Geth est l&#39;implémentation avec le langage Go activement développée par la Fondation Ethereum, elle est donc considérée comme l&#39;implémentation &quot;officielle&quot; du client Ethereum. En règle générale, chaque chaîne de blocs basée sur Ethereum aura sa propre implémentation Geth. Si vous utilisez Geth, assurez-vous de récupérer la bonne version pour votre chaîne de blocs en utilisant l&#39;un des liens de référentiel suivants :
+((("clients, Ethereum","Geth et", id="ix_03clients-asciidoc7", range="startofrange")))((("Geth (Go-Ethereum)","bases", id="ix_03clients-asciidoc8", range="startofrange")))Geth est l&#39;implémentation avec le langage Go activement développée par la Fondation Ethereum, elle est donc considérée comme l&#39;implémentation "officielle" du client Ethereum. En règle générale, chaque chaîne de blocs basée sur Ethereum aura sa propre implémentation Geth. Si vous utilisez Geth, assurez-vous de récupérer la bonne version pour votre chaîne de blocs en utilisant l&#39;un des liens de référentiel suivants :
 
 
 * https://github.com/ethereum/go-ethereum[Ethereum] (or https://geth.ethereum.org/)
@@ -290,13 +290,13 @@ Génial! Maintenant que Parity est installé, vous pouvez synchroniser la chaîn
 
 [NOTE]
 =====
-Vous pouvez également ignorer ces instructions et installer un binaire précompilé pour la plate-forme de votre choix. Les versions précompilées sont beaucoup plus faciles à installer et peuvent être trouvées dans la section &quot;versions&quot; de l&#39;un des référentiels répertoriés ici. Cependant, vous pouvez en apprendre davantage en téléchargeant et en compilant le logiciel vous-même.
+Vous pouvez également ignorer ces instructions et installer un binaire précompilé pour la plate-forme de votre choix. Les versions précompilées sont beaucoup plus faciles à installer et peuvent être trouvées dans la section "versions" de l&#39;un des référentiels répertoriés ici. Cependant, vous pouvez en apprendre davantage en téléchargeant et en compilant le logiciel vous-même.
 =====
 
 [[cloning_repo]]
 ===== Cloner le référentiel
 
-(((&quot;Geth (Go-Ethereum)&quot;,&quot;clonage du référentiel Git pour&quot;)))La première étape consiste à cloner le référentiel Git, pour obtenir une copie du code source.
+((("Geth (Go-Ethereum)","clonage du référentiel Git pour")))La première étape consiste à cloner le référentiel Git, pour obtenir une copie du code source.
 
 Pour créer un clone local de votre référentiel choisi, utilisez la commande +git+ comme suit, dans votre répertoire personnel ou sous n&#39;importe quel répertoire que vous utilisez pour le développement :
 
@@ -323,7 +323,7 @@ Génial! Maintenant que vous avez une copie locale de Geth, vous pouvez compiler
 [[build_geth_src]]
 ===== Construire Geth à partir du code source
 
-(((&quot;Geth (Go-Ethereum)&quot;,&quot;construire à partir du code source&quot;)))Pour compiler Geth, allez dans le répertoire où le code source a été téléchargé et utilisez la commande +make+ :
+((("Geth (Go-Ethereum)","construire à partir du code source")))Pour compiler Geth, allez dans le répertoire où le code source a été téléchargé et utilisez la commande +make+ :
 
 ++++
 <pre data-type="programlisting">
@@ -349,7 +349,7 @@ github.com/ethereum/go-ethereum/common
 github.com/ethereum/go-ethereum/cmd/utils
 github.com/ethereum/go-ethereum/cmd/geth
 Done building.
-Exécutez &quot;build/bin/geth&quot; pour exécuter geth.
+Exécutez "build/bin/geth" pour exécuter geth.
 $
 ----
 
@@ -374,13 +374,13 @@ Operating System: linux
 
 Votre commande +geth version+ peut afficher des informations légèrement différentes, mais vous devriez voir un rapport de version similaire à celui présenté ici.
 
-Les sections suivantes expliquent le défi avec la synchronisation initiale de la chaîne de blocs d&#39;Ethereum(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc6&quot;))).(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc5&quot;)))
+Les sections suivantes expliquent le défi avec la synchronisation initiale de la chaîne de blocs d&#39;Ethereum(((range="endofrange", startref="ix_03clients-asciidoc6"))).(((range="endofrange", startref="ix_03clients-asciidoc5")))
 
 
 [[first_sync]]
 === La première synchronisation des chaînes de blocs basées sur Ethereum
 
-(((&quot;chaîne de blocs&quot;,&quot;première synchronisation de&quot;, id=&quot;ix_03clients-asciidoc9&quot;, range=&quot;startofrange&quot;)))(((&quot;clients, Ethereum&quot;,&quot;première synchronisation des chaînes de blocs basées sur Ethereum&quot;, id= &quot;ix_03clients-asciidoc10&quot;, range=&quot;startofrange&quot;)))(((&quot;première synchronisation&quot;,&quot;des chaînes de blocs basées sur Ethereum&quot;, id=&quot;ix_03clients-asciidoc11&quot;, range=&quot;startofrange&quot;)))Traditionnellement, lors de la synchronisation d'une chaîne de blocs Ethereum, votre client téléchargerait et validerait chaque bloc et chaque transaction depuis le tout début, c&#39;est-à-dire depuis le bloc de genèse.
+((("chaîne de blocs","première synchronisation de", id="ix_03clients-asciidoc9", range="startofrange")))((("clients, Ethereum","première synchronisation des chaînes de blocs basées sur Ethereum", id= "ix_03clients-asciidoc10", range="startofrange")))((("première synchronisation","des chaînes de blocs basées sur Ethereum", id="ix_03clients-asciidoc11", range="startofrange")))Traditionnellement, lors de la synchronisation d'une chaîne de blocs Ethereum, votre client téléchargerait et validerait chaque bloc et chaque transaction depuis le tout début, c&#39;est-à-dire depuis le bloc de genèse.
 
 Bien qu&#39;il soit possible de synchroniser entièrement la chaîne de blocs de cette façon, ce type de synchronisation prendra très longtemps et nécessite beaucoup de ressources (il nécessitera beaucoup plus de RAM, et prendra en effet très longtemps si vous n&#39;avez pas stockage).
 
@@ -390,7 +390,7 @@ Par exemple, sur Ethereum, un nouveau client progressera rapidement jusqu&#39;à
 
 Si vous synchronisez avec une validation complète, votre client ralentira et peut prendre plusieurs jours, voire plus, pour valider les blocs affectés par les attaques DoS.
 
-(((&quot;synchronisation rapide&quot;)))Heureusement, la plupart des clients Ethereum effectuent désormais par défaut une synchronisation &quot;rapide&quot; qui ignore la validation complète des transactions jusqu&#39;à ce qu&#39;elle soit synchronisée avec la pointe de la chaîne de blocs, puis reprend la validation complète.
+((("synchronisation rapide")))Heureusement, la plupart des clients Ethereum effectuent désormais par défaut une synchronisation "rapide" qui ignore la validation complète des transactions jusqu&#39;à ce qu&#39;elle soit synchronisée avec la pointe de la chaîne de blocs, puis reprend la validation complète.
 
 Geth effectue une synchronisation rapide par défaut pour Ethereum. Vous devrez peut-être vous référer aux instructions spécifiques pour l&#39;autre chaîne Ethereum choisie.
 
@@ -403,7 +403,7 @@ Geth ne peut opérer une synchronisation rapide que lorsqu&#39;il démarre avec 
 
 ==== Exécuter Geth ou Parity
 
-(((&quot;première synchronisation&quot;,&quot;Geth ou Parity pour&quot;)))(((&quot;Geth (Go-Ethereum)&quot;,&quot;pour la première synchronisation&quot;)))(((&quot;Parity&quot;,&quot;pour la première synchronisation&quot;)))Maintenant que vous comprenez les défis de la &quot;première synchronisation&quot;, vous êtes prêt à démarrer un client Ethereum et à synchroniser la chaîne de blocs. Pour Geth et Parity, vous pouvez utiliser l&#39;option +--help+ pour voir tous les paramètres de configuration. Les paramètres par défaut sont généralement judicieux et appropriés pour la plupart des utilisations. Choisissez comment configurer les paramètres facultatifs en fonction de vos besoins, puis démarrez Geth ou Parity pour synchroniser la chaîne. Puis attendre...
+((("première synchronisation","Geth ou Parity pour")))((("Geth (Go-Ethereum)","pour la première synchronisation")))((("Parity","pour la première synchronisation")))Maintenant que vous comprenez les défis de la "première synchronisation", vous êtes prêt à démarrer un client Ethereum et à synchroniser la chaîne de blocs. Pour Geth et Parity, vous pouvez utiliser l&#39;option +--help+ pour voir tous les paramètres de configuration. Les paramètres par défaut sont généralement judicieux et appropriés pour la plupart des utilisations. Choisissez comment configurer les paramètres facultatifs en fonction de vos besoins, puis démarrez Geth ou Parity pour synchroniser la chaîne. Puis attendre...
 
 [TIP]
 ====
@@ -413,11 +413,11 @@ La synchronisation de la chaîne de blocs Ethereum prendra entre une demi-journ�
 [[json_rpc]]
 ==== L&#39;interface JSON-RPC
 
-(((&quot;clients, Ethereum&quot;,&quot;et API JSON-RPC&quot;, id=&quot;ix_03clients-asciidoc12&quot;, range=&quot;startofrange&quot;)))(((&quot;première synchronisation&quot;,&quot;et API JSON-RPC&quot;, id =&quot;ix_03clients-asciidoc13&quot;, range=&quot;startofrange&quot;)))(((&quot;JSON-RPC API&quot;, id=&quot;ix_03clients-asciidoc14&quot;, range=&quot;startofrange&quot;)))Les clients Ethereum offrent une interface de programmation d&#39;application et un ensemble de commandes Remote Procedure Call (RPC), qui sont encodées en JavaScript Object Notation (JSON). Vous verrez cela appelé _API JSON-RPC_. Essentiellement, l&#39;API JSON-RPC est une interface qui nous permet d&#39;écrire des programmes qui utilisent un client Ethereum comme _passerelle_ vers un réseau Ethereum et une chaîne de blocs.
+((("clients, Ethereum","et API JSON-RPC", id="ix_03clients-asciidoc12", range="startofrange")))((("première synchronisation","et API JSON-RPC", id ="ix_03clients-asciidoc13", range="startofrange")))((("JSON-RPC API", id="ix_03clients-asciidoc14", range="startofrange")))Les clients Ethereum offrent une interface de programmation d&#39;application et un ensemble de commandes Remote Procedure Call (RPC), qui sont encodées en JavaScript Object Notation (JSON). Vous verrez cela appelé _API JSON-RPC_. Essentiellement, l&#39;API JSON-RPC est une interface qui nous permet d&#39;écrire des programmes qui utilisent un client Ethereum comme _passerelle_ vers un réseau Ethereum et une chaîne de blocs.
 
 Habituellement, l&#39;interface RPC est proposée en tant que service HTTP sur le port 8545. Pour des raisons de sécurité, il est restreint, par défaut, de n&#39;accepter que les connexions de localhost (l&#39;adresse IP de votre propre ordinateur, qui est 127.0.0.1).
 
-Pour accéder à l&#39;API JSON-RPC, vous pouvez utiliser une bibliothèque spécialisée (écrite dans le langage de programmation de votre choix) qui fournit des appels de fonction &quot;stub&quot; correspondant à chaque commande RPC disponible, ou vous pouvez construire manuellement des requêtes HTTP et envoyer/recevoir des requêtes codées en JSON. Vous pouvez même utiliser un client HTTP de ligne de commande générique, comme +curl+, pour appeler l&#39;interface RPC. Essayons ça. Tout d&#39;abord, assurez-vous que Geth est opérationnel, configuré avec --rpc pour autoriser l&#39;accès HTTP à l&#39;interface RPC, puis passez à une nouvelle fenêtre de terminal (par exemple, avec Ctrl-Maj-N ou Ctrl-Maj-T dans un fenêtre de terminal) comme indiqué ici :
+Pour accéder à l&#39;API JSON-RPC, vous pouvez utiliser une bibliothèque spécialisée (écrite dans le langage de programmation de votre choix) qui fournit des appels de fonction "stub" correspondant à chaque commande RPC disponible, ou vous pouvez construire manuellement des requêtes HTTP et envoyer/recevoir des requêtes codées en JSON. Vous pouvez même utiliser un client HTTP de ligne de commande générique, comme +curl+, pour appeler l&#39;interface RPC. Essayons ça. Tout d&#39;abord, assurez-vous que Geth est opérationnel, configuré avec --rpc pour autoriser l&#39;accès HTTP à l&#39;interface RPC, puis passez à une nouvelle fenêtre de terminal (par exemple, avec Ctrl-Maj-N ou Ctrl-Maj-T dans un fenêtre de terminal) comme indiqué ici :
 
 ++++
 <pre data-type="programlisting">
@@ -440,7 +440,7 @@ Dans cet exemple, nous utilisons +curl+ pour établir une connexion HTTP à l&#3
 
 La requête JSON-RPC est formatée conformément à la https://www.jsonrpc.org/specification [spécification JSON-RPC 2.0]. Chaque demande contient quatre éléments :
 
-++jsonrpc++ :: Version du protocole JSON-RPC. Cela DOIT être exactement ++&quot;2.0&quot;++.
+++jsonrpc++ :: Version du protocole JSON-RPC. Cela DOIT être exactement ++"2.0"++.
 
 ++method++ :: Le nom de la méthode à invoquer.
 
@@ -450,7 +450,7 @@ La requête JSON-RPC est formatée conformément à la https://www.jsonrpc.org/s
 
 [TIP]
 ====
-(((&quot;batching&quot;)))Le paramètre +id+ est principalement utilisé lorsque vous effectuez plusieurs requêtes dans un seul appel JSON-RPC, une pratique appelée _batching_. Le traitement par lots est utilisé pour éviter la surcharge d&#39;une nouvelle connexion HTTP et TCP pour chaque requête. Dans le contexte Ethereum, par exemple, nous utiliserions le traitement par lots si nous voulions récupérer des milliers de transactions sur une seule connexion HTTP. Lors du traitement par lots, vous définissez un +id+ différent pour chaque demande, puis le faites correspondre au +id+ dans chaque réponse du serveur JSON-RPC. Le moyen le plus simple d&#39;implémenter ceci est de maintenir un compteur et d&#39;incrémenter la valeur pour chaque demande.
+((("batching")))Le paramètre +id+ est principalement utilisé lorsque vous effectuez plusieurs requêtes dans un seul appel JSON-RPC, une pratique appelée _batching_. Le traitement par lots est utilisé pour éviter la surcharge d&#39;une nouvelle connexion HTTP et TCP pour chaque requête. Dans le contexte Ethereum, par exemple, nous utiliserions le traitement par lots si nous voulions récupérer des milliers de transactions sur une seule connexion HTTP. Lors du traitement par lots, vous définissez un +id+ différent pour chaque demande, puis le faites correspondre au +id+ dans chaque réponse du serveur JSON-RPC. Le moyen le plus simple d&#39;implémenter ceci est de maintenir un compteur et d&#39;incrémenter la valeur pour chaque demande.
 ====
 
 
@@ -492,7 +492,7 @@ L&#39;API JSON-RPC complète peut être étudiée sur le https://github.com/ethe
 [[parity_compatibility_mode]]
 ===== Mode de compatibilité Geth de Parity
 
-Parity a un &quot;mode de compatibilité Geth&quot; spécial, où il offre une API JSON-RPC identique à celle offerte par Geth. Pour exécuter Parity dans ce mode, utilisez le commutateur +--geth+(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc14&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc13&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc12&quot;))):(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc11&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc10&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients-asciidoc9&quot;)))
+Parity a un "mode de compatibilité Geth" spécial, où il offre une API JSON-RPC identique à celle offerte par Geth. Pour exécuter Parity dans ce mode, utilisez le commutateur +--geth+(((range="endofrange", startref="ix_03clients-asciidoc14")))(((range="endofrange", startref="ix_03clients-asciidoc13")))(((range="endofrange", startref="ix_03clients-asciidoc12"))):(((range="endofrange", startref="ix_03clients-asciidoc11")))(((range="endofrange", startref="ix_03clients-asciidoc10")))(((range="endofrange", startref="ix_03clients-asciidoc9")))
 
 ++++
 <pre data-type="programlisting">
@@ -504,7 +504,7 @@ $ <strong>parity --geth</strong>
 [[lw_eth_clients]]
 === Clients Ethereum distants
 
-(((&quot;clients, Ethereum&quot;,&quot;distant&quot;, id=&quot;ix_03clients-asciidoc15&quot;, range=&quot;startofrange&quot;)))(((&quot;clients distants&quot;, id=&quot;ix_03clients-asciidoc16&quot;, range=&quot;startofrange&quot;)))Les clients distants offrent un sous-ensemble des fonctionnalités d&#39;un client complet. Ils ne stockent pas la chaîne de blocs Ethereum complète, ils sont donc plus rapides à configurer et nécessitent beaucoup moins de stockage de données.
+((("clients, Ethereum","distant", id="ix_03clients-asciidoc15", range="startofrange")))((("clients distants", id="ix_03clients-asciidoc16", range="startofrange")))Les clients distants offrent un sous-ensemble des fonctionnalités d&#39;un client complet. Ils ne stockent pas la chaîne de blocs Ethereum complète, ils sont donc plus rapides à configurer et nécessitent beaucoup moins de stockage de données.
 
 [role="pagebreak-before"]
 Ces clients offrent généralement la possibilité d&#39;effectuer une ou plusieurs des actions suivantes :
@@ -526,41 +526,41 @@ Examinons certains des clients distants les plus populaires et les fonctions qu&
 [[mobile_wallets]]
 ==== Portefeuilles mobiles (Smartphone)
 
-(((&quot;portefeuilles mobiles (smartphones)&quot;)))(((&quot;clients distants&quot;,&quot;portefeuilles mobiles&quot;)))(((&quot;portefeuilles&quot;,&quot;mobile&quot;)))Tous les portefeuilles mobiles sont des clients distants, car les téléphones intelligents ne disposent pas des ressources adéquates pour exécuter un client Ethereum complet. Les clients légers sont en développement et ne sont pas généralement utilisés pour Ethereum. Dans le cas de Parity, le client léger est marqué &quot;expérimental&quot; et peut être utilisé en exécutant +parity+ avec l&#39;option +--light+.
+((("portefeuilles mobiles (smartphones)")))((("clients distants","portefeuilles mobiles")))((("portefeuilles","mobile")))Tous les portefeuilles mobiles sont des clients distants, car les téléphones intelligents ne disposent pas des ressources adéquates pour exécuter un client Ethereum complet. Les clients légers sont en développement et ne sont pas généralement utilisés pour Ethereum. Dans le cas de Parity, le client léger est marqué "expérimental" et peut être utilisé en exécutant +parity+ avec l&#39;option +--light+.
 
 Les portefeuilles mobiles populaires incluent les éléments suivants (nous les énumérons simplement à titre d&#39;exemples ; il ne s&#39;agit pas d&#39;une approbation ou d&#39;une indication de la sécurité ou de la fonctionnalité de ces portefeuilles) :
 
-https://jaxx.io[Jaxx]:: (((&quot;Jaxx&quot;,&quot;version mobile&quot;)))(((&quot;portefeuilles&quot;,&quot;Jaxx&quot;)))Un portefeuille mobile multidevises basé sur les valeurs mnémoniques BIP-39, avec prise en charge de Bitcoin, Litecoin, Ethereum, Ethereum Classic, ZCash, une variété de jetons ERC20 et de nombreuses autres devises. Jaxx est disponible sur Android et iOS, en tant que portefeuille de plug-in de navigateur et en tant que portefeuille de bureau pour une variété de systèmes d&#39;exploitation.
+https://jaxx.io[Jaxx]:: ((("Jaxx","version mobile")))((("portefeuilles","Jaxx")))Un portefeuille mobile multidevises basé sur les valeurs mnémoniques BIP-39, avec prise en charge de Bitcoin, Litecoin, Ethereum, Ethereum Classic, ZCash, une variété de jetons ERC20 et de nombreuses autres devises. Jaxx est disponible sur Android et iOS, en tant que portefeuille de plug-in de navigateur et en tant que portefeuille de bureau pour une variété de systèmes d&#39;exploitation.
 
-https://status.im[Status]:: (((&quot;Status (portefeuille mobile)&quot;)))Un portefeuille mobile et un navigateur DApp, avec prise en charge d&#39;une variété de jetons et de DApps populaires. Disponible pour iOS et Android.
+https://status.im[Status]:: ((("Status (portefeuille mobile)")))Un portefeuille mobile et un navigateur DApp, avec prise en charge d&#39;une variété de jetons et de DApps populaires. Disponible pour iOS et Android.
 
-https://trustwalletapp.com/[Trust Wallet]:: (((&quot;Trust Wallet&quot;)))(((&quot;portefeuilles&quot;,&quot;Trust&quot;)))Un portefeuille mobile multi-devises qui prend en charge Ethereum et Ethereum Classic ainsi que les jetons ERC20 et ERC223. Trust Wallet est disponible pour iOS et Android.
+https://trustwalletapp.com/[Trust Wallet]:: ((("Trust Wallet")))((("portefeuilles","Trust")))Un portefeuille mobile multi-devises qui prend en charge Ethereum et Ethereum Classic ainsi que les jetons ERC20 et ERC223. Trust Wallet est disponible pour iOS et Android.
 
-https://www.cipherbrowser.com[Cipher Browser]:: (((&quot;Cipher Browser&quot;))) Un navigateur et un portefeuille DApp mobile complet compatible avec Ethereum qui permet l&#39;intégration avec les applications et les jetons Ethereum. Disponible pour iOS et Android.
+https://www.cipherbrowser.com[Cipher Browser]:: ((("Cipher Browser"))) Un navigateur et un portefeuille DApp mobile complet compatible avec Ethereum qui permet l&#39;intégration avec les applications et les jetons Ethereum. Disponible pour iOS et Android.
 
 [[browser_wallets]]
 ==== Portefeuilles de navigateur
 
-(((&quot;portefeuilles de navigateur&quot;)))(((&quot;clients distants&quot;,&quot;portefeuilles de navigateur&quot;)))(((&quot;portefeuilles&quot;,&quot;portefeuilles de navigateur&quot;)))Une variété de portefeuilles et de navigateurs DApp sont disponibles en tant que plug-ins ou extensions de navigateurs Web tels que Chrome et Firefox. Ce sont des clients distants qui s&#39;exécutent dans votre navigateur.
+((("portefeuilles de navigateur")))((("clients distants","portefeuilles de navigateur")))((("portefeuilles","portefeuilles de navigateur")))Une variété de portefeuilles et de navigateurs DApp sont disponibles en tant que plug-ins ou extensions de navigateurs Web tels que Chrome et Firefox. Ce sont des clients distants qui s&#39;exécutent dans votre navigateur.
 
 Certains des plus populaires sont MetaMask, Jaxx, MyEtherWallet et MyCrypto.
 
 [[MetaMask]]
 ===== MetaMask
 
-https://metamask.io/[MetaMask], (((&quot;MetaMask&quot;,&quot;comme portefeuille de navigateur&quot;)))introduit dans <<intro_chapter>>, est un portefeuille polyvalent basé sur un navigateur, un client RPC et un explorateur de contrats de base. Il est disponible sur Chrome, Firefox, Opera et Brave Browser.
+https://metamask.io/[MetaMask], ((("MetaMask","comme portefeuille de navigateur")))introduit dans <<intro_chapter>>, est un portefeuille polyvalent basé sur un navigateur, un client RPC et un explorateur de contrats de base. Il est disponible sur Chrome, Firefox, Opera et Brave Browser.
 
 Contrairement aux autres portefeuilles de navigateur, MetaMask injecte une instance web3 dans le contexte JavaScript du navigateur, agissant comme un client RPC qui se connecte à une variété de chaînes de blocs Ethereum (mainnet, Ropsten testnet, Kovan testnet, nœud RPC local, etc.). La possibilité d&#39;injecter une instance web3 et d&#39;agir comme une passerelle vers des services RPC externes fait de MetaMask un outil très puissant pour les développeurs et les utilisateurs. Il peut être combiné, par exemple, avec MyEtherWallet ou MyCrypto, agissant comme un fournisseur web3 et une passerelle RPC pour ces outils.
 
 [[Jaxx]]
 ===== Jaxx
 
-https://jaxx.io[Jaxx], (((&quot;Jaxx&quot;,&quot;version de bureau&quot;)))(((&quot;portefeuilles&quot;,&quot;Jaxx&quot;)))qui a été présenté comme un portefeuille mobile dans la section précédente, est également disponible en tant qu&#39;extension Chrome et Firefox et en tant que portefeuille de bureau.
+https://jaxx.io[Jaxx], ((("Jaxx","version de bureau")))((("portefeuilles","Jaxx")))qui a été présenté comme un portefeuille mobile dans la section précédente, est également disponible en tant qu&#39;extension Chrome et Firefox et en tant que portefeuille de bureau.
 
 [[MEW]]
 ===== MyEtherWallet (MEW)
 
-https://www.myetherwallet.com/[MyEtherWallet] (((&quot;MyEtherWallet (MEW)&quot;)))(((&quot;portefeuilles&quot;,&quot;MyEtherWallet&quot;))) est un client distant JavaScript basé sur un navigateur qui offre :
+https://www.myetherwallet.com/[MyEtherWallet] ((("MyEtherWallet (MEW)")))((("portefeuilles","MyEtherWallet"))) est un client distant JavaScript basé sur un navigateur qui offre :
 
 * Un pont vers les portefeuilles matériels populaires tels que Trezor et Ledger
 * Une interface web3 pouvant se connecter à une instance web3 injectée par un autre client (par exemple, MetaMask)
@@ -577,13 +577,13 @@ Vous devez être très prudent lorsque vous accédez à MyEtherWallet et à d&#3
 [[MyCrypto]]
 ===== MyCrypto
 
-(((&quot;MyCrypto (portefeuille)&quot;)))(((&quot;portefeuilles&quot;,&quot;MyCrypto&quot;)))Début 2018, le (((&quot;MyEtherWallet (MEW)&quot;)))(((&quot;portefeuilles&quot;,&quot; MyEtherWallet&quot;))) projet MyEtherWallet s&#39;est scindé en deux implémentations concurrentes, guidées par deux équipes de développement indépendantes : une &quot;fourche&quot; ou &quot;fork&quot;, comme on l&#39;appelle dans le développement à source libre. Les deux projets s&#39;appellent MyEtherWallet (la marque originale) et https://mycrypto.com/[MyCrypto]. MyCrypto offre des fonctionnalités presque identiques à MyEtherWallet, mais au lieu d&#39;utiliser MEWConnect, il offre une connexion à l&#39;application mobile Parity Signer. Comme MEWConnect, Parity Signer stocke les clés sur le téléphone et s&#39;interface avec MyCrypto de la même manière qu&#39;un portefeuille matériel.
+((("MyCrypto (portefeuille)")))((("portefeuilles","MyCrypto")))Début 2018, le ((("MyEtherWallet (MEW)")))((("portefeuilles"," MyEtherWallet"))) projet MyEtherWallet s&#39;est scindé en deux implémentations concurrentes, guidées par deux équipes de développement indépendantes : une "fourche" ou "fork", comme on l&#39;appelle dans le développement à source libre. Les deux projets s&#39;appellent MyEtherWallet (la marque originale) et https://mycrypto.com/[MyCrypto]. MyCrypto offre des fonctionnalités presque identiques à MyEtherWallet, mais au lieu d&#39;utiliser MEWConnect, il offre une connexion à l&#39;application mobile Parity Signer. Comme MEWConnect, Parity Signer stocke les clés sur le téléphone et s&#39;interface avec MyCrypto de la même manière qu&#39;un portefeuille matériel.
 
 [[Mist]]
 ===== Mist (obsolète)
 
-https://github.com/ethereum/mist[Mist] (((&quot;Mist (portefeuille basé sur un navigateur)&quot;)))(((&quot;portefeuilles&quot;,&quot;Mist&quot;)))était le premier navigateur compatible avec Ethereum, construit par la Fondation Ethereum. Il contenait un portefeuille basé sur un navigateur qui était la première implémentation de la norme de jeton ERC20 (Fabian Vogelsteller, auteur d&#39;ERC20, était également le principal développeur de Mist). Mist a également été le premier portefeuille à introduire la somme de contrôle camelCase (EIP-55). Depuis mars 2019, Mist est obsolète et ne doit plus être utilisé.
+https://github.com/ethereum/mist[Mist] ((("Mist (portefeuille basé sur un navigateur)")))((("portefeuilles","Mist")))était le premier navigateur compatible avec Ethereum, construit par la Fondation Ethereum. Il contenait un portefeuille basé sur un navigateur qui était la première implémentation de la norme de jeton ERC20 (Fabian Vogelsteller, auteur d&#39;ERC20, était également le principal développeur de Mist). Mist a également été le premier portefeuille à introduire la somme de contrôle camelCase (EIP-55). Depuis mars 2019, Mist est obsolète et ne doit plus être utilisé.
 
 === Conclusion
 
-Dans ce chapitre, nous avons exploré les clients Ethereum. Vous avez téléchargé, installé et synchronisé un client, devenant un participant au réseau Ethereum et contribuant à la santé et à la stabilité du système en répliquant la chaîne de blocs sur votre propre ordinateur.(((range=&quot;endofrange&quot;, startref=&quot;ix_03clients -asciidoc0&quot;)))
+Dans ce chapitre, nous avons exploré les clients Ethereum. Vous avez téléchargé, installé et synchronisé un client, devenant un participant au réseau Ethereum et contribuant à la santé et à la stabilité du système en répliquant la chaîne de blocs sur votre propre ordinateur.(((range="endofrange", startref="ix_03clients -asciidoc0")))

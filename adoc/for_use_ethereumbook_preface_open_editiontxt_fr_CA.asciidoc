@@ -8,7 +8,7 @@ Gavin souhaitait écrire un livre qui développait le Livre jaune (sa descriptio
 
 Des plans étaient en cours - un éditeur avait été trouvé - lorsque Gavin a parlé à Andreas, qu&#39;il connaissait depuis le tout début de son mandat chez Ethereum en tant que personnalité notable dans l&#39;espace.
 
-Andreas avait récemment publié la première édition de son livre _Mastering Bitcoin_ (O&#39;Reilly), qui est rapidement devenu le guide technique faisant autorité sur le Bitcoin et les cryptomonnaies. Presque aussitôt que le livre a été publié, ses lecteurs ont commencé à lui demander : &quot;Quand écriras-tu &#39;Mastering Ethereum&#39; ?&quot; Andreas envisageait déjà son prochain projet et a trouvé qu&#39;Ethereum était un sujet technique convaincant.
+Andreas avait récemment publié la première édition de son livre _Mastering Bitcoin_ (O&#39;Reilly), qui est rapidement devenu le guide technique faisant autorité sur le Bitcoin et les cryptomonnaies. Presque aussitôt que le livre a été publié, ses lecteurs ont commencé à lui demander : "Quand écriras-tu &#39;Mastering Ethereum&#39; ?" Andreas envisageait déjà son prochain projet et a trouvé qu&#39;Ethereum était un sujet technique convaincant.
 
 Enfin, en mai 2016, Gavin et Andreas se trouvaient par coïncidence dans la même ville au même moment. Ils se sont retrouvés autour d&#39;un café pour discuter de travailler ensemble sur le livre. Andreas et Gavin étant tous deux des adeptes du paradigme open source, ils se sont tous deux engagés à en faire un effort collaboratif, publié sous une licence Creative Commons. Heureusement, l&#39;éditeur, O&#39;Reilly Media, était heureux d&#39;être d&#39;accord, et le projet _Mastering Ethereum_ a été officiellement lancé.
 
@@ -23,14 +23,14 @@ Enfin, l&#39;index du livre permet aux lecteurs de trouver facilement des sujets
 [[intended_audience_sec]]
 === Public visé
 
-(((&quot;audience visée&quot;)))Ce livre est principalement destiné aux codeurs. Si vous pouvez utiliser un langage de programmation, ce livre vous apprendra comment fonctionnent les chaînes de blocs de contrats intelligents, comment les utiliser et comment développer des contrats intelligents et des applications décentralisées avec eux. Les premiers chapitres conviennent également comme une introduction approfondie à Ethereum pour les non-codeurs.
+((("audience visée")))Ce livre est principalement destiné aux codeurs. Si vous pouvez utiliser un langage de programmation, ce livre vous apprendra comment fonctionnent les chaînes de blocs de contrats intelligents, comment les utiliser et comment développer des contrats intelligents et des applications décentralisées avec eux. Les premiers chapitres conviennent également comme une introduction approfondie à Ethereum pour les non-codeurs.
 
 
 
 [[conventinons_used_sec]]
 === Conventions utilisées dans ce livre
 
-(((&quot;conventions typographiques&quot;)))Les conventions typographiques suivantes sont utilisées dans ce livre :
+((("conventions typographiques")))Les conventions typographiques suivantes sont utilisées dans ce livre :
 
 _Italic_:: Indique de nouveaux termes, URL, adresses e-mail, noms de fichiers et extensions de fichiers.
 
@@ -59,7 +59,7 @@ Cette icône indique un avertissement ou une mise en garde.
 [[code_examples_sec]]
 === Exemples de codes
 
-(((&quot;exemples de code, obtention et utilisation&quot;)))Les exemples sont illustrés dans Solidity, Vyper et JavaScript, et en utilisant la ligne de commande d&#39;un système d&#39;exploitation de type Unix. Tous les extraits de code sont disponibles dans le référentiel GitHub sous le sous-répertoire _code_. Fourchez le code du livre, essayez les exemples de code ou soumettez des corrections via GitHub : https://github.com/ethereumbook/ethereumbook.
+((("exemples de code, obtention et utilisation")))Les exemples sont illustrés dans Solidity, Vyper et JavaScript, et en utilisant la ligne de commande d&#39;un système d&#39;exploitation de type Unix. Tous les extraits de code sont disponibles dans le référentiel GitHub sous le sous-répertoire _code_. Fourchez le code du livre, essayez les exemples de code ou soumettez des corrections via GitHub : https://github.com/ethereumbook/ethereumbook.
 
 Tous les extraits de code peuvent être répliqués sur la plupart des systèmes d&#39;exploitation avec une installation minimale de compilateurs, d&#39;interpréteurs et de bibliothèques pour les langages correspondants. Si nécessaire, nous fournissons des instructions d&#39;installation de base et des exemples étape par étape de la sortie de ces instructions.
 
@@ -68,9 +68,9 @@ Certains des extraits de code et des sorties de code ont été reformatés pour 
 Tous les extraits de code utilisent des valeurs réelles et des calculs lorsque cela est possible, de sorte que vous pouvez construire d&#39;exemple en exemple et voir les mêmes résultats dans n&#39;importe quel code que vous écrivez pour calculer les mêmes valeurs. Par exemple, les clés privées et les clés et adresses publiques correspondantes sont toutes réelles. Les exemples de transactions, de contrats, de blocs et de références de chaîne de blocs ont tous été introduits dans la chaîne de blocs Ethereum actuelle et font partie du grand livre public, vous pouvez donc les consulter.
 
 
-(((&quot;attribution&quot;)))Nous apprécions, mais n&#39;exigeons pas, l&#39;attribution. Une attribution comprend généralement le titre, l&#39;auteur, l&#39;éditeur, l&#39;ISBN et le droit d&#39;auteur. Par exemple : « __Mastering Ethereum__ par Andreas M. Antonopoulos et le Dr Gavin Wood. Copyright 2019 The Ethereum Book LLC et Gavin Wood&quot;
+((("attribution")))Nous apprécions, mais n&#39;exigeons pas, l&#39;attribution. Une attribution comprend généralement le titre, l&#39;auteur, l&#39;éditeur, l&#39;ISBN et le droit d&#39;auteur. Par exemple : « __Mastering Ethereum__ par Andreas M. Antonopoulos et le Dr Gavin Wood. Copyright 2019 The Ethereum Book LLC et Gavin Wood"
 
-(((&quot;licences open source&quot;)))__Mastering Ethereum__ est proposé sous la licence internationale Creative Commons Attribution-ShareAlike (CC BY SA 4.0).
+((("licences open source")))__Mastering Ethereum__ est proposé sous la licence internationale Creative Commons Attribution-ShareAlike (CC BY SA 4.0).
 
 
 === Références aux entreprises et aux produits
@@ -80,9 +80,9 @@ Toutes les références aux entreprises et aux produits sont destinées à des f
 [[ethereum_sdresses_and_transactions_sec]]
 === Adresses et transactions Ethereum dans ce livre
 
-(((&quot;chaîne de blocs&quot;,&quot;avertissements et précautions&quot;)))(((&quot;clés et adresses&quot;, seealso=&quot;cryptographie; clés privées; clés publiques&quot;)))(((&quot;codes QR&quot;)))(((&quot;transactions&quot;,&quot;avertissements et mises en garde&quot;)))(((&quot;avertissements et mises en garde&quot;,&quot;lors de l&#39;utilisation de matériel de test et d&#39;exemple apparaissant dans le livre&quot;)))Les adresses Ethereum, les transactions, les clés, les codes QR et les données de la chaîne de blocs utilisés dans ce livre sont, pour la plupart, réels. Cela signifie que vous pouvez parcourir la chaîne de blocs, regarder les transactions proposées en exemple, les récupérer avec vos propres scripts ou programmes, etc.
+((("chaîne de blocs","avertissements et précautions")))((("clés et adresses", seealso="cryptographie; clés privées; clés publiques")))((("codes QR")))((("transactions","avertissements et mises en garde")))((("avertissements et mises en garde","lors de l&#39;utilisation de matériel de test et d&#39;exemple apparaissant dans le livre")))Les adresses Ethereum, les transactions, les clés, les codes QR et les données de la chaîne de blocs utilisés dans ce livre sont, pour la plupart, réels. Cela signifie que vous pouvez parcourir la chaîne de blocs, regarder les transactions proposées en exemple, les récupérer avec vos propres scripts ou programmes, etc.
 
-(((&quot;avertissements et précautions&quot;, &quot;évitez d&#39;envoyer de l&#39;argent aux adresses figurant dans le livre&quot;)))Cependant, notez que les clés privées utilisées pour construire les adresses imprimées dans ce livre ont été &quot;brûlées&quot;. Cela signifie que si vous envoyez de l&#39;argent à l&#39;une de ces adresses, l&#39;argent sera perdu pour toujours ou (plus probablement) approprié, puisque toute personne qui lit le livre peut le prendre en utilisant les clés privées imprimées ici.
+((("avertissements et précautions", "évitez d&#39;envoyer de l&#39;argent aux adresses figurant dans le livre")))Cependant, notez que les clés privées utilisées pour construire les adresses imprimées dans ce livre ont été "brûlées". Cela signifie que si vous envoyez de l&#39;argent à l&#39;une de ces adresses, l&#39;argent sera perdu pour toujours ou (plus probablement) approprié, puisque toute personne qui lit le livre peut le prendre en utilisant les clés privées imprimées ici.
 
 [WARNING]
 ====
@@ -131,7 +131,7 @@ Merci à tous de m&#39;avoir soutenu tout au long de ce parcours.
 
 === Remerciements par Gavin
 
-Ma mère m&#39;a procuré mon premier ordinateur chez un voisin quand j&#39;avais 9 ans, sans quoi mes progrès techniques auraient sans doute été amoindris. Je lui dois aussi ma peur de l&#39;électricité depuis mon enfance et je dois reconnaître Trevor et mes grands-parents, qui ont accompli le grave devoir de &quot;me regarder le brancher&quot; à maintes reprises, et sans qui ledit ordinateur aurait été inutile. Je dois également reconnaître les différents éducateurs que j&#39;ai eu la chance d&#39;avoir tout au long de ma vie, du dit voisin Sean (qui m&#39;a appris mon premier programme informatique), à M. Quinn, mon professeur d&#39;école primaire, qui m&#39;a aidé à faire plus de programmation et moins d&#39;histoire, grâce à des enseignants du secondaire comme Richard Furlong-Brown, qui m&#39;ont arrangé pour que je fasse plus de programmation et moins de rugby.
+Ma mère m&#39;a procuré mon premier ordinateur chez un voisin quand j&#39;avais 9 ans, sans quoi mes progrès techniques auraient sans doute été amoindris. Je lui dois aussi ma peur de l&#39;électricité depuis mon enfance et je dois reconnaître Trevor et mes grands-parents, qui ont accompli le grave devoir de "me regarder le brancher" à maintes reprises, et sans qui ledit ordinateur aurait été inutile. Je dois également reconnaître les différents éducateurs que j&#39;ai eu la chance d&#39;avoir tout au long de ma vie, du dit voisin Sean (qui m&#39;a appris mon premier programme informatique), à M. Quinn, mon professeur d&#39;école primaire, qui m&#39;a aidé à faire plus de programmation et moins d&#39;histoire, grâce à des enseignants du secondaire comme Richard Furlong-Brown, qui m&#39;ont arrangé pour que je fasse plus de programmation et moins de rugby.
 
 Je dois remercier la mère de mes enfants, Jutta, pour son soutien continu, et les nombreuses personnes dans ma vie, amis nouveaux et anciens, qui me gardent, grosso modo, sain d&#39;esprit. Enfin, une énorme cuillerée de remerciements doit aller à Aeron Buchanan, sans qui les cinq dernières années de ma vie n&#39;auraient jamais pu se dérouler comme elles l&#39;ont fait et sans le temps, le soutien et les conseils de qui ce livre ne serait pas en aussi bon état tel quel.
 
