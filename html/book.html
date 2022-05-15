@@ -1364,22 +1364,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <div class="listingblock data-line-278">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// SPDX-License-Identifier: CC-BY-SA-4.0
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Identifiant de licence SPDX : CC-BY-SA-4.0
 
-// Version of Solidity compiler this program was written for
+// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity 0.6.4;
 
-// Our first contract is a faucet!
+// Notre premier contrat est un faucet !
 contract Faucet {
-    // Accept any incoming amount
+    // Accepte tout montant entrant
     receive() external payable {}
 
-    // Give out ether to anyone who asks
+    // Donnez de l'éther à quiconque demande
     function withdraw(uint withdraw_amount) public {
-        // Limit withdrawal amount
+        // Limiter le montant du retrait
         require(withdraw_amount &lt;= 100000000000000000);
 
-        // Send the amount to the address that requested it
+        // Envoie le montant à l'adresse qui l'a demandé
         msg.sender.transfer(withdraw_amount);
     }
 }</code></pre>
@@ -5321,10 +5321,10 @@ const txData = {
 tx = new ethTx(txData);
 console.log('RLP-Encoded Tx: 0x' + tx.serialize().toString('hex'))
 
-txHash = tx.hash(); // This step encodes into RLP and calculates the hash
+txHash = tx.hash(); // Cette étape encode en RLP et calcule le hachage
 console.log('Tx Hash: 0x' + txHash.toString('hex'))
 
-// Sign transaction
+// Signer la transaction
 const privKey = Buffer.from(
     '91c8360c4cb4b5fac45513a7213f31d4e4a7bfcb4630e9fbf074f42a203ac0b9', 'hex');
 tx.sign(privKey);
@@ -5747,22 +5747,22 @@ Version: 0.4.24+commit.e67f0147.Linux.g++
 <div class="content">
 <div class="listingblock data-line-137">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// SPDX-License-Identifier: CC-BY-SA-4.0
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Identifiant de licence SPDX : CC-BY-SA-4.0
 
-// Version of Solidity compiler this program was written for
+// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity 0.6.4;
 
-// Our first contract is a faucet!
+// Notre premier contrat est un faucet !
 contract Faucet {
-    // Accept any incoming amount
+    // Accepte tout montant entrant
     receive() external payable {}
 
-    // Give out ether to anyone who asks
+    // Donnez de l'éther à quiconque demande
     function withdraw(uint withdraw_amount) public {
-        // Limit withdrawal amount
+        // Limiter le montant du retrait
         require(withdraw_amount &lt;= 100000000000000000);
 
-        // Send the amount to the address that requested it
+        // Envoie le montant à l'adresse qui l'a demandé
         msg.sender.transfer(withdraw_amount);
     }
 }</code></pre>
@@ -5850,22 +5850,22 @@ Contract JSON ABI
 <div class="content">
 <div class="listingblock data-line-215">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// SPDX-License-Identifier: CC-BY-SA-4.0
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Identifiant de licence SPDX : CC-BY-SA-4.0
 
-// Version of Solidity compiler this program was written for
+// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity ^0.6.4;
 
-// Our first contract is a faucet!
+// Notre premier contrat est un faucet !
 contract Faucet {
-    // Accept any incoming amount
+    // Accepte tout montant entrant
     receive() external payable {}
 
-    // Give out ether to anyone who asks
+    // Donnez de l'éther à quiconque demande
     function withdraw(uint withdraw_amount) public {
-        // Limit withdrawal amount
+        // Limiter le montant du retrait
         require(withdraw_amount &lt;= 100000000000000000);
 
-        // Send the amount to the address that requested it
+        // Envoie le montant à l'adresse qui l'a demandé
         msg.sender.transfer(withdraw_amount);
     }
 }</code></pre>
@@ -6567,20 +6567,20 @@ function () external payable {
 <div class="content">
 <div class="listingblock data-line-685">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// SPDX-License-Identifier: CC-BY-SA-4.0
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Identifiant de licence SPDX : CC-BY-SA-4.0
 
-// Version of Solidity compiler this program was written for
+// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity ^0.6.4;
 
 contract Owned {
     address payable owner;
 
-    // Contract constructor: set owner
+    // Constructeur de contrat : définit le propriétaire
     constructor() public {
         owner = msg.sender;
     }
 
-    // Access control modifier
+    // Modificateur de contrôle d'accès
     modifier onlyOwner {
         require(msg.sender == owner, "Only the contract owner can call this function");
         _;
@@ -6588,7 +6588,7 @@ contract Owned {
 }
 
 contract Mortal is Owned {
-    // Contract destructor
+    // Destructeur de contrat
     function destroy() public onlyOwner {
         selfdestruct(owner);
     }
@@ -6598,14 +6598,14 @@ contract Faucet is Mortal {
     event Withdrawal(address indexed to, uint amount);
     event Deposit(address indexed from, uint amount);
 
-    // Accept any incoming amount
+    // Accepte tout montant entrant
     receive() external payable {
         emit Deposit(msg.sender, msg.value);
     }
 
-    // Give out ether to anyone who asks
+    // Donnez de l'éther à quiconque demande
     function withdraw(uint withdraw_amount) public {
-        // Limit withdrawal amount
+        // Limiter le montant du retrait
         require(withdraw_amount &lt;= 0.1 ether);
 
         require(
@@ -6613,7 +6613,7 @@ contract Faucet is Mortal {
             "Insufficient balance in faucet for withdrawal request"
         );
 
-        // Send the amount to the address that requested it
+        // Envoie le montant à l'adresse qui l'a demandé
         msg.sender.transfer(withdraw_amount);
 
         emit Withdrawal(msg.sender, withdraw_amount);
@@ -6858,18 +6858,15 @@ contract caller {
 
     function make_calls(calledContract _calledContract) public {
 
-    // Calling calledContract and calledLibrary directly
-    _calledContract.calledFunction();
-    calledLibrary.calledFunction();
+        // Appel calledContract et callLibrary directement
+        _calledContract.calledFunction();
+        calledLibrary.calledFunction();
 
-    // Low-level calls using the address object for calledContract
-    require(address(_calledContract).
-            call(bytes4(keccak256("calledFunction()"))));
-    require(address(_calledContract).
-            delegatecall(bytes4(keccak256("calledFunction()"))));
-
-
-
+        // Appels de bas niveau utilisant l'objet d'adresse pour le contrat appelé
+        require(address(_calledContract).
+        call(bytes4(keccak256("calledFunction()"))));
+        require(address(_calledContract).
+        delegatecall(bytes4(keccak256("calledFunction()"))));
 	}
 }</code></pre>
 </div>
@@ -10055,7 +10052,7 @@ Compiling openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol...
 <pre class="highlight"><code class="language-javascript" data-lang="javascript">var METoken = artifacts.require("METoken");
 
 module.exports = function(deployer) {
-  // Deploy the METoken contract as our only task
+  // Déployer le contrat METoken comme seule tâche
   deployer.deploy(METoken);
 };</code></pre>
 </div>
@@ -10316,37 +10313,37 @@ truffle(ganache)&gt; <strong>BigNumber { s: 1, e: 5, c: [ 100000 ] }</strong>
 <div class="content">
 <div class="listingblock data-line-615">
 <div class="content">
-<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Version of Solidity compiler this program was written for
+<pre class="highlight"><code class="language-solidity" data-lang="solidity">// Version du compilateur Solidity pour lequel ce programme a été écrit
 pragma solidity ^0.4.19;
 
 import 'openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol';
 
 
-// A faucet for ERC20 token MET
+// Un robinet pour le jeton ERC20 MET
 contract METFaucet {
 
 	StandardToken public METoken;
 	address public METOwner;
 
-	// METFaucet constructor, provide the address of METoken contract and
-	// the owner address we will be approved to transferFrom
+	// Constructeur METFaucet, indique l'adresse du contrat METoken et
+	// l'adresse du propriétaire que nous serons autorisés pour transferFrom
 	function METFaucet(address _METoken, address _METOwner) public {
 
-		// Initialize the METoken from the address provided
+		// Initialise le METoken à partir de l'adresse fournie
 		METoken = StandardToken(_METoken);
 		METOwner = _METOwner;
 	}
 
 	function withdraw(uint withdraw_amount) public {
 
-    	// Limit withdrawal amount to 10 MET
+		// Limiter le montant du retrait à 10 MET
     	require(withdraw_amount &lt;= 1000);
 
-		// Use the transferFrom function of METoken
+		// Utiliser la fonction transferFrom de METoken
 		METoken.transferFrom(METOwner, msg.sender, withdraw_amount);
     }
 
-	// REJECT any incoming ether
+	// REJETER tout éther entrant
 	function () external payable { revert(); }
 
 }</code></pre>
@@ -15869,7 +15866,7 @@ contract SampleCrowdsale is PostDeliveryCrowdsale, MintedCrowdsale {
 const SampleToken = artifacts.require('./SampleToken.sol');
 
 module.exports = function(deployer, network, accounts) {
-  const openingTime = web3.eth.getBlock('latest').timestamp + 2; // 2s in future
+  const openingTime = web3.eth.getBlock('latest').timestamp + 2; // 2s dans le futur
   const closingTime = openingTime + 86400 * 20; // 20 days
   const rate = new web3.BigNumber(1000);
   const wallet = accounts[1];
@@ -16586,16 +16583,235 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 <div class="paragraph data-line-41">
 <p>Maintenant que vous avez vu le didacticiel de base, vous pouvez essayer les mêmes interactions en utilisant une construction asynchrone wait . Passez en revue le script <em>web3-contract-basic-interaction-async-await.js</em> dans <a href="http://bit.ly/2ABrFkl" data-href="http://bit.ly/2ABrFkl"><em>code/web3js</em></a> et comparez-le à ce didacticiel pour voir en quoi ils diffèrent. Async-wait est plus facile à lire, car il fait en sorte que l&#8217;interaction asynchrone se comporte davantage comme une séquence d&#8217;appels bloquants.</p>
 </div>
-<div class="paragraph data-line-43">
-<p>Unresolved directive in &lt;stdin&gt; - include::for_use_ethereumbook_appdx-web3js-shortlinkstxt_fr_CA.asciidoc[]</p>
 </div>
+</div>
+</div>
+<div class="sect1 data-line-3">
+<h2 id="short_links">Appendix F: Référence des liens courts</h2>
+<div class="sectionbody">
+<div class="paragraph data-line-5">
+<p>Tout au long de ce livre, nous avons utilisé des liens courts. Ces liens courts prennent moins de place sur la page et permettent aux lecteurs de l&#8217;édition papier de les retranscrire plus facilement dans un navigateur. Cependant, des liens courts peuvent se rompre et les sociétés fournissant ces services peuvent cesser d&#8217;exister ou bloquer certains liens. Les liens complets sont présentés ici dans l&#8217;ordre où ils se trouvent dans le texte.</p>
+</div>
+<div class="sect2 data-line-8">
+<h3 id="_sécurité_du_contrat_intelligent">Sécurité du contrat intelligent</h3>
+<table class="tableblock frame-all grid-all stretch data-line-11">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Lien court</th>
+<th class="tableblock halign-left valign-top">Lien étendu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Ogvnng</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/units-and-global-variables.html#address-related" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/units-and-global-variables.html#address-related">https://solidity.readthedocs.io/en/latest/units-and-global-variables.html#address-related</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2EVo70v</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern">https://solidity.readthedocs.io/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2EQaLCI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/" class="undefined" data-href="http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/">http://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2MOfBPv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://consensys.github.io/smart-contract-best-practices/known_attacks/#integer-overflow-and-underflow" class="undefined" data-href="https://consensys.github.io/smart-contract-best-practices/known_attacks/#integer-overflow-and-underflow">https://consensys.github.io/smart-contract-best-practices/known_attacks/#integer-overflow-and-underflow</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2xvbx1M</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://randomoracle.wordpress.com/2018/04/27/ethereum-solidity-and-integer-overflows-programming-blockchains-like-1970/" class="undefined" data-href="https://randomoracle.wordpress.com/2018/04/27/ethereum-solidity-and-integer-overflows-programming-blockchains-like-1970/">https://randomoracle.wordpress.com/2018/04/27/ethereum-solidity-and-integer-overflows-programming-blockchains-like-1970/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2CUf7WG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md" class="undefined" data-href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2RovrDf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html">https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2AAElb8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ethereum.stackexchange.com/questions/3667/difference-between-call-callcode-and-delegatecall" class="undefined" data-href="https://ethereum.stackexchange.com/questions/3667/difference-between-call-callcode-and-delegatecall">https://ethereum.stackexchange.com/questions/3667/difference-between-call-callcode-and-delegatecall</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Oi7UlH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries">https://solidity.readthedocs.io/en/latest/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2RmueMP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/abi-spec.html#function-selector" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/abi-spec.html#function-selector">https://solidity.readthedocs.io/en/latest/abi-spec.html#function-selector</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Dg7GtW</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://medium.com/chain-cloud-company-blog/parity-multisig-hack-again-b46771eaa838" class="undefined" data-href="https://medium.com/chain-cloud-company-blog/parity-multisig-hack-again-b46771eaa838">https://medium.com/chain-cloud-company-blog/parity-multisig-hack-again-b46771eaa838</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2CUh2KS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract" class="undefined" data-href="https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract">https://ethereum.stackexchange.com/questions/191/how-can-i-securely-generate-a-random-number-in-my-smart-contract</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Q589lx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620" class="undefined" data-href="https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620">https://blog.positive.com/predicting-random-numbers-in-ethereum-smart-contracts-e5358c6b8620</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2JtdqRi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://etherscan.io/address/0x95d34980095380851902ccd9a1fb4c813c2cb639#code" class="undefined" data-href="https://etherscan.io/address/0x95d34980095380851902ccd9a1fb4c813c2cb639#code">https://etherscan.io/address/0x95d34980095380851902ccd9a1fb4c813c2cb639#code</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Q58VyX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.reddit.com/r/ethdev/comments/7x5rwr/tricked_by_a_honeypot_contract_or_beaten_by/" class="undefined" data-href="https://www.reddit.com/r/ethdev/comments/7x5rwr/tricked_by_a_honeypot_contract_or_beaten_by/">https://www.reddit.com/r/ethdev/comments/7x5rwr/tricked_by_a_honeypot_contract_or_beaten_by/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2yKme14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://vessenes.com/the-erc20-short-address-attack-explained/" class="undefined" data-href="https://vessenes.com/the-erc20-short-address-attack-explained/">https://vessenes.com/the-erc20-short-address-attack-explained/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2yFOGRQ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://medium.com/huzzle/ico-smart-contract-vulnerability-short-address-attack-31ac9177eb6b" class="undefined" data-href="https://medium.com/huzzle/ico-smart-contract-vulnerability-short-address-attack-31ac9177eb6b">https://medium.com/huzzle/ico-smart-contract-vulnerability-short-address-attack-31ac9177eb6b</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2CQjBhc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.reddit.com/r/ethereum/comments/6r9nhj/cant_understand_the_erc20_short_address_attack/" class="undefined" data-href="https://www.reddit.com/r/ethereum/comments/6r9nhj/cant_understand_the_erc20_short_address_attack/">https://www.reddit.com/r/ethereum/comments/6r9nhj/cant_understand_the_erc20_short_address_attack/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Q5VIG9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/abi-spec.html" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/abi-spec.html">https://solidity.readthedocs.io/en/latest/abi-spec.html</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Q1ybpQ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://vessenes.com/the-erc20-short-address-attack-explained/" class="undefined" data-href="https://vessenes.com/the-erc20-short-address-attack-explained/">https://vessenes.com/the-erc20-short-address-attack-explained/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2RnS1vA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://hackingdistributed.com/2016/06/16/scanning-live-ethereum-contracts-for-bugs/" class="undefined" data-href="http://hackingdistributed.com/2016/06/16/scanning-live-ethereum-contracts-for-bugs/">http://hackingdistributed.com/2016/06/16/scanning-live-ethereum-contracts-for-bugs/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2CSdF7y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/common-patterns.html" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/common-patterns.html">https://solidity.readthedocs.io/en/latest/common-patterns.html</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2OfHalK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/etherpot/contract/blob/master/app/contracts/lotto.sol" class="undefined" data-href="https://github.com/etherpot/contract/blob/master/app/contracts/lotto.sol">https://github.com/etherpot/contract/blob/master/app/contracts/lotto.sol</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Jpzf4x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://aakilfernandes.github.io/blockhashes-are-only-good-for-256-blocks" class="undefined" data-href="http://aakilfernandes.github.io/blockhashes-are-only-good-for-256-blocks">http://aakilfernandes.github.io/blockhashes-are-only-good-for-256-blocks</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2ACsfi1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.kingoftheether.com/thrones/kingoftheether/index.html" class="undefined" data-href="https://www.kingoftheether.com/thrones/kingoftheether/index.html">https://www.kingoftheether.com/thrones/kingoftheether/index.html</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2ESoaub</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.kingoftheether.com/postmortem.html" class="undefined" data-href="https://www.kingoftheether.com/postmortem.html">https://www.kingoftheether.com/postmortem.html</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Q6E4lP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://consensys.github.io/smart-contract-best-practices/known_attacks/#race-conditions" class="undefined" data-href="https://consensys.github.io/smart-contract-best-practices/known_attacks/#race-conditions">https://consensys.github.io/smart-contract-best-practices/known_attacks/#race-conditions</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2yI5Dv7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/ethereum/wiki/wiki/Ethash" class="undefined" data-href="https://github.com/ethereum/wiki/wiki/Ethash">https://github.com/ethereum/wiki/wiki/Ethash</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2SygqQx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://hackingdistributed.com/2017/08/28/submarine-sends/" class="undefined" data-href="http://hackingdistributed.com/2017/08/28/submarine-sends/">http://hackingdistributed.com/2017/08/28/submarine-sends/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2EUlLzb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hackernoon.com/front-running-bancor-in-150-lines-of-python-with-ethereum-api-d5e2bfd0d798" class="undefined" data-href="https://hackernoon.com/front-running-bancor-in-150-lines-of-python-with-ethereum-api-d5e2bfd0d798">https://hackernoon.com/front-running-bancor-in-150-lines-of-python-with-ethereum-api-d5e2bfd0d798</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Oh8j7R</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://etherscan.io/address/0xf45717552f12ef7cb65e95476f217ea008167ae3" class="undefined" data-href="https://etherscan.io/address/0xf45717552f12ef7cb65e95476f217ea008167ae3">https://etherscan.io/address/0xf45717552f12ef7cb65e95476f217ea008167ae3</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2OdUC9C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://solidity.readthedocs.io/en/latest/units-and-global-variables.html" class="undefined" data-href="https://solidity.readthedocs.io/en/latest/units-and-global-variables.html">https://solidity.readthedocs.io/en/latest/units-and-global-variables.html</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2AAebFr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef#code" class="undefined" data-href="https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef#code">https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef#code</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Q1AMA6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes" class="undefined" data-href="https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes">https://applicature.com/blog/history-of-ethereum-security-vulnerabilities-hacks-and-their-fixes</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2ESWG7t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://etherscan.io/address/0xe82719202e5965Cf5D9B6673B7503a3b92DE20be#code" class="undefined" data-href="https://etherscan.io/address/0xe82719202e5965Cf5D9B6673B7503a3b92DE20be#code">https://etherscan.io/address/0xe82719202e5965Cf5D9B6673B7503a3b92DE20be#code</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2ERI0pb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://medium.com/cryptronics/storage-allocation-exploits-in-ethereum-smart-contracts-16c2aa312743" class="undefined" data-href="https://medium.com/cryptronics/storage-allocation-exploits-in-ethereum-smart-contracts-16c2aa312743">https://medium.com/cryptronics/storage-allocation-exploits-in-ethereum-smart-contracts-16c2aa312743</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2OgxPtG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.reddit.com/r/ethdev/comments/7wp363/how_does_this_honeypot_work_it_seems_like_a/" class="undefined" data-href="https://www.reddit.com/r/ethdev/comments/7wp363/how_does_this_honeypot_work_it_seems_like_a/">https://www.reddit.com/r/ethdev/comments/7wp363/how_does_this_honeypot_work_it_seems_like_a/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2OVkSL4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://medium.com/coinmonks/an-analysis-of-a-couple-ethereum-honeypot-contracts-5c07c95b0a8d" class="undefined" data-href="https://medium.com/coinmonks/an-analysis-of-a-couple-ethereum-honeypot-contracts-5c07c95b0a8d">https://medium.com/coinmonks/an-analysis-of-a-couple-ethereum-honeypot-contracts-5c07c95b0a8d</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Ogp2Ia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/ethereum/wiki/wiki/Safety#beware-rounding-with-integer-division" class="undefined" data-href="https://github.com/ethereum/wiki/wiki/Safety#beware-rounding-with-integer-division">https://github.com/ethereum/wiki/wiki/Safety#beware-rounding-with-integer-division</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2SwDnE0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://vessenes.com/ethereum-contracts-are-going-to-be-candy-for-hackers/" class="undefined" data-href="https://vessenes.com/ethereum-contracts-are-going-to-be-candy-for-hackers/">https://vessenes.com/ethereum-contracts-are-going-to-be-candy-for-hackers/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2qm7ocJ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://vessenes.com/tx-origin-and-ethereum-oh-my/" class="undefined" data-href="https://vessenes.com/tx-origin-and-ethereum-oh-my/">https://vessenes.com/tx-origin-and-ethereum-oh-my/</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2P3KVA4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://medium.com/coinmonks/solidity-tx-origin-attacks-58211ad95514" class="undefined" data-href="https://medium.com/coinmonks/solidity-tx-origin-attacks-58211ad95514">https://medium.com/coinmonks/solidity-tx-origin-attacks-58211ad95514</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2 data-line-57">
+<h3 id="_jetons">Jetons</h3>
+<table class="tableblock frame-all grid-all stretch data-line-60">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Lien court</th>
+<th class="tableblock halign-left valign-top">Lien étendu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2CUf7WG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md" class="undefined" data-href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2EUYCMR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol" class="undefined" data-href="https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol">https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2xPYck6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v1.12.0/contracts/token/ERC20/StandardToken.sol" class="undefined" data-href="https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v1.12.0/contracts/token/ERC20/StandardToken.sol">https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v1.12.0/contracts/token/ERC20/StandardToken.sol</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-15 06:21:48 -0400
+Last updated 2022-05-15 07:29:47 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">
