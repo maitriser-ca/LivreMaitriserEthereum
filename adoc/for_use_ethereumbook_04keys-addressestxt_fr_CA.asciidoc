@@ -360,9 +360,9 @@ Une fonction de hachage cryptographique est une fonction de hachage _unidirectio
 
 ((("fonctions de hachage","propriétés principales")))Regardons de plus près les principales propriétés des fonctions de hachage cryptographiques. Ceux-ci inclus:
 
-Déterministe :: Un message d'entrée donné produit toujours la même sortie de hachage.
+Déterministe:: Un message d'entrée donné produit toujours la même sortie de hachage.
 
-Vérifiable :: Le calcul du hachage d'un message est efficace (complexité linéaire).
+Vérifiable:: Le calcul du hachage d'un message est efficace (complexité linéaire).
 
 Non-corrélationnaire:: Une petite modification du message (par exemple, un changement de 1 bit) devrait modifier la sortie de hachage si largement qu'elle ne peut pas être corrélée au hachage du message d'origine.
 

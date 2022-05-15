@@ -384,7 +384,7 @@ Le prochain ensemble de mots clés (`+public+`,+private+, `+internal+`,+external
 
 +external+:: ((("fonction externe")))Les fonctions externes sont comme des fonctions publiques, sauf qu'elles ne peuvent pas être appelées depuis le contrat à moins d'être explicitement préfixées avec le mot-clé +this+.
 
-+interne+ :: ((("fonction interne")))Les fonctions internes ne sont accessibles qu'à partir du contrat - elles ne peuvent pas être appelées par un autre contrat ou une transaction EOA. Ils peuvent être appelés par des contrats dérivés (ceux qui héritent de celui-ci).
++interne+:: ((("fonction interne")))Les fonctions internes ne sont accessibles qu'à partir du contrat - elles ne peuvent pas être appelées par un autre contrat ou une transaction EOA. Ils peuvent être appelés par des contrats dérivés (ceux qui héritent de celui-ci).
 
 +private+:: ((("fonction privée")))Les fonctions privées sont comme des fonctions internes mais ne peuvent pas être appelées par les pass:[<span class="keep-together">contrats</span>] dérivés.
 
@@ -392,7 +392,7 @@ Gardez à l'esprit que les termes _internal_ et _private_ sont quelque peu tromp
 
 Le deuxième ensemble de mots clés (`+pure+`,+constant+, `+view+`,+payable+) affecte le comportement de la fonction :
 
-+constant+ ou +view+ :: ((("view (mot-clé de fonction)")))Une fonction marquée comme _view_ promet de ne modifier aucun état. ((("constant (mot clé de la fonction)")))Le terme _constant_ est un alias pour la vue qui sera obsolète dans une future version. Pour le moment, le compilateur n'applique pas le modificateur `+view+`,ne produisant qu'un avertissement, mais cela devrait devenir un mot-clé appliqué dans la v0.5 de Solidity.
++constant+ ou +view+:: ((("view (mot-clé de fonction)")))Une fonction marquée comme _view_ promet de ne modifier aucun état. ((("constant (mot clé de la fonction)")))Le terme _constant_ est un alias pour la vue qui sera obsolète dans une future version. Pour le moment, le compilateur n'applique pas le modificateur `+view+`,ne produisant qu'un avertissement, mais cela devrait devenir un mot-clé appliqué dans la v0.5 de Solidity.
 
 +pure+:: ((("fonction pure")))Une fonction pure est une fonction qui ne lit ni écrit aucune variable dans le stockage. Il ne peut fonctionner que sur des arguments et renvoyer des données, sans référence à aucune donnée stockée. Les fonctions pures sont destinées à encourager la programmation de style déclaratif sans effets secondaires ni état.
 

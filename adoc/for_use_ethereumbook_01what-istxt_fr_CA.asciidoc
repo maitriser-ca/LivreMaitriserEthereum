@@ -118,7 +118,7 @@ Ethereum est également une machine à états distribuée. Mais au lieu de suivr
 
 Réseau P2P:: Ethereum fonctionne sur le _réseau principal Ethereum_, qui est adressable sur le port TCP 30303, et exécute un protocole appelé _ÐΞVp2p_.
 
-Règles de consensus :: Les règles de consensus d'Ethereum sont définies dans la spécification de référence, le Yellow Paper (voir <<references>>).
+Règles de consensus:: Les règles de consensus d'Ethereum sont définies dans la spécification de référence, le Yellow Paper (voir <<references>>).
 
 Transactions:: Les transactions Ethereum sont des messages réseau qui incluent (entre autres) un expéditeur, un destinataire, une valeur et une charge utile de données.
 

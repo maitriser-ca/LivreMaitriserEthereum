@@ -78,7 +78,7 @@ Notez que toute l'arithmétique est effectuée modulo 2^256^ (sauf indication co
 
 
 [[stack_opcodes]]
-Opérations de pile :: Instructions de gestion de la pile, de la mémoire et du stockage :
+Opérations de pile:: Instructions de gestion de la pile, de la mémoire et du stockage :
 +
 ----
 POP        // Supprime l'élément du haut de la pile
@@ -98,7 +98,7 @@ SWAPx      // Échangez les 1er et (x+1)-ème éléments de la pile, où x peut 
 
 
 [[flow_opcodes]]
-Opérations de flux de processus :: Instructions pour le flux de contrôle :
+Opérations de flux de processus:: Instructions pour le flux de contrôle :
 +
 ----
 STOP     // Arrête l'exécution
@@ -110,7 +110,7 @@ JUMPDEST // Marquer une destination valide pour les sauts
 ----
 
 [[system_opcodes]]
-Opérations système :: Opcodes pour le système exécutant le programme :
+Opérations système:: Opcodes pour le système exécutant le programme :
 +
 ----
 LOGx         // Ajouter un enregistrement de journal avec x sujets, où x est n'importe quel entier
@@ -132,7 +132,7 @@ SELFDESTRUCT // Arrête l'exécution et enregistre le compte pour suppression
 ----
 
 [[logic_opcides]]
-Opérations logiques :: Opcodes pour les comparaisons et la logique au niveau du bit :
+Opérations logiques:: Opcodes pour les comparaisons et la logique au niveau du bit :
 +
 ----
 LT     // Comparaison inférieure à
@@ -149,7 +149,7 @@ BYTE   // Récupérer un seul octet d'un mot pleine largeur de 256 bits
 ----
 
 [[environment_opcodes]]
-Opérations environnementales :: Opcodes traitant des informations sur l'environnement d'exécution :
+Opérations environnementales:: Opcodes traitant des informations sur l'environnement d'exécution :
 +
 ----
 GAZ            // Obtenir la quantité de gaz disponible (après la réduction pour

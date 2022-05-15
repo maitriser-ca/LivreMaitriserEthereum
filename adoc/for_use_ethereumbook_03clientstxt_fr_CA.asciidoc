@@ -440,13 +440,13 @@ Dans cet exemple, nous utilisons +curl+ pour établir une connexion HTTP à l'ad
 
 La requête JSON-RPC est formatée conformément à la https://www.jsonrpc.org/specification [spécification JSON-RPC 2.0]. Chaque demande contient quatre éléments :
 
-++jsonrpc++ :: Version du protocole JSON-RPC. Cela DOIT être exactement ++"2.0"++.
+++jsonrpc++:: Version du protocole JSON-RPC. Cela DOIT être exactement ++"2.0"++.
 
-++method++ :: Le nom de la méthode à invoquer.
+++method++:: Le nom de la méthode à invoquer.
 
-++params++ :: Une valeur structurée qui contient les valeurs de paramètre à utiliser lors de l'invocation de la méthode. Ce membre PEUT être omis.
+++params++:: Une valeur structurée qui contient les valeurs de paramètre à utiliser lors de l'invocation de la méthode. Ce membre PEUT être omis.
 
-++id++ :: Un identifiant établi par le client qui DOIT contenir une valeur `+String+`,+Number+ ou +NULL+ si elle est incluse. Le serveur DOIT répondre avec la même valeur dans l'objet de réponse s'il est inclus. Ce membre est utilisé pour corréler le contexte entre les deux objets.
+++id++:: Un identifiant établi par le client qui DOIT contenir une valeur `+String+`,+Number+ ou +NULL+ si elle est incluse. Le serveur DOIT répondre avec la même valeur dans l'objet de réponse s'il est inclus. Ce membre est utilisé pour corréler le contexte entre les deux objets.
 
 [TIP]
 ====

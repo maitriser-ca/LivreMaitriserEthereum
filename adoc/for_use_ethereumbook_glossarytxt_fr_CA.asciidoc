@@ -157,7 +157,7 @@ IDE::
 Problème de code déployé immuable::
 ((("problème de code déployé immuable"))) Une fois que le code d'un contrat (ou d'une bibliothèque) est déployé, il devient immuable. Les pratiques de développement logiciel standard reposent sur la capacité à corriger les bogues éventuels et à ajouter de nouvelles fonctionnalités, ce qui représente un défi pour le développement de contrats intelligents.
 
-Transaction interne (également "message") ::
+Transaction interne (également "message")::
 ((("transaction interne (message)")))Une transaction envoyée d'un compte de contrat à un autre compte de contrat ou à un EOA.
 
 IPFS::
@@ -315,5 +315,5 @@ Wei::
 Whisper::
 ((("Whisper")))Un service de messagerie décentralisé (P2P). Il est utilisé avec Web3 et Swarm pour créer des DApps.
 
-Adresse zéro ::
+Adresse zéro::
 ((("zero adresse","défini")))Une adresse Ethereum spéciale, entièrement composée de zéros, qui est spécifiée comme adresse de destination d'une transaction de création de contrat.

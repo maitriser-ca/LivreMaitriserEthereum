@@ -202,13 +202,13 @@ Idéalement, chacun de ces points devrait être soigneusement examiné puis docu
 === Décorateurs
 ((("décorateurs, Vyper")))((("Vyper","décorateurs")))Les décorateurs suivants peuvent être utilisés au début de chaque fonction :
 
-+@private+ :: Le décorateur `@private` rend la fonction inaccessible depuis l'extérieur du contrat.
++@private+:: Le décorateur `@private` rend la fonction inaccessible depuis l'extérieur du contrat.
 
-+@public+ :: Le décorateur `@public` rend la fonction à la fois visible et exécutable publiquement. Par exemple, même le portefeuille Ethereum affichera de telles fonctions lors de la visualisation du contrat.
++@public+:: Le décorateur `@public` rend la fonction à la fois visible et exécutable publiquement. Par exemple, même le portefeuille Ethereum affichera de telles fonctions lors de la visualisation du contrat.
 
-+@constant+ :: Les fonctions avec le décorateur `@constant` ne sont pas autorisées à modifier les variables d'état. En fait, le compilateur rejettera le programme entier (avec une erreur appropriée) si la fonction essaie de changer une variable d'état.
++@constant+:: Les fonctions avec le décorateur `@constant` ne sont pas autorisées à modifier les variables d'état. En fait, le compilateur rejettera le programme entier (avec une erreur appropriée) si la fonction essaie de changer une variable d'état.
 
-+@payable+ :: Seules les fonctions avec le décorateur `@payable` sont autorisées à transférer de la valeur.
++@payable+:: Seules les fonctions avec le décorateur `@payable` sont autorisées à transférer de la valeur.
 
 Vyper implémente explicitement http://bit.ly/2P14RDq[la logique des décorateurs]. Par exemple, le processus de compilation de Vyper échouera si une fonction a à la fois un décorateur `@payable` et un décorateur `@constant`. Cela a du sens car une fonction qui transfère une valeur a par définition mis à jour l'état, elle ne peut donc pas être `@constant`. Chaque fonction Vyper doit être décorée avec `@public` ou `@private` (mais pas les deux !).
 
