@@ -3,17 +3,29 @@
 
 Ce glossaire rapide contient de nombreux termes utilisés en relation avec Ethereum. Ces termes sont utilisés tout au long du livre, alors mettez-les en signet pour une référence rapide.
 
-Compte::
-((("account","defined")))Un objet contenant une adresse, un solde, un nonce, ainsi qu'un stockage et un code facultatifs. Un compte peut être un compte contractuel ou un compte détenu en externe (externally owned account ou EOA).
+Acte::
+((("acte","défini")))Norme de jeton non fongible (NFT) introduite par la proposition ERC721. Contrairement aux jetons ERC20, les actes prouvent la propriété et ne sont pas interchangeables, bien qu'ils ne soient reconnus comme des documents juridiques dans aucune juridiction, du moins pas actuellement (voir aussi "NFT").
 
 Adresse::
 ((("adresses","défini")))Plus généralement, cela représente un EOA ou un contrat qui peut recevoir (adresse de destination) ou envoyer (adresse source) des transactions sur la chaîne de blocs. Plus précisément, il s'agit des 160 bits les plus à droite d'un hachage Keccak d'une clé publique ECDSA.
 
+Adresse zéro::
+((("zero adresse","défini")))Une adresse Ethereum spéciale, entièrement composée de zéros, qui est spécifiée comme adresse de destination d'une transaction de création de contrat.
+
 Affirmer::
 ((("fonction affirmée","defined")))Dans Solidity, +assert(false)+ se compile en `+0xfe+`,un opcode invalide, qui utilise tout le gaz restant et annule toutes les modifications. Lorsqu'une instruction +assert()+ échoue, quelque chose de très faux et inattendu se produit, et vous devrez corriger votre code. Vous devez utiliser +assert()+ pour éviter les conditions qui ne devraient jamais se produire.
 
-Gros-boutiste::
-((("gros-boutiste, defined")))Une représentation numérique positionnelle où le chiffre le plus significatif est le premier. Le contraire de petit-boutiste, où le chiffre le moins significatif est le premier.
+Arbre Merkle Patricia::
+((("Merkle Patricia Tree")))Une structure de données utilisée dans Ethereum pour stocker efficacement les paires clé-valeur.
+
+Assemblage en ligne Solidity::
+((("assemblage en ligne","défini")))((("Assemblage en ligne Solidity")))Langage d'assemblage EVM dans un programme Solidity. La prise en charge de Solidity pour l'assemblage en ligne facilite l'écriture de certaines opérations.
+
+Attaque de réentrance::
+((("attaques de réentrance","défini")))Une attaque qui consiste en un contrat de l'attaquant appelant une fonction de contrat de la victime de telle sorte que pendant l'exécution, la victime appelle à nouveau le contrat de l'attaquant, de manière récursive. Cela peut entraîner, par exemple, le vol de fonds en sautant des parties du contrat de la victime qui mettent à jour les soldes ou comptent les montants des retraits.
+
+Bibliothèque::
+((("contrat de bibliothèque")))Un type spécial de contrat qui n'a pas de fonctions payantes, pas de fonction de secours et pas de stockage de données. Par conséquent, il ne peut pas recevoir ou conserver d'ether, ni stocker de données. Une bibliothèque sert de code précédemment déployé que d'autres contrats peuvent appeler pour un calcul en lecture seule.
 
 BIPs::
 ((("Propositions d'amélioration de Bitcoin (BIP)")))Propositions d'amélioration de Bitcoin. Un ensemble de propositions que les membres de la communauté Bitcoin ont soumises pour améliorer Bitcoin. Par exemple, BIP-21 est une proposition visant à améliorer le schéma d'identificateur de ressource uniforme (URI) Bitcoin.
@@ -21,32 +33,44 @@ BIPs::
 Bloc::
 ((("bloc, défini")))Une collection d'informations requises (un en-tête de bloc) sur les transactions comprises, et un ensemble d'autres en-têtes de bloc appelés ommers. Les blocs sont ajoutés au réseau Ethereum par les mineurs.
 
+Bloc de genèse::
+((("bloc de genèse")))Le premier bloc d'une chaîne de blocs, utilisé pour initialiser un réseau particulier et sa cryptomonnaie.
+
 Chaîne de blocs::
 ((("chaîne de blocs","défini")))Dans Ethereum, une séquence de blocs validés par le système de preuve de travail, chacun étant lié à son prédécesseur jusqu'au bloc de genèse. Cela diffère du protocole Bitcoin en ce qu'il n'a pas de limite de taille de bloc ; il utilise à la place des limites de gaz variables.
+
+Clé privée::
+Voir "clé secrète".
+
+Clé publique::
+((("clés publiques","défini")))Un numéro, dérivé via une fonction unidirectionnelle d'une clé privée, qui peut être partagé publiquement et utilisé par n'importe qui pour vérifier une signature numérique faite avec la clé privée correspondante.
+
+Clé secrète (c'est-à-dire clé privée)::
+((("clés privées","défini")))((("clés secrètes", seealso="clés privées")))Le numéro secret qui permet aux utilisateurs d'Ethereum de prouver la propriété d'un compte ou de contrats, en produisant un signature numérique (voir « clé publique », « adresse », « ECDSA »).
+
+Client léger::
+((("client léger/léger")))Un client Ethereum qui ne stocke pas de copie locale de la chaîne de blocs, ni ne valide les blocs et les transactions. Il offre les fonctions d'un portefeuille et peut créer et diffuser des transactions.
 
 Code intermédiaire::
 ((("code intermédiaire", seealso="code intermédiaire EVM")))Jeu d'instructions abstrait conçu pour une exécution efficace par un interpréteur logiciel ou une machine virtuelle. Contrairement au code source lisible par l'homme, le code intermédiaire est exprimé au format numérique.
 
-Fourche Byzantaine::
-((("fourche Byzantaine")))Le premier de deux embranchements divergents pour la phase de développement de Metropolis. Il comprenait EIP-649: Metropolis Difficulty Bomb Delay and Block Reward Reduction, où l'ère glaciaire (voir ci-dessous) a été retardée d'un an et la récompense de bloc a été réduite de 5 à 3 ethers.
-
 Compilation::
 ((("compilation","défini"))Convertir le code écrit dans un langage de programmation de haut niveau (par exemple, Solidity) dans un langage de niveau inférieur (par exemple, le code intermédiaire EVM).
 
-Consensus::
-((("consensus","défini")))Lorsque de nombreux nœuds, généralement la plupart des nœuds du réseau, ont tous les mêmes blocs dans leur meilleure chaîne de blocs validée localement. À ne pas confondre avec les règles de consensus.
-
-Règles de consensus::
-((("règles de consensus")))Les règles de validation de bloc que les nœuds complets suivent pour rester en consensus avec les autres nœuds. A ne pas confondre avec le consensus.
-
-Embramchement de Constantinople::
-((("embranchement de Constantinople")))La deuxième partie de l'étape Metropolis, initialement prévue pour la mi-2018. Devrait inclure un passage à un algorithme de consensus hybride preuve de travail/preuve de participation, entre autres changements.
+Compte::
+((("account","defined")))Un objet contenant une adresse, un solde, un nonce, ainsi qu'un stockage et un code facultatifs. Un compte peut être un compte contractuel ou un compte détenu en externe (externally owned account ou EOA).
 
 Compte de contrat::
 ((("comptes contractuels","défini")))((("contrats intelligents","défini")))Un compte contenant du code qui s'exécute chaque fois qu'il reçoit une transaction d'un autre compte (EOA ou contrat).
 
-Transaction de création de contrat::
-((("transaction de création de contrat")))Une transaction spéciale, avec "l'adresse zéro" comme destinataire, qui est utilisée pour enregistrer un contrat et l'enregistrer sur la chaîne de blocs Ethereum (voir "adresse zéro").
+Consensus::
+((("consensus","défini")))Lorsque de nombreux nœuds, généralement la plupart des nœuds du réseau, ont tous les mêmes blocs dans leur meilleure chaîne de blocs validée localement. À ne pas confondre avec les règles de consensus.
+
+Consensus, Règles de::
+((("règles de consensus")))Les règles de validation de bloc que les nœuds complets suivent pour rester en consensus avec les autres nœuds. A ne pas confondre avec le consensus.
+
+Contrat intelligent::
+((("contrats intelligents","définis")))Un programme qui s'exécute sur l'infrastructure informatique Ethereum.
 
 DAO::
 ((("DAO (Organisation Autonome Décentralisée)","défini")))Organisation Autonome Décentralisée. Une entreprise ou une autre organisation qui fonctionne sans direction hiérarchique. Peut également faire référence à un contrat nommé "The DAO" lancé le 30 avril 2016, qui a ensuite été piraté en juin 2016 ; cela a finalement motivé un embranchement divergent (nom de code DAO) au bloc # 1 192 000, qui a annulé le contrat DAO piraté et a provoqué la scission d'Ethereum et d'Ethereum Classic en deux systèmes concurrents.
@@ -54,20 +78,23 @@ DAO::
 DApp::
 ((("DApps (applications décentralisées)","défini")))Application décentralisée. Au minimum, il s'agit d'un contrat intelligent et d'une interface utilisateur Web. Plus généralement, une DApp est une application Web qui repose sur des services d'infrastructure ouverts, décentralisés et pair à pair. De plus, de nombreux DApps incluent un stockage décentralisé et/ou un protocole et une plateforme de messages.
 
-Acte::
-((("acte","défini")))Norme de jeton non fongible (NFT) introduite par la proposition ERC721. Contrairement aux jetons ERC20, les actes prouvent la propriété et ne sont pas interchangeables, bien qu'ils ne soient reconnus comme des documents juridiques dans aucune juridiction, du moins pas actuellement (voir aussi "NFT").
-
 Difficulté::
 ((("paramètre de difficulté")))Paramètre à l'échelle du réseau qui contrôle la quantité de calcul nécessaire pour produire une preuve de travail.
-
-Signature numérique::
-((("signatures numérique","défini")))Une courte chaîne de données qu'un utilisateur produit pour un document à l'aide d'une clé privée, de sorte que toute personne disposant de la clé publique correspondante, de la signature et du document peut vérifier que (1) le document a été "signé" par le propriétaire de cette clé privée particulière, et (2) le document n'a pas été modifié après sa signature.
 
 ECDSA::
 ((("Algorithme de signature numérique à courbe elliptique (ECDSA)","défini")))Algorithme de signature numérique à courbe elliptique. Un algorithme cryptographique utilisé par Ethereum pour s'assurer que les fonds ne peuvent être dépensés que par leurs propriétaires.
 
 EIP::
 ((("EIP (Propositions d'amélioration d'Ethereum)","défini")))Proposition d'amélioration d'Ethereum. Un document de conception fournissant des informations à la communauté Ethereum, décrivant une nouvelle fonctionnalité proposée ou ses processus ou son environnement. Pour plus d'informations, voir https://github.com/ethereum/EIPs (voir aussi "ERC").
+
+Embranchement::
+((("embranchements")))Un changement de protocole provoquant la création d'une chaîne alternative, ou une divergence temporelle dans deux chemins de blocs potentiels lors de l'extraction.
+
+Embramchement de Constantinople::
+((("embranchement de Constantinople")))La deuxième partie de l'étape Metropolis, initialement prévue pour la mi-2018. Devrait inclure un passage à un algorithme de consensus hybride preuve de travail/preuve de participation, entre autres changements.
+
+Embranchement divergent::
+((("embranchements divergents")))Une divergence permanente dans la chaîne de blocs; également connu sous le nom de changement hard-forking. L'un se produit généralement lorsque des nœuds non mis à niveau ne peuvent pas valider les blocs créés par des nœuds mis à niveau qui suivent des règles de consensus plus récentes. À ne pas confondre avec une fourche ou un simple embranchement, un embranchement convergent, un embranchement logiciel ou un Git fork.
 
 ENS::
 ((("ENS (Ethereum Name Service ou Service de nom Ethereum)")))Service de nom Ethereum (Ethereum Name Service). Pour plus d'informations, consultez https://github.com/ethereum/ens/.
@@ -93,21 +120,20 @@ Ether::
 EVM::
 ((("EVM (Ethereum Virtual Machine)","défini")))Ethereum Virtual Machine ou Machine virtuelle Ethereum. Une machine virtuelle basée sur la pile qui exécute le code intermédiaire. Dans Ethereum, le modèle d'exécution spécifie comment l'état du système est modifié en fonction d'une série d'instructions de code intermédiaire et d'un petit uplet de données environnementales. Ceci est spécifié par un modèle formel d'une machine à états virtuelle.
 
-Langage d'assemblage EVM::
-((("Langage d'assemblage EVM")))Une forme lisible par l'homme du code intermédiaire EVM.
-
-Fonction de repli::
-((("fonction de secours")))Une fonction par défaut appelée en l'absence de données ou d'un nom de fonction déclaré.
-
-Robinet::
+Faucet::
 ((("robinet, défini")))Un service qui distribue des fonds sous la forme d'ether de test gratuit pouvant être utilisé sur un testnet.
+
+Fichier de magasin de clés::
+((("fichier keystore")))Fichier encodé en JSON qui contient une seule clé privée (générée de manière aléatoire), chiffrée par une phrase secrète pour plus de sécurité.
 
 Finney::
 ((("finney")))Une dénomination d'ether. 1 finney = 10^15^ wei, 10^3^ finney = 1 ether.
 
-Embranchement::
-((("embranchements")))Un changement de protocole provoquant la création d'une chaîne alternative, ou une divergence temporelle dans deux chemins de blocs potentiels lors de l'extraction.
+Fonction de repli::
+((("fonction de secours")))Une fonction par défaut appelée en l'absence de données ou d'un nom de fonction déclaré.
 
+Fourche Byzantaine::
+((("fourche Byzantaine")))Le premier de deux embranchements divergents pour la phase de développement de Metropolis. Il comprenait EIP-649: Metropolis Difficulty Bomb Delay and Block Reward Reduction, où l'ère glaciaire (voir ci-dessous) a été retardée d'un an et la récompense de bloc a été réduite de 5 à 3 ethers.
 
 Frontier::
 ((("Frontier")))L'étape initiale de développement des tests d'Ethereum, qui a duré de juillet 2015 à mars 2016.
@@ -115,32 +141,17 @@ Frontier::
 Ganache::
 ((("Ganache","défini")))Une chaîne de blocs Ethereum personnelle que vous pouvez utiliser pour exécuter des tests, exécuter des commandes et inspecter l'état tout en contrôlant le fonctionnement de la chaîne.
 
-Gaz::
-((("gaz","défini")))Un carburant virtuel utilisé dans Ethereum pour exécuter des contrats intelligents. L'EVM utilise un mécanisme comptable pour mesurer la consommation de gaz et limiter la consommation de ressources informatiques (voir "complétude de Turing").
-
-Limite de gaz::
-((("limite de gaz"))) La quantité maximale de gaz qu'une transaction ou un bloc peut consommer.
-
 Gavin Wood::
 ((("Wood, Dr. Gavin"))) Un programmeur britannique qui est le cofondateur et ancien CTO d'Ethereum. En août 2014, il a proposé Solidity, un langage de programmation orienté contrat pour l'écriture de contrats intelligents.
 
-Bloc de genèse::
-((("bloc de genèse")))Le premier bloc d'une chaîne de blocs, utilisé pour initialiser un réseau particulier et sa cryptomonnaie.
+Gaz::
+((("gaz","défini")))Un carburant virtuel utilisé dans Ethereum pour exécuter des contrats intelligents. L'EVM utilise un mécanisme comptable pour mesurer la consommation de gaz et limiter la consommation de ressources informatiques (voir "complétude de Turing").
 
 Geth::
 ((("Geth (Go-Ethereum)","défini")))Go Ethereum. L'une des implémentations les plus importantes du protocole Ethereum, écrite en Go.
 
-Embranchement divergent::
-((("embranchements divergents")))Une divergence permanente dans la chaîne de blocs; également connu sous le nom de changement hard-forking. L'un se produit généralement lorsque des nœuds non mis à niveau ne peuvent pas valider les blocs créés par des nœuds mis à niveau qui suivent des règles de consensus plus récentes. À ne pas confondre avec une fourche ou un simple embranchement, un embranchement convergent, un embranchement logiciel ou un Git fork.
-
-Valeur d'hachage::
-((("hachage, défini")))Une empreinte digitale de longueur fixe d'entrée de taille variable, produite par une fonction de hachage.
-
-Portefeuille HD::
-((("portefeuilles déterministes hiérarchiques (BIP-32/BIP-44)","défini")))Un portefeuille utilisant le protocole de création et de transfert de clé déterministe hiérarchique (HD) (BIP-32).
-
-Valeur d'amorçage de portefeuille HD::
-((("valeur d'amorçage de portefeuille HD")))((("valeurs d'amorçage", seealso="valeur d'amorçage racine")))Une valeur utilisée pour générer la clé privée principale et le code de chaîne principal pour un portefeuille HD. La valeur d'amorçage du portefeuille peut être représentée par des mots mnémoniques, ce qui permet aux humains de copier, sauvegarder et restaurer plus facilement les clés privées.
+Gros-boutiste::
+((("gros-boutiste, defined")))Une représentation numérique positionnelle où le chiffre le plus significatif est le premier. Le contraire de petit-boutiste, où le chiffre le moins significatif est le premier.
 
 Homestead::
 ((("Homestead")))La deuxième étape de développement d'Ethereum, lancée en mars 2016 au bloc #1 150 000.
@@ -154,12 +165,6 @@ Ice Age::
 IDE::
 ((("IDE (environnement de développement intégré)")))((("Environnement de développement intégré (IDE)")))Environnement de développement intégré. Une interface utilisateur qui combine généralement un éditeur de code, un compilateur, un moteur d'exécution et un débogueur.
 
-Problème de code déployé immuable::
-((("problème de code déployé immuable"))) Une fois que le code d'un contrat (ou d'une bibliothèque) est déployé, il devient immuable. Les pratiques de développement logiciel standard reposent sur la capacité à corriger les bogues éventuels et à ajouter de nouvelles fonctionnalités, ce qui représente un défi pour le développement de contrats intelligents.
-
-Transaction interne (également "message")::
-((("transaction interne (message)")))Une transaction envoyée d'un compte de contrat à un autre compte de contrat ou à un EOA.
-
 IPFS::
 ((("IPFS (Système de fichiers interplanétaire)")))InterPlanetary File System ou Système de fichiers interplanétaire. Un protocole, un réseau et un projet open source conçu pour créer une méthode pair à pair adressable par le contenu pour stocker et partager des hypermédias dans un système de fichiers distribué.
 
@@ -169,25 +174,19 @@ KDF::
 Keccak-256::
 ((("Fonction de hachage Keccak-256")))Fonction de hachage cryptographique utilisée dans Ethereum. Keccak-256 a été normalisé en tant que SHA-3.
 
-Fichier de magasin de clés::
-((("fichier keystore")))Fichier encodé en JSON qui contient une seule clé privée (générée de manière aléatoire), chiffrée par une phrase secrète pour plus de sécurité.
+Langage d'assemblage EVM::
+((("Langage d'assemblage EVM")))Une forme lisible par l'homme du code intermédiaire EVM.
 
 LevelDB::
 ((("LevelDB")))Un magasin clé-valeur open source sur disque, implémenté comme une bibliothèque légère à usage unique, avec des liaisons vers de nombreuses plates-formes.
 
-Bibliothèque::
-((("contrat de bibliothèque")))Un type spécial de contrat qui n'a pas de fonctions payantes, pas de fonction de secours et pas de stockage de données. Par conséquent, il ne peut pas recevoir ou conserver d'ether, ni stocker de données. Une bibliothèque sert de code précédemment déployé que d'autres contrats peuvent appeler pour un calcul en lecture seule.
-
-Client léger::
-((("client léger/léger")))Un client Ethereum qui ne stocke pas de copie locale de la chaîne de blocs, ni ne valide les blocs et les transactions. Il offre les fonctions d'un portefeuille et peut créer et diffuser des transactions.
-
-Arbre Merkle Patricia::
-((("Merkle Patricia Tree")))Une structure de données utilisée dans Ethereum pour stocker efficacement les paires clé-valeur.
+Limite de gaz::
+((("limite de gaz"))) La quantité maximale de gaz qu'une transaction ou un bloc peut consommer.
 
 Message::
 ((("message, défini")))Une transaction interne qui n'est jamais sérialisée et envoyée uniquement dans l'EVM.
 
-Appel de message::
+Message, Appel de::
 ((("appel de message")))L'action de transmettre un message d'un compte à un autre. Si le compte de destination est associé au code EVM, alors la VM sera démarrée avec l'état de cet objet et le message agi
 sur.
 
@@ -197,15 +196,11 @@ METoken::
 Metropolis::
 ((("Metropolis")))La troisième étape de développement d'Ethereum, lancée en octobre 2017.
 
-
 Mineur::
 ((("mineurs")))Un nœud de réseau qui trouve une preuve de travail valide pour les nouveaux blocs, par pass:[<span class="keep-together">hachage</span>] répété.
 
 Mist::
 ((("Mist (portefeuille basé sur un navigateur)")))((("portefeuilles","Mist")))Le premier navigateur compatible Ethereum, construit par la Fondation Ethereum. Il contient un portefeuille basé sur un navigateur qui a été la première implémentation de la norme de jeton ERC20 (Fabian Vogelsteller, auteur d'ERC20, était également le principal développeur de Mist). Mist a également été le premier portefeuille à introduire la somme de contrôle camelCase (EIP-55 ; voir <<EIP55>>). Mist exécute un nœud complet et offre un navigateur DApp complet avec prise en charge du stockage basé sur Swarm et des adresses ENS.
-
-Réseau::
-((("réseaux (Ethereum)","défini")))((("réseaux (Ethereum)","MetaMask et")))Se référant au réseau Ethereum, un réseau pair à pair qui propage les transactions et blocs à chaque nœud Ethereum (participant au réseau).
 
 NFT::
 ((("jetons non fongibles (NFT)", "définis")))Un jeton non fongible (également appelé "acte"). Il s'agit d'une norme symbolique introduite par la proposition ERC721. Les NFT peuvent être suivis et échangés, mais chaque jeton est unique et distinct ; ils ne sont pas interchangeables comme les jetons ERC20. Les NFT peuvent représenter la propriété d'actifs numériques ou physiques.
@@ -222,35 +217,35 @@ Ommer::
 Parity::
 ((("Parity","défini")))L'une des implémentations interopérables les plus importantes du logiciel client Ethereum.
 
-Clé privée::
-Voir "clé secrète".
+Portefeuille::
+((("portefeuilles","défini")))Logiciel qui détient des clés secrètes. Utilisé pour accéder et contrôler les comptes Ethereum et interagir avec les contrats intelligents. Les clés n'ont pas besoin d'être stockées dans un portefeuille et peuvent être récupérées à partir d'un stockage hors ligne (par exemple, une carte mémoire ou du papier) pour une sécurité améliorée. Malgré leur nom, les portefeuilles ne stockent jamais les pièces ou les jetons réels.
+
+Portefeuille HD::
+((("portefeuilles déterministes hiérarchiques (BIP-32/BIP-44)","défini")))Un portefeuille utilisant le protocole de création et de transfert de clé déterministe hiérarchique (HD) (BIP-32).
 
 Preuve de participation ou d'enjeu (PoS)::
 ((("preuve d'enjeu (PoS)","défini")))Une méthode par laquelle un protocole de chaîne de blocs de cryptomonnaie vise à atteindre un consensus distribué. PoS demande aux utilisateurs de prouver la propriété d'une certaine quantité de cryptomonnaie (leur "participation" dans le réseau) afin de pouvoir participer à la validation des transactions.
 
-Preuve de travail (PoW): :
+Preuve de travail (PoW)::
 ((("preuve de travail (PoW)","défini")))Un élément de données (la preuve) qui nécessite un calcul important pour être trouvé. Dans Ethereum, les mineurs doivent trouver une solution numérique à l'algorithme Ethash qui répond à un objectif de difficulté à l'échelle du réseau.
 
-Clé publique::
-((("clés publiques","défini")))Un numéro, dérivé via une fonction unidirectionnelle d'une clé privée, qui peut être partagé publiquement et utilisé par n'importe qui pour vérifier une signature numérique faite avec la clé privée correspondante.
+Problème de code déployé immuable::
+((("problème de code déployé immuable"))) Une fois que le code d'un contrat (ou d'une bibliothèque) est déployé, il devient immuable. Les pratiques de développement logiciel standard reposent sur la capacité à corriger les bogues éventuels et à ajouter de nouvelles fonctionnalités, ce qui représente un défi pour le développement de contrats intelligents.
+
+Récompense::
+((("récompense, défini")))Une quantité d'ether incluse dans chaque nouveau bloc comme récompense par le réseau au mineur qui a trouvé la solution de preuve de travail.
 
 Reçu::
 ((("reçu, défini")))Données renvoyées par un client Ethereum pour représenter le résultat d'une transaction particulière, y compris un hachage de la transaction, son numéro de bloc, la quantité de gaz utilisée et, en cas de déploiement de un contrat intelligent, l'adresse du contrat.
 
-Attaque de réentrance::
-((("attaques de réentrance","défini")))Une attaque qui consiste en un contrat de l'attaquant appelant une fonction de contrat de la victime de telle sorte que pendant l'exécution, la victime appelle à nouveau le contrat de l'attaquant, de manière récursive. Cela peut entraîner, par exemple, le vol de fonds en sautant des parties du contrat de la victime qui mettent à jour les soldes ou comptent les montants des retraits.
-
-Récompense::
-((("récompense, défini")))Une quantité d'ether incluse dans chaque nouveau bloc comme récompense par le réseau au mineur qui a trouvé la solution de preuve de travail.
+Réseau::
+((("réseaux (Ethereum)","défini")))((("réseaux (Ethereum)","MetaMask et")))Se référant au réseau Ethereum, un réseau pair à pair qui propage les transactions et blocs à chaque nœud Ethereum (participant au réseau).
 
 RLP::
 ((("Préfixe de longueur récursive (RLP)")))((("RLP (Préfixe de longueur récursive)")))Préfixe de longueur récursive. Une norme d'encodage conçue par les développeurs d'Ethereum pour encoder et sérialiser des objets (structures de données) de complexité et de longueur arbitraires.
 
 Satoshi Nakamoto::
 ((("Satoshi Nakamoto")))Le nom utilisé par la ou les personnes qui ont conçu Bitcoin, créé son implémentation de référence originale et ont été les premiers à résoudre le problème de la double dépense pour la monnaie numérique. Leur véritable identité reste inconnue.
-
-Clé secrète (c'est-à-dire clé privée): :
-((("clés privées","défini")))((("clés secrètes", seealso="clés privées")))Le numéro secret qui permet aux utilisateurs d'Ethereum de prouver la propriété d'un compte ou de contrats, en produisant un signature numérique (voir « clé publique », « adresse », « ECDSA »).
 
 Serenity::
 ((("Serenity")))La quatrième et dernière étape de développement d'Ethereum. Serenity n'a pas encore de date de sortie prévue.
@@ -264,14 +259,11 @@ SHA::
 Singleton::
 ((("singleton")))Terme de programmation informatique qui décrit un objet dont une seule instance peut exister.
 
-Contrat intelligent::
-((("contrats intelligents","définis")))Un programme qui s'exécute sur l'infrastructure informatique Ethereum.
+Signature numérique::
+((("signatures numérique","défini")))Une courte chaîne de données qu'un utilisateur produit pour un document à l'aide d'une clé privée, de sorte que toute personne disposant de la clé publique correspondante, de la signature et du document peut vérifier que (1) le document a été "signé" par le propriétaire de cette clé privée particulière, et (2) le document n'a pas été modifié après sa signature.
 
 Solidity::
 ((("Solidity","défini")))Langage de programmation procédural (impératif) avec une syntaxe similaire à JavaScript, C++ ou Java. Le langage le plus populaire et le plus fréquemment utilisé pour les contrats intelligents Ethereum. Créé par le Dr Gavin Wood (co-auteur de ce livre).
-
-Assemblage en ligne Solidity::
-((("assemblage en ligne","défini")))((("Assemblage en ligne Solidity")))Langage d'assemblage EVM dans un programme Solidity. La prise en charge de Solidity pour l'assemblage en ligne facilite l'écriture de certaines opérations.
 
 Spurious Dragon::
 ((("Spurious Dragon")))Un embranchement divergent de la chaîne de blocs Ethereum, qui s'est produit au bloc #2 675 000 pour traiter davantage de vecteurs d'attaque par déni de service et effacer l'état (voir aussi "Tangerine Whistle"). En outre, un mécanisme de protection contre les attaques par relecture.
@@ -291,20 +283,29 @@ Testnet::
 Transaction::
 ((("transactions","défini")))Données engagées dans la chaîne de blocs Ethereum signées par un compte d'origine, ciblant une adresse spécifique. La transaction contient des métadonnées telles que la limite de gaz pour cette transaction.
 
+Transaction de création de contrat::
+((("transaction de création de contrat")))Une transaction spéciale, avec "l'adresse zéro" comme destinataire, qui est utilisée pour enregistrer un contrat et l'enregistrer sur la chaîne de blocs Ethereum (voir "adresse zéro").
+
+Transaction interne (également "message")::
+((("transaction interne (message)")))Une transaction envoyée d'un compte de contrat à un autre compte de contrat ou à un EOA.
+
 Truffle::
 ((("Truffle","défini")))L'un des environnements de développement Ethereum les plus couramment utilisés.
 
 Turing complet::
 ((("Turing complétude","défini")))Un concept nommé d'après le mathématicien et informaticien anglais Alan Turing : un système de règles de manipulation de données (comme un jeu d'instructions d'ordinateur, un langage de programmation ou un automate cellulaire) est dit "Turing complet" ou "informatiquement universel" s'il peut être utilisé pour simuler n'importe quelle machine de Turing.
 
+Valeur d'amorçage de portefeuille HD::
+((("valeur d'amorçage de portefeuille HD")))((("valeurs d'amorçage", seealso="valeur d'amorçage racine")))Une valeur utilisée pour générer la clé privée principale et le code de chaîne principal pour un portefeuille HD. La valeur d'amorçage du portefeuille peut être représentée par des mots mnémoniques, ce qui permet aux humains de copier, sauvegarder et restaurer plus facilement les clés privées.
+
+Valeur d'hachage::
+((("hachage, défini")))Une empreinte digitale de longueur fixe d'entrée de taille variable, produite par une fonction de hachage.
+
 Vitalik Buterin::
 ((("Buterin, Vitalik")))Un programmeur et écrivain russo-canadien principalement connu comme le cofondateur d'Ethereum et de _Bitcoin Magazine_.
 
 Vyper::
 ((("Vyper","défini")))Un langage de programmation de haut niveau, similaire à Serpent, avec une syntaxe de type Python. Destiné à se rapprocher d'un langage fonctionnel pur. Créé par Vitalik Buterin.
-
-Portefeuille::
-((("portefeuilles","défini")))Logiciel qui détient des clés secrètes. Utilisé pour accéder et contrôler les comptes Ethereum et interagir avec les contrats intelligents. Les clés n'ont pas besoin d'être stockées dans un portefeuille et peuvent être récupérées à partir d'un stockage hors ligne (par exemple, une carte mémoire ou du papier) pour une sécurité améliorée. Malgré leur nom, les portefeuilles ne stockent jamais les pièces ou les jetons réels.
 
 Web3::
 ((("web3", seealso="DApps")))La troisième version du web. Proposé pour la première fois par le Dr Gavin Wood, Web3 représente une nouvelle vision et une nouvelle orientation pour les applications Web : des applications détenues et gérées de manière centralisée aux applications basées sur des protocoles décentralisés.
@@ -314,6 +315,3 @@ Wei::
 
 Whisper::
 ((("Whisper")))Un service de messagerie décentralisé (P2P). Il est utilisé avec Web3 et Swarm pour créer des DApps.
-
-Adresse zéro::
-((("zero adresse","défini")))Une adresse Ethereum spéciale, entièrement composée de zéros, qui est spécifiée comme adresse de destination d'une transaction de création de contrat.
