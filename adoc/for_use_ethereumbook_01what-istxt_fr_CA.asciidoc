@@ -35,7 +35,7 @@ Contrairement à Bitcoin, qui a un langage de script très limité, Ethereum est
 * Un schéma d&#39;incitation théoriquement valable (par exemple, les coûts de la preuve de travail plus les récompenses globales) pour sécuriser économiquement la machine d&#39;état dans un pass:[<span class="keep-together">environnement</span>] ouvert.
 * Une ou plusieurs implémentations logicielles à source libre des éléments ci-dessus (&quot;clients&quot;)
 
-Tous ou la plupart de ces composants sont généralement combinés dans un seul client logiciel. Par exemple, dans (((&quot;Bitcoin Core&quot;)))(((&quot;bitcoind client&quot;)))Bitcoin, l&#39;implémentation de référence est développée par le projet à source libre _Bitcoin Core_ et implémentée en tant que client _bitcoind_. Dans Ethereum, plutôt qu&#39;une implémentation de référence, il existe une (((&quot;spécification de référence&quot;)))_spécification de référence_, une description mathématique du système dans le livre jaune (voir &lt;<references>&gt;). Il existe un certain nombre de clients, qui sont construits selon la spécification de référence.
+Tous ou la plupart de ces composants sont généralement combinés dans un seul client logiciel. Par exemple, dans (((&quot;Bitcoin Core&quot;)))(((&quot;bitcoind client&quot;)))Bitcoin, l&#39;implémentation de référence est développée par le projet à source libre _Bitcoin Core_ et implémentée en tant que client _bitcoind_. Dans Ethereum, plutôt qu&#39;une implémentation de référence, il existe une (((&quot;spécification de référence&quot;)))_spécification de référence_, une description mathématique du système dans le livre jaune (voir <<references>>). Il existe un certain nombre de clients, qui sont construits selon la spécification de référence.
 
 Dans le passé, nous utilisions le terme &quot;chaîne de blocs&quot; pour représenter tous les composants que nous venons d&#39;énumérer, comme une référence abrégée à la combinaison de technologies qui englobent toutes les caractéristiques décrites. Aujourd&#39;hui, cependant, il existe une grande variété de chaînes de blocs avec des propriétés différentes. Nous avons besoin de qualificatifs pour nous aider à comprendre les caractéristiques de la chaîne de blocs en question, telles que _ouverte, publique, globale, décentralisée, neutre,_ et _résistante à la censure_, pour identifier les caractéristiques émergentes importantes d&#39;un système &quot;chaîne de blocs&quot; que ces composants permettent.
 
@@ -113,12 +113,12 @@ Ethereum est également une machine à états distribuée. Mais au lieu de suivr
 [[ethereum_components]]
 === Composants d&#39;Ethereum
 
-(((&quot;chaîne de blocs&quot;,&quot;composantes de&quot;)))(((&quot;Ethereum (généralement)&quot;,&quot;composantes de chaîne de blocs&quot;)))Dans Ethereum, les composantes d&#39;un système de chaîne de blocs décrit dans &lt;<blockchain_components>&gt; sont, plus précisément :
+(((&quot;chaîne de blocs&quot;,&quot;composantes de&quot;)))(((&quot;Ethereum (généralement)&quot;,&quot;composantes de chaîne de blocs&quot;)))Dans Ethereum, les composantes d&#39;un système de chaîne de blocs décrit dans <<blockchain_components>> sont, plus précisément :
 
 
 Réseau P2P:: Ethereum fonctionne sur le _réseau principal Ethereum_, qui est adressable sur le port TCP 30303, et exécute un protocole appelé _ÐΞVp2p_.
 
-Règles de consensus :: Les règles de consensus d&#39;Ethereum sont définies dans la spécification de référence, le Yellow Paper (voir &lt;<references>&gt;).
+Règles de consensus :: Les règles de consensus d&#39;Ethereum sont définies dans la spécification de référence, le Yellow Paper (voir <<references>>).
 
 Transactions:: Les transactions Ethereum sont des messages réseau qui incluent (entre autres) un expéditeur, un destinataire, une valeur et une charge utile de données.
 

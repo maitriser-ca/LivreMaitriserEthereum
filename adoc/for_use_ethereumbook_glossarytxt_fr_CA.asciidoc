@@ -202,7 +202,7 @@ Mineur::
 (((&quot;mineurs&quot;)))Un nœud de réseau qui trouve une preuve de travail valide pour les nouveaux blocs, par pass:[<span class="keep-together">hachage</span>] répété.
 
 Mist::
-(((&quot;Mist (portefeuille basé sur un navigateur)&quot;)))(((&quot;portefeuilles&quot;,&quot;Mist&quot;)))Le premier navigateur compatible Ethereum, construit par la Fondation Ethereum. Il contient un portefeuille basé sur un navigateur qui a été la première implémentation de la norme de jeton ERC20 (Fabian Vogelsteller, auteur d&#39;ERC20, était également le principal développeur de Mist). Mist a également été le premier portefeuille à introduire la somme de contrôle camelCase (EIP-55 ; voir &lt;<EIP55>&gt;). Mist exécute un nœud complet et offre un navigateur DApp complet avec prise en charge du stockage basé sur Swarm et des adresses ENS.
+(((&quot;Mist (portefeuille basé sur un navigateur)&quot;)))(((&quot;portefeuilles&quot;,&quot;Mist&quot;)))Le premier navigateur compatible Ethereum, construit par la Fondation Ethereum. Il contient un portefeuille basé sur un navigateur qui a été la première implémentation de la norme de jeton ERC20 (Fabian Vogelsteller, auteur d&#39;ERC20, était également le principal développeur de Mist). Mist a également été le premier portefeuille à introduire la somme de contrôle camelCase (EIP-55 ; voir <<EIP55>>). Mist exécute un nœud complet et offre un navigateur DApp complet avec prise en charge du stockage basé sur Swarm et des adresses ENS.
 
 Réseau::
 (((&quot;réseaux (Ethereum)&quot;,&quot;défini&quot;)))(((&quot;réseaux (Ethereum)&quot;,&quot;MetaMask et&quot;)))Se référant au réseau Ethereum, un réseau pair à pair qui propage les transactions et blocs à chaque nœud Ethereum (participant au réseau).

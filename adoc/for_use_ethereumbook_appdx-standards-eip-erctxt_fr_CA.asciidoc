@@ -5,7 +5,7 @@
 [[eips]]
 === Propositions d&#39;amélioration d&#39;Ethereum (EIPs)
 
-(((&quot;EIP (Propositions d&#39;amélioration d&#39;Ethereum)&quot;)))(((&quot;Ethereum (généralement)&quot;,&quot;EIP&quot;)))(((&quot;Ethereum (généralement)&quot;,&quot;normes&quot;)))Le référentiel des propositions d&#39;amélioration d&#39;Ethereum est situé sur https://github.com/ethereum/EIPs/[]. (((&quot;EIPs (Ethereum Improvement Proposals)&quot;,&quot;workflow&quot;)))Le flux de travail est illustré dans &lt;<eip_workflow>&gt;.
+(((&quot;EIP (Propositions d&#39;amélioration d&#39;Ethereum)&quot;)))(((&quot;Ethereum (généralement)&quot;,&quot;EIP&quot;)))(((&quot;Ethereum (généralement)&quot;,&quot;normes&quot;)))Le référentiel des propositions d&#39;amélioration d&#39;Ethereum est situé sur https://github.com/ethereum/EIPs/[]. (((&quot;EIPs (Ethereum Improvement Proposals)&quot;,&quot;workflow&quot;)))Le flux de travail est illustré dans <<eip_workflow>>.
 
 Depuis https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md[EIP-1] :
 

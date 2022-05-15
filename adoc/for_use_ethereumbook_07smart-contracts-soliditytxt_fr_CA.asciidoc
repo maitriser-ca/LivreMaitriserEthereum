@@ -1,7 +1,7 @@
 [[smart_contracts_chapter]]
 == Contrats intelligents et Solidity
 
-(((&quot;contrats intelligents&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc0&quot;, range=&quot;startofrange&quot;)))Comme nous en avons discuté dans &lt;<intro_chapter>&gt;, il existe deux types de comptes différents dans Ethereum : (((&quot;EOA (Externally Owned Account)&quot;,&quot;comptes contractuels par rapport à&quot;)))les comptes externes (EOA) et comptes contractuels. Les EOA sont contrôlés par les utilisateurs, souvent via un logiciel tel qu&#39;une application de portefeuille externe à la plate-forme Ethereum. (((&quot;comptes contractuels&quot;,&quot;EOA comparés à&quot;)))(((&quot;contrats intelligents&quot;,&quot;EOA comparés à&quot;))) contrats ») qui est exécuté par la machine virtuelle Ethereum. En bref, les EOA sont de simples comptes sans code ni stockage de données associés, tandis que les comptes contractuels ont à la fois un code et un stockage de données associés. Les EOA sont contrôlés par des transactions créées et signées cryptographiquement avec une clé privée dans le &quot;monde réel&quot; externe et indépendant du protocole, alors que les comptes contractuels n&#39;ont pas de clés privées et &quot;se contrôlent&quot; donc de la manière prédéterminée prescrite par leur code de contrat intelligent. Les deux types de comptes sont identifiés par une adresse Ethereum. Dans ce chapitre, nous discuterons des comptes contractuels et du code de programme qui les contrôle.
+(((&quot;contrats intelligents&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc0&quot;, range=&quot;startofrange&quot;)))Comme nous en avons discuté dans <<intro_chapter>>, il existe deux types de comptes différents dans Ethereum : (((&quot;EOA (Externally Owned Account)&quot;,&quot;comptes contractuels par rapport à&quot;)))les comptes externes (EOA) et comptes contractuels. Les EOA sont contrôlés par les utilisateurs, souvent via un logiciel tel qu&#39;une application de portefeuille externe à la plate-forme Ethereum. (((&quot;comptes contractuels&quot;,&quot;EOA comparés à&quot;)))(((&quot;contrats intelligents&quot;,&quot;EOA comparés à&quot;))) contrats ») qui est exécuté par la machine virtuelle Ethereum. En bref, les EOA sont de simples comptes sans code ni stockage de données associés, tandis que les comptes contractuels ont à la fois un code et un stockage de données associés. Les EOA sont contrôlés par des transactions créées et signées cryptographiquement avec une clé privée dans le &quot;monde réel&quot; externe et indépendant du protocole, alors que les comptes contractuels n&#39;ont pas de clés privées et &quot;se contrôlent&quot; donc de la manière prédéterminée prescrite par leur code de contrat intelligent. Les deux types de comptes sont identifiés par une adresse Ethereum. Dans ce chapitre, nous discuterons des comptes contractuels et du code de programme qui les contrôle.
 
 [[smart_contracts_definition]]
 === Qu&#39;est-ce qu&#39;un contrat intelligent ?
@@ -28,7 +28,7 @@ L&#39;EVM fonctionne comme une instance locale sur chaque nœud Ethereum, mais c
 [[smart_contract_lifecycle]]
 === Cycle de vie d&#39;un contrat intelligent
 
-(((&quot;contrats intelligents&quot;,&quot;cycle de vie de&quot;)))Les contrats intelligents sont généralement écrits dans un langage de haut niveau, tel que Solidity. Mais pour fonctionner, ils doivent être compilés dans le code intermédiaire (bytecode) de bas niveau qui s&#39;exécute dans l&#39;EVM. Une fois compilés, ils sont déployés sur la plateforme Ethereum à l&#39;aide d&#39;une transaction spéciale de _création de contrat_, qui est identifiée comme telle en étant envoyée à l&#39;adresse spéciale de création de contrat, à savoir +0x0+ (voir &lt;<contract_reg>&gt;). Chaque contrat est identifié par une adresse Ethereum, qui est dérivée de la transaction de création de contrat en fonction du compte d&#39;origine et du nonce. L&#39;adresse Ethereum d&#39;un contrat peut être utilisée dans une transaction en tant que destinataire, envoyer des fonds au contrat ou appeler l&#39;une des fonctions du contrat. Notez que, contrairement aux EOA, il n&#39;y a pas de clés associées à un compte créé pour un nouveau contrat intelligent. En tant que créateur du contrat, vous n&#39;obtenez aucun privilège spécial au niveau du protocole (bien que vous puissiez les coder explicitement dans le contrat intelligent). Vous ne recevez certainement pas la clé privée du compte de contrat, qui en fait n&#39;existe pas - nous pouvons dire que les comptes de contrat intelligents se possèdent eux-mêmes.
+(((&quot;contrats intelligents&quot;,&quot;cycle de vie de&quot;)))Les contrats intelligents sont généralement écrits dans un langage de haut niveau, tel que Solidity. Mais pour fonctionner, ils doivent être compilés dans le code intermédiaire (bytecode) de bas niveau qui s&#39;exécute dans l&#39;EVM. Une fois compilés, ils sont déployés sur la plateforme Ethereum à l&#39;aide d&#39;une transaction spéciale de _création de contrat_, qui est identifiée comme telle en étant envoyée à l&#39;adresse spéciale de création de contrat, à savoir +0x0+ (voir <<contract_reg>>). Chaque contrat est identifié par une adresse Ethereum, qui est dérivée de la transaction de création de contrat en fonction du compte d&#39;origine et du nonce. L&#39;adresse Ethereum d&#39;un contrat peut être utilisée dans une transaction en tant que destinataire, envoyer des fonds au contrat ou appeler l&#39;une des fonctions du contrat. Notez que, contrairement aux EOA, il n&#39;y a pas de clés associées à un compte créé pour un nouveau contrat intelligent. En tant que créateur du contrat, vous n&#39;obtenez aucun privilège spécial au niveau du protocole (bien que vous puissiez les coder explicitement dans le contrat intelligent). Vous ne recevez certainement pas la clé privée du compte de contrat, qui en fait n&#39;existe pas - nous pouvons dire que les comptes de contrat intelligents se possèdent eux-mêmes.
 
 (((&quot;transactions&quot;,&quot;contrats intelligents et&quot;)))Il est important de noter que les contrats _ne s&#39;exécutent que s&#39;ils sont appelés par une transaction_. Tous les contrats intelligents dans Ethereum sont exécutés, en fin de compte, en raison d&#39;une transaction initiée à partir d&#39;un EOA. Un contrat peut appeler un autre contrat qui peut appeler un autre contrat, et ainsi de suite, mais le premier contrat d&#39;une telle chaîne d&#39;exécution aura toujours été appelé par une transaction d&#39;un EOA. Les contrats ne fonctionnent jamais &quot;seuls&quot; ou &quot;en arrière-plan&quot;. Les contrats restent effectivement inactifs jusqu&#39;à ce qu&#39;une transaction déclenche l&#39;exécution, soit directement, soit indirectement dans le cadre d&#39;une chaîne d&#39;appels de contrats. Il convient également de noter que les contrats intelligents ne sont en aucun cas exécutés &quot;en parallèle&quot; - l&#39;ordinateur mondial Ethereum peut être considéré comme une machine à un seul fil d'exécution (thread).
 
@@ -39,7 +39,7 @@ L&#39;EVM fonctionne comme une instance locale sur chaque nœud Ethereum, mais c
 [[high_level_languages]]
 === Introduction aux langages de haut niveau Ethereum
 
-(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;et langages de haut niveau Ethereum&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc1&quot;, range=&quot;startofrange&quot;)))(((&quot;contrats intelligents&quot;,&quot; et les langages de haut niveau Ethereum&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc2&quot;, range=&quot;startofrange&quot;)))L&#39;EVM est une machine virtuelle qui exécute une (((&quot;EVM bytecode&quot;)))forme spéciale de code appelé _code intermédiaire EVM_ ou _EVM bytecode_, analogue au processeur de votre ordinateur, qui exécute un code machine tel que x86_64. Nous examinerons le fonctionnement et le langage de l&#39;EVM de manière beaucoup plus détaillée dans &lt;<evm_chapter>&gt;. Dans cette section, nous verrons comment les contrats intelligents sont écrits pour s&#39;exécuter sur l&#39;EVM.
+(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;et langages de haut niveau Ethereum&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc1&quot;, range=&quot;startofrange&quot;)))(((&quot;contrats intelligents&quot;,&quot; et les langages de haut niveau Ethereum&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc2&quot;, range=&quot;startofrange&quot;)))L&#39;EVM est une machine virtuelle qui exécute une (((&quot;EVM bytecode&quot;)))forme spéciale de code appelé _code intermédiaire EVM_ ou _EVM bytecode_, analogue au processeur de votre ordinateur, qui exécute un code machine tel que x86_64. Nous examinerons le fonctionnement et le langage de l&#39;EVM de manière beaucoup plus détaillée dans <<evm_chapter>>. Dans cette section, nous verrons comment les contrats intelligents sont écrits pour s&#39;exécuter sur l&#39;EVM.
 
 Bien qu&#39;il soit possible de programmer des contrats intelligents directement en code intermédiaire, le code intermédiaire EVM est plutôt lourd et très difficile à lire et à comprendre pour les programmeurs. Au lieu de cela, la plupart des développeurs Ethereum utilisent un langage de haut niveau pour écrire des programmes et un compilateur pour les convertir en code intermédiaire.
 
@@ -72,7 +72,7 @@ Comme vous pouvez le voir, il existe de nombreux languages parmi lesquelles choi
 
 Le &quot;produit&quot; principal du projet Solidity est le compilateur Solidity, +solc+, qui convertit les programmes écrits dans le langage Solidity en bytecode EVM. Le projet gère également l&#39;importante norme d&#39;interface binaire d&#39;application (ABI) pour les contrats intelligents Ethereum, que nous explorerons en détail dans ce chapitre. Chaque version du compilateur Solidity correspond à et compile une version spécifique de pass:[<span class="keep-together">language</span>] de Solidity.
 
-Pour commencer, nous allons télécharger un exécutable binaire du compilateur Solidity. Ensuite, nous développerons et compilerons un contrat simple, à la suite de l&#39;exemple avec lequel nous avons commencé dans &lt;<intro_chapter>&gt;.
+Pour commencer, nous allons télécharger un exécutable binaire du compilateur Solidity. Ensuite, nous développerons et compilerons un contrat simple, à la suite de l&#39;exemple avec lequel nous avons commencé dans <<intro_chapter>>.
 
 ==== Sélection d&#39;une version de Solidity
 
@@ -82,7 +82,7 @@ Au moment de la rédaction, Solidity est à la version 0.4.24. Les règles de la
 
 La sortie de la version majeure 0.5 de Solidity est attendue de manière imminente.
 
-Comme vous l&#39;avez vu dans &lt;<intro_chapter>&gt;, vos programmes Solidity peuvent contenir une directive pragma qui spécifie les versions minimale et maximale de Solidity avec lesquelles il est compatible, et peut être utilisée pour compiler votre contrat.
+Comme vous l&#39;avez vu dans <<intro_chapter>>, vos programmes Solidity peuvent contenir une directive pragma qui spécifie les versions minimale et maximale de Solidity avec lesquelles il est compatible, et peut être utilisée pour compiler votre contrat.
 
 Étant donné que Solidity évolue rapidement, il est souvent préférable d&#39;installer la dernière version.
 
@@ -126,9 +126,9 @@ Utilisez les outils qui vous rendent productif. En fin de compte, les programmes
 
 ==== Écrire un programme Solidity simple
 
-(((&quot;Solidity&quot;,&quot;écrire un programme simple en&quot;)))Dans &lt;<intro_chapter>&gt;, nous avons écrit notre premier programme Solidity. Lorsque nous avons créé le contrat +Faucet+ pour la première fois, nous avons utilisé l&#39;IDE Remix pour compiler et déployer le contrat. Dans cette section, nous allons revisiter, améliorer et embellir +Faucet+.
+(((&quot;Solidity&quot;,&quot;écrire un programme simple en&quot;)))Dans <<intro_chapter>>, nous avons écrit notre premier programme Solidity. Lorsque nous avons créé le contrat +Faucet+ pour la première fois, nous avons utilisé l&#39;IDE Remix pour compiler et déployer le contrat. Dans cette section, nous allons revisiter, améliorer et embellir +Faucet+.
 
-Notre première tentative ressemblait à &lt;<original_sol_faucet>&gt;.
+Notre première tentative ressemblait à <<original_sol_faucet>>.
 
 [[original_sol_faucet]]
 .Faucet.sol : Un contrat Solidity mettant en place un robinet
@@ -171,7 +171,7 @@ Le résultat que +solc+ produit est un binaire sérialisé hexadécimal qui peut
 
 Dans Ethereum, l&#39;ABI est utilisé pour coder les appels de contrat pour l&#39;EVM et pour lire les données des transactions. Le but d&#39;un ABI est de définir les fonctions du contrat qui peuvent être invoquées et de décrire comment chaque fonction acceptera les arguments et renverra son résultat.
 
-L&#39;ABI d&#39;un contrat est spécifié sous la forme d&#39;un tableau JSON de descriptions de fonctions (voir &lt;<solidity_functions>&gt;) et événements (voir &lt;<solidity_events>&gt;). Une description de fonction est un objet JSON avec les champs `type`, `name`, `inputs`, `outputs`, `constant` et `payable`. Un objet de description d&#39;événement a des champs `type`, `name`, `inputs` et `anonymous`.
+L&#39;ABI d&#39;un contrat est spécifié sous la forme d&#39;un tableau JSON de descriptions de fonctions (voir <<solidity_functions>>) et événements (voir <<solidity_events>>). Une description de fonction est un objet JSON avec les champs `type`, `name`, `inputs`, `outputs`, `constant` et `payable`. Un objet de description d&#39;événement a des champs `type`, `name`, `inputs` et `anonymous`.
 
 Nous utilisons le compilateur Solidity en ligne de commande +solc+ pour produire l&#39;ABI pour notre exemple de contrat pass:[<span class="keep-together"><em>Faucet.sol</em></span>] :
 
@@ -206,7 +206,7 @@ pragma solidity ^0.4.19;
 
 Le compilateur Solidity lit le pragma de version et génère une erreur si la version du compilateur est incompatible avec le pragma de version. Dans ce cas, notre pragma de version indique que ce programme peut être compilé par un compilateur Solidity avec une version minimale de 0.4.19. Le symbole +^+ indique, cependant, que nous autorisons la compilation avec toute _révision mineure_ au-dessus de 0.4.19 ; par exemple, 0.4.20, mais pas 0.5.0 (qui est une révision majeure, pas une révision mineure). Les directives Pragma ne sont pas compilées dans le code intermédiaire EVM. Ils ne sont utilisés par le compilateur que pour vérifier la compatibilité.
 
-Ajoutons une directive pragma à notre contrat +Faucet+. Nous nommerons le nouveau fichier pass:[<span class="keep-together"><em>Faucet2.sol</em></span>], pour garder une trace de nos modifications au fur et à mesure que nous avancerons dans ces exemples en commençant par &lt;<add_pragma_to_faucet>&gt;.
+Ajoutons une directive pragma à notre contrat +Faucet+. Nous nommerons le nouveau fichier pass:[<span class="keep-together"><em>Faucet2.sol</em></span>], pour garder une trace de nos modifications au fur et à mesure que nous avancerons dans ces exemples en commençant par <<add_pragma_to_faucet>>.
 
 [[add_pragma_to_faucet]]
 .Faucet2.sol : Ajout du pragma de version à Faucet
@@ -221,10 +221,10 @@ L&#39;ajout d&#39;un pragma de version est une bonne pratique, car il évite les
 
 === Programmation avec Solidity
 
-(((&quot;Solidity&quot;,&quot;programmation avec&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc10&quot;, range=&quot;startofrange&quot;)))Dans cette section, nous examinerons certaines des fonctionnalités du langage Solidity. Comme nous l&#39;avons mentionné dans &lt;<intro_chapter>&gt;, notre premier exemple de contrat était très simple et également défectueux à plusieurs égards. Nous allons l&#39;améliorer progressivement ici, tout en explorant comment utiliser Solidity. Cependant, ce ne sera pas un didacticiel complet sur Solidity, car Solidity est assez complexe et évolue rapidement. Nous couvrirons les bases et vous donnerons suffisamment de bases pour pouvoir explorer le reste par vous-même. La documentation de Solidity se trouve
+(((&quot;Solidity&quot;,&quot;programmation avec&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc10&quot;, range=&quot;startofrange&quot;)))Dans cette section, nous examinerons certaines des fonctionnalités du langage Solidity. Comme nous l&#39;avons mentionné dans <<intro_chapter>>, notre premier exemple de contrat était très simple et également défectueux à plusieurs égards. Nous allons l&#39;améliorer progressivement ici, tout en explorant comment utiliser Solidity. Cependant, ce ne sera pas un didacticiel complet sur Solidity, car Solidity est assez complexe et évolue rapidement. Nous couvrirons les bases et vous donnerons suffisamment de bases pour pouvoir explorer le reste par vous-même. La documentation de Solidity se trouve
 https://solidity.readthedocs.io/en/latest/[sur le site du projet].
 
-====Types de données
+==== Types de données
 
 (((&quot;Solidity&quot;,&quot;types de données&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc11&quot;, range=&quot;startofrange&quot;)))D&#39;abord, examinons certains des types de données de base proposés dans Solidity :
 
@@ -328,7 +328,7 @@ Chaque fois qu&#39;un contrat appelle un autre contrat, les valeurs de tous les 
 
 ++address.call(__payload__)++:: fonction +CALL+ de bas niveau — peut construire un appel de message arbitraire avec une charge utile de données. Renvoie +faux+ en cas d&#39;erreur. AVERTISSEMENT : dangereux : le destinataire peut (accidentellement ou par malveillance) utiliser tout votre gaz, provoquant l&#39;arrêt de votre contrat avec une exception +OOG+ ; vérifiez toujours la valeur de retour de +call+.
 
-++address.callcode(__payload__)++:: fonction +CALLCODE+ de bas niveau, comme +address(this).call(pass :[...])+ mais avec le code de ce contrat remplacé par celui de +address+. Renvoie +faux+ en cas d&#39;erreur. AVERTISSEMENT : utilisation avancée uniquement !
+++address.callcode(__payload__)++:: fonction +CALLCODE+ de bas niveau, comme +address(this).call(pass:[...])+ mais avec le code de ce contrat remplacé par celui de +address+. Renvoie +faux+ en cas d&#39;erreur. AVERTISSEMENT : utilisation avancée uniquement !
 
 +address.delegatecall()+:: Fonction +DELEGATECALL+ de bas niveau, comme +callcode(pass:[...])+ mais avec le contexte +msg+ complet vu par le contrat actuel. Renvoie +faux+ en cas d&#39;erreur. AVERTISSEMENT : utilisation avancée uniquement !
 
@@ -354,7 +354,7 @@ Solidity propose deux autres types d&#39;objets qui s&#39;apparentent à un cont
 
 +interface+:: (((&quot;type de donnée interface&quot;)))(((&quot;stub&quot;)))Une définition d&#39;interface est structurée exactement comme un contrat, sauf qu&#39;aucune des fonctions n&#39;est définie, elles sont seulement déclarées. Ce type de déclaration est souvent appelé _stub_ ou _souche_ ; il vous indique les arguments des fonctions et les types de retour sans aucune implémentation. Une interface précise la « forme » d&#39;un contrat ; lorsqu&#39;elle est héritée, chacune des fonctions déclarées par l&#39;interface doit être définie par l&#39;enfant.
 
-+library+:: (((&quot;contrat de bibliothèque&quot;)))Un contrat de bibliothèque est un contrat destiné à être déployé une seule fois et utilisé par d&#39;autres contrats, en utilisant la méthode +delegatecall+ (voir &lt;<solidity_address_object>&gt;).
++library+:: (((&quot;contrat de bibliothèque&quot;)))Un contrat de bibliothèque est un contrat destiné à être déployé une seule fois et utilisé par d&#39;autres contrats, en utilisant la méthode +delegatecall+ (voir <<solidity_address_object>>).
 
 [[solidity_functions]]
 ==== Fonctions
@@ -443,7 +443,7 @@ Notez que vous devez explicitement ajouter cette commande à votre contrat si vo
 
 ==== Ajout d&#39;un constructeur et autodestruction à notre exemple de robinet
 
-(((&quot;fonction constructeur&quot;,&quot;ajout à l&#39;exemple du robinet&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;ajout du constructeur et de l&#39;autodestruction à&quot;)))(((&quot;Solidité&quot;,&quot;ajout constructor/selfdestruction to faucet example&quot;)))L&#39;exemple de contrat +Faucet+ que nous avons introduit dans &lt;<intro_chapter>&gt; n&#39;a pas de constructeur ou de fonctions +selfdestruct+. C&#39;est un contrat éternel qui ne peut pas être supprimé. Changeons cela en ajoutant un constructeur et une fonction +selfdestruct+. Nous voulons probablement que +selfdestruct+ soit appelable _uniquement_ par l&#39;EOA qui a initialement créé le contrat. Par convention, ceci est généralement stocké dans une variable d&#39;adresse appelée +owner+. Notre constructeur définit la variable +owner+, et la fonction +selfdestruct+ vérifiera d&#39;abord que le propriétaire l&#39;a appelée directement.
+(((&quot;fonction constructeur&quot;,&quot;ajout à l&#39;exemple du robinet&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;ajout du constructeur et de l&#39;autodestruction à&quot;)))(((&quot;Solidité&quot;,&quot;ajout constructor/selfdestruction to faucet example&quot;)))L&#39;exemple de contrat +Faucet+ que nous avons introduit dans <<intro_chapter>> n&#39;a pas de constructeur ou de fonctions +selfdestruct+. C&#39;est un contrat éternel qui ne peut pas être supprimé. Changeons cela en ajoutant un constructeur et une fonction +selfdestruct+. Nous voulons probablement que +selfdestruct+ soit appelable _uniquement_ par l&#39;EOA qui a initialement créé le contrat. Par convention, ceci est généralement stocké dans une variable d&#39;adresse appelée +owner+. Notre constructeur définit la variable +owner+, et la fonction +selfdestruct+ vérifiera d&#39;abord que le propriétaire l&#39;a appelée directement.
 
 Tout d&#39;abord, notre constructeur :
 
@@ -640,7 +640,7 @@ Un code de vérification d&#39;erreur supplémentaire comme celui-ci augmentera 
 [[solidity_events]]
 ==== Événements
 
-(((&quot;Événement&quot;,&quot;Solidity&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc18&quot;, range=&quot;startofrange&quot;)))(((&quot;Solidity&quot;,&quot;objets d'événements&quot;, id=&quot;ix_07smart-contracts- solidity-asciidoc19&quot;, range=&quot;startofrange&quot;)))Lorsque (((&quot;réception de transaction&quot;)))une transaction se termine (avec succès ou non), elle produit une _réception de transaction_, comme nous le verrons dans &lt;<evm_chapter>&gt;. Le reçu de transaction contient des entrées _log_ qui fournissent des informations sur les actions qui se sont produites lors de l&#39;exécution de la transaction. Les _Événements_ ou _Events_ sont les objets de haut niveau de Solidity utilisés pour construire ces journaux.
+(((&quot;Événement&quot;,&quot;Solidity&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc18&quot;, range=&quot;startofrange&quot;)))(((&quot;Solidity&quot;,&quot;objets d'événements&quot;, id=&quot;ix_07smart-contracts- solidity-asciidoc19&quot;, range=&quot;startofrange&quot;)))Lorsque (((&quot;réception de transaction&quot;)))une transaction se termine (avec succès ou non), elle produit une _réception de transaction_, comme nous le verrons dans <<evm_chapter>>. Le reçu de transaction contient des entrées _log_ qui fournissent des informations sur les actions qui se sont produites lors de l&#39;exécution de la transaction. Les _Événements_ ou _Events_ sont les objets de haut niveau de Solidity utilisés pour construire ces journaux.
 
 Les événements sont particulièrement utiles pour les clients légers et les services DApp, qui peuvent &quot;surveiller&quot; des événements spécifiques et les signaler à l&#39;interface utilisateur, ou modifier l&#39;état de l&#39;application pour refléter un événement dans un contrat sous-jacent.
 
@@ -676,7 +676,7 @@ function () external payable {
 }
 ----
 
-Le contrat _Faucet.sol_ résultant ressemble à &lt;<Faucet8_sol>&gt;.
+Le contrat _Faucet.sol_ résultant ressemble à <<Faucet8_sol>>.
 
 [[Faucet8_sol]]
 .Faucet8.sol : contrat de robinet révisé, avec événements
@@ -691,7 +691,7 @@ include::code/Solidity/Faucet8.sol[]
 
 (((&quot;événements&quot;,&quot;attraper&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;attraper des événements&quot;)))OK, nous avons donc configuré notre contrat pour émettre des événements. Comment voir les résultats d&#39;une transaction et &quot;attraper&quot; les événements ? La bibliothèque web3.js fournit une structure de données qui contient les journaux d&#39;une transaction. Dans ceux-ci, nous pouvons voir les événements générés par la transaction.
 
-(((&quot;Truffle&quot;,&quot;exécution d&#39;une transaction de test avec&quot;)))Utilisons +truffle+ pour exécuter une transaction de test sur le contrat +Faucet+ révisé. Suivez les instructions dans &lt;<truffle>&gt; pour configurer un répertoire de projet et compiler le code pass:[<span class="keep-together"><code>Faucet</code></span>]. Le code source peut être trouvé dans https://github.com/ethereumbook/ethereumbook[le référentiel GitHub du livre] sous _code/truffle/FaucetEvents_.
+(((&quot;Truffle&quot;,&quot;exécution d&#39;une transaction de test avec&quot;)))Utilisons +truffle+ pour exécuter une transaction de test sur le contrat +Faucet+ révisé. Suivez les instructions dans <<truffle>> pour configurer un répertoire de projet et compiler le code pass:[<span class="keep-together"><code>Faucet</code></span>]. Le code source peut être trouvé dans https://github.com/ethereumbook/ethereumbook[le référentiel GitHub du livre] sous _code/truffle/FaucetEvents_.
 
 ++++
 <pre data-type="programlisting">
@@ -853,7 +853,7 @@ contract Token is mortal {
 }
 ----
 
-(((&quot;appels aveugles&quot;)))Comme vous pouvez le voir, ce type de +call+ est un appel _aveugle_ dans une fonction, un peu comme la construction d&#39;une transaction brute, uniquement à partir du contexte d&#39;un contrat. (((&quot;attaques de réentrance&quot;,&quot;appels aveugles et&quot;)))Cela peut exposer votre contrat à un certain nombre de risques de sécurité, le plus important étant la _réentrance_, dont nous discuterons plus en détail dans &lt;<reentrancy_security>&gt;. La fonction +call+ renverra +false+ s&#39;il y a un problème, vous pouvez donc évaluer la valeur de retour pour la gestion des erreurs :
+(((&quot;appels aveugles&quot;)))Comme vous pouvez le voir, ce type de +call+ est un appel _aveugle_ dans une fonction, un peu comme la construction d&#39;une transaction brute, uniquement à partir du contexte d&#39;un contrat. (((&quot;attaques de réentrance&quot;,&quot;appels aveugles et&quot;)))Cela peut exposer votre contrat à un certain nombre de risques de sécurité, le plus important étant la _réentrance_, dont nous discuterons plus en détail dans <<reentrancy_security>>. La fonction +call+ renverra +false+ s&#39;il y a un problème, vous pouvez donc évaluer la valeur de retour pour la gestion des erreurs :
 
 [source,solidity]
 ----
@@ -868,11 +868,11 @@ contract Token is mortal {
 
 (((&quot;méthode delegatecall&quot;)))(((&quot;contrats intelligents&quot;,&quot;méthode delegatecall&quot;)))Une autre variante de +call+ est +delegatecall+, qui a remplacé le plus dangereux +callcode+. La méthode pass:[<code><span class="keep-together">callcode</span></code>] sera bientôt obsolète, elle ne doit donc pas être utilisée.
 
-Comme mentionné dans &lt;<solidity_address_object>&gt;, un +delegatecall+ est différent d&#39;un +call+ en ce que le contexte +msg+ ne change pas. Par exemple, alors qu&#39;un +call+ change la valeur de +msg.sender+ pour être le contrat d&#39;appel, un +delegatecall+ conserve le même +msg.sender+ que dans le contrat d&#39;appel. Essentiellement, +delegatecall+ exécute le code d&#39;un autre contrat dans le contexte de l&#39;exécution du contrat en cours. Il est le plus souvent utilisé pour invoquer du code à partir d&#39;une bibliothèque. Cela vous permet également de dessiner sur le modèle d&#39;utilisation des fonctions de bibliothèque stockées ailleurs, mais de faire fonctionner ce code avec les données de stockage de votre contrat.
+Comme mentionné dans <<solidity_address_object>>, un +delegatecall+ est différent d&#39;un +call+ en ce que le contexte +msg+ ne change pas. Par exemple, alors qu&#39;un +call+ change la valeur de +msg.sender+ pour être le contrat d&#39;appel, un +delegatecall+ conserve le même +msg.sender+ que dans le contrat d&#39;appel. Essentiellement, +delegatecall+ exécute le code d&#39;un autre contrat dans le contexte de l&#39;exécution du contrat en cours. Il est le plus souvent utilisé pour invoquer du code à partir d&#39;une bibliothèque. Cela vous permet également de dessiner sur le modèle d&#39;utilisation des fonctions de bibliothèque stockées ailleurs, mais de faire fonctionner ce code avec les données de stockage de votre contrat.
 
 L&#39;appel +delegatecall+ doit être utilisé avec beaucoup de prudence. Cela peut avoir des effets inattendus, surtout si le contrat que vous appelez n&#39;a pas été conçu comme une bibliothèque.
 
-Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#39;appel utilisées par +call+ et +delegatecall+ pour appeler des bibliothèques et des contrats. Dans &lt;<call_examples_code>&gt;, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#39;appel change en fonction du type d&#39;appel.
+Utilisons un exemple de contrat pour démontrer les différentes sémantiques d&#39;appel utilisées par +call+ et +delegatecall+ pour appeler des bibliothèques et des contrats. Dans <<call_examples_code>>, nous utilisons un événement pour enregistrer les détails de chaque appel et voir comment le contexte d&#39;appel change en fonction du type d&#39;appel.
 
 [[call_examples_code]]
 .CallExamples.sol : un exemple de différentes sémantiques d&#39;appel
@@ -962,7 +962,7 @@ Les deux appels suivants, utilisant les appels +call+ et +delegatecall+ de bas n
 [[gas_sec]]
 === Considérations sur le gaz
 
-(((&quot;gaz&quot;,&quot;conserver du&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc24&quot;, range=&quot;startofrange&quot;)))(((&quot;contrats intelligents&quot;,&quot;considérations sur le gaz&quot;, id=&quot;ix_07smart-contracts -solidity-asciidoc25&quot;, range=&quot;startofrange&quot;)))(((&quot;Solidity&quot;,&quot;considérations sur le gaz&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc26&quot;, range=&quot;startofrange&quot;)))Le gaz, décrit dans plus de détails dans &lt;<gas>&gt;, est une considération extrêmement importante dans la programmation de contrats intelligents. Le gaz est une ressource limitant la quantité maximale de calculs qu&#39;Ethereum permettra à une transaction de consommer. Si la limite de gaz est dépassée pendant le calcul, la série d&#39;événements suivante se produit :
+(((&quot;gaz&quot;,&quot;conserver du&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc24&quot;, range=&quot;startofrange&quot;)))(((&quot;contrats intelligents&quot;,&quot;considérations sur le gaz&quot;, id=&quot;ix_07smart-contracts -solidity-asciidoc25&quot;, range=&quot;startofrange&quot;)))(((&quot;Solidity&quot;,&quot;considérations sur le gaz&quot;, id=&quot;ix_07smart-contracts-solidity-asciidoc26&quot;, range=&quot;startofrange&quot;)))Le gaz, décrit dans plus de détails dans <<gas>>, est une considération extrêmement importante dans la programmation de contrats intelligents. Le gaz est une ressource limitant la quantité maximale de calculs qu&#39;Ethereum permettra à une transaction de consommer. Si la limite de gaz est dépassée pendant le calcul, la série d&#39;événements suivante se produit :
 
 * Une exception &quot;out of gas&quot; est levée.
 * L&#39;état du contrat avant l&#39;exécution est restauré (inversé).
@@ -1001,7 +1001,7 @@ var gasCostInEther = web3.utils.fromWei((gasEstimate * gasPrice), 'ether');
 
 Appliquons nos fonctions d&#39;estimation de gaz pour estimer le coût du gaz de notre exemple +Faucet+, en utilisant le code http://bit.ly/2zf0SIO[du référentiel du livre].
 
-Démarrez Truffle en mode développement et exécutez le fichier JavaScript dans &lt;<estimateGas_function>&gt;, _gas_estimates.js_.
+Démarrez Truffle en mode développement et exécutez le fichier JavaScript dans <<estimateGas_function>>, _gas_estimates.js_.
 
 [source, javascript]
 [[estimateGas_function]]
@@ -1056,4 +1056,4 @@ Il est recommandé d&#39;évaluer le coût en gaz des fonctions dans le cadre de
 
 === Conclusion
 
-Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc4&quot;)))(((range=&quot;endofrange&quot; , startref=&quot;ix_07smart-contracts-solidity-asciidoc3&quot;))) Nous avons pris un exemple de contrat simple, _Faucet.sol_, et l&#39;avons progressivement amélioré et rendu plus complexe, en l&#39;utilisant pour explorer divers aspects du langage Solidity. Dans &lt;<vyper_chap>&gt; nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc0&quot;)))
+Dans ce chapitre, nous avons commencé à travailler en détail avec les contrats intelligents et exploré le langage de programmation de contrats Solidity.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc4&quot;)))(((range=&quot;endofrange&quot; , startref=&quot;ix_07smart-contracts-solidity-asciidoc3&quot;))) Nous avons pris un exemple de contrat simple, _Faucet.sol_, et l&#39;avons progressivement amélioré et rendu plus complexe, en l&#39;utilisant pour explorer divers aspects du langage Solidity. Dans <<vyper_chap>> nous travaillerons avec Vyper, un autre langage de programmation orienté contrat. Nous comparerons Vyper à Solidity, montrant certaines des différences dans la conception de ces deux langages et approfondirons notre compréhension de la programmation de contrats intelligents.(((range=&quot;endofrange&quot;, startref=&quot;ix_07smart-contracts-solidity-asciidoc0&quot;)))

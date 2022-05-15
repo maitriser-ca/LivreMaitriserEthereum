@@ -436,28 +436,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article data-line-1">
+<body class="article">
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1 data-line-3">
+<div class="sect1">
 <h2 id="web3js_tutorial">Appendix A: Tutoriel web3.js</h2>
 <div class="sectionbody">
-<div class="sect2 data-line-5">
+<div class="sect2">
 <h3 id="_descriptif">Descriptif</h3>
-<div class="paragraph data-line-6">
+<div class="paragraph">
 <p>Ce tutoriel est basé sur web3@1.0.0-beta.29 web3.js . Il est conçu comme une introduction à web3.js.</p>
 </div>
-<div class="paragraph data-line-8">
+<div class="paragraph">
 <p>La bibliothèque JavaScript web3.js est une collection de modules qui contiennent des fonctionnalités spécifiques pour l&#39;écosystème Ethereum, ainsi qu&#39;une API JavaScript compatible Ethereum qui implémente la spécification Generic JSON RPC.</p>
 </div>
-<div class="paragraph data-line-10">
-<p>Pour exécuter ce script, vous n&#39;avez pas besoin d&#39;exécuter votre propre nœud local, car il utilise <a href="https://infura.io" data-href="https://infura.io">services Infura</a>.</p>
+<div class="paragraph">
+<p>Pour exécuter ce script, vous n&#39;avez pas besoin d&#39;exécuter votre propre nœud local, car il utilise <a href="https://infura.io">services Infura</a>.</p>
 </div>
 </div>
-<div class="sect2 data-line-12">
+<div class="sect2">
 <h3 id="_interaction_de_base_du_contrat_web3_js_de_manière_non_bloquée_asynchrone">Interaction de base du contrat web3.js de manière non bloquée (asynchrone)</h3>
-<div class="paragraph data-line-14">
+<div class="paragraph">
 <p>Vérifiez que vous disposez d&#39;une version npm valide :</p>
 </div>
 <pre data-type="programlisting">
@@ -465,14 +465,14 @@ $ <strong>npm -v</strong>
 5.6.0
 
 </pre>
-<div class="paragraph data-line-24">
+<div class="paragraph">
 <p>Si ce n&#39;est pas le cas, initialisez npm :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>npm init</strong>
 
 </pre>
-<div class="paragraph data-line-33">
+<div class="paragraph">
 <p>Installez les dépendances de base :</p>
 </div>
 <pre data-type="programlisting">
@@ -481,27 +481,27 @@ $ <strong>npm i web3</strong>
 $ <strong>npm i node-rest-client-promise</strong>
 
 </pre>
-<div class="paragraph data-line-44">
+<div class="paragraph">
 <p>Cela mettra à jour votre fichier de configuration <em>package.json</em> avec vos nouvelles dépendances.</p>
 </div>
-<div class="sect3 data-line-46">
+<div class="sect3">
 <h4 id="_exécution_du_script_node_js">Exécution du script Node.js</h4>
-<div class="paragraph data-line-48">
+<div class="paragraph">
 <p>Exécution de base :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>node code/web3js/web3-contract-basic-interaction.js</strong>
 
 </pre>
-<div class="paragraph data-line-57">
-<p>Utilisez votre propre jeton Infura (enregistrez-vous sur <a href="https://infura.io/" class="undefined" data-href="https://infura.io/">https://infura.io/</a> et stockez la clé API dans un fichier local appelé <em>infura_token</em>) :</p>
+<div class="paragraph">
+<p>Utilisez votre propre jeton Infura (enregistrez-vous sur <a href="https://infura.io/" class="bare">https://infura.io/</a> et stockez la clé API dans un fichier local appelé <em>infura_token</em>) :</p>
 </div>
 <pre data-type="programlisting">
 $ <strong>node code/web3js/web3-contract-basic-interaction.js \
   --infuraFileToken /path/to/file/with/infura_token</strong>
 
 </pre>
-<div class="paragraph data-line-67">
+<div class="paragraph">
 <p>ou:</p>
 </div>
 <pre data-type="programlisting">
@@ -509,48 +509,48 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
   /path/to/file/with/infura_token</strong>
 
 </pre>
-<div class="paragraph data-line-77">
+<div class="paragraph">
 <p>Cela lira le fichier avec votre propre jeton et le transmettra comme argument de ligne de commande à la commande réelle.</p>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-79">
+<div class="sect2">
 <h3 id="_examen_du_script_de_démonstration">Examen du script de démonstration</h3>
-<div class="paragraph data-line-81">
+<div class="paragraph">
 <p> Ensuite, passons en revue notre script de démonstration, <em>web3-contract-basic-interaction</em>.</p>
 </div>
-<div class="paragraph data-line-83">
+<div class="paragraph">
 <p>Nous utilisons l&#39;objet Web3 pour obtenir un fournisseur web3 de base :</p>
 </div>
-<div class="listingblock data-line-86">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">var web3 = new Web3(infura_host);</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-90">
+<div class="paragraph">
 <p>Nous pouvons alors interagir avec web3 et essayer quelques fonctions de base. Voyons la version du protocole :</p>
 </div>
-<div class="listingblock data-line-93">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">web3.eth.getProtocolVersion().then(function(protocolVersion) {
       console.log(`Protocol Version: ${protocolVersion}`);
   })</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-99">
+<div class="paragraph">
 <p>Regardons maintenant le prix actuel du gaz :</p>
 </div>
-<div class="listingblock data-line-102">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">web3.eth.getGasPrice().then(function(gasPrice) {
       console.log(`Gas Price: ${gasPrice}`);
   })</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-108">
+<div class="paragraph">
 <p>Quel est le dernier bloc extrait de la chaîne actuelle ?</p>
 </div>
-<div class="listingblock data-line-111">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">web3.eth.getBlockNumber().then(function(blockNumber) {
       console.log(`Block Number: ${blockNumber}`);
@@ -558,81 +558,81 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 </div>
 </div>
-<div class="sect2 data-line-117">
+<div class="sect2">
 <h3 id="_interaction_de_contrat">Interaction de contrat</h3>
-<div class="paragraph data-line-119">
-<p>Essayons maintenant quelques interactions de base avec un contrat. Pour ces exemples, nous utiliserons le <a href="https://bit.ly/2MPZZLx" data-href="https://bit.ly/2MPZZLx">WETH9_ contract</a> sur le testnet Kovan.</p>
+<div class="paragraph">
+<p>Essayons maintenant quelques interactions de base avec un contrat. Pour ces exemples, nous utiliserons le <a href="https://bit.ly/2MPZZLx">WETH9_ contract</a> sur le testnet Kovan.</p>
 </div>
-<div class="paragraph pagebreak-before data-line-122">
+<div class="paragraph pagebreak-before">
 <p>Tout d&#8217;abord, initialisons notre adresse de contrat :</p>
 </div>
-<div class="listingblock data-line-125">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">var our_contract_address = "0xd0A1E359811322d97991E03f863a0C30C2cF029C";</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-129">
+<div class="paragraph">
 <p>On peut alors regarder son solde :</p>
 </div>
-<div class="listingblock data-line-132">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">web3.eth.getBalance(our_contract_address).then(function(balance) {
       console.log(`Balance of ${our_contract_address}: ${balance}`);
 })</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-138">
+<div class="paragraph">
 <p>et voir son code intermédiaire :</p>
 </div>
-<div class="listingblock data-line-141">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">web3.eth.getCode(our_contract_address).then(function(code) {
       console.log(code);
 })</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-147">
+<div class="paragraph">
 <p>Ensuite, nous allons préparer notre environnement pour interagir avec l&#8217;API de l&#8217;explorateur Etherscan.</p>
 </div>
-<div class="paragraph data-line-149">
+<div class="paragraph">
 <p>Initialisons notre URL de contrat dans l&#8217;API de l&#8217;explorateur Etherscan pour la chaîne Kovan :</p>
 </div>
-<div class="listingblock data-line-152">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">var etherscan_url =
   "https://kovan.etherscan.io/api?module=contract&amp;action=getabi&amp;
   address=${our_contract_address}"</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-158">
+<div class="paragraph">
 <p>Et initialisons un client REST pour interagir avec l&#8217;API Etherscan :</p>
 </div>
-<div class="listingblock data-line-161">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">var client = require('node-rest-client-promise').Client();</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-165">
+<div class="paragraph">
 <p>et obtenir une promesse client :</p>
 </div>
-<div class="listingblock data-line-168">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">client.getPromise(etherscan_url)</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-172">
+<div class="paragraph">
 <p>Une fois que nous avons une promesse client valide, nous pouvons obtenir notre ABI de contrat à partir de l&#8217;API Etherscan :</p>
 </div>
-<div class="listingblock data-line-175">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">.then((client_promise) =&gt; {
   our_contract_abi = JSON.parse(client_promise.data.result);</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-180">
+<div class="paragraph">
 <p>Et maintenant nous pouvons créer notre objet contrat comme une promesse de consommer plus tard :</p>
 </div>
-<div class="listingblock data-line-183">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">  return new Promise((resolve, reject) =&gt; {
       var our_contract = new web3.eth.Contract(our_contract_abi,
@@ -648,45 +648,45 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 })</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-198">
+<div class="paragraph">
 <p>Si notre promesse de contrat revient avec succès, nous pouvons commencer à interagir avec elle :</p>
 </div>
-<div class="listingblock data-line-201">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">.then((our_contract) =&gt; {</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-205">
+<div class="paragraph">
 <p>Voyons notre adresse de contrat :</p>
 </div>
-<div class="listingblock data-line-208">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">console.log(`Our Contract address:
             ${our_contract._address}`);</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-213">
+<div class="paragraph">
 <p>Ou bien:</p>
 </div>
-<div class="listingblock data-line-216">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">console.log(`Our Contract address in another way:
             ${our_contract.options.address}`);</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-221">
+<div class="paragraph">
 <p>Interrogeons maintenant notre ABI de contrat :</p>
 </div>
-<div class="listingblock data-line-224">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">console.log("Our contract abi: " +
             JSON.stringify(our_contract.options.jsonInterface));</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-229">
+<div class="paragraph">
 <p>Nous pouvons voir l&#8217;approvisionnement total de notre contrat à l&#8217;aide d&#8217;un rappel :</p>
 </div>
-<div class="listingblock data-line-232">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">our_contract.methods.totalSupply().call(function(err, totalSupply) {
     if (!err) {
@@ -697,10 +697,10 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 });</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-242">
+<div class="paragraph">
 <p>Ou nous pouvons utiliser la promesse retournée au lieu de transmettre le rappel :</p>
 </div>
-<div class="listingblock data-line-245">
+<div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-solidity" data-lang="solidity">our_contract.methods.totalSupply().call().then(function(totalSupply){
     console.log(`Total Supply with a promise:  ${totalSupply}`);
@@ -710,10 +710,10 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 </div>
 </div>
-<div class="sect2 data-line-253">
+<div class="sect2">
 <h3 id="_fonctionnement_asynchrone_avec_attente">Fonctionnement asynchrone avec attente</h3>
-<div class="paragraph data-line-255">
-<p>Maintenant que vous avez vu le didacticiel de base, vous pouvez essayer les mêmes interactions en utilisant une construction asynchrone wait . Passez en revue le script <em>web3-contract-basic-interaction-async-await.js</em> dans <a href="http://bit.ly/2ABrFkl" data-href="http://bit.ly/2ABrFkl"><em>code/web3js</em></a> et comparez-le à ce didacticiel pour voir en quoi ils diffèrent. Async-wait est plus facile à lire, car il fait en sorte que l&#8217;interaction asynchrone se comporte davantage comme une séquence d&#8217;appels bloquants.</p>
+<div class="paragraph">
+<p>Maintenant que vous avez vu le didacticiel de base, vous pouvez essayer les mêmes interactions en utilisant une construction asynchrone wait . Passez en revue le script <em>web3-contract-basic-interaction-async-await.js</em> dans <a href="http://bit.ly/2ABrFkl"><em>code/web3js</em></a> et comparez-le à ce didacticiel pour voir en quoi ils diffèrent. Async-wait est plus facile à lire, car il fait en sorte que l&#8217;interaction asynchrone se comporte davantage comme une séquence d&#8217;appels bloquants.</p>
 </div>
 </div>
 </div>
@@ -721,7 +721,7 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-14 23:50:53 -0400
+Last updated 2022-05-14 23:50:07 -0400
 </div>
 </div>
 </body>

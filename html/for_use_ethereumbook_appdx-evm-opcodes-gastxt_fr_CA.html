@@ -436,17 +436,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article data-line-1">
+<body class="article">
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1 data-line-3">
+<div class="sect1">
 <h2 id="evm_opcodes">Appendix A: Opcodes Ethereum EVM et consommation de gaz</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-5">
-<p>Cette annexe est basée sur le travail de consolidation effectué par les personnes de <a href="https://github.com/trailofbits/evm-opcodes" class="undefined" data-href="https://github.com/trailofbits/evm-opcodes">https://github.com/trailofbits/evm-opcodes</a> comme référence pour les opcodes Ethereum VM (EVM) et les informations d&#39;instruction sous licence <a href="http://bit.ly/2zfrv0b" data-href="http://bit.ly/2zfrv0b">Apache License 2.0</a>.</p>
+<div class="paragraph">
+<p>Cette annexe est basée sur le travail de consolidation effectué par les personnes de <a href="https://github.com/trailofbits/evm-opcodes" class="bare">https://github.com/trailofbits/evm-opcodes</a> comme référence pour les opcodes Ethereum VM (EVM) et les informations d&#39;instruction sous licence <a href="http://bit.ly/2zfrv0b">Apache License 2.0</a>.</p>
 </div>
-<table id="evm_opcodes_table" class="tableblock frame-all grid-all stretch data-line-10">
+<table id="evm_opcodes_table" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Opcodes EVM et coût du gaz</caption>
 <colgroup>
 <col style="width: 20%;">
@@ -594,7 +594,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x15</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISZERO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Opérateur NÉGATION simple</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opérateur NOT simple</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
@@ -749,14 +749,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RETURNDATASIZE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Pousse la taille du tampon de données de retour sur la pile</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2zaBcNe" data-href="http://bit.ly/2zaBcNe">EIP-211</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2zaBcNe">EIP-211</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x3e</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RETURNDATACOPY</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Copie les données du tampon de données de retour vers la mémoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2zaBcNe" data-href="http://bit.ly/2zaBcNe">EIP-211</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2zaBcNe">EIP-211</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
@@ -1399,64 +1399,64 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb0</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPTO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire <a href="http://bit.ly/2Sx2Vkg" data-href="http://bit.ly/2Sx2Vkg">libevmasm a des numéros différents</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP 615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire <a href="http://bit.ly/2Sx2Vkg">libevmasm a des numéros différents</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP 615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb1</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPIF</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb2</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPSUB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb4</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JUMPSUBV</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb5</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BEGINSUB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb6</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BEGINDATA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb8</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">RETURNSUB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xb9</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUTLOCAL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xba</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GETLOCA</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provisoire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu" data-href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://bit.ly/2CR77pu">EIP-615</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1592,7 +1592,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-14 21:18:44 -0400
+Last updated 2022-05-14 21:19:46 -0400
 </div>
 </div>
 </body>

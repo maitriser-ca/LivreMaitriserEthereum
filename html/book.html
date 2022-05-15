@@ -5884,9 +5884,8 @@ contract Faucet {
 <p>Dans cette section, nous examinerons certaines des fonctionnalités du langage Solidity. Comme nous l&#39;avons mentionné dans <a href="#intro_chapter">Les bases d&#39;Ethereum</a>, notre premier exemple de contrat était très simple et également défectueux à plusieurs égards. Nous allons l&#39;améliorer progressivement ici, tout en explorant comment utiliser Solidity. Cependant, ce ne sera pas un didacticiel complet sur Solidity, car Solidity est assez complexe et évolue rapidement. Nous couvrirons les bases et vous donnerons suffisamment de bases pour pouvoir explorer le reste par vous-même. La documentation de Solidity se trouve
 <a href="https://solidity.readthedocs.io/en/latest/" data-href="https://solidity.readthedocs.io/en/latest/">sur le site du projet</a>.</p>
 </div>
-<div class="paragraph data-line-227">
-<p>====Types de données</p>
-</div>
+<div class="sect3 data-line-227">
+<h4 id="_types_de_données">Types de données</h4>
 <div class="paragraph data-line-229">
 <p>D&#39;abord, examinons certains des types de données de base proposés dans Solidity :</p>
 </div>
@@ -5969,6 +5968,7 @@ contract Faucet {
 <div class="listingblock data-line-267">
 <div class="content">
 <pre>require(withdraw_amount &lt;= 0.1 ether);</pre>
+</div>
 </div>
 </div>
 <div class="sect3 data-line-271">
@@ -6097,7 +6097,7 @@ contract Faucet {
 </dd>
 <dt class="hdlist1">address.callcode(__payload__)</dt>
 <dd>
-<p>fonction CALLCODE de bas niveau, comme address(this).call(pass :[...]) mais avec le code de ce contrat remplacé par celui de address. Renvoie faux en cas d&#39;erreur. AVERTISSEMENT : utilisation avancée uniquement !</p>
+<p>fonction CALLCODE de bas niveau, comme address(this).call(...) mais avec le code de ce contrat remplacé par celui de address. Renvoie faux en cas d&#39;erreur. AVERTISSEMENT : utilisation avancée uniquement !</p>
 </dd>
 <dt class="hdlist1">address.delegatecall()</dt>
 <dd>
@@ -7252,7 +7252,7 @@ function f(uint _in, bytes32 _key) public pure returns (uint out) {
 <div class="sect3 data-line-121">
 <h4 id="_conversion_de_type_variable">Conversion de type variable</h4>
 <div class="paragraph data-line-123">
-<p>Il existe deux types de typage : <em>implicit</em> et <em>explicit</em></p>
+<p>Il existe deux types de typage : <em>implicite</em> et <em>explicite</em></p>
 </div>
 <div class="paragraph data-line-125">
 <p>Le transtypage implicite est souvent effectué au moment de la compilation. Par exemple, si une conversion de type est sémantiquement correcte et qu&#39;aucune information n&#39;est susceptible d&#39;être perdue, le compilateur peut effectuer une conversion implicite, telle que la conversion d&#39;une variable de type uint8 en uint16. Les premières versions de Vyper autorisaient le transtypage implicite des variables, mais pas les versions récentes.</p>
@@ -11884,7 +11884,7 @@ ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581
 <li><em>bzz://ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581</em></li>
 </ul>
 <div class="paragraph data-line-438">
-<p>Nous avons fait quelques progrès dans la décentralisation de notre DApp, mais nous l&#39;avons rendu plus difficile à utiliser. Une URL comme celle-là est beaucoup moins conviviale qu&#39;un joli nom comme <em>auction_dapp.com</em>. Sommes-nous obligés de sacrifier l&#39;utilisabilité pour gagner en décentralisation ? Pas nécessairement. Dans la section suivante, nous examinerons le service de noms d&#39;Ethereum, qui nous permet d&#39;utiliser des noms faciles à lire tout en préservant la nature décentralisée de notre application.(range=&quot;endofrange&quot;, startref=&quot;ix_12dapps-asciidoc7&quot; )</p>
+<p>Nous avons fait quelques progrès dans la décentralisation de notre DApp, mais nous l&#39;avons rendu plus difficile à utiliser. Une URL comme celle-là est beaucoup moins conviviale qu&#39;un joli nom comme <em>auction_dapp.com</em>. Sommes-nous obligés de sacrifier l&#39;utilisabilité pour gagner en décentralisation ? Pas nécessairement. Dans la section suivante, nous examinerons le service de noms d&#39;Ethereum, qui nous permet d&#39;utiliser des noms faciles à lire tout en préservant la nature décentralisée de notre application.</p>
 </div>
 </div>
 </div>
@@ -11908,7 +11908,7 @@ ab164cf37dc10647e43a233486cdeffa8334b026e32a480dd9cbd020c12d4581
 <div class="sect3 data-line-453">
 <h4 id="_histoire_des_services_de_noms_ethereum">Histoire des services de noms Ethereum</h4>
 <div class="paragraph data-line-455">
-<p> L&#39;enregistrement de noms a été la première application non monétaire des chaînes de blocs, lancée par Namecoin. L&#39;Ethereum <a href="http://bit.ly/2Of1gfZ" class="undefined" data-href="http://bit.ly/2Of1gfZ">http://bit.ly/2Of1gfZ</a> [White Paper] a donné un système d&#39;enregistrement de type Namecoin à deux lignes comme l&#39;un de ses exemples d&#39;applications.</p>
+<p> L&#39;enregistrement de noms a été la première application non monétaire des chaînes de blocs, lancée par Namecoin. L&#39;Ethereum <a href="http://bit.ly/2Of1gfZ" data-href="http://bit.ly/2Of1gfZ">White Paper</a> a donné un système d&#39;enregistrement de type Namecoin à deux lignes comme l&#39;un de ses exemples d&#39;applications.</p>
 </div>
 <div class="paragraph data-line-457">
 <p>Les premières versions de Geth et du client C++ Ethereum avaient un contrat namereg intégré (qui n&#39;est plus utilisé), et de nombreuses propositions et ERC pour les services de noms ont été faites, mais ce n&#39;est que lorsque Nick Johnson a commencé à travailler pour la Fondation Ethereum en 2016. et a pris le projet sous son aile que le travail sérieux sur un registraire a commencé.</p>
@@ -16595,7 +16595,7 @@ $ <strong>node code/web3js/web3-contract-basic-interaction.js \
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-14 23:50:58 -0400
+Last updated 2022-05-15 00:42:07 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

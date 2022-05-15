@@ -18,7 +18,7 @@ L&#39;EVM a une architecture basée sur la pile, stockant toutes les valeurs en 
 
 Il existe également un ensemble de variables d&#39;environnement et de données disponibles pendant l&#39;exécution. Nous les détaillerons plus loin dans ce chapitre.
 
-&lt;<evm_architecture>&gt; montre l&#39;architecture EVM et le contexte d&#39;exécution.
+<<evm_architecture>> montre l&#39;architecture EVM et le contexte d&#39;exécution.
 
 [[evm_architecture]]
 .L&#39;architecture et le contexte d&#39;exécution de la machine virtuelle Ethereum (EVM)
@@ -51,7 +51,7 @@ remis sur le dessus de la pile.
 
 [NOTE]
 ====
-Une liste complète des opcodes et leur coût de gaz correspondant peut être trouvée dans &lt;<evm_opcodes>&gt;.
+Une liste complète des opcodes et leur coût de gaz correspondant peut être trouvée dans <<evm_opcodes>>.
 ====
 
 Les opcodes disponibles peuvent être divisés dans les catégories suivantes :
@@ -202,7 +202,7 @@ GASLIMIT   // Récupère la limite de gaz du bloc
 TODO : schéma de base montrant la structure de la cartographie des états mondiaux et la structure des comptes
 ////
 
-Lorsqu&#39;une transaction entraîne l&#39;exécution d&#39;un code de contrat intelligent, une EVM est instanciée avec toutes les informations requises par rapport au bloc en cours de création et à la transaction spécifique en cours de traitement. En particulier, la ROM de code de programme de l&#39;EVM est chargée avec le code du compte de contrat appelé, le compteur de programme est mis à zéro, la mémoire est chargée à partir de la mémoire du compte de contrat, la mémoire est mise à zéro, et tout le bloc et les variables d&#39;environnement sont définies. Une variable clé est l&#39;approvisionnement en gaz pour cette exécution, qui est fixé à la quantité de gaz payée par l&#39;expéditeur au début de la transaction (voir &lt;<gas>&gt; pour plus de détails). Au fur et à mesure de l&#39;exécution du code, l&#39;alimentation en gaz est réduite en fonction du coût en gaz des opérations exécutées. Si, à un moment quelconque, l&#39;alimentation en gaz est réduite à zéro, nous obtenons une exception &quot;Out of Gas&quot; (OOG) ; l&#39;exécution s&#39;arrête immédiatement et la transaction est abandonnée. Aucune modification de l&#39;état d&#39;Ethereum n&#39;est appliquée, à l&#39;exception du nonce de l&#39;expéditeur qui est incrémenté et de son solde d&#39;ether qui diminue pour payer le bénéficiaire du bloc pour les ressources utilisées pour exécuter le code jusqu&#39;au point d&#39;arrêt. À ce stade, vous pouvez penser à l&#39;EVM s&#39;exécutant sur une copie en bac à sable de l&#39;état mondial d&#39;Ethereum, cette version en bac à sable étant complètement supprimée si l&#39;exécution ne peut pas se terminer pour une raison quelconque. Cependant, si l&#39;exécution réussit, l&#39;état réel est mis à jour pour correspondre à la version en bac à sable, y compris toute modification des données de stockage du contrat appelé, tout nouveau contrat créé et tout transfert de solde d&#39;ether initié.
+Lorsqu&#39;une transaction entraîne l&#39;exécution d&#39;un code de contrat intelligent, une EVM est instanciée avec toutes les informations requises par rapport au bloc en cours de création et à la transaction spécifique en cours de traitement. En particulier, la ROM de code de programme de l&#39;EVM est chargée avec le code du compte de contrat appelé, le compteur de programme est mis à zéro, la mémoire est chargée à partir de la mémoire du compte de contrat, la mémoire est mise à zéro, et tout le bloc et les variables d&#39;environnement sont définies. Une variable clé est l&#39;approvisionnement en gaz pour cette exécution, qui est fixé à la quantité de gaz payée par l&#39;expéditeur au début de la transaction (voir <<gas>> pour plus de détails). Au fur et à mesure de l&#39;exécution du code, l&#39;alimentation en gaz est réduite en fonction du coût en gaz des opérations exécutées. Si, à un moment quelconque, l&#39;alimentation en gaz est réduite à zéro, nous obtenons une exception &quot;Out of Gas&quot; (OOG) ; l&#39;exécution s&#39;arrête immédiatement et la transaction est abandonnée. Aucune modification de l&#39;état d&#39;Ethereum n&#39;est appliquée, à l&#39;exception du nonce de l&#39;expéditeur qui est incrémenté et de son solde d&#39;ether qui diminue pour payer le bénéficiaire du bloc pour les ressources utilisées pour exécuter le code jusqu&#39;au point d&#39;arrêt. À ce stade, vous pouvez penser à l&#39;EVM s&#39;exécutant sur une copie en bac à sable de l&#39;état mondial d&#39;Ethereum, cette version en bac à sable étant complètement supprimée si l&#39;exécution ne peut pas se terminer pour une raison quelconque. Cependant, si l&#39;exécution réussit, l&#39;état réel est mis à jour pour correspondre à la version en bac à sable, y compris toute modification des données de stockage du contrat appelé, tout nouveau contrat créé et tout transfert de solde d&#39;ether initié.
 
 Notez que, comme un contrat intelligent peut lui-même initier efficacement des transactions, l&#39;exécution de code est un processus récursif. Un contrat peut appeler d&#39;autres contrats, chaque appel entraînant l&#39;instanciation d&#39;un autre EVM autour de la nouvelle cible de l&#39;appel. Chaque instanciation a son état mondial de bac à sable initialisé à partir du bac à sable de l&#39;EVM au niveau supérieur. Chaque instanciation reçoit également une quantité spécifiée de gaz pour son alimentation en gaz (n&#39;excédant pas la quantité de gaz restant dans le niveau supérieur, bien sûr), et peut donc elle-même s&#39;arrêter à une exception près en raison du manque de gaz pour terminer son exécution . Encore une fois, dans de tels cas, l&#39;état du bac à sable est ignoré et l&#39;exécution revient à l&#39;EVM au niveau supérieur.
 
@@ -210,7 +210,7 @@ Notez que, comme un contrat intelligent peut lui-même initier efficacement des 
 ==== Compilation de Solidity en code intermédiaire EVM
 
 [[solc_help]]
-(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;compilation de Solidity en code intermédiaire EVM&quot;, id=&quot;ix_13evm-asciidoc4&quot;, range=&quot;startofrange&quot;)))(((&quot;EVM bytecode&quot;,&quot;compilation du fichier source en&quot; , id=&quot;ix_13evm-asciidoc5&quot;, range=&quot;startofrange&quot;)))(((&quot;Solidity&quot;,&quot;compilation du fichier source en code intermédiaire EVM&quot;, id=&quot;ix_13evm-asciidoc6&quot;, range=&quot;startofrange&quot;)))La compilation un fichier source Solidity en code intermédiaire EVM peut être réalisé via plusieurs méthodes. Dans &lt;<intro_chapter>&gt; nous avons utilisé le compilateur Remix en ligne. Dans ce chapitre, nous utiliserons l&#39;exécutable +solc+ en ligne de commande. Pour une liste d&#39;options, exécutez la pass:[<span class="keep-together">commande</span>] suivante :
+(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;compilation de Solidity en code intermédiaire EVM&quot;, id=&quot;ix_13evm-asciidoc4&quot;, range=&quot;startofrange&quot;)))(((&quot;EVM bytecode&quot;,&quot;compilation du fichier source en&quot; , id=&quot;ix_13evm-asciidoc5&quot;, range=&quot;startofrange&quot;)))(((&quot;Solidity&quot;,&quot;compilation du fichier source en code intermédiaire EVM&quot;, id=&quot;ix_13evm-asciidoc6&quot;, range=&quot;startofrange&quot;)))La compilation un fichier source Solidity en code intermédiaire EVM peut être réalisé via plusieurs méthodes. Dans <<intro_chapter>> nous avons utilisé le compilateur Remix en ligne. Dans ce chapitre, nous utiliserons l&#39;exécutable +solc+ en ligne de commande. Pour une liste d&#39;options, exécutez la pass:[<span class="keep-together">commande</span>] suivante :
 
 ++++
 <pre data-type="programlisting">
@@ -351,7 +351,7 @@ ffffffffffffffffffffffffffffffffffffffff
 160217905550603580605b6000396000f3006060604052600080fd00a165627a7a7230582056b...
 ----
 
-Vous pouvez enquêter sur ce qui se passe ici en détail en utilisant la liste des opcodes donnée dans &lt;<evm_bytecode_overview>&gt;. Cependant, c&#39;est toute une tâche, alors commençons par examiner les quatre premières instructions :
+Vous pouvez enquêter sur ce qui se passe ici en détail en utilisant la liste des opcodes donnée dans <<evm_bytecode_overview>>. Cependant, c&#39;est toute une tâche, alors commençons par examiner les quatre premières instructions :
 
 [[opcode_analysis_1]]
 ----
@@ -423,7 +423,7 @@ Si vous comparez la sortie de ces commandes, vous verrez que le code intermédia
 - https://github.com/trailofbits/ethersplay[_Ethersplay_] est un plug-in EVM pour Binary Ninja, un désassembleur.
 - https://github.com/trailofbits/ida-evm[_IDA-Evm_] est un plugin EVM pour IDA, un autre désassembleur.
 
-Dans cette section, nous utiliserons le plug-in Ethersplay pour Binary Ninja et pour commencer &lt;<Faucet_disassembled>&gt;. Après avoir obtenu le code intermédiaire d&#39;exécution de _Faucet.sol_, nous pouvons l&#39;introduire dans Binary Ninja (après avoir chargé le plug-in Ethersplay) pour voir à quoi ressemblent les instructions EVM.
+Dans cette section, nous utiliserons le plug-in Ethersplay pour Binary Ninja et pour commencer <<Faucet_disassembled>>. Après avoir obtenu le code intermédiaire d&#39;exécution de _Faucet.sol_, nous pouvons l&#39;introduire dans Binary Ninja (après avoir chargé le plug-in Ethersplay) pour voir à quoi ressemblent les instructions EVM.
 
 [[Faucet_disassembled]]
 .Démontage du code intermédiaire d&#39;exécution du robinet
@@ -480,7 +480,7 @@ jumpi(label, cond) // Aller à &quot;label&quot; si &quot;cond&quot; est vrai
 
 Dans notre cas, +label+ est +0x3f+, où réside notre fonction de secours dans notre contrat intelligent. L&#39;argument +cond+ est +1+, qui était le résultat de l&#39;instruction +LT+ précédente. Pour mettre toute cette séquence en mots, le contrat passe à la fonction de repli si les données de transaction sont inférieures à 4 octets.
 
-À +0x3f+, seule une instruction +STOP+ suit, car bien que nous ayons déclaré une fonction de repli, nous l&#39;avons laissée vide. Comme vous pouvez le voir dans &lt;<Faucet_jumpi_instruction>&gt;, si nous n&#39;avions pas implémenté une fonction de secours, le contrat lèverait une exception à la place.
+À +0x3f+, seule une instruction +STOP+ suit, car bien que nous ayons déclaré une fonction de repli, nous l&#39;avons laissée vide. Comme vous pouvez le voir dans <<Faucet_jumpi_instruction>>, si nous n&#39;avions pas implémenté une fonction de secours, le contrat lèverait une exception à la place.
 
 [[Faucet_jumpi_instruction]]
 .Instruction JUMPI menant à la fonction de repli
@@ -632,7 +632,7 @@ Bien que la transaction ait échoué, l&#39;expéditeur se verra facturer des fr
 
 ==== Considérations sur la comptabilisation du gaz
 
-(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;considérations sur la comptabilité du gaz&quot;)))(((&quot;gaz&quot;,&quot;considérations sur la comptabilité&quot;)))Les coûts relatifs du gaz des différentes opérations pouvant être effectuées par l&#39;EVM ont ont été soigneusement choisis pour protéger au mieux la chaîne de blocs Ethereum contre les attaques. Vous pouvez voir un tableau détaillé des coûts de gaz pour différents opcodes EVM dans &lt;<evm_opcodes_table>&gt;.
+(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;considérations sur la comptabilité du gaz&quot;)))(((&quot;gaz&quot;,&quot;considérations sur la comptabilité&quot;)))Les coûts relatifs du gaz des différentes opérations pouvant être effectuées par l&#39;EVM ont ont été soigneusement choisis pour protéger au mieux la chaîne de blocs Ethereum contre les attaques. Vous pouvez voir un tableau détaillé des coûts de gaz pour différents opcodes EVM dans <<evm_opcodes_table>>.
 
 Les opérations plus intensives en calcul coûtent plus de gaz. Par exemple, l&#39;exécution de la fonction +SHA3+ est 10 fois plus coûteuse (30 gaz) que l&#39;opération +ADD+ (3 gaz). Plus important encore, certaines opérations, telles que +EXP+, nécessitent un paiement supplémentaire en fonction de la taille de l&#39;opérande. L&#39;utilisation de la mémoire EVM et le stockage des données dans le stockage en chaîne d&#39;un contrat entraînent également un coût en gaz.
 
@@ -686,4 +686,4 @@ Les mineurs du réseau décident collectivement de la limite de gaz du bloc. Les
 
 === Conclusion
 
-Dans ce chapitre, nous avons exploré la machine virtuelle Ethereum, en retraçant l&#39;exécution de divers contrats intelligents et en examinant comment l&#39;EVM exécute le bytecode. Nous avons également examiné le gaz, le mécanisme de comptabilité de l&#39;EVM, et avons vu comment il résout le problème d&#39;arrêt et protège Ethereum des attaques par déni de service. Ensuite, dans &lt;<consensus>&gt;, nous examinerons le mécanisme utilisé par Ethereum pour parvenir à un consensus décentralisé.(((range=&quot;endofrange&quot;, startref=&quot;ix_13evm-asciidoc0&quot;)))
+Dans ce chapitre, nous avons exploré la machine virtuelle Ethereum, en retraçant l&#39;exécution de divers contrats intelligents et en examinant comment l&#39;EVM exécute le bytecode. Nous avons également examiné le gaz, le mécanisme de comptabilité de l&#39;EVM, et avons vu comment il résout le problème d&#39;arrêt et protège Ethereum des attaques par déni de service. Ensuite, dans <<consensus>>, nous examinerons le mécanisme utilisé par Ethereum pour parvenir à un consensus décentralisé.(((range=&quot;endofrange&quot;, startref=&quot;ix_13evm-asciidoc0&quot;)))

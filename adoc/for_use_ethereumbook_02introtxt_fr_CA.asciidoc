@@ -19,7 +19,7 @@ La valeur de l&#39;ether est toujours représentée en interne dans Ethereum sou
 
 Les différentes dénominations d&#39;ether ont à la fois un _nom scientifique_ utilisant le Système international d&#39;unités (_SI_) et un nom familier qui rend hommage à de nombreux grands esprits de l&#39;informatique et de la cryptographie.
 
-&lt;<ether_denominations>&gt; montre les différentes unités, leurs noms familiers (communs) et leurs noms SI. Conformément à la représentation interne de la valeur, le tableau montre toutes les dénominations en wei (première ligne), avec l&#39;ether indiqué par 10^18^ wei dans la 7e ligne.
+<<ether_denominations>> montre les différentes unités, leurs noms familiers (communs) et leurs noms SI. Conformément à la représentation interne de la valeur, le tableau montre toutes les dénominations en wei (première ligne), avec l&#39;ether indiqué par 10^18^ wei dans la 7e ligne.
 
 [[ether_denominations]]
 .Dénominations d'ether et noms d&#39;unités
@@ -96,7 +96,7 @@ Maintenant que nous avons couvert quelques bonnes pratiques de base pour la gest
 
 (((&quot;Ethereum (généralement)&quot;,&quot;Bases de MetaMask&quot;, id=&quot;ix_02intro-asciidoc2&quot;, range=&quot;startofrange&quot;)))(((&quot;MetaMask&quot;,&quot;bases&quot;, id=&quot;ix_02intro-asciidoc3&quot;, range=&quot;startofrange&quot;)))Ouvrez le navigateur Google Chrome et accédez à https://chrome.google.com/webstore/category/extensions[].
 
-Recherchez &quot;MetaMask&quot; et cliquez sur le logo d&#39;un renard. Vous devriez voir quelque chose comme le résultat affiché dans &lt;<metamask_download>&gt;.
+Recherchez &quot;MetaMask&quot; et cliquez sur le logo d&#39;un renard. Vous devriez voir quelque chose comme le résultat affiché dans <<metamask_download>>.
 
 [[metamask_download]]
 .La page de détail de l&#39;extension MetaMask Chrome
@@ -114,7 +114,7 @@ Une fois que vous avez confirmé que vous recherchez la bonne extension, cliquez
 [[using_MetaMask]]
 ==== Création d&#39;un portefeuille
 
-(((&quot;MetaMask&quot;,&quot;création d'un portefeuille&quot;, id=&quot;ix_02intro-asciidoc4&quot;, range=&quot;startofrange&quot;)))Une fois MetaMask installé, vous devriez voir une nouvelle icône (la tête d&#39;un renard) dans la barre d&#39;outils de votre navigateur. Cliquez dessus pour commencer. Il vous sera demandé d&#39;accepter les termes et conditions puis de créer votre nouveau portefeuille Ethereum en saisissant un mot de passe (voir &lt;<metamask_password>&gt;).
+(((&quot;MetaMask&quot;,&quot;création d'un portefeuille&quot;, id=&quot;ix_02intro-asciidoc4&quot;, range=&quot;startofrange&quot;)))Une fois MetaMask installé, vous devriez voir une nouvelle icône (la tête d&#39;un renard) dans la barre d&#39;outils de votre navigateur. Cliquez dessus pour commencer. Il vous sera demandé d&#39;accepter les termes et conditions puis de créer votre nouveau portefeuille Ethereum en saisissant un mot de passe (voir <<metamask_password>>).
 
 [[metamask_password]]
 .La page de mot de passe de l&#39;extension MetaMask Chrome
@@ -125,7 +125,7 @@ image::images/metamask_password.png[&quot;Page de mot de passe du métamasque&qu
 Le mot de passe contrôle l&#39;accès à MetaMask, de sorte qu&#39;il ne peut être utilisé par personne ayant accès à votre navigateur.
 ====
 
-(((&quot;mots de code mnémonique&quot;,&quot;MetaMask and&quot;, id=&quot;ix_02intro-asciidoc5&quot;, range=&quot;startofrange&quot;)))Une fois que vous avez défini un mot de passe, MetaMask générera un portefeuille pour vous et vous montrera un _mnémonique de sauvegarde_ composé de 12 mots anglais (voir &lt;<metamask_mnemonic>&gt;). Ces mots peuvent être utilisés dans n&#39;importe quel portefeuille compatible pour récupérer l&#39;accès à vos fonds si quelque chose arrivait à MetaMask ou à votre ordinateur. Vous n&#39;avez pas besoin du mot de passe pour cette récupération ; les 12 mots suffisent.
+(((&quot;mots de code mnémonique&quot;,&quot;MetaMask and&quot;, id=&quot;ix_02intro-asciidoc5&quot;, range=&quot;startofrange&quot;)))Une fois que vous avez défini un mot de passe, MetaMask générera un portefeuille pour vous et vous montrera un _mnémonique de sauvegarde_ composé de 12 mots anglais (voir <<metamask_mnemonic>>). Ces mots peuvent être utilisés dans n&#39;importe quel portefeuille compatible pour récupérer l&#39;accès à vos fonds si quelque chose arrivait à MetaMask ou à votre ordinateur. Vous n&#39;avez pas besoin du mot de passe pour cette récupération ; les 12 mots suffisent.
 
 [TIP]
 ====
@@ -136,7 +136,7 @@ Sauvegardez votre mnémonique (12 mots) sur papier, deux fois. Conservez les deu
 .La sauvegarde mnémonique de votre portefeuille, créée par MetaMask
 image::images/metamask_mnemonic.png[&quot;Page Mnémonique MetaMask&quot;]
 
-Une fois que vous avez confirmé que vous avez stocké le mnémonique en toute sécurité, vous pourrez voir les détails de votre compte Ethereum, comme indiqué dans &lt;<metamask_account>&gt;.(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc5&quot;)))
+Une fois que vous avez confirmé que vous avez stocké le mnémonique en toute sécurité, vous pourrez voir les détails de votre compte Ethereum, comme indiqué dans <<metamask_account>>.(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc5&quot;)))
 
 [[metamask_account]]
 .Votre compte Ethereum dans MetaMask
@@ -173,7 +173,7 @@ Votre portefeuille MetaMask utilise la même clé privée et la même adresse Et
 
 (((&quot;ether (généralement)&quot;,&quot;testnet&quot;)))(((&quot;MetaMask&quot;,&quot;et ether testnet&quot;)))(((&quot;ether test&quot;,&quot;obtention&quot;)))(((&quot;testnet&quot;,&quot;ether pour&quot;)))(((&quot;portefeuilles&quot;,&quot;ether testnet et&quot;)))Votre première tâche est de financer votre portefeuille. Vous ne ferez pas cela sur le réseau principal car l&#39;éther réel coûte de l&#39;argent et sa manipulation nécessite un peu plus d&#39;expérience. Pour l&#39;instant, vous allez charger votre portefeuille avec de l&#39;ether testnet.
 
-(((&quot;Réseau de test Ropsten&quot;)))Passez MetaMask au _Réseau test Ropsten_. Cliquez sur Deposit, puis sur Ropsten Test Faucet. MetaMask ouvrira une nouvelle page Web, comme indiqué dans &lt;<metamask_ropsten_faucet>&gt;.
+(((&quot;Réseau de test Ropsten&quot;)))Passez MetaMask au _Réseau test Ropsten_. Cliquez sur Deposit, puis sur Ropsten Test Faucet. MetaMask ouvrira une nouvelle page Web, comme indiqué dans <<metamask_ropsten_faucet>>.
 
 [[metamask_ropsten_faucet]]
 .MetaMask et le robinet du réseau test Ropsten
@@ -188,7 +188,7 @@ Cliquez sur le bouton vert &quot;demander 1 éther au robinet&quot;. Vous verrez
 0x7c7ad5aaea6474adccf6f5c5d6abed11b70a350fbc6f9590109e099568090c57
 ----
 
-Dans quelques secondes, la nouvelle transaction sera exploitée par les mineurs de Ropsten et votre portefeuille MetaMask affichera un solde de 1 ETH. Cliquez sur l&#39;ID de transaction et votre navigateur vous amènera à un _explorateur de bloc_, qui est un site Web qui vous permet de visualiser et d&#39;explorer des blocs, des adresses et des transactions. MetaMask utilise https://etherscan.io/[Explorateur de blocs Etherscan], l&#39;un des explorateurs de blocs Ethereum les plus populaires. La transaction contenant le paiement du Ropsten Test Faucet est affichée dans &lt;<ropsten_block_explorer>&gt;.
+Dans quelques secondes, la nouvelle transaction sera exploitée par les mineurs de Ropsten et votre portefeuille MetaMask affichera un solde de 1 ETH. Cliquez sur l&#39;ID de transaction et votre navigateur vous amènera à un _explorateur de bloc_, qui est un site Web qui vous permet de visualiser et d&#39;explorer des blocs, des adresses et des transactions. MetaMask utilise https://etherscan.io/[Explorateur de blocs Etherscan], l&#39;un des explorateurs de blocs Ethereum les plus populaires. La transaction contenant le paiement du Ropsten Test Faucet est affichée dans <<ropsten_block_explorer>>.
 
 [[ropsten_block_explorer]]
 .Explorateur de blocs Ropsten sur Etherscan
@@ -203,7 +203,7 @@ Essayez de visiter ce lien ou de saisir le hachage de la transaction sur le site
 
 (((&quot;MetaMask&quot;,&quot;envoi d&#39;ether depuis&quot;, id=&quot;ix_02intro-asciidoc6&quot;, range=&quot;startofrange&quot;)))(((&quot;ether test&quot;,&quot;envoi&quot;, id=&quot;ix_02intro-asciidoc7&quot;, range =&quot;startofrange&quot;)))Une fois que vous avez reçu votre premier test d&#39;ether du Ropsten Test Faucet, vous pouvez expérimenter l&#39;envoi d&#39;ether en essayant d&#39;en renvoyer au robinet. Comme vous pouvez le voir sur la page Ropsten Test Faucet, il existe une option pour &quot;donner&quot; 1 ETH au robinet. Cette option est disponible pour qu&#39;une fois que vous avez terminé les tests, vous puissiez retourner le reste de votre ether de test, afin que quelqu&#39;un d&#39;autre puisse l&#39;utiliser ensuite. Même si l&#39;ether de test n&#39;a aucune valeur, certaines personnes l'accumulent, ce qui rend difficile pour tout le monde d&#39;utiliser les réseaux de test. L'accumulation de l&#39;ether de test est mal vue !
 
-Heureusement, nous ne sommes pas des accumulateurs d&#39;éther de test. Cliquez sur le bouton orange &quot;1 ether&quot; pour dire à MetaMask de créer une transaction payant le robinet 1 ether. MetaMask préparera une transaction et ouvrira une fenêtre avec la confirmation, comme indiqué dans &lt;<send_to_faucet>&gt;.
+Heureusement, nous ne sommes pas des accumulateurs d&#39;éther de test. Cliquez sur le bouton orange &quot;1 ether&quot; pour dire à MetaMask de créer une transaction payant le robinet 1 ether. MetaMask préparera une transaction et ouvrira une fenêtre avec la confirmation, comme indiqué dans <<send_to_faucet>>.
 
 
 [[send_to_faucet]]
@@ -219,7 +219,7 @@ Oups! Vous avez probablement remarqué que vous ne pouvez pas terminer la transa
 (((&quot;gaz&quot;,&quot;sur les réseaux de test&quot;)))Des frais sont également exigés sur les réseaux de test. Sans frais, un réseau de test se comporterait différemment du réseau principal, ce qui en ferait une plate-forme de test inadéquate. Les frais protègent également les réseaux de test des attaques DoS et des contrats mal construits (par exemple, des boucles infinies), tout comme ils protègent le réseau principal.
 ====
 
-Lorsque vous avez envoyé la transaction, MetaMask a calculé le prix moyen du gaz des récentes transactions réussies à 3 gwei, ce qui signifie gigawei. Wei est la plus petite pass:[<span class="keep-together">subdivision</span>] de la monnaie ether, comme nous l&#39;avons vu dans &lt;<ether_units>&gt;. La limite de gaz est fixée au prix de l&#39;envoi d&#39;une transaction de base, soit 21 000 unités de gaz. Par conséquent, le montant maximum d&#39;ETH que vous dépenserez est de 3 * 21 000 gwei = 63 000 gwei = 0,000063 ETH. (Sachez que les prix moyens du gaz peuvent fluctuer, car ils sont principalement déterminés par les mineurs. Nous verrons dans un chapitre ultérieur comment vous pouvez augmenter/diminuer votre limite de gaz pour vous assurer que votre transaction a la priorité si nécessaire.)
+Lorsque vous avez envoyé la transaction, MetaMask a calculé le prix moyen du gaz des récentes transactions réussies à 3 gwei, ce qui signifie gigawei. Wei est la plus petite pass:[<span class="keep-together">subdivision</span>] de la monnaie ether, comme nous l&#39;avons vu dans <<ether_units>>. La limite de gaz est fixée au prix de l&#39;envoi d&#39;une transaction de base, soit 21 000 unités de gaz. Par conséquent, le montant maximum d&#39;ETH que vous dépenserez est de 3 * 21 000 gwei = 63 000 gwei = 0,000063 ETH. (Sachez que les prix moyens du gaz peuvent fluctuer, car ils sont principalement déterminés par les mineurs. Nous verrons dans un chapitre ultérieur comment vous pouvez augmenter/diminuer votre limite de gaz pour vous assurer que votre transaction a la priorité si nécessaire.)
 
 Tout cela pour dire : faire une transaction à 1 ETH coûte 1,000063 ETH. MetaMask arrondit de manière confuse au _plancher_ d'1 ETH lors de l&#39;affichage du total, mais le montant réel dont vous avez besoin est de 1,000063 ETH et vous n&#39;avez que 1 ETH. Cliquez sur Reject pour annuler cette transaction.
 
@@ -230,13 +230,13 @@ Une fois que vous avez un solde de 2 ETH, vous pouvez réessayer. Cette fois, lo
 [[explore_tx_history]]
 ==== Explorer l&#39;historique des transactions d&#39;une adresse
 
-(((&quot;addresses&quot;,&quot;exploration de l&#39;historique des transactions des&quot;, id=&quot;ix_02intro-asciidoc8&quot;, range=&quot;startofrange&quot;)))(((&quot;MetaMask&quot;,&quot;exploration de l&#39;historique des transactions d&#39;une adresse avec&quot;, id=&quot; ix_02intro-asciidoc9&quot;, range=&quot;startofrange&quot;)))Vous êtes maintenant devenu un expert dans l&#39;utilisation de MetaMask pour envoyer et recevoir de l&#39;ether de test. Votre portefeuille a reçu au moins deux paiements et en a envoyé au moins un. Vous pouvez afficher toutes ces transactions à l&#39;aide de l&#39;explorateur de blocs _ropsten.etherscan.io_. Vous pouvez soit copier l&#39;adresse de votre portefeuille et la coller dans la zone de recherche de l&#39;explorateur de blocs, soit demander à MetaMask d&#39;ouvrir la page pour vous. À côté de l&#39;icône de votre compte dans MetaMask, vous verrez un bouton affichant trois points. Cliquez dessus pour afficher un menu d&#39;options liées au compte (voir &lt;<metamask_account_context_menu>&gt;).
+(((&quot;addresses&quot;,&quot;exploration de l&#39;historique des transactions des&quot;, id=&quot;ix_02intro-asciidoc8&quot;, range=&quot;startofrange&quot;)))(((&quot;MetaMask&quot;,&quot;exploration de l&#39;historique des transactions d&#39;une adresse avec&quot;, id=&quot; ix_02intro-asciidoc9&quot;, range=&quot;startofrange&quot;)))Vous êtes maintenant devenu un expert dans l&#39;utilisation de MetaMask pour envoyer et recevoir de l&#39;ether de test. Votre portefeuille a reçu au moins deux paiements et en a envoyé au moins un. Vous pouvez afficher toutes ces transactions à l&#39;aide de l&#39;explorateur de blocs _ropsten.etherscan.io_. Vous pouvez soit copier l&#39;adresse de votre portefeuille et la coller dans la zone de recherche de l&#39;explorateur de blocs, soit demander à MetaMask d&#39;ouvrir la page pour vous. À côté de l&#39;icône de votre compte dans MetaMask, vous verrez un bouton affichant trois points. Cliquez dessus pour afficher un menu d&#39;options liées au compte (voir <<metamask_account_context_menu>>).
 
 [[metamask_account_context_menu]]
 .Menu contextuel du compte MetaMask
 image::images/metamask_account_context_menu.png[&quot;Menu contextuel du compte MetaMask&quot;]
 
-Sélectionnez &quot;View account on Etherscan&quot; pour ouvrir une page Web dans l&#39;explorateur de blocs affichant l&#39;historique des transactions de votre compte, comme indiqué dans &lt;<block_explorer_account_history>&gt;.
+Sélectionnez &quot;View account on Etherscan&quot; pour ouvrir une page Web dans l&#39;explorateur de blocs affichant l&#39;historique des transactions de votre compte, comme indiqué dans <<block_explorer_account_history>>.
 
 [[block_explorer_account_history]]
 .Historique des transactions d'une adresse sur Etherscan
@@ -251,7 +251,7 @@ Vous pouvez explorer l&#39;historique des transactions de n&#39;importe quelle a
 
 (((&quot;Ethereum (généralement)&quot;,&quot;et EVM&quot;)))(((&quot;EVM (Ethereum Virtual Machine)&quot;,&quot;comme ordinateur mondial&quot;)))(((&quot;ordinateur mondial, Ethereum comme&quot;))) Vous avez maintenant créé un portefeuille et envoyé et reçu de l&#39;ether. Jusqu&#39;à présent, nous avons traité Ethereum comme une cryptomonnaie. Mais Ethereum est bien plus que cela. En fait, la fonction de cryptomonnaie est subordonnée à la fonction d&#39;Ethereum en tant qu&#39;ordinateur mondial décentralisé. (((&quot;contrats intelligents&quot;,&quot;ether et&quot;)))L'ether est destiné à être utilisé pour payer l&#39;exécution de _contrats intelligents_ aussi, qui sont des programmes informatiques qui s&#39;exécutent sur un ordinateur émulé appelé _Ethereum Virtual Machine_ (EVM).
 
-L&#39;EVM est un singleton global, ce qui signifie qu&#39;il fonctionne comme s&#39;il s&#39;agissait d&#39;un ordinateur global à instance unique, fonctionnant partout. Chaque nœud du réseau Ethereum exécute une copie locale de l&#39;EVM pour valider l&#39;exécution du contrat, tandis que la blockchain Ethereum enregistre l&#39;état changeant de cet ordinateur mondial lorsqu&#39;il traite les transactions et les contrats intelligents. Nous en discuterons plus en détail dans &lt;<evm_chapter>&gt;.
+L&#39;EVM est un singleton global, ce qui signifie qu&#39;il fonctionne comme s&#39;il s&#39;agissait d&#39;un ordinateur global à instance unique, fonctionnant partout. Chaque nœud du réseau Ethereum exécute une copie locale de l&#39;EVM pour valider l&#39;exécution du contrat, tandis que la blockchain Ethereum enregistre l&#39;état changeant de cet ordinateur mondial lorsqu&#39;il traite les transactions et les contrats intelligents. Nous en discuterons plus en détail dans <<evm_chapter>>.
 
 [[EOA_contracts]]
 === Comptes détenus en externe (EOA ou Externally Owned Accounts) et contrats
@@ -267,9 +267,9 @@ Dans les prochaines sections, nous rédigerons notre premier contrat. Vous appre
 [[exemple_contrat_simple]]
 === Un contrat simple : un robinet test d'ether
 
-(((&quot;comptes de contrat&quot;,&quot;création&quot;, seealso=&quot;Contrat Faucet.sol&quot;, id=&quot;ix_02intro-asciidoc10&quot;, range=&quot;startofrange&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot; ,&quot;création&quot;, id=&quot;ix_02intro-asciidoc11&quot;, range=&quot;startofrange&quot;))) Ethereum possède de nombreux langages de haut niveau différents, qui peuvent tous être utilisés pour écrire un contrat et produire un code intermédiaire ou bytecode EVM. Vous pouvez lire sur bon nombre des plus importantes et des plus intéressantes dans &lt;<high_level_languages>&gt;. Un langage de haut niveau est de loin le choix dominant pour la programmation de contrats intelligents : Solidity. (((&quot;Wood, Dr. Gavin&quot;,&quot;et Solidity&quot;)))Solidity a été créé par le Dr Gavin Wood, le co-auteur de ce livre, et est devenu le langage le plus largement utilisé dans Ethereum (et au-delà). Nous utiliserons Solidity pour rédiger notre premier contrat.
+(((&quot;comptes de contrat&quot;,&quot;création&quot;, seealso=&quot;Contrat Faucet.sol&quot;, id=&quot;ix_02intro-asciidoc10&quot;, range=&quot;startofrange&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot; ,&quot;création&quot;, id=&quot;ix_02intro-asciidoc11&quot;, range=&quot;startofrange&quot;))) Ethereum possède de nombreux langages de haut niveau différents, qui peuvent tous être utilisés pour écrire un contrat et produire un code intermédiaire ou bytecode EVM. Vous pouvez lire sur bon nombre des plus importantes et des plus intéressantes dans <<high_level_languages>>. Un langage de haut niveau est de loin le choix dominant pour la programmation de contrats intelligents : Solidity. (((&quot;Wood, Dr. Gavin&quot;,&quot;et Solidity&quot;)))Solidity a été créé par le Dr Gavin Wood, le co-auteur de ce livre, et est devenu le langage le plus largement utilisé dans Ethereum (et au-delà). Nous utiliserons Solidity pour rédiger notre premier contrat.
 
-(((&quot;Solidity&quot;,&quot;faucet.sol et&quot;)))Pour notre premier exemple (&lt;<solidity_faucet_example>&gt;), nous allons écrire un contrat qui contrôle un _robinet_. Vous avez déjà utilisé un robinet pour obtenir de l&#39;ether de test sur le réseau de test de Ropsten. Un robinet est une chose relativement simple: il donne de l&#39;ether à toute adresse qui le demande et peut être rempli périodiquement. Vous pouvez implémenter un robinet comme un portefeuille contrôlé par un humain ou un serveur Web.
+(((&quot;Solidity&quot;,&quot;faucet.sol et&quot;)))Pour notre premier exemple (<<solidity_faucet_example>>), nous allons écrire un contrat qui contrôle un _robinet_. Vous avez déjà utilisé un robinet pour obtenir de l&#39;ether de test sur le réseau de test de Ropsten. Un robinet est une chose relativement simple: il donne de l&#39;ether à toute adresse qui le demande et peut être rempli périodiquement. Vous pouvez implémenter un robinet comme un portefeuille contrôlé par un humain ou un serveur Web.
 
 [[solidity_faucet_example]]
 .Faucet.sol: Un contrat Solidity mettant en place un robinet
@@ -327,7 +327,7 @@ La fonction est nommée +withdraw+, et elle prend un argument entier non signé 
 require(withdraw_amount <= 100000000000000000);
 ----
 
-Il utilise la fonction intégrée Solidity +require+ pour tester une condition préalable, que le +withdraw_amount+ est inférieur ou égal à 100 000 000 000 000 000 wei, qui est l&#39;unité de base de l&#39;ether (voir &lt;<ether_denominations>&gt;) et équivalent à 0,1 ether. Si la fonction +withdraw+ est appelée avec un +withdraw_amount+ supérieur à ce montant, la fonction +require+ provoquera ici l&#39;arrêt et l&#39;échec de l&#39;exécution du contrat avec une _exception_. Notez que les instructions doivent se terminer par un point-virgule dans Solidity.
+Il utilise la fonction intégrée Solidity +require+ pour tester une condition préalable, que le +withdraw_amount+ est inférieur ou égal à 100 000 000 000 000 000 wei, qui est l&#39;unité de base de l&#39;ether (voir <<ether_denominations>>) et équivalent à 0,1 ether. Si la fonction +withdraw+ est appelée avec un +withdraw_amount+ supérieur à ce montant, la fonction +require+ provoquera ici l&#39;arrêt et l&#39;échec de l&#39;exécution du contrat avec une _exception_. Notez que les instructions doivent se terminer par un point-virgule dans Solidity.
 
 Cette partie du contrat est la logique principale de notre robinet. Il contrôle le flux de fonds hors du contrat en imposant une limite aux retraits. C&#39;est un contrôle très simple mais qui peut vous donner un aperçu de la puissance d&#39;une chaîne de blocs programmable : un logiciel décentralisé contrôlant l&#39;argent.
 
@@ -364,25 +364,25 @@ Le compilateur Solidity se présente sous la forme d&#39;un exécutable autonome
 
 (((&quot;Remix IDE&quot;)))Utilisez votre navigateur Chrome (avec le portefeuille MetaMask que vous avez installé précédemment) pour accéder à l&#39;IDE Remix à l&#39;adresse https://remix.ethereum.org[].
 
-Lorsque vous chargez Remix pour la première fois, il démarre avec un exemple de contrat appelé _ballot.sol_. Nous n&#39;en avons pas besoin, alors fermez-le en cliquant sur le +x+ dans le coin de l&#39;onglet, comme indiqué dans &lt;<remix_close_tab>&gt;.
+Lorsque vous chargez Remix pour la première fois, il démarre avec un exemple de contrat appelé _ballot.sol_. Nous n&#39;en avons pas besoin, alors fermez-le en cliquant sur le +x+ dans le coin de l&#39;onglet, comme indiqué dans <<remix_close_tab>>.
 
 [[remix_close_tab]]
 .Fermer l&#39;onglet d&#39;exemple par défaut
 image::images/remix_close_tab.png[&quot;Fermer l&#39;onglet d&#39;exemple par défaut&quot;]
 
-Maintenant, ajoutez un nouvel onglet en cliquant sur le signe plus circulaire dans la barre d&#39;outils en haut à gauche, comme indiqué dans &lt;<remix_toolbar>&gt;. Nommez le nouveau fichier _Faucet.sol_.
+Maintenant, ajoutez un nouvel onglet en cliquant sur le signe plus circulaire dans la barre d&#39;outils en haut à gauche, comme indiqué dans <<remix_toolbar>>. Nommez le nouveau fichier _Faucet.sol_.
 
 [[remix_toolbar]]
 .Cliquez sur le signe plus pour ouvrir un nouvel onglet
 image::images/remix_toolbar.png[&quot;Cliquez sur le signe plus pour ouvrir un nouvel onglet&quot;]
 
-Une fois que vous avez ouvert le nouvel onglet, copiez et collez le code de notre exemple _Faucet.sol_, comme indiqué dans &lt;<remix_faucet_load>&gt;.
+Une fois que vous avez ouvert le nouvel onglet, copiez et collez le code de notre exemple _Faucet.sol_, comme indiqué dans <<remix_faucet_load>>.
 
 [[remix_faucet_load]]
 .Copiez l&#39;exemple de code Faucet dans le nouvel onglet
 image::images/remix_faucet_load.png[&quot;Copiez l&#39;exemple de code Faucet dans le nouvel onglet&quot;]
 
-Une fois que vous avez chargé le contrat _Faucet.sol_ dans l&#39;IDE Remix, l&#39;IDE compilera automatiquement le code. Si tout se passe bien, vous verrez une boîte verte avec &quot;Faucet&quot; dedans apparaître à droite, sous l&#39;onglet Compiler, confirmant la compilation réussie (voir &lt;<remix_compile>&gt;).
+Une fois que vous avez chargé le contrat _Faucet.sol_ dans l&#39;IDE Remix, l&#39;IDE compilera automatiquement le code. Si tout se passe bien, vous verrez une boîte verte avec &quot;Faucet&quot; dedans apparaître à droite, sous l&#39;onglet Compiler, confirmant la compilation réussie (voir <<remix_compile>>).
 
 [[remix_compile]]
 .Remix compile avec succès le contrat Faucet.sol
@@ -421,15 +421,15 @@ N&#39;êtes-vous pas content d&#39;utiliser un langage de haut niveau comme Soli
 
 (((&quot;adresse zéro&quot;,&quot;enregistrement d'un contrat&quot;)))L&#39;enregistrement d&#39;un contrat sur la chaîne de blocs implique la création d&#39;une transaction spéciale dont la destination est l&#39;adresse +0x00000000000000000000000000000000000000+, également appelée _zero address_ ou l'_adresse zéro_. L&#39;adresse zéro est une adresse spéciale qui indique à la chaîne de blocs Ethereum que vous souhaitez enregistrer un contrat. Heureusement, l&#39;IDE Remix s&#39;occupera de tout cela pour vous et enverra la transaction à MetaMask.
 
-(((&quot;IDE Remix&quot;, id=&quot;ix_02intro-asciidoc16&quot;, range=&quot;startofrange&quot;)))Tout d&#39;abord, passez à l&#39;onglet Run et sélectionnez Injected Web3 dans la zone de sélection déroulante Environment. Cela connecte l&#39;IDE Remix au portefeuille MetaMask et, via MetaMask, au réseau de test Ropsten. Une fois que vous faites cela, vous pouvez voir Ropsten sous Environment. De plus, dans la zone de sélection du compte, il indique l&#39;adresse de votre portefeuille (voir &lt;<remix_run>&gt;).
+(((&quot;IDE Remix&quot;, id=&quot;ix_02intro-asciidoc16&quot;, range=&quot;startofrange&quot;)))Tout d&#39;abord, passez à l&#39;onglet Run et sélectionnez Injected Web3 dans la zone de sélection déroulante Environment. Cela connecte l&#39;IDE Remix au portefeuille MetaMask et, via MetaMask, au réseau de test Ropsten. Une fois que vous faites cela, vous pouvez voir Ropsten sous Environment. De plus, dans la zone de sélection du compte, il indique l&#39;adresse de votre portefeuille (voir <<remix_run>>).
 
 [[remix_run]]
 .Onglet Run du IDE Remix, avec l&#39;environnement Injected Web3 sélectionné
 image::images/remix_run.png[&quot;Onglet Run du IDE Remix, avec l&#39;environnement Injected Web3 sélectionné&quot;]
 
-Juste en dessous des paramètres d&#39;exécution que vous venez de confirmer se trouve le contrat +Faucet+, prêt à être créé. Cliquez sur le bouton Deploy affiché dans &lt;<remix_run>&gt;.
+Juste en dessous des paramètres d&#39;exécution que vous venez de confirmer se trouve le contrat +Faucet+, prêt à être créé. Cliquez sur le bouton Deploy affiché dans <<remix_run>>.
 
-Remix construira la transaction spéciale &quot;création&quot; et MetaMask vous demandera de l&#39;approuver, comme indiqué dans &lt;<remix_metamask_create>&gt;. Vous remarquerez que la transaction de création de contrat ne contient pas d&#39;ether, mais qu&#39;elle contient 262 octets de données (le contrat compilé) et consommera 10 gwei en gaz. Cliquez sur Soumettre pour l&#39;approuver.
+Remix construira la transaction spéciale &quot;création&quot; et MetaMask vous demandera de l&#39;approuver, comme indiqué dans <<remix_metamask_create>>. Vous remarquerez que la transaction de création de contrat ne contient pas d&#39;ether, mais qu&#39;elle contient 262 octets de données (le contrat compilé) et consommera 10 gwei en gaz. Cliquez sur Soumettre pour l&#39;approuver.
 
 [[remix_metamask_create]]
 .MetaMask montrant la transaction de création de contrat
@@ -437,7 +437,7 @@ image::images/remix_metamask_create.png[&quot;MetaMask montrant la transaction d
 
 Maintenant, vous devez attendre. Il faudra environ 15 à 30 secondes pour que le contrat soit miné sur Ropsten. Remix ne semblera pas faire grand-chose, mais soyez patient.
 
-Une fois le contrat créé, il apparaît en bas de l&#39;onglet Run (voir &lt;<remix_contract_interact>&gt;).
+Une fois le contrat créé, il apparaît en bas de l&#39;onglet Run (voir <<remix_contract_interact>>).
 
 [[remix_contract_interact]]
 .Le contrat Faucet est VIVANT !
@@ -453,13 +453,13 @@ Notez que le contrat +Faucet+ a maintenant sa propre adresse : Remix l&#39;affi
 [[view_contract_address]]
 ==== Affichage de l&#39;adresse du contrat dans un explorateur de blocs
 
-(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;affichage de l&#39;adresse du contrat dans un explorateur de blocs&quot;)))Nous avons maintenant un contrat enregistré sur la chaîne de blocs, et nous pouvons voir qu&#39;il a une adresse Ethereum. Vérifions-le dans l&#39;explorateur de blocs _ropsten.etherscan.io_ et voyons à quoi ressemble un contrat. Dans l&#39;IDE Remix, copiez l&#39;adresse du contrat en cliquant sur l&#39;icône du presse-papiers à côté de son nom (voir &lt;<remix_contract_address>&gt;).
+(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;affichage de l&#39;adresse du contrat dans un explorateur de blocs&quot;)))Nous avons maintenant un contrat enregistré sur la chaîne de blocs, et nous pouvons voir qu&#39;il a une adresse Ethereum. Vérifions-le dans l&#39;explorateur de blocs _ropsten.etherscan.io_ et voyons à quoi ressemble un contrat. Dans l&#39;IDE Remix, copiez l&#39;adresse du contrat en cliquant sur l&#39;icône du presse-papiers à côté de son nom (voir <<remix_contract_address>>).
 
 [[remix_contract_address]]
 .Copiez l&#39;adresse du contrat de Remix
 image::images/remix_contract_address.png[&quot;Copier l&#39;adresse du contrat depuis Remix&quot;]
 
-Gardez Remix ouvert ; nous y reviendrons plus tard. Maintenant, naviguez dans votre navigateur jusqu&#39;à _ropsten.etherscan.io_ et collez l&#39;adresse dans le champ de recherche. Vous devriez voir l&#39;historique des adresses Ethereum du contrat, comme indiqué dans &lt;<etherscan_contract_address>&gt;.(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc17&quot;)))
+Gardez Remix ouvert ; nous y reviendrons plus tard. Maintenant, naviguez dans votre navigateur jusqu&#39;à _ropsten.etherscan.io_ et collez l&#39;adresse dans le champ de recherche. Vous devriez voir l&#39;historique des adresses Ethereum du contrat, comme indiqué dans <<etherscan_contract_address>>.(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc17&quot;)))
 
 [[etherscan_contract_address]]
 .Afficher l&#39;adresse du contrat Faucet dans l&#39;explorateur de blocs Etherscan
@@ -470,7 +470,7 @@ image::images/etherscan_contract_address.png[&quot;Afficher l&#39;adresse du con
 
 (((&quot;Faucet.sol contract (exemple de test)&quot;,&quot;envoyer de l'ether à&quot;, id=&quot;ix_02intro-asciidoc18&quot;, range=&quot;startofrange&quot;)))Pour l&#39;instant, le contrat n&#39;a qu&#39;une seule transaction dans son historique : l'opération de création de contrat. Comme vous pouvez le voir, le contrat n&#39;a pas non plus d&#39;ether (solde nul). C&#39;est parce que nous n&#39;avons pas envoyé d&#39;éther au contrat dans la transaction de création, même si nous aurions pu le faire.
 
-Notre robinet a besoin de fonds ! Notre premier projet sera d&#39;utiliser MetaMask pour envoyer de l&#39;ether au contrat. Vous devriez toujours avoir l&#39;adresse du contrat dans votre presse-papiers (sinon, copiez-la à nouveau depuis Remix). Ouvrez MetaMask et envoyez-lui 1 éther, exactement comme vous le feriez à n&#39;importe quelle autre adresse Ethereum (voir &lt;<metamask_send_to_contract>&gt;).
+Notre robinet a besoin de fonds ! Notre premier projet sera d&#39;utiliser MetaMask pour envoyer de l&#39;ether au contrat. Vous devriez toujours avoir l&#39;adresse du contrat dans votre presse-papiers (sinon, copiez-la à nouveau depuis Remix). Ouvrez MetaMask et envoyez-lui 1 éther, exactement comme vous le feriez à n&#39;importe quelle autre adresse Ethereum (voir <<metamask_send_to_contract>>).
 
 [[metamask_send_to_contract]]
 .Envoyer 1 ether à l&#39;adresse du contrat
@@ -493,7 +493,7 @@ Lorsque vous avez envoyé une transaction à l&#39;adresse du contrat, sans donn
 
 (((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;retrait de fonds de&quot;, id=&quot;ix_02intro-asciidoc19&quot;, range=&quot;startofrange&quot;)))(((&quot;retrait de fonds du contrat&quot;, id=&quot; ix_02intro-asciidoc20&quot;, range=&quot;startofrange&quot;)))Ensuite, retirons des fonds du robinet. Pour retirer, nous devons construire une transaction qui appelle la fonction +withdraw+ et lui passe un argument +withdraw_amount+. Pour garder les choses simples pour le moment, Remix construira cette transaction pour nous et MetaMask la présentera pour notre approbation.
 
-Revenez à l&#39;onglet Remix et consultez le contrat dans l&#39;onglet Run. Vous devriez voir une boîte orange intitulée +wthdraw+ (retrait) avec une entrée de champ intitulée +uint256 withdraw_amount+ (voir &lt;<remix_contract_withdraw>&gt;).
+Revenez à l&#39;onglet Remix et consultez le contrat dans l&#39;onglet Run. Vous devriez voir une boîte orange intitulée +wthdraw+ (retrait) avec une entrée de champ intitulée +uint256 withdraw_amount+ (voir <<remix_contract_withdraw>>).
 
 [[remix_contract_withdraw]]
 .La fonction de retrait (withdraw) de Faucet.sol, dans Remix
@@ -510,19 +510,19 @@ Tout d&#39;abord, déterminons le +withdraw_amount+ (montant de retrait). Nous v
 En raison d&#39;une limitation de JavaScript, un nombre aussi grand que 10^17^ ne peut pas être traité par Remix. Au lieu de cela, nous l&#39;entourons de guillemets doubles, pour permettre à Remix de le recevoir sous forme de chaîne et de le manipuler comme un +BigNumber+. Si nous ne le mettons pas entre guillemets, l&#39;IDE Remix ne parviendra pas à le traiter et affichera &quot;Error encoding arguments: Error: Assertion failed.&quot;
 ====
 
-Tapez &quot;100000000000000000&quot; (avec les guillemets) dans la case +withdraw_amount+ et cliquez sur le bouton de retrait (voir &lt;<remix_withdraw>&gt;).
+Tapez &quot;100000000000000000&quot; (avec les guillemets) dans la case +withdraw_amount+ et cliquez sur le bouton de retrait (voir <<remix_withdraw>>).
 
 [[remix_withdraw]]
 .Cliquez sur &quot;withdraw&quot; dans Remix pour créer une transaction de retrait
 image::images/remix_withdraw.png[&quot;&quot;]
 
-MetaMask fera apparaître une fenêtre de transaction que vous devrez approuver. Cliquez sur Confirmer pour envoyer votre appel de retrait au contrat (voir &lt;<metamask_withdraw>&gt;).
+MetaMask fera apparaître une fenêtre de transaction que vous devrez approuver. Cliquez sur Confirmer pour envoyer votre appel de retrait au contrat (voir <<metamask_withdraw>>).
 
 [[metamask_withdraw]]
 .Transaction MetaMask pour appeler la fonction de retrait
 image::images/metamask_withdraw.png[&quot;Transaction MetaMask pour appeler la fonction de retrait&quot;]
 
-Attendez une minute, puis rechargez l&#39;explorateur de blocs Etherscan pour voir la transaction reflétée dans l&#39;historique des adresses de contrat + Faucet + (voir &lt;<etherscan_withdrawal_tx>&gt;).
+Attendez une minute, puis rechargez l&#39;explorateur de blocs Etherscan pour voir la transaction reflétée dans l&#39;historique des adresses de contrat + Faucet + (voir <<etherscan_withdrawal_tx>>).
 
 [[etherscan_withdrawal_tx]]
 .Etherscan montre la transaction appelant la fonction de retrait
@@ -531,7 +531,7 @@ image::images/etherscan_withdrawal_tx.png[&quot;Etherscan affiche la transaction
 
 Nous voyons maintenant une nouvelle transaction avec l&#39;adresse du contrat comme destination et une valeur de 0 éther. Le solde du contrat a changé et est maintenant de 0,9 éther car il nous a envoyé 0,1 éther comme demandé. Mais nous ne voyons pas de transaction &quot;OUT&quot; dans l&#39;_historique des adresses de contrat_.
 
-Où est le retrait sortant ? Un nouvel onglet est apparu sur la page d&#39;historique des adresses du contrat, nommé Transactions internes. (((&quot;transaction interne (message)&quot;)))Parce que le transfert d&#39;éther 0.1 provient du code de contrat, il s&#39;agit d&#39;une transaction interne (également appelée _message_). Cliquez sur cet onglet pour le voir (voir &lt;<etherscan_withdrawal_internal>&gt;).
+Où est le retrait sortant ? Un nouvel onglet est apparu sur la page d&#39;historique des adresses du contrat, nommé Transactions internes. (((&quot;transaction interne (message)&quot;)))Parce que le transfert d&#39;éther 0.1 provient du code de contrat, il s&#39;agit d&#39;une transaction interne (également appelée _message_). Cliquez sur cet onglet pour le voir (voir <<etherscan_withdrawal_internal>>).
 
 
 Cette &quot;transaction interne&quot; a été envoyée par le contrat dans cette ligne de code (à partir de la fonction pass:[<code><span class="keep-together">withdraw</span></code>] dans _Faucet.sol_) :
@@ -557,4 +557,4 @@ Ensuite, vous avez écrit un contrat de robinet dans Solidity. Vous avez utilis�
 
 Cela peut ne pas sembler beaucoup, mais vous venez d&#39;interagir avec succès avec un logiciel qui contrôle l&#39;argent sur un ordinateur mondial décentralisé.
 
-Nous ferons beaucoup plus de programmation de contrats intelligents dans &lt;<smart_contracts_chapter>&gt; et découvrirons les meilleures pratiques et les considérations de sécurité dans &lt;<smart_contract_security>&gt;.(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc0&quot;)))
+Nous ferons beaucoup plus de programmation de contrats intelligents dans <<smart_contracts_chapter>> et découvrirons les meilleures pratiques et les considérations de sécurité dans <<smart_contract_security>>.(((range=&quot;endofrange&quot;, startref=&quot;ix_02intro-asciidoc0&quot;)))

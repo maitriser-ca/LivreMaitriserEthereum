@@ -219,7 +219,7 @@ L&#39;exécution du contrat de transfert est très simple. Si Alice veut envoyer
 
 (((&quot;approve &amp; transferFrom flux de travail&quot;)))Le deuxième flux de travail est un processus à deux transactions qui utilise +approve+ suivi de +transferFrom+. Ce workflow permet à un propriétaire de jeton de déléguer son contrôle à une autre adresse. Il est le plus souvent utilisé pour déléguer le contrôle à un contrat de distribution de jetons, mais il peut également être utilisé par les échanges.
 
-(((&quot;Initial Coin Offerings (ICOs)&quot;,&quot;jetons et&quot;)))Par exemple, si une entreprise vend des tokens pour une ICO (Initial Coin Offerings ou "offres initiales de pièces"), elle peut +approve+ (approuver) une adresse de contrat de crowdsale pour distribuer une certaine quantité de jetons. Le contrat de crowdsale peut alors +transferFrom+ le solde du propriétaire du contrat de jeton à chaque acheteur du jeton, comme illustré dans &lt;<approve_transferFrom_workflow>&gt;.
+(((&quot;Initial Coin Offerings (ICOs)&quot;,&quot;jetons et&quot;)))Par exemple, si une entreprise vend des tokens pour une ICO (Initial Coin Offerings ou "offres initiales de pièces"), elle peut +approve+ (approuver) une adresse de contrat de crowdsale pour distribuer une certaine quantité de jetons. Le contrat de crowdsale peut alors +transferFrom+ le solde du propriétaire du contrat de jeton à chaque acheteur du jeton, comme illustré dans <<approve_transferFrom_workflow>>.
 
 [NOTE]
 ====
@@ -246,7 +246,7 @@ https://bit.ly/2xPYck6[OpenZeppelin StandardToken]:: Cette implémentation est c
 [[METoken_example]]
 ==== Lancement de notre propre jeton ERC20
 
-(((&quot;standard de jeton ERC20&quot;,&quot;Exemple de création/lancement de METoken&quot;, id=&quot;ix_10tokens-asciidoc9&quot;, range=&quot;startofrange&quot;)))(((&quot;METoken (Mastering Ethereum Token)&quot;,&quot;exemple de création/lancement &quot;, id=&quot;ix_10tokens-asciidoc10&quot;, range=&quot;startofrange&quot;))) Créons et lançons notre propre jeton. Pour cet exemple, nous utiliserons le cadre de développement (framework) Truffle. L&#39;exemple suppose que vous avez déjà installé +truffle+ et que vous l&#39;avez configuré, et que vous êtes familiarisé avec son fonctionnement de base (pour plus de détails, voir &lt;<truffle>&gt;).
+(((&quot;standard de jeton ERC20&quot;,&quot;Exemple de création/lancement de METoken&quot;, id=&quot;ix_10tokens-asciidoc9&quot;, range=&quot;startofrange&quot;)))(((&quot;METoken (Mastering Ethereum Token)&quot;,&quot;exemple de création/lancement &quot;, id=&quot;ix_10tokens-asciidoc10&quot;, range=&quot;startofrange&quot;))) Créons et lançons notre propre jeton. Pour cet exemple, nous utiliserons le cadre de développement (framework) Truffle. L&#39;exemple suppose que vous avez déjà installé +truffle+ et que vous l&#39;avez configuré, et que vous êtes familiarisé avec son fonctionnement de base (pour plus de détails, voir <<truffle>>).
 
 Nous appellerons notre jeton &quot;Mastering Ethereum Token&quot;, avec le symbole &quot;MET&quot;.
 
@@ -323,7 +323,7 @@ Le module de dévelopement +openzeppelin-solidity+ ajoutera environ 250 fichiers
 
 Ensuite, écrivons notre contrat de jeton. Créez un nouveau fichier, _METoken.sol_, et copiez l&#39;exemple de code depuis http://bit.ly/2qfIFH0[GitHub].
 
-Notre contrat, illustré en &lt;<solidity_token_example>&gt;, est très simple, car il hérite toutes ses fonctionnalités de la bibliothèque OpenZeppelin.
+Notre contrat, illustré en <<solidity_token_example>>, est très simple, car il hérite toutes ses fonctionnalités de la bibliothèque OpenZeppelin.
 
 [[solidity_token_example]]
 .METoken.sol : Un contrat Solidity implémentant un token ERC20
@@ -391,7 +391,7 @@ Saving artifacts...
 </pre>
 ++++
 
-Sur la console +ganache+, nous devrions voir que notre déploiement a créé quatre nouvelles transactions, comme illustré dans &lt;<ganache_METoken>&gt;.
+Sur la console +ganache+, nous devrions voir que notre déploiement a créé quatre nouvelles transactions, comme illustré dans <<ganache_METoken>>.
 
 [[ganache_METoken]]
 .Déploiement METoken sur ganache
@@ -508,7 +508,7 @@ METoken a 2 décimales de précision, ce qui signifie que 1 METoken correspond �
 
 Comme vous pouvez le voir, dans la console, +account[0]+ a maintenant 20 999 000 MET, et +account[1]+ a 1 000 MET.
 
-Si vous passez à l&#39;interface utilisateur graphique +ganache+, comme indiqué dans &lt;<ganache_METoken_transfer>&gt;, vous verrez la transaction qui a appelé la fonction +transfer+.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc12&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc11&quot;)))
+Si vous passez à l&#39;interface utilisateur graphique +ganache+, comme indiqué dans <<ganache_METoken_transfer>>, vous verrez la transaction qui a appelé la fonction +transfer+.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc12&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc11&quot;)))
 
 [[ganache_METoken_transfer]]
 .Transfert METoken sur ganache
@@ -604,9 +604,9 @@ L&#39;une des façons dont les utilisateurs de jetons ERC20 peuvent perdre par i
 
 (((&quot;flux de travail approve et transferFrom&quot;, id=&quot;ix_10tokens-asciidoc15&quot;, range=&quot;startofrange&quot;)))(((&quot;Contrat Faucet.sol (exemple de test)&quot;,&quot;démonstration de flux de travail METoken approve et transferFrom&quot;, id =&quot;ix_10tokens-asciidoc16&quot;, range=&quot;startofrange&quot;)))(((&quot;METoken (Mastering Ethereum Token)&quot;,&quot;démonstration du flux de travail approve et transferFrom&quot;, id=&quot;ix_10tokens-asciidoc17&quot;, range=&quot;startofrange&quot;)))Notre contrat +Faucet+ ne pouvait pas gérer les jetons ERC20. L&#39;envoi de jetons à l&#39;aide de la fonction + transfer + a entraîné la perte de ces jetons. Réécrivons maintenant le contrat et faisons en sorte qu&#39;il gère les jetons ERC20. Plus précisément, nous allons le transformer en un robinet qui donne du MET à quiconque le demande.
 
-Pour cet exemple, nous allons faire une copie du répertoire du projet _truffle_ (nous l&#39;appellerons __METoken_METFaucet__), initialiser +truffle+ et +npm+, installer les dépendances OpenZeppelin et copier le contrat _METoken.sol_. Voir notre premier exemple, dans &lt;<METoken_example>&gt;, pour les instructions détaillées.
+Pour cet exemple, nous allons faire une copie du répertoire du projet _truffle_ (nous l&#39;appellerons __METoken_METFaucet__), initialiser +truffle+ et +npm+, installer les dépendances OpenZeppelin et copier le contrat _METoken.sol_. Voir notre premier exemple, dans <<METoken_example>>, pour les instructions détaillées.
 
-Notre nouveau contrat de robinetterie, _METFaucet.sol_, ressemblera à &lt;<METFaucet>&gt;.
+Notre nouveau contrat de robinetterie, _METFaucet.sol_, ressemblera à <<METFaucet>>.
 
 [[METFaucet]]
 .METFaucet.sol : Un robinet pour METoken
@@ -996,7 +996,7 @@ Si vous utilisez une implémentation existante, vous pouvez également l&#39;ét
 
 [TIP]
 ====
-Les normes et les choix de mise en œuvre sont des éléments importants de la conception globale des contrats intelligents sécurisés, mais ce ne sont pas les seules considérations. Voir &lt;<smart_contract_security>&gt;.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc25&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc24&quot;)))
+Les normes et les choix de mise en œuvre sont des éléments importants de la conception globale des contrats intelligents sécurisés, mais ce ne sont pas les seules considérations. Voir <<smart_contract_security>>.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc25&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc24&quot;)))
 ====
 
 
@@ -1036,4 +1036,4 @@ L&#39;astuce consiste à séparer la vision et l&#39;impact à long terme de cet
 
 === Conclusion
 
-Les jetons sont un concept très puissant dans Ethereum et peuvent constituer la base de nombreuses applications décentralisées importantes. Dans ce chapitre, nous avons examiné les différents types de jetons et les normes de jeton, et vous avez construit votre premier jeton et l&#39;application associée. Nous reviendrons à nouveau sur les jetons dans &lt;<decentralized_applications_chap>&gt;, où vous utiliserez un jeton non fongible comme base pour un DApp d&#39;enchères.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc0&quot;)))
+Les jetons sont un concept très puissant dans Ethereum et peuvent constituer la base de nombreuses applications décentralisées importantes. Dans ce chapitre, nous avons examiné les différents types de jetons et les normes de jeton, et vous avez construit votre premier jeton et l&#39;application associée. Nous reviendrons à nouveau sur les jetons dans <<decentralized_applications_chap>>, où vous utiliserez un jeton non fongible comme base pour un DApp d&#39;enchères.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc0&quot;)))

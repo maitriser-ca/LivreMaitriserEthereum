@@ -5,7 +5,7 @@
 
 Ethereum est un projet à source libre, et le code source de tous les principaux clients est disponible sous des licences à source libre (par exemple, LGPL v3.0), téléchargeable et utilisable à n&#39;importe quelle fin. _Source libre_ signifie cependant plus que simplement libre d&#39;utilisation. Cela signifie également qu&#39;Ethereum est développé par une communauté ouverte de volontaires et peut être modifié par n&#39;importe qui. Plus d&#39;yeux signifie un code plus fiable.
 
-(((&quot;Spécification du papier jaune&quot;)))Ethereum est défini par une spécification formelle appelée le &quot;Papier jaune&quot; (voir &lt;<references>&gt;).
+(((&quot;Spécification du papier jaune&quot;)))Ethereum est défini par une spécification formelle appelée le &quot;Papier jaune&quot; (voir <<references>>).
 
 (((&quot;Bitcoin&quot;,&quot;Définition d&#39;Ethereum par rapport à&quot;)))Cela contraste avec, par exemple, Bitcoin, qui n&#39;est pas défini de manière formelle. Là où la &quot;spécification&quot; de Bitcoin est l&#39;implémentation de référence de Bitcoin Core, la spécification d&#39;Ethereum est documentée dans un article qui combine une spécification anglaise et une spécification mathématique (formelle). Cette spécification formelle, en plus de diverses propositions d&#39;amélioration Ethereum, définit le comportement standard d&#39;un pass:[<span class="keep-together">client</span>] Ethereum. Le livre jaune est périodiquement mis à jour au fur et à mesure que des modifications majeures sont apportées à pass:[<span class="keep-together">Ethereum</span>].
 
@@ -33,7 +33,7 @@ Dans cette section, nous examinerons les deux clients les plus courants, Parity 
 
 (((&quot;noeud complet&quot;,&quot;réseaux basés sur Ethereum et&quot;, id=&quot;ix_03clients-asciidoc3&quot;, range=&quot;startofrange&quot;)))(((&quot;réseaux (Ethereum)&quot;,&quot;noeuds complets et&quot;, id=&quot;ix_03clients-asciidoc4&quot;, range=&quot;startofrange&quot;)))La santé, la résilience et la résistance à la censure des chaînes de blocs dépendent de leur nombre de nœuds complets exploités indépendamment et dispersés géographiquement. Chaque nœud complet peut aider d&#39;autres nouveaux nœuds à obtenir les données de bloc pour amorcer leur fonctionnement, tout en offrant à l&#39;opérateur une vérification faisant autorité et indépendante de toutes les transactions et contrats.
 
-Cependant, l&#39;exécution d&#39;un nœud complet entraînera un coût en ressources matérielles et en bande passante. Un nœud complet doit télécharger 80 à 300 Go de données (à compter de janvier 2020, selon la configuration du client) et les stocker sur un disque dur local. Cette charge de données augmente assez rapidement chaque jour à mesure que de nouvelles transactions et de nouveaux blocs sont ajoutés. Nous abordons ce sujet plus en détail dans &lt;<requirements>&gt;.
+Cependant, l&#39;exécution d&#39;un nœud complet entraînera un coût en ressources matérielles et en bande passante. Un nœud complet doit télécharger 80 à 300 Go de données (à compter de janvier 2020, selon la configuration du client) et les stocker sur un disque dur local. Cette charge de données augmente assez rapidement chaque jour à mesure que de nouvelles transactions et de nouveaux blocs sont ajoutés. Nous abordons ce sujet plus en détail dans <<requirements>>.
 
 Un nœud complet fonctionnant sur un réseau _mainnet_ en direct n&#39;est pas nécessaire pour le développement d&#39;Ethereum. Vous pouvez faire presque tout ce que vous devez faire avec un nœud _testnet_ (qui vous connecte à l&#39;une des plus petites chaînes de blocs de test publiques), avec une chaîne de blocs privée locale comme Ganache, ou avec un client Ethereum basé sur le cloud proposé par un fournisseur de services comme Infura.
 
@@ -205,7 +205,7 @@ Pour installer Parity, vous pouvez utiliser le gestionnaire d'applications Rust 
 [[install_parity]]
 ===== Installation de Parity
 
-(((&quot;Parity&quot;,&quot;installation&quot;)))Le https://wiki.parity.io/Setup[Parity Wiki] propose des instructions pour créer Parity dans différents environnements et conteneurs. Nous allons vous montrer comment créer Parity à partir de la source. Cela suppose que vous avez déjà installé Rust en utilisant +rustup+ (voir &lt;<sw_reqs>&gt;).
+(((&quot;Parity&quot;,&quot;installation&quot;)))Le https://wiki.parity.io/Setup[Parity Wiki] propose des instructions pour créer Parity dans différents environnements et conteneurs. Nous allons vous montrer comment créer Parity à partir de la source. Cela suppose que vous avez déjà installé Rust en utilisant +rustup+ (voir <<sw_reqs>>).
 
 Tout d&#39;abord, récupérez le code source sur GitHub :
 
@@ -548,7 +548,7 @@ Certains des plus populaires sont MetaMask, Jaxx, MyEtherWallet et MyCrypto.
 [[MetaMask]]
 ===== MetaMask
 
-https://metamask.io/[MetaMask], (((&quot;MetaMask&quot;,&quot;comme portefeuille de navigateur&quot;)))introduit dans &lt;<intro_chapter>&gt;, est un portefeuille polyvalent basé sur un navigateur, un client RPC et un explorateur de contrats de base. Il est disponible sur Chrome, Firefox, Opera et Brave Browser.
+https://metamask.io/[MetaMask], (((&quot;MetaMask&quot;,&quot;comme portefeuille de navigateur&quot;)))introduit dans <<intro_chapter>>, est un portefeuille polyvalent basé sur un navigateur, un client RPC et un explorateur de contrats de base. Il est disponible sur Chrome, Firefox, Opera et Brave Browser.
 
 Contrairement aux autres portefeuilles de navigateur, MetaMask injecte une instance web3 dans le contexte JavaScript du navigateur, agissant comme un client RPC qui se connecte à une variété de chaînes de blocs Ethereum (mainnet, Ropsten testnet, Kovan testnet, nœud RPC local, etc.). La possibilité d&#39;injecter une instance web3 et d&#39;agir comme une passerelle vers des services RPC externes fait de MetaMask un outil très puissant pour les développeurs et les utilisateurs. Il peut être combiné, par exemple, avec MyEtherWallet ou MyCrypto, agissant comme un fournisseur web3 et une passerelle RPC pour ces outils.
 

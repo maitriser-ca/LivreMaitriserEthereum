@@ -27,7 +27,7 @@ Simultanément, un assemblage de volontaires se faisant appeler le Robin Hood Gr
 
 [[dao_reentrancy_bug_technicals]]
 ==== Détails techniques
-(((&quot;bogue de réentrance&quot;,&quot;détails techniques&quot;)))Alors qu&#39;une explication plus détaillée et approfondie du bogue est donnée par http://bit.ly/2EQaLCI[Phil Daian], la brève explication est qu&#39;une fonction cruciale dans le DAO avait deux lignes de code dans le mauvais ordre, ce qui signifie que l&#39;attaquant pourrait avoir des demandes de retrait d&#39;ether traitées à plusieurs reprises, avant que la vérification de savoir si l&#39;attaquant avait droit au retrait ne soit terminée. Ce type de vulnérabilité est décrit dans &lt;<reentrancy_security>&gt;.
+(((&quot;bogue de réentrance&quot;,&quot;détails techniques&quot;)))Alors qu&#39;une explication plus détaillée et approfondie du bogue est donnée par http://bit.ly/2EQaLCI[Phil Daian], la brève explication est qu&#39;une fonction cruciale dans le DAO avait deux lignes de code dans le mauvais ordre, ce qui signifie que l&#39;attaquant pourrait avoir des demandes de retrait d&#39;ether traitées à plusieurs reprises, avant que la vérification de savoir si l&#39;attaquant avait droit au retrait ne soit terminée. Ce type de vulnérabilité est décrit dans <<reentrancy_security>>.
 
 [[dao_reentrancy_bug_attack_flow]]
 ==== Flux d&#39;attaque

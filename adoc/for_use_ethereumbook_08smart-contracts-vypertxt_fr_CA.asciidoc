@@ -120,7 +120,7 @@ La première fonction (nommée +f+) accepte un argument d&#39;entrée de type +u
 
 ==== Conversion de type variable
 
-(((&quot;Solidity&quot;,&quot;transtypage de variable&quot;)))(((&quot;transtypage&quot;)))(((&quot;Vyper&quot;,&quot;transtypage de variable&quot;)))Il existe deux types de typage : _implicit_ et _explicit_
+(((&quot;Solidity&quot;,&quot;transtypage de variable&quot;)))(((&quot;transtypage&quot;)))(((&quot;Vyper&quot;,&quot;transtypage de variable&quot;)))Il existe deux types de typage : _implicite_ et _explicite_
 
 (((&quot;transtypage implicite&quot;)))Le transtypage implicite est souvent effectué au moment de la compilation. Par exemple, si une conversion de type est sémantiquement correcte et qu&#39;aucune information n&#39;est susceptible d&#39;être perdue, le compilateur peut effectuer une conversion implicite, telle que la conversion d&#39;une variable de type +uint8+ en +uint16+. Les premières versions de Vyper autorisaient le transtypage implicite des variables, mais pas les versions récentes.
 

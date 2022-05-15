@@ -37,7 +37,7 @@ Par exemple, vous remarquerez peut-être qu&#39;il n&#39;y a pas de données &qu
 [[tx_nonce]]
 === Le Nonce de transaction
 
-(((&quot;nonces&quot;, id=&quot;ix_06transactions-asciidoc1&quot;, range=&quot;startofrange&quot;)))(((&quot;transactions&quot;,&quot;nonces&quot;, id=&quot;ix_06transactions-asciidoc2&quot;, range=&quot;startofrange&quot;)))Le nonce est l&#39;un des composants les plus importants et les moins compris d&#39;une transaction. La définition du Livre jaune (voir &lt;<references>&gt;) lit :
+(((&quot;nonces&quot;, id=&quot;ix_06transactions-asciidoc1&quot;, range=&quot;startofrange&quot;)))(((&quot;transactions&quot;,&quot;nonces&quot;, id=&quot;ix_06transactions-asciidoc2&quot;, range=&quot;startofrange&quot;)))Le nonce est l&#39;un des composants les plus importants et les moins compris d&#39;une transaction. La définition du Livre jaune (voir <<references>>) lit :
 
 ____
 +nonce+ : Une valeur scalaire égale au nombre de transactions émises depuis cette adresse ou, dans le cas de comptes avec code associé, au nombre de créations de contrats effectuées par ce compte.
@@ -169,13 +169,13 @@ En fin de compte, ces problèmes de simultanéité, en plus de la difficulté de
 [[tx_gas]]
 === Gaz de transaction
 
-(((&quot;gaz&quot;,&quot;transactions et&quot;, id=&quot;ix_06transactions-asciidoc3&quot;, range=&quot;startofrange&quot;)))(((&quot;transactions&quot;,&quot;gaz&quot;, id=&quot;ix_06transactions-asciidoc4&quot;, range=&quot; startofrange&quot;)))Nous avons un peu parlé du gaz dans les chapitres précédents, et nous en discutons plus en détail dans &lt;<gas>&gt;. Cependant, couvrons quelques notions de base sur le rôle des composants +gasPrice+ et +gasLimit+ d&#39;une transaction.
+(((&quot;gaz&quot;,&quot;transactions et&quot;, id=&quot;ix_06transactions-asciidoc3&quot;, range=&quot;startofrange&quot;)))(((&quot;transactions&quot;,&quot;gaz&quot;, id=&quot;ix_06transactions-asciidoc4&quot;, range=&quot; startofrange&quot;)))Nous avons un peu parlé du gaz dans les chapitres précédents, et nous en discutons plus en détail dans <<gas>>. Cependant, couvrons quelques notions de base sur le rôle des composants +gasPrice+ et +gasLimit+ d&#39;une transaction.
 
 Le gaz est le carburant d&#39;Ethereum. Le gaz n&#39;est pas de l&#39;ether, c&#39;est une monnaie virtuelle distincte avec son propre taux de change par rapport à l&#39;ether. Ethereum utilise du gaz pour contrôler la quantité de ressources qu&#39;une transaction peut utiliser, car elle sera traitée sur des milliers d&#39;ordinateurs à travers le monde. Le modèle de calcul ouvert (Turing-complet) nécessite une certaine forme de mesure afin d&#39;éviter les attaques par déni de service ou les transactions gourmandes en ressources par inadvertance.
 
 Le gaz est séparé de l&#39;ether afin de protéger le système de la volatilité qui pourrait survenir avec les changements rapides de la valeur de l&#39;ether, et aussi comme moyen de gérer les rapports importants et sensibles entre les coûts des diverses ressources que le gaz paie. (à savoir, calcul, mémoire et stockage).
 
-(((&quot;champ gasPrice&quot;)))Le champ +gasPrice+ dans une transaction permet à l&#39;initiateur de la transaction de définir le prix qu&#39;il est prêt à payer en échange de gaz. Le prix est mesuré en wei par unité de gaz. Par exemple, dans l&#39;exemple de transaction dans &lt;<intro_chapter>&gt; votre portefeuille fixe le +gasPrice+ à 3 gwei (3 gigawei ou 3 milliards de wei).
+(((&quot;champ gasPrice&quot;)))Le champ +gasPrice+ dans une transaction permet à l&#39;initiateur de la transaction de définir le prix qu&#39;il est prêt à payer en échange de gaz. Le prix est mesuré en wei par unité de gaz. Par exemple, dans l&#39;exemple de transaction dans <<intro_chapter>> votre portefeuille fixe le +gasPrice+ à 3 gwei (3 gigawei ou 3 milliards de wei).
 
 [TIP]
 ====
@@ -229,7 +229,7 @@ Ethereum ne valide plus ce champ. Toute valeur de 20 octets est considérée com
 Le protocole Ethereum ne valide pas les adresses des destinataires dans les transactions. Vous pouvez envoyer à une adresse qui n&#39;a pas de clé privée ou de contrat correspondant, &quot;brûlant&quot; ainsi l&#39;ether, le rendant à jamais inutilisable. La validation doit être effectuée au niveau de l&#39;interface utilisateur.
 ====
 
-(((&quot;brûler de l'ether&quot;)))L&#39;envoi d&#39;une transaction à la mauvaise adresse va probablement _brûler_ l&#39;ether envoyé, le rendant à jamais inaccessible (inutilisable), puisque la plupart des adresses n&#39;ont pas de clé privée connue et donc aucune signature ne peut être générée pour le dépenser. On suppose que la validation de l&#39;adresse se produit au niveau de l&#39;interface utilisateur (voir &lt;<EIP55>&gt;). En fait, il existe un certain nombre de raisons valables pour brûler de l&#39;ether - par exemple, pour dissuader de tricher dans les canaux de paiement et autres contrats intelligents - et puisque la quantité d&#39;ether est finie, brûler de l&#39;ether distribue efficacement la valeur brûlée à tous les détenteurs d&#39;ether. (proportionnellement à la quantité d&#39;ether qu&#39;ils contiennent).
+(((&quot;brûler de l'ether&quot;)))L&#39;envoi d&#39;une transaction à la mauvaise adresse va probablement _brûler_ l&#39;ether envoyé, le rendant à jamais inaccessible (inutilisable), puisque la plupart des adresses n&#39;ont pas de clé privée connue et donc aucune signature ne peut être générée pour le dépenser. On suppose que la validation de l&#39;adresse se produit au niveau de l&#39;interface utilisateur (voir <<EIP55>>). En fait, il existe un certain nombre de raisons valables pour brûler de l&#39;ether - par exemple, pour dissuader de tricher dans les canaux de paiement et autres contrats intelligents - et puisque la quantité d&#39;ether est finie, brûler de l&#39;ether distribue efficacement la valeur brûlée à tous les détenteurs d&#39;ether. (proportionnellement à la quantité d&#39;ether qu&#39;ils contiennent).
 
 [[tx_value_data]]
 === Valeur et données de la transaction
@@ -255,7 +255,7 @@ web3.eth.sendTransaction({from: src, to: dst, \
   value: web3.utils.toWei(0.01, "ether"), data: ""});
 ----
 
-Notre portefeuille affiche un écran de confirmation indiquant la valeur à envoyer, comme indiqué dans &lt;<parity_txdemo_value_nodata>&gt;.
+Notre portefeuille affiche un écran de confirmation indiquant la valeur à envoyer, comme indiqué dans <<parity_txdemo_value_nodata>>.
 
 [[parity_txdemo_value_nodata]]
 .Portefeuille de Parity montrant une transaction avec une valeur, mais pas de données
@@ -271,7 +271,7 @@ web3.eth.sendTransaction({from: src, to: dst, \
   value: web3.utils.toWei(0.01, "ether"), data: "0x1234"});
 ----
 
-Notre portefeuille affiche un écran de confirmation indiquant la valeur à envoyer ainsi que la charge utile des données, comme indiqué dans &lt;<parity_txdemo_value_data>&gt;.
+Notre portefeuille affiche un écran de confirmation indiquant la valeur à envoyer ainsi que la charge utile des données, comme indiqué dans <<parity_txdemo_value_data>>.
 
 [[parity_txdemo_value_data]]
 .Portefeuille de Parity montrant une transaction avec valeur et données
@@ -285,7 +285,7 @@ La transaction suivante inclut une charge utile de données mais spécifie une v
 web3.eth.sendTransaction({from: src, to: dst, value: 0, data: "0x1234"});
 ----
 
-Notre portefeuille affiche un écran de confirmation indiquant la valeur zéro et la charge utile des données, comme indiqué dans &lt;<parity_txdemo_novalue_data>&gt;.
+Notre portefeuille affiche un écran de confirmation indiquant la valeur zéro et la charge utile des données, comme indiqué dans <<parity_txdemo_novalue_data>>.
 
 [[parity_txdemo_novalue_data]]
 .Portefeuille de Parity montrant une transaction sans valeur, uniquement des données
@@ -300,7 +300,7 @@ Enfin, la dernière transaction n&#39;inclut ni valeur à envoyer ni données ut
 web3.eth.sendTransaction({from: src, to: dst, value: 0, data: ""}));
 ----
 
-Notre portefeuille affiche un écran de confirmation indiquant la valeur zéro, comme indiqué dans &lt;<parity_txdemo_novalue_nodata>&gt;.
+Notre portefeuille affiche un écran de confirmation indiquant la valeur zéro, comme indiqué dans <<parity_txdemo_novalue_nodata>>.
 
 [[parity_txdemo_novalue_nodata]]
 .Portefeuille de Parity montrant une transaction sans valeur et sans données
@@ -330,7 +330,7 @@ Un sélecteur de fonction:: Les 4 premiers octets du hachage Keccak-256 du proto
 
 Les arguments de la fonction:: Les arguments de la fonction, encodés selon les règles des différents types élémentaires définies dans la spécification ABI.
 
-Dans &lt;<solidity_faucet_example>&gt;, nous avons défini une fonction pour les retraits :
+Dans <<solidity_faucet_example>>, nous avons défini une fonction pour les retraits :
 
 [[withdraw_function_src]]
 [source,solidity]
@@ -396,7 +396,7 @@ Tout ether envoyé à l&#39;adresse de brûlure désignée deviendra inutilisabl
 
 Une transaction de création de contrat ne doit contenir qu&#39;une charge utile de données contenant le bytecode compilé qui créera le contrat. Le seul effet de cette transaction est de créer le contrat. Vous pouvez inclure un montant en ether dans le champ +value+ si vous souhaitez configurer le nouveau contrat avec un solde de départ, mais cela est entièrement facultatif. Si vous envoyez une valeur (ether) à l&#39;adresse de création de contrat sans charge utile de données (pas de contrat), l&#39;effet est le même que l&#39;envoi à une adresse de brûlure : il n&#39;y a pas de contrat à créditer, donc l&#39;ether est perdu.
 
-Par exemple, nous pouvons créer le contrat _Faucet.sol_ utilisé dans &lt;<intro_chapter>&gt; en créant manuellement une transaction à l&#39;adresse zéro avec le contrat dans la charge utile des données. Le contrat doit être compilé dans une représentation en bytecode. Cela peut être fait avec le compilateur Solidity :
+Par exemple, nous pouvons créer le contrat _Faucet.sol_ utilisé dans <<intro_chapter>> en créant manuellement une transaction à l&#39;adresse zéro avec le contrat dans la charge utile des données. Le contrat doit être compilé dans une représentation en bytecode. Cela peut être fait avec le compilateur Solidity :
 
 ++++
 <pre data-type="programlisting" class="pagebreak-before">
@@ -427,7 +427,7 @@ Nous pouvons maintenant créer la transaction :
 
 Il est recommandé de toujours spécifier un paramètre +to+, même dans le cas d&#39;une création de contrat sans adresse, car le coût d&#39;envoyer accidentellement votre ether à +0x0+ et de le perdre pour toujours est trop élevé. Vous devez également spécifier un +gasPrice+ et un +gasLimit+.
 
-Une fois le contrat extrait, nous pouvons le voir sur l&#39;explorateur de blocs Etherscan, comme indiqué dans &lt;<publish_contract_from_web3>&gt;.
+Une fois le contrat extrait, nous pouvons le voir sur l&#39;explorateur de blocs Etherscan, comme indiqué dans <<publish_contract_from_web3>>.
 
 [[publish_contract_from_web3]]
 .Etherscan montrant le contrat miné avec succès
@@ -478,7 +478,7 @@ Cela inclut l&#39;adresse du contrat, que nous pouvons utiliser pour envoyer et 
 </pre>
 ++++
 
-Après un certain temps, les deux transactions sont visibles sur Etherscan, comme indiqué dans &lt;<publish_contract_transactions>&gt;.(((range=&quot;endofrange&quot;, startref=&quot;ix_06transactions-asciidoc13&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_06transactions-asciidoc12&quot;)))
+Après un certain temps, les deux transactions sont visibles sur Etherscan, comme indiqué dans <<publish_contract_transactions>>.(((range=&quot;endofrange&quot;, startref=&quot;ix_06transactions-asciidoc13&quot;)))(((range=&quot;endofrange&quot;, startref=&quot;ix_06transactions-asciidoc12&quot;)))
 
 [[publish_contract_transactions]]
 .Etherscan montrant les transactions d&#39;envoi et de réception de fonds
@@ -493,7 +493,7 @@ image::images/published_contract_transactions.png[&quot;Etherscan affichant les 
 [[ecdsa]]
 ==== L&#39;algorithme de signature numérique à courbe elliptique
 
-(((&quot;signatures numériques&quot;,&quot;ECDSA et&quot;)))(((&quot;Elliptic Curve Digital Signature Algorithm (ECDSA)&quot;,&quot;à propos&quot;)))L&#39;algorithme de signature numérique utilisé dans Ethereum est l&#39;_Elliptic Curve Digital Signature Algorithm_ ( ECDSA). Il est basé sur des paires de clés privées-publiques à courbe elliptique, comme décrit dans &lt;<elliptic_curve>&gt;.
+(((&quot;signatures numériques&quot;,&quot;ECDSA et&quot;)))(((&quot;Elliptic Curve Digital Signature Algorithm (ECDSA)&quot;,&quot;à propos&quot;)))L&#39;algorithme de signature numérique utilisé dans Ethereum est l&#39;_Elliptic Curve Digital Signature Algorithm_ ( ECDSA). Il est basé sur des paires de clés privées-publiques à courbe elliptique, comme décrit dans <<elliptic_curve>>.
 
 Une signature numérique sert trois objectifs dans Ethereum (voir l&#39;encadré suivant). Premièrement, la signature prouve que le propriétaire de la clé privée, qui est implicitement le propriétaire d&#39;un compte Ethereum, a _autorisé_ la dépense d&#39;ether ou l&#39;exécution d&#39;un contrat. (((&quot;non-répudiation&quot;)))Deuxièmement, il garantit la _non-répudiation_ : la preuve de l&#39;autorisation est indéniable. Troisièmement, la signature prouve que les données de transaction n&#39;ont pas été et _ne peuvent pas être modifiées_ par quiconque après la signature de la transaction.
 
@@ -588,7 +588,7 @@ L&#39;algorithme de vérification de signature prend le message (c&#39;est-à-di
 
 (((&quot;clé privée éphémère&quot;)))L&#39;algorithme de signature génère d&#39;abord une clé privée _éphémère_ (temporaire) de manière cryptographiquement sécurisée. Cette clé temporaire est utilisée dans le calcul des valeurs _r_ et _s_ pour s&#39;assurer que la clé privée réelle de l&#39;expéditeur ne peut pas être calculée par des attaquants qui surveillent les transactions signées sur le réseau Ethereum.
 
-Comme nous le savons depuis &lt;<pubkey>&gt;, la clé privée éphémère est utilisée pour dériver la clé publique (éphémère) correspondante, nous avons donc :
+Comme nous le savons depuis <<pubkey>>, la clé privée éphémère est utilisée pour dériver la clé publique (éphémère) correspondante, nous avons donc :
 
 * Un nombre aléatoire cryptographiquement sécurisé _q_, qui est utilisé comme clé privée éphémère
 * La clé publique éphémère correspondante _Q_, générée à partir de _q_ et du point générateur de courbe elliptique _G_
@@ -649,7 +649,7 @@ Pour signer une transaction dans Ethereum, l&#39;initiateur doit :
 4. Calculez la signature ECDSA, en signant le hachage avec la clé privée de l&#39;EOA d&#39;origine.
 5. Ajoutez les valeurs +v+, +r+ et +s+ calculées de la signature ECDSA à la transaction.
 
-La variable de signature spéciale +v+ indique deux choses : l&#39;ID (identifiant) de chaîne et l&#39;identifiant de récupération pour aider la fonction +ECDSArecover+ à vérifier la signature. Il est calculé comme l&#39;un des 27 ou 28, ou comme l&#39;ID de chaîne doublé plus 35 ou 36. Pour plus d&#39;informations sur l&#39;ID de chaîne, voir &lt;<raw_tx_eip155>&gt;. L&#39;identifiant de récupération (27 ou 28 dans les signatures &quot;à l&#39;ancienne&quot;, ou 35 ou 36 dans les transactions complètes de type Spurious Dragon) est utilisé pour indiquer la parité du composant +y+ de la clé publique (voir &lt;<sign_prefix>&gt; pour plus de détails).
+La variable de signature spéciale +v+ indique deux choses : l&#39;ID (identifiant) de chaîne et l&#39;identifiant de récupération pour aider la fonction +ECDSArecover+ à vérifier la signature. Il est calculé comme l&#39;un des 27 ou 28, ou comme l&#39;ID de chaîne doublé plus 35 ou 36. Pour plus d&#39;informations sur l&#39;ID de chaîne, voir <<raw_tx_eip155>>. L&#39;identifiant de récupération (27 ou 28 dans les signatures &quot;à l&#39;ancienne&quot;, ou 35 ou 36 dans les transactions complètes de type Spurious Dragon) est utilisé pour indiquer la parité du composant +y+ de la clé publique (voir <<sign_prefix>> pour plus de détails).
 
 
 [NOTE]
@@ -690,7 +690,7 @@ Signed Raw Transaction: 0xf866808609184e72a0008303000094b0920c523d582040f2bcb1..
 EIP-155 ajoute trois champs aux six principaux champs de la structure de données de transaction, à savoir l&#39;identifiant de chaîne, +0+ et +0+. Ces trois champs sont ajoutés aux données de transaction _avant qu&#39;elles ne soient encodées et hachées_. Ils modifient donc le hash de la transaction, auquel la signature est ensuite appliquée. En incluant l&#39;identifiant de la chaîne dans les données à signer, la signature de la transaction empêche tout changement, car la signature est invalidée si l&#39;identifiant de la chaîne est modifié. Par conséquent, EIP-155 rend impossible la relecture d&#39;une transaction sur une autre chaîne, car la validité de la signature dépend de l&#39;identifiant de la chaîne.
 
 
-Le champ d&#39;identifiant de chaîne prend une valeur en fonction du réseau auquel la transaction est destinée, comme indiqué dans &lt;<chain_id_table>&gt;.
+Le champ d&#39;identifiant de chaîne prend une valeur en fonction du réseau auquel la transaction est destinée, comme indiqué dans <<chain_id_table>>.
 
 [[chain_id_table]]
 .Identifiants de chaîne
@@ -716,9 +716,9 @@ Pour plus de détails, voir http://bit.ly/2CQUgne[la spécification EIP-155].(((
 [[sign_prefix]]
 === La valeur du préfixe de signature (v) et la récupération de la clé publique
 
-(((&quot;signatures numériques&quot;,&quot;valeur de préfixe de signature (v) et récupération de clé publique&quot;)))(((&quot;récupération de clé publique&quot;)))(((&quot;transactions&quot;,&quot;valeur de préfixe de signature (v) et récupération récupération de clé&quot;)))Comme mentionné dans &lt;<tx_struct>&gt;, le message de transaction n&#39;inclut pas de champ &quot;from&quot;. En effet, la clé publique de l&#39;expéditeur peut être calculée directement à partir de la signature ECDSA. Une fois que vous avez la clé publique, vous pouvez facilement calculer l&#39;adresse. Le processus de récupération de la clé publique du signataire est appelé _récupération de la clé publique_.
+(((&quot;signatures numériques&quot;,&quot;valeur de préfixe de signature (v) et récupération de clé publique&quot;)))(((&quot;récupération de clé publique&quot;)))(((&quot;transactions&quot;,&quot;valeur de préfixe de signature (v) et récupération récupération de clé&quot;)))Comme mentionné dans <<tx_struct>>, le message de transaction n&#39;inclut pas de champ &quot;from&quot;. En effet, la clé publique de l&#39;expéditeur peut être calculée directement à partir de la signature ECDSA. Une fois que vous avez la clé publique, vous pouvez facilement calculer l&#39;adresse. Le processus de récupération de la clé publique du signataire est appelé _récupération de la clé publique_.
 
-Étant donné les valeurs +r+ et +s+ qui ont été calculées dans &lt;<ecdsa_math>&gt;, nous pouvons calculer deux clés publiques possibles.
+Étant donné les valeurs +r+ et +s+ qui ont été calculées dans <<ecdsa_math>>, nous pouvons calculer deux clés publiques possibles.
 
 Tout d&#39;abord, nous calculons deux points de courbe elliptique, _R_ et __R__^__&#39;__^, à partir de la coordonnée _x_ +r+ valeur qui se trouve dans la signature. Il y a deux points parce que la courbe elliptique est symétrique sur l&#39;axe des x, de sorte que pour toute valeur +x+ il y a deux valeurs possibles qui correspondent à la courbe, une de chaque côté de l&#39;axe des x.
 
@@ -756,11 +756,11 @@ Pour rendre les choses plus efficaces, la signature de la transaction inclut une
 [[offline_sign]]
 === Séparer la signature et la transmission (signature hors ligne)
 
-(((&quot;signatures numériques&quot;,&quot;séparer la signature et la transmission&quot;, id=&quot;ix_06transactions-asciidoc18&quot;, range=&quot;startofrange&quot;)))(((&quot;signature hors ligne&quot;, id=&quot;ix_06transactions-asciidoc19&quot;, range=&quot; startofrange&quot;)))(((&quot;transactions&quot;,&quot;séparer la signature et la transmission&quot;, id=&quot;ix_06transactions-asciidoc20&quot;, range=&quot;startofrange&quot;)))Une fois qu&#39;une transaction est signée, elle est prête à être transmise au réseau Ethereum . Les trois étapes de création, de signature et de diffusion d&#39;une transaction se déroulent normalement en une seule opération, par exemple en utilisant +web3.eth.sendTransaction+. Cependant, comme vous l&#39;avez vu dans &lt;<raw_tx>&gt;, vous pouvez créer et signer la transaction en deux étapes distinctes. Une fois que vous avez une transaction signée, vous pouvez ensuite la transmettre à l&#39;aide de +web3.eth.sendSignedTransaction+, qui prend une transaction codée en hexadécimal et signée et la transmet sur le réseau Ethereum.
+(((&quot;signatures numériques&quot;,&quot;séparer la signature et la transmission&quot;, id=&quot;ix_06transactions-asciidoc18&quot;, range=&quot;startofrange&quot;)))(((&quot;signature hors ligne&quot;, id=&quot;ix_06transactions-asciidoc19&quot;, range=&quot; startofrange&quot;)))(((&quot;transactions&quot;,&quot;séparer la signature et la transmission&quot;, id=&quot;ix_06transactions-asciidoc20&quot;, range=&quot;startofrange&quot;)))Une fois qu&#39;une transaction est signée, elle est prête à être transmise au réseau Ethereum . Les trois étapes de création, de signature et de diffusion d&#39;une transaction se déroulent normalement en une seule opération, par exemple en utilisant +web3.eth.sendTransaction+. Cependant, comme vous l&#39;avez vu dans <<raw_tx>>, vous pouvez créer et signer la transaction en deux étapes distinctes. Une fois que vous avez une transaction signée, vous pouvez ensuite la transmettre à l&#39;aide de +web3.eth.sendSignedTransaction+, qui prend une transaction codée en hexadécimal et signée et la transmet sur le réseau Ethereum.
 
 Pourquoi voudriez-vous séparer la signature et la transmission des transactions ? La raison la plus courante est la sécurité. L&#39;ordinateur qui signe une transaction doit avoir des clés privées déverrouillées chargées en mémoire. L&#39;ordinateur qui effectue la transmission doit être connecté à Internet (et exécuter un client Ethereum). Si ces deux fonctions sont sur un seul ordinateur, alors vous avez des clés privées sur un système en ligne, ce qui est assez dangereux. Séparer les fonctions de signature et de transmission et les exécuter sur différentes machines (sur un appareil hors ligne et en ligne, respectivement) est appelé _signature hors ligne_ et est une pratique de sécurité courante.
 
-&lt;<offline_signing>&gt; montre le processus :
+<<offline_signing>> montre le processus :
 
 1. Créez une transaction non signée sur l&#39;ordinateur en ligne où l&#39;état actuel du compte, notamment le nonce actuel et les fonds disponibles, peut être récupéré.
 2. Transférez la transaction non signée vers un appareil hors ligne « isolé » pour la signature de la transaction, par exemple via un code QR ou une clé USB.
@@ -786,9 +786,9 @@ En quelques secondes seulement, une transaction Ethereum se propage à tous les 
 [[chain_record]]
 === Enregistrement sur la chaîne de blocs
 
-(((&quot;chaîne de blocs&quot;,&quot;enregistrement des transactions sur la&quot;)))(((&quot;mineurs&quot;)))(((&quot;exploitations minières&quot;)))(((&quot;transactions&quot;,&quot;enregistrement sur la chaîne de blocs&quot;)))Bien que tous les nœuds d&#39;Ethereum soient des pairs égaux, certains d&#39;entre eux sont exploités par des _mineurs_ et alimentent des transactions et des blocs vers des _fermes minières_, qui sont des ordinateurs dotés d&#39;unités de traitement graphique (GPU) hautes performances. Les ordinateurs de minage ajoutent des transactions à un bloc candidat et tentent de trouver une _preuve de travail_ qui rend le bloc candidat valide. Nous en discuterons plus en détail dans &lt;<consensus>&gt;.
+(((&quot;chaîne de blocs&quot;,&quot;enregistrement des transactions sur la&quot;)))(((&quot;mineurs&quot;)))(((&quot;exploitations minières&quot;)))(((&quot;transactions&quot;,&quot;enregistrement sur la chaîne de blocs&quot;)))Bien que tous les nœuds d&#39;Ethereum soient des pairs égaux, certains d&#39;entre eux sont exploités par des _mineurs_ et alimentent des transactions et des blocs vers des _fermes minières_, qui sont des ordinateurs dotés d&#39;unités de traitement graphique (GPU) hautes performances. Les ordinateurs de minage ajoutent des transactions à un bloc candidat et tentent de trouver une _preuve de travail_ qui rend le bloc candidat valide. Nous en discuterons plus en détail dans <<consensus>>.
 
-Sans entrer dans trop de détails, les transactions valides seront éventuellement incluses dans un bloc de transactions et, ainsi, enregistrées dans la chaîne de blocs Ethereum. Une fois minées dans un bloc, les transactions modifient également l&#39;état du singleton Ethereum, soit en modifiant le solde d&#39;un compte (dans le cas d&#39;un simple paiement) soit en invoquant des contrats qui changent leur état interne. Ces modifications sont enregistrées parallèlement à la transaction, sous la forme d&#39;un _reçu_ de transaction, qui peut également inclure des _événements_. Nous examinerons tout cela beaucoup plus en détail dans &lt;<evm_chapter>&gt;.
+Sans entrer dans trop de détails, les transactions valides seront éventuellement incluses dans un bloc de transactions et, ainsi, enregistrées dans la chaîne de blocs Ethereum. Une fois minées dans un bloc, les transactions modifient également l&#39;état du singleton Ethereum, soit en modifiant le solde d&#39;un compte (dans le cas d&#39;un simple paiement) soit en invoquant des contrats qui changent leur état interne. Ces modifications sont enregistrées parallèlement à la transaction, sous la forme d&#39;un _reçu_ de transaction, qui peut également inclure des _événements_. Nous examinerons tout cela beaucoup plus en détail dans <<evm_chapter>>.
 
 Une transaction qui a terminé son parcours depuis la création jusqu&#39;à la signature par un EOA, la propagation et enfin l&#39;exploitation minière a changé l&#39;état du singleton et laissé une marque indélébile sur la chaîne de blocs.
 

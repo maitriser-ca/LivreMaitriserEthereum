@@ -14,7 +14,7 @@ Enfin, en mai 2016, Gavin et Andreas se trouvaient par coïncidence dans la mêm
 
 === Comment utiliser ce livre
 
-Le livre est destiné à servir à la fois de manuel de référence et d&#39;exploration d&#39;Ethereum de bout en bout. Les deux premiers chapitres offrent une introduction douce, adaptée aux utilisateurs novices, et les exemples de ces chapitres peuvent être complétés par toute personne ayant un peu de compétence technique. Ces deux chapitres vous donneront une bonne compréhension des bases et vous permettront d&#39;utiliser les outils fondamentaux d&#39;Ethereum. &lt;<ethereum_clients_chapter>&gt; et au-delà sont destinés principalement aux programmeurs et incluent de nombreux sujets techniques et exemples de programmation.
+Le livre est destiné à servir à la fois de manuel de référence et d&#39;exploration d&#39;Ethereum de bout en bout. Les deux premiers chapitres offrent une introduction douce, adaptée aux utilisateurs novices, et les exemples de ces chapitres peuvent être complétés par toute personne ayant un peu de compétence technique. Ces deux chapitres vous donneront une bonne compréhension des bases et vous permettront d&#39;utiliser les outils fondamentaux d&#39;Ethereum. <<ethereum_clients_chapter>> et au-delà sont destinés principalement aux programmeurs et incluent de nombreux sujets techniques et exemples de programmation.
 
 Pour servir à la fois de manuel de référence et de récit complet sur Ethereum, le livre contient inévitablement des doublons. Certains sujets, tels que le _gaz_, doivent être introduits suffisamment tôt pour que le reste des sujets ait un sens, mais sont également examinés en profondeur dans leurs propres sections.
 

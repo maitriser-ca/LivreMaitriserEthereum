@@ -85,7 +85,7 @@ $ <strong>truffle unbox <em>BOX_NAME</em></strong>
 [[truffle_project_directory]]
 ===== Création d&#39;un répertoire de projet truffle
 
-(((&quot;Truffle&quot;,&quot;création d&#39;un répertoire de projet&quot;, id=&quot;ix_appdx-dev-tools-asciidoc3&quot;, range=&quot;startofrange&quot;)))Pour chaque projet où vous utiliserez +truffle+, créez un répertoire de projet et initialisez +truffle+ dans ce répertoire. +truffle+ créera la structure de répertoire nécessaire dans le répertoire de votre projet. Il est d&#39;usage de donner au répertoire du projet un nom qui décrit le projet. Pour cet exemple, nous utiliserons +truffle+ pour déployer notre contrat +Faucet+ depuis &lt;<simple_contract_example>&gt;, et donc nous nommerons le dossier du projet __Faucet__ :
+(((&quot;Truffle&quot;,&quot;création d&#39;un répertoire de projet&quot;, id=&quot;ix_appdx-dev-tools-asciidoc3&quot;, range=&quot;startofrange&quot;)))Pour chaque projet où vous utiliserez +truffle+, créez un répertoire de projet et initialisez +truffle+ dans ce répertoire. +truffle+ créera la structure de répertoire nécessaire dans le répertoire de votre projet. Il est d&#39;usage de donner au répertoire du projet un nom qui décrit le projet. Pour cet exemple, nous utiliserons +truffle+ pour déployer notre contrat +Faucet+ depuis <<simple_contract_example>>, et donc nous nommerons le dossier du projet __Faucet__ :
 
 ++++
 <pre data-type="programlisting">
@@ -203,7 +203,7 @@ Dans les sections suivantes, nous configurerons des réseaux supplémentaires po
 
 (((&quot;contrats intelligents&quot;,&quot;utiliser Truffle pour déployer&quot;)))(((&quot;Truffle&quot;,&quot;déploiement de contrat avec&quot;)))Nous avons maintenant un répertoire de travail de base pour notre projet _Faucet_, et nous avons +truffle+ et ses dépendances configurées. Les contrats vont dans le sous-répertoire _contracts_ de notre projet. Le répertoire contient déjà un contrat &quot;d'aide&quot;, _Migrations.sol_, qui gère pour nous les mises à jour des contrats. Nous examinerons l&#39;utilisation de _Migrations.sol_ dans la section suivante.
 
-Copions le contrat _Faucet.sol_ (depuis &lt;<solidity_faucet_example>&gt;) dans le sous-répertoire _contracts_, de sorte que le répertoire du projet ressemble à ceci :
+Copions le contrat _Faucet.sol_ (depuis <<solidity_faucet_example>>) dans le sous-répertoire _contracts_, de sorte que le répertoire du projet ressemble à ceci :
 
 ----
 Faucet
@@ -260,7 +260,7 @@ Faucet $ <strong>truffle migrate --network localnode</strong>
 </pre>
 ++++
 
-Comme nous utilisons un nœud local pour nous connecter au réseau Ethereum et gérer notre portefeuille, nous devons autoriser la transaction créée par +truffle+. Nous exécutons +parity+ connecté à la chaîne de blocs de test de Ropsten, donc pendant la migration, nous verrons une fenêtre contextuelle comme celle de &lt;<parity_deployment_confirmation>&gt; sur la console web de Parity.
+Comme nous utilisons un nœud local pour nous connecter au réseau Ethereum et gérer notre portefeuille, nous devons autoriser la transaction créée par +truffle+. Nous exécutons +parity+ connecté à la chaîne de blocs de test de Ropsten, donc pendant la migration, nous verrons une fenêtre contextuelle comme celle de <<parity_deployment_confirmation>> sur la console web de Parity.
 
 [[parity_deployment_confirmation]]
 .Parity demandant confirmation pour déployer Faucet
@@ -350,7 +350,7 @@ truffle(localnode)&gt;
 </pre>
 ++++
 
-web3.js est une grande bibliothèque JavaScript qui offre une interface complète au système Ethereum, via un fournisseur tel qu&#39;un client local. Nous examinerons web3.js plus en détail dans &lt;<web3js_tutorial>&gt;. Essayons maintenant d&#39;interagir avec nos contrats :
+web3.js est une grande bibliothèque JavaScript qui offre une interface complète au système Ethereum, via un fournisseur tel qu&#39;un client local. Nous examinerons web3.js plus en détail dans <<web3js_tutorial>>. Essayons maintenant d&#39;interagir avec nos contrats :
 
 ++++
 <pre data-type="programlisting">
@@ -486,7 +486,7 @@ include::code/OpenZeppelin/contracts/SampleCrowdsale.sol[]
 
 Encore une fois, nous avons à peine eu à écrire du code ; nous venons de réutiliser le code testé au combat que la communauté OpenZeppelin a mis à disposition. Cependant, il est important de noter que ce cas est différent de celui de notre contrat `SampleToken`. Si vous allez sur les http://bit.ly/2Q8lQ3o[Tests automatisés Crowdsale], vous verrez qu&#39;ils sont testés de manière isolée. Lorsque vous intégrez différentes unités de code dans un composant plus gros, il ne suffit pas de tester toutes les unités séparément, car les interactions entre elles peuvent provoquer des comportements auxquels vous ne vous attendiez pas. En particulier, vous verrez qu&#39;ici nous avons introduit l&#39;héritage multiple, ce qui peut surprendre le développeur s&#39;il ne comprend pas les détails de Solidity. Notre pass:[<span class="keep-together"><code>SampleCrowdsale</code></span>] est simple et fonctionnera exactement comme prévu, car le cadre a été conçu pour simplifier des cas comme ceux-ci ; mais ne relâchez pas votre vigilance à cause de la simplicité qu&#39;introduit ce cadre de développement. Chaque fois que vous intégrez des parties du cadre de développement OpenZeppelin pour créer une solution plus complexe, vous devez tester entièrement chaque aspect de votre solution pour vous assurer que toutes les interactions des unités fonctionnent comme vous le souhaitez.
 
-Enfin, lorsque nous sommes satisfaits de notre solution et que nous l&#39;avons testée de manière approfondie, nous devons la déployer. OpenZeppelin s&#39;intègre bien à Truffle, nous pouvons donc simplement écrire un fichier de migration comme celui-ci (_migrations/2_deploy_contracts.js_), comme expliqué dans &lt;<truffle_migrations_understanding_deployment_scripts>&gt; :
+Enfin, lorsque nous sommes satisfaits de notre solution et que nous l&#39;avons testée de manière approfondie, nous devons la déployer. OpenZeppelin s&#39;intègre bien à Truffle, nous pouvons donc simplement écrire un fichier de migration comme celui-ci (_migrations/2_deploy_contracts.js_), comme expliqué dans <<truffle_migrations_understanding_deployment_scripts>> :
 
 [source,js]
 ----
@@ -665,7 +665,7 @@ Documentation : https://docs.etcdevteam.com[]
 [[testing_frameworks]]
 === Tester les contrats intelligents
 
-(((&quot;cadres de développement&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc11&quot;, range=&quot;startofrange&quot;)))(((&quot;contrat intelligent&quot;,&quot;cadres de développement test&quot;, id=&quot; ix_appdx-dev-tools-asciidoc12&quot;, range=&quot;startofrange&quot;)))(((&quot;cadres de développement de test&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc13&quot;, range=&quot;startofrange&quot;) ))Il existe plusieurs cadres de test couramment utilisés pour le développement de contrats intelligents, résumés dans &lt;<testing_frameworks_table>&gt; :
+(((&quot;cadres de développement&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc11&quot;, range=&quot;startofrange&quot;)))(((&quot;contrat intelligent&quot;,&quot;cadres de développement test&quot;, id=&quot; ix_appdx-dev-tools-asciidoc12&quot;, range=&quot;startofrange&quot;)))(((&quot;cadres de développement de test&quot;,&quot;pour le développement de contrats intelligents&quot;, id=&quot;ix_appdx-dev-tools-asciidoc13&quot;, range=&quot;startofrange&quot;) ))Il existe plusieurs cadres de test couramment utilisés pour le développement de contrats intelligents, résumés dans <<testing_frameworks_table>> :
 
 [[testing_frameworks_table]]
 [options="header"]
