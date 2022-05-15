@@ -120,7 +120,7 @@ L&#39;un des avantages du déploiement de services sur des plates-formes à usag
 
 (((&quot;Buterin, Vitalik&quot;,&quot;sur les jetons&quot;)))Vitalik Buterin a suggéré les jetons comme l&#39;une des applications les plus évidentes et les plus utiles d&#39;une chaîne de blocs programmable généralisée telle qu&#39;Ethereum. En fait, au cours de la première année d&#39;Ethereum, il était courant de voir Vitalik et d&#39;autres porter des T-shirts arborant le logo Ethereum et un échantillon de contrat intelligent au dos. Il y avait plusieurs variantes de ce T-shirt, mais la plus courante montrait une implémentation d&#39;un jeton.
 
-Avant de nous plonger dans les détails de la création de jetons sur Ethereum, il est important d&#39;avoir un aperçu du fonctionnement des jetons sur Ethereum. Les jetons sont différents de l&#39;ether car le protocole Ethereum ne sait rien d&#39;eux. L&#39;envoi d&#39;éther est une action intrinsèque de la plateforme Ethereum, mais l&#39;envoi ou même la possession de jetons ne l&#39;est pas. Le solde d&#39;ether des comptes Ethereum est géré au niveau du protocole, tandis que le solde de jetons des comptes Ethereum est géré au niveau du contrat intelligent. Afin de créer un nouveau jeton sur Ethereum, vous devez créer un nouveau contrat intelligent. Une fois déployé, le contrat intelligent gère tout, y compris la propriété, les transferts et les droits d&#39;accès. Vous pouvez rédiger votre contrat intelligent pour effectuer toutes les actions nécessaires comme vous le souhaitez, mais il est probablement plus sage de suivre une norme existante. Nous examinerons ensuite ces normes. Nous discutons des avantages et des inconvénients des normes suivantes à la fin du chapitre.
+Avant de nous plonger dans les détails de la création de jetons sur Ethereum, il est important d&#39;avoir un aperçu du fonctionnement des jetons sur Ethereum. Les jetons sont différents de l&#39;ether car le protocole Ethereum ne sait rien d&#39;eux. L&#39;envoi d&#39;ether est une action intrinsèque de la plateforme Ethereum, mais l&#39;envoi ou même la possession de jetons ne l&#39;est pas. Le solde d&#39;ether des comptes Ethereum est géré au niveau du protocole, tandis que le solde de jetons des comptes Ethereum est géré au niveau du contrat intelligent. Afin de créer un nouveau jeton sur Ethereum, vous devez créer un nouveau contrat intelligent. Une fois déployé, le contrat intelligent gère tout, y compris la propriété, les transferts et les droits d&#39;accès. Vous pouvez rédiger votre contrat intelligent pour effectuer toutes les actions nécessaires comme vous le souhaitez, mais il est probablement plus sage de suivre une norme existante. Nous examinerons ensuite ces normes. Nous discutons des avantages et des inconvénients des normes suivantes à la fin du chapitre.
 
 
 [[ERC20_std]]
@@ -336,7 +336,7 @@ include::code/truffle/METoken/contracts/METoken.sol[]
 
 Ici, nous définissons les variables optionnelles +name+, +symbol+ et +decimals+. Nous définissons également une variable +_initial_supply+, définie sur 21 millions de jetons ; avec deux décimales de subdivision qui donne 2,1 milliards d&#39;unités au total. Dans la fonction d&#39;initialisation (constructeur) du contrat, nous définissons le +totalSupply+ égal à +_initial_supply+ et allouons tout le +_initial_supply+ au solde du compte (+msg.sender+) qui crée le contrat +METoken+.
 
-Nous utilisons maintenant +truffe+ pour compiler le code +METoken+ :
+Nous utilisons maintenant +truffle+ pour compiler le code +METoken+ :
 
 ++++
 <pre data-type="programlist">
@@ -410,7 +410,7 @@ truffle(ganache)&gt;
 </pre>
 ++++
 
-L&#39;invite +truffe(ganache)&gt;+ indique que nous sommes connectés à la chaîne de blocs +ganache+ et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes +truffle+, nous pourrions donc +compiler+ et +migrer+ depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat +METoken+ existe en tant qu&#39;objet JavaScript dans l&#39;environnement Truffle. Tapez ++METoken**++ à l&#39;invite et il affichera l&#39;intégralité de la définition du contrat :
+L&#39;invite +truffle(ganache)&gt;+ indique que nous sommes connectés à la chaîne de blocs +ganache+ et que nous sommes prêts à taper nos commandes. La console Truffle prend en charge toutes les commandes +truffle+, nous pourrions donc +compiler+ et +migrer+ depuis la console. Nous avons déjà exécuté ces commandes, allons donc directement au contrat lui-même. Le contrat +METoken+ existe en tant qu&#39;objet JavaScript dans l&#39;environnement Truffle. Tapez ++METoken**++ à l&#39;invite et il affichera l&#39;intégralité de la définition du contrat :
 
 ++++
 <pre data-type="programlist">
@@ -597,7 +597,7 @@ Si vous vous demandez quoi faire ensuite, ne le faites pas. Il n&#39;y a pas de 
 
 Peut-être avez-vous anticipé ce problème. Très probablement, vous ne l&#39;avez pas fait. En fait, des centaines d&#39;utilisateurs d&#39;Ethereum qui ont accidentellement transféré divers jetons vers des contrats qui n&#39;avaient aucune capacité ERC20 n&#39;en ont pas non plus fait. Selon certaines estimations, des jetons d&#39;une valeur de plus d&#39;environ 2,5 millions de dollars (au moment de la rédaction) sont restés &quot;bloqués&quot; comme ça et sont perdus à jamais.
 
-L&#39;une des façons dont les utilisateurs de jetons ERC20 peuvent perdre par inadvertance leurs jetons lors d&#39;un transfert, c&#39;est lorsqu&#39;ils tentent de transférer vers un échange ou un autre service. Ils copient une adresse Ethereum à partir du site Web d&#39;un échange, pensant qu&#39;ils peuvent simplement lui envoyer des jetons. Cependant, de nombreux échanges publient des adresses de réception qui sont en fait des contrats ! Ces contrats sont uniquement destinés à recevoir de l&#39;éther, pas des jetons ERC20, balayant le plus souvent tous les fonds qui leur sont envoyés vers un « stockage à froid » ou un autre portefeuille centralisé. Malgré les nombreux avertissements indiquant &quot;n&#39;envoyez pas de jetons à cette adresse&quot;, de nombreux jetons sont perdus de cette façon.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc14&quot;)))(((range=&quot;endofrange&quot; , startref=&quot;ix_10tokens-asciidoc13&quot;)))
+L&#39;une des façons dont les utilisateurs de jetons ERC20 peuvent perdre par inadvertance leurs jetons lors d&#39;un transfert, c&#39;est lorsqu&#39;ils tentent de transférer vers un échange ou un autre service. Ils copient une adresse Ethereum à partir du site Web d&#39;un échange, pensant qu&#39;ils peuvent simplement lui envoyer des jetons. Cependant, de nombreux échanges publient des adresses de réception qui sont en fait des contrats ! Ces contrats sont uniquement destinés à recevoir de l&#39;ether, pas des jetons ERC20, balayant le plus souvent tous les fonds qui leur sont envoyés vers un « stockage à froid » ou un autre portefeuille centralisé. Malgré les nombreux avertissements indiquant &quot;n&#39;envoyez pas de jetons à cette adresse&quot;, de nombreux jetons sont perdus de cette façon.(((range=&quot;endofrange&quot;, startref=&quot;ix_10tokens-asciidoc14&quot;)))(((range=&quot;endofrange&quot; , startref=&quot;ix_10tokens-asciidoc13&quot;)))
 
 [[transfer_workflow_demo]]
 ===== Démonstration du flux de travail &quot;approuver et transférer de&quot;
@@ -742,7 +742,7 @@ Dans les prochaines sections, nous examinerons diverses propositions qui tentent
 (((&quot;Proposition de norme de jeton ERC223&quot;)))(((&quot;jetons&quot;,&quot;Proposition de norme ERC223&quot;)))La proposition ERC223 tente de résoudre le problème du transfert par inadvertance de jetons vers un contrat (qui peut ou non prendre en charge jetons) en détectant si l&#39;adresse de destination est un contrat ou non. ERC223 exige que les contrats conçus pour accepter des jetons implémentent une fonction nommée +tokenFallback+. Si la destination d&#39;un transfert est un contrat et que le contrat ne prend pas en charge les jetons (c&#39;est-à-dire qu&#39;il n&#39;implémente pas +tokenFallback+), le transfert échoue.
 
 [[is_contract]]
-Pour détecter si l&#39;adresse de destination est un contrat, l&#39;implémentation de référence ERC223 utilise un petit segment de bytecode en ligne d&#39;une manière plutôt créative :
+Pour détecter si l&#39;adresse de destination est un contrat, l&#39;implémentation de référence ERC223 utilise un petit segment de code intermédiaire en ligne d&#39;une manière plutôt créative :
 
 [source,solidity]
 ----

@@ -579,7 +579,7 @@ Hevm::
 Hevm est une implémentation Haskell EVM avec un débogueur Solidity agile basé sur un terminal. Il est utilisé pour tester et déboguer les DApps.
 
 evmdis::
-evmdis est un désassembleur EVM ; il effectue une analyse statique sur le bytecode pour fournir un niveau d&#39;abstraction plus élevé que les opérations EVM brutes.
+evmdis est un désassembleur EVM ; il effectue une analyse statique sur le code intermédiaire pour fournir un niveau d&#39;abstraction plus élevé que les opérations EVM brutes.
 
 
 ==== SputnikVM
@@ -603,7 +603,7 @@ Documentation pour l&#39;API web3.js 1.0.0-beta.xx : http://bit.ly/2CT33p0[]
 [role="pagebreak-before"]
 ==== web3.py
 
-(((&quot;libraries&quot;,&quot;web3.py&quot;)))(((&quot;web3.py&quot;)))web3.py est une bibliothèque Python pour interagir avec la blockchain Ethereum, maintenue par la Fondation Ethereum.
+(((&quot;libraries&quot;,&quot;web3.py&quot;)))(((&quot;web3.py&quot;)))web3.py est une bibliothèque Python pour interagir avec la chaîne de blocs Ethereum, maintenue par la Fondation Ethereum.
 
 GitHub : https://github.com/ethereum/web3.py[]
 
@@ -672,7 +672,7 @@ Documentation : https://docs.etcdevteam.com[]
 .Résumé des cadres de test des contrats intelligents
 |=======
 |Cadre | Langue(s) d&#39;essai | Cadre de test | Émulateur de chaîne | Site Internet
-|Truffe | JavaScript/Solidity | Moka | TestRPC/Ganache | https://truffeframework.com/[]
+|Truffle | JavaScript/Solidity | Moka | TestRPC/Ganache | https://truffeframework.com/[]
 |Embark | JavaScript | Moka | TestRPC/Ganache | https://embark.status.im/docs/[]
 |DApp | Solidity | +ds-test+ (personnalisé) | +ethrun+ (Parity) | https://dapp.tools/dapp/[]
 |Populus | Python | +pytest+ | Émulateur de chaîne Python | https://populus.readthedocs.io[]

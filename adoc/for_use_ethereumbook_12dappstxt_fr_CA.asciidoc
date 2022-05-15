@@ -32,7 +32,7 @@ Chacun d&#39;eux peut être quelque peu centralisé ou quelque peu décentralis�
 La création d&#39;une DApp présente de nombreux avantages qu&#39;une architecture centralisée typique ne peut pas offrir :
 
 Élasticité::
-Parce que la logique d'affaire est contrôlée par un contrat intelligent, une DApp dorsale sera entièrement distribué et géré sur une plateforme chaîne de blocs. Contrairement à une application déployée sur un serveur centralisé, une DApp n&#39;aura pas de temps d&#39;arrêt et restera disponible tant que la plateforme fonctionnera.
+Parce que la logique applicative est contrôlée par un contrat intelligent, une DApp dorsale sera entièrement distribué et géré sur une plateforme chaîne de blocs. Contrairement à une application déployée sur un serveur centralisé, une DApp n&#39;aura pas de temps d&#39;arrêt et restera disponible tant que la plateforme fonctionnera.
 
 Transparence::
 La nature en chaîne d&#39;une DApp permet à chacun d&#39;inspecter le code et d&#39;être plus sûr de sa fonction. Toute interaction avec la DApp sera stockée pour toujours dans la chaîne de blocs.
@@ -155,13 +155,13 @@ contract AuctionRepository {
     // Mappage du propriétaire à une liste d&#39;enchères détenues
     mapping(address => uint[]) public auctionOwner;
 
-    // Structure d&#39;enchère pour retenir l&#39;enchérisseur et le montant
+    // Structure d&#39;enchères pour retenir l&#39;enchérisseur et le montant
     struct Bid {
         address from;
         uint256 amount;
     }
 
-    // Structure d&#39;enchère contenant toutes les informations requises
+    // Structure d&#39;enchères contenant toutes les informations requises
     struct Auction {
         string name;
         uint256 blockDeadline;
@@ -442,7 +442,7 @@ Nous avons fait quelques progrès dans la décentralisation de notre DApp, mais 
 
 (((&quot;DApp d'enchères&quot;,&quot;ENS et&quot;, id=&quot;ix_12dapps-asciidoc9&quot;, range=&quot;startofrange&quot;)))(((&quot;ENS (Ethereum Name Service)&quot;, id=&quot;ix_12dapps-asciidoc10&quot;, range =&quot;startofrange&quot;)))(((&quot;ENS (Ethereum Name Service)&quot;,&quot;DApps et&quot;, id=&quot;ix_12dapps-asciidoc11&quot;, range=&quot;startofrange&quot;)))Vous pouvez concevoir le meilleur contrat intelligent au monde , mais si vous ne fournissez pas une bonne interface aux utilisateurs, ils ne pourront pas y accéder.
 
-Sur Internet traditionnel, le système de noms de domaine (DNS) nous permet d&#39;utiliser des noms lisibles par l&#39;homme dans le navigateur tout en résolvant ces noms en adresses IP ou autres identifiants dans les coulisses. Sur la blockchain Ethereum, le _Ethereum Naming System_ (ENS) résout le même problème, mais de manière décentralisée.
+Sur Internet traditionnel, le système de noms de domaine (DNS) nous permet d&#39;utiliser des noms lisibles par l&#39;homme dans le navigateur tout en résolvant ces noms en adresses IP ou autres identifiants dans les coulisses. Sur la chaîne de blocs Ethereum, le _Ethereum Naming System_ (ENS) résout le même problème, mais de manière décentralisée.
 
 Par exemple, l&#39;adresse de don de la Fondation Ethereum est +0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359+ ; dans un portefeuille qui prend en charge ENS, c&#39;est simplement +ethereum.eth+.
 
@@ -538,7 +538,7 @@ Actuellement, le but et l&#39;objectif de ces détenteurs de clés est de travai
 
 ===== Résolveurs
 
-(((&quot;ENS (Ethereum Name Service)&quot;,&quot;résolveurs&quot;)))(((&quot;contrats de résolution&quot;)))Le contrat ENS de base ne peut pas ajouter de métadonnées aux noms ; c&#39;est le travail des soi-disant « contrats de résolveur ». Ce sont des contrats créés par l&#39;utilisateur qui peuvent répondre à des questions sur le nom, telles que l&#39;adresse Swarm associée à l&#39;application, l&#39;adresse qui reçoit les paiements à l&#39;application (en éther ou en jetons) ou le hachage de l&#39;application (pour vérifier son intégrité).(((range=&quot;endofrange&quot;, startref=&quot;ix_12dapps-asciidoc13&quot;)))
+(((&quot;ENS (Ethereum Name Service)&quot;,&quot;résolveurs&quot;)))(((&quot;contrats de résolution&quot;)))Le contrat ENS de base ne peut pas ajouter de métadonnées aux noms ; c&#39;est le travail des soi-disant « contrats de résolveur ». Ce sont des contrats créés par l&#39;utilisateur qui peuvent répondre à des questions sur le nom, telles que l&#39;adresse Swarm associée à l&#39;application, l&#39;adresse qui reçoit les paiements à l&#39;application (en ether ou en jetons) ou le hachage de l&#39;application (pour vérifier son intégrité).(((range=&quot;endofrange&quot;, startref=&quot;ix_12dapps-asciidoc13&quot;)))
 
 ==== Couche intermédiaire : les nœuds .eth
 

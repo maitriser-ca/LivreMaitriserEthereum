@@ -33,7 +33,7 @@ Voici d&#39;autres exemples de données pouvant être fournies par les oracles 
 * Événements sportifs : pour la résolution du marché de la prédiction et les contrats de sports fantastiques
 * Données de géolocalisation : par exemple, telles qu&#39;elles sont utilisées dans le suivi de la chaîne d&#39;approvisionnement
 * Vérification des dommages : pour les contrats d&#39;assurance
-* Événements survenant sur d&#39;autres blockchains : fonctions d&#39;interopérabilité
+* Événements survenant sur d&#39;autres chaînes de blocs : fonctions d&#39;interopérabilité
 * Prix du marché de l&#39;ether : par exemple, oracles pour le prix du gaz en fiat
 * Statistiques de vol : par exemple, telles qu&#39;elles sont utilisées par les groupes et les clubs pour la mise en commun des billets d&#39;avion
 
@@ -125,7 +125,7 @@ L&#39;un des principaux défis d&#39;une telle approche décentralisée est la f
 Jason Teutsch de TrueBit a récemment proposé une nouvelle conception pour un oracle décentralisé de disponibilité des données hors chaîne. Cette conception s&#39;appuie sur une chaîne de blocs de preuve de travail dédiée qui est capable de signaler correctement si les données enregistrées sont disponibles ou non à une époque donnée. Les mineurs tentent de télécharger, stocker et propager toutes les données actuellement enregistrées, garantissant ainsi que les données sont disponibles localement. Bien qu&#39;un tel système soit coûteux dans le sens où chaque nœud de minage stocke et propage toutes les données enregistrées, le système permet de réutiliser le stockage en libérant les données après la fin de la période d&#39;enregistrement.
 
 [[oracle_client_interfaces_in_solidity_sec]]
-=== Interfaces clients Oracle en solidité
+=== Interfaces clients Oracle en Solidity
 
 (((&quot;oracles&quot;,&quot;interfaces client dans Solidity&quot;, id=&quot;ix_11oracles-asciidoc3&quot;, range=&quot;startofrange&quot;)))(((&quot;Oraclize&quot;, id=&quot;ix_11oracles-asciidoc4&quot;, range=&quot;startofrange&quot; )))(((&quot;Solidity&quot;,&quot;interfaces client Oracle dans&quot;, id=&quot;ix_11oracles-asciidoc5&quot;, range=&quot;startofrange&quot;)))<<using_oraclize_to_update_the_eth_usd>> est un exemple Solidity démontrant comment Oraclize peut être utilisé pour interroger en continu le prix ETH/USD à partir d&#39;une API et stocker le résultat de manière utilisable.
 

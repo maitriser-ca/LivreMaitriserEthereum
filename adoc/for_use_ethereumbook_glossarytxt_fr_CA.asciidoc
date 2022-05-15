@@ -217,7 +217,7 @@ Nonce::
 (((&quot;nonces&quot;,&quot;défini&quot;)))En cryptographie, une valeur qui ne peut être utilisée qu&#39;une seule fois. Il existe deux types de nonce utilisés dans Ethereum : un compte nonce est un compteur de transactions dans chaque compte, qui est utilisé pour empêcher les attaques par relecture ; un nonce de preuve de travail est la valeur aléatoire dans un bloc qui a été utilisée pour satisfaire la preuve de travail.
 
 Ommer::
-(((&quot;ommer, défini&quot;)))Un bloc enfant d&#39;un ancêtre qui n&#39;est pas lui-même un ancêtre. Lorsqu&#39;un mineur trouve un bloc valide, un autre mineur peut avoir publié un bloc concurrent qui est ajouté à la pointe de la blockchain. Contrairement à Bitcoin, les blocs orphelins d&#39;Ethereum peuvent être inclus par des blocs plus récents en tant qu&#39;ommers et recevoir une récompense de bloc partielle. Le terme « ommer » est le terme non sexiste préféré pour le frère d&#39;un bloc parent, mais il est aussi parfois appelé « oncle (uncle) ».
+(((&quot;ommer, défini&quot;)))Un bloc enfant d&#39;un ancêtre qui n&#39;est pas lui-même un ancêtre. Lorsqu&#39;un mineur trouve un bloc valide, un autre mineur peut avoir publié un bloc concurrent qui est ajouté à la pointe de la chaîne de blocs. Contrairement à Bitcoin, les blocs orphelins d&#39;Ethereum peuvent être inclus par des blocs plus récents en tant qu&#39;ommers et recevoir une récompense de bloc partielle. Le terme « ommer » est le terme non sexiste préféré pour le frère d&#39;un bloc parent, mais il est aussi parfois appelé « oncle (uncle) ».
 
 Parity::
 (((&quot;Parity&quot;,&quot;défini&quot;)))L&#39;une des implémentations interopérables les plus importantes du logiciel client Ethereum.

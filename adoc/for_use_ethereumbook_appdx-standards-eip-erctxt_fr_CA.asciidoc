@@ -71,7 +71,7 @@ image::images/eip_workflow.png[&quot;Flux de travail des propositions d&#39;amé
 
 | http://bit.ly/2qjYX1n[EIP-681] | Format d&#39;URL pour les demandes de transaction | Daniel A. Nagy | Interface | Brouillon |
 
-| http://bit.ly/2OYgE5n[EIP-649] | Délai de bombe de difficulté Metropolis et réduction de récompense de bloc. Retardé l&#39;ère glaciaire (aka Difficulty Bomb) de 1 an et réduit la récompense de bloc de 5 à 3 éther. | Afri Schoedon, Vitalik Buterin | Noyau | Finale | Métropole Byzantinium
+| http://bit.ly/2OYgE5n[EIP-649] | Délai de bombe de difficulté Metropolis et réduction de récompense de bloc. Retardé l&#39;ère glaciaire (aka Difficulty Bomb) de 1 an et réduit la récompense de bloc de 5 à 3 ether. | Afri Schoedon, Vitalik Buterin | Noyau | Finale | Métropole Byzantinium
 | http://bit.ly/2RoGCvH[EIP-658] | Intégration du code d&#39;état de la transaction dans les reçus. Récupère et intègre un champ d&#39;état indiquant l&#39;état de réussite ou d&#39;échec des reçus de transaction pour les appelants, car il n&#39;est plus possible de supposer que la transaction a échoué si et seulement si elle a consommé tout le gaz après l&#39;introduction de l&#39;opcode &quot;REVERT&quot; dans EIP-140.
 | Nick Johnson | Noyau | Finale | Métropole Byzantinium
 | http://bit.ly/2Ogwpzs[EIP-706] | Compression rapide DEVp2p | Péter Szilágyi | Réseautage | Finale |
