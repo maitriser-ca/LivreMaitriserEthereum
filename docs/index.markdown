@@ -5,6 +5,7 @@
 layout: home
 title: "Maîtriser Ethereum : Développer des contrats intelligents et des DApps"
 ---
+
 Le livre **Maîtriser Ethereum : Développer des contrats intelligents et des DApps** (_**Mastering Ethereum: Building Smart Contracts and DApps**_ par O'Reilly Media) tel qu'écrit originalement en anglais par _Andreas M. Antonopoulos_ et _Dr. Gavin Wood_, traduit en français (Canada) par _Google Translate API_ et révisé par _Serafim Dos Santos_ avec les termes du [Grand dictionnaire terminologique (GDT)](https://gdt.oqlf.gouv.qc.ca/) de l'[Office qu&eacute;b&eacute;cois de la langue fran&ccedil;aise](https://www.oqlf.gouv.qc.ca/).
 
 ---
