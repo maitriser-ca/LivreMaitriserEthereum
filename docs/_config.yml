@@ -21,7 +21,7 @@
 title: "Maîtriser Ethereum : Développer des contrats intelligents et des DApps"
 email: info@maitriser.ca
 description: >- # this means to ignore newlines until "baseurl:"
-  Le livre Maîtriser Ethereum : Développer des contrats intelligents et des DApps (Mastering Ethereum: Building Smart Contracts and DApps par O'Reilly Media) tel qu'écrit originalement en anglais par Andreas M. Antonopoulos et Dr. Gavin Wood, traduit en français (Canada) par Google Translate API et révisé par Serafim Dos Santos avec les termes du Grand dictionnaire terminologique (GDT) de l'Office qu&eacute;b&eacute;cois de la langue fran&ccedil;aise. La source de ce document peut-être téléchargé sur le site de GitHub au https://github.com/maitriser-ca/LivreMaitriserEthereum.
+  Le livre Maîtriser Ethereum : Développer des contrats intelligents et des DApps (Mastering Ethereum: Building Smart Contracts and DApps par O'Reilly Media) tel qu'écrit originalement en anglais par Andreas M. Antonopoulos et Dr. Gavin Wood, traduit en français (Canada) par Google Translate API et révisé par Serafim Dos Santos avec les termes du Grand dictionnaire terminologique (GDT) de l'Office québécois de la langue française. La source de ce document peut-être téléchargé sur le site de GitHub au https://github.com/maitriser-ca/LivreMaitriserEthereum.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ethereum.maitriser.ca" # the base hostname & protocol for your site, e.g. http://example.com
