@@ -14,6 +14,8 @@ Le livre **Maîtriser Ethereum : Développer des contrats intelligents et des DA
 <img src="assets/ME1OE-GITHUB_BANNER-002.jpg" alt="Maîtriser Ethereum: Implémenter des contrats intelligents" width="96%"/>
 </center>
 
+---
+
 <center style="font-size:1.2em;">
 <h2><em>Mastering Ethereum</em></h2>
 <blockquote><br><p>
@@ -26,7 +28,11 @@ La source originale de ces textes est tiré du livre à édition ouverte <strong
 Thank you Dr. Gavin!<br>
 and Thank you O'Reilly Media!</p><br>
 </blockquote>
-<hr />
+</center>
+
+---
+
+<center>
 <h1>Maîtriser Ethereum</h1>
 <h2>Développer des contrats intelligents et des DApps</h2>
 <h3>1ère édition ouverte</h3>
