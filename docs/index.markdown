@@ -26,9 +26,7 @@ La source originale de ces textes est tiré du livre à édition ouverte <strong
 Thank you Dr. Gavin!<br>
 and Thank you O'Reilly Media!</p><br>
 </blockquote>
-
----
-
+<hr />
 <h1>Maîtriser Ethereum</h1>
 <h2>Développer des contrats intelligents et des DApps</h2>
 <h3>1ère édition ouverte</h3>
