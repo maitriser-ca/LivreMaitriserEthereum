@@ -703,59 +703,18 @@ code s&#8217;appelle la signature numérique. Notez qu&#8217;une transaction Eth
 <div class="paragraph">
 <p>Ethereum utilise une courbe elliptique spécifique et un ensemble de constantes mathématiques, telles que définies dans une norme appelée <code>secp256k1</code>, établie par le National Institute of Standards and Technology (NIST) des États-Unis. La courbe secp256k1 est définie par la fonction suivante, qui produit une courbe elliptique :</p>
 </div>
-<div data-type="equation">
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow>
-    <mrow>
-      <msup><mi>y</mi> <mn>2</mn> </msup>
-      <mo>=</mo>
-      <mrow>
-        <mo>(</mo>
-        <msup><mi>x</mi> <mn>3</mn> </msup>
-        <mo>+</mo>
-        <mn>7</mn>
-        <mo>)</mo>
-      </mrow>
-    </mrow>
-    <mspace width="3.33333pt"/>
-    <mtext>over</mtext>
-    <mspace width="3.33333pt"/>
-    <mrow>
-      <mo>(</mo>
-      <msub><mi>&#x1d53d;</mi> <mi>p</mi> </msub>
-      <mo>)</mo>
-    </mrow>
-  </mrow>
-</math>
+<div data-type="equation" align="center">
+y<sup>2</sup> = (x<sup>3</sup> + 7) over (&#x1d53d; p)
 </div>
 <div class="paragraph">
 <p>ou alors:</p>
 </div>
-<div data-type="equation">
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow>
-    <msup><mi>y</mi> <mn>2</mn> </msup>
-    <mspace width="3.33333pt"/>
-    <mo form="prefix">mod</mo>
-    <mspace width="0.277778em"/>
-    <mi>p</mi>
-    <mo>=</mo>
-    <mrow>
-      <mo>(</mo>
-      <msup><mi>x</mi> <mn>3</mn> </msup>
-      <mo>+</mo>
-      <mn>7</mn>
-      <mo>)</mo>
-    </mrow>
-    <mspace width="3.33333pt"/>
-    <mo form="prefix">mod</mo>
-    <mspace width="0.277778em"/>
-    <mi>p</mi>
-  </mrow>
-</math>
+<div data-type="equation" align="center">
+  y<sup>2</sup> mod p = (x<sup>3</sup> + 7) mod p
+  <br><br>
 </div>
 <div class="paragraph">
-<p>Le <em>mod p</em> (modulo nombre premier <em>p</em>) indique que cette courbe est sur un corps fini d&#8217;ordre premier <em>p</em>, également écrit comme \(\( \mathbb{F}_p \)\), où <em>p</em> = 2<sup>256</sup> – 2<sup>32</sup> – 2<sup>9</sup> – 2<sup>8</sup> – 2<sup>7</sup> – 2<sup>6</sup> – 2<sup>4</sup> – 1, qui est un très grand nombre premier.</p>
+<p>Le <em>mod p</em> (modulo nombre premier <em>p</em>) indique que cette courbe est sur un corps fini d&#8217;ordre premier <em>p</em>, également écrit comme (&#x1d53d; p), où <em>p</em> = 2<sup>256</sup> – 2<sup>32</sup> – 2<sup>9</sup> – 2<sup>8</sup> – 2<sup>7</sup> – 2<sup>6</sup> – 2<sup>4</sup> – 1, qui est un très grand nombre premier.</p>
 </div>
 <div class="paragraph">
 <p>Parce que cette courbe est définie sur un champ fini d&#8217;ordre premier au lieu de sur les nombres réels, elle ressemble à un motif de points dispersés en deux dimensions, ce qui la rend difficile à visualiser. Cependant, le calcul est identique à celui d&#8217;une courbe elliptique sur des nombres réels. A titre d&#8217;exemple, <a href="#ecc-over-F17-math">Cryptographie sur courbe elliptique: visualisation d&#8217;une courbe elliptique sur F(p), avec p=17</a> montre la même courbe elliptique sur un champ fini beaucoup plus petit d&#8217;ordre premier 17, montrant un motif de points sur une grille. La courbe elliptique secp256k1 Ethereum peut être considérée comme un motif beaucoup plus complexe de points sur une grille insondable.</p>
