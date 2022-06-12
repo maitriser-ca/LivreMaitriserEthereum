@@ -77,6 +77,29 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 
 ---
 
+Si vous préférez une copie papier ou un format ebook Kindle vous pouvez suivre le lien ci-contre.
+
+<table style="border-width: 0px;text-align:center;">
+<tr>
+<th>
+Amazon CA
+</th>
+<th>
+Amazon FR
+</th>
+</tr>
+<tr>
+<td>
+<a href="https://www.amazon.ca/dp/B0B1JV2BDT">amazon.ca: B0B1JV2BDT</a>
+</td>
+<td>
+<a href="https://www.amazon.fr/dp/B0B1JV2BDT">amazon.fr: B0B1JV2BDT</a>
+</td>
+</tr>
+</table>
+
+---
+
 <div style="display: flex; text-align:center;">
   <div style="width:35%;">
   <p>Pour un don ou me payer un café :</p>
