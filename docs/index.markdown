@@ -91,7 +91,7 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 
 ---
 
-L'édition ouverte originale en anglais, en html : [http://www.maitriser.ca/MasteringEthereumBook/](http://www.maitriser.ca/MasteringEthereumBook/)
+L'édition ouverte originale en anglais, en html : [http://ethereum.dabook.org/](http://ethereum.dabook.org/)
 
 ---
 
