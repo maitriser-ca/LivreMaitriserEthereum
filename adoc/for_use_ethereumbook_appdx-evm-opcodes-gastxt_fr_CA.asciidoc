@@ -313,7 +313,7 @@
 
 |`0xf4` |+DELEGATECALL+ |Message-call dans ce compte avec le code d'un autre compte, mais persistant dans ce compte avec le code d'un autre compte |- |Compliqué
 
-|`0xf5` |+APPELBLACKBOX+ |- |- |40
+|`0xf5` |+CALLBLACKBOX+ |- |- |40
 
 |`0xf6` - `0xf9` |Inutilisé |- |- |
 
