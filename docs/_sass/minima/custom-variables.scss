@@ -1,1 +1,47 @@
-// Placeholder to allow overriding predefined variables smoothly.
+// Light Pastel Color Scheme Variables
+
+// Primary colors - soft pastels
+$pastel-lavender: #e6e6fa;
+$pastel-mint: #f0fff0;
+$pastel-peach: #ffe5cc;
+$pastel-sky: #e0f6ff;
+$pastel-rose: #ffe4e1;
+$pastel-lemon: #fffacd;
+
+// Text colors
+$text-color: #4a4a4a;
+$brand-color: #7b68ee;
+$brand-color-light: lighten($brand-color, 40%);
+$brand-color-dark: darken($brand-color, 25%);
+
+// Background colors
+$background-color: $pastel-mint;
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
+
+// Override Minima variables
+$grey-color: #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark: darken($grey-color, 25%);
+
+// Table colors
+$table-text-align: left;
+
+// Syntax highlighting
+$base00: #fafafa;
+$base01: #e0e0e0;
+$base02: #d0d0d0;
+$base03: #b0b0b0;
+$base04: #969896;
+$base05: #373b41;
+$base06: #282a2e;
+$base07: #1d1f21;
+$base08: #c66;
+$base09: #de935f;
+$base0a: #f0c674;
+$base0b: #b5bd68;
+$base0c: #8abeb7;
+$base0d: #81a2be;
+$base0e: #b294bb;
+$base0f: #a3685a;
