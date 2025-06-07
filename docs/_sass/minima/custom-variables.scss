@@ -1,47 +1,47 @@
-// Light Pastel Color Scheme Variables
+// Grey-Sand Pastel Theme - Custom Variables
 
-// Primary colors - soft pastels
-$pastel-lavender: #e6e6fa;
-$pastel-mint: #f0fff0;
-$pastel-peach: #ffe5cc;
-$pastel-sky: #e0f6ff;
-$pastel-rose: #ffe4e1;
-$pastel-lemon: #fffacd;
+// Color Palette - Calming grey-sand pastel tones
+$background-color: #faf9f7 !default;          // Warm off-white sand
+$text-color: #4a4a4a !default;                // Soft charcoal grey
+$brand-color: #8b8680 !default;               // Muted grey-brown
+$brand-color-light: #c4bcb7 !default;          // Calculated lighten($brand-color, 40%)
+$brand-color-dark: #5e5651 !default;            // Calculated darken($brand-color, 25%)
 
-// Text colors
-$text-color: #4a4a4a;
-$brand-color: #7b68ee;
-$brand-color-light: lighten($brand-color, 40%);
-$brand-color-dark: darken($brand-color, 25%);
+// Accent colors
+$accent-color: #a69c94 !default;              // Warm grey-beige
+$accent-light: #d4cfc8 !default;              // Light sand
+$accent-lighter: #e8e4de !default;            // Very light sand
+$accent-dark: #6b6258 !default;               // Dark sand-brown
 
-// Background colors
-$background-color: $pastel-mint;
-$content-width: 800px;
-$on-palm: 600px;
-$on-laptop: 800px;
+// Content area colors
+$content-bg: #ffffff !default;                // Pure white for content
+$sidebar-bg: #f5f3f0 !default;                // Light warm grey
+$border-color: #ddd8d2 !default;              // Soft border color
+$table-border-color: #e6e1db !default;        // Table borders
 
-// Override Minima variables
-$grey-color: #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark: darken($grey-color, 25%);
+// Typography
+$base-font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-size: 16px !default;
+$base-font-weight: 400 !default;
+$small-font-size: $base-font-size * 0.875 !default;
+$base-line-height: 1.6 !default;
 
-// Table colors
-$table-text-align: left;
+// Code and syntax highlighting
+$code-bg: #f8f6f3 !default;                   // Light sand for code blocks
+$code-border: #e0dbd5 !default;               // Code block borders
 
-// Syntax highlighting
-$base00: #fafafa;
-$base01: #e0e0e0;
-$base02: #d0d0d0;
-$base03: #b0b0b0;
-$base04: #969896;
-$base05: #373b41;
-$base06: #282a2e;
-$base07: #1d1f21;
-$base08: #c66;
-$base09: #de935f;
-$base0a: #f0c674;
-$base0b: #b5bd68;
-$base0c: #8abeb7;
-$base0d: #81a2be;
-$base0e: #b294bb;
-$base0f: #a3685a;
+// Links
+$link-base-color: #7a6f66 !default;           // Muted brown for links
+$link-visited-color: $link-base-color !default;
+$link-hover-color: #665d56 !default;           // Calculated darken($link-base-color, 15%)
+
+// Header and navigation
+$header-bg: $accent-lighter !default;          // Light sand header
+$nav-link-color: $text-color !default;
+$nav-link-hover: $accent-color !default;
+
+// Spacing
+$spacing-unit: 30px !default;
+$content-width: 800px !default;
+$on-palm: 600px !default;
+$on-laptop: 800px !default;

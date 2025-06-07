@@ -37,8 +37,11 @@ plugins:
   - jekyll-feed  
   - jekyll-seo-tag
 
-show_excerpts: true # set to true to show excerpts on the homepage
+# Minima theme configuration
+minima:
+  skin: classic
 
+show_excerpts: true # set to true to show excerpts on the homepage
 
 # Exclude from processing.
 # The following items will not be processed, by default.

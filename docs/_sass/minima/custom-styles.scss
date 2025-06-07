@@ -1,201 +1,254 @@
-// Light Pastel Theme Custom Styles
+// Grey-Sand Pastel Theme - Custom Styles
 
-// Body and main layout
+// Base styles
 body {
-  background: linear-gradient(135deg, $pastel-mint 0%, $pastel-sky 50%, $pastel-lavender 100%);
-  min-height: 100vh;
+  background-color: $background-color;
   color: $text-color;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
 }
 
 // Header styling
 .site-header {
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid $pastel-lavender;
+  background-color: $header-bg;
+  border-bottom: 2px solid $border-color;
+  box-shadow: 0 2px 8px rgba(139, 134, 128, 0.1);
   
   .site-title {
-    color: $brand-color;
-    font-weight: 600;
+    color: $text-color;
+    font-weight: 500;
     
     &:hover {
-      color: $brand-color-dark;
+      color: $accent-color;
+      text-decoration: none;
     }
   }
   
-  .site-nav .page-link {
-    color: $text-color;
-    
-    &:hover {
-      color: $brand-color;
+  .site-nav {
+    .page-link {
+      color: $nav-link-color;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: $nav-link-hover;
+        text-decoration: none;
+      }
     }
   }
 }
 
 // Main content area
 .page-content {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  margin: 20px;
-  padding: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  background-color: $content-bg;
+  padding: $spacing-unit 0;
 }
 
-// Post and page styling
-.post-header {
-  .post-title {
-    color: $brand-color;
-    border-bottom: 3px solid $pastel-peach;
-    padding-bottom: 10px;
-  }
+.wrapper {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+  background-color: $content-bg;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(139, 134, 128, 0.08);
 }
 
-.post-content {
-  h1, h2, h3, h4, h5, h6 {
-    color: $brand-color-dark;
-    margin-top: 2rem;
-    
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  
-  h1 { border-bottom: 2px solid $pastel-rose; }
-  h2 { border-bottom: 1px solid $pastel-peach; }
-  h3 { color: lighten($brand-color-dark, 10%); }
+// Typography enhancements
+h1, h2, h3, h4, h5, h6 {
+  color: $accent-dark;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  border-bottom: 3px solid $accent-light;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  border-bottom: 2px solid $accent-lighter;
+  padding-bottom: 0.3rem;
 }
 
 // Links
 a {
-  color: $brand-color;
+  color: $link-base-color;
+  text-decoration: none;
+  transition: all 0.3s ease;
   
   &:hover {
-    color: $brand-color-dark;
-    text-decoration: none;
-    background: linear-gradient(120deg, transparent 0%, $pastel-lemon 100%);
+    color: $link-hover-color;
+    text-decoration: underline;
   }
   
   &:visited {
-    color: lighten($brand-color, 10%);
+    color: $link-visited-color;
   }
 }
 
-// Code blocks
-pre, code {
-  background-color: $pastel-lemon;
-  border: 1px solid $pastel-peach;
-  border-radius: 8px;
+// Code styling
+code {
+  background-color: $code-bg;
+  border: 1px solid $code-border;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: $accent-dark;
 }
 
-.highlight {
-  background-color: $pastel-lemon;
-  border-radius: 8px;
-  padding: 15px;
-  border: 1px solid $pastel-peach;
-}
-
-// Blockquotes
-blockquote {
-  background: linear-gradient(135deg, $pastel-rose 0%, $pastel-peach 100%);
-  border-left: 4px solid $brand-color;
-  border-radius: 0 8px 8px 0;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+pre {
+  background-color: $code-bg;
+  border: 1px solid $code-border;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  
+  code {
+    background: none;
+    border: none;
+    padding: 0;
+  }
 }
 
 // Tables
 table {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  
+  th, td {
+    border: 1px solid $table-border-color;
+    padding: 0.75rem;
+    text-align: left;
+  }
   
   th {
-    background: linear-gradient(135deg, $pastel-lavender 0%, $pastel-sky 100%);
-    color: $brand-color-dark;
-    font-weight: 600;
+    background-color: $accent-lighter;
+    font-weight: 500;
+    color: $accent-dark;
   }
   
-  tr:nth-child(even) {
-    background-color: $pastel-mint;
+  tbody tr:nth-child(even) {
+    background-color: rgba(232, 228, 222, 0.3);
   }
-  
-  td, th {
-    padding: 12px 15px;
-    border: 1px solid $pastel-peach;
-  }
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $accent-color;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  background-color: rgba(232, 228, 222, 0.2);
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: $accent-dark;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(139, 134, 128, 0.15);
+  margin: 1rem 0;
 }
 
 // Footer
 .site-footer {
-  background: linear-gradient(135deg, $pastel-lavender 0%, $pastel-rose 100%);
-  border-top: 2px solid $pastel-peach;
+  background-color: $accent-lighter;
+  border-top: 2px solid $border-color;
+  color: $accent-dark;
+  padding: $spacing-unit 0;
   
   .footer-heading {
-    color: $brand-color-dark;
+    color: $accent-dark;
+    font-weight: 500;
   }
   
   a {
-    color: $text-color;
+    color: $accent-dark;
     
     &:hover {
-      color: $brand-color;
+      color: $link-hover-color;
     }
   }
 }
 
-// Navigation
-.pagination {
-  .page-link {
-    background-color: $pastel-sky;
-    border: 1px solid $pastel-lavender;
-    color: $brand-color;
-    border-radius: 8px;
-    
-    &:hover {
-      background-color: $pastel-lavender;
-      color: $brand-color-dark;
-    }
+// Posts and pages
+.post-title, .page-heading {
+  color: $accent-dark;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.post-content {
+  margin-bottom: 2rem;
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.post-meta {
+  color: $accent-color;
+  font-size: $small-font-size;
+  margin-bottom: 1rem;
+}
+
+// Navigation improvements
+.post-nav {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: $sidebar-bg;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+}
+
+// Responsive adjustments
+@media screen and (max-width: $on-palm) {
+  .wrapper {
+    padding: 0 1rem;
+    border-radius: 0;
   }
   
-  .page-item.active .page-link {
-    background-color: $brand-color;
-    border-color: $brand-color;
+  .site-header {
+    padding: 0.5rem 0;
   }
 }
 
-// Buttons and form elements
-.btn, button, input[type="submit"] {
-  background: linear-gradient(135deg, $pastel-sky 0%, $pastel-lavender 100%);
-  border: 1px solid $brand-color;
-  color: $brand-color-dark;
-  border-radius: 8px;
-  padding: 10px 20px;
-  transition: all 0.3s ease;
+// Button styling (if needed)
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: $accent-color;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
   
   &:hover {
-    background: linear-gradient(135deg, $pastel-lavender 0%, $pastel-rose 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    background-color: $accent-dark;
+    color: white;
+    text-decoration: none;
   }
 }
 
-// Special content boxes
+// Highlight boxes for important content
 .highlight-box {
-  background: linear-gradient(135deg, $pastel-peach 0%, $pastel-lemon 100%);
-  border: 2px solid $brand-color-light;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
-}
-
-// Mobile responsiveness
-@media screen and (max-width: $on-palm) {
-  .page-content {
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
+  background-color: rgba(232, 228, 222, 0.3);
+  border: 1px solid $accent-light;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  
+  &.info {
+    border-left: 4px solid $accent-color;
+  }
+  
+  &.warning {
+    border-left: 4px solid #d4a574;
+    background-color: rgba(212, 165, 116, 0.1);
   }
 }
