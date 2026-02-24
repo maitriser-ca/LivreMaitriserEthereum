@@ -80,7 +80,7 @@ Traducteur : <strong>Serafim Dos Santos</strong></p>
 <div style="margin:5% auto;">
     <a href="https://www.amazon.ca/dp/B0B1JV2BDT" target="_newtab">
         <img src="../assets/ME1EO-SITE_AMAZON_BANNER-002.jpg" width="100%" alt="Bannière Amazon du livre Maîtriser Ethereum" style="border-radius:10px;" />
-    </a>    
+    </a>
 </div>
 
 <table style="border-width: 0px;text-align:center;">
@@ -101,20 +101,6 @@ Amazon FR
 </td>
 </tr>
 </table>
-
----
-
-<div style="display: flex; text-align:center;">
-  <div style="width:35%;">
-  <p>Pour un don ou me payer un café :</p>
-  <img src="assets/bluewallet-bitcoin-sponsoring-qr-code.jpg" alt="" style="max-width:33.5%;">
-  </div>
-
-  <div style="width:65%;">
-  <p>bitcoin:bc1qgal2khvhktyqaj99etxmtd6m6xhv72ht0zvhtx</p>
-  <p>$ETH : serafdossantos.eth</p>
-  </div>
-</div>
 
 ---
 

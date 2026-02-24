@@ -1,0 +1,20 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd docs
+        - bundle install
+    build:
+      commands:
+        - bundle exec jekyll build -d ../public
+        - cd ..
+        - mkdir -p public/assets
+        - cp -R assets/. public/assets/
+  artifacts:
+    baseDirectory: public
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - docs/vendor/bundle/**/*
