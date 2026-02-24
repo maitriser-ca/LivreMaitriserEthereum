@@ -10,7 +10,7 @@ frontend:
         - bundle exec jekyll build -d ../public
         - cd ..
         - mkdir -p public/assets
-        - cp -R assets/. public/assets/
+        - cp -R docs/assets/. public/assets/
   artifacts:
     baseDirectory: public
     files:
